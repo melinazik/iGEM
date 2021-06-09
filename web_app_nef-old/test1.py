@@ -23,18 +23,18 @@ import os
 
 app = Flask(__name__)
 
-database_name = "/home/pi/bear/bear.db" ##TODO !! change
+database_name = "C:\\tools\\sqlite-tools-win32-x86-3350500\\data2" ##TODO !! change
 
 
-# logs actions to the database
-def log_action(source, state, filename, presence): # TODO change to log data !!
+# log data to database
+def log_action(age, gender, OAstage): 
 
     global database_name
     conn=sqlite3.connect(database_name)
 
     curs=conn.cursor()
 
-    curs.execute("""INSERT INTO actions values(datetime('now'), (?), (?), (?), (?))""", (source, state, filename, presence))
+    curs.execute("""INSERT INTO data1 values(datetime('now'), (?), (?), (?))""", (age, gender, OAstage))
 
     # commit the changes
     conn.commit()
@@ -46,12 +46,24 @@ def log_action(source, state, filename, presence): # TODO change to log data !!
 @app.route("/")
 def main():
 
+    global database_name 
+    conn=sqlite3.connect(database_name)
+    
     now = datetime.now()
     timeString = now.strftime("%Y-%m-%d %H:%M")
 
+    query = "SELECT  * from data1 WHERE datetime BETWEEN  datetime('{start}','-1 days') AND  datetime('{start}','0 days')".format(start=now.strftime("%Y-%m-%d"))
+    
+    curs=conn.cursor()
+    curs= conn.execute(query)
+    actions = curs.fetchall()
+
+    data = log_action(actions, actions, actions)
+
     templateData = {
         'title' : 'Menu',
-        'time' : timeString
+        'time' : timeString,
+        'data': data
     }
     return render_template('main.html', **templateData)
 #
@@ -66,7 +78,7 @@ def calc():
     global database_name 
     conn=sqlite3.connect(database_name)
 
-    query = "SELECT  * from actions WHERE datetime BETWEEN  datetime('{start}','-1 days') AND  datetime('{start}','0 days') ORDER BY datetime DESC LIMIT 30".format(start=start_day.strftime("%Y-%m-%d"))
+    query = "SELECT  * from data1 WHERE datetime BETWEEN  datetime('{start}','-1 days') AND  datetime('{start}','0 days')".format(start=now.strftime("%Y-%m-%d"))
     
     curs=conn.cursor()
     curs= conn.execute(query)
@@ -92,12 +104,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:  
             print("keyboard stop")
 
-     
-
-   
-
-
-        
-
-
-
+cd 
