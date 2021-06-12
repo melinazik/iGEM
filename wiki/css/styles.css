@@ -1,0 +1,861 @@
+
+
+	/* CLEAR DEFAULT SETTINGS **************************************************/
+	#sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
+	#content { padding:0px; width:100%; margin-top:-7px; margin-left:0px; border:none;}
+	body, html {background-color:white; width: 100%; height: 100%;}
+	#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+	#bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+
+
+	
+	.igem_content_wrapper {
+		background-color: #ffffff;
+    	display: block;
+    	width: 100%;
+	}
+	
+	.igem_column_wrapper{
+		margin: auto;
+		width: 90%;
+		max-width: 1200px;
+	}	
+		
+	.top_bar{
+	    float: left;
+    	position: fixed;
+    	width: 100%;
+    	height: 40px;
+		background-color: #efedef;
+    	border-bottom: 2px solid #cec6cc;
+	}
+
+	.top_bar .bar_wrapping{
+		width:97%;
+		float:right;
+	}
+		
+	.top_bar .bar_wrapping .bar_button{
+		height: 30px;
+		padding: 5px 0px;
+		cursor: pointer;
+		background-repeat: no-repeat;
+    	display: inline-block;
+		background-color: inherit;
+    	border-bottom: inherit;
+	}
+		
+	.top_bar .bar_wrapping .bar_button:hover,
+	.top_bar .bar_wrapping .bar_button.general_menu.active_button{
+		background-color:#97c998 !important;
+		border-bottom: 2px solid #82af83 !important;
+	}
+	
+		
+	.top_bar .bar_wrapping .bar_button.main_page{
+    	background-position: 0%;
+    	float: left;
+    	width: 70px;
+		background-image: url(https://2021.igem.org/wiki/images/c/c8/2021_igem_logo_horizontal.svg);
+	}
+
+	.top_bar .bar_wrapping .bar_button.general_menu{
+    	float: right;
+    	width: 50px;
+		background-color: inherit;
+    	border-bottom: inherit;
+    	background-position: 50%;
+		background-image: url(https://2020.igem.org/wiki/images/f/f9/Hamburger_menu.svg);
+	}
+
+
+	.menu_container{
+		background-color: #efedef;
+    	border-left: 2px solid #cec6cc;
+    	display: none;
+    	float: right;
+    	height: 100vh;
+    	margin-top: 42px;
+    	overflow-x: hidden;
+    	overflow-y: auto;
+   		padding: 0px;
+   		position: fixed;
+   		right: 0%;
+   		text-align: left;
+   		width: 250px;
+   		z-index: 0;
+	}
+	
+	
+		
+		
+	.menu_container .menu_wrapper{
+		width:100%;
+		margin:auto;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper{
+		width: 100%;
+    	max-width: 350px;
+    	margin: auto;
+	}
+	
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab{
+		width: 82.6px;
+    	float: left;
+    	background-position: 50%;
+    	padding: 5px 0px;
+    	cursor: pointer;
+    	height: 30px;
+   	 	background-repeat: no-repeat;
+    	display: inline-block;
+		border-bottom: 1px solid #cec6cc;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab:hover{
+		background-color:#97c99885;
+	}
+		
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab.wiki_tools{
+		background-image: url("https://2020.igem.org/wiki/images/8/8a/Wiki_tools.svg");
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab.login{
+		background-image: url("https://2020.igem.org/wiki/images/4/46/User_login.svg");
+		border-left: 1px solid #cec6cc;
+		border-right: 1px solid #cec6cc;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab.navigation{
+		background-image: url("https://2020.igem.org/wiki/images/1/17/Navigation.svg");
+	}	
+	
+		
+	.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab.active_tab {
+		background-color: #97c99885;	
+	}			
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content {
+		display:none;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation {				
+		display:block;
+	}
+		
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper{
+		float: left;
+		width: 100%;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper{
+width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    height: fit-content;
+    padding-bottom: 100px;
+    max-width: 300px;
+    float: left;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_tab_title{
+		color: #666766; 
+		font-size: 140%; 
+		font-weight: bold; 
+		margin:auto; 
+		border-bottom: 1px solid #c4c4c4;
+    	padding-bottom: 10px;
+		margin-bottom: 15px;
+		text-align: center;
+		display: block;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_button{
+		background-color: #1c6937;
+    	border-radius: 3%;
+    	color: #ffffff;
+    	cursor: pointer;
+    	font-size: 120%;
+    	font-weight: bold;
+    	min-height: 20px;
+    	margin: 10px auto;
+    	max-width: 170px;
+    	width: 65%;
+   		text-align: center;
+    	border-bottom: 7px solid #144d28;
+	}
+				
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_button:hover{
+		text-decoration: none !important;
+		background-color:#278548;
+		border-bottom: 7px solid #1d6a38;
+	}
+				
+		
+	.menu_content_button a{
+		color:#ffffff;
+		padding: 12px 5px 10px 5px;
+		display: block;
+	}	
+		
+	.menu_content_button a:hover{
+		text-decoration: none;
+	}	
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_section_title{
+		color: #666766;
+    	font-size: 115%;
+    	font-weight: bold;
+    	margin-bottom: 15px;
+    	text-align: center;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_line_divider{
+		border-top: 1px solid #cccccc;
+    	clear: both;
+    	float: left;
+    	height: 0px;
+    	margin: 15px 5%;
+    	width: 90%;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link_list li{
+    	cursor: pointer;
+    	float: left;
+    	font-size: 110%;
+   		font-weight: bold;
+    	height: 20px;
+    	margin-bottom: 10px;
+    	text-align: center;
+		width: 100%;
+		list-style-type: none;
+		padding:0px;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link_list li a{
+		color: #000000;
+		text-decoration: underline;
+	}
+		
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link{
+		text-align: center;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link a {
+		color: #000000;
+		text-decoration: underline;
+		cursor: pointer;
+    	font-size: 110%;
+   		font-weight: bold;
+	}
+			
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link_list li a:hover, 
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_link a:hover{
+		color:#1c6937;
+	}
+				
+	ul.menu_content_link_list {
+		list-style-type: none !important;
+		padding:0px;
+		margin-left:0px;
+		list-style-image: none !important;
+	}
+				
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .input_wrapper {
+		width:80%;
+		margin:auto;
+		max-width: 250px;
+	}		
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .input_wrapper .menu_content_input{
+		border-radius: 4px;
+    	border: 1px solid #cec6cc;
+    	box-sizing: border-box;
+    	padding: 10px 20px;
+    	width: 100%;
+		font-size:100%;
+	}
+	
+	
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper{
+		background-color: #ffffff78;
+    	border: 2px solid #cec6cc;
+    	border-radius: 5px;
+    	padding: 10px;
+		margin-bottom: 15px;
+	}
+				
+		#error_message_login{
+			display: none;
+		}	
+		
+		#wiki_tools_edit_page{
+			display: none;
+		}
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper .notification_title_wrapper{
+		height: 40px; 
+		margin-bottom: 15px; 
+		margin: auto; 
+		text-align: left;
+	}
+							
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper .notification_title_wrapper .notification_icon{
+		background-repeat: no-repeat; 
+		float: left; 
+		height: 35px; 
+		width: 35px;
+	}
+							
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper .notification_title_wrapper .notification_icon.alert{
+		background-image:url(https://2020.igem.org/wiki/images/4/45/Alert_icon.svg);
+	}
+							
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper .notification_title_wrapper .notification_icon.reminder{
+		background-image:url(https://2020.igem.org/wiki/images/8/89/Reminder_icon.svg); 
+	}
+							
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper .notification_title_wrapper .title_text{
+		color: #666766; 
+		float: left; 
+		font-size: 130%; 
+		font-weight: bold;
+		padding: 10px 0px 0px 0px;
+		width: 70%;
+	}
+							
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .notification_wrapper p{
+		font-size: 14px !important; 
+		font-weight: bold !important; 
+		text-align: left !important;
+	}
+		
+	
+		
+	/*navigation menu*/	
+		
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper{
+		border: 1px solid #cec6cc;
+		float: left; 
+		width: 100%;
+		cursor: pointer;
+		background-color:#efedef; 
+		margin-top:-1px;
+	}
+					
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper:hover,
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper.current_hub{
+		background-color:#97c998;					
+	}
+	
+
+
+
+	/* menu icon */	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon{
+		background-image: url(https://2020.igem.org/wiki/images/f/f7/Menu_icon_demo_competition.svg); 
+		background-position: 50%; 
+		background-repeat: no-repeat; 
+		display: inline-block; 
+		float: left; 
+		height: 30px; 
+		padding: 4.5px 0px; 
+		width: 15%;
+	}
+		
+	/* about */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.about{
+		background-image: url(https://2020.igem.org/wiki/images/e/ea/Menu_icon_about_demo.svg);
+	}
+
+	/*calendar */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.calendar{
+		background-image: url(https://2020.igem.org/wiki/images/6/6f/Menu_icon_calendar_demo.svg);
+	}
+
+	/*teams */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.teams{
+		background-image: url(https://2020.igem.org/wiki/images/7/7e/Menu_icon_teams_demo.svg);
+	}
+
+
+	/* competition */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.competition{
+		background-image: url(https://2020.igem.org/wiki/images/f/f7/Menu_icon_demo_competition.svg); 
+	}
+
+	/* jamboree*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.jamboree{
+		background-image: url(https://2020.igem.org/wiki/images/b/b5/Menu_icon_jamboree_demo.svg); 
+	}
+
+	/* judging */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.judging{
+		background-image: url(https://2020.igem.org/wiki/images/6/60/Menu_icon_judging_demo.svg); 
+	}
+
+	/* safety*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.safety{
+		background-image: url(https://2020.igem.org/wiki/images/f/f9/Menu_icon_safety_DEMO.svg); 
+	}
+
+	/* human practices */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.human_practices{
+		background-image: url(https://2020.igem.org/wiki/images/d/dc/Menu_icon_human_practices_demo.svg); 
+	}
+
+
+	/* measurement*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.measurement{
+		background-image: url(https://2020.igem.org/wiki/images/d/d7/Menu_icon_measurement_demo.svg); 
+	}
+
+
+	/* resources*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.resources{
+		background-image: url(https://2020.igem.org/wiki/images/0/08/Menu_icon_resources_demo.svg); 
+	}
+
+	/* sponsors */
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.sponsors{
+		background-image: url(https://2020.igem.org/wiki/images/4/47/Menu_icon_sponsors_demo.svg); 
+	}
+
+
+	/* sitemap*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_icon.sitemap{
+		background-image: url(https://2020.igem.org/wiki/images/b/ba/Menu_icon_sitemap_demo.svg); 
+	}
+
+
+
+
+					
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_title{
+		color: #000000; 
+		float: left; 
+		font-size: 110%; 
+		font-weight: bold; 
+		padding: 10px 0px 0px 0px;
+		width: 69%;
+	}
+					
+					
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_title.single{
+		width: 85%;
+	}
+					
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_control{
+		float: right; 
+		font-size: 130%; 
+		font-weight: bold; 
+		height: 61%; 
+		max-width: 100px;  
+		padding: 10px 2.5%; 
+		text-align: center; 
+		width: 10%;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_control:hover, 
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_item_wrapper .menu_control.open{
+		background-color:#c1d9c1;
+	}
+		
+	/* would need to specify for menu item and submenu*/	
+		
+	.menu_control::before {
+		content: "+"; 
+	}
+		
+	.menu_control.open::before {
+		content: "-"; 
+	}
+					
+	
+	/*sub menu*/	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper{
+		    background-color: #ffffff;
+    display: none;
+    color: #000000;
+    width: 100%;
+    float: left;
+    /* border: 1px solid #cec6cc;*/
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_section{
+		padding-right: 0;
+    	width: 97%;
+    	font-size: 100%;
+    	color: #666766;
+    	float: left;
+    	border-bottom: 1px solid #cec6cc;
+    	padding: 7px 0px 7px 3%;
+	}
+		
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper{ 
+		padding-right: 0;
+    width: 100%;
+    font-size: 105%;
+    float: left;
+    border-bottom: 1px solid #cec6cc;
+    border-right: 1px solid #cec6cc;
+    border-left: 1px solid #cec6cc;
+	}
+
+
+
+	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper a{
+		display: inline-block;
+    	color: #000000;
+    	text-decoration: none;
+    	padding: 7px 0px 7px 6%;
+    	width: 79%;
+    	float: left;
+    	font-weight: bold;
+	}
+	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper.single a{
+		width: 94%;
+	}
+		
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper a:hover,
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper.current_page,
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper:hover{
+		background-color: #c1d9c1;
+	}
+	
+
+	.menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper .menu_control{
+		float: right; 
+		font-size: 130%; 
+		font-weight: bold;  
+		max-width: 100px;  
+		padding: 7px 2.5%; 
+		text-align: center; 
+		width: 10%;
+		cursor: pointer;
+	}
+	
+	 .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper .menu_control.open,
+	.menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .submenu_item_wrapper .menu_control:hover{
+		background-color: #eef6ee;
+	}	
+		
+	/* sub sub menu*/
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .menu_subsub_wrapper{
+		display:none;
+	}
+	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .menu_subsub_wrapper .subsubmenu_item_wrapper{
+		padding-right: 0;
+    	width: 100%;
+   		font-size: 100%;
+		float:left;
+    	border-bottom: 1px solid #cec6cc;	
+	}
+	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper .menu_subsub_wrapper .subsubmenu_item_wrapper a{
+		display: inline-block;
+    	color: #000000;
+    	text-decoration: none;
+    	padding: 7px 0px 7px 12%;
+    	width: 88%;
+    	float: left;
+    	font-weight: normal;
+	}
+	
+	.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content.navigation .menu_tab_content_wrapper .menu_sub_wrapper	.menu_subsub_wrapper .subsubmenu_item_wrapper a:hover, .subsubmenu_item_wrapper.current_subpage{
+		background-color:#eef6ee;
+	}
+		
+	/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+	/*size for title h tags*/
+	.igem_content_wrapper .igem_column_wrapper h1 { font-size: 210%;}
+	.igem_content_wrapper .igem_column_wrapper h2 { font-size: 190%;}
+	.igem_content_wrapper .igem_column_wrapper h3 { font-size: 170%;}
+	.igem_content_wrapper .igem_column_wrapper h4 { font-size: 150%;}
+	.igem_content_wrapper .igem_column_wrapper h5 { font-size: 140%;}
+	.igem_content_wrapper .igem_column_wrapper h6 { font-size: 130%;}
+
+
+	/*titles h1, h2*/
+	.igem_content_wrapper .igem_column_wrapper h1, .igem_content_wrapper .igem_column_wrapper h2 {
+		border-bottom:0px; 
+		color: #635d5d;
+		font-family: "Arial Black", Gadget, sans-serif;
+		line-height: normal;
+		padding: 10px 0px;
+	}
+
+	/*titles h3, h3, h5, h6 */
+	.igem_content_wrapper .igem_column_wrapper h3, 
+	.igem_content_wrapper .igem_column_wrapper h4, 
+	.igem_content_wrapper .igem_column_wrapper h5, 
+	.igem_content_wrapper .igem_column_wrapper h6 { 
+		border-bottom:0px; 
+		color: #635d5d;  
+		font-family: "Arial Black", Gadget, sans-serif;
+		line-height: normal;
+		padding: 5px 0px;
+	}
+
+	/* text p tag*/
+	.igem_content_wrapper .igem_column_wrapper p { 
+		font-size: 130%;
+		font-family: Arial, Helvetica, sans-serif;
+		padding: 5px 0px;
+		text-align: left;
+		color: #484848;
+	}
+
+	/* Links a tag*/
+	.igem_content_wrapper .igem_column_wrapper a {
+		color: #00a19b;
+		font-weight: bold; 
+		text-decoration: underline;
+		text-decoration-color:#00a19b;
+		transition: all 0.4s ease;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease; 
+		-ms-transition: all 0.4s ease; 
+		-o-transition: all 0.4s ease; 
+	}
+
+	/* hover for the links */
+	.igem_content_wrapper .igem_column_wrapper a:hover { 
+		color: #085156;
+		text-decoration:none;
+	}
+
+
+	/* Table tag*/
+	.igem_content_wrapper .igem_column_wrapper table { 
+		border: 1px solid #635d5d; 
+		border-collapse: collapse; 
+		font-size: 130%;
+		width: 100%; 
+	}
+
+	/* table cells */
+	.igem_content_wrapper .igem_column_wrapper td { 
+		border: 1px solid #cecece; 
+		border-collapse: collapse; 
+		font-size: 105%;
+		padding: 10px;
+		vertical-align: text-top; 
+	}
+
+	/* table headers */
+	.igem_content_wrapper .igem_column_wrapper th { 
+		background-color:#cecece; 
+		border: 1px solid #635d5d; 
+		border-collapse: collapse; 
+		font-size: 110%;
+		padding: 10px; 
+		vertical-align: text-top; 
+	}
+
+
+
+	/* non numbered lists */
+	.igem_content_wrapper .igem_column_wrapper ul, .igem_content_wrapper .igem_column_wrapper ol {
+		font-size: 130%;
+		font-family: Arial, Helvetica, sans-serif;
+		padding:0px 20px;
+	}
+
+
+	/*font sizing within list nesting*/
+	.igem_content_wrapper .igem_column_wrapper ul ul li, .igem_content_wrapper .igem_column_wrapper ul ul ul li, 
+	.igem_content_wrapper .igem_column_wrapper ul ol li, .igem_content_wrapper .igem_column_wrapper ul ul ol li, 
+	.igem_content_wrapper .igem_column_wrapper ol ol li, .igem_content_wrapper .igem_column_wrapper ul ol ul li, 
+	.igem_content_wrapper .igem_column_wrapper ol ul li, .igem_content_wrapper .igem_column_wrapper ul ol ol li, 
+	.igem_content_wrapper .igem_column_wrapper ol ul ul li, .igem_content_wrapper .igem_column_wrapper ol ol ul li, 
+ 	.igem_content_wrapper .igem_column_wrapper ol ol ol li, .igem_content_wrapper .igem_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+	/*main layout class */
+	.igem_content_wrapper .igem_column_wrapper .column  { 
+		float:left;
+		margin: 1% 2%;
+		padding: 0px;
+	}
+
+	/* 100% */
+	.igem_content_wrapper .igem_column_wrapper .column.full_size { width:96%; }
+
+	/* 66% */
+	.igem_content_wrapper .igem_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+	/* 33% */
+	.igem_content_wrapper .igem_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+	/*all images*/
+	.igem_content_wrapper .igem_column_wrapper .column.full_size img, 
+	.igem_content_wrapper .igem_column_wrapper .column.two_thirds_size img,
+	.igem_content_wrapper .igem_column_wrapper .column.third_size img {
+		margin-bottom: 15px;
+		width: 100%; 
+	}
+
+
+	/* page break */
+	.igem_content_wrapper .igem_column_wrapper .clear {
+		clear:both;
+	}
+	/*add extra space to page break with clear class*/
+	.igem_content_wrapper .igem_column_wrapper .clear.extra_space {
+		height: 30px;
+	}
+
+	/* horizontal line to divide the page*/
+	.igem_content_wrapper .igem_column_wrapper .line_divider {
+    	border-top: 1px solid #cecece;
+	  	margin: auto;
+   	 	width: 98%;
+	}
+
+
+
+	
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+	/*Button  */
+	/************************************************/
+	.igem_content_wrapper .igem_column_wrapper .button_link {
+		font-size: 130%;
+		margin: 30px auto;
+		text-align: center;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .button_link a  {
+		background-color: #00a19bad !important;
+		color: #000 !important;
+		font-weight: bold;
+		margin: auto;
+		text-decoration: none !important;
+		padding: 10px 15px !important;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .button_link a:hover {
+		background-color: #ffb819 !important;   
+	}
+
+	
+
+	/*highlight */
+	/************************************************/
+	.igem_content_wrapper .igem_column_wrapper .highlight { 
+		padding: 15px 20px;
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight p, 
+	.igem_content_wrapper .igem_column_wrapper .highlight h1, 
+	.igem_content_wrapper .igem_column_wrapper .highlight h2,
+	.igem_content_wrapper .igem_column_wrapper .highlight h3,
+	.igem_content_wrapper .igem_column_wrapper .highlight h4,
+	.igem_content_wrapper .igem_column_wrapper .highlight h5,
+	.igem_content_wrapper .igem_column_wrapper .highlight h6 {
+		padding: 5px 15px;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_background {
+		background-color: #ececec; 
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_A_top {
+    	border-top: 4px solid #00a19bad;
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_A_full {
+    	border: 4px solid #00a19bad;
+	}
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_B_top {
+    	border-top: 4px solid #ffb819
+	}
+
+
+	.igem_content_wrapper .igem_column_wrapper .highlight.decoration_B_full {
+    	border: 4px solid #ffb819;
+	}
+
+	
+	/* 1100px  */
+	/************************************************/
+	@media only screen and (max-width: 1100px) {		
+		
+		.igem_content_wrapper .igem_column_wrapper .column.full_size, .igem_content_wrapper .igem_column_wrapper .column.two_thirds_size,.igem_content_wrapper .igem_column_wrapper .column.third_size {width:96%; }
+
+	}
+	
+		
+	/* 800px  */
+	/************************************************/
+	@media only screen and (max-width: 800px) {
+		
+		.menu_container{ display:none; width:100%; border-left:none; position:fixed;}
+
+		
+		.menu_container .menu_wrapper{width:60%;}
+		.menu_container .menu_wrapper .menu_tabs_wrapper .menu_tab{width: 33.1%;}
+		
+		
+		.top_bar .bar_wrapping .bar_button.general_menu.active_button{
+		background-image: url(https://2020.igem.org/wiki/images/7/7a/Hamburger_menu_close.svg) !important;}
+		
+		
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_tab_title{
+			display: none; 
+		}
+		
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .menu_content_line_divider{
+			    margin: 10px 5%;
+		}
+		
+		.menu_container .menu_wrapper .menu_tabs_general_wrapper .menu_tabs_content .menu_tab_content_wrapper .input_wrapper .menu_content_input{
+			margin-bottom: 0px;
+		}
+		
+		.menu_container .menu_wrapper .menu_tabs_wrapper {
+    		height: 41px;
+    		border-left: 1px solid #cec6cc;
+    		border-right: 1px solid #cec6cc;
+		}
+	}
+
+		
+	@media only screen and (max-width: 500px) {
+		.menu_container .menu_wrapper{width:100%; }
+		.top_bar .bar_wrapping .bar_button:hover {background-color: inherit !important;
+    	border-bottom: inherit !important;}
+		
+	}
+
+
+
+
+/********  TEAM PAGES **********/
+.judges-will-not-evaluate { border: 4px solid #F42534; padding: 2% !important; width: 92%!important;}
+
