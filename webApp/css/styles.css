@@ -1,26 +1,12 @@
-/* font  */
-/*body {
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}*/
-
 html, body{
     height:100%;
     padding:0px;
     margin:0px;
-  
-    font-family: Georgia, serif;
+
+    font-family:  Arial, Helvetica, sans-serif;
     overflow-y: scroll;
     scroll-behavior: smooth;
     overflow-x: hidden;
-  }
-  
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
   }
   
   /* -------------- NAVBAR ------------ */
@@ -29,8 +15,7 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     overflow: hidden; /* Hide overflow */
-    background-color:#192d47;/*#0E828A/* #333; /* Dark background color */
-  
+    background-color:#1a3a64;/*#0E828A/* #333; /* Dark background color */
   }
   
   .right-navbar {
@@ -84,7 +69,7 @@ html, body{
   
   /* ------------FOOTER-------------*/
   footer {
-    background: #192d47; /* Grey background */
+    background: #1a3a64; /* Grey background */
     padding:40px 0;
     color: white;
     height: 300px;
@@ -184,7 +169,7 @@ html, body{
   }
   
   .footer-bottom{
-    background: #192d47; /* Grey background */
+    background: #1a3a64; /* Grey background */
     color: white;
     height:50px;
     width:100%;
