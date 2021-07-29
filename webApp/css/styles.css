@@ -226,7 +226,7 @@ html, body{
     color: white;
     width: 800px;
     padding: 50px;
-    margin: 20px;
+    margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -295,6 +295,7 @@ hr {
 #page-view {
   width: 100%;
   height: 60vh;
+  /* TODO : change picture */
   background-image: url("../images/mitosis.png");
   background-size: cover;
   display: flex;
