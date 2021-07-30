@@ -3,7 +3,7 @@ html, body{
     padding:0px;
     margin:0px;
 
-    font-family:  Helvetica;
+    font-family:  sans-serif;
     overflow-y: scroll;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -194,6 +194,11 @@ html, body{
     color: #24262b;
     background-color: #ffffff;
   }
+
+  .social-links .fb a:hover{
+    color: #a53b28;
+    background-color: #ffffff;
+  }
   
   .footer-section .contact-info{
     display: block;
@@ -300,7 +305,14 @@ hr {
   background-size: cover;
   display: flex;
   justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+
+
 }
+
 
 #title{
   color: white;
