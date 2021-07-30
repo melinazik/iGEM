@@ -287,7 +287,6 @@ hr {
   border-radius: 7px;
 }
 
-
 .home-section{
   background-color: #0b36483a;
 }
@@ -311,28 +310,43 @@ hr {
 
 #title{
   color: white;
-  font-weight: bold;
-  font-size: 3em;
+  font-size: 4em;
   align-self: center;
 }
 
 .section-title{
-  align-self: center;
+  /* align-self: center; */
+  justify-content: center;
+
+  font-size: 3em;
 }
 
-
 .section-about{
-  background-color: #0b3648d0;
+  justify-content: center;
 }
 
 .section-osteo{
-  background-color: #0b3648;
+  background-color: #1B83AD;
 }
 
 .section-calc{
-  background-color: #0b3648d0;
+  background-color: #0B3445;
 }
 
 .section-sposnor{
-  background-color: #0b3648d0;
+  background-color: #269A87;
+}
+
+.centered-container{
+  padding-right: 140px;
+  padding-left: 140px;
+  align-self: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  text-align: center;
 }
