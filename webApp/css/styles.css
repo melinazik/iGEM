@@ -106,6 +106,7 @@ html, body{
     background-size: cover;
     padding-bottom: 120px;
     padding-right: 80px;
+    margin-bottom: 45px;
   }
  
   
@@ -141,10 +142,11 @@ html, body{
   }
   
   .col{
-    width:33%;
+    width:30%;
     padding: 0 15px;
   }
   
+
   .col h4{
     font-size:18px;
     color:#ffffff;
@@ -167,6 +169,7 @@ html, body{
   
   .footer-about{
     color: #bbbbbb;
+    width:70%;
   }
   
   ul{
@@ -199,6 +202,10 @@ html, body{
     color:#ffffff;
     transition: all 0.5s ease;
   }
+
+  .social-links .nous a{
+    padding-top: 10px;
+  }
   
   .social-links a:hover{
     color: #24262b;
@@ -215,7 +222,22 @@ html, body{
     font-size: 1.1em;
     margin-bottom: 8px;
   }
+
+  .footer-section .nous{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
   
+
+  .footer-links{
+    color: #bbbbbb;
+    text-decoration:none;
+  }
+
+  .footer-links:hover{
+    color: #ffffff;
+  }
   
   
   /*--responsive--*/
