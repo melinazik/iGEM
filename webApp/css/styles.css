@@ -308,17 +308,20 @@ html, body{
 }
 
 .hr-about {
-  height: 2px;
   background-color: rgb(0, 0, 0);
-  background-color: rgb(0, 0, 0);
-  border-radius: 7px;
+  border: 1.5px solid black;
 }
 
+  
+
 .hr-osteo{
-  height: 2px;
-  background-color: rgb(0, 0, 0);
-  color: #082936;
-  border-radius: 7px;
+  background-color: #082936;
+  border: 1.5px solid #082936;
+}
+
+.hr-calc{
+  background-color: #ffff;
+  border: 1.5px solid #ffff;
 }
 
 .home-section{
@@ -362,13 +365,16 @@ html, body{
 
 .section-osteo{
   justify-content: center;
-  background-color: #1b84ad9a;
+  background-color: #1b84ad5e;
   color: #082936;
   padding-bottom: 80px;
+  padding-top: 10px;
+
 }
 
 .section-calc{
-  background-color: #0B3445;
+  background-color: #0b3445da;
+  color: #ffff;
   padding-bottom: 80px;
   padding-top: 10px;
 }
