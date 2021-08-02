@@ -395,6 +395,7 @@ html, body{
 .img-sponsors{
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
+    transition: transform .4s;
 }
 
 .img-sponsors:hover {
