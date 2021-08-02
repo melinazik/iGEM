@@ -254,12 +254,11 @@ html, body{
   /*---------FOOTER END------------*/
   
 .main-text-home {
-
   background-color: #0b3648d0;
   color: white;
   width: 800px;
   padding: 50px;
-  margin-top: 70px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -312,8 +311,6 @@ html, body{
   border: 1.5px solid black;
 }
 
-  
-
 .hr-osteo{
   background-color: #082936;
   border: 1.5px solid #082936;
@@ -349,6 +346,13 @@ html, body{
   color: white;
   font-size: 4em;
   align-self: center;
+}
+
+#home-title{
+  color: white;
+  font-size: 5em;
+  align-self: center;
+  text-align: center;
 }
 
 .section-title{
