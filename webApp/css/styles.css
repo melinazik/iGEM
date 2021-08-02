@@ -10,7 +10,6 @@ html, body{
   }
   
   /* -------------- NAVBAR ------------ */
-  
   .navbar {
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +45,6 @@ html, body{
     list-style: none inside;
     margin: 0;
     padding: 0;
-
   }
   
   #nav li {
@@ -146,7 +144,6 @@ html, body{
     padding: 0 15px;
   }
   
-
   .col h4{
     font-size:18px;
     color:#ffffff;
@@ -256,21 +253,18 @@ html, body{
   
   /*---------FOOTER END------------*/
   
-  
-  .main-text-home {
+.main-text-home {
 
-    background-color: #0b3648d0;
-    color: white;
-    width: 800px;
-    padding: 50px;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-radius: 25px;
+  background-color: #0b3648d0;
+  color: white;
+  width: 800px;
+  padding: 50px;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 25px;
 }
-
-
 
 .container {
   padding: 16px;
@@ -357,17 +351,13 @@ html, body{
 .section-title{
   /* align-self: center; */
   padding-top: 60px;
-  
   justify-content: center;
-
   font-size: 3em;
 }
 
 .section-about{
   justify-content: center;
-  
   padding-bottom: 80px;
-
 }
 
 .section-osteo{
@@ -406,7 +396,6 @@ html, body{
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
 }
-
 
 .img-sponsors:hover {
   filter: none;
