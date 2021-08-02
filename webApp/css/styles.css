@@ -372,7 +372,6 @@ html, body{
 
 .section-osteo{
   justify-content: center;
-
   background-color: #1b84ad9a;
   color: #082936;
   padding-bottom: 80px;
@@ -385,7 +384,6 @@ html, body{
 }
 
 .section-sponsors{
-  background-color: #269A87;
   padding-bottom: 80px;
   padding-top: 10px;
 }
@@ -402,4 +400,16 @@ html, body{
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
   text-align: center;
+}
+
+.img-sponsors{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+
+.img-sponsors:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  transform: scale(1.1); 
 }
