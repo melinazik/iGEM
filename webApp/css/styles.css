@@ -365,29 +365,29 @@ html, body{
 
 .section-about{
   justify-content: center;
+  
   padding-bottom: 80px;
 
 }
 
 .section-osteo{
+  justify-content: center;
+
   background-color: #1b84ad9a;
   color: #082936;
-  padding-top: 10px;
   padding-bottom: 80px;
-
-
 }
 
 .section-calc{
   background-color: #0B3445;
   padding-bottom: 80px;
-
+  padding-top: 10px;
 }
 
-.section-sposnor{
+.section-sponsors{
   background-color: #269A87;
   padding-bottom: 80px;
-
+  padding-top: 10px;
 }
 
 .centered-container{
