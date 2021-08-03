@@ -1,4 +1,3 @@
-// ex = "age (years) <= 64 AND age (years) >= 60 AND sex = 'male'";
 // ex = ( body mass index < 40 AND body mass index >= 35 ) AND sex = 'female'
 
 var RiskEvidenceConditionParser = {
@@ -43,9 +42,9 @@ var RiskEvidenceConditionParser = {
     parse: function(ex) {
         var op = this.operatorDetails(ex);
         var start = op[0];
-        var left = s.substring(0, start).trim();
-        var right = s.substring(op[1]).trim();
-        var oper = s.substring(start, op[1]).trim();
+        var left = ex.substring(0, start).trim();
+        var right = ex.substring(op[1]).trim();
+        var oper = ex.substring(start, op[1]).trim();
         var opType = this.logicalOperatorType(oper);
 
         // console.log("PARSE: Left: \"" + left + "\" Right: \"" + right + "\" Operator: \"" + oper + "\"");
@@ -94,7 +93,7 @@ var RiskEvidenceConditionParser = {
                     
                     // Idea here is to weight logical operators so that they will still be selected over other operators
                     // when no parens are present
-                    var parens = (this.logicalOperatorType(sub) > -1) ? this.parens(ex, location) - 1 : this.parens(s, locInStr);
+                    var parens = (this.logicalOperatorType(sub) > -1) ? this.parens(ex, location) - 1 : this.parens(ex, location);
 
                     if (parens <= minParens) {
 
@@ -210,3 +209,5 @@ var RiskEvidenceConditionParser = {
         }
     }
 };
+
+console.log(RiskEvidenceConditionParser.parseAndEvaluate("age (years) <= 64 AND age (years) >= 60 AND sex = 'male'"));
