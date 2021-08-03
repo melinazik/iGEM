@@ -21,23 +21,6 @@ var RiskEvidenceConditionParser = {
         }
     },
 
-    evaluate: function(condition, vars) {
-        // sort by key length
-        var sortedVals = Object.keys(vars).sort(function(a,b){return b.length>a.length;});
-        sortedVals.forEach(function(val){
-            condition=RiskEvidenceConditionParser.replaceAll(condition,val+" ",vars[val]);
-        });
-        
-		//error control
-		if(condition.indexOf("OB_")>=0) {
-// 			console.error("===ERROR in OB replacement===");
-// 			console.error("--Condition:",condition);
-// 			console.error("--Observable:",
-// 			condition.substr(condition.indexOf("OB_"),5));
-			return false;
-		}
-        return this.parseAndEvaluate(condition);
-    },
 
     parse: function(ex) {
         var op = this.operatorDetails(ex);
@@ -59,6 +42,8 @@ var RiskEvidenceConditionParser = {
 
         var left = this.removeParens(left);
         var right = this.removeParens(right);
+        // console.log(right);
+
 
         if (this.isNumeric(left) && this.isNumeric(right)){
             return this.evaluateFloat(parseFloat(left), oper, parseFloat(right));
