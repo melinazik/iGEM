@@ -4,6 +4,11 @@ var RiskEvidenceConditionParser = {
 	
     operators: ["!=", "=", ">=", "<=", ">", "<", "OR", "AND"],
 
+    parseValues: function(){
+        var age = document.getElementById("ageInput");
+        console.log(age);
+    },
+
     // parse and evaluate an expression 
     // (ex. sex = 'female' AND age > 30)
     parseAndEvaluate: function(ex) {

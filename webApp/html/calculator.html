@@ -19,6 +19,8 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="../js/javascript.js"> </script>
+		<script src="../js/parser.js"> </script>
+
 	</head>
 
 	<body>
@@ -49,7 +51,10 @@
 
 		<section class="after-nav">
 		
-        CALCULATOR
+			<form id="form" onsubmit="return false;">
+				<input   type="text" id="ageInput">
+				<input   type="submit" onclick="RiskEvidenceConditionParser.parseValues();">
+			</form>
 		</section>
 
 		
