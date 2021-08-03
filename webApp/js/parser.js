@@ -5,7 +5,7 @@ var RiskEvidenceConditionParser = {
     operators: ["!=", "=", ">=", "<=", ">", "<", "OR", "AND"],
 
     parseValues: function(){
-        var age = document.getElementById("ageInput");
+        var age = document.getElementById("ageInput").value;
         console.log(age);
     },
 
@@ -200,4 +200,4 @@ var RiskEvidenceConditionParser = {
     }
 };
 
-console.log(RiskEvidenceConditionParser.parseAndEvaluate("age (years) <= 64 AND age (years) >= 60 AND sex = 'male'"));
+// console.log(RiskEvidenceConditionParser.parseAndEvaluate("age (years) <= 64 AND age (years) >= 60 AND sex = 'male'"));
