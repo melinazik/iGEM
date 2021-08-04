@@ -18,6 +18,7 @@ html, body{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 10;
   }
   
   .right-navbar {
@@ -413,9 +414,13 @@ html, body{
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   transition: transform .4s;
+
   height: 140px;
   height: 140px;
+
   margin-right: 60px;
+
+  z-index: 1;
 }
 
 .img-sponsors-archimedes{
@@ -441,6 +446,7 @@ html, body{
   height: 60px;
 
   margin-bottom: 60px;
+  
 }
 
 .img-sponsors-htss{
