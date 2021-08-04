@@ -415,6 +415,10 @@ html, body{
 }
 
 strong {
-  font-size: 1.2em;
-  
+  font-size: 1.2em; 
+}
+
+/* Calculator forms */
+.select select {
+  display: none; /*hide original SELECT element:*/
 }
