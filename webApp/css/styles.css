@@ -3,7 +3,7 @@ html, body{
     padding:0px;
     margin:0px;
 
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
     overflow-y: scroll;
     scroll-behavior: smooth;
     overflow-x: hidden;

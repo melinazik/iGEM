@@ -1,18 +1,33 @@
 // ex = ( body mass index < 40 AND body mass index >= 35 ) AND sex = 'female'
 
-var RiskEvidenceConditionParser = {
+var Parser = {
 	
+    age : 0,
     operators: ["!=", "=", ">=", "<=", ">", "<", "OR", "AND"],
 
     parseValues: function(){
-        var age = document.getElementById("ageInput").value;
-        console.log(age);
+        this.age = document.getElementById("ageInput").value;
+
+        var ex = "age <= 64 AND age >= 60 AND sex = 'male'";
+
+        var a = Parser.replaceValues(ex);
+        console.log(Parser.parseAndEvaluate(a));
+    },
+
+    replaceValues: function (ex){
+
+        if (ex.search("age") != -1){
+            
+            return ex.replace(/age/g, this.age);
+        }
+        
+        return -1;
     },
 
     // parse and evaluate an expression 
     // (ex. sex = 'female' AND age > 30)
     parseAndEvaluate: function(ex) {
-        var array = ex.split("");
+        var array = ex.split(" ");
         for (var i = 0; i < array.length; i++) {
             
             // if the parsed array is not empty
@@ -200,4 +215,8 @@ var RiskEvidenceConditionParser = {
     }
 };
 
-// console.log(RiskEvidenceConditionParser.parseAndEvaluate("age (years) <= 64 AND age (years) >= 60 AND sex = 'male'"));
+
+
+
+// console.log(ex.replace(/age/g, '15'));
+// console.log(ex);
