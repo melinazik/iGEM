@@ -10,8 +10,7 @@ var Parser = {
 
         var ex = "age <= 64 AND age >= 60 AND sex = 'male'";
 
-        var a = Parser.replaceValues(ex);
-        console.log(Parser.parseAndEvaluate(a));
+        console.log(Parser.parseAndEvaluate(Parser.replaceValues(ex)));
     },
 
     replaceValues: function (ex){
