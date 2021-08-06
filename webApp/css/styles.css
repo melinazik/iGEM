@@ -486,15 +486,33 @@ strong {
   font-size: 1.2em; 
 }
 
-/* Calculator forms */
-.select select {
-  display: none; /*hide original SELECT element:*/
+
+/***** CALCULATOR *****/
+
+select {
+    /* display: none; hide original SELECT element:/ */
+    /* width: 140px;
+    height: 35px;
+    padding: 5px 35px 5px 5px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:16px 0;
+  border:0;
+  background: #f1f1f1;
+  padding: 20px 40px;
+  outline:none;
+  color: black;
+  transition:0.5s;
 }
 
-
-/* CALCULATOR */
-main {
-  color:#0b3648;
+select:hover{
+  background: #e0dfdf;
 }
 
 .main-holder {
@@ -535,10 +553,13 @@ main {
 }
 
 .form-text:hover{
-  box-shadow: 0 0 10px 4px #34495e;
+  background: #e0dfdf;
+
 }
 
 textarea.form-text{
   resize:none;
   height: 120px;
 }
+
+
