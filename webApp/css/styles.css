@@ -490,15 +490,6 @@ strong {
 /***** CALCULATOR *****/
 
 select {
-    /* display: none; hide original SELECT element:/ */
-    /* width: 140px;
-    height: 35px;
-    padding: 5px 35px 5px 5px;
-    font-size: 18px;
-    border: 2px solid #ccc;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; */
   display:block;
   width:100%;
   box-sizing:border-box;
@@ -522,7 +513,6 @@ select:hover{
   margin: 20px auto 20px auto;
   box-shadow: 0 0 10px 4px #34495e;
   background-color:white;
-
   padding-left: 60px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -560,6 +550,23 @@ select:hover{
 textarea.form-text{
   resize:none;
   height: 120px;
+}
+
+button:hover {
+  opacity:0.7;
+}
+
+/* style buttons*/
+button {
+  border:0;
+  background:#0B3648;
+  color: #fff;
+  padding: 12px 50px;
+  cursor: pointer;
+  transition:0.5s;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 
