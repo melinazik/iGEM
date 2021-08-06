@@ -3,24 +3,32 @@
 var Parser = {
 	
     age : 0,
+    sex : { OTHER: "other", MALE: "male", FEMALE: "female"},
     operators: ["!=", "=", ">=", "<=", ">", "<", "OR", "AND"],
 
     parseValues: function(){
         this.age = document.getElementById("ageInput").value;
+        this.sex = document.getElementById("sexInput").value;
 
-        var ex = "age <= 64 AND age >= 60 AND sex = 'male'";
+        var ex = "age <= 64 AND age >= 60 AND sex = male";
 
+        // console.log(Parser.replaceValues(ex));
         console.log(Parser.parseAndEvaluate(Parser.replaceValues(ex)));
     },
 
     replaceValues: function (ex){
+        var expression = ex;
 
         if (ex.search("age") != -1){
             
-            return ex.replace(/age/g, this.age);
+            expression = expression.replace(/age/g, this.age);
+        }
+        if (ex.search("sex") != -1){
+            
+            expression = expression.replace(/sex/g, this.sex);
         }
         
-        return -1;
+        return expression;
     },
 
     // parse and evaluate an expression 
@@ -218,4 +226,4 @@ var Parser = {
 
 
 // console.log(ex.replace(/age/g, '15'));
-// console.log(ex);
+// console.log(Parser.parseAndEvaluate(Parser.));
