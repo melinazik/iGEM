@@ -52,19 +52,26 @@
 		</div>  <br><br>
 
 		<section class="after-nav">
-		
-			<form id="form" onsubmit="return false;">
-				<input type="text" id="ageInput">
 
-				<select class="select" id="sexInput" name="sex">
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
-				  </select>
-				<input type="submit" onclick="Parser.parseValues();">
-			</form>
+			<main class="main-holder">
+			
+				<form id="form" class="form" onsubmit="return false;">
+
+					<input type="text" class="form-text" id="ageInput" placeholder="Age" required name="ageInput">
+
+					<select class="select" class="form-text" id="sexInput"  required name="ageInput" name="sex">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>
+					</select>
+
+					<input type="submit" onclick="Parser.parseValues();">
+				</form>
+
+			</main>
+
 		</section>
-
+		
 		
 		<!--footer-->
 		<footer>
