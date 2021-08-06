@@ -10,7 +10,7 @@ var Parser = {
         this.age = document.getElementById("ageInput").value;
         this.sex = document.getElementById("sexInput").value;
 
-        var ex = "age <= 64 AND age >= 60 AND sex = male";
+        var ex = "age <= 64 AND age >= 60 AND sex = 'male'";
 
         // console.log(Parser.replaceValues(ex));
         console.log(Parser.parseAndEvaluate(Parser.replaceValues(ex)));
