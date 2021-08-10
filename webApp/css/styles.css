@@ -266,46 +266,7 @@ html, body{
   border-radius: 25px;
 }
 
-.container {
-  padding: 16px;
-}
 
-.description-container{
-  max-width: 800px;
-  margin:40px auto 20px;
-}
-
-.description-container p{
-  text-align:justify;
-}
-
-.description-container-text{
-  margin-top:10px;
-}
-
-.description-container .image{
-  max-width: 150px;
-}
-
-.description-container .image.right{
-  float:right;
-  margin-left: 30px;
-  margin-bottom:10px;
-  margin-top:10px;
-  border-radius: 7px;
-}
-
-.description-container .image.left{
-  float:left;
-  margin-right: 30px;
-  margin-bottom:10px;
-  margin-top:10px;
-  border-radius: 7px;
-}
-
-.container-title {
-  margin-bottom: 5px;
-}
 
 .hr-calc {
   background-color: rgb(0, 0, 0);
@@ -366,12 +327,12 @@ html, body{
 .section-calc{
   justify-content: center;
   padding-bottom: 80px;
+  background-color: #1b84ad5e;
+  color: #082936;
 }
 
 .section-osteo{
   justify-content: center;
-  background-color: #1b84ad5e;
-  color: #082936;
   padding-bottom: 80px;
   padding-top: 10px;
 
@@ -544,7 +505,6 @@ select:hover{
 
 .form-text:hover{
   background: #e0dfdf;
-
 }
 
 textarea.form-text{
@@ -567,6 +527,10 @@ button {
   border-radius: 5px;
   margin-bottom: 20px;
   margin-top: 10px;
+}
+
+.img-osteo{
+  border-radius: 20%;
 }
 
 
