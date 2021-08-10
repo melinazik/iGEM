@@ -266,14 +266,12 @@ html, body{
   border-radius: 25px;
 }
 
-
-
-.hr-calc {
+.hr-osteo {
   background-color: rgb(0, 0, 0);
   border: 1.5px solid black;
 }
 
-.hr-osteo{
+.hr-calc{
   background-color: #082936;
   border: 1.5px solid #082936;
 }
@@ -394,8 +392,6 @@ html, body{
 
   margin-top: 60px;
   margin-bottom: 60px;
-
-
 }
 
 .img-sponsors-bioemtech{
@@ -529,8 +525,5 @@ button {
   margin-top: 10px;
 }
 
-.img-osteo{
-  border-radius: 20%;
-}
 
 
