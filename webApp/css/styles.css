@@ -376,7 +376,6 @@ ul{
   transition: transform .4s;
 
   height: 140px;
-  height: 140px;
 
   margin-right: 60px;
 
@@ -389,7 +388,6 @@ ul{
   transition: transform .4s;
 
   height: 90px;
-  height: 90px;
 
   margin-top: 60px;
   margin-bottom: 60px;
@@ -401,7 +399,6 @@ ul{
   transition: transform .4s;
 
   height: 60px;
-  height: 60px;
 
   margin-bottom: 60px;
   
@@ -412,7 +409,6 @@ ul{
   -webkit-filter: grayscale(100%);
   transition: transform .4s;
   
-  height: 130px;
   height: 130px;
 }
 
@@ -534,7 +530,6 @@ button {
 }
 
 
-
 .img-osteo-container{
   transition: transform .4s;
 }
@@ -564,6 +559,5 @@ figcaption {
 
   font-weight: 1000;
   transition: transform .4s;
-
 }
 
