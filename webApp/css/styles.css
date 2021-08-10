@@ -527,12 +527,19 @@ button {
 }
 
 .img-osteo{
+  margin-top: 20px;
+
   border-radius: 100%;
   height: 400px;
+}
+
+
+
+.img-osteo-container{
   transition: transform .4s;
 }
 
-.img-osteo:hover{
+.img-osteo-container:hover {
   transform: scale(1.1); 
 }
 
@@ -551,7 +558,12 @@ button {
 figcaption {
   padding: 2px;
   text-align: center;
+
   margin-top: 10px;
+  margin-bottom: 40px;
+
   font-weight: 1000;
+  transition: transform .4s;
+
 }
 
