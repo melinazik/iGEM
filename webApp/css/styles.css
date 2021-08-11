@@ -322,6 +322,12 @@ ul{
   font-size: 3em;
 }
 
+.home-content{
+  max-width: 1000px;
+  padding-left: 100px;
+
+}
+
 .section-calc{
   justify-content: center;
   padding-bottom: 80px;
