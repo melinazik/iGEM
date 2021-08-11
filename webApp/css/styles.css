@@ -327,14 +327,14 @@ ul{
   padding-bottom: 80px;
   background-color: #1b84ad5e;
   color: #082936;
+  font-size: 18px;
 }
 
 .section-osteo{
   justify-content: center;
   padding-bottom: 80px;
   padding-top: 10px;
-
-
+  font-size: 18px;
 }
 
 .section-about{
@@ -342,11 +342,13 @@ ul{
   color: #ffff;
   padding-bottom: 80px;
   padding-top: 10px;
+  font-size: 18px;
 }
 
 .section-sponsors{
   padding-bottom: 80px;
   padding-top: 10px;
+  font-size: 18px;
 }
 
 .centered-container{
