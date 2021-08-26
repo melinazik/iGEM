@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "R",
+			"problemMatcher": [],
+			"label": "R: Check",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
