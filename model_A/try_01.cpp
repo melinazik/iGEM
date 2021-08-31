@@ -24,7 +24,7 @@ double n0 = 666.0; // starting quantity of miRNA
 double n1 = 666.0; // exosome number
 double k1 = 666.0; // degradation rate of complex / target
 double kts = 666.0; //idk
-double kts = 666.0; //idk
+// double kts = 666.0; //idk
 
 double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t)
 {
@@ -92,15 +92,26 @@ int main()
         target = eq_target (n0, n1, c1, miRNA, k1, t);
         mRNA2 = eq_mRNA2 (k_syn, mRNA1, DmRNA, t);
 
-        cout << "mRNA1" << mRNA1 << endl;
-        cout << "miRNA" << miRNA << endl;
-        cout << "P" << P << endl;
-        cout << "tx0" << tx0 << endl;
-        cout << "target" << target << endl;
-        cout << "mRNA2" << mRNA2 << endl;
+        cout << "mRNA1 " << mRNA1 << endl;
+        cout << "miRNA " << miRNA << endl;
+        cout << "P " << P << endl;
+        cout << "tx0 " << tx0 << endl;
+        cout << "target " << target << endl;
+        cout << "mRNA2 " << mRNA2 << endl;
 
+        //file << t; <<"\n"; // ","<< mRNA1<< "," << miRNA << ","<< P << ','<< tx0 << target << mRNA2 << "\n";
 
-        file << mRNA1, miRNA, P, tx0, target, mRNA2 ;
+        //file << t, "," mRNA1,",", miRNA,",", P,",", tx0, ",",target,",", mRNA2, "\n" ;
 
-    }
+        file << t << " ,";
+        file << mRNA1 << " ,";
+        file << miRNA << " ,";
+        file << P << " ,";
+        file << tx0 << " ,";
+        file << target << " ,";
+        file << mRNA2 << " , \n" ;
+        
+        }
+
+    file.close();
 }
