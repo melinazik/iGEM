@@ -19,7 +19,7 @@ function initializeScreen(){
 			if(rowData[j] != 0){
 
 				var txtID = String('txt' + '_' + i + '_' + j);
-				cell.innerHTML = '<input type="text" class="inputBox" maxlength="2" style="text-transform: uppercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
+				cell.innerHTML = '<input type="text" class="inputCell" maxlength="2" style="text-transform: uppercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
 			}
 			else{
 				cell.style.backgroundColor  = '#0b3648ce';
@@ -33,12 +33,12 @@ function initializeScreen(){
 //TODO various puzzles according to cross id 
 // add the numbers of the horizontal and vertical hints according to the puzzle
 function addHint(){
-	document.getElementById("txt_0_6").placeholder = "1";
-	document.getElementById("txt_3_0").placeholder = "2";
-	document.getElementById("txt_5_2").placeholder = "3";
-	document.getElementById("txt_5_3").placeholder = "4";
-	document.getElementById("txt_7_6").placeholder = "5";
-	document.getElementById("txt_9_2").placeholder = "6";
+	document.getElementById("txt_1_7").placeholder = "1";
+	document.getElementById("txt_4_1").placeholder = "2";
+	document.getElementById("txt_6_3").placeholder = "3";
+	document.getElementById("txt_6_4").placeholder = "4";
+	document.getElementById("txt_8_7").placeholder = "5";
+	document.getElementById("txt_10_3").placeholder = "6";
 }
 
 // stores ID of the selected cell into currentTextInput
@@ -48,16 +48,20 @@ function textInputFocus(textID){
 
 // returns crossword words (solutions)
 function prepareCrosswordArray(){
-var items = [	[0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x'],
-				[0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0 ],
-				[0, 0, 0, 0, 0, 0, 'g', 0, 0, 0, 0, 0 ],
-				['c','i', 'r', 'c', 'u', 'l', 'a','t', 'i', 'o', 'n', 0],
-				[0, 0, 0, 0, 0, 0, 'm', 0, 0, 0, 0, 0 ],
-				[0, 0, 'e', 'p', 'i', 'd', 'e', 'r', 'm', 'i', 's', 0],
-				[0, 0, 0, 'u', 0, 0, 'n', 0, 0, 0, 0, 0],
-				[0, 0, 0, 'p', 0, 0, 't', 'e', 'n', 'd', 'o', 'n'],
-				[0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0],
+var items = [	
+				
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x', 0],
+				[0, 0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 'g', 0, 0, 0, 0, 0, 0],
+				[0, 'c','i', 'r', 'c', 'u', 'l', 'a','t', 'i', 'o', 'n', 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 'm', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 'e', 'p', 'i', 'd', 'e', 'r', 'm', 'i', 's', 0, 0],
+				[0, 0, 0, 0, 'u', 0, 0, 'n', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'p', 0, 0, 't', 'e', 'n', 'd', 'o', 'n', 0],
+				[0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 			];
 
 	return items;

@@ -689,17 +689,19 @@ td {
 
 #crossword{
 	text-align: center;
-	margin: 0;
-	padding: 0;
+	padding: 50px;
 	border-collapse: collapse;
-	border: 1px solid black;
+	border: 1px solid #0b3648b0;
+  border-radius: 6px;
+
 }
 
-.inputBox{
+.inputCell{
 		width: 40px;
 		height:40px;
-		border: 1px solid black;
+		border: 0.3px solid black;
 		text-align: center;
+    border-radius: 6px;
 }
 
 #hintsTable{
