@@ -675,7 +675,7 @@ td {
 
 .cross-button{
 	height:50px;
-	width: 142px;
+	width: 156px;
 
   background:#0B3648;
   color: #fff;
@@ -693,7 +693,6 @@ td {
 	border-collapse: collapse;
 	border: 1px solid #0b3648b0;
   border-radius: 6px;
-
 }
 
 .inputCell{
