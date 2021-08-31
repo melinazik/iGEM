@@ -33,12 +33,21 @@ function initializeScreen(){
 //TODO various puzzles according to cross id 
 // add the numbers of the horizontal and vertical hints according to the puzzle
 function addHint(){
-	document.getElementById("txt_1_7").placeholder = "1";
-	document.getElementById("txt_4_1").placeholder = "2";
-	document.getElementById("txt_6_3").placeholder = "3";
-	document.getElementById("txt_6_4").placeholder = "4";
-	document.getElementById("txt_8_7").placeholder = "5";
-	document.getElementById("txt_10_3").placeholder = "6";
+	// document.getElementById("txt_1_7").placeholder = "1";
+	// document.getElementById("txt_4_1").placeholder = "2";
+	// document.getElementById("txt_6_3").placeholder = "3";
+	// document.getElementById("txt_6_4").placeholder = "4";
+	// document.getElementById("txt_8_7").placeholder = "5";
+	// document.getElementById("txt_10_3").placeholder = "6";
+
+	document.getElementById("txt_1_6").placeholder = "1";
+	document.getElementById("txt_3_4").placeholder = "2";
+	document.getElementById("txt_4_1").placeholder = "3";
+	document.getElementById("txt_4_3").placeholder = "4";
+	document.getElementById("txt_6_1").placeholder = "5";
+	document.getElementById("txt_9_8").placeholder = "6";
+	document.getElementById("txt_11_6").placeholder = "7";
+	document.getElementById("txt_18_1").placeholder = "8";
 }
 
 // stores ID of the selected cell into currentTextInput
@@ -48,19 +57,52 @@ function textInputFocus(textID){
 
 // returns crossword words (solutions)
 function prepareCrosswordArray(){
-var items = [	
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x', 0],
-				[0, 0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 'g', 0, 0, 0, 0, 0, 0],
-				[0, 'c','i', 'r', 'c', 'u', 'l', 'a','t', 'i', 'o', 'n', 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 'm', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 'e', 'p', 'i', 'd', 'e', 'r', 'm', 'i', 's', 0, 0],
-				[0, 0, 0, 0, 'u', 0, 0, 'n', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 'p', 0, 0, 't', 'e', 'n', 'd', 'o', 'n', 0],
-				[0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	// var items = [	
+	// 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x', 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 'g', 0, 0, 0, 0, 0, 0],
+	// 			[0, 'c','i', 'r', 'c', 'u', 'l', 'a','t', 'i', 'o', 'n', 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 'm', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 'e', 'p', 'i', 'd', 'e', 'r', 'm', 'i', 's', 0, 0],
+	// 			[0, 0, 0, 0, 'u', 0, 0, 'n', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 'p', 0, 0, 't', 'e', 'n', 'd', 'o', 'n', 0],
+	// 			[0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	// 		];
+
+
+	var items = [	
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'n', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'm', 0, 'd', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 'n', 0, 'r', 'i', 'b', 'o', 's', 'o', 'm', 'e', 's', 0, 0, 0],
+				[0, 'u', 0, 0, 't', 0, 'p', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 'c', 'y', 't', 'o', 'p', 'l', 'a', 's', 'm', 0, 0, 0, 0, 0],
+				[0, 'l', 0, 0, 'c', 0, 'a', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 'e', 0, 0, 'h', 0, 's', 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 'u', 0, 0, 'o', 0, 'm', 0, 'c', 0, 0, 0, 0, 0, 0],
+				[0, 's', 0, 0, 'n', 0, 'i', 0, 'h', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'd', 0, 'c', 'e', 'l', 'l', 'w', 'a', 'l', 'l', 0],
+				[0, 0, 0, 0, 'r', 0, 'r', 0, 'o', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'i', 0, 'e', 0, 'r', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 'a', 0, 't', 0, 'o', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'i', 0, 'p', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'c', 0, 'l', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'u', 0, 'a', 0, 0, 0, 0, 0, 0],
+				[0, 'v', 'a', 'c', 'u', 'o', 'l', 'e', 's', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'u', 0, 't', 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 'm', 0, 's', 0, 0, 0, 0, 0, 0],
+
+
+
+
+
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
 			];
 
 	return items;
