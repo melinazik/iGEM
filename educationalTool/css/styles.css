@@ -643,16 +643,6 @@ figcaption {
   margin-left: 470px;
 }
 
-#cross{
-	text-align: center;
-	width:30px;
-	height:30px;
-	margin: 0;
-	padding: 0;
-	border-collapse: collapse;
-	border: 1px solid white;
-}
-
 tr {
 	margin: 0;
 	padding: 0;
@@ -663,15 +653,6 @@ td {
 	height: 30px;
 	width: 30px;
 }
-
-/* #leftBox{
-	float: left;
-}
-
-#rightBox{
-	float: left;
-	clear:left;
-} */
 
 .cross-button{
 	height:50px;
@@ -691,7 +672,7 @@ td {
 	text-align: center;
 	padding: 50px;
 	border-collapse: collapse;
-	border: 1px solid #0b3648b0;
+	border: 0.3px solid #0b3648b0;
   border-radius: 6px;
 }
 
