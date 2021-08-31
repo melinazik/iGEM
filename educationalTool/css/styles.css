@@ -634,3 +634,78 @@ figcaption {
   transition: transform .4s;
 }
 
+/***********************/
+/*** CROSSWORD START ***/
+/***********************/
+
+.cross-section{
+  margin-bottom: 850px;
+  margin-left: 490px;
+}
+
+#cross{
+	text-align: center;
+	width:30px;
+	height:30px;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border: 1px solid white;
+}
+
+#buttons{
+	width:30%;
+	float: right;
+}
+
+tr{
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+td{
+	height: 30px;
+	width: 30px;
+}
+
+#leftBox{
+	float: left;
+}
+
+#rightBox{
+	float: left;
+	clear:left;
+}
+
+.butt{
+	height:50px;
+	width: 107px;
+}
+
+#puzzel{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+.inputBox{
+		width: 40px;
+		height:40px;
+		border: 1px solid black;
+		text-align: center;
+}
+
+#hintsTable{
+	width: 480px;
+	float: left;
+	clear: left;
+}
+
+/*********************/
+/*** CROSSWORD END ***/
+/*********************/
+
+
