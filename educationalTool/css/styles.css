@@ -653,18 +653,13 @@ figcaption {
 	border: 1px solid white;
 }
 
-#buttons{
-	width:30%;
-	float: right;
-}
-
-tr{
+tr {
 	margin: 0;
 	padding: 0;
 	border-collapse: collapse;
 }
 
-td{
+td {
 	height: 30px;
 	width: 30px;
 }
@@ -678,9 +673,18 @@ td{
 	clear:left;
 }
 
-.butt{
+.cross-button{
 	height:50px;
-	width: 107px;
+	width: 142px;
+
+  background:#0B3648;
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  transition:0.5s;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 #puzzel{
