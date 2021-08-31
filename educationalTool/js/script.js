@@ -49,7 +49,6 @@ function textInputFocus(textID){
 // returns crossword words (solutions)
 function prepareCrosswordArray(){
 var items = [	
-				
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x', 0],
 				[0, 0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0],

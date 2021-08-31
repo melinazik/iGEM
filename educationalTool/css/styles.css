@@ -639,13 +639,11 @@ figcaption {
 /***********************/
 
 .cross-section{
-  margin-bottom: 450px;
+  margin-bottom: 460px;
   margin-left: 470px;
 }
 
 tr {
-	margin: 0;
-	padding: 0;
 	border-collapse: collapse;
 }
 
@@ -685,7 +683,7 @@ td {
 }
 
 #hintsTable{
-	width: 480px;
+	width: 600px;
 	float: left;
 	clear: left;
 }
