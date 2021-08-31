@@ -664,14 +664,14 @@ td {
 	width: 30px;
 }
 
-#leftBox{
+/* #leftBox{
 	float: left;
 }
 
 #rightBox{
 	float: left;
 	clear:left;
-}
+} */
 
 .cross-button{
 	height:50px;
@@ -687,7 +687,7 @@ td {
   margin-top: 10px;
 }
 
-#puzzel{
+#crossword{
 	text-align: center;
 	margin: 0;
 	padding: 0;

@@ -1,20 +1,20 @@
 //Globals
 var currentTextInput;
-var puzzelArrayData;
+var crosswordArrayData;
 //Loads the Crossword
 function initializeScreen(){
-	var puzzelTable = document.getElementById("puzzel");
-	puzzelArrayData = preparePuzzelArray();
-	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
-		var row = puzzelTable.insertRow(-1);
-		var rowData = puzzelArrayData[i];
+	var crosswordTable = document.getElementById("crossword");
+	crosswordArrayData = prepareCrosswordArray();
+	for ( var i = 0; i < crosswordArrayData.length ; i++ ) {
+		var row = crosswordTable.insertRow(-1);
+		var rowData = crosswordArrayData[i];
 		for(var j = 0 ; j < rowData.length ; j++){
 			var cell = row.insertCell(-1);
 			if(rowData[j] != 0){
 				var txtID = String('txt' + '_' + i + '_' + j);
 				cell.innerHTML = '<input type="text" class="inputBox" maxlength="1" style="text-transform: lowercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
 			}else{
-				cell.style.backgroundColor  = "black";
+				cell.style.backgroundColor  = '#0b3648ce';
 			}
 		}
 	}
@@ -34,7 +34,7 @@ function textInputFocus(txtID123){
 	currentTextInput = txtID123;
 }
 //Returns Array
-function preparePuzzelArray(){
+function prepareCrosswordArray(){
 var items = [	[0, 0, 0, 0, 0, 0, 'l', 'a', 'r', 'y', 'n', 'x'],
 				[0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 0, 0 ],
 				[0, 0, 0, 0, 0, 0, 'g', 0, 0, 0, 0, 0 ],
@@ -51,18 +51,18 @@ return items;
 //Clear All Button
 function clearAllClicked(){
 	currentTextInput = '';
-	var puzzelTable = document.getElementById("puzzel");
-	puzzelTable.innerHTML = '';
+	var crosswordTable = document.getElementById("crossword");
+	crosswordTable.innerHTML = '';
     initializeScreen();
 }
 //Check button
 function checkClicked(){
-	for ( var i = 0; i < puzzelArrayData.length ; i++ ) {
-		var rowData = puzzelArrayData[i];
+	for ( var i = 0; i < crosswordArrayData.length ; i++ ) {
+		var rowData = crosswordArrayData[i];
 		for(var j = 0 ; j < rowData.length ; j++){
 			if(rowData[j] != 0){
 				var selectedInputTextElement = document.getElementById('txt' + '_' + i + '_' + j);
-				if(selectedInputTextElement.value != puzzelArrayData[i][j]){
+				if(selectedInputTextElement.value != crosswordArrayData[i][j]){
 					selectedInputTextElement.style.backgroundColor = 'red';
 					
 				}else{
@@ -79,7 +79,7 @@ function clueClicked(){
 		var token = temp1.split("_");
 		var row = token[1];
 		var column = token[2];
-		document.getElementById(temp1).value = puzzelArrayData[row][column];
+		document.getElementById(temp1).value = crosswordArrayData[row][column];
 		//checkClicked();
 	}
 }
@@ -93,27 +93,27 @@ function solveClicked(){
 		
 		// Print elements on top
 		for(j = row; j >= 0; j--){
-			if(puzzelArrayData[j][column] != 0){
-				document.getElementById('txt' + '_' + j + '_' + column).value = puzzelArrayData[j][column];
+			if(crosswordArrayData[j][column] != 0){
+				document.getElementById('txt' + '_' + j + '_' + column).value = crosswordArrayData[j][column];
 				}else break;
 		}
 		// Print elements on right
-		for(i = column; i< puzzelArrayData[row].length; i++){
-			if(puzzelArrayData[row][i] != 0){
-				document.getElementById('txt' + '_' + row + '_' + i).value = puzzelArrayData[row][i];
+		for(i = column; i< crosswordArrayData[row].length; i++){
+			if(crosswordArrayData[row][i] != 0){
+				document.getElementById('txt' + '_' + row + '_' + i).value = crosswordArrayData[row][i];
 				}else break;
 		}
 		
 		// Print elements below
-		for(m = row; m< puzzelArrayData.length; m++){
-			if(puzzelArrayData[m][column] != 0){
-				document.getElementById('txt' + '_' + m + '_' + column).value = puzzelArrayData[m][column];
+		for(m = row; m< crosswordArrayData.length; m++){
+			if(crosswordArrayData[m][column] != 0){
+				document.getElementById('txt' + '_' + m + '_' + column).value = crosswordArrayData[m][column];
 				}else break;
 		}
 		// Print elements on left
 		for(k = column; k >= 0; k--){
-			if(puzzelArrayData[row][k] != 0){
-				document.getElementById('txt' + '_' + row + '_' + k).value = puzzelArrayData[row][k];
+			if(crosswordArrayData[row][k] != 0){
+				document.getElementById('txt' + '_' + row + '_' + k).value = crosswordArrayData[row][k];
 				}else break;
 		}
 		// Done!
