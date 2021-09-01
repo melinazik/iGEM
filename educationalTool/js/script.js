@@ -40,14 +40,26 @@ function addHint(){
 	// document.getElementById("txt_8_7").placeholder = "5";
 	// document.getElementById("txt_10_3").placeholder = "6";
 
-	document.getElementById("txt_1_6").placeholder = "1";
-	document.getElementById("txt_3_4").placeholder = "2";
-	document.getElementById("txt_4_1").placeholder = "3";
-	document.getElementById("txt_4_3").placeholder = "4";
-	document.getElementById("txt_6_1").placeholder = "5";
-	document.getElementById("txt_9_8").placeholder = "6";
-	document.getElementById("txt_11_6").placeholder = "7";
-	document.getElementById("txt_18_1").placeholder = "8";
+	// document.getElementById("txt_1_6").placeholder = "1";
+	// document.getElementById("txt_3_4").placeholder = "2";
+	// document.getElementById("txt_4_1").placeholder = "3";
+	// document.getElementById("txt_4_3").placeholder = "4";
+	// document.getElementById("txt_6_1").placeholder = "5";
+	// document.getElementById("txt_9_8").placeholder = "6";
+	// document.getElementById("txt_11_6").placeholder = "7";
+	// document.getElementById("txt_18_1").placeholder = "8";
+
+	document.getElementById("txt_1_12").placeholder = "1";
+	document.getElementById("txt_7_8").placeholder = "2";
+	document.getElementById("txt_8_10").placeholder = "3";
+	document.getElementById("txt_8_12").placeholder = "4";
+	document.getElementById("txt_8_15").placeholder = "5";
+	document.getElementById("txt_9_17").placeholder = "6";
+	document.getElementById("txt_10_7").placeholder = "7";
+	document.getElementById("txt_11_15").placeholder = "8";
+	document.getElementById("txt_13_13").placeholder = "9";
+	document.getElementById("txt_15_13").placeholder = "10";
+	document.getElementById("txt_17_1").placeholder = "11";
 }
 
 // stores ID of the selected cell into currentTextInput
@@ -72,38 +84,57 @@ function prepareCrosswordArray(){
 	// 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	// 		];
 
+	// var items = [	
+	// 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'n', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 'm', 0, 'd', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 'n', 0, 'r', 'i', 'b', 'o', 's', 'o', 'm', 'e', 's', 0, 0, 0],
+	// 			[0, 'u', 0, 0, 't', 0, 'p', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 'c', 'y', 't', 'o', 'p', 'l', 'a', 's', 'm', 0, 0, 0, 0, 0],
+	// 			[0, 'l', 0, 0, 'c', 0, 'a', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 'e', 0, 0, 'h', 0, 's', 0, 0, 0, 0, 0, 0, 0, 0],
+	// 			[0, 'u', 0, 0, 'o', 0, 'm', 0, 'c', 0, 0, 0, 0, 0, 0],
+	// 			[0, 's', 0, 0, 'n', 0, 'i', 0, 'h', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 'd', 0, 'c', 'e', 'l', 'l', 'w', 'a', 'l', 'l', 0],
+	// 			[0, 0, 0, 0, 'r', 0, 'r', 0, 'o', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 'i', 0, 'e', 0, 'r', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 'a', 0, 't', 0, 'o', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'i', 0, 'p', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'c', 0, 'l', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'u', 0, 'a', 0, 0, 0, 0, 0, 0],
+	// 			[0, 'v', 'a', 'c', 'u', 'o', 'l', 'e', 's', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'u', 0, 't', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 'm', 0, 's', 0, 0, 0, 0, 0, 0],
+	// 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	// 		];
+
 
 	var items = [	
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'n', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 'm', 0, 'd', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 'n', 0, 'r', 'i', 'b', 'o', 's', 'o', 'm', 'e', 's', 0, 0, 0],
-				[0, 'u', 0, 0, 't', 0, 'p', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 'c', 'y', 't', 'o', 'p', 'l', 'a', 's', 'm', 0, 0, 0, 0, 0],
-				[0, 'l', 0, 0, 'c', 0, 'a', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 'e', 0, 0, 'h', 0, 's', 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 'u', 0, 0, 'o', 0, 'm', 0, 'c', 0, 0, 0, 0, 0, 0],
-				[0, 's', 0, 0, 'n', 0, 'i', 0, 'h', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 'd', 0, 'c', 'e', 'l', 'l', 'w', 'a', 'l', 'l', 0],
-				[0, 0, 0, 0, 'r', 0, 'r', 0, 'o', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 'i', 0, 'e', 0, 'r', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 'a', 0, 't', 0, 'o', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'i', 0, 'p', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'c', 0, 'l', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'u', 0, 'a', 0, 0, 0, 0, 0, 0],
-				[0, 'v', 'a', 'c', 'u', 'o', 'l', 'e', 's', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'u', 0, 't', 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 'm', 0, 's', 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 's', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'c', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'h', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'r', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'i', 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'n', 0, 't', 0, 'c', 'e', 'l', 'l', 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 't', 0, 'r', 0, 'h', 0, 0, 'y', 0, 'y', 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 'h', 'e', 'p', 'a', 't', 'i', 't', 'i', 's', 0, 'e', 0, 0, 0],
+			[0, 0, 0,  0, 0, 0, 0, 0, 'r', 0, 'n', 0, 'a', 0, 0, 'o', 'v', 'a', 'r', 'y', 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'f', 0, 's', 0, 0, 0, 0, 's', 0, 's', 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'e', 0, 'p', 0, 0, 'w', 'h', 'o', 0, 't', 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'r', 0, 'o', 0, 0, 0, 0, 'm', 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'o', 0, 'r', 0, 0, 'k', 'r', 'e', 'b', 's', 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 'n', 0, 't', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 'n', 'e', 'c', 'r', 'o', 's', 'i', 's', 0, 'e', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'r', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
 
-
-
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-
-			];
+	];
 
 	return items;
 }
