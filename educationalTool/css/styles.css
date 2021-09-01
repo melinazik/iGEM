@@ -691,40 +691,6 @@ td {
 /*********************/
 /*** CROSSWORD END ***/
 /*********************/
-.admin-action-panel {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  height: 3em;
-  width: 15em;
-  box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
-  margin: 2em;
-}
-
-.admin-action-panel p {
-  text-align: center;
-  font-size: 1.2em;
-  margin-left: 1em;
-}
-
-.admin-action-image {
-  position: relative;
-  height: 150px;
-  width: 150px;
-  padding-left: 150px;
-
-  /* padding-bottom: 120px;
-  padding-right: 80px;
-  margin-bottom: 45px;
-   */
-}
-
-#action-image1 {
-  background-image: url(../images/crossword.PNG);
-  background-size: cover;
-}
-
 
 .row-imgs {
   padding-left: 0;
@@ -757,11 +723,17 @@ figcaption {
   border: 3px solid rgba(0, 0, 0, 0.527);
 }
 
-
 .img-games-container{
   transition: transform .4s;
 }
 
 .img-games-container:hover {
   transform: scale(1.1); 
+  background-color: #0b364865;
 }
+
+.games-name:visited, .games-name:link{
+  text-decoration: none;
+  color: black;
+}
+
