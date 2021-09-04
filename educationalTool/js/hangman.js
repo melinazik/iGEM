@@ -16,18 +16,11 @@ window.onload = function () {
     
     // get elements
     var showLives = document.getElementById("mylives");
+    var showCategory = document.getElementById("scategory");
     var getHint = document.getElementById("hint");
     var showClue = document.getElementById("clue");  
     
-    var selectCat = function () {
-        if (chosenCategory === categories[0]) {
-          categoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
-        } else if (chosenCategory === categories[1]) {
-          categoryName.innerHTML = "The Chosen Category Is Films";
-        } else if (chosenCategory === categories[2]) {
-          categoryName.innerHTML = "The Chosen Category Is Cities";
-        }
-      }
+    
     
     // create alphabet ul
     var buttons = function () {
@@ -44,6 +37,16 @@ window.onload = function () {
         letters.appendChild(list);
       }
     }
+
+    var selectCat = function () {
+        if (chosenCategory === categories[0]) {
+          categoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+        } else if (chosenCategory === categories[1]) {
+          categoryName.innerHTML = "The Chosen Category Is Films";
+        } else if (chosenCategory === categories[2]) {
+          categoryName.innerHTML = "The Chosen Category Is Cities";
+        }
+      }
     
     // Create guesses ul
      result = function () {
