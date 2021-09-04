@@ -741,6 +741,7 @@ figcaption {
 /*********************/
 /*** HANGMAN START ***/
 /*********************/
+
 .hangman {
   background:#0b3648b0;
   color:white;
@@ -806,7 +807,6 @@ canvas {
   text-align:center;
   display:block;
 }
-
 
 
 /*********************/

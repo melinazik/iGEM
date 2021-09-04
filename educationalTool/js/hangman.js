@@ -40,11 +40,7 @@ window.onload = function () {
 
     var selectCat = function () {
         if (chosenCategory === categories[0]) {
-          categoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
-        } else if (chosenCategory === categories[1]) {
-          categoryName.innerHTML = "The Chosen Category Is Films";
-        } else if (chosenCategory === categories[2]) {
-          categoryName.innerHTML = "The Chosen Category Is Cities";
+          categoryName.innerHTML = "";
         }
       }
     
@@ -164,9 +160,9 @@ window.onload = function () {
     // play
     play = function () {
         categories = [
-            ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-            ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-            ["manchester", "milan", "madrid", "amsterdam", "prague"]
+            ["mitosis", "prokaryote", "transcription", "in vitro", "ribosome", "endonuclease", "chromosome", "primosome", "biomarkers", "polymerase",
+            "antibiotic", "antigen", "biosynthesis", "catalyst", "chlorophyll", "chloroplast", "homeostasis", "hydrophobic", "lysosome", "meiosis",
+            "mutation", "osmosis", "pipette" , "nucleus"]
         ];
 
         chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -192,9 +188,31 @@ window.onload = function () {
     hint.onclick = function() {
     
         hints = [
-          ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-          ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-          ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+          ["Cell division.", 
+           "Unicellular organism that lacks a nuclear membrane-enclosed nucleus.", 
+           "The process of making an RNA copy of a gene sequence.", 
+           "Performed or taking place in a test tube", 
+           "Factory for protein synthesis in cells.", 
+           "An enzyme that breaks down a nucleotide chain into two or more shorter chains.", 
+           "Long DNA molecule with part or all of the genetic material of an organism.",
+           "A protein complex responsible for creating RNA primers.",
+           "Biological molecule found in blood.",
+           "Enzymes that catalyze the synthesis of DNA or RNA polymers.",
+           "A substance used to kill microorganisms and cure infections.",
+           "Any substance that stimulates an immune response in the body.",
+           "Production of a chemical compound by a living organism.",
+           "Substance that initiates or accelerates a chemical reaction.",
+           "Any of green pigments found in photosynthetic organisms.",
+           "Organelle in which photosynthesis takes place.",
+           "Metabolic equilibrium maintained by biological mechanisms.",
+           "Lacking affinity for water.",
+           "A membrane-bound organelle containing digestive enzymes.",
+           "Cell division that produces reproductive cells.",
+           "A change or alteration in form or qualities.",
+           "Diffusion of molecules through a semipermeable membrane.",
+           "Laboratory instrument used to measure out or transfer small quantities of liquid.",
+           "Controls and regulates the activities of the cell.",]
+
       ];
     
         var categoryIndex = categories.indexOf(chosenCategory);
