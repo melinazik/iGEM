@@ -737,3 +737,87 @@ figcaption {
   color: black;
 }
 
+
+/*********************/
+/*** HANGMAN START ***/
+/*********************/
+.hangman {
+  background:#0b3648b0;
+  color:white;
+  height:100%;
+  text-align:center;
+  margin-top: -16px;
+}
+
+.wrappper {
+  width:100%;
+  margin:0 auto;
+}
+
+canvas {
+  color:white;
+  border: white dashed 2px;
+  padding:15px;
+}
+
+
+#alphabet {
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background:white;
+  color:black;
+  cursor:pointer;
+  border: solid 1px white; 
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
+}
+
+.active {
+  cursor:default;
+}
+
+#mylives{
+  font-size:1.6em;
+  text-align:center;
+  display:block;
+}
+
+@media (max-width: 767px) {
+  #alphabet {
+  padding:0 0 0 15px;
+}
+  }
+
+  @media (max-width: 480px) {
+  #alphabet {
+  padding:0 0 0 25px;
+}
+  }
+
+/*********************/
+/**** HANGMAN END ****/
+/*********************/
