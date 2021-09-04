@@ -747,6 +747,7 @@ figcaption {
   height:100%;
   text-align:center;
   margin-top: -16px;
+  padding-top: 50px;
 }
 
 .wrappper {
@@ -760,24 +761,24 @@ canvas {
   padding:15px;
 }
 
-
 #alphabet {
   margin:15px auto;
   padding:0;
-  max-width:900px;
+  max-width:700px;
 }
 
 #alphabet li {
   float:left;
   margin: 0 10px 10px 0;
   list-style:none;
-  width:35px;
-  height:30px;
+  width: 40px;
+  height: 30px;
   padding-top:10px;
   background:white;
   color:black;
   cursor:pointer;
   border: solid 1px white; 
+  border-radius: 10%;
 }
 
 #my-word {
@@ -806,17 +807,7 @@ canvas {
   display:block;
 }
 
-@media (max-width: 767px) {
-  #alphabet {
-  padding:0 0 0 15px;
-}
-  }
 
-  @media (max-width: 480px) {
-  #alphabet {
-  padding:0 0 0 25px;
-}
-  }
 
 /*********************/
 /**** HANGMAN END ****/
