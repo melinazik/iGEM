@@ -9,7 +9,7 @@ using namespace std;
 
 //assumption: [miRNA]/t equally distributed to num of exosomes/t
 
-double k_syn = 0.7;
+double k_syn = 0.5;
 double c1 = 0.6;
 double c2 = 20.6;
 
@@ -29,12 +29,12 @@ double mRNA2 = 0;
 double P = 0;
 double miRNA = 0;
 double target = 0;
-
+double Exo = 0;
 
 
 double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1_prev)
 {
-    double mRNA1 = n* kts * t - DmRNA * t - k_syn * mRNA1_prev * t;
+    mRNA1 = n * kts * t - DmRNA * mRNA1_prev * t - k_syn * mRNA1_prev * t;
 
     cout << "mRNA1 value after calc at t=" << t <<" is " << mRNA1 <<endl;
 
@@ -43,7 +43,7 @@ double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, dou
 
 double eq_miRNA (double c1, double mRNA1, double k_syn, double Exo, double t, double miRNA_prev) //sugkentrosi miRNA per t 
 {
-    double miRNA = k_syn * mRNA1 * t - c1 *  miRNA_prev * t; //*Exo
+    miRNA = k_syn * mRNA1 * t - c1 *  miRNA_prev * t; //*Exo
 
     return miRNA;
 }
@@ -51,7 +51,7 @@ double eq_miRNA (double c1, double mRNA1, double k_syn, double Exo, double t, do
 double eq_P (double a_prot, double L, double mRNA1, double mRNA2, double D_prot, double c2, double Exo,  double t, double P_prev) 
 {
 
-    double P = (a_prot/L) * (mRNA1 + mRNA2) * t - D_prot * P_prev * t - c2 * P_prev * t; //*Exo
+    P = (a_prot/L) * (mRNA1 + mRNA2) * t - D_prot * P_prev * t - c2 * P_prev * t; //*Exo
 
     cout << "P value after calc at t=" << t <<" is " << P << endl;
 
@@ -60,21 +60,21 @@ double eq_P (double a_prot, double L, double mRNA1, double mRNA2, double D_prot,
 
 double eq_Exo (double k0, double t) //num of exosomes at t - k0 exosomes per t
 {
-    double Exo = k0 * t;
+    Exo = k0 * t;
 
     return Exo;
 }
 
 double eq_target (double n0, double n1, double c1, double miRNA, double k1, double t, double target_prev)
 {
-    double target = n0 * t + c1 * miRNA * n1 * t - k1 * target_prev * t;
+    target = n0 * t + c1 * miRNA * n1 * t - k1 * target_prev * t;
 
     return target;
 }
 
 double eq_mRNA2 (double k_syn, double mRNA1, double DmRNA, double t, double mRNA2_prev)
 {
-    double mRNA2 = k_syn * mRNA1 * t - DmRNA * mRNA2_prev * t;
+    mRNA2 = k_syn * mRNA1 * t - DmRNA * mRNA2_prev * t;
 
     return mRNA2;
 }
@@ -94,8 +94,15 @@ int main()
     double mRNA2 = 0;
 
 
-    for (int t=0; t <5; t=t+1)
+    for (int t=0; t <10; t=t+1)
     {
+        cout << "mRNA1 " << mRNA1 << endl;
+        cout << "miRNA " << miRNA << endl;
+        cout << "P " << P << endl;
+        cout << "Exo " << Exo << endl;
+        cout << "target " << target << endl;
+        cout << "mRNA2 " << mRNA2 << endl;
+        
         double mRNA1_prev = mRNA1;
         double mRNA2_prev = mRNA2;
         double miRNA_prev = miRNA;
@@ -110,17 +117,13 @@ int main()
         miRNA = eq_miRNA (c1, Exo, mRNA1, k_syn, t, miRNA_prev);
         cout << "for:mRNA1 post calc for miRNA " << mRNA1 << endl;
 
-        P = eq_P (a_prot, L, mRNA1, mRNA2, D_prot, c2, Exo, t,P_prev);
-        Exo = eq_Exo (k0, t);
-        target = eq_target (n0, n1, c1, miRNA, k1, t, target_prev);
         mRNA2 = eq_mRNA2 (k_syn, mRNA1, DmRNA, t, mRNA2_prev);
+        P = eq_P (a_prot, L, mRNA1, mRNA2, D_prot, c2, Exo, t,P_prev);
+        
+        target = eq_target (n0, n1, c1, miRNA, k1, t, target_prev);
+        Exo = eq_Exo (k0, t);
 
-        cout << "mRNA1 " << mRNA1 << endl;
-        cout << "miRNA " << miRNA << endl;
-        cout << "P " << P << endl;
-        cout << "Exo " << Exo << endl;
-        cout << "target " << target << endl;
-        cout << "mRNA2 " << mRNA2 << endl;
+        
 
         
         file << t << " ,";
