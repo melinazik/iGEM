@@ -190,7 +190,7 @@ int main()
             if (miRNA_first == false)
             {
                 MO_miRNA = miRNA_in_exo / t;
-                cout << "mesos oros sugkentrosis miRNA sta exosomata prin to equilibrium = " << MO_miRNA << endl;
+                cout << "mesos oros sugkentrosis miRNA sta exosomata prin to equilibrium = " << MO_miRNA << "se xrono t = " << t << endl;
 
                 miRNA_first = true;
             }
@@ -207,7 +207,7 @@ int main()
             if (P_first == false)
             {
                 MO_P = P_in_exo / t;
-                cout << "mesos oros sugkentrosis proteinis sta exosomata prin to equilibrium = " << MO_P << endl;
+                cout << "mesos oros sugkentrosis proteinis sta exosomata prin to equilibrium = " << MO_P << "se xrono t = " << t << endl;
 
                 P_first = true;
             }
@@ -225,7 +225,7 @@ int main()
         {
             file << "not yet" << " ,";
         }
-        
+
         if(equilibrium(mRNA2_prev, mRNA2) == true)
         {
             file << t << " ,\n";
@@ -239,10 +239,11 @@ int main()
     }
 
     MO_miRNA = MO_miRNA / times;
-    cout << "mesos oros sugkentrosis miRNA sta exosomata meta to equilibrium (mexri to telos) = " << MO_miRNA << endl;
+    cout << "mesos oros sugkentrosis miRNA sta exosomata meta to equilibrium (mexri to telos) = " << MO_miRNA << "se xrono t = " << times << endl;
 
     MO_P = MO_P / times;
-    cout << "mesos oros sugkentrosis protein sta exosomata meta to equilibrium (mexri to telos) = " << MO_P << endl;
+    cout << "mesos oros sugkentrosis protein sta exosomata meta to equilibrium (mexri to telos) = " << MO_P << "se xrono t = " << times << endl;
+
 
     file.close();
 }
