@@ -22,7 +22,7 @@ function initializeScreen(){
 				cell.innerHTML = '<input type="text" class="inputCell" maxlength="2" style="text-transform: uppercase" ' + 'id="' + txtID + '" onfocus="textInputFocus(' + "'" + txtID + "'"+ ')">';
 			}
 			else{
-				cell.style.backgroundColor  = '#0b3648ce';
+				cell.style.backgroundColor  = '#0b3648b0';
 			}
 		}
 	}
