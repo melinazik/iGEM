@@ -25,7 +25,7 @@ double kp = 8.0;
 
 double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1)
 {
-    double mRNA1_rate=  n * kts - DmRNA * mRNA1 - k_syn * mRNA1; //mRNA1_rate= rate of mRNA1 change per time
+    double mRNA1_rate =  n * kts - DmRNA * mRNA1 - k_syn * mRNA1; //mRNA1_rate= rate of mRNA1 change per time
 
     return mRNA1_rate;
 }
