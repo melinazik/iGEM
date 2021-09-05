@@ -308,7 +308,7 @@ function checkForAnswer() {
     //check if checked radio button is same as the correct answer
     options.forEach((option) => {
         if (option.checked === true && option.value === currentQuestionAnswer) {
-            document.getElementById(correctOption).style.backgroundColor = "green";
+            document.getElementById(correctOption).style.backgroundColor = "#71c93ecb";
             playerScore++; // increase player's score
             indexNumber++; // increase index to display next question
             
@@ -320,8 +320,8 @@ function checkForAnswer() {
 
         else if (option.checked && option.value !== currentQuestionAnswer) {
             const wrongLabelId = option.labels[0].id;
-            document.getElementById(wrongLabelId).style.backgroundColor = "red";
-            document.getElementById(correctOption).style.backgroundColor = "green";
+            document.getElementById(wrongLabelId).style.backgroundColor = "#e74747b4";
+            document.getElementById(correctOption).style.backgroundColor = "#71c93ecb";
             wrongAttempt++; //adds 1 to wrong attempts 
             indexNumber++;
 

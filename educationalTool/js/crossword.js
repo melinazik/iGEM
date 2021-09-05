@@ -162,11 +162,11 @@ function checkClicked(){
 
 				var selectedInputTextElement = document.getElementById('txt' + '_' + i + '_' + j);
 				if(selectedInputTextElement.value != crosswordArrayData[i][j]){
-					selectedInputTextElement.style.backgroundColor = '#aa3535b4';
+					selectedInputTextElement.style.backgroundColor = '#e74747b4';
 					
 				}
 				else{
-					selectedInputTextElement.style.backgroundColor = '#5ea734cb';
+					selectedInputTextElement.style.backgroundColor = '#71c93ecb';
 				}
 			}
 		}
