@@ -17,7 +17,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="../js/script.js"> </script>
+		<script src="../js/crossword.js"> </script>
 	</head>
 
 	<body onload="initializeScreen()">
@@ -36,16 +36,30 @@
 			<div class="right-navbar" id="navbarID">
 				<ul id="nav">
 					<li><a href="home.html">Home</a></li>
-					<li><a href="games.html">Games</a></li>
-					<div class="dropdown">
-                        <button class="dropbtn">Tutorials 
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="experiments.html">Experiments</a>
-                            <a href="presentations.html">Presentations</a>
-                        </div>
-                      </div> 
+					
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'games.html'">Games</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="crossword.html">Crossword</a>
+								<a href="quiz.html">Quiz</a>
+								<a href="hangman.html">Hangman</a>
+							</div>
+						</div> 
+						
+					</li>
+
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn">Tutorials 
+							</button>
+							<div class="dropdown-content">
+								<a href="experiments.html">Experiments</a>
+								<a href="presentations.html">Presentations</a>
+							</div>
+						</div> 
+					</li>
 					<li><a href="resources.html">Resources</a></li>
 					
 				</ul>
@@ -235,4 +249,5 @@
 	TODO: choose games (icons)
 	TODO: crosswords - id
 	TODO: clues - width / styling
+	TODO: crossword -> centered
  -->

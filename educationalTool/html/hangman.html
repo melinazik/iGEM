@@ -17,7 +17,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="../js/script.js"> </script>
+		<script src="../js/hangman.js"> </script>
 	</head>
 
 	<body>
@@ -36,16 +36,30 @@
 			<div class="right-navbar" id="navbarID">
 				<ul id="nav">
 					<li><a href="home.html">Home</a></li>
-					<li><a href="games.html">Games</a></li>
-					<div class="dropdown">
-                        <button class="dropbtn">Tutorials 
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="experiments.html">Experiments</a>
-                            <a href="presentations.html">Presentations</a>
-                        </div>
-                      </div> 
+					
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'games.html'">Games</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="crossword.html">Crossword</a>
+								<a href="quiz.html">Quiz</a>
+								<a href="hangman.html">Hangman</a>
+							</div>
+						</div> 
+						
+					</li>
+
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn">Tutorials 
+							</button>
+							<div class="dropdown-content">
+								<a href="experiments.html">Experiments</a>
+								<a href="presentations.html">Presentations</a>
+							</div>
+						</div> 
+					</li>
 					<li><a href="resources.html">Resources</a></li>
 					
 				</ul>
@@ -55,8 +69,40 @@
 		
         <div id="page-view">
 			<div id="title">HANGMAN</div>
-		</div>  <br><br>
+		</div>  
 
+		<section class="hangman">
+			<div class="wrapper">
+				<p>Use the alphabet to guess the word, or click hint to get a clue. </p>
+			</div>
+
+			<div class="wrapper">
+				<div id="buttons"></div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<p id="categoryName"></p>
+
+				<div id="hold"></div>
+
+				<p id="mylives"></p>
+				<p id="clue">Clue -</p>  
+
+				<canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+				<div class="container">
+				<button id="hint">Hint</button>
+				<button id="reset">Play again</button>
+				</div>
+			</div>
+		</section>
+		
 		<!--footer-->
 		<footer>
 			<div class="footer-content">

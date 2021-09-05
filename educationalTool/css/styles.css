@@ -302,37 +302,6 @@ ul{
 
 /*---------FOOTER END------------*/
   
-.main-text-home {
-  background-color: #0b3648d0;
-  color: white;
-  width: 800px;
-  padding: 50px;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  border-radius: 25px;
-}
-
-.hr-osteo {
-  background-color: rgb(0, 0, 0);
-  border: 1.5px solid black;
-}
-
-.hr-calc{
-  background-color: #082936;
-  border: 1.5px solid #082936;
-}
-
-.hr-about{
-  background-color: #ffff;
-  border: 1.5px solid #ffff;
-}
-
-.home-section{
-  background-color: #0b36483a;
-}
-
 .after-nav{
   margin-top: 90px;
 }
@@ -376,207 +345,10 @@ ul{
   padding-left: 100px;
 } */
 
-.section-calc{
-  justify-content: center;
-  padding-bottom: 80px;
-  background-color: #1b84ad5e;
-  color: #082936;
-  font-size: 18px;
-}
-
-.section-osteo{
-  justify-content: center;
-  padding-bottom: 80px;
-  padding-top: 10px;
-  font-size: 18px;
-}
-
-.section-about{
-  background-color: #0b3445da;
-  color: #ffff;
-  padding-bottom: 80px;
-  padding-top: 10px;
-  font-size: 18px;
-}
-
-.section-sponsors{
-  padding-bottom: 80px;
-  padding-top: 10px;
-  font-size: 18px;
-}
-
-.centered-container{
-  padding-right: 140px;
-  padding-left: 140px;
-  align-self: center;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto auto;
-  grid-template-rows: auto auto;
-  text-align: center;
-}
-
-.img-team{
-  padding-top: 40px;
-  padding-bottom: 30px;
-  
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-
-  border-radius: 7%;
-  height: 450px;
-}
-
-.img-team:hover{
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transform: scale(1.1); 
-}
-
-.img-sponsors{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-}
-
-.img-sponsors-intra{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-
-  height: 140px;
-
-  margin-right: 60px;
-
-  z-index: 1;
-}
-
-.img-sponsors-archimedes{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-
-  height: 90px;
-
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.img-sponsors-bioemtech{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-
-  height: 60px;
-
-  margin-bottom: 60px;
-  
-}
-
-.img-sponsors-htss{
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  transition: transform .4s;
-  
-  height: 130px;
-}
-
-.img-sponsors-htss:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transform: scale(1.1); 
-}
-
-.img-sponsors-intra:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transform: scale(1.1); 
-}
-
-.img-sponsors-bioemtech:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transform: scale(1.1); 
-}
-
-.img-sponsors-archimedes:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transform: scale(1.1); 
-}
-
 strong {
   font-size: 1.2em; 
 }
 
-
-/***** CALCULATOR *****/
-
-select {
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-  margin:16px 0;
-  border:0;
-  background: #f1f1f1;
-  padding: 20px 40px;
-  outline:none;
-  color: black;
-  transition:0.5s;
-}
-
-select:hover{
-  background: #e0dfdf;
-}
-
-.main-holder {
-  width: 700px;
-  height: auto;
-  display: grid;
-  margin: 20px auto 20px auto;
-  box-shadow: 0 0 10px 4px #34495e;
-  background-color:white;
-  padding-left: 60px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-.form{
-  display: grid;
-  border: 1px ;
-  width: 80%;
-  padding: 40px 0 0 40px;
-}
-
-.form-text{
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-  margin:16px 0;
-  border:0;
-  background: #f1f1f1;
-  padding: 20px 40px;
-  outline:none;
-  color: black;
-  transition:0.5s;
-}
-
-.form-text:focus{
-  box-shadow: 0 0 10px 4px #34495e;
-}
-
-.form-text:hover{
-  background: #e0dfdf;
-}
-
-textarea.form-text{
-  resize:none;
-  height: 120px;
-}
 
 button:hover {
   opacity:0.7;
@@ -593,45 +365,6 @@ button {
   border-radius: 5px;
   margin-bottom: 20px;
   margin-top: 10px;
-}
-
-.img-osteo{
-  margin-top: 20px;
-
-  border-radius: 100%;
-  height: 400px;
-}
-
-
-.img-osteo-container{
-  transition: transform .4s;
-}
-
-.img-osteo-container:hover {
-  transform: scale(1.1); 
-}
-
-.row-imgs {
-  padding-left: 0;
-  margin-left: -5px;
-  list-style: none;
-}
-
-.row-imgs > li {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-figcaption {
-  padding: 2px;
-  text-align: center;
-
-  margin-top: 10px;
-  margin-bottom: 40px;
-
-  font-weight: 1000;
-  transition: transform .4s;
 }
 
 /***********************/
@@ -737,3 +470,78 @@ figcaption {
   color: black;
 }
 
+
+/*********************/
+/*** HANGMAN START ***/
+/*********************/
+
+.hangman {
+  background:#0b3648b0;
+  color:white;
+  height:100%;
+  text-align:center;
+  margin-top: -16px;
+  padding-top: 50px;
+}
+
+.wrappper {
+  width:100%;
+  margin:0 auto;
+}
+
+canvas {
+  color:white;
+  border: white dashed 2px;
+  padding:15px;
+}
+
+#alphabet {
+  margin:15px auto;
+  padding:0;
+  max-width:700px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width: 40px;
+  height: 30px;
+  padding-top:10px;
+  background:white;
+  color:black;
+  cursor:pointer;
+  border: solid 1px white; 
+  border-radius: 10%;
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
+}
+
+.active {
+  cursor:default;
+}
+
+#mylives{
+  font-size:1.6em;
+  text-align:center;
+  display:block;
+}
+
+
+/*********************/
+/**** HANGMAN END ****/
+/*********************/
