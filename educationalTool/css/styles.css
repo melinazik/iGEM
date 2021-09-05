@@ -545,3 +545,237 @@ canvas {
 /*********************/
 /**** HANGMAN END ****/
 /*********************/
+
+/*********************/
+/***** QUIZ START ****/
+/*********************/
+.quiz{
+  margin-top: -40px;
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b3648b0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-quiz-container{
+  width: 840px;
+  height: 500px;
+  background-color: #ffffffcb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.game-details-container{
+  width: 80%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-details-container h1{
+  font-size: 1.2rem;
+}
+
+.game-question-container{
+  width: 80%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  color: white;
+  background-color: #0B3648;
+  border-radius: 5px;
+}
+
+.game-question-container h1{
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3px;
+}
+
+.game-options-container{
+  width: 80%;
+  height: 12rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.game-options-container span{
+  width: 45%;
+  height: 3rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+span label{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-weight: 600;
+  color: black;
+}
+
+span label:hover{
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  color: black;
+}
+
+input[type="radio"] {
+  position: relative;
+  display: none;
+}
+
+input[type=radio]:checked ~ .option {
+  background: rgb(150, 150, 150);
+}
+
+.modal-container{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0, 0, 0, 0.452); 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  -webkit-animation: fadeIn 0.7s ease-in-out;
+  animation: fadeIn 0.7s ease-in-out;  
+}
+
+.modal-content-container{
+  height: 20rem;
+  width: 25rem;
+  background-color: rgb(19, 19, 19);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal-content-container h1{
+  font-size: 1.3rem;
+  height: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.grade-details{
+  width: 15rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grade-details p{
+  color: white;
+  text-align: center;
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+  .game-quiz-container{
+      width: 90%;
+      height: 80vh;
+   }
+   .game-details-container h1{
+      font-size: 0.8rem;
+   }
+
+   .game-question-container{
+      height: 6rem;
+   }
+   .game-question-container h1{
+     font-size: 0.9rem;
+  }
+
+  .game-options-container span{
+      width: 90%;
+      height: 2.5rem;
+  }
+  .game-options-container span label{
+      font-size: 0.8rem;
+  }
+  .modal-content-container{
+      width: 90%;
+      height: 25rem;
+  }
+
+  .modal-content-container h1{
+      font-size: 1.2rem;
+  }
+}
+
+@media(min-width : 350px) and (max-width : 700px){
+ .game-quiz-container{
+     width: 90%;
+     height: 80vh;
+  }
+  .game-details-container h1{
+      font-size: 1rem;
+  }
+
+  .game-question-container{
+      height: 8rem;
+  }
+
+  .game-question-container h1{
+      font-size: 0.9rem;
+   }
+
+  .game-options-container span{
+      width: 90%;
+  }
+  .modal-content-container{
+      width: 90%;
+      height: 25rem;
+  }
+  .modal-content-container h1{
+      font-size: 1.2rem;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/*********************/
+/****** QUIZ END *****/
+/*********************/
