@@ -180,15 +180,6 @@ const questions = [
     },
 
     {
-        question: "The enzyme that catalyzes the synthesis of new DNA molecules is called:",
-        optionA: "Scurvy",
-        optionB: "Rickets",
-        optionC: "Cancer",
-        optionD: "Malaria",
-        correctOption: "optionD"
-    },
-
-    {
         question: "One of the most famous examples of the practical use of synthetic biology was the modification of E. coli and yeast to produce a drug to fight what disease?",
         optionA: "DNA ligase",
         optionB: "DNA gyrase",
@@ -240,9 +231,7 @@ const questions = [
         optionC: "proteins",
         optionD: "carbohydrates",
         correctOption: "optionC"
-    },
-
-
+    }
 
 ]
 
