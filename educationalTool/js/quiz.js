@@ -180,7 +180,7 @@ const questions = [
     },
 
     {
-        question: "One of the most famous examples of the practical use of synthetic biology was the modification of E. coli and yeast to produce a drug to fight what disease?",
+        question: "The enzyme that catalyzes the synthesis of new DNA molecules is called:",
         optionA: "DNA ligase",
         optionB: "DNA gyrase",
         optionC: "DNA polymerase",
