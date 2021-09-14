@@ -309,7 +309,6 @@ ul{
 #page-view {
   width: 100%;
   height: 60vh;
-  /* TODO : change picture */
   background-image: url("../images/parkinson_cropped2.png");
   background-size: cover;
   display: flex;

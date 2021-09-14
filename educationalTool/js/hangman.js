@@ -24,15 +24,24 @@ window.onload = function () {
     
     // create alphabet ul
     var buttons = function () {
-      myButtons = document.getElementById('buttons');
-      letters = document.createElement('ul');
-    
+        myButtons = document.getElementById('buttons');
+        letters = document.createElement('ul');
+            
+
+        
+
+
       for (var i = 0; i < alphabet.length; i++) {
         letters.id = 'alphabet';
         list = document.createElement('li');
+
         list.id = 'letter';
         list.innerHTML = alphabet[i];
+
         check();
+
+        
+
         myButtons.appendChild(letters);
         letters.appendChild(list);
       }
@@ -135,6 +144,9 @@ window.onload = function () {
     // OnClick Function
      check = function () {
         list.onclick = function () {
+            this.style.backgroundColor = 'rgba(218, 218, 218, 0.774)';
+            this.style.borderColor = 'rgba(218, 218, 218, 0.774)';
+
             var guess = (this.innerHTML);
             this.setAttribute("class", "active");
             this.onclick = null;
@@ -143,8 +155,11 @@ window.onload = function () {
                 if (word[i] === guess) {
                     guesses[i].innerHTML = guess;
                     counter += 1;
-                } 
+
+                }
+                
             }
+            
             var j = (word.indexOf(guess));
             if (j === -1) {
                 lives -= 1;
@@ -217,7 +232,7 @@ window.onload = function () {
     
         var categoryIndex = categories.indexOf(chosenCategory);
         var hintIndex = chosenCategory.indexOf(word);
-        showClue.innerHTML = "Clue: - " +  hints [categoryIndex][hintIndex];
+        showClue.innerHTML = "Clue: " +  hints [categoryIndex][hintIndex];
     };
     
     
