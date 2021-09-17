@@ -97,6 +97,10 @@ html, body{
   margin: 0 5px;
 }
 
+/* -------------- NAVBAR END ------------ */
+
+
+/* ------------FOOTER-------------*/
 .logo-footer {
   position: relative;
   height: 70px;
@@ -109,7 +113,6 @@ html, body{
 }
 
 
-/* ------------FOOTER-------------*/
 footer {
   background: #0B3648; /* Grey background */
   padding:40px 0;
@@ -395,6 +398,8 @@ ul{
   transform: scale(1.1); 
 }
 
+/* ------------ SPONSORS -------------*/
+
 .img-sponsors{
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
@@ -615,6 +620,8 @@ select {
   transition:0.5s;
 }
 
+/* ------------ SPONSORS END-------------*/
+
 select:hover{
   background: #e0dfdf;
 }
@@ -719,4 +726,3 @@ figcaption {
   font-weight: 1000;
   transition: transform .4s;
 }
-
