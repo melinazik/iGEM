@@ -11,7 +11,7 @@ function openPPT() {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-  modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -27,4 +27,3 @@ function openPPT() {
 
     modal.style.display = "none";
 }
-
