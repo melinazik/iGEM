@@ -62,8 +62,7 @@ $(document).ready(function() {
                 }	
         }
     }
-
-        
+    
         
     function highlight_current_page_menu() {
         
@@ -179,4 +178,9 @@ $(document).ready(function() {
     });
 
 
+    // change picture on click
+
+    
+    onmouseover="document.getElementById('mantis-og').src='https://igemnous.med.duth.gr/wp-content/uploads/2021/01/jordi.jpg';"
+    onmouseout="document.getElementById('mantis-og').src='https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg';"
 });
