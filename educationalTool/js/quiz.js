@@ -272,7 +272,7 @@ function nextQuestion(index) {
 }
 
 function checkForAnswer() {
-    const currentQuestion = shuffledQuestions[indexNumber]       //gets current question 
+    const currentQuestion = shuffledQuestions[indexNumber];      //gets current question 
     const currentQuestionAnswer = currentQuestion.correctOption; //gets current question's answer
     const options = document.getElementsByName("option");        //gets all options of a question
     var correctOption = null;
