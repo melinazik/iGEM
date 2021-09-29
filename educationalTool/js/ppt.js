@@ -1,5 +1,3 @@
-
-
 // When the user clicks the button, open the modal 
 function openPPT() {
     // Get the modal
