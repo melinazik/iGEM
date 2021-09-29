@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf 8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content=" ">
+        
+		<meta name="keywords" content="risk, caclulator, osteoarthritis, igem, nous">
+		<meta name="author" content="iGEM NOUS, M. Zikou">
+
+		<title> NOUS </title>
+
+		<link rel="icon" type="image/png" href="../images/favicon.png"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="../js/ppt.js"> </script>
+	</head>
+
+	<body>
+		<!-- Loading icon -->
+		<div class="loader"></div>
+
+		<!-- Navigation Bar -->
+		<div class="navbar">
+			<div class="nav-bar-logo">
+				<a href="home.html" class="active">
+					<div class="logo-header"></div>
+				</a>
+				<a href="home.html" class="active">NOUS </a>
+			</div>
+	
+			<div class="right-navbar" id="navbarID">
+				<ul id="nav">
+					<li><a href="home.html">Home</a></li>
+					
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'games.html'">Games</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="crossword.html">Crossword</a>
+								<a href="quiz.html">Quiz</a>
+								<a href="hangman.html">Hangman</a>
+							</div>
+						</div> 
+						
+					</li>
+
+					<li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'tutorials.html'">Tutorials</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="presentations.html">Presentations</a>
+								<a href="experiments.html">Experiments</a>
+							</div>
+						</div> 
+					</li>
+					<li><a href="resources.html">Resources</a></li>
+					
+				</ul>
+				
+			</div>
+		</div>
+		
+        <div id="page-view">
+			<div id="title">Bio Girls</div>
+		</div>  <br><br>
+
+        <div id="centered">
+			<ul class="row-imgs">
+                
+				<li class="img-games-container">
+					<a id="ppt1" onclick="openPPT1()"><img class="img-games" src="../images/human.PNG"></a>
+					<figcaption>
+						<a class="games-name" onclick="openPPT()">The Human Body</a>
+			    		</figcaption>
+
+				</li>
+
+				<li class="img-games-container">
+					<a id="ppt2" onclick="openPPT2()"><img class="img-games" src="../images/cell.PNG"></a>
+					<figcaption>
+						<a class="games-name" onclick="openPPT()">Cells</a>
+					</figcaption>
+				</li>
+
+                 
+                <div id="myModal1" class="modal">
+            
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close" onclick="closePPT1()" >&times;</span>
+                      <center>
+                            <iframe src="https://onedrive.live.com/embed?cid=3250ECC3D610AFD4&amp;resid=3250ECC3D610AFD4%21273746&amp;authkey=ADmoWU3C2MXAcP8&amp;em=2&amp;wdAr=1.7777777777777777" width="962px" height="565px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+                      </center>
+                      
+                    </div>
+                  
+           		</div>
+
+				<div id="myModal2" class="modal">
+		
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closePPT2()" >&times;</span>
+					<center>
+                        <iframe src="https://onedrive.live.com/embed?cid=3250ECC3D610AFD4&amp;resid=3250ECC3D610AFD4%21273745&amp;authkey=ANZYyUxo0F__9a4&amp;em=2&amp;wdAr=1.7777777777777777" width="962px" height="565px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+					</center>
+					
+				</div>
+                  
+           		</div>
+				
+			</ul>
+		</div>
+
+		<!--footer-->
+		<footer>
+			<div class="footer-content">
+				<div class="row">
+
+					<div class="col">
+						<a href="https://igemnous.med.duth.gr/" target="_blank">
+							<div class="logo-footer"></div> 
+						</a>
+
+							<i class="fa fa-envelope fa-lg fa-fw"></i>
+							<a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
+							<a class="footer-links" href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
+					</div>
+
+					<div class="col">
+						<h4>About Us</h4>
+						<p class="footer-about">We are an interdisciplinary team of students from Greek Universities aiming to participate in iGEM Competition 2021.
+						</p>
+					</div>
+
+					<div class="col">
+						<h4 class="follow-footer">Contact us</h4>
+						<div class="social-links">
+							<a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fab fa-instagram"></i></a><br>
+                            <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fab fa-linkedin"></i></a>
+							<a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fab fa-youtube"></i></a>
+							<a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</footer>
+		<!-- /.footer -->
+	</body>
+
+</html>
