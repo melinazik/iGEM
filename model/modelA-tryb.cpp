@@ -207,6 +207,7 @@ int main()
             if (P_first == false)
             {
                 MO_P = P_in_exo / t;
+
                 cout << "mesos oros sugkentrosis proteinis sta exosomata prin to equilibrium = " << MO_P << "se xrono t = " << t << endl;
 
                 P_first = true;
@@ -239,6 +240,7 @@ int main()
     }
 
     MO_miRNA = MO_miRNA / times;
+
     cout << "mesos oros sugkentrosis miRNA sta exosomata meta to equilibrium (mexri to telos) = " << MO_miRNA << "se xrono t = " << times << endl;
 
     MO_P = MO_P / times;

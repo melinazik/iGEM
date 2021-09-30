@@ -2,7 +2,9 @@
 #include <math.h>
 #include <string>
 #include <fstream>
+
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
@@ -28,14 +30,24 @@ double kp = 8.0;
 // stuff for model B
 
 double Sp = 0.07; // Stathera prosdesis
-double P = 10; //Posous upodoxeis exei 1 kuttaro
-double K = Sp*P; //Pithanotita ena exosoma na mpei se ena kuttaro
+double Yp = 10; //Posous upodoxeis exei 1 kuttaro
+double K = Sp*Yp; //Pithanotita ena exosoma na mpei se ena kuttaro
 int At = 5; //Xronos ananeosis enos upodoxea
 double l = 3.7; //Apostasi kuttaron - statheri - metrimeni se ___
 double u = 2.1; //taxutita exosomaton - statheri - metrimeni se ___/min
 double Dt = l/u; //poso xrono thelei ena exosoma na dianusei to l
-double b = 5.1; // pososto exosomaton pou xanontai/pethainoun
+double b = 0.1; // pososto exosomaton pou xanontai/pethainoun
 int Pe = 7; // Upodoxeis pou xrieazetai ena exosoma gia na mpei
+
+class class_upodoxeis 
+{
+    public:
+
+        int cell; //se poio kuttaro
+        int upodox; //posoi kleisane
+        int close_t; //ti ora kleisame
+        int open_t = close_t + At; // pote prepei na anoiksoun
+};
 
 
 //equations - functions for model A
@@ -102,10 +114,17 @@ bool equilibrium (double prev_value, double now_value)
 
 int main()
 {
+    //try smt
+    double tttt =3.7;
+    int kkkk = int(tttt);
+
+    cout << kkkk;
+    //
     // initialize csv file
     std::ofstream file;
-    file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_results_01.csv");
+    file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_results_02.csv");
     file << "time, mRNA1, miRNA, P, Exo, target, mRNA2, miRNA in exosomes, protein in exosomes, eq in mRNA1, eq in miRNA, eq in P, eq in target, eq in mRNA2\n";
+    file.flush();
 
     double mRNA1 = 0;
     double mRNA1_rate = 0; // mRNA1 rate
@@ -145,11 +164,20 @@ int main()
     // ** MODEL B **
     // stuff for model B
 
-    int cells[10][4] = {0,0};
+    int cells[12][4] = {0,0}; // 0: cell num 1: esosomata in total sauto to cell 2: available upodoxeis 3:posa pane sto epomeno
     int exos = 0; // metrao exosomata pou taksideuoun
+    queue <class_upodoxeis> q_upodoxeis;
+ 
 
-    for (int t=0; t <100; t=t+1)
+    for (int i = 1; i<=10; i++) //initialize ola ta kuttara me P upodoxeis
     {
+        cells[i][0] = i; //arithmisi kuttaron 
+        cells[i][2] = Yp;
+    }
+    
+    for (int t=0; t <10; t=t+1) 
+    {   
+        
         //counting prev values to calculate equilibrim
 
         double mRNA1_prev = mRNA1;
@@ -175,6 +203,7 @@ int main()
 
         Exo = eq_Exo (k0, t);
 
+
         //calc protein and miRNA in exosomes
         if (Exo > 0)
         {
@@ -186,7 +215,6 @@ int main()
             P_in_exo = P_in_exo + P_exo;
         }
 
-        
         //add stuff to excel
         file << t << " ,";
         file << mRNA1 << " ,";
@@ -197,6 +225,7 @@ int main()
         file << mRNA2 << " ,";
         file << miRNA_exo << " ,";
         file << P_exo << " ," ;
+        cout << "after file";
 
         //calculate equilibrium
         if(equilibrium(mRNA1_prev, mRNA1) == true)
@@ -208,6 +237,7 @@ int main()
             file << "not yet" << " ,";
         }
         
+
         if(equilibrium(miRNA_prev, miRNA) == true)
         {
             file << t << " ,";
@@ -224,6 +254,7 @@ int main()
         {
             file << "not yet" << " ,";
         }
+
 
         if(equilibrium(P_prev, P) == true)
         {
@@ -267,7 +298,87 @@ int main()
         //
         // ** MODEL B **
 
+        if (t >= Dt) //ta exosomata na exoun ftasei toulaxiston sto proto kuttaro
+        {
+            int x = int(t/Dt); // metrao se poio kuttaro exoun ftasei
 
+            for(int i=1; i <= x; i++)
+            {
+                if(cells[i-1][3]>0) //elegxos an exoune meinei aptin prigoumeni fora
+                {
+                    exos =  (Exo - Exo*b) * (pow(1-K,i)) + cells[i-1][3]; //b% xanontai * to upoloipo gia to i cell
+                }
+                else
+                {
+                    exos = (Exo - Exo*b) * (pow(1-K,i));
+                }
+
+                if(cells[i][2]>= exos * Pe) //an uparxoun arketoi upodoxeis na xoresoun ola ta exosomata
+                {
+                    //create object upodoxea before changing
+                    class_upodoxeis obj_upodox;
+
+                    obj_upodox.cell = i;
+                    obj_upodox.upodox = exos * Pe;
+                    obj_upodox.close_t = t;
+
+                    q_upodoxeis.push(obj_upodox); //add to queue
+
+                    //add changes to array
+                    cells[i][1] += exos; // prostheto exosomata sto kuttaro
+                    cells[i][2] -= exos * Pe; //afairo upodoxeis
+                    
+                }
+
+                else if(cells[i][2] < exos*Pe && cells[i][2] >0) //an den exei arketous upodoxeis pairno osous exei
+                {
+                    //create object upodoxea before changing
+                    class_upodoxeis obj_upodox;
+
+                    obj_upodox.cell = i;
+                    obj_upodox.upodox = cells[i][2] - (cells[i][2] % Pe);
+                    obj_upodox.close_t = t;
+
+                    q_upodoxeis.push(obj_upodox); //add to queue
+
+                    //add changes to array
+                    cells[i][1] += int(cells[i][2]/Pe); // den mporoun na mpoun 0.5 exosomata
+                    cells[i][2] = cells[i][2] % Pe;
+                }
+                else if(cells[i][2] == 0) // an den xoraei kanena
+                {
+                    cells[i][3] = exos;
+                }
+            }
+            
+        }
+
+        //check if upodoxeis are to open - add them - delete obj
+        bool stop = false;
+        
+        while(stop == false)
+        {
+            if(q_upodoxeis.front().open_t <= t)
+            {
+                int cell = q_upodoxeis.front().cell;
+                int upodox = q_upodoxeis.front().upodox;
+
+                cells[cell][2] += upodox;
+
+                q_upodoxeis.pop();
+            }
+            else
+            {
+                bool stop = true;
+            }
+        }
+
+        //midenismos proigoumenon giati ksekinaei nea prtida exosomaton
+        int x = int(t/Dt); // ksana giati de to blepei allios
+        for(int j = 1; j <=x; j++)
+        {
+            cells[j][3] = 0;
+        }
     }
 
     MO_miRNA = MO_miRNA / times;
@@ -278,4 +389,6 @@ int main()
 
 
     file.close();
+
+    cout << "reached end";
 }
