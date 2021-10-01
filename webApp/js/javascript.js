@@ -15,7 +15,9 @@ function load(){
 
         Object.entries(obv).forEach((entry) => {
             const [key, value] = entry;
-            console.log(`${key}: ${value}`);
+            var obvName = value.name.value;
+            console.log(key, " : ", obvName);
+            // console.log(`${key}: ${value}`);
         });
     
     })
