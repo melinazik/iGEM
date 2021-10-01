@@ -64,16 +64,18 @@ function load(){
             var x = mesType.search('#');
             var datatype = mesType.slice(x + 1);
 
-            // if(datatype.valueOf() == 'enum'.valueOf()){
-            //     mesLabel = "todo";
-            // }
-            // else{
-            //     mesLabel = value.label.value;
-            // }
-
             
-           
-            measurementTypesMap[mesIDFinal] = [key, datatype];
+            if(datatype.valueOf() == 'enum'.valueOf() || datatype.valueOf() == 'boolean'.valueOf()){
+                mesLabel = "todo";
+            }
+            else if(mesIDFinal.valueOf() == "ME_25".valueOf()){
+                mesLabel = "----";
+            }
+            else{
+                mesLabel = value.label.value;
+            }
+                      
+            measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
     })
 
