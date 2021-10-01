@@ -21,7 +21,6 @@ function load(){
         Object.entries(obv).forEach((entry) => {
             const [key, value] = entry;
 
-            
             var obvName = value.name.value;
             var obvCountRV =  value.countRV.value;
             
@@ -41,24 +40,44 @@ function load(){
     })
 
     // fetch measurement types JSON from URL
-    // fetch(measurementTypesURL)
-    // .then(res => res.json())
-    // .then((measurementTypes) => {
+    fetch(measurementTypesURL)
+    .then(res => res.json())
+    .then((measurementTypes) => {
 
-    //     var string = JSON.stringify(measurementTypes);
-    //     const obj = JSON.parse(string);
+        var string = JSON.stringify(measurementTypes);
+        const obj = JSON.parse(string);
         
-    //     const obv = obj.results.bindings;
+        const mes = obj.results.bindings;
 
-    //     Object.entries(obv).forEach((entry) => {
-    //         const [key, value] = entry;
-    //         var mesName = value.name.value;
-    //         // console.log(key, " : ", obvName);
-    //         observableMap[key] = [value.name.value, value.countRV.value];
-    //         // console.log(`${key}: ${value}`);
-    //     });
-    // })
+        Object.entries(mes).forEach((entry) => {
+            const [key, value] = entry;
+            
 
-    console.log(observableMap);
+            var mesLabel;
+             
+            
+            var mesID = value.measurement_type.value;
+            var x = mesID.search('ME');
+            var mesIDFinal = mesID.substr(x, x + 2);
+
+            var mesType = value.datatype.value;
+            var x = mesType.search('#');
+            var datatype = mesType.slice(x + 1);
+
+            // if(datatype.valueOf() == 'enum'.valueOf()){
+            //     mesLabel = "todo";
+            // }
+            // else{
+            //     mesLabel = value.label.value;
+            // }
+
+            
+           
+            measurementTypesMap[mesIDFinal] = [key, datatype];
+        });
+    })
+
+    // console.log(observableMap);
+    console.log(measurementTypesMap);
 
 }
