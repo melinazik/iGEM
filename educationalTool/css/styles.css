@@ -79,6 +79,7 @@ html, body{
 .nav-bar-logo {
   padding: 14px 20px; /* Add some padding */
   display: flex;
+  cursor: pointer;
 }
 
 .nav-bar-logo a{
@@ -86,6 +87,7 @@ html, body{
   font-size: 1.4em;
   color: white; /* White text color */
   text-decoration: none; /* Remove underline */
+  cursor: pointer;
 }
 
 .dropdown {
