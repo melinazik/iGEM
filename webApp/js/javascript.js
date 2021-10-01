@@ -7,5 +7,13 @@ function load(){
     .then(res => res.json())
     .then((observables) => {
     console.log(observables);
+
+    var string = JSON.stringify(observables);
+    const obj = JSON.parse(string);
+
+
+    console.log(obj.results.bindings);
+    
+    // document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
     })
 }
