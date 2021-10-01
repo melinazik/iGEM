@@ -30,7 +30,7 @@ double kp = 8.0;
 // stuff for model B
 
 double Sp = 0.07; // Stathera prosdesis
-double Yp = 10; //Posous upodoxeis exei 1 kuttaro
+double Yp = 50; //Posous upodoxeis exei 1 kuttaro
 double K = Sp*Yp; //Pithanotita ena exosoma na mpei se ena kuttaro
 int At = 5; //Xronos ananeosis enos upodoxea
 double l = 3.7; //Apostasi kuttaron - statheri - metrimeni se ___
@@ -46,7 +46,15 @@ class class_upodoxeis
         int cell; //se poio kuttaro
         int upodox; //posoi kleisane
         int close_t; //ti ora kleisame
-        int open_t = close_t + At; // pote prepei na anoiksoun
+        double open_t = close_t + At; // pote prepei na anoiksoun
+
+        class_upodoxeis (int cell, int upodox, int close_t, double open_t)
+        {
+            this->cell = cell;
+            this->upodox = upodox;
+            this->close_t = close_t;
+            this->open_t = open_t;
+        }
 };
 
 
@@ -114,17 +122,14 @@ bool equilibrium (double prev_value, double now_value)
 
 int main()
 {
-    //try smt
-    double tttt =3.7;
-    int kkkk = int(tttt);
+    // initialize csv file_A
+    std::ofstream file_A;
+    file_A.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_results_02.csv");
+    file_A << "time, mRNA1, miRNA, P, Exo, target, mRNA2, miRNA in exosomes, protein in exosomes, eq in mRNA1, eq in miRNA, eq in P, eq in target, eq in mRNA2\n";
 
-    cout << kkkk;
-    //
-    // initialize csv file
-    std::ofstream file;
-    file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_results_02.csv");
-    file << "time, mRNA1, miRNA, P, Exo, target, mRNA2, miRNA in exosomes, protein in exosomes, eq in mRNA1, eq in miRNA, eq in P, eq in target, eq in mRNA2\n";
-    file.flush();
+    std::ofstream file_B;
+    file_B.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_B_results_01.csv");
+    file_B << "cell, exosomes in total, available upodoxeis, remaining exos to give\n";
 
     double mRNA1 = 0;
     double mRNA1_rate = 0; // mRNA1 rate
@@ -158,26 +163,25 @@ int main()
     bool miRNA_first = false;
     bool P_first = false;
 
-
     //
     //
     // ** MODEL B **
     // stuff for model B
+    int size = 100; //how many cells
 
-    int cells[12][4] = {0,0}; // 0: cell num 1: esosomata in total sauto to cell 2: available upodoxeis 3:posa pane sto epomeno
+    int cells[101][4] = {0,0}; // 0: cell num 1: esosomata in total sauto to cell 2: available upodoxeis 3:posa pane sto epomeno
     int exos = 0; // metrao exosomata pou taksideuoun
     queue <class_upodoxeis> q_upodoxeis;
  
 
-    for (int i = 1; i<=10; i++) //initialize ola ta kuttara me P upodoxeis
+    for (int i = 1; i<= size; i++) //initialize ola ta kuttara me P upodoxeis
     {
         cells[i][0] = i; //arithmisi kuttaron 
         cells[i][2] = Yp;
     }
     
-    for (int t=0; t <10; t=t+1) 
+    for (int t=0; t <100; t=t+1) 
     {   
-        
         //counting prev values to calculate equilibrim
 
         double mRNA1_prev = mRNA1;
@@ -216,31 +220,30 @@ int main()
         }
 
         //add stuff to excel
-        file << t << " ,";
-        file << mRNA1 << " ,";
-        file << miRNA << " ,";
-        file << P << " ,";
-        file << Exo << " ,";
-        file << target << " ,";
-        file << mRNA2 << " ,";
-        file << miRNA_exo << " ,";
-        file << P_exo << " ," ;
-        cout << "after file";
+        file_A << t << " ,";
+        file_A << mRNA1 << " ,";
+        file_A << miRNA << " ,";
+        file_A << P << " ,";
+        file_A << Exo << " ,";
+        file_A << target << " ,";
+        file_A << mRNA2 << " ,";
+        file_A << miRNA_exo << " ,";
+        file_A << P_exo << " ," ;
 
         //calculate equilibrium
         if(equilibrium(mRNA1_prev, mRNA1) == true)
         {
-            file << t << " ,";
+            file_A << t << " ,";
         }  
         else
         {
-            file << "not yet" << " ,";
+            file_A << "not yet" << " ,";
         }
         
 
         if(equilibrium(miRNA_prev, miRNA) == true)
         {
-            file << t << " ,";
+            file_A << t << " ,";
 
             if (miRNA_first == false)
             {
@@ -252,13 +255,13 @@ int main()
         }  
         else
         {
-            file << "not yet" << " ,";
+            file_A << "not yet" << " ,";
         }
 
 
         if(equilibrium(P_prev, P) == true)
         {
-            file << t << " ,";
+            file_A << t << " ,";
 
             if (P_first == false)
             {
@@ -270,25 +273,25 @@ int main()
         }  
         else
         {
-            file << "not yet" << " ,";
+            file_A << "not yet" << " ,";
         }
 
         if(equilibrium(target_prev, target) == true)
         {
-            file << t << " ,";
+            file_A << t << " ,";
         }  
         else
         {
-            file << "not yet" << " ,";
+            file_A << "not yet" << " ,";
         }
 
         if(equilibrium(mRNA2_prev, mRNA2) == true)
         {
-            file << t << " ,\n";
+            file_A << t << " ,\n";
         }  
         else
         {
-            file << "not yet" << " ,\n";
+            file_A << "not yet" << " ,\n";
         }
 
         times = t;
@@ -316,11 +319,13 @@ int main()
                 if(cells[i][2]>= exos * Pe) //an uparxoun arketoi upodoxeis na xoresoun ola ta exosomata
                 {
                     //create object upodoxea before changing
-                    class_upodoxeis obj_upodox;
 
-                    obj_upodox.cell = i;
-                    obj_upodox.upodox = exos * Pe;
-                    obj_upodox.close_t = t;
+                    int cell = i;
+                    int upodox = exos*Pe;
+                    int close_t = t;
+                    double open_t = close_t + At;
+
+                    class_upodoxeis obj_upodox(cell, upodox, close_t, open_t);
 
                     q_upodoxeis.push(obj_upodox); //add to queue
 
@@ -332,12 +337,14 @@ int main()
 
                 else if(cells[i][2] < exos*Pe && cells[i][2] >0) //an den exei arketous upodoxeis pairno osous exei
                 {
-                    //create object upodoxea before changing
-                    class_upodoxeis obj_upodox;
 
-                    obj_upodox.cell = i;
-                    obj_upodox.upodox = cells[i][2] - (cells[i][2] % Pe);
-                    obj_upodox.close_t = t;
+                    //create object upodoxea before changing
+                    int cell = i;
+                    int upodox = cells[i][2] - (cells[i][2] % Pe);
+                    int close_t = t;
+                    double open_t = close_t + At;
+
+                    class_upodoxeis obj_upodox (cell, upodox, close_t, open_t);
 
                     q_upodoxeis.push(obj_upodox); //add to queue
 
@@ -353,23 +360,28 @@ int main()
             
         }
 
-        //check if upodoxeis are to open - add them - delete obj
-        bool stop = false;
-        
-        while(stop == false)
+        if (!q_upodoxeis.empty())
         {
-            if(q_upodoxeis.front().open_t <= t)
+            
+            //check if upodoxeis are to open - add them - delete obj
+            bool stop = false;
+            
+            while(stop == false && !q_upodoxeis.empty())
             {
-                int cell = q_upodoxeis.front().cell;
-                int upodox = q_upodoxeis.front().upodox;
+                if(q_upodoxeis.front().open_t <= t)
+                {
+                    int cell = q_upodoxeis.front().cell;
+                    int upodox = q_upodoxeis.front().upodox;
 
-                cells[cell][2] += upodox;
+                    cells[cell][2] += upodox;
 
-                q_upodoxeis.pop();
-            }
-            else
-            {
-                bool stop = true;
+                    q_upodoxeis.pop();
+                }
+                else
+                {
+                    stop = true;
+                }
+
             }
         }
 
@@ -382,13 +394,24 @@ int main()
     }
 
     MO_miRNA = MO_miRNA / times;
-    cout << "mesos oros sugkentrosis miRNA sta exosomata meta to equilibrium (mexri to telos) = " << MO_miRNA << "se xrono t = " << times << endl;
+    cout << "mesos oros sugkentrosis miRNA sta exosomata meta to equilibrium (mexri to telos) = " << MO_miRNA << " se xrono t = " << times << endl;
 
     MO_P = MO_P / times;
-    cout << "mesos oros sugkentrosis protein sta exosomata meta to equilibrium (mexri to telos) = " << MO_P << "se xrono t = " << times << endl;
+    cout << "mesos oros sugkentrosis protein sta exosomata meta to equilibrium (mexri to telos) = " << MO_P << " se xrono t = " << times << endl;
 
+    //MODEL B
+    //insert to file
+    for (int i = 0; i <= size; i++)
+    {
+        file_B << cells[i][0]<< " ,";
+        file_B << cells[i][1]<< " ,";
+        file_B << cells[i][2]<< " ,";
+        file_B << cells[i][3]<< " ,\n";
+    }
 
-    file.close();
+    file_A.close();
+    file_B.close();
 
     cout << "reached end";
 }
+
