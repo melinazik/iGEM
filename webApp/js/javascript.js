@@ -37,6 +37,32 @@ function load(){
             // console.log(`${key}: ${value}`); 
             // console.log(key, " : ", obvName);
         });
+        
+        // Solution 1: sort observables map - count rvs 
+
+        observableMap[Symbol.iterator] = function* () {
+            yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
+        }
+        console.log([... observableMap]);  
+
+        // map OB id with count rv
+        // var mapRV = {};
+
+        // var keys = Object.keys(observableMap);
+        // keys.forEach(k=>{
+        //     var valueRV = parseInt((observableMap[k])[2]);
+        //     mapRV[k] = valueRV;   
+        // });
+
+        // // Solution 2: sort map rv 
+        // mapRV[Symbol.iterator] = function* () {
+        //     yield* [...Object.entries(mapRV)].sort((a, b) => a[1] - b[1]);
+        // }
+        // console.log([...mapRV]);  
+
+        // Solution 3: sort map rv 
+        // const mapRVSort = new Map([...Object.entries(mapRV)].sort((a, b) => b[1] - a[1]));
+        // console.log(mapRVSort);
     })
 
     // fetch measurement types JSON from URL
@@ -66,7 +92,8 @@ function load(){
 
             
             if(datatype.valueOf() == 'enum'.valueOf() || datatype.valueOf() == 'boolean'.valueOf()){
-                mesLabel = "todo";
+                mesLabel = value.enum_values.value.split(';');
+                
             }
             else if(mesIDFinal.valueOf() == "ME_25".valueOf()){
                 mesLabel = "----";
@@ -79,7 +106,9 @@ function load(){
         });
     })
 
-    // console.log(observableMap);
-    console.log(measurementTypesMap);
+    console.log(observableMap);
+
+    
+    // console.log(measurementTypesMap);
 
 }
