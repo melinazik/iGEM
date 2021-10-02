@@ -66,7 +66,8 @@ function load(){
 
             
             if(datatype.valueOf() == 'enum'.valueOf() || datatype.valueOf() == 'boolean'.valueOf()){
-                mesLabel = "todo";
+                mesLabel = value.enum_values.value.split(';');
+                
             }
             else if(mesIDFinal.valueOf() == "ME_25".valueOf()){
                 mesLabel = "----";
