@@ -8,6 +8,7 @@ function load(){
     var observableMap = {};
     var measurementTypesMap = {};
     var mapObvSort = {};
+    var countOb = 0;
 
     // fetch observables JSON from URL
     fetch(observablesURL)
@@ -115,9 +116,27 @@ function load(){
             if(parseInt(observableMap[key][2]) != 0){
                 var mesID = observableMap[key][0];   
                 console.log(measurementTypesMap[mesID]);
+                countOb++;
             }
             
         });
+
+        // Container <div> where dynamic content will be placed
+        var container = document.getElementById("container");
+
+        // create html form fields according to observables
+        for (i = 0; i < countOb; i++){
+
+            // Append a node with a random text
+            container.appendChild(document.createTextNode("Member " + (i+1)));
+            // Create an <input> element, set its type and name attributes
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = "member" + i;
+            container.appendChild(input);
+            // Append a line break 
+            container.appendChild(document.createElement("br"));
+        }
     })
 
     // console.log(observableMap);
