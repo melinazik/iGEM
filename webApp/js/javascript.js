@@ -47,9 +47,8 @@ function load(){
 
         // Solution 2: sort observables map - count rvs 
         mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
-        console.log(mapObvSort);
+        // console.log(mapObvSort);
         
-
         // map OB id with count rv
         // var mapRV = {};
 
@@ -68,6 +67,8 @@ function load(){
         // Solution 4: sort map rv 
         // const mapRVSort = new Map([...Object.entries(mapRV)].sort((a, b) => b[1] - a[1]));
         // console.log(mapRVSort);
+
+        
     })
 
     // fetch measurement types JSON from URL
@@ -109,11 +110,19 @@ function load(){
                       
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
+        
+        var keys = Object.keys(observableMap);
+        keys.forEach(key =>{
+            var mesID = observableMap[key][0];   
+            console.log(measurementTypesMap[mesID]);
+        });
     })
 
     // console.log(observableMap);
+    // console.log(measurementTypesMap);
+    // console.log((observableMap["OB_1"])[0]);    
 
-    
-    console.log(measurementTypesMap);
+   
+
 
 }
