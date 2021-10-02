@@ -84,9 +84,7 @@ function load(){
         Object.entries(mes).forEach((entry) => {
             const [key, value] = entry;
             
-
             var mesLabel;
-             
             
             var mesID = value.measurement_type.value;
             var x = mesID.search('ME');
@@ -110,19 +108,20 @@ function load(){
                       
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
-        
+
+        // find ME that for each OB 
         var keys = Object.keys(observableMap);
         keys.forEach(key =>{
-            var mesID = observableMap[key][0];   
-            console.log(measurementTypesMap[mesID]);
+            if(parseInt(observableMap[key][2]) != 0){
+                var mesID = observableMap[key][0];   
+                console.log(measurementTypesMap[mesID]);
+            }
+            
         });
     })
 
     // console.log(observableMap);
     // console.log(measurementTypesMap);
     // console.log((observableMap["OB_1"])[0]);    
-
-   
-
 
 }
