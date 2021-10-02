@@ -37,6 +37,27 @@ function load(){
             // console.log(`${key}: ${value}`); 
             // console.log(key, " : ", obvName);
         });
+        
+
+        
+
+        var mapRV = {};
+
+        var keys = Object.keys(observableMap);
+        keys.forEach(k=>{
+            var valueRV = parseInt((observableMap[k])[2]);
+            mapRV[k] = valueRV;   
+        });
+
+        mapRV[Symbol.iterator] = function* () {
+            yield* [...Object.entries(mapRV)].sort((a, b) => a[1] - b[1]);
+        }
+
+        // const mapRVSort = new Map([...Object.entries(mapRV)].sort((a, b) => b[1] - a[1]));
+        // console.log(mapRVSort);
+
+        
+        console.log([...mapRV]);   
     })
 
     // fetch measurement types JSON from URL
@@ -80,7 +101,9 @@ function load(){
         });
     })
 
-    // console.log(observableMap);
-    console.log(measurementTypesMap);
+    console.log(observableMap);
+
+    
+    // console.log(measurementTypesMap);
 
 }
