@@ -118,15 +118,38 @@ function load(){
                 var mesID = observableMap[key][0];   
                 // console.log(measurementTypesMap[mesID]);
 
-                // Append a node with a random text
-                // Create an <input> element, set its type and name attributes
-                var input = document.createElement("input");
+                if(((measurementTypesMap[mesID])[0]).valueOf() == 'enum'.valueOf() ||
+                   ((measurementTypesMap[mesID])[0]).valueOf() == 'boolean'.valueOf()){
 
-                input.type = "text";
-                input.className = 'form-text';
-                input.placeholder = (observableMap[key])[1];
+                    // Create an <input> element, set its type and name attributes
+                    var select = document.createElement("select");
+                    
+                    ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
+                        var option = document.createElement('option');
+                        option.value = observableMap[key][1];
 
-                container.appendChild(input);
+                        option.class = "dropdown-content";
+                        option.innerHTML = mes;
+
+                        console.log(option);
+                        select.appendChild(option);
+                        
+                    })
+                    container.appendChild(select);
+                
+                }
+
+                else {
+                    // Create an <input> element, set its type and name attributes
+                    var input = document.createElement("input");
+
+                    input.type = "text";
+                    input.className = 'form-text';
+                    input.placeholder = (observableMap[key])[1];
+
+                    container.appendChild(input);
+                }
+                
                 // Append a line break 
                 container.appendChild(document.createElement("br"));
 

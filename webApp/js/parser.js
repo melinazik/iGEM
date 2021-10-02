@@ -8,7 +8,7 @@ var Parser = {
 
     parseValues: function(){
         this.age = document.getElementById("intInput").value;
-        this.sex = document.getElementById("sexInput").value;
+        this.sex = document.getElementById("dropdownInput").value;
 
         var ex = "age <= 64 AND age >= 60 AND sex = 'male'";
 
