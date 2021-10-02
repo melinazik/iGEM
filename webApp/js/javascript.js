@@ -110,6 +110,8 @@ function load(){
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
 
+        var container = document.getElementById("container");
+
         // find ME that for each OB 
         var keys = Object.keys(observableMap);
         keys.forEach(key =>{
@@ -117,27 +119,41 @@ function load(){
                 var mesID = observableMap[key][0];   
                 // console.log(measurementTypesMap[mesID]);
                 countOb++;
+
+                // Append a node with a random text
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+
+                input.type = "text";
+                input.className = 'form-text';
+                input.placeholder = (observableMap[key])[1];
+
+                container.appendChild(input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+
             }
             
         });
 
-        // Container <div> where dynamic content will be placed
-        var container = document.getElementById("container");
+        // // Container <div> where dynamic content will be placed
+        // var container = document.getElementById("container");
 
-        // create html form fields according to observables
-        for (i = 0; i < countOb; i++){
+        // // create html form fields according to observables
+        // for (i = 0; i < countOb; i++){
 
-            // Append a node with a random text
-            // Create an <input> element, set its type and name attributes
-            var input = document.createElement("input");
+        //     // Append a node with a random text
+        //     // Create an <input> element, set its type and name attributes
+        //     var input = document.createElement("input");
 
-            input.type = "text";
-            input.className = 'form-text';
+        //     input.type = "text";
+        //     input.className = 'form-text';
+        //     input.placeholder = (observableMap[key])[1];
 
-            container.appendChild(input);
-            // Append a line break 
-            container.appendChild(document.createElement("br"));
-        }
+        //     container.appendChild(input);
+        //     // Append a line break 
+        //     container.appendChild(document.createElement("br"));
+        // }
     })
 
     // console.log(observableMap);
