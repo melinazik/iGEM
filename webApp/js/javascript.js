@@ -7,6 +7,7 @@ function load(){
     
     var observableMap = {};
     var measurementTypesMap = {};
+    var mapObvSort = {};
 
     // fetch observables JSON from URL
     fetch(observablesURL)
@@ -39,12 +40,15 @@ function load(){
         });
         
         // Solution 1: sort observables map - count rvs 
+        // observableMap[Symbol.iterator] = function* () {
+        //     yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
+        // }
+        // console.log([... observableMap]);
 
-        observableMap[Symbol.iterator] = function* () {
-            yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
-        }
-        console.log([... observableMap]);  
-
+        // Solution 2: sort observables map - count rvs 
+        mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
+        // console.log(mapObvSort);
+        
         // map OB id with count rv
         // var mapRV = {};
 
@@ -54,15 +58,17 @@ function load(){
         //     mapRV[k] = valueRV;   
         // });
 
-        // // Solution 2: sort map rv 
+        // // Solution 3: sort map rv 
         // mapRV[Symbol.iterator] = function* () {
         //     yield* [...Object.entries(mapRV)].sort((a, b) => a[1] - b[1]);
         // }
         // console.log([...mapRV]);  
 
-        // Solution 3: sort map rv 
+        // Solution 4: sort map rv 
         // const mapRVSort = new Map([...Object.entries(mapRV)].sort((a, b) => b[1] - a[1]));
         // console.log(mapRVSort);
+
+        
     })
 
     // fetch measurement types JSON from URL
@@ -104,11 +110,19 @@ function load(){
                       
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
+        
+        var keys = Object.keys(observableMap);
+        keys.forEach(key =>{
+            var mesID = observableMap[key][0];   
+            console.log(measurementTypesMap[mesID]);
+        });
     })
 
-    console.log(observableMap);
-
-    
+    // console.log(observableMap);
     // console.log(measurementTypesMap);
+    // console.log((observableMap["OB_1"])[0]);    
+
+   
+
 
 }
