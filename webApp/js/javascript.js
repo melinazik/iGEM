@@ -38,26 +38,31 @@ function load(){
             // console.log(key, " : ", obvName);
         });
         
+        // Solution 1: sort observables map - count rvs 
 
-        
-
-        var mapRV = {};
-
-        var keys = Object.keys(observableMap);
-        keys.forEach(k=>{
-            var valueRV = parseInt((observableMap[k])[2]);
-            mapRV[k] = valueRV;   
-        });
-
-        mapRV[Symbol.iterator] = function* () {
-            yield* [...Object.entries(mapRV)].sort((a, b) => a[1] - b[1]);
+        observableMap[Symbol.iterator] = function* () {
+            yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
         }
+        console.log([... observableMap]);  
 
+        // map OB id with count rv
+        // var mapRV = {};
+
+        // var keys = Object.keys(observableMap);
+        // keys.forEach(k=>{
+        //     var valueRV = parseInt((observableMap[k])[2]);
+        //     mapRV[k] = valueRV;   
+        // });
+
+        // // Solution 2: sort map rv 
+        // mapRV[Symbol.iterator] = function* () {
+        //     yield* [...Object.entries(mapRV)].sort((a, b) => a[1] - b[1]);
+        // }
+        // console.log([...mapRV]);  
+
+        // Solution 3: sort map rv 
         // const mapRVSort = new Map([...Object.entries(mapRV)].sort((a, b) => b[1] - a[1]));
         // console.log(mapRVSort);
-
-        
-        console.log([...mapRV]);   
     })
 
     // fetch measurement types JSON from URL
