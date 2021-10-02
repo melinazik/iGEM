@@ -8,7 +8,6 @@ function load(){
     var observableMap = {};
     var measurementTypesMap = {};
     var mapObvSort = {};
-    var countOb = 0;
 
     // fetch observables JSON from URL
     fetch(observablesURL)
@@ -118,7 +117,6 @@ function load(){
             if(parseInt(observableMap[key][2]) != 0){
                 var mesID = observableMap[key][0];   
                 // console.log(measurementTypesMap[mesID]);
-                countOb++;
 
                 // Append a node with a random text
                 // Create an <input> element, set its type and name attributes
