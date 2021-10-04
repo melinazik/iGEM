@@ -43,7 +43,7 @@ function load(){
         // observableMap[Symbol.iterator] = function* () {
         //     yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
         // }
-        // console.log([... observableMap]);
+        // console.log([...observableMap]);
 
         // Solution 2: sort observables map - count rvs 
         mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
@@ -84,9 +84,7 @@ function load(){
         Object.entries(mes).forEach((entry) => {
             const [key, value] = entry;
             
-
             var mesLabel;
-             
             
             var mesID = value.measurement_type.value;
             var x = mesID.search('ME');
@@ -110,19 +108,77 @@ function load(){
                       
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
+
+        // mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
         
-        var keys = Object.keys(observableMap);
+        observableMap[Symbol.iterator] = function* () {
+            yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
+        }
+
+        var container = document.getElementById("container");
+
+        // find ME that for each OB 
+        var keys = Object.keys([...observableMap]);
         keys.forEach(key =>{
-            var mesID = observableMap[key][0];   
-            console.log(measurementTypesMap[mesID]);
+            if(parseInt([...observableMap][key][2]) != 0){
+                var mesID = [...observableMap][key][1][0];   
+
+                // console.log(measurementTypesMap[mesID]);
+
+                if(((measurementTypesMap[mesID])[0]).valueOf() == 'enum'.valueOf() ||
+                   ((measurementTypesMap[mesID])[0]).valueOf() == 'boolean'.valueOf()){
+
+                    // Create an <input> element, set its type and name attributes
+                    var select = document.createElement("select");
+
+                    // TODO fix select - required (not working)
+                    // select.required = true;
+                    var option = document.createElement('option');
+
+                    option.disabled = true;
+                    option.selected = true;
+                    option.innerHTML = [...observableMap][key][1][1];
+                    select.appendChild(option);
+
+                    ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
+                        option = document.createElement('option');
+                        
+                        option.value = [...observableMap][key][1][1];
+
+                        option.class = "dropdown-content";
+                        option.innerHTML = mes;
+
+                        select.appendChild(option);
+                    })
+
+                    //TODO selects in reversed order
+                    // container.prepend(select);
+                    container.appendChild(select);
+                
+                }
+
+                else {
+                    // Create an <input> element, set its type and name attributes
+                    var input = document.createElement("input");
+
+                    input.type = "text";
+                    input.className = 'form-text';
+                    input.placeholder = ([...observableMap][key])[1][1];
+
+                    container.appendChild(input);
+                }
+                
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+
+            }
+            
         });
+
     })
 
     // console.log(observableMap);
     // console.log(measurementTypesMap);
     // console.log((observableMap["OB_1"])[0]);    
-
-   
-
 
 }

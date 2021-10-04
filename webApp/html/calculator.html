@@ -57,24 +57,7 @@
 			
 				<form id="form" class="form" onsubmit="return false;">
 
-					<input type="text" class="form-text" id="ageInput" placeholder="Age" required name="ageInput">
-
-					<select id="sexInput" required name="ageInput" name="sex">
-						<div class="dropdown-content">
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-						<option value="other">Other</option>
-					</div>
-					</select>
-
-					<!-- <div class="dropdown">
-						<input class="form-text" placeholder="Sex"></input>
-						<div class="dropdown-content">
-							<a value="male">Male</a>
-							<a value="female">Female</a>
-							<a value="other">Other</a>
-						</div>
-					  </div> -->
+					  <div id="container"> </div>
 
 					<button type="submit" onclick="Parser.parseValues();"> Okay </button>
 				</form>
