@@ -114,14 +114,6 @@ function load(){
         observableMap[Symbol.iterator] = function* () {
             yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
         }
-        // console.log([...observableMap][0]);
-        
-        // console.log(observableMap);  
-        
-        // console.log([...mapObvSort]);
-
-        // console.log(mapObvSort['0']);
-
 
         var container = document.getElementById("container");
 
@@ -159,6 +151,8 @@ function load(){
                         select.appendChild(option);
                     })
 
+                    //TODO selects in reversed order
+                    // container.prepend(select);
                     container.appendChild(select);
                 
                 }
