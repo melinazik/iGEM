@@ -126,6 +126,8 @@ function load(){
                     // Create an <input> element, set its type and name attributes
                     var select = document.createElement("select");
 
+                    // TODO fix select - required (not working)
+                    // select.required = true;
                     var option = document.createElement('option');
 
                     option.disabled = true;
@@ -134,8 +136,6 @@ function load(){
                     select.appendChild(option);
 
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
-                        select.required = 'required';
-
                         option = document.createElement('option');
                         
                         option.value = observableMap[key][1];
