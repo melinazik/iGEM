@@ -109,6 +109,8 @@ function load(){
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
 
+        mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
+
         var container = document.getElementById("container");
 
         // find ME that for each OB 
@@ -132,6 +134,8 @@ function load(){
                     select.appendChild(option);
 
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
+                        select.required = 'required';
+
                         option = document.createElement('option');
                         
                         option.value = observableMap[key][1];
