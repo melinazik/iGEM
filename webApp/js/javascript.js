@@ -123,44 +123,24 @@ function load(){
 
                     // Create an <input> element, set its type and name attributes
                     var select = document.createElement("select");
-                        
-                    var optgroup =  document.createElement("optgroup");
-                    optgroup.label = observableMap[key][1];
-                    optgroup.innerHTML = observableMap[key][1];
-                    var firstOption = true;
 
                     var option = document.createElement('option');
 
                     option.disabled = true;
-                            option.selected = true;
-                            option.innerHTML = observableMap[key][1];
-                            optgroup.appendChild(option);
-                            firstOption = false;   
+                    option.selected = true;
+                    option.innerHTML = observableMap[key][1];
+                    select.appendChild(option);
 
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
                         option = document.createElement('option');
-                        // if(firstOption){
-                        //     option.disabled = true;
-                        //     option.selected = true;
-                        //     option.innerHTML = observableMap[key][1];
-                        //     optgroup.appendChild(option);
-                        //     firstOption = false;   
-                        // }
-
-                        // else{
-                            option.value = observableMap[key][1];
-
-                            option.class = "dropdown-content";
-                            option.innerHTML = mes;
-
-                            console.log(optgroup);
-                            optgroup.appendChild(option);
-                        // }
                         
-                        
-                        
+                        option.value = observableMap[key][1];
+
+                        option.class = "dropdown-content";
+                        option.innerHTML = mes;
+
+                        select.appendChild(option);
                     })
-                    select.appendChild(optgroup);
 
                     container.appendChild(select);
                 
