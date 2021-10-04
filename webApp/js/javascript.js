@@ -43,7 +43,7 @@ function load(){
         // observableMap[Symbol.iterator] = function* () {
         //     yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
         // }
-        // console.log([... observableMap]);
+        // console.log([...observableMap]);
 
         // Solution 2: sort observables map - count rvs 
         mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
@@ -109,15 +109,28 @@ function load(){
             measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
         });
 
-        mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
+        // mapObvSort = new Map([...Object.entries(observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]));
+        
+        observableMap[Symbol.iterator] = function* () {
+            yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
+        }
+        // console.log([...observableMap][0]);
+        
+        // console.log(observableMap);  
+        
+        // console.log([...mapObvSort]);
+
+        // console.log(mapObvSort['0']);
+
 
         var container = document.getElementById("container");
 
         // find ME that for each OB 
-        var keys = Object.keys(observableMap);
+        var keys = Object.keys([...observableMap]);
         keys.forEach(key =>{
-            if(parseInt(observableMap[key][2]) != 0){
-                var mesID = observableMap[key][0];   
+            if(parseInt([...observableMap][key][2]) != 0){
+                var mesID = [...observableMap][key][1][0];   
+
                 // console.log(measurementTypesMap[mesID]);
 
                 if(((measurementTypesMap[mesID])[0]).valueOf() == 'enum'.valueOf() ||
@@ -132,13 +145,13 @@ function load(){
 
                     option.disabled = true;
                     option.selected = true;
-                    option.innerHTML = observableMap[key][1];
+                    option.innerHTML = [...observableMap][key][1][1];
                     select.appendChild(option);
 
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
                         option = document.createElement('option');
                         
-                        option.value = observableMap[key][1];
+                        option.value = [...observableMap][key][1][1];
 
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
@@ -156,7 +169,7 @@ function load(){
 
                     input.type = "text";
                     input.className = 'form-text';
-                    input.placeholder = (observableMap[key])[1];
+                    input.placeholder = ([...observableMap][key])[1][1];
 
                     container.appendChild(input);
                 }
