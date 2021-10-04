@@ -127,16 +127,37 @@ function load(){
                     var optgroup =  document.createElement("optgroup");
                     optgroup.label = observableMap[key][1];
                     optgroup.innerHTML = observableMap[key][1];
+                    var firstOption = true;
+
+                    var option = document.createElement('option');
+
+                    option.disabled = true;
+                            option.selected = true;
+                            option.innerHTML = observableMap[key][1];
+                            optgroup.appendChild(option);
+                            firstOption = false;   
 
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
-                        var option = document.createElement('option');
-                        option.value = observableMap[key][1];
+                        option = document.createElement('option');
+                        // if(firstOption){
+                        //     option.disabled = true;
+                        //     option.selected = true;
+                        //     option.innerHTML = observableMap[key][1];
+                        //     optgroup.appendChild(option);
+                        //     firstOption = false;   
+                        // }
 
-                        option.class = "dropdown-content";
-                        option.innerHTML = mes;
+                        // else{
+                            option.value = observableMap[key][1];
 
-                        console.log(optgroup);
-                        optgroup.appendChild(option);
+                            option.class = "dropdown-content";
+                            option.innerHTML = mes;
+
+                            console.log(optgroup);
+                            optgroup.appendChild(option);
+                        // }
+                        
+                        
                         
                     })
                     select.appendChild(optgroup);
