@@ -123,7 +123,11 @@ function load(){
 
                     // Create an <input> element, set its type and name attributes
                     var select = document.createElement("select");
-                    
+                        
+                    var optgroup =  document.createElement("optgroup");
+                    optgroup.label = observableMap[key][1];
+                    optgroup.innerHTML = observableMap[key][1];
+
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
                         var option = document.createElement('option');
                         option.value = observableMap[key][1];
@@ -131,10 +135,12 @@ function load(){
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
 
-                        console.log(option);
-                        select.appendChild(option);
+                        console.log(optgroup);
+                        optgroup.appendChild(option);
                         
                     })
+                    select.appendChild(optgroup);
+
                     container.appendChild(select);
                 
                 }
