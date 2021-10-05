@@ -65,12 +65,12 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: rgb(185, 13, 13);
     padding: 0px;
     z-index: 4; 
   }
   .dropdown-content {
-    background-color: rgb(220,220,220);
+    background-color: rgb(189, 20, 20);
   }
   .dropdown-content a {
     display: flex;
@@ -79,7 +79,7 @@
     padding-bottom: 10px;
   }
   .dropdown-content a:hover {
-    background-color: rgb(50,50,50);
+    background-color: rgb(80, 15, 165);
   }
   .dropdown:hover .dropdown-content {
     display: flex;

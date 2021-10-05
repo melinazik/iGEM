@@ -29,7 +29,7 @@ double kp = 8.0;
 // ** MODEL B **
 // stuff for model B
 
-double Sp = 0.07; // Stathera prosdesis
+double Sp = 0.000001; // Stathera prosdesis
 double Yp = 50; //Posous upodoxeis exei 1 kuttaro
 double K = Sp*Yp; //Pithanotita ena exosoma na mpei se ena kuttaro
 int At = 5; //Xronos ananeosis enos upodoxea
@@ -178,6 +178,7 @@ int main()
     {
         cells[i][0] = i; //arithmisi kuttaron 
         cells[i][2] = Yp;
+
     }
     
     for (int t=0; t <100; t=t+1) 
@@ -309,14 +310,14 @@ int main()
             {
                 if(cells[i-1][3]>0) //elegxos an exoune meinei aptin prigoumeni fora
                 {
-                    exos =  (Exo - Exo*b) * (pow(1-K,i)) + cells[i-1][3]; //b% xanontai * to upoloipo gia to i cell
+                    exos =  (Exo - Exo*b) * (pow(1-(Sp*cells[i][2]),i)) + cells[i-1][3]; //b% xanontai * to upoloipo gia to i cell
                 }
                 else
                 {
-                    exos = (Exo - Exo*b) * (pow(1-K,i));
+                    exos = (Exo - Exo*b) * (pow(1-(Sp*cells[i][2]),i));
                 }
 
-                if(cells[i][2]>= exos * Pe) //an uparxoun arketoi upodoxeis na xoresoun ola ta exosomata
+                if(cells[i][2]>= exos * Pe && exos >=0) //an uparxoun arketoi upodoxeis na xoresoun ola ta exosomata
                 {
                     //create object upodoxea before changing
 
@@ -335,9 +336,8 @@ int main()
                     
                 }
 
-                else if(cells[i][2] < exos*Pe && cells[i][2] >0) //an den exei arketous upodoxeis pairno osous exei
+                else if(cells[i][2] < exos*Pe && cells[i][2] >0 && exos >=0) //an den exei arketous upodoxeis pairno osous exei
                 {
-
                     //create object upodoxea before changing
                     int cell = i;
                     int upodox = cells[i][2] - (cells[i][2] % Pe);
@@ -351,8 +351,12 @@ int main()
                     //add changes to array
                     cells[i][1] += int(cells[i][2]/Pe); // den mporoun na mpoun 0.5 exosomata
                     cells[i][2] = cells[i][2] % Pe;
+
+                    //add exos to next
+                    cells[i][3] += exos - int(cells[i][2]/Pe);
+
                 }
-                else if(cells[i][2] == 0) // an den xoraei kanena
+                else if(cells[i][2] == 0 && exos >=0) // an den xoraei kanena
                 {
                     cells[i][3] = exos;
                 }

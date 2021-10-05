@@ -1,3 +1,47 @@
+.row{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  
+  .col{
+    width:30%;
+    padding: 0 15px;
+  }
+  
+  .col h4{
+    font-size:18px;
+    color:#ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position:relative;
+  }
+  
+  .col h4::before{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    background-color:rgb(199, 169, 190);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+  
+  .col ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  
+  .col ul li span{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration:none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+  }
+
 #footerWrapper {
     width: 100%;
     border-top: solid 25px #07e250;

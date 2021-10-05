@@ -9,7 +9,7 @@ using namespace std;
 
 //assumption: [miRNA]/t equally distributed to num of exosomes/t
 
-double k_syn = 0.5;
+double k_syn = 0.5; //
 double c1 = 0.6;
 double c2 = 0.6;
 double DmRNA = 0.41; // m mol / min 
