@@ -37,6 +37,21 @@ function openPPT2() {
     modal.style.display = "block";
 }
 
+function openPPT3() {
+    var modal = document.getElementById("myModal3");
+    modal.style.display = "block";
+}
+
+function openPPT4() {
+    var modal = document.getElementById("myModal4");
+    modal.style.display = "block";
+}
+
+function openPPT5() {
+    var modal = document.getElementById("myModal5");
+    modal.style.display = "block";
+}
+
 function closePPT1(){
    var modal = document.getElementById("myModal1");
    modal.style.display = "none";
@@ -44,5 +59,20 @@ function closePPT1(){
 
 function closePPT2(){
     var modal = document.getElementById("myModal2");
+    modal.style.display = "none";
+ }
+
+ function closePPT3(){
+    var modal = document.getElementById("myModal3");
+    modal.style.display = "none";
+ }
+
+ function closePPT4(){
+    var modal = document.getElementById("myModal4");
+    modal.style.display = "none";
+ }
+
+ function closePPT5(){
+    var modal = document.getElementById("myModal5");
     modal.style.display = "none";
  }

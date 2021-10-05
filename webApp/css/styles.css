@@ -725,4 +725,25 @@ figcaption {
 
   font-weight: 1000;
   transition: transform .4s;
+
+  max-width: 300px;
+
 }
+
+.img-prof{
+
+  border-radius: 60%;
+  height: 300px;
+  transition: transform .8s;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.img-prof:hover{
+  transform: scale(0.8); 
+}
+
+.cv{
+  max-width: 300px;
+}
+

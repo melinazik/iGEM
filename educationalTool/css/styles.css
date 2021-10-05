@@ -428,14 +428,15 @@ td {
 
 .row-imgs {
   padding-left: 0;
-  margin-left: 170px;
+  margin-left: 0;
   list-style: none;
 }
 
 .row-imgs > li {
   display: inline-block;
-  padding-right: 90px;
-  padding-left: 90px;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-bottom: 70px;
 }
 
 figcaption {
@@ -823,6 +824,25 @@ input[type=radio]:checked ~ .option {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.description{
+  max-width: 350px;
+  text-align: center;
+}
+
+.centered-container{
+  padding-right: 140px;
+  padding-left: 140px;
+  align-self: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  text-align: center;
 }
 
 /*********************/
