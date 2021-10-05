@@ -192,9 +192,42 @@ function load(){
            
             riskElementsMap[riskIDFinal] = [riskName];
         });
+    })
+
+    fetch(riskEvidencesURL)
+    .then(res => res.json())
+    .then((evidences) => {
+
+        var string = JSON.stringify(evidences);
+        const obj = JSON.parse(string);
+        
+        const ev = obj.results.bindings;
+
+        Object.entries(ev).forEach((entry) => {
+            const [key, value] = entry;
+
+            var condition = value.condition.value;
+            // var min = value.confidece_interval_min.value;
+            // var max = value.confidece_interval_max.value;
+            var average = value.risk_evidence_ratio_value.value;
+            
+            var evidence = value.risk_evidence.value;
+            var z = evidence.search('RV');
+            var evidenceID = evidence.substr(z, z + 2);
+
+            var source = value.has_risk_factor_source.value;
+            var x = source.search('RL');
+            var sourceID = source.substr(x, x + 2);
+
+            var target = value.has_risk_factor_target.value;
+            var y = target.search('RL');
+            var targetID = target.substr(y, y + 2);
+           
+            riskEvidencesMap[evidenceID] = [condition, sourceID, targetID, average];
+        });
     
     })
 
-    console.log(riskElementsMap);
+    console.log(riskEvidencesMap);
 
 }
