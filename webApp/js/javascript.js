@@ -311,6 +311,7 @@ function load(){
 
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
+                        
 
                         select.appendChild(option);
                     })
@@ -401,4 +402,22 @@ function load(){
     })
 
     console.log(riskEvidencesMap);
+}
+
+function parse(){
+    var container = document.getElementById("container");
+
+    var options = document.getElementsByTagName('option');
+    var inputs = document.getElementsByTagName('input');
+    
+    // var input = document.getElementById("OB_27");
+    // console.log(input); //
+
+    for (var i = 0; i < options.length; i++) {
+        console.log(options[i].value);
+    }
+
+    for (var i = 0; i < inputs.length; i++) {
+        console.log(inputs[i].value);
+    }
 }
