@@ -294,6 +294,7 @@ function load(){
 
                     // Create an <input> element, set its type and name attributes
                     var select = document.createElement("select");
+                    select.id = [...observableMap][key][1][1];
 
                     // TODO fix select - required (not working)
                     // select.required = true;
@@ -304,14 +305,15 @@ function load(){
                     option.innerHTML = [...observableMap][key][1][1];
                     select.appendChild(option);
 
+                    var countID = 0;
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
+                        
                         option = document.createElement('option');
                         
                         option.id = [...observableMap][key][0];
 
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
-                        
 
                         select.appendChild(option);
                     })
@@ -321,7 +323,7 @@ function load(){
 
                     container.appendChild(select);
                     
-                
+                    console.log(container);
                 }
 
                 else {
@@ -406,16 +408,25 @@ function load(){
 
 function parse(){
     var container = document.getElementById("container");
-
+    var selects =  document.getElementsByTagName('select');
     var options = document.getElementsByTagName('option');
     var inputs = document.getElementsByTagName('input');
     
+    
+
+
     // var input = document.getElementById("OB_27");
     // console.log(input); //
 
-    for (var i = 0; i < options.length; i++) {
-        console.log(options[i].value);
-    }
+    // for (var i = 0; i < options.length; i++) {
+    //     console.log(selects[i].id);
+        
+    //     var x = document.getElementById(selects[i].id);
+
+    //     console.log(x);
+    //     console.log([x.selectedIndex].value);
+        
+    // }
 
     for (var i = 0; i < inputs.length; i++) {
         console.log(inputs[i].value);
