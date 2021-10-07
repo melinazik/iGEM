@@ -464,17 +464,16 @@ function replaceOB(){
 
     // TODO
     // 1. map return to default when button is pressed (Ajax query??)
-    // 2. replace all values
+
     var keys = Object.keys(formInputMap);
     keys.forEach(key =>{
 
         var keys2 = Object.keys(map);
         keys2.forEach(key2 =>{
             
-            // console.log(key2);
             if(map[key2][0].search(key) >= 0){
 
-                var text = map[key2][0].replace(key, formInputMap[key]);
+                var text = map[key2][0].split(key).join(formInputMap[key]);
 
                 map[key2][0] = text;
                 count++;
