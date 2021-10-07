@@ -310,7 +310,7 @@ function load(){
                         
                         option = document.createElement('option');
                         
-                        option.id = [...observableMap][key][0];
+                        option.id = [...observableMap][key][0] + (countID++);
 
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
@@ -407,26 +407,12 @@ function load(){
 }
 
 function parse(){
-    var container = document.getElementById("container");
     var selects =  document.getElementsByTagName('select');
-    var options = document.getElementsByTagName('option');
     var inputs = document.getElementsByTagName('input');
     
-    
-
-
-    // var input = document.getElementById("OB_27");
-    // console.log(input); //
-
-    // for (var i = 0; i < options.length; i++) {
-    //     console.log(selects[i].id);
-        
-    //     var x = document.getElementById(selects[i].id);
-
-    //     console.log(x);
-    //     console.log([x.selectedIndex].value);
-        
-    // }
+    for (var i = 0; i < selects.length; i++) {
+        console.log(selects[i].value);
+    }
 
     for (var i = 0; i < inputs.length; i++) {
         console.log(inputs[i].value);
