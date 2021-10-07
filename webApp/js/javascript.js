@@ -410,8 +410,29 @@ function parse(){
     var selects =  document.getElementsByTagName('select');
     var inputs = document.getElementsByTagName('input');
     
+    // console.log(observableMap);
+    // console.log(measurementTypesMap);
     for (var i = 0; i < selects.length; i++) {
-        console.log(selects[i].value);
+        
+        // name of observable
+        var obName = selects[i].id;
+        var mesID;
+
+        var keys = Object.keys(observableMap);
+        keys.forEach(key =>{
+            
+            if (obName == observableMap[key][1]){
+                mesID = observableMap[key][0];
+            }
+        });
+
+        console.log(mesID);
+
+        // console.log(selects[i].value);
+
+
+
+
     }
 
     for (var i = 0; i < inputs.length; i++) {
