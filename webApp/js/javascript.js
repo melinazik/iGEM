@@ -163,10 +163,20 @@ var Parser = {
 
 };
 
+// Observable ID -> observable details
 var observableMap = {};
+
+// measurement type ID -> measurement type details
 var measurementTypesMap = {};
+
+// Risk element ID -> risk element name
 var riskElementsMap = {};
+
+// Risk evidence ID -> risk evidence details
 var riskEvidencesMap = {};
+
+// Observable ID -> observable value (html form)
+var formInputMap = {};
 
 function load(){
 
@@ -424,16 +434,11 @@ function parse(){
             if (obName == observableMap[key][1]){
                 ob = key;
             }
-
         });
 
         console.log(ob);
 
         // console.log(selects[i].value);
-
-
-
-
     }
 
     for (var i = 0; i < inputs.length; i++) {
