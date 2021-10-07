@@ -433,15 +433,28 @@ function parse(){
             
             if (obName == observableMap[key][1]){
                 ob = key;
+
+                formInputMap[ob] =  selects[i].value;
+
             }
+
         });
 
-        console.log(ob);
+        // console.log(ob);
 
         // console.log(selects[i].value);
     }
 
+
+
     for (var i = 0; i < inputs.length; i++) {
-        console.log(inputs[i].value);
+        console.log(inputs[i].id);
+
+
+        formInputMap[inputs[i].id] =  inputs[i].value;
     }
+
+    console.log(formInputMap);
+
 }
+
