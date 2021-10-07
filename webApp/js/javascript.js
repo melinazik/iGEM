@@ -15,8 +15,9 @@ var Parser = {
     evaluate: function(condition, vars) {
         // sort by key length
         var sortedVals = Object.keys(vars).sort(function(a,b){return b.length>a.length;});
+
         sortedVals.forEach(function(val){
-            condition=RiskEvidenceConditionParser.replaceAll(condition,val+" ",vars[val]);
+            condition = Parser.replaceAll(condition, val + " ", vars[val]);
         });
         
 		//error control
@@ -27,6 +28,7 @@ var Parser = {
 			condition.substr(condition.indexOf("OB_"),5));
 			return false;
 		}
+
         return this.parseAndEvaluateExpression(condition);
     },
 
@@ -315,12 +317,11 @@ function load(){
                     option.innerHTML = [...observableMap][key][1][1];
                     select.appendChild(option);
 
-                    var countID = 0;
                     ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
                         
                         option = document.createElement('option');
                         
-                        option.id = [...observableMap][key][0] + (countID++);
+                        option.id = [...observableMap][key][0];
 
                         option.class = "dropdown-content";
                         option.innerHTML = mes;
@@ -435,26 +436,54 @@ function parse(){
                 ob = key;
 
                 formInputMap[ob] =  selects[i].value;
-
             }
-
         });
 
-        // console.log(ob);
-
-        // console.log(selects[i].value);
     }
 
-
-
     for (var i = 0; i < inputs.length; i++) {
-        console.log(inputs[i].id);
-
-
         formInputMap[inputs[i].id] =  inputs[i].value;
     }
 
     console.log(formInputMap);
 
+    // create copy of riskEvidencesMap to replace values
+    var map = {};
+    for (var i in riskEvidencesMap){
+        map[i] = riskEvidencesMap[i];
+    }
+
+    var keys = Object.keys(formInputMap);
+    keys.forEach(key =>{
+
+        var keys2 = Object.keys(map);
+        keys2.forEach(key2 =>{
+            
+            // console.log(key2);
+            if(map[key2][0].search(key) >= 0){
+
+               
+
+                var text = map[key2][0].replace(key, formInputMap[key]);
+
+                map[key2][0] = text;
+
+                console.log(map[key2][0]);
+            }
+            
+        });
+        
+    });
+
+        
+    
+    
+
 }
 
+
+
+function replaceOB(map){
+
+
+}
