@@ -454,11 +454,17 @@ function parse(){
 
 function replaceOB(){
     // create copy of riskEvidencesMap to replace values
+    
+    var count = 0;
+
     var map = {};
     for (var i in riskEvidencesMap){
         map[i] = riskEvidencesMap[i];
     }
 
+    // TODO
+    // 1. map return to default when button is pressed (Ajax query??)
+    // 2. replace all values
     var keys = Object.keys(formInputMap);
     keys.forEach(key =>{
 
@@ -471,7 +477,7 @@ function replaceOB(){
                 var text = map[key2][0].replace(key, formInputMap[key]);
 
                 map[key2][0] = text;
-
+                count++;
             }
             
         });
@@ -479,6 +485,6 @@ function replaceOB(){
     });
 
 
-    console.log(map);
+    console.log(count);
 
 }
