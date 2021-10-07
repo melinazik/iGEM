@@ -416,17 +416,18 @@ function parse(){
         
         // name of observable
         var obName = selects[i].id;
-        var mesID;
+        var ob;
 
         var keys = Object.keys(observableMap);
         keys.forEach(key =>{
             
             if (obName == observableMap[key][1]){
-                mesID = observableMap[key][0];
+                ob = key;
             }
+
         });
 
-        console.log(mesID);
+        console.log(ob);
 
         // console.log(selects[i].value);
 
