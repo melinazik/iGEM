@@ -445,8 +445,14 @@ function parse(){
         formInputMap[inputs[i].id] =  inputs[i].value;
     }
 
-    console.log(formInputMap);
+    // console.log(formInputMap);
 
+    replaceOB();
+
+}
+
+
+function replaceOB(){
     // create copy of riskEvidencesMap to replace values
     var map = {};
     for (var i in riskEvidencesMap){
@@ -462,28 +468,17 @@ function parse(){
             // console.log(key2);
             if(map[key2][0].search(key) >= 0){
 
-               
-
                 var text = map[key2][0].replace(key, formInputMap[key]);
 
                 map[key2][0] = text;
 
-                console.log(map[key2][0]);
             }
             
         });
         
     });
 
-        
-    
-    
 
-}
-
-
-
-function replaceOB(map){
-
+    console.log(map);
 
 }
