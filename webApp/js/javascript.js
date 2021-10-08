@@ -156,9 +156,10 @@ var Parser = {
 
     evaluateStr: function(left, op, right) {
         if (op=="=" || op=="!=" ) {
+            console.log("eval str");
             return this.fixQuotes(left) === this.fixQuotes(right);
         } else {
-            console.error("ERROR: Operator type not recognized." + left + " " +  op +  " " + right);
+            console.error("ERROR: Operator type not recognized: " + left + " " +  op +  " " + right);
             return false;
         }
     }
@@ -296,7 +297,7 @@ function load(){
         var keys = Object.keys([...observableMap]);
         keys.forEach(key =>{
             // TODO
-            if(parseInt([...observableMap][key][1][2]) > 20){
+            if(parseInt([...observableMap][key][1][2]) > 30){
                 var mesID = [...observableMap][key][1][0];   
 
                 // console.log(measurementTypesMap[mesID]);
@@ -453,13 +454,12 @@ function parse(){
 
 
 function replaceOB(){
-    // create copy of riskEvidencesMap to replace values
     
-    var count = 0;
-
+    // create copy of riskEvidencesMap to replace values
     var map = {};
     for (var i in riskEvidencesMap){
         map[i] = riskEvidencesMap[i];
+        map[i][4] = 0;
     }
 
     // TODO
@@ -476,14 +476,18 @@ function replaceOB(){
                 var text = map[key2][0].split(key).join(formInputMap[key]);
 
                 map[key2][0] = text;
-                count++;
+                map[key2][4] = 1;
             }
             
         });
         
     });
 
+    console.log(map);
+    var keys2 = Object.keys(map);
+        keys2.forEach(key2 =>{
 
-    console.log(count);
+            // Parser.parseAndEvaluateExpression(map[key2][0]);
+    });
 
 }
