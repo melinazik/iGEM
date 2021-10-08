@@ -40,7 +40,7 @@ var Parser = {
         var oper = s.substring(start, op[1]).trim();
         var logType = this.logicalOperatorType(oper);
 
-        console.log("PARSE: Left: \"" + left + "\" Right: \"" + right + "\" Operator: \"" + oper + "\"");
+        // console.log("PARSE: Left: \"" + left + "\" Right: \"" + right + "\" Operator: \"" + oper + "\"");
 
         if (logType === 0) // encounters OR- recurse
             return this.parseWithStrings(left) || this.parseWithStrings(right);
@@ -155,8 +155,7 @@ var Parser = {
     },
 
     evaluateStr: function(left, op, right) {
-        if (op=="=" || op=="!=" ) {
-            console.log("eval str");
+        if (op == "=" || op == "!=" ) {
             return this.fixQuotes(left) === this.fixQuotes(right);
         } else {
             console.error("ERROR: Operator type not recognized: " + left + " " +  op +  " " + right);
@@ -483,11 +482,17 @@ function replaceOB(){
         
     });
 
-    console.log(map);
+    // console.log(map);
     var keys2 = Object.keys(map);
         keys2.forEach(key2 =>{
 
-            // Parser.parseAndEvaluateExpression(map[key2][0]);
+            if(map[key2][4] == 1){
+                
+                if(Parser.parseAndEvaluateExpression(map[key2][0]) != false){
+                    console.log("yay!!!!!!!!!!!!!!!!!!!!!!!!!");
+                }
+                // Parser.parseAndEvaluateExpression(map[key2][0]);
+            }
     });
 
 }
