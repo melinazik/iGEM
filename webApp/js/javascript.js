@@ -495,7 +495,9 @@ function replaceOB(){
                     var target = map[key2][2];
                     var ratio = map[key2][3];
 
-                    console.log(source, target, ratio);
+                    // console.log(source, target, ratio);
+
+                    console.log(riskElementsMap[source]+ " -> " + riskElementsMap[target] + " ---- " + ratio);
                 }
                 // Parser.parseAndEvaluateExpression(map[key2][0]);
             }
