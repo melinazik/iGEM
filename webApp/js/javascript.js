@@ -144,7 +144,7 @@ var Parser = {
             return left != right;
         }
         else {
-            console.error("ERROR: Operator type not recognized.");
+            // console.error("ERROR: Operator type not recognized.");
             return false;
         }
     },
@@ -158,7 +158,7 @@ var Parser = {
         if (op == "=" || op == "!=" ) {
             return this.fixQuotes(left) === this.fixQuotes(right);
         } else {
-            console.error("ERROR: Operator type not recognized: " + left + " " +  op +  " " + right);
+            // console.error("ERROR: Operator type not recognized: " + left + " " +  op +  " " + right);
             return false;
         }
     }
@@ -489,7 +489,13 @@ function replaceOB(){
             if(map[key2][4] == 1){
                 
                 if(Parser.parseAndEvaluateExpression(map[key2][0]) != false){
-                    console.log("yay!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    // console.log("yay!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+                    var source = map[key2][1];
+                    var target = map[key2][2];
+                    var ratio = map[key2][3];
+
+                    console.log(source, target, ratio);
                 }
                 // Parser.parseAndEvaluateExpression(map[key2][0]);
             }
