@@ -857,29 +857,37 @@ input[type=radio]:checked ~ .option {
 
 .book {
   transition: opacity 0.4s 0.2s;
+  margin-left: 180px;
+  margin-bottom: 80px;
 }
 
-p{
-  margin-top: 8vw;
-  text-align: center;
-  font-size: 5vw;
-  color: #000000;
+
+.comic-page{
+  width: 30vw;
+  height: 44vw;
+  /* margin-bottom: 90px; */
+  /* bottom: 20%; */
+  padding-bottom: 100px;
 }
+
 .page {
   width: 30vw;
   height: 44vw;
   background-color: #111111;
   float: left;
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
   background: left top no-repeat;
   background-size: cover;
 }
+
 .page:nth-child(even) {
   clear: both;
 }
+
 .book {
   perspective: 250vw;
 }
+
 .book .pages {
   width: 60vw;
   height: 44vw;
@@ -889,6 +897,7 @@ p{
   border-radius: 4px;
   /*box-shadow: 0 0 0 1px #e3dfd8;*/
 }
+
 .book .page {
   float: none;
   clear: none;
@@ -905,6 +914,7 @@ p{
   user-select: none;
   background-color: #f0f0f0;
 }
+
 .book .page:before {
   content: '';
   position: absolute;
@@ -916,6 +926,7 @@ p{
   transition: background 0.7s;
   z-index: 2;
 }
+
 .book .page:nth-child(odd) {
   pointer-events: all;
   transform: rotateY(0deg);
@@ -923,15 +934,19 @@ p{
   border-radius: 0 4px 4px 0;
   background-image: linear-gradient(to right, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 10%);
 }
+
 .book .page:nth-child(odd):hover {
   transform: rotateY(-15deg);
 }
+
 .book .page:nth-child(odd):hover:before {
   background: rgba(0, 0, 0, 0.03);
 }
+
 .book .page:nth-child(odd):before {
   background: rgba(0, 0, 0, 0);
 }
+
 .book .page:nth-child(even) {
   pointer-events: none;
   transform: rotateY(180deg);
@@ -941,57 +956,46 @@ p{
   border-color: black;
   background-image: linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 10%);
 }
+
 .book .page:nth-child(even):before {
   background: rgba(0, 0, 0, 0.2);
 }
+
 .book .page.grabbing {
   transition: none;
 }
+
 .book .page.flipped:nth-child(odd) {
   pointer-events: none;
   transform: rotateY(-180deg);
 }
+
 .book .page.flipped:nth-child(odd):before {
   background: rgba(0, 0, 0, 0.2);
 }
+
 .book .page.flipped:nth-child(even) {
   pointer-events: all;
   transform: rotateY(0deg);
 }
+
 .book .page.flipped:nth-child(even):hover {
   transform: rotateY(15deg);
 }
+
 .book .page.flipped:nth-child(even):hover:before {
   background: rgba(0, 0, 0, 0.03);
 }
+
 .book .page.flipped:nth-child(even):before {
   background: rgba(0, 0, 0, 0);
 }
-*,
-* :before,
-*:after {
-  box-sizing: border-box;
-}
-/* html,
-body {
-  font-family: 'Lovers Quarrel', cursive;
-  background: #333;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2em 0;
-  line-height: 1.5em;
-} */
+
 .page:nth-child(odd){
   background-position: right top;
 }
+
+
 
 /*********************/
 /******* COMIC *******/
