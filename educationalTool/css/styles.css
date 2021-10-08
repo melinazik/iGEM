@@ -854,13 +854,14 @@ input[type=radio]:checked ~ .option {
 /*********************/
 /******* COMIC *******/
 /*********************/
-
+.comic-body {
+  background-color:rgba(102, 102, 102, 0.123);
+}
 .book {
   transition: opacity 0.4s 0.2s;
   margin-left: calc((100%)/5.5);
   margin-bottom: 80px;
 }
-
 
 .comic-page{
   width: 30vw;
