@@ -13,14 +13,17 @@
 
 		<link rel="icon" type="image/png" href="../images/favicon.png"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/books.css" />
+
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="../js/script.js"> </script>
+		<script src="../js/book.js"> </script>
 	</head>
 
-	<body>
+	<body onload="loadBook()">
 		<!-- Loading icon -->
 		<div class="loader"></div>
 
@@ -72,6 +75,72 @@
 			<div id="title">Comic Book</div>
 		</div>  <br><br>
 
+		<div class="book">
+		  <div id="pages" class="pages">
+			<div class="page"><p><img src=""></div>
+			<div class="page"></div>
+			<div class="page"><p></p></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+			<div class="page"></div>
+		  </div>
+		</div>
+		
+		<script>
+			var pages = document.getElementsByClassName('page');
+
+			for(var i = 0; i < pages.length; i++){
+				var page = pages[i];
+				if (i % 2 === 0){
+					page.style.zIndex = (pages.length - i);
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', function(){
+				for(var i = 0; i < pages.length; i++){
+				//Or var page = pages[i];
+					pages[i].pageNum = i + 1;
+					pages[i].onclick=function(){
+						if (this.pageNum % 2 === 0){
+							this.classList.remove('flipped');
+							this.previousElementSibling.classList.remove('flipped');
+						}
+						
+						else{
+							this.classList.add('flipped');
+							this.nextElementSibling.classList.add('flipped');
+						}
+					}
+				}
+			})
+
+		</script>
 
 		<!--footer-->
 		<footer>
@@ -113,3 +182,6 @@
 	</body>
 
 </html>
+
+
+
