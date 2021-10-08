@@ -857,7 +857,7 @@ input[type=radio]:checked ~ .option {
 
 .book {
   transition: opacity 0.4s 0.2s;
-  margin-left: 180px;
+  margin-left: calc((100%)/5.5);
   margin-bottom: 80px;
 }
 
