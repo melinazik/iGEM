@@ -296,7 +296,7 @@ function load(){
         var keys = Object.keys([...observableMap]);
         keys.forEach(key =>{
             // TODO
-            if(parseInt([...observableMap][key][1][2]) > 30){
+            if(parseInt([...observableMap][key][1][2]) > 20){
                 var mesID = [...observableMap][key][1][0];   
 
                 // console.log(measurementTypesMap[mesID]);
@@ -461,8 +461,7 @@ function replaceOB(){
         map[i][4] = 0;
     }
 
-    // TODO
-    // 1. map return to default when button is pressed (Ajax query??)
+    // TODO map return to default when button is pressed (Ajax query??)
 
     var keys = Object.keys(formInputMap);
     keys.forEach(key =>{
@@ -482,24 +481,19 @@ function replaceOB(){
         
     });
 
-    // console.log(map);
     var keys2 = Object.keys(map);
         keys2.forEach(key2 =>{
 
             if(map[key2][4] == 1){
                 
                 if(Parser.parseAndEvaluateExpression(map[key2][0]) != false){
-                    // console.log("yay!!!!!!!!!!!!!!!!!!!!!!!!!");
 
                     var source = map[key2][1];
                     var target = map[key2][2];
                     var ratio = map[key2][3];
 
-                    // console.log(source, target, ratio);
-
                     console.log(riskElementsMap[source]+ " -> " + riskElementsMap[target] + " ---- " + ratio);
                 }
-                // Parser.parseAndEvaluateExpression(map[key2][0]);
             }
     });
 
