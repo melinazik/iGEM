@@ -1,0 +1,24 @@
+#video-compare-container {
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    width: 100%;
+    padding-top:57%;
+  }
+  #video-compare-container > video {
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    top: 0; height: 100%;
+  }
+  #video-clipper {
+    width: 50%; position: absolute;
+    top: 0; bottom: 0;
+    overflow:hidden;
+  }
+  #video-clipper video {
+    background-size: cover;
+    width: 200%;
+    position: absolute;
+    height: 100%;
+  }
