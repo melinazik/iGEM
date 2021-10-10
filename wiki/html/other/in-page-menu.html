@@ -1,32 +1,54 @@
-<!-- <div id="bubbles">
-    <div class="bubble" id="bub_first">
-        <div id="popup-main" class="toggleable active">
-            <div class="choices">
-                <ol class="menu-list">
-                    <li id="project" class="main-choice toggleable">
-                        <h1>project</h1>
-                    </li>
-                    <li id="wl" class="main-choice toggleable">
-                        <h1>wet lab</h1>
-                    </li>
-                    <li id="dl" class="main-choice toggleable">
-                        <h1>dry lab</h1>
-                    </li>
-                    <li id="hp" class="main-choice toggleable active">
-                        <h1>human<br>practices</h1>
-                    </li>
-                    <li id="team" class="main-choice toggleable">
-                        <h1>team</h1>
-                    </li>
-                </ol>
-            </div>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../../css/in-page-menu-style.css" />
+    </head>
+    <script>
+        myID = document.getElementById("liusideMenu");
+        
+        var myScrollFunc = function() {
+          var y = window.scrollY;
+          if (y >= 45) {
+            myID.className = "liusideMenu show"
+          } else {
+            myID.className = "liusideMenu hide"
+          }
+        };
+        
+        window.addEventListener("scroll", myScrollFunc);
+    </script>
+    <body>
+        <div id="liusideMenu" class="liusideMenu hide">
+            <ul>
+                <li class="active"> <a href="#heading1"> Our idea </a></li>
+                <li class="active"><a href="#heading2"> CBD </a></li>
+                <li class="active"><a href="#heading4"> The enzymes </a></li>
+            </ul>
         </div>
-    </div>
-    <div class="bubble" id="bub_second">
-        <div id="popup-next" class="toggleable active hp" style="height: 300px; width: 300px;">
-            <div class="choices">
-                <ul id="appendable" class="menu-list"><li><a href="https://2020.igem.org/Team:Vilnius-Lithuania/Human_Practices">Integrated<br>Human Practices</a></li><li><a href="https://2020.igem.org/Team:Vilnius-Lithuania/Education">Education &amp;<br>Public Engagement</a></li><li><a href="https://2020.igem.org/Team:Vilnius-Lithuania/The_6th_SynBio_Sense">The 6th SynBio Sense</a></li></ul>
+
+
+        <main id="section-text">
+            <div id="index" class="sideBlock">
+                <div id="indexbutton" class="indexbutton">Index</div>
+                <b>title of tittles</b>
+                <ul>
+                    <li class="active">
+                        <div></div>
+                        <a href="#heading1">title 1</a></li>
+                    <li class="active">
+                        <div></div>
+                        <a href="#heading2">title 2</a></li>
+                </ul>
             </div>
-        </div>
-    </div>
-</div> -->
+                <input id="headingTitleText" type="hidden" value="Parts">
+                <div class="contentBlock">
+                    <div class="content">
+                        <div class="h3" id="heading1" tabindex="-1" style="outline: none;">Tittle 1</div>
+                        <h1>yo yo yo ,</h1>
+        
+                        <div class="h3" id="heading2" tabindex="-1" style="outline: none;">title 2</div>
+                        <h1> CONTENT 2</h1>
+                    </div>
+                </div>
+            </main>
+    </body>
+</html>

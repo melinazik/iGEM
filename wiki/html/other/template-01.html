@@ -6,31 +6,7 @@
 </head>
 
 <body>
-    
-
-    <div id="globalWrapper">
-        <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper" >
-                <div id="sidebar-wrapper" class="scroll-area">
-                    <div id="scrollbar-container">
-                        <div id="scrollbar" style="height: 52.6621%;"></div>
-                    </div>
-                </div>
-                <!-- <div id="back-to-top" class="scroll-area">
-                    <div id="backtotop-wrapper" class="scrolled">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.16 77.64"><g><path d="M2.12,10.1l8.3-8.6,7.86,8.6" transform="translate(-0.62 0)" style="fill: none;stroke: #6281ef;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"></path><path d="M10.2,4.5V76.14" transform="translate(-0.62 0)" style="fill: none;stroke: #6281ef;stroke-linecap: round;stroke-width: 3px"></path></g></svg>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-   
-
-    </div>
-	
-    <!-- <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPage&amp;action=raw&amp;ctype=text/javascript"></script>
-    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPageIndex&amp;action=raw&amp;ctype=text/javascript"></script> -->
-
+    	
 <main id="section-text">
     <div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
@@ -86,17 +62,26 @@
 			</div>
 		</div>
 	</main>
-    <script>
-	
-    </script>
 
-
-</div>		            <div class="visualClear"></div>
+</div>		            
 	            
 </div>
 </body>
 
 <script>
+    myID = document.getElementById("liusideMenu");
+
+    var myScrollFunc = function() {
+    var y = window.scrollY;
+    if (y >= 45) {
+        myID.className = "liusideMenu show"
+    } else {
+        myID.className = "liusideMenu hide"
+    }
+    };
+
+window.addEventListener("scroll", myScrollFunc);
+
     var textSection = null;
     var navbar = document.getElementById("navbar");
 
