@@ -2,11 +2,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../../css/template-01-style.css" />
 
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    
 
     <div id="globalWrapper">
         <div id="fixedOverlay" bg="none">
@@ -28,18 +28,22 @@
 
     </div>
 	
-    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPage&amp;action=raw&amp;ctype=text/javascript"></script>
-    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPageIndex&amp;action=raw&amp;ctype=text/javascript"></script>
+    <!-- <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPage&amp;action=raw&amp;ctype=text/javascript"></script>
+    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPageIndex&amp;action=raw&amp;ctype=text/javascript"></script> -->
 
 <main id="section-text">
-    <!-- <div id="index" class="sideBlock">
+    <div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
-        <b>Parts</b>
+        <b>title of tittles</b>
         <ul>
-            <li class="active"><div></div><a href="#heading1">title 1</a></li>
-            <li class=""><div></div><a href="#heading2">title 2</a></li>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">title 1</a></li>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">title 2</a></li>
         </ul>
-    </div> -->
+    </div>
 		<input id="headingTitleText" type="hidden" value="Parts">
 		<div class="contentBlock">
 			<div class="content">
@@ -145,7 +149,7 @@
 
         document.getElementById("fixedOverlay").classList.add("project");
 
-    function addIndex() 
+        function addIndex() 
     {
         let mainContent = document.getElementById("section-text");
 

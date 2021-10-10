@@ -25,7 +25,7 @@
 }
 #fixedOverlay .scroll-wrapper .scroll-area #sidebar-wrapper #scrollbar-container #scrollbar {
   width: 100%;
-  background: #6281EF;
+  background: #002060;
   opacity: 100%;
   height: 0%;
   border-radius: 20px;
@@ -97,7 +97,7 @@ div[bg=none] {
 }
 #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
   width: 100%;
-  background: #6281EF;
+  background: #002060;
   opacity: 100%;
   height: 0%;
   border-radius: 20px;
@@ -165,7 +165,7 @@ div[bg=none] {
 }
 #fixedOverlay nav #header .hamb-wrapper {
   height: 50px;
-  background-color: #6281ef;
+  background-color: #002060;
   border-radius: 100px;
   width: 50px;
   display: flex;
@@ -198,7 +198,7 @@ div[bg=none] {
   background-color: #FAFAFC;
 }
 #fixedOverlay nav #header .hamb-wrapper.white-menu .menu-hamb {
-  background-color: #6281EF;
+  background-color: #002060;
 }
 #fixedOverlay nav #header .hamb-wrapper.invisible {
   box-shadow: none;
@@ -245,7 +245,7 @@ div[bg=none] {
   }
 }
 #fixedOverlay nav[onText=true] #header .hamb-wrapper .menu-wrapper .menu-hamb {
-  background-color: #6281ef;
+  background-color: #002060;
 }
 #fixedOverlay nav .header-part {
   margin: 0 10px;
@@ -260,7 +260,7 @@ div[bg=none] {
   height: 3px;
 }
 #fixedOverlay nav #header .menu-wrapper .menu-hamb.white-menu {
-  background-color: #6281EF;
+  background-color: #002060;
 }
 #fixedOverlay nav #header .menu-wrapper .menu-short {
   margin-bottom: 5px;
@@ -309,16 +309,15 @@ body, html {
     padding: 0.75rem 0.5rem;
   }
   #HQ_page table a, table a {
-    color: #6281EF;
+    color: #002060;
     text-decoration: none;
   }
   #HQ_page table a:hover, table a:hover {
     text-decoration: underline;
-    color: #2E64EC;
+    color: #002060;
   }
 
 
-  /* @charset "UTF-8"; */
 body, html {
   margin: 0;
   padding: 0;
@@ -405,62 +404,6 @@ div.h6.larger {
   font-size: 2.5rem;
 }
 
-.introContainer {
-  width: 100%;
-  height: calc(100vh - 18px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #121212;
-  background-image: url(https://2020.igem.org/wiki/images/7/7f/T--Vilnius-Lithuania--backgroundWaves.png);
-  background-size: cover;
-}
-.introContainer > span {
-  width: 80vw;
-  height: 80vw;
-  border-radius: 1000px;
-  position: relative;
-  background-size: cover;
-  background-position: 0px 0px;
-  background-attachment: fixed;
-  overflow: hidden;
-}
-@media (min-aspect-ratio: 1/1) {
-  .introContainer > span {
-    width: 80vh;
-    height: 80vh;
-  }
-}
-.introContainer > span #image-overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #6281EF;
-  mix-blend-mode: multiply;
-}
-.introContainer .heading {
-  z-index: 3;
-  position: absolute;
-  font-size: 5.7vh;
-  font-size: calc(2.5vh + 2vw);
-  color: #FAFAFC;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "montserrat-black";
-}
-.introContainer .heading.other {
-  padding-top: 0.3em;
-  pointer-events: none;
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #FAFAFC;
-}
-@media (min-aspect-ratio: 1/1) {
-  .introContainer .heading {
-    font-size: 6.5vw;
-  }
-}
-
 
 main {
   margin-top: -5px;
@@ -487,7 +430,7 @@ main::after {
 
 .indexbutton {
   display: none;
-  color: #FAFAFC;
+  color: #ffffff;
   text-transform: capitalize;
   font-size: 1.4rem;
   width: 100%;
@@ -497,7 +440,7 @@ main::after {
   height: 62px;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: #6281EF;
+  background-color: #002060;
   z-index: 21;
   transition: 0.5s;
 }
@@ -530,7 +473,7 @@ table, #HQ_page table {
   top: 50%;
   margin: 200px 32px 0 4vw;
   transform: translateY(-50%);
-  min-width: 220px;
+  min-width: 20px;
   max-width: 350px;
 }
 @media (max-width: 1024px) {
@@ -550,14 +493,14 @@ table, #HQ_page table {
   padding: 0;
 }
 .sideBlock a {
-  color: #121212;
+  color: #002060;
   text-decoration: none;
   font-family: "lato-light", sans-serif;
 }
 .sideBlock li {
   margin: 24px;
   list-style: none;
-  color: #121212;
+  color: #3658cf;
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -572,22 +515,22 @@ table, #HQ_page table {
   max-height: 15px;
   box-sizing: border-box;
   border: 1px solid;
-  color: #2E64EC;
-  border-radius: 20px;
+  color: #3658cf;
+  border-radius: 2px;
   transition: 0.5s;
   margin-right: 8px;
   height: 10vw;
   width: 10vh;
 }
 .sideBlock li.active div {
-  background-color: #2E64EC;
+  background-color: #3658cf;
 }
 @media (max-width: 800px) {
   .sideBlock {
     position: fixed;
     bottom: 0;
     padding: 0 64px;
-    background-color: #6281EF;
+    background-color: #002060;
     color: #FAFAFC;
     float: unset;
     margin: 0;
@@ -635,7 +578,7 @@ table, #HQ_page table {
 }
 
 .contentBlock {
-  width: 64vw;
+  width: 800vw;
   max-width: 700px;
   float: right;
   display: flex;
@@ -697,7 +640,7 @@ table, #HQ_page table {
 }
 .content ul li::before {
   content: "•";
-  color: #6281ef;
+  color: #002060;
 }
 .content .splide ul li::before {
   content: unset;
@@ -706,7 +649,7 @@ table, #HQ_page table {
   margin: 10px;
 }
 .content li::marker {
-  color: #6281ef;
+  color: #002060;
   font-family: "lato-heavy";
   font-size: 1.3em;
 }
@@ -722,7 +665,7 @@ table, #HQ_page table {
   font-size: 1em;
 }
 .content a {
-  color: #2e64ec;
+  color: #002060;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -744,7 +687,7 @@ table, #HQ_page table {
   border-radius: 1000px;
   margin: 40px auto;
   transition: 0.3s ease-out;
-  background-color: #6281ef;
+  background-color: #002060;
   box-shadow: 0 16px 32px -12px #3658cf;
   border: none;
   position: relative;
@@ -753,138 +696,8 @@ table, #HQ_page table {
   cursor: pointer;
   text-transform: uppercase;
 }
-.content a button:hover {
-  top: -5px;
-  box-shadow: 0 16px 32px -16px #3658cf;
-}
-.content p b {
-  font-family: "lato-regular", sans-serif;
-  color: #000;
-}
-.content p a:not(.citation) {
-  text-decoration: none;
-  font-variant-position: normal;
-  color: #121212;
-  box-shadow: inset 0 -0.5em 0 -1px #fcbd1b;
-  transition: 0.3s ease-out;
-}
-.content p a:not(.citation):hover {
-  box-shadow: inset 0 -1.2em 0 -1px #fcbd1b;
-}
-
-_::-webkit-full-page-media,
-_:future,
-:root {
-  transition-duration: unset;
-}
-
-.photos-wrapper.full-width {
-  width: 100%;
-}
-.photos-wrapper.full-width::after {
-  transform: rotate(180deg) translate(-520px, 50px);
-}
-.photos-wrapper .photos {
-  padding: 20px;
-  height: fit-content;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.photos-wrapper .photos.phone {
-  display: flex;
-  justify-content: space-around;
-}
-.photos-wrapper .photos.phone img {
-  height: 400px;
-  border-radius: 0;
-  box-shadow: none;
-  max-width: none;
-  max-height: none;
-  width: auto;
-}
-.photos-wrapper .photos.photo-grid {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-.photos-wrapper .photos.photo-grid.three-part {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.photos-wrapper .photos.photo-grid.two-part {
-  grid-template-columns: 1fr 1fr;
-}
-.photos-wrapper .photos.photo-grid.one-part {
-  grid-template-columns: 1fr;
-}
-.photos-wrapper .photos.photo-grid.round-corners img {
-  border-radius: 200px;
-}
-.photos-wrapper .photos.photo-grid.no-shadow img {
-  box-shadow: none;
-}
-.photos-wrapper .photos.photo-grid.pie img {
-  width: 70%;
-}
-.photos-wrapper .photos.photo-grid img {
-  box-shadow: 5px 5px 7px #00000029;
-  width: 90%;
-}
-.photos-wrapper.half-width {
-  width: 50%;
-  align-self: center;
-}
-.photos-wrapper.half-width .photos {
-  height: fit-content;
-}
-.photos-wrapper.half-width .photos img {
-  width: 100%;
-}
-.photos-wrapper.half-width::after {
-  transform: rotate(180deg) translate(-235px, 50px);
-}
-
-video {
-  width: 100%;
-}
-
-.content p.photo-desc {
-  text-align: left !important;
-  font-size: 0.8em !important;
-}
-@media (max-width: 800px) {
-  .content p.photo-desc {
-    font-size: 0.6em;
-  }
-}
-
-.references {
-  font-size: 1.9rem;
-}
-.references svg {
-  max-width: 100px;
-}
-.references h3 {
-  margin-block-start: 0em;
-  font-size: 0.8em;
-  font-family: "montserrat-bold", sans-serif;
-}
-.references ol {
-  margin: initial;
-  padding-inline-start: 10px;
-}
-.references ol li {
-  font-size: 0.4em;
-  font-family: "lato-light", sans-serif;
-}
-.references ol li::marker {
-  color: initial;
-  font-family: "lato-light", sans-serif;
-  font-size: 1em;
-}
 
 
-/* Side menu? */
 
 #sideMenu,
 #top_title,
@@ -907,8 +720,8 @@ video {
 body,
 html {
 	background-color: white;
-	/*width: 100%;
-	height: 100%;*/
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0px;
 }
