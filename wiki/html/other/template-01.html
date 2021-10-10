@@ -1,0 +1,188 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../css/template-01-style.css" />
+
+    
+</head>
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper" >
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 52.6621%;"></div>
+                    </div>
+                </div>
+                <!-- <div id="back-to-top" class="scroll-area">
+                    <div id="backtotop-wrapper" class="scrolled">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.16 77.64"><g><path d="M2.12,10.1l8.3-8.6,7.86,8.6" transform="translate(-0.62 0)" style="fill: none;stroke: #6281ef;stroke-linecap: round;stroke-linejoin: round;stroke-width: 3px"></path><path d="M10.2,4.5V76.14" transform="translate(-0.62 0)" style="fill: none;stroke: #6281ef;stroke-linecap: round;stroke-width: 3px"></path></g></svg>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+   
+
+    </div>
+	
+    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPage&amp;action=raw&amp;ctype=text/javascript"></script>
+    <script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/ContentPageIndex&amp;action=raw&amp;ctype=text/javascript"></script>
+
+<main id="section-text">
+    <!-- <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+        <b>Parts</b>
+        <ul>
+            <li class="active"><div></div><a href="#heading1">title 1</a></li>
+            <li class=""><div></div><a href="#heading2">title 2</a></li>
+        </ul>
+    </div> -->
+		<input id="headingTitleText" type="hidden" value="Parts">
+		<div class="contentBlock">
+			<div class="content">
+				<div class="h3" id="heading1" tabindex="-1" style="outline: none;">Tittle 1</div>
+				<h1>Lorem Ipsum is simply dummy text of the
+                     printing and typesetting industry. Lorem 
+                     Ipsum has been the industry's standard dummy
+                      text ever since the 1500s,
+                      Lorem Ipsum is simply dummy text of the
+                      printing and typesetting industry. Lorem 
+                      Ipsum has been the industry's standard dummy
+                       text ever since the 1500s,
+                       Lorem Ipsum is simply dummy text of the
+                       printing and typesetting industry. Lorem 
+                       Ipsum has been the industry's standard dummy
+                        text ever since the 1500s,
+                        Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem 
+                        Ipsum has been the industry's standard dummy
+                         text ever since the 1500s,
+                         Lorem Ipsum is simply dummy text of the
+                         printing and typesetting industry. Lorem 
+                         Ipsum has been the industry's standard dummy
+                          text ever since the 1500s,
+                          Lorem Ipsum is simply dummy text of the
+                     printing and typesetting industry. Lorem 
+                     Ipsum has been the industry's standard dummy
+                      text ever since the 1500s,
+                      Lorem Ipsum is simply dummy text of the
+                     printing and typesetting industry. Lorem 
+                     Ipsum has been the industry's standard dummy
+                      text ever since the 1500s,
+                      Lorem Ipsum is simply dummy text of the
+                     printing and typesetting industry. Lorem 
+                     Ipsum has been the industry's standard dummy
+                      text ever since the 1500s,</h1>
+
+				<div class="h3" id="heading2" tabindex="-1" style="outline: none;">title 2</div>
+				<h1> CONTENT 2</h1>
+			</div>
+		</div>
+	</main>
+    <script>
+	
+    </script>
+
+
+</div>		            <div class="visualClear"></div>
+	            
+</div>
+</body>
+
+<script>
+    var textSection = null;
+    var navbar = document.getElementById("navbar");
+
+    window.addEventListener('load', function() {
+        textSection = document.querySelector('.elevate-navbar');
+        checkScrollPos();
+        checkBackToTopPos();
+    })
+    window.addEventListener('scroll', function() {
+        updateScrollbar();
+        checkNavbarPos();
+        checkScrollPos();
+        checkBackToTopPos();
+    });
+    function checkScrollPos() {
+        var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+        var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+        let scrollWrapper = document.querySelector('.scroll-wrapper');
+        if (scrollbarBottom >= footerTop) {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+        } else {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+        }
+    }
+    function checkBackToTopPos() {
+        if ($(window).scrollTop() > 1000) {
+            $('#backtotop-wrapper').addClass('scrolled')
+        } else $('#backtotop-wrapper').removeClass('scrolled')
+    }
+    $(document).ready(function() {
+        $('#backtotop-wrapper').on('click', function() {
+            $('html, body').animate({
+                'scrollTop': $('body').offset().top
+            }, 2000);
+        });
+    });
+
+    function updateScrollbar() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - window.innerHeight;;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("scrollbar").style.height = scrolled + "%";
+    }
+    
+    var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
+
+    function addIndex() 
+    {
+        let mainContent = document.getElementById("section-text");
+
+        indexbutton = document.createElement("div"); indexbutton.id = "indexbutton"; indexbutton.className = "indexbutton"; indexbutton.innerText = "Index";
+
+        let index = document.createElement("div"); index.id = "index"; index.classList.add("sideBlock", "notshow"); index.appendChild(indexbutton); let boldIndexTitle = document.createElement("b"); boldIndexTitle.innerText = document.getElementById("headingTitleText").value; index.appendChild(boldIndexTitle); let ul = document.createElement("ul"); index.appendChild(ul);
+
+
+        function closeIndex() { indexbutton.innerHTML = "Index"; indexbutton.classList.remove("open"); index.classList.remove("open") }
+
+        function openIndex() { indexbutton.innerHTML = "✖"; indexbutton.classList.add("open"); index.classList.add("open") }
+
+
+
+        let headings = document.querySelectorAll(".content div.h3");
+
+        let number = 1; for (let heading of headings) { heading.id = "heading" + number; let li = document.createElement("li"); if (number == 1) li.className = "active"; ul.appendChild(li); let div = document.createElement("div"); li.appendChild(div); let a = document.createElement("a"); a.href = "#heading" + number; a.innerText = heading.innerText; li.appendChild(a); li.onclick = () => { const setActiveFunction = () => { Array.from(ul.children).forEach((childLi) => { childLi.className = ""; }); li.className = "active"; }; setTimeout(setActiveFunction, 100); setTimeout(setActiveFunction, 260); setTimeout(setActiveFunction, 420); closeIndex(); }; number++; } mainContent.insertBefore(index, mainContent.firstChild);
+
+        indexbutton.onclick = () => { if (indexbutton.classList.contains("open")) { closeIndex(); } else { openIndex(); } }; initializeIndexScroll(); } document.addEventListener('DOMContentLoaded', addIndex);
+
+
+        function activateBubble(id) { let ul = document.querySelector("#index ul"); Array.from(ul.children).forEach((childLi) => { // if (childLi.dataset.href == "#" + id){ if (childLi.lastElementChild.getAttribute("href") == "#" + id) { childLi.className = "active"; return; } childLi.className = ""; }); }
+
+        function indexScroll() { let currentScrollPos = document.documentElement.scrollTop; let clientWindowMid = document.documentElement.clientHeight*0.1;
+
+        let calculatedScroll = currentScrollPos + clientWindowMid; let highlightedElement; for (let i = scrollPositions.length-1; i >= 0; i--) { if (scrollPositions[i].position < calculatedScroll+160) { highlightedElement = scrollPositions[i].element; break; } } if (highlightedElement == undefined || highlightedElement.id == undefined) return; activateBubble(highlightedElement.id); }
+
+        function initializeIndexScroll() { scrollPositions = []; let mainContent = document.getElementById("section-text"); let headings = document.querySelectorAll(".content div.h3"); headings.forEach((heading) => { let position = mainContent.offsetTop + heading.offsetTop; scrollPositions.push({ element: heading, position }); });
+
+        } window.addEventListener("resize", initializeIndexScroll); window.addEventListener("scroll", indexScroll);
+
+        const introContainer = document.querySelector(".introContainer");
+
+        function checkHideIndex(){ if (indexbutton == null) return; let indexbuttonTop = indexbutton.getBoundingClientRect().top; if (index.classList.contains("notshow")){ indexbuttonTop -= 60; } let introContainerBottom = introContainer.getBoundingClientRect().bottom; let footerTop = footerWrapper.getBoundingClientRect().top;
+
+        if (indexbuttonTop < introContainerBottom || indexbuttonTop > footerTop){ index.classList.add("notshow"); }else{ index.classList.remove("notshow"); } } window.addEventListener("resize", checkHideIndex); window.addEventListener("scroll", checkHideIndex);
+    });}
+
+</script>
+</html>
