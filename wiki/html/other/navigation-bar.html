@@ -1,95 +1,111 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../../css/navigation-style.css" />
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+
     </head>
 <body>
-    <div class="nav-bar">
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United">HOME</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-            </div> 
-        
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Description">PROJECT</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Implementation">implementation</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Results">results</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Partnership">Partnership</a>
-                </div>
-            </div>        
-            
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Design">Wet Lab</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/Design">Design</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Engineering">engineering</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Experiments">experiments</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Notebook">notebook</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/ProofofConcept">proof of consept</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Parts">parts</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Improve">improve</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/PartCollection">part collection</a>
-                </div>
-            </div>   
+    
 
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Model">Dry Lab</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/Model">Model</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/App">App</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/GeneticCircuit">Genetic circuit</a>
-                </div>
-            </div>   
-                 
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/HumanPractices">Human Practices</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/HumanPractices">Human Practices</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Integrated">integrated</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Education">education</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Communication">communication</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Collaborations">collaborations</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Inclucivity">inclusivity</a>
-                </div>
-            </div>
-                
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">Finances</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">Entrepreunership</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Fundraising">Fundraising</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Sponsors">Sponsors</a>
-                </div>
-            </div>        
-            
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Graphics">Graphics</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-            </div> 
-            <div class="dropdown">
-                <button class="dropbtn"><a href="https://2021.igem.org/Team:Greece_United/Team">team</a> 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://2021.igem.org/Team:Greece_United/Team">team</a>
-                    <a href="https://2021.igem.org/Team:Greece_United/Attributions">attributions</a>
-                </div>
-            </div> 
+    <!-- Navigation Bar -->
+		<div class="navbar">
+			<div class="nav-bar-logo">
+				<a href="https://2021.igem.org/Team:Greece_United" class="active">
+					<div class="logo-header"></div>
+				</a>
+			</div>
+	
+			<div class="right-navbar" id="navbarID">
+				<ul id="nav">
+					<li><a href="https://2021.igem.org/Team:Greece_United">HOME</a></li>
 
-    </nav>
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+							</div>
+						</div> 
+					</li>
+
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                            </div>
+						</div> 
+					</li>
+
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/App">APPLICATION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/GeneticCircuit">GENETIC CIRCUIT</a>
+                            </div>
+						</div> 
+					</li>
+                    
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/HumanPractices'">HUMAN PRACTICES</a>
+							</button>
+							<div class="dropdown-content">
+                                <a href="https://2021.igem.org/Team:Greece_United/HumanPractices">HUMAN PRACTICES</a>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Integrated">INTEGRATED</a>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Inclucivity">INCLUCIVITY</a>
+                            </div>
+						</div> 
+					</li>
+
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreunership'">FINANCES</a>
+							</button>
+							<div class="dropdown-content">
+								<a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">ENTERPRENEURSHIP</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            </div>
+						</div> 
+					</li>
+
+					<li><a href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a></li>
+
+                    <li>
+						<div class="dropdown">
+							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+							</button>
+							<div class="dropdown-content">
+                                <a href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+                            </div>
+						</div> 
+					</li>
+
+				</ul>
+				
+			</div>
+		</div>
 </body>
 </html>
