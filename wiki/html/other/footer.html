@@ -5,6 +5,8 @@
 
         <!-- social media instructions -->
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+
 
         <!-- page title -->
         <title>iGEM Greece_United 2021</title>
@@ -12,7 +14,19 @@
     </head>
 
     <style>
-         .vertical-line {
+
+        html, body{
+            height:100%;
+            padding:0px;
+            margin:0px;
+
+            font-family: 'Lato', sans-serif;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .vertical-line {
             border-left:  1.7px solid #E8E8E8;
             opacity: 50%;
 
@@ -284,16 +298,6 @@
             position:relative;
         }
 
-        /* .col h4::before{
-            content:'';
-            position:flex;
-            left:0;
-            bottom:-10px;
-            height: 2px;
-            box-sizing: border-box;
-            width: 50px;
-        } */
-
         .col ul li:not(:last-child){
             margin-bottom: 10px;
         }
@@ -323,6 +327,31 @@
         display:flex;
         flex-wrap:wrap;
         }
+
+        .centered-container{
+  padding-right: 140px;
+  padding-left: 140px;
+  align-self: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  text-align: center;
+}
+.row-imgs {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.row-imgs > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
         
     </style>
 
@@ -364,20 +393,33 @@
                     <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a> -->
 
                 </div>
+            </div>
 
-                
                 <div class="col">
-                    <h4>Our Sponsors</h4>
-                    <div class="footer_sponsors">
-                        <div> 
-                        <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:450%; margin: -120px 0 0 -50px;"></a>
-                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/5/50/T--Greece_United--deloite.png" style="width:300%; margin: -100px 0 0 100px;"></a>
-                        <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:130%; margin: 210px 80px 0 -180px;"></a>
-                        <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:200%; margin: 210px 0 0 -80px;"></a>
+                    
+                    <div class="centered-container">
+                        <ul class="row-imgs">
+                            
+                            
+
+                            <div class="footer_sponsors">
+                                <div> 
+                                    <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:200%; margin-left: calc((100%)); "></a>
+                               
+                                <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:300%; margin: -100px 0 100px;"></a>
+                                <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:130%; margin: 210px 80px 120px 0;"></a>
+                                <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:200%; margin: 210px 0 100px 0px;"></a>
+                                </div>
+                            </div>
+            
+                        </ul>
                     </div>
+
+                    
+                   
                     
                 </div>
-            </div>
+            
         </footer>
     </body>
 </html>
