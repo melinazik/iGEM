@@ -1,38 +1,289 @@
-.row{
+
+html, body{
+    height:100%;
+    padding:0px;
+    margin:0px;
+
+    font-family: 'Lato', sans-serif;
+}
+
+.vertical-line {
+    border-left:  1.7px solid #E8E8E8;
+    opacity: 50%;
+
+    height: 300px;
+    margin-left: calc(100%/2.7);
+    top: 400px;;
+    position: absolute;
+}
+
+.footer hr{
+    background-color: #E8E8E8;
+    border: 1.5px solid #E8E8E8;
+    opacity: 50%;
+    width: calc(100%/1.5);
+}
+
+.footer{ 
+    width:100%; 
+    height:800px; 
+    margin:auto;
+    margin-top: 3%;
+    background:#002060;
+} 
+
+.footer ul{
+    margin:4%  39%;
+    text-align:right;
     display:flex;
-    flex-wrap:wrap;
-  }
-  
-  .col{
+    position:absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.footer ul li{
+    list-style: none;
+    margin-right: 10%;
+}
+
+.footer h4{
+    text-align: center;
+    background-color:none;
+    position: absolute;
+    margin: 120px 0 0 36%;
+    font-size: 12px;
+}
+
+.footer ul li a{
+    text-align: center;
+    line-height: 70px;
+    font-size:30px;
+    margin:0 10px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.footer ul li a .fa{
+    position: relative;
+    color: white;
+    transition: 0.5s;
+}
+
+/* Facebook social icon */
+.facebook a:hover .fa{
+    color: #3b5998;
+    transform: rotateY(360deg);
+}
+
+.facebook a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #3b5998;
+    transition:0.5s;
+    z-index: 2;
+}
+
+
+.facebook a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #3b5998;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* Twitter social icon */
+.twitter a:hover .fa{
+    color:  #55acee;
+    transform: rotateY(360deg);
+}
+
+.twitter a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background:  #55acee;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* Instagram social icon */
+.instagram a:hover .fa{
+    color: #C32AA3;
+    transform: rotateY(360deg);
+}
+
+.instagram a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #C32AA3;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* LinkedIn social icon */
+.linkedin a:hover .fa{
+    color: #0e76a8;
+    transform: rotateY(360deg);
+}
+
+.linkedin a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #0e76a8;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* YouTube social icon */
+.youtube a:hover .fa{
+    color: #c4302b;
+    transform: rotateY(360deg);
+}
+
+.youtube a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #c4302b;
+    transition:0.5s;
+    z-index: 2;
+}     
+
+/* Mail social icon */
+.mail a:hover .fa{
+    color: #dd4b39;
+    transform: rotateY(360deg);
+}
+
+.mail a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #dd4b39;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* GitHub social icon */
+.github a:hover .fa{
+    color: #171515;
+    transform: rotateY(360deg);
+}
+
+.github a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #171515;
+    transition:0.5s;
+    z-index: 2;
+}
+
+/* Website icon */
+.website a:hover .fa{
+    color: #949794;
+    transform: rotateY(360deg);
+}
+
+.website a:before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    background: #949794;
+    transition:0.5s;
+    z-index: 2;
+}
+
+
+.footer_sponsors {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 0%;
+}
+
+.footer_sponsors div {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.footer_sponsors img {
+    width: 60%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.75;
+
+}
+
+.footer_sponsors img:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.logo_container{
+    width: 45%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.logo_container img{
+    width: 400px;
+    height: auto;
+}
+
+.logo-footer {
+    position: relative;
+    height: 70px;
+    width: 90px;
+    background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
+    background-size: cover;
+    padding-bottom: 120px;
+    padding-right: 80px;
+    margin-left: calc(100%/1.5);
+}
+
+.col{
     width:30%;
-    padding: 0 15px;
-  }
-  
-  .col h4{
-    font-size:18px;
+    padding-right: 250px;
+}
+
+.col h4{
+    font-size:24px;
     color:#ffffff;
     text-transform: capitalize;
-    margin-bottom: 35px;
+    margin-bottom: 70px;
+    margin-top: -70px;
     font-weight: 500;
     position:relative;
-  }
-  
-  .col h4::before{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    background-color:rgb(199, 169, 190);
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px;
-  }
-  
-  .col ul li:not(:last-child){
+}
+
+.col ul li:not(:last-child){
     margin-bottom: 10px;
-  }
-  
-  .col ul li span{
+}
+
+.col ul li span{
     font-size: 16px;
     text-transform: capitalize;
     color: #ffffff;
@@ -40,352 +291,45 @@
     font-weight: 300;
     color: #bbbbbb;
     display: block;
-  }
-
-#footerWrapper {
-    width: 100%;
-    border-top: solid 25px #07e250;
-    font-family: 'montserrat-light', sans-serif;
-    ;
-    text-transform: uppercase;
-    background-color: #fafafc;
-}
-
-#footerWrapper .container {
-    width: unset
-}
-
-#upperFooter {
-    height: fit-content;
-    background-color: #9af136;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#upperFooter #contacts {
-    max-width: 45vw;
-    height: 100%
-}
-
-#upperFooter #contacts #contactsWrapper {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    justify-content: center;
-    height: 100%
-}
-
-#upperFooter #contacts #contactsWrapper #contactus {
-    padding-right: 10px
-}
-
-#upperFooter #contacts #image-placeholder {
-    height: 9vw;
-    width: 9vw;
-    border-right: solid 1px #121212;
-    padding-right: 30px;
 }
 
 
-#upperFooter #contacts #image-placeholder img {
-    height: 100%;
-    width: 100%
+.footer-links{
+    color: #bbbbbb;
+    text-decoration:none;
+    z-index: 1000;
 }
 
-#upperFooter #contacts #team-info {
-    display: flex;
-    height: 100%;
-    font-size: 0.8em;
-    padding-left: 30px;
-    justify-content: space-around;
-    align-items: center;
+.footer-links:hover{
+    color: #ffffff;
 }
 
-#upperFooter #contacts #team-info h3 {
-    margin: 0;
-    margin-bottom: 10px;
-    align-items: left; 
+.row{
+    display:flex;
+    flex-wrap:wrap;
 }
 
-#upperFooter #contacts a {
-    font-size: 0.9em;
-    text-transform: initial;
-    font-family: Lato, sans-serif;
-    text-decoration: none;
-    color: #121212;
-    line-height: 2em;
-    padding-right: 0px;
-}
-
-#upperFooter #sponsors {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    max-width: 55vw
-}
-
-#upperFooter #sponsors #mainSponsors {
-    display:grid;
-    grid-template-columns: 2fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px 0px;
-}
-
-#upperFooter #sponsors #otherSponsors {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr 2fr;
-    gap: 10px 0px;
-}
-
-#lowerFooter {
-    color: #fafafc;
-    height: 20vh;
-    box-sizing: border-box;
-    background-color: #121212;
-}
-
-#lowerFooter #navigation {
-    background-color: #121212;
-    display: flex;
-    justify-content: space-around
-}
-
-#lowerFooter ul {
-    list-style: none;
-    padding-inline-start: 0;
-    margin: 0;
-}
-
-#lowerFooter h2 {
-    padding-bottom: 20px;
-    font-family: 'montserrat-bold', sans-serif;
-}
-
-#lowerFooter #navigation {
-    padding: 40px;
-    font-size: smaller
-}
-
-#footerWrapper #lowerFooter a {
-    text-decoration: none;
-    transition-duration: 0.2s;
-    color: #fafafc;
-    text-transform: capitalize;
-    font-weight: 100;
-    line-height: 2em
-}
-
-#footerWrapper #lowerFooter a:active,
-#footerWrapper #lowerFooter a:focus,
-#footerWrapper #lowerFooter a:visited {
-    color: #fafafc
-}
-
-#footerWrapper #lowerFooter a:hover {
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: none
-}
-
-#projectList {
-    display: grid;
+.centered-container{
+    padding-right: 140px;
+    padding-left: 140px;
+    align-self: center;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: column;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 10px;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    text-align: center;
+}
+.row-imgs {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
 }
 
-#mainSponsors img {
-    max-width: 16vw;
-}
-
-.otherS img {
-    max-width: 10vw;
-    height: auto;
-}
-
-.links-icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.links-icons svg {
-    fill: #121212;
-    width: 2em;
-    padding-right: 5px
-}
-
-#upperFooter #sponsors #othSWrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px 0px;
-}
-
-@media (max-width:768px) {
-    #mainSponsors img {
-        max-width: 13vw;
-        height: auto;
-    }
-    #upperFooter #contacts {
-        max-width: 40vw;
-    }
-    #upperFooter #sponsors {
-        max-width: 60vw;
-    }
-    #otherSponsors img {
-        max-width: 10vw;
-        height: auto;
-    }
-    #upperFooter #sponsors #mainSponsors {
-        max-width: 100%
-    }
-    #upperFooter #sponsors #othsWrap {
-        max-width: 100%
-    }
-    #upperFooter #contacts #team-info {
-        font-size: 0.7em;
-        padding-left: 15px;
-        margin-left: 15px
-    }
-    #lowerFooter h2 {
-        padding-bottom: 10px;
-        font-size: 0.9em
-    }
-    #lowerFooter ul {
-        font-size: 0.8em
-    }
-    .links-icons svg {
-        width: 1.5em;
-    }
-    #upperFooter #contacts #team-info h3 {
-        font-size: 0.8em;
-    }
-#upperFooter #contacts #image-placeholder {
-    border-right: solid 1px #fafafc;
-}
-}
-
-@media (max-width:420px) {
-    #upperFooter {
-        display: block;
-        height: fit-content;
-        padding: 0;
-        transform: rotate(-180deg);
-    }
-    #upperFooter #sponsors {
-        display: block;
-        padding-left: 0;
-        max-width: none
-    }
-    #upperFooter #sponsors #mainSponsors {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        max-width: none
-    }
-    #mainSponsors img {
-        max-width: 40vw;
-        height: auto;
-    }
-    #otherSponsors img {
-        max-width: 30vw;
-        height: auto;
-    }
-    #upperFooter #sponsors #otherSponsors {
-        display: block
-    }
-    #upperFooter #sponsors #otherSponsors .sponsors-row {
-        display: flex
-    }
-    .mainS {
-        margin: 0;
-    }
-    #upperFooter #sponsors #othSWrap {
-        width: fit-content;
-        margin: 0 auto;
-        max-width: none;
-        padding-bottom: 30px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-    .otherS {
-        justify-content: center
-    }
-    .otherS img {
-        max-width: 25vw;
-    }
-    #upperFooter #contacts {
-        background-color: #6281ef;
-        height: 10em;
-        max-width: 100vw;
-        display: flex;
-        justify-content: center
-    }
-    #upperFooter #contacts #contactsWrapper {
-        width: 80%
-    }
-    #lowerFooter {
-        height: fit-content;
-        transform: rotate(-180deg);
-        border-top: solid 25px #6281ef;
-    }
-    #lowerFooter #navigation {
-        display: block;
-    }
-    #footerWrapper {
-        border: none;
-        transform: rotate(180deg);
-    }
-    #lowerFooter ul {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.2s ease-out;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    #lowerFooter #navigation h2 {
-        cursor: pointer;
-        transition: 0.4s;
-        font-size: 1.6em
-    }
-    #lowerFooter ul li {
-        font-size: 1.5em
-    }
-    #upperFooter #contacts #team-info h3 {
-        color: #fafafc;
-        font-size: 1em
-    }
-    #upperFooter #contacts #image-placeholder {
-        height: 20vw;
-        width: 20vw;
-    }
-    .links-icons svg {
-        fill: #fcfcfa
-    }
-}
-
-@media (max-width:300px) {
-    #upperFooter #contacts #team-info h3 {
-        font-size: 0.7em
-    }
-    #upperFooter #contacts #team-info {
-        border: none
-    }
-    #upperFooter #contacts #image-placeholder {
-        max-width: 20vw;
-        max-height: 20vw
-    }
-    .links-icons svg {
-        max-height: 14px;
-    }
-    #team-info {
-        max-width: 40vw
-    }
+.row-imgs > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
 }
