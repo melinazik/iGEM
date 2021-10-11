@@ -1025,7 +1025,6 @@ input[type=radio]:checked ~ .option {
   width: 250px;
   height: 200px;
   position: absolute;
-  border-radius: 30%;
 }
 
 .image-caption {
@@ -1039,6 +1038,7 @@ input[type=radio]:checked ~ .option {
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   -ms-transition: all 300ms ease-in-out;
+  border-radius: 15%;
 }
 
 .image-caption h1 {
