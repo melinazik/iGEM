@@ -14,24 +14,21 @@ svg{
 div {
     position: relative;
 }
-p {
-    z-index: 10;
-    position: relative;
-    width: 300px;
-    text-align: justify;
-}
+
 
 .p1{
     z-index: 10;
     position: relative;
-    width: 300px;
+    width: 600px;
     text-align: justify;
-    left: 1000px;
+    left: 100px;
+    padding-top: 200px;
+    font-size: 24px;
 }
 
 
 body{
-    background: linear-gradient(#CEDDEF, #002060);
+    background: linear-gradient(#B7E0FF, #002060);
     background-size: 100% 1000vh;
     font-family: 'Lato', sans-serif;
 
