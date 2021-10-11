@@ -31,8 +31,10 @@ p {
 
 
 body{
-    background: linear-gradient(#002060, #CEDDEF);
+    background: linear-gradient(#CEDDEF, #002060);
     background-size: 100% 1000vh;
+    font-family: 'Lato', sans-serif;
+
 
 }
 
