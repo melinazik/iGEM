@@ -23,10 +23,10 @@
         border-radius: 30%;
         }
 
+
         #BacktoTop:hover {
         background-color: #002060;
         }
-
         /* progress bar & in page menu */
         #fixedOverlay {
         position: fixed;
@@ -279,9 +279,9 @@
             font-family: "lato-regular";
         }
         
-        /* .contentBlock {
+        .contentBlock {
             max-width: 800px;
-        } */
+        }
         
         
 
@@ -504,7 +504,7 @@
 
         .contentBlock {
         width: 800vw;
-		max-width: 900px;
+        max-width: 700px;
         float: right;
         display: flex;
         flex-direction: column;
@@ -517,9 +517,9 @@
         @media (max-width: 800px) {
         .contentBlock {
             margin-right: unset;
-            width: 100%;
+            width: 90%;
             box-sizing: border-box;
-            max-width: 800px;
+            max-width: 650px;
         }
         }
 
@@ -923,540 +923,346 @@
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
 
-	<style>
-		
-		html, body{
-			height:100%;
-			padding:0px;
-			margin:0px;
+        <style>
+            
+            html, body{
+                height:100%;
+                padding:0px;
+                margin:0px;
 
-			font-family: 'Lato', sans-serif;
-		}
+                font-family: 'Lato', sans-serif;
+            }
 
-		.vertical-line {
-			border-left:  1.7px solid #E8E8E8;
-			opacity: 50%;
+            .vertical-line {
+                border-left:  1.7px solid #E8E8E8;
+                opacity: 50%;
 
-			height: 300px;
-			margin-left: calc(100%/2.7);
-			top: 400px;;
-			position: absolute;
-		}
+                height: 300px;
+                margin-left: calc(100%/2.7);
+                top: 400px;;
+                position: absolute;
+            }
 
-		.footer hr{
-			background-color: #E8E8E8;
-			border: 1.5px solid #E8E8E8;
-			opacity: 50%;
-			width: calc(100%/1.5);
-		}
+            .footer hr{
+                background-color: #E8E8E8;
+                border: 1.5px solid #E8E8E8;
+                opacity: 50%;
+                width: calc(100%/1.5);
+            }
 
-		.footer{ 
-			width:100%; 
-			height:800px; 
-			margin:auto;
-			margin-top: 3%;
-			background:#002060;
-		} 
+            .footer{ 
+                width:100%; 
+                height:800px; 
+                margin:auto;
+                margin-top: 3%;
+                background:#002060;
+            } 
 
-		.footer ul{
-			margin:4%  39%;
-			text-align:right;
-			display:flex;
-			position:absolute;
-			transform: translate(-50%, -50%);
-			color: white;
-		}
+            .footer ul{
+                margin:4%  39%;
+                text-align:right;
+                display:flex;
+                position:absolute;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
 
-		.footer ul li{
-			list-style: none;
-			margin-right: 10%;
-		}
+            .footer ul li{
+                list-style: none;
+                margin-right: 10%;
+            }
 
-		.footer h4{
-			text-align: center;
-			background-color:none;
-			position: absolute;
-			margin: 120px 0 0 36%;
-			font-size: 12px;
-		}
+            .footer h4{
+                text-align: center;
+                background-color:none;
+                position: absolute;
+                margin: 120px 0 0 36%;
+                font-size: 12px;
+            }
 
-		.footer ul li a{
-			text-align: center;
-			line-height: 70px;
-			font-size:30px;
-			margin:0 10px;
-			display: block;
-			position: relative;
-			z-index: 1;
-		}
+            .footer ul li a{
+                text-align: center;
+                line-height: 70px;
+                font-size:30px;
+                margin:0 10px;
+                display: block;
+                position: relative;
+                z-index: 1;
+            }
 
-		.footer ul li a .fa{
-			position: relative;
-			color: white;
-			transition: 0.5s;
-		}
+            .footer ul li a .fa{
+                position: relative;
+                color: white;
+                transition: 0.5s;
+            }
 
-		/* Facebook social icon */
-		.facebook a:hover .fa{
-			color: #3b5998;
-			transform: rotateY(360deg);
-		}
+            /* Facebook social icon */
+            .facebook a:hover .fa{
+                color: #3b5998;
+                transform: rotateY(360deg);
+            }
 
-		.facebook a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #3b5998;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-
-		.facebook a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #3b5998;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Twitter social icon */
-		.twitter a:hover .fa{
-			color:  #55acee;
-			transform: rotateY(360deg);
-		}
-
-		.twitter a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background:  #55acee;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Instagram social icon */
-		.instagram a:hover .fa{
-			color: #C32AA3;
-			transform: rotateY(360deg);
-		}
-
-		.instagram a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #C32AA3;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* LinkedIn social icon */
-		.linkedin a:hover .fa{
-			color: #0e76a8;
-			transform: rotateY(360deg);
-		}
-
-		.linkedin a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #0e76a8;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* YouTube social icon */
-		.youtube a:hover .fa{
-			color: #c4302b;
-			transform: rotateY(360deg);
-		}
-
-		.youtube a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #c4302b;
-			transition:0.5s;
-			z-index: 2;
-		}     
-
-		/* Mail social icon */
-		.mail a:hover .fa{
-			color: #dd4b39;
-			transform: rotateY(360deg);
-		}
-
-		.mail a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #dd4b39;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* GitHub social icon */
-		.github a:hover .fa{
-			color: #171515;
-			transform: rotateY(360deg);
-		}
-
-		.github a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #171515;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Website icon */
-		.website a:hover .fa{
-			color: #949794;
-			transform: rotateY(360deg);
-		}
-
-		.website a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #949794;
-			transition:0.5s;
-			z-index: 2;
-		}
+            .facebook a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #3b5998;
+                transition:0.5s;
+                z-index: 2;
+            }
 
 
-		.footer_sponsors {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			bottom: 0%;
-		}
+            .facebook a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #3b5998;
+                transition:0.5s;
+                z-index: 2;
+            }
 
-		.footer_sponsors div {
-			display: flex;
-			flex: 1;
-			justify-content: center;
-			align-items: center;
-			padding-left: 1%;
-			padding-right: 1%;
-		}
+            /* Twitter social icon */
+            .twitter a:hover .fa{
+                color:  #55acee;
+                transform: rotateY(360deg);
+            }
 
-		.footer_sponsors img {
-			width: 60%;
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(100%);
-			transition: all 0.3s ease-in-out;
-			opacity: 0.75;
+            .twitter a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background:  #55acee;
+                transition:0.5s;
+                z-index: 2;
+            }
 
-		}
+            /* Instagram social icon */
+            .instagram a:hover .fa{
+                color: #C32AA3;
+                transform: rotateY(360deg);
+            }
 
-		.footer_sponsors img:hover {
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(0%);
-			opacity: 1;
-		}
+            .instagram a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #C32AA3;
+                transition:0.5s;
+                z-index: 2;
+            }
 
-		.logo_container{
-			width: 45%;
-			float: left;
-			height: 100%;
-			display: block;
-		}
+            /* LinkedIn social icon */
+            .linkedin a:hover .fa{
+                color: #0e76a8;
+                transform: rotateY(360deg);
+            }
 
-		.logo_container img{
-			width: 400px;
-			height: auto;
-		}
+            .linkedin a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #0e76a8;
+                transition:0.5s;
+                z-index: 2;
+            }
 
-		.logo-footer {
-			position: relative;
-			height: 70px;
-			width: 90px;
-			background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
-			background-size: cover;
-			padding-bottom: 120px;
-			padding-right: 80px;
-			margin-left: calc(100%/1.5);
-		}
+            /* YouTube social icon */
+            .youtube a:hover .fa{
+                color: #c4302b;
+                transform: rotateY(360deg);
+            }
 
-		.col{
-			width:30%;
-			padding-right: 250px;
-		}
+            .youtube a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #c4302b;
+                transition:0.5s;
+                z-index: 2;
+            }     
 
-		.col h4{
-			font-size:24px;
-			color:#ffffff;
-			text-transform: capitalize;
-			margin-bottom: 70px;
-			margin-top: -70px;
-			font-weight: 500;
-			position:relative;
-		}
+            /* Mail social icon */
+            .mail a:hover .fa{
+                color: #dd4b39;
+                transform: rotateY(360deg);
+            }
 
-		.col ul li:not(:last-child){
-			margin-bottom: 10px;
-		}
+            .mail a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #dd4b39;
+                transition:0.5s;
+                z-index: 2;
+            }
 
-		.col ul li span{
-			font-size: 16px;
-			text-transform: capitalize;
-			color: #ffffff;
-			text-decoration:none;
-			font-weight: 300;
-			color: #bbbbbb;
-			display: block;
-		}
+            /* GitHub social icon */
+            .github a:hover .fa{
+                color: #171515;
+                transform: rotateY(360deg);
+            }
+
+            .github a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #171515;
+                transition:0.5s;
+                z-index: 2;
+            }
+
+            /* Website icon */
+            .website a:hover .fa{
+                color: #949794;
+                transform: rotateY(360deg);
+            }
+
+            .website a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #949794;
+                transition:0.5s;
+                z-index: 2;
+            }
 
 
-		.footer-links{
-			color: #bbbbbb;
-			text-decoration:none;
-			z-index: 1000;
-		}
+            .footer_sponsors {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                bottom: 0%;
+            }
 
-		.footer-links:hover{
-			color: #ffffff;
-		}
+            .footer_sponsors div {
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                align-items: center;
+                padding-left: 1%;
+                padding-right: 1%;
+            }
 
-		.row{
-			display:flex;
-			flex-wrap:wrap;
-		}
+            .footer_sponsors img {
+                width: 60%;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                transition: all 0.3s ease-in-out;
+                opacity: 0.75;
 
-		.centered-container{
-			padding-right: 140px;
-			padding-left: 140px;
-			align-self: center;
-			grid-auto-columns: 1fr;
-			grid-column-gap: 16px;
-			grid-row-gap: 16px;
-			-ms-grid-columns: 1fr 1fr;
-			grid-template-columns: 1fr 1fr;
-			-ms-grid-rows: auto auto;
-			grid-template-rows: auto auto;
-			text-align: center;
-		}
-		.row-imgs {
-			padding-left: 0;
-			margin-left: -5px;
-			list-style: none;
-		}
+            }
 
-		.row-imgs > li {
-			display: inline-block;
-			padding-right: 5px;
-			padding-left: 5px;
-		}
-	</style>
+            .footer_sponsors img:hover {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+
+            .logo_container{
+                width: 45%;
+                float: left;
+                height: 100%;
+                display: block;
+            }
+
+            .logo_container img{
+                width: 400px;
+                height: auto;
+            }
+
+            .logo-footer {
+                position: relative;
+                height: 70px;
+                width: 90px;
+                background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
+                background-size: cover;
+                padding-bottom: 120px;
+                padding-right: 80px;
+                margin-left: calc(100%/1.5);
+            }
+
+            .col{
+                width:30%;
+                padding-right: 250px;
+            }
+
+            .col h4{
+                font-size:24px;
+                color:#ffffff;
+                text-transform: capitalize;
+                margin-bottom: 70px;
+                margin-top: -70px;
+                font-weight: 500;
+                position:relative;
+            }
+
+            .col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+
+            .col ul li span{
+                font-size: 16px;
+                text-transform: capitalize;
+                color: #ffffff;
+                text-decoration:none;
+                font-weight: 300;
+                color: #bbbbbb;
+                display: block;
+            }
+
+
+            .footer-links{
+                color: #bbbbbb;
+                text-decoration:none;
+                z-index: 1000;
+            }
+
+            .footer-links:hover{
+                color: #ffffff;
+            }
+
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+
+            .centered-container{
+                padding-right: 140px;
+                padding-left: 140px;
+                align-self: center;
+                grid-auto-columns: 1fr;
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+                -ms-grid-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                -ms-grid-rows: auto auto;
+                grid-template-rows: auto auto;
+                text-align: center;
+            }
+            .row-imgs {
+                padding-left: 0;
+                margin-left: -5px;
+                list-style: none;
+            }
+
+            .row-imgs > li {
+                display: inline-block;
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+        </style>
         
         <!-- page title -->
-        <title>Inclucivity - iGEM NOUS</title>
-
-	<!-- Slidshow -->
-	<style>
-		* {box-sizing:border-box}
-
-		/* Slideshow container */
-		.slideshow-container3 {
-		max-width: 1000px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		}
-
-		.slideshow-container4 {
-		height: 700px;
-		width: 760px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		display: table-cell;
-		vertical-align:middle;
-		}
-
-		.slideshow-container, .slideshow-container2{
-		height: 800px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		display: table-cell;
-		vertical-align:middle;
-
-		}
-
-		.slideshow-containerWhite {
-		max-width: 1000px;
-		position: relative;
-		margin: auto;
-		background-color: var(--background);
-		text-align: center;
-		}
-
-		/* Hide the images by default */
-		.mySlides, .mySlides2, .mySlides3 {
-		display: none; 
-		}
-
-
-		/* Next & previous buttons */
-		.prev, .next, .prev2, .next2, .prev3, .next3 {
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		width: auto;
-		margin-top: -22px;
-		padding: 16px;
-		color: white;
-		font-weight: bold;
-		font-size: 18px;
-		transition: 0.6s ease;
-		user-select: none;
-		}
-
-		.prevBlack, .nextBlack {
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		width: auto;
-		margin-top: -22px;
-		padding: 16px;
-		color: black;
-		font-weight: bold;
-		font-size: 18px;
-		transition: 0.6s ease;
-		user-select: none;
-		}
-
-		.prev, .prev2, .prev3, .prevBlack {
-		left: 0;
-		border-radius: 0 3px 3px 0;
-		}
-
-		/* Position the "next button" to the right */
-		.next, .next2, .next3, .nextBlack {
-		right: 0;
-		border-radius: 3px 0 0 3px;
-		}
-
-		/* On hover, add a black background color with a little bit see-through */
-		.prev:hover, .next:hover, .prev2:hover, .next2:hover, .prev3:hover, .next3:hover {
-		background-color: rgba(0,0,0,0.7);
-		}
-
-		.prevBlack:hover, .nextBlack:hover {
-		background-color: rgba(150,150,150,0.7);
-		}
-
-		/* Caption text */
-		.text {
-		color: white;
-		font-size: 15px;
-		padding: 8px 12px;
-		position: absolute;
-		bottom: 8px;
-		width: 100%;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.5);
-		}
-
-		.textBee {
-		color: white;
-		font-size: 15px;
-		padding: 8px 12px;
-		position: absolute;
-		bottom: 8px;
-		width: 100%;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.8);
-		}
-
-
-
-		/* Number text (1/3 etc) */
-		.numbertext, .numbertext2, .numbertext3  {
-		color: #f2f2f2;
-		font-size: 12px;
-		padding: 8px 12px;
-		position: absolute;
-		top: 0;
-		}
-
-		.numbertext4  {
-		color: black;
-		font-size: 12px;
-		padding: 8px 12px;
-		position: absolute;
-		top: 0;
-		}
-
-		/* The dots/bullets/indicators */
-		.dot, .dot2, .dot3 {
-		cursor: pointer;
-		height: 15px;
-		width: 15px;
-		margin: 0 2px;
-		background-color: #bbb;
-		border-radius: 50%;
-		display: inline-block;
-		transition: background-color 0.6s ease;
-		}
-
-		.active, .dot:hover, .active2, .dot2:hover, .active3, .dot3:hover  {
-		background-color: #717171;
-		}
-
-		/* Fading animation */
-		.fade, .fade2, .fade3 {
-		-webkit-animation-name: fade;
-		-webkit-animation-duration: 1.5s;
-		animation-name: fade;
-		animation-duration: 1.5s;
-		}
-
-		@-webkit-keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@-webkit-keyframes fade2 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade2 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-		@-webkit-keyframes fade3 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade3 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-	</style>
+        <title>iGEM Greece_United 2021</title>
 </head>
 
   <header class="circles" id="banner">
@@ -1626,22 +1432,19 @@
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading1">Bio - Girls</a>
+                    <a href="#heading1">title 1</a>
                 </li>
                 <li class="active">
                     <div></div>
-                    <a href="#heading2">Biology Comic</a>
+                    <a href="#heading2">title 2</a>
                 </li>
-				<li class="active">
-                    <div></div>
-                    <a href="#heading3">expARTiments</a>
-                </li>
+                
             </ul>
         </div>
         <input id="headingTitleText" type="hidden" value="Parts">
             <div class="contentBlock">
                 <div class="content">
-                    <div class="h3" id="heading1" tabindex="-1" style="outline: none;">Bio - Girls</div>
+                    <div class="h3" id="heading1" tabindex="-1" style="outline: none;">Tittle 1</div>
                     <h1>Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry. Lorem 
                         Ipsum has been the industry's standard dummy
@@ -1664,123 +1467,11 @@
                             text ever since the 1500s,
                             </h1>
 
-                    <div class="h3" id="heading2" tabindex="-1" style="outline: none;">Comic</div>
-                    <h1> 
-						“The Adventures of Little Aaron” is a little 10-page comic book about Aaron, a kid that is curious about anatomy and biology, and Nous, the hero who is there to help him learn. This little comic book is an attempt to interest children all over the world in the field of synthetic biology using cartoon characters with simple and colorful designs, as well as simple interactions and explanations, so that they can be appealing to a younger audience.  
-					</h1>
-					<div class="h3" id="heading3" tabindex="-1" style="outline: none;">expARTiments</div>
-                    <h1>
-						There is the common belief that there are two sides to each brain: right and left. The right one 
-						is governed by logic while the left is the artistic one. This stereotype enslaves scientific minds 
-						and keeps them detached from their artistic self, limits them to their field of study, lets them 
-						believe that the creative world of arts is not for them to touch. Blocking any group of people, in 
-						this case artists, from actual and positive interaction with science, is not in the best interest of 
-						anyone. So, we have realized this to be a problem.
-						Due to the requirements of the iGEM Competition, our team includes students from many different
-						 departments. Most of them 
-						come from a scientific background while we do have a member that actually studies art. Through our cooperation, 
-						we realized
-						how false this stereotype is, and how every member thinks alike, using their logical and artistic thinking. 
-						Having realized that, we felt we had freed our minds and upgraded our way of thinking. We felt the need to communicate 
-						this 
-						to other teams. Our goal now more: let the world know science and art are not and should not be seen as completely
-						 different
-						fields for the better good. 
-
-						We hoped to communicate that by calling out to other iGEM teams and inviting them to show their work with an artistic 
-						touch. 
-						This way we hoped to bring them to our realization, while inviting people from art departments to engage more 
-						systematically 
-						in the science side of a project. Everybody should be included in science, our artists and our artistic side of brains.
-						Our collaboration named expARTiments, involved the teams:    and we want to thank them a lot for this amazing collaboration. 
-						They sent us photos of their experiments, meetings, labs, that they found artistic in their own way and we created a collage 
-						to show every little moment in a big, meaningful picture.
-					</h1>
-					</br>
-					<img scr="https://2021.igem.org/wiki/images/8/83/T--Greece_United--epione.png" >
-
-					<h1>			
-						Here you can find the photos independently, including a description and credits.
-
-
-					SLIDESHOW
-
-						<!-- Slideshow container -->
-<div class="slideshow-containerWhite">
-
-	<!-- Full-width images with number and caption text-->
-	<div class="mySlides fade">
-	  <div class="numbertext4">1 / 7</div>
-	  <img src="https://2021.igem.org/wiki/images/6/63/T--Greece_United--logo-og.jpg" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>Logo igem nous</strong> - Invasive species in France, very efficient predator and very protective about its nest. Contrary to collective thoughts, it is not more dangerous for human than its European cousin. However, its nest hosts three times more individuals than its cousin's nest. Accordingly, the colony needs more food and may unbalance the environment by its predation efficiency and because it has no predator. Its presence stresses bees, stop them going out to supply the hive and lead them to starve during winter.</div>
-	</div>
-  
-   <div class="mySlides fade">
-	  <div class="numbertext4">2 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/5/56/T--Poitiers--abeille.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The honey bee</strong> - Principal pollinator of the environment, its action is vital to most of habitats. Without these little fellows, we may lost until 80% of our plants. They have the same venom as the other Hymenoptera but avoid to sting because they die if they do. </div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">3 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/c/c8/T--Poitiers--frelon_européen.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The European hornet</strong> - Natural predator of a lot of insects in France, which is useful to control populations. It also helps in cleaning waste and carcass. Can be agressive, but it's not dangerous to non-allergic people if alone.</div>
-	</div>
-  
-	<div class="mySlides fade">
-	  <div class="numbertext4">4 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/e/e6/T--Poitiers--bourdon.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The bumblebee</strong> - Major pollinator insect, peaceful and often trapped because of sweet baits.</div>
-	</div>
-	
-	<div class="mySlides fade">
-	  <div class="numbertext4">5 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/1/1e/T--Poitiers--guêpe_européenne.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The European wasp</strong> - Very polyvalent species, predator, pollinator and waste cleaner, the wasp is essential to our environment. Its venom is the same as other Hymenoptera and is only dangerous to allergic people.</div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">6 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/d/d2/T--Poitiers--papillons_triple.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The butterfly</strong> - Very good pollinator, this insect is really sensitive to climate conditions changes. Most of the species present patterns on their wings to intimidate predators.</div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">7 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/1/1e/T--Poitiers--mouche.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The fly</strong> - One of the most useful insect in the environment, they clean it day after day from any waste. A lot of species are also pollinators, but on other plant species than honey bees; they don't have the same tastes.</div>
-	</div>
-	  
-  
-	<!-- Next and previous buttons -->
-	<a class="prevBlack" onclick="plusSlides(-1)">&#10094;</a>
-	<a class="nextBlack" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-	<span class="dot" onclick="currentSlide(1)"></span>
-	<span class="dot" onclick="currentSlide(2)"></span>
-	<span class="dot" onclick="currentSlide(3)"></span>
-	<span class="dot" onclick="currentSlide(4)"></span>
-	<span class="dot" onclick="currentSlide(5)"></span>
-	<span class="dot" onclick="currentSlide(6)"></span>
-	<span class="dot" onclick="currentSlide(7)"></span>
-  </div>
-  <br/><br/><br/>
-
-					All this proves that science and art are very similar to each other and should be combined 
-					at every chance. We know for a fact that science explains everything in our lives. So, the question
-					that remains is: <b>Does art imitate life, or does life imitate art?</b>
-
-					</h1>
-					
+                    <div class="h3" id="heading2" tabindex="-1" style="outline: none;">title 2</div>
+                    <h1> CONTENT 2</h1>
                 </div>
             </div>
     </main>
-
-
     <!-- Text and in page menu End -->
 
     <!-- Footer -->
@@ -1919,5 +1610,127 @@
     });
 </script>
 
+<!-- TRANSPARENT HEADER -->
+<script>
+    //ninivert, September 2016
 
+    /*VARIABLES*/
+
+    canvas = document.getElementsByTagName('canvas')[0];
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.getElementById('banner').clientHeight;
+
+
+    var ctx = canvas.getContext('2d');
+
+    var bone1 = new Image;
+    bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
+    var bone2 = new Image;
+    bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
+    var bone5 = new Image;
+    bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
+    var bone6 = new Image;
+    bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
+    var dna1 = new Image;
+    dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
+    var dna3 = new Image;
+    dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
+   
+
+    var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
+
+    //stocks possible character attributes
+    var layers = {
+        n: 4, //number of layers
+        letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
+        coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
+    };
+
+    /*End of options*/
+    var characters = [];
+    var mouseX = document.body.clientWidth / 2;
+    var mouseY = document.body.clientHeight / 2;
+
+    var rnd = {
+        btwn: function (min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        },
+        choose: function (list) {
+            return list[rnd.btwn(0, list.length)];
+        }
+    };
+
+
+
+    /*LETTER DRAWING*/
+
+    function drawBacteria(img) {
+        var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
+        var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
+        var dLargeur = img.Image.width * img.coef;
+        var dHauteur = img.Image.height * img.coef;
+        
+        ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
+    }
+
+    /*ANIMATION*/
+
+    document.onmousemove = function (ev) {
+        mouseX = ev.pageX - canvas.offsetLeft;
+        mouseY = ev.pageY - canvas.offsetTop;
+
+        if (window.requestAnimationFrame) {
+            requestAnimationFrame(update);
+        } else {
+            update();
+        }
+    };
+
+    function update() {
+        clear();
+        render();
+    }
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function render() {
+        for (var i = 0; i < characters.length; i++) {
+            drawBacteria(characters[i]);
+        }
+    }
+
+    function createLetters() {
+        for (var i = 0; i < layers.n; i++) {
+            for (var j = 0; j < layers.letters[i]; j++) {
+
+                bacteria = bact[rnd.btwn(0, 6)];
+                var img = bacteria;
+                
+                var x = rnd.btwn(0, canvas.width);
+                var y = rnd.btwn(0, canvas.height);
+
+                characters.push({
+                    Image: img,
+                    layer: i,
+                    coef: layers.coef[i],
+                    posX: x,
+                    posY: y
+                });
+
+            }
+        }
+    }
+    
+    createLetters();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
+        render()
+    }else
+    {
+        update();
+    }
+        
+</script>
+<!-- CREDITS TO IGEM POITIERS 2019 for header animation || https://2019.igem.org/Team:Poitiers -->
 </html>
