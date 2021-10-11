@@ -2,6 +2,7 @@ svg{
     z-index: -1;
     position: absolute;
 }
+
 #wrap {
     height:10vh;
 }
@@ -27,3 +28,12 @@ p {
     text-align: justify;
     left: 1000px;
 }
+
+
+body{
+    background: linear-gradient(#002060, #CEDDEF);
+    background-size: 100% 1000vh;
+
+}
+
+
