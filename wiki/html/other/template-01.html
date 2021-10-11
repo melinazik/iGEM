@@ -1,14 +1,37 @@
 <html>
+    <!-- CREDITS TO IGEM POITIERS 2019 || https://2019.igem.org/Team:Poitiers -->
     <!-- template with box around text-->
-    <!-- includes back to top button - progress bar - in page menu -->
+    <!-- includes back to top button - progress bar - in page menu - animation header-->
 <head>
     <link rel="stylesheet" type="text/css" href="../../css/template-01-style.css" />
+    <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
 </head>
+  <header class="circles" id="banner">
+               
+      <canvas style="position: absolute; z-index: 0"></canvas>
 
+       <div >
+          <div >
+
+              <div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
+          </div>
+      </div>
+  </header>
+  <style>
+      .circles{
+		background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
+		background-size:cover;		
+		margin:auto; 
+		width: auto;
+        height:200px;
+		background-repeat:no-repeat;
+	}
+  </style>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
+    
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
         </svg>
@@ -76,9 +99,10 @@
 </main>
 </body>
 
+<!-- back to top button -->
 <script>
-    // back to top button
-    var mybutton = document.getElementById("myBtn");
+    
+    var mybutton = document.getElementById("BacktoTop");
 
     window.onscroll = function() {scrollFunction()};
 
@@ -95,8 +119,10 @@
     document.documentElement.scrollTop = 0;
     }
 </script>
+
+<!-- progress bar & in page menu -->
 <script>
-    // progress bar & in page menu
+    
     var textSection = null;
     var navbar = document.getElementById("navbar");
 
@@ -148,8 +174,128 @@
         });
 
         document.getElementById("fixedOverlay").classList.add("project");
+</script>
 
+<!-- TRANSPARENT HEADER -->
+<script>
+    //ninivert, September 2016
+
+    /*VARIABLES*/
+
+    canvas = document.getElementsByTagName('canvas')[0];
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.getElementById('banner').clientHeight;
+
+
+    var ctx = canvas.getContext('2d');
+
+    var bone1 = new Image;
+    bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
+    var bone2 = new Image;
+    bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
+    var bone5 = new Image;
+    bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
+    var bone6 = new Image;
+    bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
+    var dna1 = new Image;
+    dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
+    var dna3 = new Image;
+    dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
+   
+
+    var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
+
+    //stocks possible character attributes
+    var layers = {
+        n: 4, //number of layers
+        letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
+        coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
+    };
+
+    /*End of options*/
+    var characters = [];
+    var mouseX = document.body.clientWidth / 2;
+    var mouseY = document.body.clientHeight / 2;
+
+    var rnd = {
+        btwn: function (min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        },
+        choose: function (list) {
+            return list[rnd.btwn(0, list.length)];
+        }
+    };
+
+
+
+    /*LETTER DRAWING*/
+
+    function drawBacteria(img) {
+        var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
+        var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
+        var dLargeur = img.Image.width * img.coef;
+        var dHauteur = img.Image.height * img.coef;
+        
+        ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
+    }
+
+    /*ANIMATION*/
+
+    document.onmousemove = function (ev) {
+        mouseX = ev.pageX - canvas.offsetLeft;
+        mouseY = ev.pageY - canvas.offsetTop;
+
+        if (window.requestAnimationFrame) {
+            requestAnimationFrame(update);
+        } else {
+            update();
+        }
+    };
+
+    function update() {
+        clear();
+        render();
+    }
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function render() {
+        for (var i = 0; i < characters.length; i++) {
+            drawBacteria(characters[i]);
+        }
+    }
+
+    function createLetters() {
+        for (var i = 0; i < layers.n; i++) {
+            for (var j = 0; j < layers.letters[i]; j++) {
+
+                bacteria = bact[rnd.btwn(0, 6)];
+                var img = bacteria;
+                
+                var x = rnd.btwn(0, canvas.width);
+                var y = rnd.btwn(0, canvas.height);
+
+                characters.push({
+                    Image: img,
+                    layer: i,
+                    coef: layers.coef[i],
+                    posX: x,
+                    posY: y
+                });
+
+            }
+        }
+    }
     
-
+    createLetters();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
+        render()
+    }else
+    {
+        update();
+    }
+        
 </script>
 </html>

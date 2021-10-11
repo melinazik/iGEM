@@ -1,10 +1,6 @@
 /* back to top */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
 
-#myBtn {
+#BacktoTop {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -13,16 +9,16 @@ body {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #002060;
+  background-color: #B8EBFF;
   color: white;
   cursor: pointer;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 30%;
 }
 
 
-#myBtn:hover {
-  background-color: #B8EBFF;
+#BacktoTop:hover {
+  background-color: #002060;
 }
 /* progress bar & in page menu */
 #fixedOverlay {
@@ -46,7 +42,7 @@ body {
 #fixedOverlay .scroll-wrapper .scroll-area #sidebar-wrapper #scrollbar-container {
   width: 30%;
   height: 30%;
-  background: rgba(98, 129, 239, 0.3);
+  background: #002060;
   border-radius: 10px;
   max-width: 7px;
 }
@@ -445,7 +441,7 @@ table, #HQ_page table {
 .sideBlock li {
   margin: 24px;
   list-style: none;
-  color: #3658cf;
+  color: #002060;
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -460,7 +456,7 @@ table, #HQ_page table {
   max-height: 15px;
   box-sizing: border-box;
   border: 1px solid;
-  color: #3658cf;
+  color: #002060;
   border-radius: 2px;
   transition: 0.5s;
   margin-right: 8px;
@@ -468,7 +464,7 @@ table, #HQ_page table {
   width: 10vh;
 }
 .sideBlock li.active div {
-  background-color: #3658cf;
+  background-color: #002060;
 }
 @media (max-width: 800px) {
   
