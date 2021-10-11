@@ -1,3 +1,30 @@
+/* back to top */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #002060;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+
+#myBtn:hover {
+  background-color: #B8EBFF;
+}
+/* progress bar & in page menu */
 #fixedOverlay {
   position: fixed;
   height: 100%;
@@ -64,9 +91,7 @@ div[bg=none] {
 #fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
   pointer-events: none;
 }
-#fixedOverlay[bg=none] #bubbles, #fixedOverlay[bg=dark] #bubbles {
-  pointer-events: none;
-}
+
 #fixedOverlay .scroll-wrapper {
   display: flex;
   position: fixed;
@@ -212,38 +237,9 @@ div[bg=none] {
   pointer-events: all;
   display: block;
 }
-#fixedOverlay #bubbles-to-close {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: none;
-}
-#fixedOverlay #bubbles-to-close[open=true] {
-  display: initial;
-  pointer-events: all;
-}
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-   #fixedOverlay #sidebar #sidebar-wrapper #indicateScroll h3 {
-    font-size: 0.65em;
-  }
-  #fixedOverlay nav #header h1 {
-    font-size: 18px;
-  }
-  #fixedOverlay nav #header .active #top-hamb {
-    transform: scale(0.7) translateY(17px) rotate(45deg);
-  }
-  #fixedOverlay nav #header .active #bottom-hamb {
-    transform: scale(0.7) translateY(-11px) rotate(-45deg);
-  }
-  #fixedOverlay nav #header .menu-wrapper .menu-hamb {
-    height: 3px;
-  }
-  #fixedOverlay nav #header .menu-wrapper .menu-short {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
+
+
 #fixedOverlay nav[onText=true] #header .hamb-wrapper .menu-wrapper .menu-hamb {
   background-color: #002060;
 }
@@ -284,39 +280,7 @@ body, html {
     max-width: 800px;
   }
   
-  #HQ_page table, table {
-    border: unset;
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 64px;
-  }
-  #HQ_page table th, table th {
-    text-align: start;
-    background-color: rgba(98, 129, 239, 0.1);
-  }
-  #HQ_page table tr, table tr {
-    border-top: 1px solid #BBBBBB;
-    border-bottom: 1px solid #BBBBBB;
-  }
-  #HQ_page table tr:nth-child(2n), table tr:nth-child(2n) {
-    background-color: rgba(187, 187, 187, 0.15);
-  }
-  #HQ_page table tr:nth-child(2n+1), table tr:nth-child(2n+1) {
-    background-color: #FAFAFC;
-  }
-  #HQ_page table td, #HQ_page table th, table td, table th {
-    border: unset;
-    padding: 0.75rem 0.5rem;
-  }
-  #HQ_page table a, table a {
-    color: #002060;
-    text-decoration: none;
-  }
-  #HQ_page table a:hover, table a:hover {
-    text-decoration: underline;
-    color: #002060;
-  }
-
+ 
 
 body, html {
   margin: 0;
@@ -428,27 +392,8 @@ main::after {
   }
 }
 
-.indexbutton {
-  display: none;
-  color: #ffffff;
-  text-transform: capitalize;
-  font-size: 1.4rem;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  padding: 16px 0;
-  height: 62px;
-  box-sizing: border-box;
-  cursor: pointer;
-  background-color: #002060;
-  z-index: 21;
-  transition: 0.5s;
-}
-@media (max-width: 800px) {
-  .indexbutton {
-    display: block;
-  }
-}
+
+
 
 table, #HQ_page table {
   margin: 0 auto;
@@ -526,27 +471,7 @@ table, #HQ_page table {
   background-color: #3658cf;
 }
 @media (max-width: 800px) {
-  .sideBlock {
-    position: fixed;
-    bottom: 0;
-    padding: 0 64px;
-    background-color: #002060;
-    color: #FAFAFC;
-    float: unset;
-    margin: 0;
-    z-index: 20;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: unset;
-    max-width: unset;
-    text-align: center;
-    transition: transform 0.5s;
-    top: unset;
-    transform: translateY(calc(100% - 62px));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  
   .sideBlock b {
     display: block;
     margin: 0;
@@ -674,30 +599,6 @@ table, #HQ_page table {
   font-size: 0.6em;
   vertical-align: super;
 }
-.content a button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "lato-semibold", sans-serif;
-  color: #FAFAFC;
-  padding: 32px 56px;
-  font-size: 1.2rem;
-  max-width: 7;
-  text-align: center;
-  border-radius: 1000px;
-  margin: 40px auto;
-  transition: 0.3s ease-out;
-  background-color: #002060;
-  box-shadow: 0 16px 32px -12px #3658cf;
-  border: none;
-  position: relative;
-  top: 0;
-  font-variant-position: normal;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-
 
 #sideMenu,
 #top_title,
