@@ -1,69 +1,43 @@
 <html>
-<div class="container"> FOO
-    <div id="wrap">
-      
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 802.354 3245.896">
-       <defs>
-      <path id="Path_440" d="M14581.822,1364S14348,1448,14528,1848s-408,592-408,592-392,484,232,548,412,460,412,460-144,264-464,252-144,464-144,464,36,336,384,444" transform="translate(-13997.437 -1363.059)" fill="none" /></defs>
+	<link rel="stylesheet" type="text/css" href="../../css/home-style.css" />
+    <script src="../../js/home-js.js"> </script>
+
+    <body>
+        <div class="container"> FOO
+            <div id="wrap">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 802.354 3245.896">
+                    <defs>
+                    <path id="Path_440" d="M14581.822,1364S14348,1448,14528,1848s-408,592-408,592-392,484,232,548,412,460,412,460-144,264-464,252-144,464-144,464,36,336,384,444" transform="translate(-13997.437 -1363.059)" fill="none" /></defs>
+                            
+                    <use xlink:href="#Path_440" stroke="#000" stroke-width="2" stroke-dasharray="8"/>
+                    <use id="theFill" xlink:href="#Path_440" stroke="#000" stroke-width="3"/>
+                </svg>
+
+                <p>Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. Osteoarthritis is characterized by an intense inflammation cycle, in which chondrocytes produce certain proteins that cause cartilage degradation. Our approach aims to halt this inflammatory cycle by inserting specifically transfected cells in the osteoarthritic joint. The cells produce synthetically designed exosomes that contain miRNA-140. miRNA-140 has been shown to inhibit the expression of certain cartilage destructive proteins and promote the expression of regenerative agents. The exosomes are also designed to carry a Chondrocyte Affinity Peptide (CAP) in their membrane which guides them to deliver their cargo specifically towards chondrocytes. This project includes in-silico and in-vitro experiments that study the efficiency of the proposed plasmid to produce exosomes in HEK293T cells. Project dissemination activities include a novel web application to communicate osteoarthritis risks to the public.</p>
+                <p class="p1 ">Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. Osteoarthritis is characterized by an intense inflammation cycle, in which chondrocytes produce certain proteins that cause cartilage degradation. Our approach aims to halt this inflammatory cycle by inserting specifically transfected cells in the osteoarthritic joint. The cells produce synthetically designed exosomes that contain miRNA-140. miRNA-140 has been shown to inhibit the expression of certain cartilage destructive proteins and promote the expression of regenerative agents. The exosomes are also designed to carry a Chondrocyte Affinity Peptide (CAP) in their membrane which guides them to deliver their cargo specifically towards chondrocytes. This project includes in-silico and in-vitro experiments that study the efficiency of the proposed plasmid to produce exosomes in HEK293T cells. Project dissemination activities include a novel web application to communicate osteoarthritis risks to the public.</p>
+
+            </div>
+        </div>
+
+<   </body> 
+
+    <script>
             
-    <use xlink:href="#Path_440" stroke="#000" stroke-width="2" stroke-dasharray="8"/>
-       
-    <use id="theFill" xlink:href="#Path_440" stroke="#000" stroke-width="3"/>
-    </svg>
-    <p>Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. Osteoarthritis is characterized by an intense inflammation cycle, in which chondrocytes produce certain proteins that cause cartilage degradation. Our approach aims to halt this inflammatory cycle by inserting specifically transfected cells in the osteoarthritic joint. The cells produce synthetically designed exosomes that contain miRNA-140. miRNA-140 has been shown to inhibit the expression of certain cartilage destructive proteins and promote the expression of regenerative agents. The exosomes are also designed to carry a Chondrocyte Affinity Peptide (CAP) in their membrane which guides them to deliver their cargo specifically towards chondrocytes. This project includes in-silico and in-vitro experiments that study the efficiency of the proposed plasmid to produce exosomes in HEK293T cells. Project dissemination activities include a novel web application to communicate osteoarthritis risks to the public.</p>
-    <p class="p1 ">Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. Osteoarthritis is characterized by an intense inflammation cycle, in which chondrocytes produce certain proteins that cause cartilage degradation. Our approach aims to halt this inflammatory cycle by inserting specifically transfected cells in the osteoarthritic joint. The cells produce synthetically designed exosomes that contain miRNA-140. miRNA-140 has been shown to inhibit the expression of certain cartilage destructive proteins and promote the expression of regenerative agents. The exosomes are also designed to carry a Chondrocyte Affinity Peptide (CAP) in their membrane which guides them to deliver their cargo specifically towards chondrocytes. This project includes in-silico and in-vitro experiments that study the efficiency of the proposed plasmid to produce exosomes in HEK293T cells. Project dissemination activities include a novel web application to communicate osteoarthritis risks to the public.</p>
+        window.addEventListener('scroll', function() {
+        let l = Path_440.getTotalLength();
+        let dasharray = l;
+        let dashoffset = l;
+        e = document.documentElement;
+        theFill.setAttributeNS(null, "stroke-dasharray", l);
+        theFill.setAttributeNS(null, "stroke-dashoffset", l);
+        dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
+        console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
+        theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
+        })
 
-    </div>
-       </div>
+        window.onscroll = function () { scrollSvgFill() };
 
-       <style>
-           svg{
-                z-index: -1;
-                position: absolute;
-           }
-            #wrap {
-                height:10vh;
-            }
+    </script>
 
-            .container {
-                height: 1vh;
-            
-            }
-            div {
-                position: relative;
-            }
-            p {
-                z-index: 10;
-                position: relative;
-                width: 300px;
-                text-align: justify;
-            }
-
-            .p1{
-                z-index: 10;
-                position: relative;
-                width: 300px;
-                text-align: justify;
-                left: 1000px;
-            }
-       </style>
-
-       <script>
-                
-            window.addEventListener('scroll', function() {
-            let l = Path_440.getTotalLength();
-            let dasharray = l;
-            let dashoffset = l;
-            e = document.documentElement;
-            theFill.setAttributeNS(null, "stroke-dasharray", l);
-            theFill.setAttributeNS(null, "stroke-dashoffset", l);
-            dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
-            console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
-            theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
-            })
-
-            window.onscroll = function () { scrollSvgFill() };
-
-        </script>
-
-       </html>
+</html>
