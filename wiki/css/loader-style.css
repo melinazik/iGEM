@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 5vh;
     width: 100vw;
-    z-index: 1000;
+    z-index: 500;
     position: fixed;
     pointer-events: none;
 }
@@ -18,7 +18,7 @@
     transition-property: height, width, border-radius, transform;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-    transition-delay: 0s, 0s, 0s, 1.7s;
+    transition-delay: 0s, 0s, 0s, 1s;
     border-radius: 0%;
     -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
     -moz-box-shadow: 0px 0px 27px 0px #6E91CB;

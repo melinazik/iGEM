@@ -1,11 +1,22 @@
 <html>
-    <!-- CREDITS TO IGEM POITIERS 2019 || https://2019.igem.org/Team:Poitiers -->
+    
     <!-- template with box around text-->
     <!-- includes back to top button - progress bar - in page menu - animation header-->
 <head>
+    <!-- progress bar - back to top - in page menu - textwrapper -->
     <link rel="stylesheet" type="text/css" href="../../css/template-01-style.css" />
+
+    <!-- navigation bar -->
+    <link rel="stylesheet" type="text/css" href="../../css/navigation-style.css" />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+
+    <!-- loader -->
+    <link rel="stylesheet" type="text/css" href="../../css/loader-style.css" />
+
+    <!-- header animation -->
     <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
 </head>
+
   <header class="circles" id="banner">
                
       <canvas style="position: absolute; z-index: 0"></canvas>
@@ -20,23 +31,128 @@
   <style>
       .circles{
 		background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
-		background-size:cover;		
+		background-size:cover;	
+        opacity:80%;	
 		margin:auto; 
 		width: auto;
-        height:200px;
+        height:auto;
 		background-repeat:no-repeat;
 	}
   </style>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-    
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-bar-logo">
+            <a href="https://2021.igem.org/Team:Greece_United" class="active">
+                <div class="logo-header"></div>
+            </a>
+        </div>
+
+        <div class="right-navbar" id="navbarID">
+            <ul id="nav">
+                <li><a href="https://2021.igem.org/Team:Greece_United">HOME</a></li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                        </div>
+                    </div> 
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                        </div>
+                    </div> 
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/App">APPLICATION</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/GeneticCircuit">GENETIC CIRCUIT</a>
+                        </div>
+                    </div> 
+                </li>
+                
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/HumanPractices'">HUMAN PRACTICES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/HumanPractices">HUMAN PRACTICES</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Integrated">INTEGRATED</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                                <a href="https://2021.igem.org/Team:Greece_United/Inclucivity">INCLUCIVITY</a>
+                        </div>
+                    </div> 
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreunership'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">ENTERPRENEURSHIP</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div> 
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+                        </div>
+                    </div> 
+                </li>
+                <li><a href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a></li>
+
+                
+
+            </ul>
+            
+        </div>
+    </div>
+    <!-- Navigation Bar  End -->
+
+    <!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
         </svg>
     </button>
+    <!-- Back to Top Button End-->
 
+    <!-- Progress bar -->
     <div id="globalWrapper">
         <div id="fixedOverlay" bg="none">
             <div class="scroll-wrapper" >
@@ -49,54 +165,67 @@
             </div>
         </div>
     </div>
-	
-<main id="section-text">
-    
-    <div id="index" class="sideBlock">
-        <b>title of tittles</b>
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading1">title 1</a>
-            </li>
-            <li class="active">
-                <div></div>
-                <a href="#heading2">title 2</a>
-            </li>
-            
-        </ul>
+    <!-- Progress bar End -->
+
+    <!-- loader -->
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
     </div>
-    <input id="headingTitleText" type="hidden" value="Parts">
-		<div class="contentBlock">
-			<div class="content">
-				<div class="h3" id="heading1" tabindex="-1" style="outline: none;">Tittle 1</div>
-				<h1>Lorem Ipsum is simply dummy text of the
-                     printing and typesetting industry. Lorem 
-                     Ipsum has been the industry's standard dummy
-                      text ever since the 1500s,
-                      Lorem Ipsum is simply dummy text of the
-                      printing and typesetting industry. Lorem 
-                      Ipsum has been the industry's standard dummy
-                       text ever since the 1500s,
-                       Lorem Ipsum is simply dummy text of the
-                       printing and typesetting industry. Lorem 
-                       Ipsum has been the industry's standard dummy
+    <!-- loader end -->
+
+    <!-- Text and in page menu-->
+	
+    <main id="section-text">
+        
+        <div id="index" class="sideBlock">
+            <b>title of tittles</b>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading1">title 1</a>
+                </li>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading2">title 2</a>
+                </li>
+                
+            </ul>
+        </div>
+        <input id="headingTitleText" type="hidden" value="Parts">
+            <div class="contentBlock">
+                <div class="content">
+                    <div class="h3" id="heading1" tabindex="-1" style="outline: none;">Tittle 1</div>
+                    <h1>Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem 
+                        Ipsum has been the industry's standard dummy
                         text ever since the 1500s,
                         Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry. Lorem 
                         Ipsum has been the industry's standard dummy
-                         text ever since the 1500s,
-                         Lorem Ipsum is simply dummy text of the
-                         printing and typesetting industry. Lorem 
-                         Ipsum has been the industry's standard dummy
-                          text ever since the 1500s,
-                         </h1>
+                        text ever since the 1500s,
+                        Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem 
+                        Ipsum has been the industry's standard dummy
+                            text ever since the 1500s,
+                            Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem 
+                            Ipsum has been the industry's standard dummy
+                            text ever since the 1500s,
+                            Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem 
+                            Ipsum has been the industry's standard dummy
+                            text ever since the 1500s,
+                            </h1>
 
-				<div class="h3" id="heading2" tabindex="-1" style="outline: none;">title 2</div>
-				<h1> CONTENT 2</h1>
-			</div>
-		</div>
-</main>
+                    <div class="h3" id="heading2" tabindex="-1" style="outline: none;">title 2</div>
+                    <h1> CONTENT 2</h1>
+                </div>
+            </div>
+    </main>
+    <!-- Text and in page menu End -->
+
 </body>
 
 <!-- back to top button -->
@@ -174,6 +303,19 @@
         });
 
         document.getElementById("fixedOverlay").classList.add("project");
+</script>
+
+<!-- loader -->
+<script>
+    window.addEventListener("load", function() 
+    {
+        let loader = document.getElementById('loader-bg');
+        
+        setTimeout(function() 
+        {
+            loader.classList.add('loaded')
+        }, 100);
+    });
 </script>
 
 <!-- TRANSPARENT HEADER -->
@@ -298,4 +440,5 @@
     }
         
 </script>
+<!-- CREDITS TO IGEM POITIERS 2019 for header animation || https://2019.igem.org/Team:Poitiers -->
 </html>
