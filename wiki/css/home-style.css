@@ -24,16 +24,43 @@ div {
     left: 100px;
     padding-top: 200px;
     font-size: 24px;
+    font-weight: bold;
+    color: #002060;
+
 }
 
 .p2{
     z-index: 10;
     position: relative;
-    width: 600px;
+    width: 400px;
     text-align: justify;
-    left: 1200px;
-    top: -400px;
+    left: calc((100%)/1.5);
+    top: -450px;
     font-size: 24px;
+    font-weight: bold;
+    color: #002060;
+}
+
+.p3{
+    z-index: 10;
+    position: relative;
+    width: 300px;
+    left: calc((100%)/1.25);
+    font-size: 30px;
+    color: #002060;
+    font-weight: bold;
+    margin-top: -270px;
+}
+
+.p4{
+    z-index: 10;
+    position: relative;
+    width: 400px;
+    text-align: justify;
+    left: calc((100%)/1.5);
+    top: -450px;
+    font-size: 24px;
+    color: #002060;
 }
 
 
@@ -44,8 +71,23 @@ body{
 }
 
 .oa-joint{
-    width:800;
+    width:650;
     height:600;
+    left: -100px;
 }
 
+.oa-people {
+    width: 700px;
+    padding-top: 100px;
+    margin-left: 50px;
+  transition: transform .8s;
+
+}
+
+.oa-people:hover {
+    width: 700px;
+    padding-top: 100px;
+    margin-left: 50px;;
+    transform: scale(0.8); 
+}
 
