@@ -31,8 +31,10 @@ body{
     background: linear-gradient(#B7E0FF, #002060);
     background-size: 100% 1000vh;
     font-family: 'Lato', sans-serif;
+}
 
-
+.oa-joint{
+    margin-left: calc((100%)/9.8);
 }
 
 
