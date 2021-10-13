@@ -5,794 +5,8 @@
         <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script>
-            
-            // Loader
-            window.addEventListener("load", function() 
-            {
-                let loader = document.getElementById('loader-bg');
-                
-                setTimeout(function() 
-                {
-                    loader.classList.add('loaded')
-                }, 100);
-            });
-
-            // Header
-            canvas = document.getElementsByTagName('canvas')[0];
-		canvas.width = document.body.clientWidth;
-		canvas.height = document.getElementById('banner').clientHeight;
-
-
-		var ctx = canvas.getContext('2d');
-
-        var bone1 = new Image;
-		bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
-		var bone2 = new Image;
-		bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
-        var bone5 = new Image;
-		bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
-        var bone6 = new Image;
-		bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
-		var dna1 = new Image;
-		dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
-		var dna3 = new Image;
-		dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
-       
-
-		var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
-
-		//stocks possible character attributes
-		var layers = {
-			n: 4, //number of layers
-			letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
-			coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
-		};
-
-		/*End of options*/
-		var characters = [];
-		var mouseX = document.body.clientWidth / 2;
-		var mouseY = document.body.clientHeight / 2;
-
-		var rnd = {
-			btwn: function (min, max) {
-				return Math.floor(Math.random() * (max - min) + min);
-			},
-			choose: function (list) {
-				return list[rnd.btwn(0, list.length)];
-			}
-		};
-
-
-
-		/*LETTER DRAWING*/
-
-		function drawBacteria(img) {
-			var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
-			var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
-			var dLargeur = img.Image.width * img.coef;
-			var dHauteur = img.Image.height * img.coef;
-			
-			ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
-		}
-
-		/*ANIMATION*/
-
-		document.onmousemove = function (ev) {
-			mouseX = ev.pageX - canvas.offsetLeft;
-			mouseY = ev.pageY - canvas.offsetTop;
-
-			if (window.requestAnimationFrame) {
-				requestAnimationFrame(update);
-			} else {
-				update();
-			}
-		};
-
-		function update() {
-			clear();
-			render();
-		}
-
-		function clear() {
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-		}
-
-		function render() {
-			for (var i = 0; i < characters.length; i++) {
-				drawBacteria(characters[i]);
-			}
-		}
-
-		function createLetters() {
-			for (var i = 0; i < layers.n; i++) {
-				for (var j = 0; j < layers.letters[i]; j++) {
-
-					bacteria = bact[rnd.btwn(0, 6)];
-					var img = bacteria;
-					
-					var x = rnd.btwn(0, canvas.width);
-					var y = rnd.btwn(0, canvas.height);
-
-					characters.push({
-						Image: img,
-						layer: i,
-						coef: layers.coef[i],
-						posX: x,
-						posY: y
-					});
-
-				}
-			}
-		}
-		
-		createLetters();
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
-			render()
-		}else
-		{
-			update();
-		}
-        
-            // Home
-            window.addEventListener('scroll', function() {
-            let l = Path_440.getTotalLength();
-            let dasharray = l;
-            let dashoffset = l;
-            e = document.documentElement;
-            theFill.setAttributeNS(null, "stroke-dasharray", l);
-            theFill.setAttributeNS(null, "stroke-dashoffset", l);
-            dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
-            console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
-            theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
-            })
-
-            window.onscroll = function () { scrollSvgFill() };
-        </script>
-
-        <style>
-            /* Loader */
-            #loader-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 0.1vh;
-                width: 100vw;
-                z-index: 500;
-                position: fixed;
-                pointer-events: none;
-            }
-
-            #loader-bg {
-                position: fixed;
-                height: 200vw;
-                width: 200vw;
-                transform: translateY(0);
-                background-color: #6C8EC9;
-                transition-property: height, width, border-radius, transform;
-                transition-duration: 0.5s;
-                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-                transition-delay: 0s, 0s, 0s, 1s;
-                border-radius: 0%;
-                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-                box-shadow: 0px 0px 27px 0px #6E91CB;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-
-            #loader-wrapper img {
-                width: 30vh;
-
-            }
-
-            #loader-wrapper h1 {
-                color: #fafafc;
-                text-transform: uppercase;
-                font-family: 'montserrat-black', sans-serif !important;
-                position: absolute;
-                transform: translateY(15vh);
-                font-size: 2.2vw;
-                opacity: 100%;
-            }
-
-            #loader-bg.loaded 
-            {
-                height: 35vh;
-                width: 35vh;
-                border-radius: 70%;
-                transform: translateY(-2000px);
-            }
-
-            /* Navigation Bar */
-            /* -------------- NAVBAR ------------ */
-            body{
-                padding:0px;
-                margin:0px;
-
-                background: linear-gradient(#B7E0FF, #002060);
-                background-size: 100% 1000vh;
-                font-family: 'Lato', sans-serif;
-
-                display: flex;
-                flex-direction: column;
-                position: relative;
-            }
-
-
-
-            .navbar {
-            display: flex;
-            flex-wrap: wrap;
-            /* overflow: hidden;  */
-            background-color:#002060;/*#0E828A/* #333; /* Dark background color */
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-            }
-
-            .right-navbar {
-            align-self:flex-end;
-            /* overflow: hidden;  */
-            margin-left: auto;
-            margin-right: 15px;
-            }
-
-            /* Style the navigation bar links */
-            .right-navbar a {
-            float: right; /* Make sure that the links stay side-by-side */
-            display: block; /* Change the display to block, for responsive reasons (see below) */
-            color: white; /* White text color */
-            text-align: center; /* Center the text */
-            padding: 14px 20px; /* Add some padding */
-            text-decoration: none; /* Remove underline */
-            font-size: 1.2em;
-            /* overflow: hidden; */
-            }
-
-            #nav {
-            display: flex;
-            flex-direction: row;
-            list-style: none inside;
-            margin: 0;
-            padding: 0;
-            }
-
-            #nav li {
-            display: block;
-            }
-
-            #nav li li a {
-            font-size: 90%;
-            }
-
-            #nav ul {
-            padding: 0;
-            display: none;
-
-            }
-
-            #nav li:hover ul {
-            display: block;
-            }
-
-            .right-navbar a:hover, .dropdown:hover{
-            background-color: #B7E0FF; /* Grey background color */
-            color: #002060; /* Black text color */
-            }
-
-            /* responsive/collapsible nav bar */
-            .right-navbar .icon {
-            display: none;
-            }
-
-            .nav-bar-logo {
-            padding: 14px 20px; /* Add some padding */
-            display: flex;
-            cursor: pointer;
-            }
-
-            .nav-bar-logo a{
-            font-weight: 400;
-            font-size: 1.4em;
-            color: white; /* White text color */
-            text-decoration: none; /* Remove underline */
-            cursor: pointer;
-            }
-
-            .dropdown {
-            float: left;
-            }
-
-            .dropdown .dropbtn {
-            font-size: 1.2em;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-            z-index: 10;
-            }
-
-            .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #B7E0FF;
-            opacity: 80%;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 10;
-            }
-
-            .dropdown-content a {
-            float: none;
-            color: #002060;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            }
-
-            .dropdown-content a:hover {
-            background-color: #5893D4;
-            color: #002060;
-            }
-
-            .dropdown:hover .dropbtn{
-            background-color: #B7E0FF;
-            color: #002060;
-            }
-
-            .dropdown:hover .dropdown-content {
-            display: block;
-            }
-
-            .logo-header {
-            position: relative;
-            height: 70px;
-            width: 70px;
-            background: url("https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png");
-
-            background-size: cover;
-            padding-right: 7px;
-            }
-
-            /* Header */
-            
-            /* Home */
-            svg{
-                z-index: -1;
-                position: absolute;
-            }
-
-            #wrap {
-                height:10vh;
-            }
-
-            .container {
-                height: 1vh;
-
-            }
-            div {
-                position: relative;
-            }
-
-
-            .p1{
-                z-index: 10;
-                position: relative;
-                width: 600px;
-                text-align: justify;
-                left: 100px;
-                padding-top: 200px;
-                font-size: 24px;
-                font-weight: bold;
-                color: #002060;
-
-            }
-
-            .p2{
-                z-index: 10;
-                position: relative;
-                width: 400px;
-                text-align: justify;
-                left: calc((100%)/1.5);
-                top: -450px;
-                font-size: 24px;
-                font-weight: bold;
-                color: #002060;
-            }
-
-            .p3{
-                z-index: 10;
-                position: relative;
-                width: 300px;
-                left: calc((100%)/1.25);
-                font-size: 30px;
-                color: #002060;
-                font-weight: bold;
-                margin-top: -270px;
-            }
-
-            .p4{
-                z-index: 10;
-                position: relative;
-                width: 400px;
-                text-align: justify;
-                left: calc((100%)/1.5);
-                top: -450px;
-                font-size: 24px;
-                color: #002060;
-            }
-
-
-           
-
-            .oa-joint{
-                width:650;
-                height:600;
-                left: -100px;
-            }
-
-            .oa-people {
-                width: 700px;
-                padding-top: 100px;
-                margin-left: 50px;
-            transition: transform .8s;
-
-            }
-
-            .oa-people:hover {
-                width: 700px;
-                padding-top: 100px;
-                margin-left: 50px;;
-                transform: scale(0.8); 
-            }
-
-            /* Footer */
-            
-      
-
-            .vertical-line {
-                border-left:  1.7px solid #E8E8E8;
-                opacity: 50%;
-
-                height: 300px;
-                margin-left: calc(100%/2.7);
-                top: 400px;
-                position: absolute;
-            }
-
-            .footer hr{
-                background-color: #E8E8E8;
-                border: 1.5px solid #E8E8E8;
-                opacity: 50%;
-                width: calc(100%/1.5);
-            }
-
-            footer{
-                top: 800vh ;
-                position: absolute;
-            }
-
-            .footer{ 
-                width:100%; 
-                height:800px; 
-                background:#002060;  
-                
-            } 
-
-            .footer ul{
-                margin:4%  39%;
-                text-align:right;
-                display:flex;
-                position:absolute;
-                transform: translate(-50%, -50%);
-                color: white;
-            }
-
-            .footer ul li{
-                list-style: none;
-                margin-right: 10%;
-            }
-
-            .footer h4{
-                text-align: center;
-                background-color:none;
-                position: absolute;
-                margin: 120px 0 0 36%;
-                font-size: 12px;
-            }
-
-            .footer ul li a{
-                text-align: center;
-                line-height: 70px;
-                font-size:30px;
-                margin:0 10px;
-                display: block;
-                position: relative;
-                z-index: 1;
-            }
-
-            .footer ul li a .fa{
-                position: relative;
-                color: white;
-                transition: 0.5s;
-            }
-
-            /* Facebook social icon */
-            .facebook a:hover .fa{
-                color: #3b5998;
-                transform: rotateY(360deg);
-            }
-
-            .facebook a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #3b5998;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-
-            .facebook a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #3b5998;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* Twitter social icon */
-            .twitter a:hover .fa{
-                color:  #55acee;
-                transform: rotateY(360deg);
-            }
-
-            .twitter a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background:  #55acee;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* Instagram social icon */
-            .instagram a:hover .fa{
-                color: #C32AA3;
-                transform: rotateY(360deg);
-            }
-
-            .instagram a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #C32AA3;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* LinkedIn social icon */
-            .linkedin a:hover .fa{
-                color: #0e76a8;
-                transform: rotateY(360deg);
-            }
-
-            .linkedin a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #0e76a8;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* YouTube social icon */
-            .youtube a:hover .fa{
-                color: #c4302b;
-                transform: rotateY(360deg);
-            }
-
-            .youtube a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #c4302b;
-                transition:0.5s;
-                z-index: 2;
-            }     
-
-            /* Mail social icon */
-            .mail a:hover .fa{
-                color: #dd4b39;
-                transform: rotateY(360deg);
-            }
-
-            .mail a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #dd4b39;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* GitHub social icon */
-            .github a:hover .fa{
-                color: #171515;
-                transform: rotateY(360deg);
-            }
-
-            .github a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #171515;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-            /* Website icon */
-            .website a:hover .fa{
-                color: #949794;
-                transform: rotateY(360deg);
-            }
-
-            .website a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #949794;
-                transition:0.5s;
-                z-index: 2;
-            }
-
-
-            .footer_sponsors {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                bottom: 0%;
-            }
-
-            .footer_sponsors div {
-                display: flex;
-                flex: 1;
-                justify-content: center;
-                align-items: center;
-                padding-left: 1%;
-                padding-right: 1%;
-            }
-
-            .footer_sponsors img {
-                width: 60%;
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-                transition: all 0.3s ease-in-out;
-                opacity: 0.75;
-
-            }
-
-            .footer_sponsors img:hover {
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(0%);
-                opacity: 1;
-            }
-
-            .logo_container{
-                width: 45%;
-                float: left;
-                height: 100%;
-                display: block;
-            }
-
-            .logo_container img{
-                width: 400px;
-                height: auto;
-            }
-
-            .logo-footer {
-                position: relative;
-                height: 70px;
-                width: 90px;
-                background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
-                background-size: cover;
-                padding-bottom: 120px;
-                padding-right: 80px;
-                margin-left: calc(100%/1.5);
-            }
-
-            .col{
-                width:30%;
-                padding-right: 250px;
-            }
-
-            .col h4{
-                font-size:24px;
-                color:#ffffff;
-                text-transform: capitalize;
-                margin-bottom: 70px;
-                margin-top: -70px;
-                font-weight: 500;
-                position:relative;
-            }
-
-            .col ul li:not(:last-child){
-                margin-bottom: 10px;
-            }
-
-            .col ul li span{
-                font-size: 16px;
-                text-transform: capitalize;
-                color: #ffffff;
-                text-decoration:none;
-                font-weight: 300;
-                color: #bbbbbb;
-                display: block;
-            }
-
-
-            .footer-links{
-                color: #bbbbbb;
-                text-decoration:none;
-                z-index: 1000;
-            }
-
-            .footer-links:hover{
-                color: #ffffff;
-            }
-
-            .row{
-                display:flex;
-                flex-wrap:wrap;
-            }
-
-            .centered-container{
-                padding-right: 140px;
-                padding-left: 140px;
-                align-self: center;
-                grid-auto-columns: 1fr;
-                grid-column-gap: 16px;
-                grid-row-gap: 16px;
-                -ms-grid-columns: 1fr 1fr;
-                grid-template-columns: 1fr 1fr;
-                -ms-grid-rows: auto auto;
-                grid-template-rows: auto auto;
-                text-align: center;
-            }
-            .row-imgs {
-                padding-left: 0;
-                margin-left: -5px;
-                list-style: none;
-            }
-
-            .row-imgs > li {
-                display: inline-block;
-                padding-right: 5px;
-                padding-left: 5px;
-            }
-
-        </style>
-
     </head>
+
     <header class="circles" id="banner">
                  
         <canvas style="position: absolute; z-index: 0"></canvas>
@@ -995,4 +209,791 @@
     </div>
 
 </footer>
+
+<script>
+            
+    // Loader
+    window.addEventListener("load", function() 
+    {
+        let loader = document.getElementById('loader-bg');
+        
+        setTimeout(function() 
+        {
+            loader.classList.add('loaded')
+        }, 100);
+    });
+
+    // Header
+    canvas = document.getElementsByTagName('canvas')[0];
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.getElementById('banner').clientHeight;
+
+
+    var ctx = canvas.getContext('2d');
+
+    var bone1 = new Image;
+    bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
+    var bone2 = new Image;
+    bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
+    var bone5 = new Image;
+    bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
+    var bone6 = new Image;
+    bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
+    var dna1 = new Image;
+    dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
+    var dna3 = new Image;
+    dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
+
+
+    var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
+
+    //stocks possible character attributes
+    var layers = {
+        n: 4, //number of layers
+        letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
+        coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
+    };
+
+    /*End of options*/
+    var characters = [];
+    var mouseX = document.body.clientWidth / 2;
+    var mouseY = document.body.clientHeight / 2;
+
+    var rnd = {
+        btwn: function (min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        },
+        choose: function (list) {
+            return list[rnd.btwn(0, list.length)];
+        }
+    };
+
+
+
+    /*LETTER DRAWING*/
+
+    function drawBacteria(img) {
+        var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
+        var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
+        var dLargeur = img.Image.width * img.coef;
+        var dHauteur = img.Image.height * img.coef;
+        
+        ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
+    }
+
+    /*ANIMATION*/
+
+    document.onmousemove = function (ev) {
+        mouseX = ev.pageX - canvas.offsetLeft;
+        mouseY = ev.pageY - canvas.offsetTop;
+
+        if (window.requestAnimationFrame) {
+            requestAnimationFrame(update);
+        } else {
+            update();
+        }
+    };
+
+    function update() {
+        clear();
+        render();
+    }
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function render() {
+        for (var i = 0; i < characters.length; i++) {
+            drawBacteria(characters[i]);
+        }
+    }
+
+    function createLetters() {
+        for (var i = 0; i < layers.n; i++) {
+            for (var j = 0; j < layers.letters[i]; j++) {
+
+                bacteria = bact[rnd.btwn(0, 6)];
+                var img = bacteria;
+                
+                var x = rnd.btwn(0, canvas.width);
+                var y = rnd.btwn(0, canvas.height);
+
+                characters.push({
+                    Image: img,
+                    layer: i,
+                    coef: layers.coef[i],
+                    posX: x,
+                    posY: y
+                });
+
+            }
+        }
+    }
+    
+    createLetters();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
+        render()
+    }else
+    {
+        update();
+    }
+
+    // Home
+    window.addEventListener('scroll', function() {
+    let l = Path_440.getTotalLength();
+    let dasharray = l;
+    let dashoffset = l;
+    e = document.documentElement;
+    theFill.setAttributeNS(null, "stroke-dasharray", l);
+    theFill.setAttributeNS(null, "stroke-dashoffset", l);
+    dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
+    console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
+    theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
+    })
+
+    window.onscroll = function () { scrollSvgFill() };
+</script>
+
+<style>
+    /* Loader */
+    #loader-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 0.1vh;
+        width: 100vw;
+        z-index: 500;
+        position: fixed;
+        pointer-events: none;
+    }
+
+    #loader-bg {
+        position: fixed;
+        height: 200vw;
+        width: 200vw;
+        transform: translateY(0);
+        background-color: #6C8EC9;
+        transition-property: height, width, border-radius, transform;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+        transition-delay: 0s, 0s, 0s, 1s;
+        border-radius: 0%;
+        -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+        -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+        box-shadow: 0px 0px 27px 0px #6E91CB;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #loader-wrapper img {
+        width: 30vh;
+
+    }
+
+    #loader-wrapper h1 {
+        color: #fafafc;
+        text-transform: uppercase;
+        font-family: 'montserrat-black', sans-serif !important;
+        position: absolute;
+        transform: translateY(15vh);
+        font-size: 2.2vw;
+        opacity: 100%;
+    }
+
+    #loader-bg.loaded 
+    {
+        height: 35vh;
+        width: 35vh;
+        border-radius: 70%;
+        transform: translateY(-2000px);
+    }
+
+    /* Navigation Bar */
+    /* -------------- NAVBAR ------------ */
+    body{
+        padding:0px;
+        margin:0px;
+
+        background: linear-gradient(#B7E0FF, #002060);
+        background-size: 100% 1000vh;
+        font-family: 'Lato', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+
+
+    .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow: hidden;  */
+    background-color:#002060;/*#0E828A/* #333; /* Dark background color */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    }
+
+    .right-navbar {
+    align-self:flex-end;
+    /* overflow: hidden;  */
+    margin-left: auto;
+    margin-right: 15px;
+    }
+
+    /* Style the navigation bar links */
+    .right-navbar a {
+    float: right; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons (see below) */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em;
+    /* overflow: hidden; */
+    }
+
+    #nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+    }
+
+    #nav li {
+    display: block;
+    }
+
+    #nav li li a {
+    font-size: 90%;
+    }
+
+    #nav ul {
+    padding: 0;
+    display: none;
+
+    }
+
+    #nav li:hover ul {
+    display: block;
+    }
+
+    .right-navbar a:hover, .dropdown:hover{
+    background-color: #B7E0FF; /* Grey background color */
+    color: #002060; /* Black text color */
+    }
+
+    /* responsive/collapsible nav bar */
+    .right-navbar .icon {
+    display: none;
+    }
+
+    .nav-bar-logo {
+    padding: 14px 20px; /* Add some padding */
+    display: flex;
+    cursor: pointer;
+    }
+
+    .nav-bar-logo a{
+    font-weight: 400;
+    font-size: 1.4em;
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    }
+
+    .dropdown {
+    float: left;
+    }
+
+    .dropdown .dropbtn {
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    z-index: 10;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #B7E0FF;
+    opacity: 80%;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    }
+
+    .dropdown-content a {
+    float: none;
+    color: #002060;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    }
+
+    .dropdown-content a:hover {
+    background-color: #5893D4;
+    color: #002060;
+    }
+
+    .dropdown:hover .dropbtn{
+    background-color: #B7E0FF;
+    color: #002060;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    .logo-header {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    background: url("https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png");
+
+    background-size: cover;
+    padding-right: 7px;
+    }
+
+    /* Header */
+    
+    /* Home */
+    svg{
+        z-index: -1;
+        position: absolute;
+    }
+
+    #wrap {
+        height:10vh;
+    }
+
+    .container {
+        height: 1vh;
+
+    }
+    div {
+        position: relative;
+    }
+
+
+    .p1{
+        z-index: 10;
+        position: relative;
+        width: 600px;
+        text-align: justify;
+        left: 100px;
+        padding-top: 200px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #002060;
+
+    }
+
+    .p2{
+        z-index: 10;
+        position: relative;
+        width: 400px;
+        text-align: justify;
+        left: calc((100%)/1.5);
+        top: -450px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #002060;
+    }
+
+    .p3{
+        z-index: 10;
+        position: relative;
+        width: 300px;
+        left: calc((100%)/1.25);
+        font-size: 30px;
+        color: #002060;
+        font-weight: bold;
+        margin-top: -270px;
+    }
+
+    .p4{
+        z-index: 10;
+        position: relative;
+        width: 400px;
+        text-align: justify;
+        left: calc((100%)/1.5);
+        top: -450px;
+        font-size: 24px;
+        color: #002060;
+    }
+
+
+   
+
+    .oa-joint{
+        width:650;
+        height:600;
+        left: -100px;
+    }
+
+    .oa-people {
+        width: 700px;
+        padding-top: 100px;
+        margin-left: 50px;
+    transition: transform .8s;
+
+    }
+
+    .oa-people:hover {
+        width: 700px;
+        padding-top: 100px;
+        margin-left: 50px;;
+        transform: scale(0.8); 
+    }
+
+    /* Footer */
+    
+
+
+    .vertical-line {
+        border-left:  1.7px solid #E8E8E8;
+        opacity: 50%;
+
+        height: 300px;
+        margin-left: calc(100%/2.7);
+        top: 400px;
+        position: absolute;
+    }
+
+    .footer hr{
+        background-color: #E8E8E8;
+        border: 1.5px solid #E8E8E8;
+        opacity: 50%;
+        width: calc(100%/1.5);
+    }
+
+    footer{
+        top: 800vh ;
+        position: absolute;
+    }
+
+    .footer{ 
+        width:100%; 
+        height:800px; 
+        background:#002060;  
+        
+    } 
+
+    .footer ul{
+        margin:4%  39%;
+        text-align:right;
+        display:flex;
+        position:absolute;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+
+    .footer ul li{
+        list-style: none;
+        margin-right: 10%;
+    }
+
+    .footer h4{
+        text-align: center;
+        background-color:none;
+        position: absolute;
+        margin: 120px 0 0 36%;
+        font-size: 12px;
+    }
+
+    .footer ul li a{
+        text-align: center;
+        line-height: 70px;
+        font-size:30px;
+        margin:0 10px;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer ul li a .fa{
+        position: relative;
+        color: white;
+        transition: 0.5s;
+    }
+
+    /* Facebook social icon */
+    .facebook a:hover .fa{
+        color: #3b5998;
+        transform: rotateY(360deg);
+    }
+
+    .facebook a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #3b5998;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+
+    .facebook a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #3b5998;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* Twitter social icon */
+    .twitter a:hover .fa{
+        color:  #55acee;
+        transform: rotateY(360deg);
+    }
+
+    .twitter a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background:  #55acee;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* Instagram social icon */
+    .instagram a:hover .fa{
+        color: #C32AA3;
+        transform: rotateY(360deg);
+    }
+
+    .instagram a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #C32AA3;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* LinkedIn social icon */
+    .linkedin a:hover .fa{
+        color: #0e76a8;
+        transform: rotateY(360deg);
+    }
+
+    .linkedin a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #0e76a8;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* YouTube social icon */
+    .youtube a:hover .fa{
+        color: #c4302b;
+        transform: rotateY(360deg);
+    }
+
+    .youtube a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #c4302b;
+        transition:0.5s;
+        z-index: 2;
+    }     
+
+    /* Mail social icon */
+    .mail a:hover .fa{
+        color: #dd4b39;
+        transform: rotateY(360deg);
+    }
+
+    .mail a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #dd4b39;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* GitHub social icon */
+    .github a:hover .fa{
+        color: #171515;
+        transform: rotateY(360deg);
+    }
+
+    .github a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #171515;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+    /* Website icon */
+    .website a:hover .fa{
+        color: #949794;
+        transform: rotateY(360deg);
+    }
+
+    .website a:before{
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background: #949794;
+        transition:0.5s;
+        z-index: 2;
+    }
+
+
+    .footer_sponsors {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        bottom: 0%;
+    }
+
+    .footer_sponsors div {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .footer_sponsors img {
+        width: 60%;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        transition: all 0.3s ease-in-out;
+        opacity: 0.75;
+
+    }
+
+    .footer_sponsors img:hover {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    .logo_container{
+        width: 45%;
+        float: left;
+        height: 100%;
+        display: block;
+    }
+
+    .logo_container img{
+        width: 400px;
+        height: auto;
+    }
+
+    .logo-footer {
+        position: relative;
+        height: 70px;
+        width: 90px;
+        background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
+        background-size: cover;
+        padding-bottom: 120px;
+        padding-right: 80px;
+        margin-left: calc(100%/1.5);
+    }
+
+    .col{
+        width:30%;
+        padding-right: 250px;
+    }
+
+    .col h4{
+        font-size:24px;
+        color:#ffffff;
+        text-transform: capitalize;
+        margin-bottom: 70px;
+        margin-top: -70px;
+        font-weight: 500;
+        position:relative;
+    }
+
+    .col ul li:not(:last-child){
+        margin-bottom: 10px;
+    }
+
+    .col ul li span{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration:none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+    }
+
+
+    .footer-links{
+        color: #bbbbbb;
+        text-decoration:none;
+        z-index: 1000;
+    }
+
+    .footer-links:hover{
+        color: #ffffff;
+    }
+
+    .row{
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+    .centered-container{
+        padding-right: 140px;
+        padding-left: 140px;
+        align-self: center;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+    .row-imgs {
+        padding-left: 0;
+        margin-left: -5px;
+        list-style: none;
+    }
+
+    .row-imgs > li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+</style>
 </html>
