@@ -1,1592 +1,381 @@
 <html>
-    
-    <!-- template with box around text-->
-    <!-- includes back to top button - progress bar - in page menu - animation header-->
-<head>
-    <!-- progress bar - back to top - in page menu - textwrapper -->
-    <style>
-        /* back to top */
-
-        #BacktoTop {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background-color: #B8EBFF;
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 30%;
-        }
-
-        #BacktoTop:hover {
-        background-color: #002060;
-        }
-
-        /* progress bar & in page menu */
-        #fixedOverlay {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 12;
-        top: 18px;
-        transition: 1s;
-        font-family: "montserrat-light" !important;
-        }
-        #fixedOverlay .scroll-wrapper {
-        display: flex;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        justify-content: space-between;
-        opacity: 1;
-        transition: 0.5s;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #sidebar-wrapper #scrollbar-container {
-        width: 30%;
-        height: 30%;
-        background: #002060;
-        border-radius: 10px;
-        max-width: 7px;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #sidebar-wrapper #scrollbar-container #scrollbar {
-        width: 100%;
-        background: #002060;
-        opacity: 100%;
-        height: 0%;
-        border-radius: 20px;
-        transition: background-color 0.5s;
-        }
-        #fixedOverlay nav {
-        height: fit-content;
-        }
-        #fixedOverlay nav[onText=true] {
-        background-color: #FAFAFC;
-        box-shadow: 0px 1px 7px #555;
-        }
-        #fixedOverlay nav[onText=true] #header .hamb-wrapper {
-        background-color: transparent;
-        box-shadow: none;
-        height: unset;
-        width: unset;
-        }
-        div[bg=dark] {
-        background-color: rgba(0, 0, 0, 0.85);
-        }
-
-        div[bg=none] {
-        background-color: none;
-        }
-
-        #fixedOverlay {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 12;
-        top: 18px;
-        transition: 1s;
-        font-family: "montserrat-light" !important;
-        }
-        #fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-        pointer-events: none;
-        }
-
-        #fixedOverlay .scroll-wrapper {
-        display: flex;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        justify-content: space-between;
-        opacity: 1;
-        transition: 0.5s;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area {
-        height: 100%;
-        width: 5vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
-        @media screen and (max-width: 767px) {
-        #fixedOverlay .scroll-wrapper .scroll-area {
-            width: 10vw;
-        }
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-        width: 30%;
-        height: 30%;
-        background: rgba(98, 129, 239, 0.3);
-        border-radius: 10px;
-        max-width: 7px;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-        width: 100%;
-        background: #002060;
-        opacity: 100%;
-        height: 0%;
-        border-radius: 20px;
-        transition: background-color 0.5s;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #backtotop-wrapper {
-        width: 3vw;
-        pointer-events: all;
-        cursor: pointer;
-        opacity: 0;
-        transition: 0.5s ease-out;
-        max-width: 20px;
-        }
-        @media screen and (max-width: 767px) {
-        #fixedOverlay .scroll-wrapper .scroll-area #backtotop-wrapper {
-            width: 4vw;
-        }
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #backtotop-wrapper.scrolled {
-        opacity: 1;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #backtotop-wrapper svg {
-        width: 100%;
-        }
-        #fixedOverlay .scroll-wrapper .scroll-area #backtotop-wrapper svg path {
-        transition: 0.5s;
-        }
-        #fixedOverlay .scroll-wrapper[hiddenScroll=true] {
-        opacity: 0;
-        }
-        #fixedOverlay .scroll-wrapper[onBlue=true] .scroll-area#sidebar-wrapper #scrollbar-container {
-        background: rgba(255, 255, 255, 0.2);
-        }
-        #fixedOverlay .scroll-wrapper[onBlue=true] .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-        background: #FAFAFC;
-        }
-        #fixedOverlay .scroll-wrapper[onBlue=true] .scroll-area svg path {
-        stroke: #FAFAFC !important;
-        }
-        #fixedOverlay nav {
-        box-sizing: border-box;
-        z-index: 2;
-        pointer-events: none;
-        display: block;
-        transition: 0.5s;
-        height: 87px;
-        }
-        #fixedOverlay nav #header {
-        display: flex;
-        justify-content: space-between;
-        height: fit-content;
-        }
-        #fixedOverlay nav #header object {
-        width: 145px;
-        pointer-events: none;
-        }
-        #fixedOverlay nav #header .active .menu-short {
-        transform: translateX(30%) scaleX(0);
-        }
-        #fixedOverlay nav #header .active #top-hamb {
-        transform: scale(0.7) translateY(17px) rotate(45deg);
-        }
-        #fixedOverlay nav #header .active #bottom-hamb {
-        transform: scale(0.7) translateY(-11px) rotate(-45deg);
-        }
-        #fixedOverlay nav #header .hamb-wrapper {
-        height: 50px;
-        background-color: #002060;
-        border-radius: 100px;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 20px 20px 0;
-        box-shadow: 0px 0px 6px #999;
-        }
-        #fixedOverlay nav #header .hamb-wrapper .menu-wrapper {
-        cursor: pointer;
-        z-index: 11;
-        box-sizing: border-box;
-        width: 30px;
-        pointer-events: all;
-        }
-        #fixedOverlay nav #header .hamb-wrapper .menu-wrapper .menu-hamb {
-        height: 4px;
-        border-radius: 5px;
-        transition: 0.5s;
-        background-color: #FAFAFC;
-        }
-        #fixedOverlay nav #header .hamb-wrapper .menu-wrapper .menu-short {
-        width: 70%;
-        margin-bottom: 6px;
-        margin-top: 6px;
-        transition: transform 0.1s;
-        transition: background-color 0.5s;
-        }
-        #fixedOverlay nav #header .hamb-wrapper.white-menu {
-        background-color: #FAFAFC;
-        }
-        #fixedOverlay nav #header .hamb-wrapper.white-menu .menu-hamb {
-        background-color: #002060;
-        }
-        #fixedOverlay nav #header .hamb-wrapper.invisible {
-        box-shadow: none;
-        background-color: transparent;
-        }
-        #fixedOverlay nav #header #logo {
-        transition: 0.5s;
-        margin: 20px 0 20px 20px;
-        }
-        #fixedOverlay nav #header #logo a {
-        pointer-events: all;
-        display: block;
-        }
-
-
-
-        #fixedOverlay nav[onText=true] #header .hamb-wrapper .menu-wrapper .menu-hamb {
-        background-color: #002060;
-        }
-        #fixedOverlay nav .header-part {
-        margin: 0 10px;
-        }
-        #fixedOverlay nav #header .active #top-hamb {
-        transform: scale(0.7) translateY(17px) rotate(45deg);
-        }
-        #fixedOverlay nav #header .active #bottom-hamb {
-        transform: scale(0.7) translateY(-11px) rotate(-45deg);
-        }
-        #fixedOverlay nav #header .menu-wrapper .menu-hamb {
-        height: 3px;
-        }
-        #fixedOverlay nav #header .menu-wrapper .menu-hamb.white-menu {
-        background-color: #002060;
-        }
-        #fixedOverlay nav #header .menu-wrapper .menu-short {
-        margin-bottom: 5px;
-        margin-top: 5px;
-        }
-        #fixedOverlay #sidebar {
-        width: 10vw;
-        }
-        #fixedOverlay #sidebar #sidebar-wrapper #indicateScroll h3 {
-        font-size: 0.65em;
-        }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            color: #222222;
-            font-family: "lato-regular";
-        }
-        
-        /* .contentBlock {
-            max-width: 800px;
-        } */
-        
-        
-
-        body, html {
-        margin: 0;
-        padding: 0;
-        color: #222222;
-        font-family: "lato-regular";
-        }
-
-        .igem_column_wrapper > p {
-        margin: 0;
-        }
-
-        main .content .content-paragraph,
-        main .content .reference,
-        #HQ_page main .content .content-paragraph,
-        #HQ_page main .content .reference {
-        font-family: "lato-light";
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: left;
-        }
-        @media (max-width: 480px) {
-        main .content .content-paragraph,
-        main .content .reference,
-        #HQ_page main .content .content-paragraph,
-        #HQ_page main .content .reference {
-            font-size: 1rem;
-        }
-        }
-        main .content .quote,
-        #HQ_page main .content .quote {
-        padding: 20px;
-        box-shadow: 0 0 10px lightgray;
-        margin: 40px;
-        }
-        main .content .quote p,
-        main .content .quote p.content-paragraph,
-        #HQ_page main .content .quote p,
-        #HQ_page main .content .quote p.content-paragraph {
-        text-align: center;
-        font-size: 0.8em;
-        }
-        main .content .quote p.content-paragraph,
-        #HQ_page main .content .quote p.content-paragraph {
-        font-style: italic;
-        }
-        main .content .quote .beforeWave::before,
-        #HQ_page main .content .quote .beforeWave::before {
-        margin: 0 auto 5px;
-        }
-        main .content .reference,
-        #HQ_page main .content .reference {
-        word-break: break-word;
-        }
-        main .content .h3,
-        #HQ_page main .content .h3 {
-        font-size: 2rem;
-        }
-
-
-        main {
-        font-size: initial;
-        }
-
-        div.h1,
-        div.h2,
-        div.h3,
-        div.h4,
-        div.h5,
-        div.h6 {
-        font-family: "montserrat-bold";
-        font-weight: 800;
-        margin-bottom: 0.4em;
-        margin-top: 1rem;
-        }
-        div.h1.larger,
-        div.h2.larger,
-        div.h3.larger,
-        div.h4.larger,
-        div.h5.larger,
-        div.h6.larger {
-        font-size: 2.5rem;
-        }
-
-
-        main {
-        margin-top: -5px;
-        width: 100%;
-        background-color: #FAFAFC;
-        z-index: 10;
-        position: relative;
-        padding-bottom: 50px;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        }
-        main::after {
-        content: "";
-        clear: both;
-        display: table;
-        }
-        @media (max-width: 800px) {
-        main {
-            justify-content: center;
-        }
-        }
-
-        table, #HQ_page table {
-        margin: 0 auto;
-        border-collapse: collapse;
-        margin-top: 8px;
-        }
-        #HQ_page table th, table th, #HQ_page table td, table td, #HQ_page #HQ_page table th, #HQ_page table th, #HQ_page #HQ_page table td, #HQ_page table td {
-        padding: 6px 8px;
-        border: 1px solid #121212;
-        background-color: #FAFAFC;
-        }
-        #HQ_page table th, table th, #HQ_page #HQ_page table th, #HQ_page table th {
-        background-color: #e0e0e0;
-        }
-
-        .sideBlock {
-        text-transform: uppercase;
-        float: left;
-        margin-left: 10vw;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 50%;
-        margin: 200px 32px 0 4vw;
-        transform: translateY(-50%);
-        min-width: 20px;
-        max-width: 350px;
-        }
-        @media (max-width: 1024px) {
-        .sideBlock {
-            margin: 200px 32px 0 4vw;
-        }
-        }
-        .sideBlock b {
-        font-family: "montserrat-bold";
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-left: 0.25em;
-        display: block;
-        }
-        .sideBlock ul {
-        margin: 1em 0;
-        padding: 0;
-        }
-        .sideBlock a {
-        color: #002060;
-        text-decoration: none;
-        font-family: "lato-light", sans-serif;
-        }
-        .sideBlock li {
-        margin: 24px;
-        list-style: none;
-        color: #002060;
-        font-size: 1.1rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        margin-left: 0.25em;
-        }
-        .sideBlock li:last-child {
-        margin-bottom: 0;
-        }
-        .sideBlock li div {
-        max-width: 15px;
-        max-height: 15px;
-        box-sizing: border-box;
-        border: 1px solid;
-        color: #002060;
-        border-radius: 2px;
-        transition: 0.5s;
-        margin-right: 8px;
-        height: 10vw;
-        width: 10vh;
-        }
-        .sideBlock li.active div {
-        background-color: #002060;
-        }
-        @media (max-width: 800px) {
-        
-        .sideBlock b {
-            display: block;
-            margin: 0;
-        }
-        .sideBlock ul {
-            display: inline-block;
-            text-align: start;
-            margin-top: 0;
-            margin-bottom: 30px;
-        }
-        .sideBlock li {
-            font-weight: bold;
-        }
-        .sideBlock li a {
-            color: #FAFAFC;
-        }
-        .sideBlock li div {
-            color: #FAFAFC;
-        }
-        .sideBlock li.active div {
-            background-color: #FAFAFC;
-        }
-        .sideBlock.notshow {
-            transform: translateY(calc(100% - 0px));
-        }
-        .sideBlock.open {
-            transform: translateY(0);
-        }
-        }
-
-        .contentBlock {
-        width: 800vw;
-		max-width: 900px;
-        float: right;
-        display: flex;
-        flex-direction: column;
-        }
-        @media (max-width: 1024px) {
-        .contentBlock {
-            margin-right: 5vw;
-        }
-        }
-        @media (max-width: 800px) {
-        .contentBlock {
-            margin-right: unset;
-            width: 100%;
-            box-sizing: border-box;
-            max-width: 800px;
-        }
-        }
-
-        .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        font-family: "lato-light";
-        }
-        @media (max-width: 800px) {
-        .content {
-            margin: 0 auto;
-            box-shadow: unset;
-            padding: 35px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        }
-        @media (max-width: 400px) {
-        .content {
-            padding: 20px;
-        }
-        }
-        .content p:first-child {
-        margin-top: 0;
-        }
-        .content ul,
-        .content ol {
-        font-family: "lato-light", sans-serif;
-        }
-        .content ul {
-        padding-inline-start: 20px;
-        list-style-image: none;
-        list-style-type: none;
-        }
-        .content ul li {
-        display: flex;
-        }
-        .content ul li::before {
-        content: "•";
-        color: #002060;
-        }
-        .content .splide ul li::before {
-        content: unset;
-        }
-        .content li {
-        margin: 10px;
-        }
-        .content li::marker {
-        color: #002060;
-        font-family: "lato-heavy";
-        font-size: 1.3em;
-        }
-        .content h4,
-        .content h5 {
-        font-family: "montserrat-bold", sans-serif;
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-block-end: 0.2em;
-        margin-block-start: 60px;
-        }
-        .content h5 {
-        font-size: 1em;
-        }
-        .content a {
-        color: #002060;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        }
-        .content a.citation {
-        font-size: 0.6em;
-        vertical-align: super;
-        }
-
-        #sideMenu,
-        #top_title,
-        .patrollink,
-        #firstHeading,
-        #home_logo,
-        #sideMenu {
-            display: none;
-        }
-
-        #content {
-            padding: 0px;
-            width: 100%;
-            margin-top: -7px;
-            margin-left: 0px;
-            border: none;
-            line-height: initial;
-        }
-
-        body,
-        html {
-            background-color: white;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0px;
-        }
-
-        #bodyContent h1,
-        #bodyContent h2,
-        #bodyContent h3,
-        #bodyContent h4,
-        #bodyContent h5 {
-            margin-bottom: 0px;
-        }
-
-        #bodyContent a[href ^="https://"],
-        .link-https {
-            padding-right: 0px;
-        }
-
-        #globalWrapper {
-            padding: 0px;
-        }
-
-        a {
-            color: initial;
-        }
-
-        #top_title {
-            display: none;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: unset;
-            font-weight: unset;
-            overflow: unset;
-            padding-top: unset;
-            padding-bottom: unset
-        }
-
-        ol {
-            line-height: unset
-        }
-
-        #HQ_page h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h {
-            font-family: unset;
-            font-weight: unset;
-        }
-        #HQ_page p{
-        font-size: unset;
-        font-family: unset;
-        text-align: unset;
-        margin: 0;
-        }
-
-        #content H1 {
-            font-weight: unset
-        }
-
-        #bodyContent h1,
-        #bodyContent h2 {
-            margin-bottom: unset
-        }
-
-        p br {
-            display: unset
-        }
-        li{
-        margin-bottom: unset !important;
-        }
-    </style>
-
-    <!-- navigation bar -->
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-    <style>
-        /* -------------- NAVBAR ------------ */
-        html, body{
-        height:100%;
-        padding:0px;
-        margin:0px;
-
-        font-family: 'Lato', sans-serif;
-        }
-
-        .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        /* overflow: hidden;  */
-        background-color:#002060;/*#0E828A/* #333; /* Dark background color */
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-        }
-
-        .right-navbar {
-        align-self:flex-end;
-        /* overflow: hidden;  */
-        margin-left: auto;
-        margin-right: 15px;
-        }
-
-        /* Style the navigation bar links */
-        .right-navbar a {
-        float: right; /* Make sure that the links stay side-by-side */
-        display: block; /* Change the display to block, for responsive reasons (see below) */
-        color: white; /* White text color */
-        text-align: center; /* Center the text */
-        padding: 14px 20px; /* Add some padding */
-        text-decoration: none; /* Remove underline */
-        font-size: 1.2em;
-        /* overflow: hidden; */
-        }
-
-        #nav {
-        display: flex;
-        flex-direction: row;
-        list-style: none inside;
-        margin: 0;
-        padding: 0;
-        }
-
-        #nav li {
-        display: block;
-        }
-
-        #nav li li a {
-        font-size: 90%;
-        }
-
-        #nav ul {
-        padding: 0;
-        display: none;
-
-        }
-
-        #nav li:hover ul {
-        display: block;
-        }
-
-        .right-navbar a:hover, .dropdown:hover{
-        background-color: #B7E0FF; /* Grey background color */
-        color: #002060; /* Black text color */
-        }
-
-        /* responsive/collapsible nav bar */
-        .right-navbar .icon {
-        display: none;
-        }
-
-        .nav-bar-logo {
-        padding: 14px 20px; /* Add some padding */
-        display: flex;
-        cursor: pointer;
-        }
-
-        .nav-bar-logo a{
-        font-weight: 400;
-        font-size: 1.4em;
-        color: white; /* White text color */
-        text-decoration: none; /* Remove underline */
-        cursor: pointer;
-        }
-
-        .dropdown {
-        float: left;
-        }
-
-        .dropdown .dropbtn {
-        font-size: 1.2em;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-        z-index: 10;
-        }
-
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #B7E0FF;
-        opacity: 80%;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 10;
-        }
-
-        .dropdown-content a {
-        float: none;
-        color: #002060;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        }
-
-        .dropdown-content a:hover {
-        background-color: #5893D4;
-        color: #002060;
-        }
-
-        .dropdown:hover .dropbtn{
-        background-color: #B7E0FF;
-        color: #002060;
-        }
-
-        .dropdown:hover .dropdown-content {
-        display: block;
-        }
-
-        .logo-header {
-        position: relative;
-        height: 70px;
-        width: 70px;
-        background: url("https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png");
-
-        background-size: cover;
-        padding-right: 7px;
-        }
-    </style>
-
-    <!-- loader -->
-    <style>
-        #loader-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 0.1vh;
-            width: 100vw;
-            z-index: 500;
-            position: fixed;
-            pointer-events: none;
-        }
-
-        #loader-bg {
-            position: fixed;
-            height: 200vw;
-            width: 200vw;
-            transform: translateY(0);
-            background-color: #6C8EC9;
-            transition-property: height, width, border-radius, transform;
-            transition-duration: 0.5s;
-            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-            transition-delay: 0s, 0s, 0s, 1s;
-            border-radius: 0%;
-            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-            box-shadow: 0px 0px 27px 0px #6E91CB;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        #loader-wrapper img {
-            width: 30vh;
-
-        }
-
-        #loader-wrapper h1 {
-            color: #fafafc;
-            text-transform: uppercase;
-            font-family: 'montserrat-black', sans-serif !important;
-            position: absolute;
-            transform: translateY(15vh);
-            font-size: 2.2vw;
-            opacity: 100%;
-        }
-
-        #loader-bg.loaded 
-        {
-            height: 35vh;
-            width: 35vh;
-            border-radius: 70%;
-            transform: translateY(-2000px);
-        }
-    </style>
-
-    <!-- header animation -->
-    <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
-
-    <!-- Footer -->
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- social media instructions -->
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-
+  <html>	
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Team NOUS</title>
+	
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Sansita&display=swap" rel="stylesheet">
+	</head>
+	<!-- photos style -->
 	<style>
-		
-		html, body{
-			height:100%;
-			padding:0px;
-			margin:0px;
-
-			font-family: 'Lato', sans-serif;
-		}
-
-		.vertical-line {
-			border-left:  1.7px solid #E8E8E8;
-			opacity: 50%;
-
-			height: 300px;
-			margin-left: calc(100%/2.7);
-			top: 400px;;
-			position: absolute;
-		}
-
-		.footer hr{
-			background-color: #E8E8E8;
-			border: 1.5px solid #E8E8E8;
-			opacity: 50%;
-			width: calc(100%/1.5);
-		}
-
-		.footer{ 
-			width:100%; 
-			height:800px; 
-			margin:auto;
-			margin-top: 3%;
-			background:#002060;
-		} 
-
-		.footer ul{
-			margin:4%  39%;
-			text-align:right;
-			display:flex;
-			position:absolute;
-			transform: translate(-50%, -50%);
-			color: white;
-		}
-
-		.footer ul li{
-			list-style: none;
-			margin-right: 10%;
-		}
-
-		.footer h4{
-			text-align: center;
-			background-color:none;
-			position: absolute;
-			margin: 120px 0 0 36%;
-			font-size: 12px;
-		}
-
-		.footer ul li a{
-			text-align: center;
-			line-height: 70px;
-			font-size:30px;
-			margin:0 10px;
-			display: block;
-			position: relative;
-			z-index: 1;
-		}
-
-		.footer ul li a .fa{
-			position: relative;
-			color: white;
-			transition: 0.5s;
-		}
-
-		/* Facebook social icon */
-		.facebook a:hover .fa{
-			color: #3b5998;
-			transform: rotateY(360deg);
-		}
-
-		.facebook a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #3b5998;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-
-		.facebook a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #3b5998;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Twitter social icon */
-		.twitter a:hover .fa{
-			color:  #55acee;
-			transform: rotateY(360deg);
-		}
-
-		.twitter a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background:  #55acee;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Instagram social icon */
-		.instagram a:hover .fa{
-			color: #C32AA3;
-			transform: rotateY(360deg);
-		}
-
-		.instagram a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #C32AA3;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* LinkedIn social icon */
-		.linkedin a:hover .fa{
-			color: #0e76a8;
-			transform: rotateY(360deg);
-		}
-
-		.linkedin a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #0e76a8;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* YouTube social icon */
-		.youtube a:hover .fa{
-			color: #c4302b;
-			transform: rotateY(360deg);
-		}
-
-		.youtube a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #c4302b;
-			transition:0.5s;
-			z-index: 2;
-		}     
-
-		/* Mail social icon */
-		.mail a:hover .fa{
-			color: #dd4b39;
-			transform: rotateY(360deg);
-		}
-
-		.mail a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #dd4b39;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* GitHub social icon */
-		.github a:hover .fa{
-			color: #171515;
-			transform: rotateY(360deg);
-		}
-
-		.github a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #171515;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-		/* Website icon */
-		.website a:hover .fa{
-			color: #949794;
-			transform: rotateY(360deg);
-		}
-
-		.website a:before{
-			content:'';
-			position: absolute;
-			top:100%;
-			left:0;
-			background: #949794;
-			transition:0.5s;
-			z-index: 2;
-		}
-
-
-		.footer_sponsors {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			bottom: 0%;
-		}
-
-		.footer_sponsors div {
-			display: flex;
-			flex: 1;
-			justify-content: center;
-			align-items: center;
-			padding-left: 1%;
-			padding-right: 1%;
-		}
-
-		.footer_sponsors img {
-			width: 60%;
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(100%);
-			transition: all 0.3s ease-in-out;
-			opacity: 0.75;
-
-		}
-
-		.footer_sponsors img:hover {
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(0%);
-			opacity: 1;
-		}
-
-		.logo_container{
-			width: 45%;
-			float: left;
-			height: 100%;
-			display: block;
-		}
-
-		.logo_container img{
-			width: 400px;
-			height: auto;
-		}
-
-		.logo-footer {
-			position: relative;
-			height: 70px;
-			width: 90px;
-			background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
-			background-size: cover;
-			padding-bottom: 120px;
-			padding-right: 80px;
-			margin-left: calc(100%/1.5);
-		}
-
-		.col{
-			width:30%;
-			padding-right: 250px;
-		}
-
-		.col h4{
-			font-size:24px;
-			color:#ffffff;
-			text-transform: capitalize;
-			margin-bottom: 70px;
-			margin-top: -70px;
-			font-weight: 500;
-			position:relative;
-		}
-
-		.col ul li:not(:last-child){
-			margin-bottom: 10px;
-		}
-
-		.col ul li span{
-			font-size: 16px;
-			text-transform: capitalize;
-			color: #ffffff;
-			text-decoration:none;
-			font-weight: 300;
-			color: #bbbbbb;
-			display: block;
-		}
-
-
-		.footer-links{
-			color: #bbbbbb;
-			text-decoration:none;
-			z-index: 1000;
-		}
-
-		.footer-links:hover{
-			color: #ffffff;
-		}
-
-		.row{
-			display:flex;
-			flex-wrap:wrap;
-		}
-
-		.centered-container{
-			padding-right: 140px;
-			padding-left: 140px;
-			align-self: center;
-			grid-auto-columns: 1fr;
-			grid-column-gap: 16px;
-			grid-row-gap: 16px;
-			-ms-grid-columns: 1fr 1fr;
-			grid-template-columns: 1fr 1fr;
-			-ms-grid-rows: auto auto;
-			grid-template-rows: auto auto;
-			text-align: center;
-		}
-		.row-imgs {
-			padding-left: 0;
-			margin-left: -5px;
-			list-style: none;
-		}
-
-		.row-imgs > li {
-			display: inline-block;
-			padding-right: 5px;
-			padding-left: 5px;
-		}
-	</style>
-        
-        <!-- page title -->
-        <title>Inclucivity - iGEM NOUS</title>
-
-	<!-- Slidshow -->
-	<style>
-		* {box-sizing:border-box}
-
-		/* Slideshow container */
-		.slideshow-container3 {
-		max-width: 1000px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		}
-
-		.slideshow-container4 {
-		height: 700px;
-		width: 760px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		display: table-cell;
-		vertical-align:middle;
-		}
-
-		.slideshow-container, .slideshow-container2{
-		height: 800px;
-		position: relative;
-		margin: auto;
-		background-color: black;
-		text-align: center;
-		display: table-cell;
-		vertical-align:middle;
-
-		}
-
-		.slideshow-containerWhite {
-		max-width: 1000px;
-		position: relative;
-		margin: auto;
-		background-color: var(--background);
-		text-align: center;
-		}
-
-		/* Hide the images by default */
-		.mySlides, .mySlides2, .mySlides3 {
-		display: none; 
-		}
-
-
-		/* Next & previous buttons */
-		.prev, .next, .prev2, .next2, .prev3, .next3 {
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		width: auto;
-		margin-top: -22px;
-		padding: 16px;
-		color: white;
-		font-weight: bold;
-		font-size: 18px;
-		transition: 0.6s ease;
-		user-select: none;
-		}
-
-		.prevBlack, .nextBlack {
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		width: auto;
-		margin-top: -22px;
-		padding: 16px;
-		color: black;
-		font-weight: bold;
-		font-size: 18px;
-		transition: 0.6s ease;
-		user-select: none;
-		}
-
-		.prev, .prev2, .prev3, .prevBlack {
-		left: 0;
-		border-radius: 0 3px 3px 0;
-		}
-
-		/* Position the "next button" to the right */
-		.next, .next2, .next3, .nextBlack {
-		right: 0;
-		border-radius: 3px 0 0 3px;
-		}
-
-		/* On hover, add a black background color with a little bit see-through */
-		.prev:hover, .next:hover, .prev2:hover, .next2:hover, .prev3:hover, .next3:hover {
-		background-color: rgba(0,0,0,0.7);
-		}
-
-		.prevBlack:hover, .nextBlack:hover {
-		background-color: rgba(150,150,150,0.7);
-		}
-
-		/* Caption text */
-		.text {
-		color: white;
-		font-size: 15px;
-		padding: 8px 12px;
-		position: absolute;
-		bottom: 8px;
-		width: 100%;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.5);
-		}
-
-		.textBee {
-		color: white;
-		font-size: 15px;
-		padding: 8px 12px;
-		position: absolute;
-		bottom: 8px;
-		width: 100%;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.8);
-		}
-
-
-
-		/* Number text (1/3 etc) */
-		.numbertext, .numbertext2, .numbertext3  {
-		color: #f2f2f2;
-		font-size: 12px;
-		padding: 8px 12px;
-		position: absolute;
-		top: 0;
-		}
-
-		.numbertext4  {
-		color: black;
-		font-size: 12px;
-		padding: 8px 12px;
-		position: absolute;
-		top: 0;
-		}
-
-		/* The dots/bullets/indicators */
-		.dot, .dot2, .dot3 {
-		cursor: pointer;
-		height: 15px;
-		width: 15px;
-		margin: 0 2px;
-		background-color: #bbb;
-		border-radius: 50%;
-		display: inline-block;
-		transition: background-color 0.6s ease;
-		}
-
-		.active, .dot:hover, .active2, .dot2:hover, .active3, .dot3:hover  {
-		background-color: #717171;
-		}
-
-		/* Fading animation */
-		.fade, .fade2, .fade3 {
-		-webkit-animation-name: fade;
-		-webkit-animation-duration: 1.5s;
-		animation-name: fade;
-		animation-duration: 1.5s;
-		}
-
-		@-webkit-keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@-webkit-keyframes fade2 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade2 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-		@-webkit-keyframes fade3 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-
-		@keyframes fade3 {
-		from {opacity: .4}
-		to {opacity: 1}
-		}
-	</style>
-</head>
-
-  <header class="circles" id="banner">
-               
-      <canvas style="position: absolute; z-index: 0"></canvas>
-
-       <div >
-          <div >
-
-              <div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
-          </div>
-      </div>
-  </header>
-  <style>
-      .circles{
-		background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
-		background-size:cover;	
-        opacity:80%;	
-		margin:auto; 
-		width: auto;
-        height:auto;
-		background-repeat:no-repeat;
+	
+	/*main*/
+	section.abstract {
+	  padding: 3% 10% 1% 10%; 
 	}
-  </style>
+	hr.abstract {
+	  margin-left: 10%;
+	  margin-right: 10%;
+	}
+	/*title*/
+	.team h2 {
+	  font-size: 3.75rem;
+	  color:#172544;
+	  text-align: center;
+	}
+	.photo-wrapper {
+	  padding-left: 15%;
+	  padding-right:4%;
+	}
+	/* 6 photes in a line */
+	.photo-wrapper .intro-all {
+	  width: 30%;
+	  margin: 2% 1%;
+	  cursor: pointer;
+	}
+	/*lg: destop*/
+	@media (min-width: 992px) { 
+	  .photo-wrapper .intro-all {
+		width: 25%;
+		margin: 0% 1%;
+		cursor: pointer;
+	  }
+	} 
+	/* Dimmer */
+	.dimmer {
+	  position: fixed;
+	  display: flex;
+	  top: 0em ;
+	  left: 0em ;
+	  width: 100%;
+	  height: 100%;
+	  background-color:rgba(255,255,255,0.9);
+	  z-index: 10000;
+	  overflow-y: scroll;
+	}
+	/* might need revise because body tag */ /* backgroud become blur when dimmer show*/
+	.blurring .main, .blurring header, .blurring footer {
+	  -webkit-filter: blur(2px) grayscale(0);
+	  filter: blur(2px) grayscale(0);
+	  -webkit-transition: 800ms -webkit-filter ease;
+	  transition: 800ms -webkit-filter ease;
+	  transition: 800ms filter ease;
+	  transition: 800ms filter ease, 800ms -webkit-filter ease;
+	}
+	/* might need revise because body tag */
+	/* Medium devices (tablets, 768px and up) */
+	body.blurring {
+	  overflow: hidden; 
+	}
+	.dimmer > .card {
+	  z-index: 10005;
+	  overflow: auto;
+	  width: 80%;
+	}
+	.card-title {
+	   margin-bottom: .5rem;
+	}
+	.card-text {
+	  font-size: 1rem;
+	}
+	.card-text b {
+	  font-weight: 700;
+	}
+	
+	@media (min-width: 768px) { 
+	  .dimmer > .card {
+		width: 50%;
+	  }
+	}
+	</style>
+
+	<!-- in page menu & progress bar -->
+	<style>
+		/* progress bar */
+		
+		#fixedOverlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 12;
+		top: 18px;
+		transition: 1s;
+		font-family: "montserrat-light" !important;
+		}
+		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
+		pointer-events: none;
+		}
+
+		#fixedOverlay .scroll-wrapper {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		justify-content: space-between;
+		opacity: 1;
+		transition: 0.5s;
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area {
+		height: 100%;
+		width: 5vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+		@media screen and (max-width: 767px) {
+		#fixedOverlay .scroll-wrapper .scroll-area {
+			width: 10vw;
+		}
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+		width: 30%;
+		height: 30%;
+		background: rgba(98, 129, 239, 0.3);
+		border-radius: 10px;
+		max-width: 7px;
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+		width: 100%;
+		background: #002060;
+		opacity: 100%;
+		height: 0%;
+		border-radius: 20px;
+		transition: background-color 0.5s;
+		}
+		
+		#fixedOverlay nav {
+		box-sizing: border-box;
+		z-index: 2;
+		pointer-events: none;
+		display: block;
+		transition: 0.5s;
+		height: 87px;
+		}
+		
+		/* in page menu */
+		.sideBlock 
+		{
+			text-transform: uppercase;
+			float: left;
+			margin-left: 10vw;
+			position: -webkit-sticky;
+			position: fixed;
+			top: 30%;
+			margin: 200px 32px 0 4vw;
+			transform: translateY(-50%);
+			min-width: 20px;
+			max-width: 350px;
+		}
+		@media (max-width: 1024px) {
+		.sideBlock {
+			margin: 200px 32px 0 4vw;
+		}
+		}
+		.sideBlock b {
+		font-family: "montserrat-bold";
+		font-size: 1.4rem;
+		font-weight: bold;
+		margin-left: 0.25em;
+		display: block;
+		}
+		.sideBlock ul {
+		margin: 1em 0;
+		padding: 0;
+		}
+		.sideBlock a {
+		color: #002060;
+		text-decoration: none;
+		font-family: "lato-light", sans-serif;
+		}
+		.sideBlock li {
+		margin: 24px;
+		list-style: none;
+		color: #002060;
+		font-size: 1.1rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-left: 0.25em;
+		}
+		.sideBlock li:last-child {
+		margin-bottom: 0;
+		}
+		.sideBlock li div {
+		max-width: 15px;
+		max-height: 15px;
+		box-sizing: border-box;
+		border: 1px solid;
+		color: #002060;
+		border-radius: 2px;
+		transition: 0.5s;
+		margin-right: 8px;
+		height: 10vw;
+		width: 10vh;
+		}
+		.sideBlock li.active div {
+		background-color: #002060;
+		}
+		@media (max-width: 800px) {
+		
+		.sideBlock b {
+			display: block;
+			margin: 0;
+		}
+		.sideBlock ul {
+			display: inline-block;
+			text-align: start;
+			margin-top: 0;
+			margin-bottom: 30px;
+		}
+		.sideBlock li {
+			font-weight: bold;
+		}
+		.sideBlock li a {
+			color: #FAFAFC;
+		}
+		.sideBlock li div {
+			color: #FAFAFC;
+		}
+		.sideBlock li.active div {
+			background-color: #FAFAFC;
+		}
+		.sideBlock.notshow {
+			transform: translateY(calc(100% - 0px));
+		}
+		.sideBlock.open {
+			transform: translateY(0);
+		}
+		}
+
+		
+		#sideMenu,
+		#top_title,
+		.patrollink,
+		#firstHeading,
+		#home_logo,
+		#sideMenu {
+			display: none;
+		}
+
+		#content {
+			padding: 0px;
+			width: 100%;
+			margin-top: -7px;
+			margin-left: 0px;
+			border: none;
+			line-height: initial;
+		}
+
+		body,
+		html {
+			background-color: white;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0px;
+		}
+
+		#bodyContent h1,
+		#bodyContent h2,
+		#bodyContent h3,
+		#bodyContent h4,
+		#bodyContent h5 {
+			margin-bottom: 0px;
+		}
+
+		#bodyContent a[href ^="https://"],
+		.link-https {
+			padding-right: 0px;
+		}
+
+		#globalWrapper {
+			padding: 0px;
+		}
+
+		a {
+			color: initial;
+		}
+
+		#top_title {
+			display: none;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: unset;
+			font-weight: unset;
+			overflow: unset;
+			padding-top: unset;
+			padding-bottom: unset
+		}
+
+		ol {
+			line-height: unset
+		}
+
+		#HQ_page h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h {
+			font-family: unset;
+			font-weight: unset;
+		}
+		#HQ_page p{
+		font-size: unset;
+		font-family: unset;
+		text-align: unset;
+		margin: 0;
+		}
+
+		#content H1 {
+			font-weight: unset
+		}
+
+		#bodyContent h1,
+		#bodyContent h2 {
+			margin-bottom: unset
+		}
+
+		p br {
+			display: unset
+		}
+		li{
+		margin-bottom: unset !important;
+		}
+	</style>
+	<!-- back to top -->
+	<style>
+		#BacktoTop {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 99;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		background-color: #B8EBFF;
+		color: white;
+		cursor: pointer;
+		padding: 15px;
+		border-radius: 30%;
+		}
+
+		#BacktoTop:hover {
+		background-color: #002060;
+		}
+	</style>
+
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div class="nav-bar-logo">
-            <a href="https://2021.igem.org/Team:Greece_United" class="active">
-                <div class="logo-header"></div>
-            </a>
-        </div>
-
-        <div class="right-navbar" id="navbarID">
-            <ul id="nav">
-                <li><a href="https://2021.igem.org/Team:Greece_United">HOME</a></li>
-
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
-                        </div>
-                    </div> 
-                </li>
-
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
-                        </div>
-                    </div> 
-                </li>
-
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/App">APPLICATION</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/GeneticCircuit">GENETIC CIRCUIT</a>
-                        </div>
-                    </div> 
-                </li>
-                
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/HumanPractices'">HUMAN PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/HumanPractices">HUMAN PRACTICES</a>
-                                <a href="https://2021.igem.org/Team:Greece_United/Integrated">INTEGRATED</a>
-                                <a href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                                <a href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                                <a href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                                <a href="https://2021.igem.org/Team:Greece_United/Inclucivity">INCLUCIVITY</a>
-                        </div>
-                    </div> 
-                </li>
-
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreunership'">FINANCES</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">ENTERPRENEURSHIP</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
-                        </div>
-                    </div> 
-                </li>
-                <li><a href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a></li>
-
-                
-
-            </ul>
-            
-        </div>
-    </div>
-    <!-- Navigation Bar  End -->
-
-    <!-- Back to Top Button -->
+	<!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
@@ -1609,248 +398,62 @@
     </div>
     <!-- Progress bar End -->
 
-    <!-- loader -->
-    <div id="loader-wrapper">
-        <div id="loader-bg">
-            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-        </div>
-    </div>
-    <!-- loader end -->
-
-    <!-- Text and in page menu-->
-	
-    <main id="section-text">
-        
-        <div id="index" class="sideBlock">
-            <b>title of tittles</b>
-            <ul>
-                <li class="active">
-                    <div></div>
-                    <a href="#heading1">Bio - Girls</a>
-                </li>
-                <li class="active">
-                    <div></div>
-                    <a href="#heading2">Biology Comic</a>
-                </li>
-				<li class="active">
-                    <div></div>
-                    <a href="#heading3">expARTiments</a>
-                </li>
-            </ul>
-        </div>
-        <input id="headingTitleText" type="hidden" value="Parts">
-            <div class="contentBlock">
-                <div class="content">
-                    <div class="h3" id="heading1" tabindex="-1" style="outline: none;">Bio - Girls</div>
-                    <h1>Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem 
-                        Ipsum has been the industry's standard dummy
-                        text ever since the 1500s,
-                        Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem 
-                        Ipsum has been the industry's standard dummy
-                        text ever since the 1500s,
-                        Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem 
-                        Ipsum has been the industry's standard dummy
-                            text ever since the 1500s,
-                            Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry. Lorem 
-                            Ipsum has been the industry's standard dummy
-                            text ever since the 1500s,
-                            Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry. Lorem 
-                            Ipsum has been the industry's standard dummy
-                            text ever since the 1500s,
-                            </h1>
-
-                    <div class="h3" id="heading2" tabindex="-1" style="outline: none;">Comic</div>
-                    <h1> 
-						“The Adventures of Little Aaron” is a little 10-page comic book about Aaron, a kid that is curious about anatomy and biology, and Nous, the hero who is there to help him learn. This little comic book is an attempt to interest children all over the world in the field of synthetic biology using cartoon characters with simple and colorful designs, as well as simple interactions and explanations, so that they can be appealing to a younger audience.  
-					</h1>
-					<div class="h3" id="heading3" tabindex="-1" style="outline: none;">expARTiments</div>
-                    <h1>
-						There is the common belief that there are two sides to each brain: right and left. The right one 
-						is governed by logic while the left is the artistic one. This stereotype enslaves scientific minds 
-						and keeps them detached from their artistic self, limits them to their field of study, lets them 
-						believe that the creative world of arts is not for them to touch. Blocking any group of people, in 
-						this case artists, from actual and positive interaction with science, is not in the best interest of 
-						anyone. So, we have realized this to be a problem.
-						Due to the requirements of the iGEM Competition, our team includes students from many different
-						 departments. Most of them 
-						come from a scientific background while we do have a member that actually studies art. Through our cooperation, 
-						we realized
-						how false this stereotype is, and how every member thinks alike, using their logical and artistic thinking. 
-						Having realized that, we felt we had freed our minds and upgraded our way of thinking. We felt the need to communicate 
-						this 
-						to other teams. Our goal now more: let the world know science and art are not and should not be seen as completely
-						 different
-						fields for the better good. 
-
-						We hoped to communicate that by calling out to other iGEM teams and inviting them to show their work with an artistic 
-						touch. 
-						This way we hoped to bring them to our realization, while inviting people from art departments to engage more 
-						systematically 
-						in the science side of a project. Everybody should be included in science, our artists and our artistic side of brains.
-						Our collaboration named expARTiments, involved the teams:    and we want to thank them a lot for this amazing collaboration. 
-						They sent us photos of their experiments, meetings, labs, that they found artistic in their own way and we created a collage 
-						to show every little moment in a big, meaningful picture.
-					</h1>
-					</br>
-					<img scr="https://2021.igem.org/wiki/images/8/83/T--Greece_United--epione.png" >
-
-					<h1>			
-						Here you can find the photos independently, including a description and credits.
-
-
-					SLIDESHOW
-
-						<!-- Slideshow container -->
-<div class="slideshow-containerWhite">
-
-	<!-- Full-width images with number and caption text-->
-	<div class="mySlides fade">
-	  <div class="numbertext4">1 / 7</div>
-	  <img src="https://2021.igem.org/wiki/images/6/63/T--Greece_United--logo-og.jpg" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>Logo igem nous</strong> - Invasive species in France, very efficient predator and very protective about its nest. Contrary to collective thoughts, it is not more dangerous for human than its European cousin. However, its nest hosts three times more individuals than its cousin's nest. Accordingly, the colony needs more food and may unbalance the environment by its predation efficiency and because it has no predator. Its presence stresses bees, stop them going out to supply the hive and lead them to starve during winter.</div>
+	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+		
+			<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
+			describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
+			thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
+			seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
+			apart from characterizing the strength of each one of us separately, also describes the
+			spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
+			Right around there four of us from different cities and universities, gathered together 
+			and decided to create an iGEM team with no geographical limitations, in contrast to the
+			norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
+			The idea for an iGEM team had been developing in each person’s mind separately, and then 
+			came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
+			Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
+			begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
+		
+		<b>Let’s meet the team!</b>
+	</p>
+	<br><br><br><br><br>
+	<!-- in page menu -->
+	<div id="index" class="sideBlock">
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading1">Team Members</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading2">Principal Investigators</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading3">Advisor & Instructor</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading4">Outside Partner</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading5">Mentor</a>
+			</li>
+		</ul>
 	</div>
-  
-   <div class="mySlides fade">
-	  <div class="numbertext4">2 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/5/56/T--Poitiers--abeille.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The honey bee</strong> - Principal pollinator of the environment, its action is vital to most of habitats. Without these little fellows, we may lost until 80% of our plants. They have the same venom as the other Hymenoptera but avoid to sting because they die if they do. </div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">3 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/c/c8/T--Poitiers--frelon_européen.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The European hornet</strong> - Natural predator of a lot of insects in France, which is useful to control populations. It also helps in cleaning waste and carcass. Can be agressive, but it's not dangerous to non-allergic people if alone.</div>
-	</div>
-  
-	<div class="mySlides fade">
-	  <div class="numbertext4">4 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/e/e6/T--Poitiers--bourdon.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The bumblebee</strong> - Major pollinator insect, peaceful and often trapped because of sweet baits.</div>
-	</div>
-	
-	<div class="mySlides fade">
-	  <div class="numbertext4">5 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/1/1e/T--Poitiers--guêpe_européenne.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The European wasp</strong> - Very polyvalent species, predator, pollinator and waste cleaner, the wasp is essential to our environment. Its venom is the same as other Hymenoptera and is only dangerous to allergic people.</div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">6 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/d/d2/T--Poitiers--papillons_triple.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The butterfly</strong> - Very good pollinator, this insect is really sensitive to climate conditions changes. Most of the species present patterns on their wings to intimidate predators.</div>
-	</div>
-	  
-	<div class="mySlides fade">
-	  <div class="numbertext4">7 / 7</div>
-	  <img src="https://2019.igem.org/wiki/images/1/1e/T--Poitiers--mouche.png" style="height:400px; max-width:980px; margin-left: auto; margin-right: auto;">
-	  <div class="textBee"><strong>The fly</strong> - One of the most useful insect in the environment, they clean it day after day from any waste. A lot of species are also pollinators, but on other plant species than honey bees; they don't have the same tastes.</div>
-	</div>
-	  
-  
-	<!-- Next and previous buttons -->
-	<a class="prevBlack" onclick="plusSlides(-1)">&#10094;</a>
-	<a class="nextBlack" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-	<span class="dot" onclick="currentSlide(1)"></span>
-	<span class="dot" onclick="currentSlide(2)"></span>
-	<span class="dot" onclick="currentSlide(3)"></span>
-	<span class="dot" onclick="currentSlide(4)"></span>
-	<span class="dot" onclick="currentSlide(5)"></span>
-	<span class="dot" onclick="currentSlide(6)"></span>
-	<span class="dot" onclick="currentSlide(7)"></span>
-  </div>
-  <br/><br/><br/>
 
-					All this proves that science and art are very similar to each other and should be combined 
-					at every chance. We know for a fact that science explains everything in our lives. So, the question
-					that remains is: <b>Does art imitate life, or does life imitate art?</b>
+	<br><br><br><br><br><br>
 
-					</h1>
-					
-                </div>
-            </div>
-    </main>
-
-
-    <!-- Text and in page menu End -->
-
-    <!-- Footer -->
-    <footer>
-            
-        <div class="footer" style="position:absolute;">
-
-            <br><br><br><br>
-            <hr>
-            
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-            <hr>
-            </div>
-            
-        
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        
-        <div class="row">
-            <div class="col">
-                <a href="https://igemnous.med.duth.gr/" target="_blank">
-                    <div class="logo-footer"></div> 
-                </a>
-                <div class="vertical-line"></div>
-            </div>
-        </div>
-
-
-            <div class="footer_sponsors">
-                    <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-top: -240px; "></a>
-                    <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -155px;"></a>
-                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -260px;"></a>
-                    <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: 10px;"></a>
-            </div>
-        
-    </footer>
-
-</body>
-
-<!-- back to top button -->
-<script>
-    
-    var mybutton = document.getElementById("BacktoTop");
-
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-    }
-
-    function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    }
-</script>
-
-<!-- progress bar & in page menu -->
+	<!-- progress bar & in page menu -->
 <script>
     
     var textSection = null;
@@ -1905,19 +508,27 @@
 
         document.getElementById("fixedOverlay").classList.add("project");
 </script>
-
-<!-- loader -->
+<!-- back to top button -->
 <script>
-    window.addEventListener("load", function() 
-    {
-        let loader = document.getElementById('loader-bg');
-        
-        setTimeout(function() 
-        {
-            loader.classList.add('loaded')
-        }, 100);
-    });
-</script>
+    
+    var mybutton = document.getElementById("BacktoTop");
 
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+</script>
+  
+</html>
 
 </html>
