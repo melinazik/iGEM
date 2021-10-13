@@ -90,19 +90,6 @@
     
         /* Navigation Bar */
         /* -------------- NAVBAR ------------ */
-    
-    
-        .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        /* overflow: hidden;  */
-        background-color:#002060;/*#0E828A/* #333; /* Dark background color */
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-        }
-    
         .right-navbar {
         align-self:flex-end;
         /* overflow: hidden;  */
@@ -152,42 +139,17 @@
         background-color: #B7E0FF; /* Grey background color */
         color: #002060; /* Black text color */
         }
-    
-        /* responsive/collapsible nav bar */
-        .right-navbar .icon {
-        display: none;
+     
+        /* Header */
+        .circles{
+            background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
+            background-size:cover;	
+            opacity:80%;	
+            margin:0; 
+            width: 100%;
+            background-repeat:no-repeat;
         }
-    
-        .nav-bar-logo {
-        padding: 14px 20px; /* Add some padding */
-        display: flex;
-        cursor: pointer;
-        }
-    
-        .nav-bar-logo a{
-        font-weight: 400;
-        font-size: 1.4em;
-        color: white; /* White text color */
-        text-decoration: none; /* Remove underline */
-        cursor: pointer;
-        }
-    
-        .dropdown {
-        float: left;
-        }
-    
-        .dropdown .dropbtn {
-        font-size: 1.2em;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-        z-index: 10;
-        }
-    
+
         .dropdown-content {
         display: none;
         position: absolute;
@@ -221,25 +183,7 @@
         display: block;
         }
     
-        .logo-header {
-        position: relative;
-        height: 70px;
-        width: 70px;
-        background: url("https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png");
-    
-        background-size: cover;
-        padding-right: 7px;
-        }
-    
-        /* Header */
-        .circles{
-            background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
-            background-size:cover;	
-            opacity:80%;	
-            margin:0; 
-            width: 100%;
-            background-repeat:no-repeat;
-        }
+        
         /* Home */
         
     
@@ -251,8 +195,6 @@
             height: 1vh;
     
         }
-        
-    
     
         .p3{
             z-index: 10;
@@ -307,12 +249,6 @@
             position: absolute;
         }
     
-        .footer hr{
-            background-color: #E8E8E8;
-            border: 1.5px solid #E8E8E8;
-            opacity: 50%;
-            width: calc(100%/1.5);
-        }
     
         footer{
             top: 800vh ;
@@ -521,29 +457,6 @@
             opacity: 1;
         }
     
-        .logo_container{
-            width: 45%;
-            float: left;
-            height: 100%;
-            display: block;
-        }
-    
-        .logo_container img{
-            width: 400px;
-            height: auto;
-        }
-    
-        .logo-footer {
-            position: relative;
-            height: 70px;
-            width: 90px;
-            background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
-            background-size: cover;
-            padding-bottom: 120px;
-            padding-right: 80px;
-            margin-left: calc(100%/1.5);
-        }
-    
         .col{
             width:30%;
             padding-right: 250px;
@@ -571,48 +484,8 @@
             font-weight: 300;
             color: #bbbbbb;
             display: block;
-        }
+        }     
     
-    
-        .footer-links{
-            color: #bbbbbb;
-            text-decoration:none;
-            z-index: 1000;
-        }
-    
-        .footer-links:hover{
-            color: #ffffff;
-        }
-    
-        .row{
-            display:flex;
-            flex-wrap:wrap;
-        }
-    
-        .centered-container{
-            padding-right: 140px;
-            padding-left: 140px;
-            align-self: center;
-            grid-auto-columns: 1fr;
-            grid-column-gap: 16px;
-            grid-row-gap: 16px;
-            -ms-grid-columns: 1fr 1fr;
-            grid-template-columns: 1fr 1fr;
-            -ms-grid-rows: auto auto;
-            grid-template-rows: auto auto;
-            text-align: center;
-        }
-        .row-imgs {
-            padding-left: 0;
-            margin-left: -5px;
-            list-style: none;
-        }
-    
-        .row-imgs > li {
-            display: inline-block;
-            padding-right: 5px;
-            padding-left: 5px;
-        }
     
     </style>
 
@@ -636,10 +509,25 @@
     </div>
 
     <!-- Navigation Bar -->
-		<div class="navbar">
-			<div class="nav-bar-logo">
+
+    
+      
+		<div style="display: flex;
+        flex-wrap: wrap;
+        background-color:#002060;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;">
+			<div style="padding: 14px 20px;
+            display: flex;
+            cursor: pointer;">
 				<a href="https://2021.igem.org/Team:Greece_United" class="active">
-					<div class="logo-header"></div>
+                    
+       
+					<img style="height: 70px;
+                        background-size: cover;
+                        padding-right: 7px;position: relative;" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
 				</a>
 			</div>
 	
@@ -648,8 +536,16 @@
 					<li><a href="https://2021.igem.org/Team:Greece_United">HOME</a></li>
 
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
 							</button>
 							<div class="dropdown-content">
 								<a href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
@@ -662,8 +558,16 @@
 					</li>
 
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
 							</button>
 							<div class="dropdown-content">
 								<a href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
@@ -680,8 +584,16 @@
 					</li>
 
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
 							</button>
 							<div class="dropdown-content">
 								<a href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
@@ -692,8 +604,16 @@
 					</li>
                     
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/HumanPractices'">HUMAN PRACTICES</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/HumanPractices'">HUMAN PRACTICES</a>
 							</button>
 							<div class="dropdown-content">
                                 <a href="https://2021.igem.org/Team:Greece_United/HumanPractices">HUMAN PRACTICES</a>
@@ -707,8 +627,16 @@
 					</li>
 
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreunership'">FINANCES</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreunership'">FINANCES</a>
 							</button>
 							<div class="dropdown-content">
 								<a href="https://2021.igem.org/Team:Greece_United/Entrepreunership">ENTERPRENEURSHIP</a>
@@ -718,8 +646,16 @@
 						</div> 
 					</li>
                     <li>
-						<div class="dropdown">
-							<button class="dropbtn" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+						<div style="float: left;">
+							<button style="font-size: 1.2em;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        z-index: 10;" onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
 							</button>
 							<div class="dropdown-content">
                                 <a href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
@@ -762,7 +698,7 @@
                     font-weight: bold;
                     color: #002060; ">Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. It currently lacks an efficient, radical treatment.</p>
 
-                    <video style="width:650;height:600;left: -100px;" controls loop>
+                    <video style="width:650px; height:600px; left: -100px;" controls loop>
                         <source  src="https://2021.igem.org/wiki/images/3/38/T--Greece_United--OA--joint.mp4">
                         
                       </video>
@@ -795,7 +731,10 @@
             
 
         <br><br><br><br>
-        <hr>
+        <hr style="background-color: #E8E8E8;
+        border: 1.5px solid #E8E8E8;
+        opacity: 50%;
+        ">
         
         <ul>
             <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -808,15 +747,22 @@
             <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
         </ul>
         <br><br><br><br><br><br><br>
-        <hr>
+        <hr style="background-color: #E8E8E8;
+        border: 1.5px solid #E8E8E8;
+        opacity: 50%;
+        ">
             
         <br><br><br><br><br><br><br><br>
                 
             
-        <div class="row">
+        <div style="display:flex;
+        flex-wrap:wrap; ">
             <div class="col">
                 <a href="https://igemnous.med.duth.gr/" target="_blank">
-                    <div class="logo-footer"></div> 
+                    <img style=" position: relative;
+                    width: 40%;
+                    padding-bottom: 120px;
+                    margin-left: calc(100%/1.5);" src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
                 </a>
                
             </div>
@@ -832,10 +778,10 @@
                 align-items: center;
                 padding-left: 1%;
                 padding-right: 1%;">
-                        <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-top: -240px; "></a>
-                        <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -155px;"></a>
-                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -260px;"></a>
-                        <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: 10px;"></a>
+                        <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -370px; "></a>
+                        <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -330px;"></a>
+                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -420px;"></a>
+                        <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: -140px;"></a>
                 </div>
             </div>
 
