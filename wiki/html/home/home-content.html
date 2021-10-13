@@ -1,0 +1,112 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="../../css/home-style.css" />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+    <script src="../../js/home-js.js"> </script>
+
+    <body>
+    	<!--------------------------------------- COPY HERE --------------------------------------->
+        <style>
+            #wrap {
+            height:10vh;
+            }
+        
+            .container {
+                height: 1vh;
+        
+            }
+        
+            .p3{
+                z-index: 10;
+                position: relative;
+                width: 300px;
+                left: calc((100%)/1.25);
+                font-size: 30px;
+                color: #002060;
+                font-weight: bold;
+                margin-top: -270px;
+            }
+        
+            .p4{
+                z-index: 10;
+                position: relative;
+                width: 400px;
+                text-align: justify;
+                left: calc((100%)/1.5);
+                top: -450px;
+                font-size: 24px;
+                color: #002060;
+            }
+        
+        
+        
+            .oa-people {
+                width: 700px;
+                padding-top: 100px;
+                margin-left: 50px;
+            transition: transform .8s;
+        
+            }
+        
+            .oa-people:hover {
+                width: 700px;
+                padding-top: 100px;
+                margin-left: 50px;;
+                transform: scale(0.8); 
+            }
+        </style>
+
+       <div class="container">
+            <div id="wrap">
+                
+                <svg style="z-index:-1; position: absolute;" viewBox="0 0 802.354 3245.896">
+                    
+                    <defs>
+                    <path id="Path_440" d="M 14581.822 1364 S 14348 1448 14528 1848 s -275 454 -408 592 s -183 360 232 548 s 439 346 412 460 s -144 264 -464 252 s -149 662 -144 464 s 36 336 384 444" transform="translate(-13997.437 -1363.059)" fill="none" /></defs>
+                            
+                    <use xlink:href="#Path_440" stroke="#000" stroke-width="2" stroke-dasharray="8"/>
+                    <use id="theFill" xlink:href="#Path_440" stroke="#000" stroke-width="3"/>
+                    
+                    
+                </svg>
+
+                <section>
+                    <p style="z-index: 10;position: relative;width: 600px;text-align: justify;left: 100px;padding-top: 200px;font-size: 24px;font-weight: bold;color: #002060; ">
+                    Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. It currently lacks an efficient, radical treatment.</p>
+
+                    <video style="width:650px; height:600px; left: -100px;" controls loop>
+                        <source  src="https://2021.igem.org/wiki/images/3/38/T--Greece_United--OA--joint.mp4">
+                        
+                      </video>
+                      <p style="z-index: 10;position: relative;width: 400px;text-align: justify;left: calc((100%)/1.5);top: -450px;font-size: 24px;font-weight: bold;color: #002060; ">Osteoarthritis is the most common musculoskeletal disease around the world, often leading to chronic pain and severe paralysis. It currently lacks an efficient, radical treatment.</p>
+                </section>
+
+                <section>
+                    <img class="oa-people" src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--OA--humans.png">
+                    <p class="p3 ">7% of the word population has Osteoarthritis.</p> 
+                </section>
+            </div>
+        </div>
+
+        
+    </body>
+
+    <script>
+            
+        window.addEventListener('scroll', function() {
+        let l = Path_440.getTotalLength();
+        let dasharray = l;
+        let dashoffset = l;
+        e = document.documentElement;
+        theFill.setAttributeNS(null, "stroke-dasharray", l);
+        theFill.setAttributeNS(null, "stroke-dashoffset", l);
+        dashoffset = l - window.scrollY * l / (e.scrollHeight - e.clientHeight);
+        console.log('window.scrollY', window.scrollY, 'scrollTop', e.scrollTop, 'scrollHeight', e.scrollHeight, 'clientHeight', e.clientHeight, 'dash-offset', dashoffset);
+        theFill.setAttributeNS(null, "stroke-dashoffset", dashoffset);
+        })
+
+        window.onscroll = function () { scrollSvgFill() };
+    </script>
+    <!--------------------------------------- END HERE --------------------------------------->
+
+
+</html>
