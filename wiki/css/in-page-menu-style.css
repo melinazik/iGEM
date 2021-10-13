@@ -5,8 +5,8 @@
     float: left;
     margin-left: 10vw;
     position: -webkit-sticky;
-    position: sticky;
-    top: 50%;
+    position:fixed;
+    top: 20%;
     margin: 200px 32px 0 4vw;
     transform: translateY(-50%);
     min-width: 20px;

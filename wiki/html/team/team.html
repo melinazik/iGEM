@@ -1,76 +1,1184 @@
 <html>
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------- NOT UPLOADING START --------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<head> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
-    <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
-
-</head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Team NOUS</title>
+	<link rel="stylesheet" href="https://2019.igem.org/Team:NCKU_Tainan/css/4.3.1/bootstrap_min_css?action=raw&ctype=text/css"/>
 	
-<script src="../../js/javascript.js"> </script>
-
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Sansita&display=swap" rel="stylesheet">
+	</head>
+	<!-- photos style -->
+	<style>
 	
-	<!-- top bar ------------------------------------------------------------>
+	/*main*/
+	section.abstract {
+	  padding: 3% 10% 1% 10%; 
+	}
+	hr.abstract {
+	  margin-left: 10%;
+	  margin-right: 10%;
+	}
+	/*title*/
+	.team h2 {
+	  font-size: 3.75rem;
+	  color:#172544;
+	  text-align: center;
+	}
+	.photo-wrapper {
+	  padding-left: 10%;
+	  padding-right:4%;
+	}
+	/* 6 photes in a line */
+	.photo-wrapper .intro-all {
+	  width: 30%;
+	  margin: 2% 1%;
+	  cursor: pointer;
+	}
+	/*lg: destop*/
+	@media (min-width: 992px) { 
+	  .photo-wrapper .intro-all {
+		width: 25%;
+		margin: 0% 1%;
+		cursor: pointer;
+	  }
+	} 
+	/* Dimmer */
+	.dimmer {
+	  position: fixed;
+	  display: flex;
+	  top: 0em ;
+	  left: 0em ;
+	  width: 100%;
+	  height: 100%;
+	  background-color:rgba(255,255,255,0.9);
+	  z-index: 10000;
+	  overflow-y: scroll;
+	}
+	/* might need revise because body tag */ /* backgroud become blur when dimmer show*/
+	.blurring .main, .blurring header, .blurring footer {
+	  -webkit-filter: blur(2px) grayscale(0);
+	  filter: blur(2px) grayscale(0);
+	  -webkit-transition: 800ms -webkit-filter ease;
+	  transition: 800ms -webkit-filter ease;
+	  transition: 800ms filter ease;
+	  transition: 800ms filter ease, 800ms -webkit-filter ease;
+	}
+	/* might need revise because body tag */
+	/* Medium devices (tablets, 768px and up) */
+	body.blurring {
+	  overflow: hidden; 
+	}
+	.dimmer > .card {
+	  z-index: 10005;
+	  overflow: auto;
+	  width: 80%;
+	}
+	.card-title {
+	   margin-bottom: .5rem;
+	}
+	.card-text {
+	  font-size: 1rem;
+	}
+	.card-text b {
+	  font-weight: 700;
+	}
+	
+	@media (min-width: 768px) { 
+	  .dimmer > .card {
+		width: 50%;
+	  }
+	}
+	</style>
 
-	<div class="top_bar">
+	<!-- in page menu & progress bar -->
+	<style>
+		/* progress bar */
 		
-		<div class="bar_wrapping"> 
-			
-			<a href="https://2021.igem.org/">
-				<div class="bar_button main_page"> 
-				</div>
-			</a>
+		#fixedOverlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 12;
+		top: 18px;
+		transition: 1s;
+		font-family: "montserrat-light" !important;
+		}
+		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
+		pointer-events: none;
+		}
 
-			<div class="bar_button general_menu"> </div>
-			
-		</div>						
-	
+		#fixedOverlay .scroll-wrapper {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		justify-content: space-between;
+		opacity: 1;
+		transition: 0.5s;
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area {
+		height: 100%;
+		width: 5vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+		@media screen and (max-width: 767px) {
+		#fixedOverlay .scroll-wrapper .scroll-area {
+			width: 10vw;
+		}
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+		width: 30%;
+		height: 30%;
+		background: rgba(98, 129, 239, 0.3);
+		border-radius: 10px;
+		max-width: 7px;
+		}
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+		width: 100%;
+		background: #002060;
+		opacity: 100%;
+		height: 0%;
+		border-radius: 20px;
+		transition: background-color 0.5s;
+		}
+		
+		#fixedOverlay nav {
+		box-sizing: border-box;
+		z-index: 2;
+		pointer-events: none;
+		display: block;
+		transition: 0.5s;
+		height: 87px;
+		}
+		
+		/* in page menu */
+		.sideBlock 
+		{
+			text-transform: uppercase;
+			float: left;
+			margin-left: 10vw;
+			position: -webkit-sticky;
+			position: fixed;
+			top: 30%;
+			margin: 200px 32px 0 4vw;
+			transform: translateY(-50%);
+			min-width: 20px;
+			max-width: 350px;
+		}
+		@media (max-width: 1024px) {
+		.sideBlock {
+			margin: 200px 32px 0 4vw;
+		}
+		}
+		.sideBlock b {
+		font-family: "montserrat-bold";
+		font-size: 1.4rem;
+		font-weight: bold;
+		margin-left: 0.25em;
+		display: block;
+		}
+		.sideBlock ul {
+		margin: 1em 0;
+		padding: 0;
+		}
+		.sideBlock a {
+		color: #002060;
+		text-decoration: none;
+		font-family: "lato-light", sans-serif;
+		}
+		.sideBlock li {
+		margin: 24px;
+		list-style: none;
+		color: #002060;
+		font-size: 1.1rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-left: 0.25em;
+		}
+		.sideBlock li:last-child {
+		margin-bottom: 0;
+		}
+		.sideBlock li div {
+		max-width: 15px;
+		max-height: 15px;
+		box-sizing: border-box;
+		border: 1px solid;
+		color: #002060;
+		border-radius: 2px;
+		transition: 0.5s;
+		margin-right: 8px;
+		height: 10vw;
+		width: 10vh;
+		}
+		.sideBlock li.active div {
+		background-color: #002060;
+		}
+		@media (max-width: 800px) {
+		
+		.sideBlock b {
+			display: block;
+			margin: 0;
+		}
+		.sideBlock ul {
+			display: inline-block;
+			text-align: start;
+			margin-top: 0;
+			margin-bottom: 30px;
+		}
+		.sideBlock li {
+			font-weight: bold;
+		}
+		.sideBlock li a {
+			color: #FAFAFC;
+		}
+		.sideBlock li div {
+			color: #FAFAFC;
+		}
+		.sideBlock li.active div {
+			background-color: #FAFAFC;
+		}
+		.sideBlock.notshow {
+			transform: translateY(calc(100% - 0px));
+		}
+		.sideBlock.open {
+			transform: translateY(0);
+		}
+		}
+
+		
+		#sideMenu,
+		#top_title,
+		.patrollink,
+		#firstHeading,
+		#home_logo,
+		#sideMenu {
+			display: none;
+		}
+
+		#content {
+			padding: 0px;
+			width: 100%;
+			margin-top: -7px;
+			margin-left: 0px;
+			border: none;
+			line-height: initial;
+		}
+
+		body,
+		html {
+			background-color: white;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0px;
+		}
+
+		#bodyContent h1,
+		#bodyContent h2,
+		#bodyContent h3,
+		#bodyContent h4,
+		#bodyContent h5 {
+			margin-bottom: 0px;
+		}
+
+		#bodyContent a[href ^="https://"],
+		.link-https {
+			padding-right: 0px;
+		}
+
+		#globalWrapper {
+			padding: 0px;
+		}
+
+		a {
+			color: initial;
+		}
+
+		#top_title {
+			display: none;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: unset;
+			font-weight: unset;
+			overflow: unset;
+			padding-top: unset;
+			padding-bottom: unset
+		}
+
+		ol {
+			line-height: unset
+		}
+
+		#HQ_page h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h {
+			font-family: unset;
+			font-weight: unset;
+		}
+		#HQ_page p{
+		font-size: unset;
+		font-family: unset;
+		text-align: unset;
+		margin: 0;
+		}
+
+		#content H1 {
+			font-weight: unset
+		}
+
+		#bodyContent h1,
+		#bodyContent h2 {
+			margin-bottom: unset
+		}
+
+		p br {
+			display: unset
+		}
+		li{
+		margin-bottom: unset !important;
+		}
+	</style>
+	<!-- back to top -->
+	<style>
+		#BacktoTop {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 99;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		background-color: #B8EBFF;
+		color: white;
+		cursor: pointer;
+		padding: 15px;
+		border-radius: 30%;
+		}
+
+		#BacktoTop:hover {
+		background-color: #002060;
+		}
+	</style>
+
+<body>
+	<!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
+
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper" >
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 52.6621%;"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
+
+	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+		
+			<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
+			describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
+			thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
+			seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
+			apart from characterizing the strength of each one of us separately, also describes the
+			spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
+			Right around there four of us from different cities and universities, gathered together 
+			and decided to create an iGEM team with no geographical limitations, in contrast to the
+			norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
+			The idea for an iGEM team had been developing in each person’s mind separately, and then 
+			came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
+			Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
+			begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
+		
+		<b>Let’s meet the team!</b>
+	</p>
+	<br><br><br><br><br>
+	<!-- in page menu -->
+	<div id="index" class="sideBlock">
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading1">Team Members</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading2">Principal Investigators</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading3">Advisor & Instructor</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading4">Outside Partner</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading5">Mentor</a>
+			</li>
+		</ul>
 	</div>
-	
-	
-	<!--  menu content  ------------------------------------------------------>
-
-	<div class="menu_container">
-		<div class="menu_wrapper">
-		
-			<div class="menu_tabs_general_wrapper">
-			
-				<!-- navigation -->
-				<div class="menu_tabs_content navigation" id="navigation_tab_content">
-				</div>
-			
-			</div>
-			
+	<!--Team members-->
+    <section class="tMember-part">
+		<div class="h3" id="heading1" tabindex="-1" style="outline: none;">
+			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+				<b>Team Members</b>
+			</p>
 		</div>
-	</div>	
+			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				<!--Jordi-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>George Kontis</b> <br>
+						<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
+						<b>AGE</b>: 21 <br>
+						<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
+						<b>LOVES</b>: Literally anything that has to do with the sea <br>
+						<b>FIELD</b>: Fundraising, Wet Lab<br>
+						<b>TITLE</b>: Team leader & Head of Fundraising<br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">aka Jordi</h3>
+						<p class="card-text">
+							<b>CLASSIFIED AS</b>: The one who tries to keep everything in place<br>
+							<b>MISSION</b>: Make everyone love whiskey <br>
+							<b>MOTO</b>: It is what it is<br>
+							<b>KARAOKE GO-TO</b>: -<br>
+							<b>COMPLETED MISSIONS</b>: -<br>
+							<b>LEFT HIS MARK BY</b>: -<br>
+							<b>EXTENT OF POWER</b>: UNKNOWN<br>
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+			<!---->
+			<!--Nefeli-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/e/e4/T--Greece_United--nef.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Nefeli Zikou</b> <br>
+					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
+					<b>AGE</b>: 20 <br>
+					<b>ULTIMATE ABILITY</b>: Physics, AUTH <br>
+					<b>LOVES</b>: octopuses, everything that is blue, stars and DIY projects<br>
+					<b>FIELD</b>: Dry Lab, Web Development, Human Practices <br>
+					<b>TITLE</b>: Team Leader & Head of Dry Lab<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Nefos</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: the one who thinks that Gin smells like love and flowers<br>
+						<b>HATES</b>: slow-talkers<br>
+						<b>MOTO</b>: Shut up and swim <br>
+						<b>KARAOKE GO-TO</b>: Kati san psema, Xasma<br>
+						<b>COMPLETED MISSIONS</b>: Did not kill anyone during Wiki Freeze. (Possible cause of death: shouting)<br>
+						<b>LEFT HER MARK BY</b>: Eating only and always garlic ham.<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Dani-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/8/83/T--Greece_United--dani.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>Daniel Kotsi</b> <br>
+						<b>ORIGINS</b>: Malia (not Matala), Greece<br>
+						<b>AGE</b>: 21 <br>
+						<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH  <br>
+						<b>LOVES</b>: any sport that'll bring out his competitive self <br>
+						<b>FIELD</b>: Wet Lab, Human Practices<br>
+						<b>TITLE</b>: Head of Wet Lab <br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">aka Dani</h3>
+						<p class="card-text">
+							<b>CLASSIFIED AS</b>: The one that would not hesitate to cut his hair off.<br>
+							<b>MOTO</b>: Go bald or go home! (Currently at home)<br>
+							<b>KARAOKE GO-TO</b>: Zitti e buoni, Maneskin<br>
+							<b>COMPLETED MISSIONS</b>: Managed to handle the wet lab crisis. And he had a mental breakdown like only twice (per day)!<br>
+							<b>LEFT HIS MARK BY</b>: Constantly upsetting Dry Lab.<br>
+							<b>EXTENT OF POWER</b>: UNKNOWN<br>
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+			<!---->
+			<!--Melina-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--mel.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Melina Zikou</b> <br>
+					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Computer Science, AUTH <br>
+					<b>LOVES</b>: tomatoes, nature, bikes and hiking<br>
+					<b>FIELD</b>: Dry Lab, Web Development, Human Practices<br>
+					<b>TITLE</b>: Head of Web Development<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Laluña</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: the bonkers one who will find a way to sneak AI in our project<br>
+						<b>UNOFFICIAL WORLD RECORD HOLDER</b>: most bruises with unknown cause<br>
+						<b>MOTO</b>: It is what it is<br>
+						<b>KARAOKE GO-TO</b>: What’s up, Four None Blondes<br>
+						<b>COMPLETED MISSIONS</b>: Put Html in its place! (with just 7,718 lines of code)<br>
+						<b>LEFT HER MARK BY</b>: -<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Giannis-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/7/77/T--Greece_United--giann.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>John Thimianidis</b> <br>
+					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
+					<b>AGE</b>: 20 <br>
+					<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH  <br>
+					<b>LOVES</b>: Any way you can associate with music, gardening (yes, he is 40 deep down)<br>
+					<b>FIELD</b>: Wet Lab, Human Practices<br>
+					<b>TITLE</b>: Head of Human Practices<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka GIAAAAAAAIINNN</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: The fun, the serious, the philosopher (or not)<br>
+						<b>MOTO</b>: You only need to find yourself. Everything else can be Googled.<br>
+						<b>KARAOKE GO-TO</b>: Crazy train, Ozzy Osbourne<br>
+						<b>COMPLETED MISSIONS</b>: -<br>
+						<b>LEFT HIS MARK BY</b>: Never letting a call go by without screen sharing.<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Paulos-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/4/49/T--Greece_United--paulos.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/8/80/T--Greece_United--pavlos-fun.png" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Paulos Chatzoudis</b> <br>
+					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Animation & Interactive media, Akto Thessaloniki <br>
+					<b>HOBBIES</b>: Sketching, animating, dancing and sleeping<br>
+					<b>FIELD</b>: Graphics Design, Social media<br>
+					<b>TITLE</b>: Head of Graphics Design<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Chatz</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: silent, but not shy, miracle worker<br>
+						<b>MOTO</b>:-<br>
+						<b>DANCE SONG GO-TO</b>: Smooth Criminal, Michael Jackson<br>
+						<b>COMPLETED MISSIONS</b>: Everything pretty you can see about our team.<br>
+						<b>LEFT HIS MARK BY</b>: Fracturing his hand before the Wiki Freeze week...<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Mantis-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--mantis.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/d/d8/T--Greece_United--mantis-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Christos Mantis</b> <br>
+					<b>ORIGINS</b>: Athens, Greece<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH  <br>
+					<b>HOBBIES</b>: Hardware, hardware and occasionally some software<br>
+					<b>FIELD</b>: Wet Lab, Dry Lab<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka (Praying) Mantis</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: Bridge between Wet and Dry lab<br>
+						<b>HATES</b>: Losing<br>
+						<b>THOUGHT HE WAS BEING RECRUITED FOR</b>: Wet Lab?... yeah right<br>
+						<b>MOTO</b>: Procrastination is the art of keeping up with yesterday<br>
+						<b>KARAOKE GO-TO</b>: The Worst (instrumental)<br>
+						<b>COMPLETED MISSIONS</b>: Fought with CellDesigner and won (with a few gray hairs as collateral but who cares)<br>
+						<b>LEFT HIS MARK BY</b>:Always canceling on our group activities the last moment.<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Mike-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/c/cc/T--Greece_United--mike.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/b/be/T--Greece_United--mike-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Mixalis Sarris</b> <br>
+					<b>ORIGINS</b>: Athens, Greece<br>
+					<b>AGE</b>: 20 <br>
+					<b>ULTIMATE ABILITY</b>: Medicine, UOA <br>
+					<b>HOBBIES</b>: His girl, his mom, his god complex and telling people they're wrong<br>
+					<b>FIELD</b>: Wet Lab, Human Practices<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Mike</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: Chandler Bing’s and Gregory House’s sarcastic love child<br>
+						<b>HATES</b>: People who won’t accept the truth <br>
+						<b>THOUGHT HE WAS BEING RECRUITED FOR</b>: Wet Lab?... yeah right<br>
+						<b>MOTO</b>: All limitations are self-imposed.<br>
+						<b>KARAOKE GO-TO</b>: Anything but he won’t know the exact lyrics<br>
+						<b>COMPLETED MISSIONS</b>: Made 10 cells to do what he wants. One trillion to go!!<br>
+						<b>LEFT HIS MARK BY</b>: Playing chess during meetings, during lab hours, even in his sleep.<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Alkmini-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Alkmini Zania</b> <br>
+					<b>ORIGINS</b>: Athens, Greece<br>
+					<b>AGE</b>: 22<br>
+					<b>ULTIMATE ABILITY</b>: Biology, UOA<br>
+					<b>HOBBIES</b>: crafts, algorithms, Dungeons&Dragons<br>
+					<b>FIELD</b>: Wet Lab<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Minion</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: The one who constantly tried to sneak mushrooms in the project idea at any cost<br>
+						<b>THOUGHT HE WAS BEING RECRUITED FOR</b>: A campaign against space debris (also known as space junk, space pollution, space waste, space trash, or space garbage)<br>
+						<b>MOTO</b>: You miss 100% of the shots you don’t take.<br>
+						<b>KARAOKE GO-TO</b>: Baby one more time, Britney Spears<br>
+						<b>COMPLETED MISSIONS</b>: Managed to remain as calm as Buddha in the face of disaster. Sometimes calmed Dani too.<br>
+						<b>LEFT HER MARK BY</b>: Mentioning D&D at least 3 times a day.<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Nikolas-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Nikolas Romanidis</b> <br>
+					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Economics, UoM<br>
+					<b>HOBBIES</b>: -<br>
+					<b>FIELD</b>: Fundraising, Public Relations<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Nikolas <br> (dare you call him anything else)</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: -<br>
+						<b>MOTO</b>: -<br>
+						<b>KARAOKE GO-TO</b>: -<br>
+						<b>COMPLETED MISSIONS</b>: -<br>
+						<b>LEFT HIS MARK BY</b>: -<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Eva-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--eva.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/d/d3/T--Greece_United--eva-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Evangelia Maleskou</b> <br>
+					<b>ORIGINS</b>: Athens, Greece<br>
+					<b>AGE</b>: 22 <br>
+					<b>ULTIMATE ABILITY</b>: Computer Science and Biomedical Informatics, UTH<br>
+					<b>HOBBIES</b>:Feeding the spiders in her room<br>
+					<b>FIELD</b>: Dry Lab<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Eva </h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: -<br>
+						<b>THOUGHT SHE WAS BEING RECRUITED FOR</b>: an attempt to hack the iGEM organization using HTML <br>
+						<b>MOTO</b>: Whatever you do give 100%. Unless you donate blood<br>
+						<b>KARAOKE GO-TO</b>: Under pressure, Queen<br>
+						<b>COMPLETED MISSIONS</b>: -<br>
+						<b>LEFT HER MARK BY</b>: -<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Anastasia-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/b/b9/T--Greece_United--anny.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--anny-fun.png" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Anastasia Tzima</b> <br>
+					<b>ORIGINS</b>: Thessaloniki, Greece<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Economics, AUTH <br>
+					<b>LOVES</b>: business strategy, entrepreneurship, tennis, piano<br>
+					<b>FIELD</b>: Fundraising<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Annie </h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: cool kid with the briefcase<br>
+						<b>THOUGHT SHE WAS BEING RECRUITED FOR</b>: a position in W.H.O.<br>
+						<b>MOTO</b>: -<br>
+						<b>KARAOKE GO-TO</b>: Gucci forema, Mazonakis <br>
+						<b>COMPLETED MISSIONS</b>: Once finished a call to a possible sponsor without being doubtful of what they said.<br>
+						<b>LEFT HER MARK BY</b>: -<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			</div>               
+		</div>
+	</section>
+
+	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+		
+		Of course, nothing would be possible without the help of our beloved PIs, advisors, 
+		instructors, and outside partners! Their dedication and work really shaped our journey. <br><br>
 	
+		<b>Let’s meet them!</b>
+	</p>
+	<br><br><br><br><br>
+	
+	<!-- PIs -->
+	<section class="tMember-part">
+		<div class="h3" id="heading2" tabindex="-1" style="outline: none;">
+			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+			<b>Principal Investigators</b>
+			</p>
+		</div>
+			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				<!--Kaldoudi-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>Eleni Kaldoudi</b> <br>
+						<b>POSITION</b>: Principal Investigator<br>
+						<b>COMMENT FROM THE TEAM</b>: Quadruple checking anything we do. Probably the only reason people don’t laugh at us today. 
+						<br>Always there in deadlines, payments, and parties. <br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">Eleni Kaldoudi</h3>
+						<p class="card-text">
+							Eleni KALDOUDI is a Professor in Medical Physics and Medical Informatics in 
+							the School of Medicine, Democritus University of Thrace (DUTH). Her 
+							research interests are within health informatics, and physics of medical and 
+							biomedical diagnostic techniques, areas in which she has published 2 books, 
+							6 book chapters and over 90 full papers in various journals and conference 
+							proceedings. Eleni is also teaching the course of Physics in Biomedical 
+							Sciences in the Department of Molecular Biology and Genetics, DUTH and the 
+							course of Medical Physics in the School of Medicine DUTH. Eleni has 
+							participated as a project leader or team member in more than 20 national 
+							and EU grants and coordinated CARRE FP7-ICT project, has acted a co-chair 
+							of the Committee for Women in Biomedical Engineering, International 
+							Federation for Medical and Biological Engineering (2015-2018), and is an 
+							elected Member of the Council and President Elect of the European Alliance 
+							for Medical and Biological Engineering and Science.<br>
+							Email: kaldoudi@med.duth.gr
+							Homepage: http://iris.med.duth.gr/kaldoudi/en/
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+				<!---->
+				<!--Glukos-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>Nikolaos Glykos</b> <br>
+						<b>POSITION</b>: Principal Investigator<br>
+						<b>COMMENT FROM THE TEAM</b>: As his name says he is sweet*. He sweetly kills your dreams that you thought you had a sufficient model. We love him still.
+						<br>*(Glykos means sweet in Greek)
+						<br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">Nikolaos Glykos</h3>
+						<p class="card-text">
+							Nicholas GLYKOS obtained his first degree on Biology at the University of 
+							Athens, studying for his final year thesis with Prof. Hamodrakas on a new 
+							multiple sequence alignment algorithm. Being charmed by this 
+							computational work, he naturally decided to abandon Biology for Physics and 
+							computational Biology and obtained a PhD on biological crystallography at 
+							the (then) Astbury Department of Biophysics (UK) with Prof. Simon Phillips. 
+							Coming back to Greece, and following a year-long tour of duty, he spent six 
+							lovely years as a postdoc with Prof. Mike Kokkinidis at Crete writing code, 
+							avoiding the wet lab, and occasionally solving a structure. In 2003 —and after 
+							a short visit to beautiful Ioannina— he decided to take-up Einstein's advice 
+							and got a (mostly) teaching job at the Department of Molecular Biology & 
+							Genetics at Alexandroupolis, where he still serves as an Associate Professor. 
+							He has authored ~45 research articles in journals of the Science Citation 
+							Index, with most of them revolving around structural biology, crystallography 
+							and computational biology.<br>
+							Email: glykos@mbg.duth.gr
+							Homepage: https://utopia.duth.gr/glykos/
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+			<!---->
+			<!--Koffa-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Maria D. Koffa</b> <br>
+					<b>POSITION</b>: Principal Investigator<br>
+					<b>COMMENT FROM THE TEAM</b>: Saved the project! What would we be without her scientific opinion and her lab?
+					<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">Maria D. Koffa</h3>
+					<p class="card-text">
+						Insert text<br>
+						Email: <h2 href="insert">insert</h2>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+			<!--Drosos-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b>Dr. Georgios I. Drosos</b> <br>
+					<b>POSITION</b>: Secondary Investigator<br>
+					<b>COMMENT FROM THE TEAM</b>: His deep knowledge of the problem we are tackling is the reason we were able to even start our project.
+					<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">Dr. Georgios I. Drosos</h3>
+					<p class="card-text">
+						Dr. Georgios I. DROSOS is an Orthopaedic Surgeon and a Chairman at the 
+						University Department of Orthopaedic Surgery and a Professor of 
+						Orthopaedics in the School of Medicine, Democritus University of Thrace 
+						(DUTH). He has graduated from Medical School, Aristotle University of 
+						Thessaloniki (AUTH). He obtained a PhD from University of Crete, and trained 
+						in Athens (Naval Hospital of Athens, Greece) and U.K. (Royal United Hospital, 
+						Bath). He was a Medical Officer in Greek Navy until 2006. Since then, he has 
+						been a Member of Faculty, Medical School, DUTH. His special clinical and 
+						research interests lie among: Hip and Knee replacement (Fast-track / ERASEnhanced Recovery after Surgery, Short Stem Total Hip Arthroplasty, 
+						SuperPATH Minimal Invasive Surgery) Musculoskeletal infections 
+						(Osteomyelitis in Diabetic foot, Periprosthetic Joint Infection, Local 
+						antibiotic application), Orthopaedic trauma, Osteoporosis – Fragility 
+						fractures, Osteoarthritis. Georgios has 89 publications in International 
+						Journals.<br>
+						Email: drosos@med.duth.gr
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+				</div>
+			</div>
+			<!---->
+		</div>
+	</section>
+	<!-- Advisor & instructor -->
+	<section class="tMember-part">
+		<div class="h3" id="heading3" tabindex="-1" style="outline: none;">
+		<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+			<b>Advisor & Instructor</b>
+			</p>
+		</div>
+			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				<!--drosatos-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>George Drosatos</b> <br>
+						<b>POSITION</b>: Advisor | Dry Lab<br>
+						<b>COMMENT FROM THE TEAM</b>: insert <br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">George Drosatos</h3>
+						<p class="card-text">
+							insert
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+				<!---->
+				<!--xristos-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>Xristos</b> <br>
+						<b>POSITION</b>: Instructor | Wet Lab<br>
+						<b>COMMENT FROM THE TEAM</b>: insert <br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">Xristos</h3>
+						<p class="card-text">
+							insert
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+				<!---->
+			</div>
+		</div>
+	</section>
+	<!-- outside partner -->
+	<section class="tMember-part">
+		<div class="h3" id="heading4" tabindex="-1" style="outline: none;">
+			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+				<b>Outside Partner</b>
+			</p>
+		</div>
+			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				<!--papageorgiou-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>John Papageorgiou</b> <br>
+						<b>POSITION</b>: Outside partner | Fundraising & Entrepreunership<br>
+						<b>COMMENT FROM THE TEAM</b>: His unforgettable phrase “Λουξ φάση δικέ μου” might live in our minds forever. <br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">John Papageorgiou</h3>
+						<p class="card-text">
+							insert
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+				<!---->
+			</div>
+		</div>
+	</section>
+	<!-- Mentor -->
+	<section class="tMember-part">
+		<div class="h3" id="heading5" tabindex="-1" style="outline: none;">
+			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+				<b>Mentor</b>
+			</p>
+		</div>
+			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				<!--papageorgiou-->
+				<div class="intro-all">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<figcaption>
+						<b>Naina</b> <br>
+						<b>POSITION</b>: Mentor<br>
+					</figcaption>
+					<div class="intro d-none">
+						<h3 class="card-title">Naina</h3>
+						<p class="card-text">
+							insert
+						</p>
+						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
+					</div>
+				</div>
+				<!---->
+			</div>
+		</div>
+	</section>
 
-<!---------------------------------------------------------------------------->
-<!--- Content of the page  --->
-<!---------------------------------------------------------------------------->
+	<br><br><br><br><br><br>
 
+	  <!--Dimmer Part-->
+	  <div class="dimmer d-none justify-content-center align-items-center">
+		<div class="card mb-3">
+		  <div class="row no-gutters">
+			<div class="col-md-5">
+			  <img class="card-img" src="" alt="">
+			</div>
+			<div class="col-md-7 d-flex">
+			  <div class="intro card-body d-flex flex-column align-self-stretch"></div>
+			</div>
+		  </div>
+		</div> 
+	  </div>
+	</body>
 
-<div class="igem_content_wrapper">
-	<div class="igem_column_wrapper">
-		<div class="clear extra_space"></div>		
-		<div class="clear extra_space"></div>
+	<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
+	<script>
+		$( document ).ready(function() {
+		/* Only if the device is desktop, there are hover effect */ 
+		if($(window).width()>992) {
+			$(".photo-wrapper div").hover(function(){
+				$(this).children("img").toggleClass("d-none")
+			},function(){
+				$(this).children("img").toggleClass("d-none")
+			});
+		}
+		$(".photo-wrapper div").click(function(){
+			var intro = $(this).children(".intro").html();
+			var src = $(this).children("img.hover").attr("src");
+			$(".dimmer").removeClass("d-none");
+			$("body").addClass("blurring");
+			$(".dimmer img").attr("src", src);
+			$(".dimmer .intro").html(intro);
+		});
 
+		$(".dimmer").click(function(){
+			closeDimmer();
+		});
+		
+		$(".card").click(function(){
+			event.stopPropagation();
+		});
+		$(document).keydown(function(e) {
+			// ESCAPE key pressed
+			if (e.keyCode == 27) {
+			closeDimmer(); 
+			}
+		});
+		
+		// set the position of carousel
+		$('.carousel').css('margin-top', $('nav').height());
+		$(window).resize(function () {
+			$('.carousel').css('margin-top', $('nav').height());
+		});
 
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------- NOT UPLOADING END ----------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
+		});
 
+		function closeDimmer() {
+			$(".dimmer").addClass("d-none");
+			$("body").removeClass("blurring");    
+		}
+	</script>
+	<!-- progress bar & in page menu -->
+<script>
+    
+    var textSection = null;
+    var navbar = document.getElementById("navbar");
 
+    window.addEventListener('load', function() {
+        textSection = document.querySelector('.elevate-navbar');
+        checkScrollPos();
+        checkBackToTopPos();
+    })
+    window.addEventListener('scroll', function() {
+        updateScrollbar();
+        checkNavbarPos();
+        checkScrollPos();
+        checkBackToTopPos();
+    });
+    function checkScrollPos() {
+        var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+        var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+        let scrollWrapper = document.querySelector('.scroll-wrapper');
+        if (scrollbarBottom >= footerTop) {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+        } else {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+        }
+    }
+    function checkBackToTopPos() {
+        if ($(window).scrollTop() > 1000) {
+            $('#backtotop-wrapper').addClass('scrolled')
+        } else $('#backtotop-wrapper').removeClass('scrolled')
+    }
+    $(document).ready(function() {
+        $('#backtotop-wrapper').on('click', function() {
+            $('html, body').animate({
+                'scrollTop': $('body').offset().top
+            }, 2000);
+        });
+    });
 
-<p> text yooooo</p>
+    function updateScrollbar() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - window.innerHeight;;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("scrollbar").style.height = scrolled + "%";
+    }
+    
+    var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
 
+        document.getElementById("fixedOverlay").classList.add("project");
+</script>
+<!-- back to top button -->
+<script>
+    
+    var mybutton = document.getElementById("BacktoTop");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+</script>
+  
+  <!-- CODE CREDITS TO NCKU_Tainan 2019 || https://2019.igem.org/Team:NCKU_Tainan -->
 </html>
+
+	
