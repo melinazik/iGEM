@@ -1,9 +1,76 @@
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../../css/loader-style.css" />
-    
+
+
+<!--------------------------------------- COPY HERE --------------------------------------->
+    <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
+
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'montserrat-black', sans-serif !important;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded 
+        {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
+    </style>
+
+
+<!--------------------------------------- END HERE --------------------------------------->
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
+
     <script>
+                
+        // Loader
         window.addEventListener("load", function() 
         {
             let loader = document.getElementById('loader-bg');
@@ -13,14 +80,7 @@
                 loader.classList.add('loaded')
             }, 100);
         });
-    </script>
-</head>
-<body>
-    <div id="loader-wrapper">
-        <div id="loader-bg">
-            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-        </div>
-    </div>
-</body>
 
+    </script>
+    
 </html>
