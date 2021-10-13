@@ -1,26 +1,68 @@
 <html>
+
 	<head>
 	  <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
 	</head>
 
+	<!--------------------------------------- COPY HERE --------------------------------------->
+	<!-- DONT FORGET LINK IN HEAD !!!!!!!!!!!!!!!!! -->
+	<style>
+
+		.circles{
+            background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
+            background-size:cover;	
+            opacity:80%;	
+            margin:0; 
+            width: 100%;
+            background-repeat:no-repeat;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #B7E0FF;
+            opacity: 80%;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+    
+        .dropdown-content a {
+            float: none;
+            color: #002060;
+            padding: 14px 18px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: #5893D4;
+            color: #002060;
+        }
+          
+    
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+	</style>
+
 	<header class="circles" id="banner">
                  
-		<canvas style="position: absolute; z-index: 0"></canvas>
+        <canvas style="position: absolute; z-index: 0"></canvas>
 
-		 <div >
-			<div >
+         <div >
+            <div >
 
-				<div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
-			</div>
-		</div>
-	</header>
+                <div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
+            </div>
+        </div>
+    </header>
 
 
 	<script>
-		//ninivert, September 2016
-
 		/*VARIABLES*/
-
 		canvas = document.getElementsByTagName('canvas')[0];
 		canvas.width = document.body.clientWidth;
 		canvas.height = document.getElementById('banner').clientHeight;
@@ -28,19 +70,19 @@
 
 		var ctx = canvas.getContext('2d');
 
-        var bone1 = new Image;
+		var bone1 = new Image;
 		bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
 		var bone2 = new Image;
 		bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
-        var bone5 = new Image;
+		var bone5 = new Image;
 		bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
-        var bone6 = new Image;
+		var bone6 = new Image;
 		bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
 		var dna1 = new Image;
 		dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
 		var dna3 = new Image;
 		dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
-       
+
 
 		var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
 
@@ -137,6 +179,7 @@
 		}
 			
 	</script>
-
+<!--------------------------------------- END HERE --------------------------------------->
+	
 	
 </html>
