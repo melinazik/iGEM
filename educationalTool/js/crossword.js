@@ -38,7 +38,7 @@ function addHint(){
 	document.getElementById("txt_6_3").placeholder = "3";
 	document.getElementById("txt_6_4").placeholder = "4";
 	document.getElementById("txt_8_7").placeholder = "5";
-	document.getElementById("txt_10_3").placeholder = "6";
+	document.getElementById("txt_10_2").placeholder = "6";
 
 	// document.getElementById("txt_1_6").placeholder = "1";
 	// document.getElementById("txt_3_4").placeholder = "2";
@@ -80,7 +80,7 @@ function prepareCrosswordArray(){
 				[0, 0, 0, 0, 'u', 0, 0, 'n', 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 'p', 0, 0, 't', 'e', 'n', 'd', 'o', 'n', 0],
 				[0, 0, 0, 0, 'i', 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0, 0],
+				[0, 0,  'p', 'u', 'l', 's', 'e', 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 			];
 
