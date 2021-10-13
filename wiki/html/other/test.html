@@ -2,9 +2,11 @@
     <head>
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script>
+            
             // Loader
             window.addEventListener("load", function() 
             {
@@ -16,124 +18,122 @@
                 }, 100);
             });
 
-
             // Header
-
             canvas = document.getElementsByTagName('canvas')[0];
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.getElementById('banner').clientHeight;
+		canvas.width = document.body.clientWidth;
+		canvas.height = document.getElementById('banner').clientHeight;
 
 
-            var ctx = canvas.getContext('2d');
+		var ctx = canvas.getContext('2d');
 
-            var bone1 = new Image;
-            bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
-            var bone2 = new Image;
-            bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
-            var bone5 = new Image;
-            bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
-            var bone6 = new Image;
-            bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
-            var dna1 = new Image;
-            dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
-            var dna3 = new Image;
-            dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
+        var bone1 = new Image;
+		bone1.src = "https://2021.igem.org/wiki/images/f/f8/T--Greece_United--header-bone1.png";
+		var bone2 = new Image;
+		bone2.src = "https://2021.igem.org/wiki/images/7/75/T--Greece_United--header-bone2.png";
+        var bone5 = new Image;
+		bone5.src = "https://2021.igem.org/wiki/images/7/7c/T--Greece_United--header-bone5.png";
+        var bone6 = new Image;
+		bone6.src = "https://2021.igem.org/wiki/images/f/f9/T--Greece_United--header-bone6.png";
+		var dna1 = new Image;
+		dna1.src = "https://2021.igem.org/wiki/images/8/80/T--Greece_United--header-dna1.png";
+		var dna3 = new Image;
+		dna3.src = "https://2021.igem.org/wiki/images/b/bc/T--Greece_United--header-dna3.png";
+       
+
+		var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
+
+		//stocks possible character attributes
+		var layers = {
+			n: 4, //number of layers
+			letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
+			coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
+		};
+
+		/*End of options*/
+		var characters = [];
+		var mouseX = document.body.clientWidth / 2;
+		var mouseY = document.body.clientHeight / 2;
+
+		var rnd = {
+			btwn: function (min, max) {
+				return Math.floor(Math.random() * (max - min) + min);
+			},
+			choose: function (list) {
+				return list[rnd.btwn(0, list.length)];
+			}
+		};
+
+
+
+		/*LETTER DRAWING*/
+
+		function drawBacteria(img) {
+			var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
+			var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
+			var dLargeur = img.Image.width * img.coef;
+			var dHauteur = img.Image.height * img.coef;
+			
+			ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
+		}
+
+		/*ANIMATION*/
+
+		document.onmousemove = function (ev) {
+			mouseX = ev.pageX - canvas.offsetLeft;
+			mouseY = ev.pageY - canvas.offsetTop;
+
+			if (window.requestAnimationFrame) {
+				requestAnimationFrame(update);
+			} else {
+				update();
+			}
+		};
+
+		function update() {
+			clear();
+			render();
+		}
+
+		function clear() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+
+		function render() {
+			for (var i = 0; i < characters.length; i++) {
+				drawBacteria(characters[i]);
+			}
+		}
+
+		function createLetters() {
+			for (var i = 0; i < layers.n; i++) {
+				for (var j = 0; j < layers.letters[i]; j++) {
+
+					bacteria = bact[rnd.btwn(0, 6)];
+					var img = bacteria;
+					
+					var x = rnd.btwn(0, canvas.width);
+					var y = rnd.btwn(0, canvas.height);
+
+					characters.push({
+						Image: img,
+						layer: i,
+						coef: layers.coef[i],
+						posX: x,
+						posY: y
+					});
+
+				}
+			}
+		}
+		
+		createLetters();
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
+			render()
+		}else
+		{
+			update();
+		}
         
-
-            var bact = [bone1, bone2, bone5, bone6, dna1, dna3];
-
-            //stocks possible character attributes
-            var layers = {
-                n: 4, //number of layers
-                letters: [5, 6, 7, 2], //letters per layer (starting from the deepest layer)
-                coef: [0.3, 0.4, 0.5, 0.6], //how much the letters move from the mouse (starting from the deepest layer)
-            };
-
-            /*End of options*/
-            var characters = [];
-            var mouseX = document.body.clientWidth / 2;
-            var mouseY = document.body.clientHeight / 2;
-
-            var rnd = {
-                btwn: function (min, max) {
-                    return Math.floor(Math.random() * (max - min) + min);
-                },
-                choose: function (list) {
-                    return list[rnd.btwn(0, list.length)];
-                }
-            };
-
-
-
-            /*LETTER DRAWING*/
-
-            function drawBacteria(img) {
-                var x = img.posX + (mouseX - canvas.width / 2) * img.coef;
-                var y = img.posY + (mouseY - canvas.height / 2) * img.coef;
-                var dLargeur = img.Image.width * img.coef;
-                var dHauteur = img.Image.height * img.coef;
-                
-                ctx.drawImage(img.Image, x, y, dLargeur, dHauteur);
-            }
-
-            /*ANIMATION*/
-
-            document.onmousemove = function (ev) {
-                mouseX = ev.pageX - canvas.offsetLeft;
-                mouseY = ev.pageY - canvas.offsetTop;
-
-                if (window.requestAnimationFrame) {
-                    requestAnimationFrame(update);
-                } else {
-                    update();
-                }
-            };
-
-            function update() {
-                clear();
-                render();
-            }
-
-            function clear() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-
-            function render() {
-                for (var i = 0; i < characters.length; i++) {
-                    drawBacteria(characters[i]);
-                }
-            }
-
-            function createLetters() {
-                for (var i = 0; i < layers.n; i++) {
-                    for (var j = 0; j < layers.letters[i]; j++) {
-
-                        bacteria = bact[rnd.btwn(0, 6)];
-                        var img = bacteria;
-                        
-                        var x = rnd.btwn(0, canvas.width);
-                        var y = rnd.btwn(0, canvas.height);
-
-                        characters.push({
-                            Image: img,
-                            layer: i,
-                            coef: layers.coef[i],
-                            posX: x,
-                            posY: y
-                        });
-
-                    }
-                }
-            }
-            
-            createLetters();
-            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {	
-                render()
-            }else
-            {
-                update();
-            }
-
             // Home
             window.addEventListener('scroll', function() {
             let l = Path_440.getTotalLength();
@@ -219,7 +219,10 @@
 
                 display: flex;
                 flex-direction: column;
+                position: relative;
             }
+
+
 
             .navbar {
             display: flex;
@@ -360,6 +363,8 @@
             padding-right: 7px;
             }
 
+            /* Header */
+            
             /* Home */
             svg{
                 z-index: -1;
@@ -471,14 +476,16 @@
                 width: calc(100%/1.5);
             }
 
+            footer{
+                top: 800vh ;
+                position: absolute;
+            }
 
             .footer{ 
                 width:100%; 
                 height:800px; 
-                margin-bottom: auto;
                 background:#002060;  
-                bottom: 0;
-                position: absolute;
+                
             } 
 
             .footer ul{
@@ -786,6 +793,17 @@
         </style>
 
     </head>
+    <header class="circles" id="banner">
+                 
+        <canvas style="position: absolute; z-index: 0"></canvas>
+
+         <div >
+            <div >
+
+                <div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
+            </div>
+        </div>
+    </header>
 <body>
     <!-- Loader -->
     <div id="loader-wrapper">
@@ -893,17 +911,7 @@
 		</div>
 
         <!-- Header -->
-        <header class="circles" id="banner">
-                 
-            <canvas style="position: absolute; z-index: 0"></canvas>
-    
-             <div >
-                <div >
-    
-                    <div class="mouse" style="position: relative;top: 0px;margin-left: auto;margin-right: auto;width: 42px; height: 50px;"></div>
-                </div>
-            </div>
-        </header>
+        
 
         <!-- Home -->
         <div class="container">
@@ -937,53 +945,54 @@
             </div>
         </div>
 
-
-        <div class="footer">
-            <!-- Footer -->
-                     
-                
-    
-            <br><br><br><br>
-            <hr>
-            
-            <ul>
-                <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-            </ul>
-            <br><br><br><br><br><br><br>
-            <hr>
-                
-            <br><br><br><br><br><br><br><br>
-                    
-                
-            <div class="row">
-                <div class="col">
-                    <a href="https://igemnous.med.duth.gr/" target="_blank">
-                        <div class="logo-footer"></div> 
-                    </a>
-                   
-                </div>
-            
-    
-    
-                <div class="footer_sponsors">
-                        <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-top: -240px; "></a>
-                        <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -155px;"></a>
-                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -260px;"></a>
-                        <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: 10px;"></a>
-                </div>
-            </div>
-        
-        </div>
         
     </body>
 
-   
+    
+    <footer>
+    <div class="footer">
+        <!-- Footer -->
+                 
+            
 
+        <br><br><br><br>
+        <hr>
+        
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr>
+            
+        <br><br><br><br><br><br><br><br>
+                
+            
+        <div class="row">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <div class="logo-footer"></div> 
+                </a>
+               
+            </div>
+        
+
+
+            <div class="footer_sponsors">
+                    <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-top: -240px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -155px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -260px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: 10px;"></a>
+            </div>
+        </div>
+    
+    </div>
+
+</footer>
 </html>
