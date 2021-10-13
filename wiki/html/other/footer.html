@@ -18,53 +18,291 @@
     <body>
 	    <!--------------------------------------- COPY HERE --------------------------------------->
 	    <!-- DONT FORGET LINK IN HEAD !!!!!!!!!!!!!!!!! -->
+
+        <style>
+            
+        footer{
+            top: 860vh ;
+            position: absolute;
+            }
+        
+            .footer{ 
+                width:100%; 
+                height:800px; 
+                background:#002060;  
+                
+            } 
+        
+            .footer ul{
+                margin:4%  39%;
+                text-align:right;
+                display:flex;
+                position:absolute;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+        
+            .footer ul li{
+                list-style: none;
+                margin-right: 10%;
+            }
+        
+            .footer h4{
+                text-align: center;
+                background-color:none;
+                position: absolute;
+                margin: 120px 0 0 36%;
+                font-size: 12px;
+            }
+        
+            .footer ul li a{
+                text-align: center;
+                line-height: 70px;
+                font-size:30px;
+                margin:0 10px;
+                display: block;
+                position: relative;
+                z-index: 1;
+            }
+        
+            .footer ul li a .fa{
+                position: relative;
+                color: white;
+                transition: 0.5s;
+            }
+        
+            /* Facebook social icon */
+            .facebook a:hover .fa{
+                color: #3b5998;
+                transform: rotateY(360deg);
+            }
+        
+            .facebook a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #3b5998;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+        
+            .facebook a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #3b5998;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* Twitter social icon */
+            .twitter a:hover .fa{
+                color:  #55acee;
+                transform: rotateY(360deg);
+            }
+        
+            .twitter a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background:  #55acee;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* Instagram social icon */
+            .instagram a:hover .fa{
+                color: #C32AA3;
+                transform: rotateY(360deg);
+            }
+        
+            .instagram a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #C32AA3;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* LinkedIn social icon */
+            .linkedin a:hover .fa{
+                color: #0e76a8;
+                transform: rotateY(360deg);
+            }
+        
+            .linkedin a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #0e76a8;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* YouTube social icon */
+            .youtube a:hover .fa{
+                color: #c4302b;
+                transform: rotateY(360deg);
+            }
+        
+            .youtube a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #c4302b;
+                transition:0.5s;
+                z-index: 2;
+            }     
+        
+            /* Mail social icon */
+            .mail a:hover .fa{
+                color: #dd4b39;
+                transform: rotateY(360deg);
+            }
+        
+            .mail a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #dd4b39;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* GitHub social icon */
+            .github a:hover .fa{
+                color: #171515;
+                transform: rotateY(360deg);
+            }
+        
+            .github a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #171515;
+                transition:0.5s;
+                z-index: 2;
+            }
+        
+            /* Website icon */
+            .website a:hover .fa{
+                color: #949794;
+                transform: rotateY(360deg);
+            }
+        
+            .website a:before{
+                content:'';
+                position: absolute;
+                top:100%;
+                left:0;
+                background: #949794;
+                transition:0.5s;
+                z-index: 2;
+            }    
+            
+        
+            .footer_sponsors img {
+                width: 60%;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                transition: all 0.3s ease-in-out;
+                opacity: 0.75;
+        
+            }
+        
+            .footer_sponsors img:hover {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        
+            .col{
+                width:30%;
+                padding-right: 250px;
+            }
+        
+            .col h4{
+                font-size:24px;
+                color:#ffffff;
+                text-transform: capitalize;
+                margin-bottom: 70px;
+                margin-top: -70px;
+                font-weight: 500;
+                position:relative;
+            }
+        
+            .col ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+        
+            .col ul li span{
+                font-size: 16px;
+                text-transform: capitalize;
+                color: #ffffff;
+                text-decoration:none;
+                font-weight: 300;
+                color: #bbbbbb;
+                display: block;
+            }
+        </style>
         
         <footer>
-            
-            <div class="footer" style="position:absolute;">
-
+            <div class="footer">
+                <!-- Footer -->
+                         
+                    
+        
                 <br><br><br><br>
-                <hr>
+                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
                 
-                    <ul>
-                        <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                        <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                        <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                        <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                    </ul>
-                    <br><br><br><br><br><br><br>
-                <hr>
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+                </ul>
+                <br><br><br><br><br><br><br>
+                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+                    
+                <br><br><br><br><br><br><br><br>
+                        
+                    
+                <div style="display:flex;flex-wrap:wrap; ">
+                    <div class="col">
+                        <a href="https://igemnous.med.duth.gr/" target="_blank">
+                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);" 
+                                 src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
+                        </a>
+                       
+                    </div>
+                    
+                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                        <div class="footer_sponsors" style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                            <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                            <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;" ></a>
+                            <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                        </div>
+                    </div>
+        
                 </div>
-                
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            
-            <div class="row">
-                <div class="col">
-                    <a href="https://igemnous.med.duth.gr/" target="_blank">
-                        <div class="logo-footer"></div> 
-                    </a>
-                    <div class="vertical-line"></div>
-<!-- 
-                        <i class="fa fa-envelope"></i>
-                        <a class="footer-links" href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
-                    <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a> -->
-
-                </div>
             </div>
-
-
-                <div class="footer_sponsors">
-                        <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-top: -240px; "></a>
-                        <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-top: -155px;"></a>
-                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-top: -260px;"></a>
-                        <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-top: 10px;"></a>
-                </div>
-            
+        
         </footer>
         <!--------------------------------------- END HERE --------------------------------------->
 
