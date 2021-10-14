@@ -492,7 +492,7 @@ table, #HQ_page table {
 
 .contentBlock {
   width: 800vw;
-  max-width: 700px;
+  max-width: auto;
   float: right;
   display: flex;
   flex-direction: column;
