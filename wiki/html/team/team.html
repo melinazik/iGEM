@@ -1,19 +1,56 @@
 <html>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Team NOUS</title>
-	<link rel="stylesheet" href="https://2019.igem.org/Team:NCKU_Tainan/css/4.3.1/bootstrap_min_css?action=raw&ctype=text/css"/>
+
+	<title>NOUS: Team</title>
+
 	
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 		<link href="https://fonts.googleapis.com/css?family=Raleway|Sansita&display=swap" rel="stylesheet">
 	</head>
-	<!-- photos style -->
+
+	<!-- general -->
 	<style>
-	
+		/* bg color */
+	body
+	{
+		/* background: linear-gradient(to right,  #1F3C88,#c7e4fa); */
+ 		background-size: 100% 1000vh;
+		text-align: justify;
+	}
+		/* Rounded border */
+	hr.line 
+	{
+		border-top: 8px solid #bbb;
+		border-radius: 5px;
+		border-color: #002060;
+	}
+	</style>
+ <!-- slideshow -->
+ <style>
+   
+    
+    .carousel .carousel-item {
+        height: auto;
+      }
+      
+    .carousel-item img {
+        min-height: 555px;
+        max-height: 765px;
+        object-fit:contain;
+      }
+    
+    </style>
+
+	<!-- photos style-->
+	<style>
 	/*main*/
+
 	section.abstract {
-	  padding: 3% 10% 1% 10%; 
+	  padding-top: 3%;
+	  padding-bottom:1%; 
+	  margin-left: 400px;
 	}
 	hr.abstract {
 	  margin-left: 10%;
@@ -28,11 +65,12 @@
 	.photo-wrapper {
 	  padding-left: 15%;
 	  padding-right:4%;
+	  /* background: linear-gradient(to right, #B7E0FF, #002060); */
 	}
 	/* 6 photes in a line */
 	.photo-wrapper .intro-all {
 	  width: 30%;
-	  margin: 2% 1%;
+	  margin: 10% 1%;
 	  cursor: pointer;
 	}
 	/*lg: destop*/
@@ -51,7 +89,7 @@
 	  left: 0em ;
 	  width: 100%;
 	  height: 100%;
-	  background-color:rgba(255,255,255,0.9);
+	  background-color:#ceddefdc;
 	  z-index: 10000;
 	  overflow-y: scroll;
 	}
@@ -64,8 +102,6 @@
 	  transition: 800ms filter ease;
 	  transition: 800ms filter ease, 800ms -webkit-filter ease;
 	}
-	/* might need revise because body tag */
-	/* Medium devices (tablets, 768px and up) */
 	body.blurring {
 	  overflow: hidden; 
 	}
@@ -79,6 +115,7 @@
 	}
 	.card-text {
 	  font-size: 1rem;
+	  font-family:Arial, Helvetica, sans-serif;
 	}
 	.card-text b {
 	  font-weight: 700;
@@ -103,6 +140,7 @@
 		top: 18px;
 		transition: 1s;
 		font-family: "montserrat-light" !important;
+		/* background-color: #002060; */
 		}
 		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
 		pointer-events: none;
@@ -132,7 +170,7 @@
 		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
 		width: 30%;
 		height: 30%;
-		background: rgba(98, 129, 239, 0.3);
+		background-color: rgba(98, 129, 239, 0.3);
 		border-radius: 10px;
 		max-width: 7px;
 		}
@@ -152,12 +190,13 @@
 		display: block;
 		transition: 0.5s;
 		height: 87px;
-		}
+		}-->
 		
 		/* in page menu */
 		.sideBlock 
 		{
 			text-transform: uppercase;
+			text-decoration: none;
 			float: left;
 			margin-left: 10vw;
 			position: -webkit-sticky;
@@ -167,6 +206,11 @@
 			transform: translateY(-50%);
 			min-width: 20px;
 			max-width: 350px;
+			background: #ffffff;
+			opacity: 80%;
+			border-radius: 15%;
+			padding-left: 20px;
+
 		}
 		@media (max-width: 1024px) {
 		.sideBlock {
@@ -350,7 +394,7 @@
 		li{
 		margin-bottom: unset !important;
 		}
-	</style>
+	</style> 
 	<!-- back to top -->
 	<style>
 		#BacktoTop {
@@ -373,8 +417,8 @@
 		background-color: #002060;
 		}
 	</style>
-
-<body>
+	
+	<body >
 	<!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -389,7 +433,7 @@
             <div class="scroll-wrapper" >
                 <div id="sidebar-wrapper" class="scroll-area">
                     <div id="scrollbar-container">
-                        <div id="scrollbar" style="height: 52.6621%;"></div>
+                        <div id="scrollbar" style="height: 3%;"></div>
                     </div>
                 </div>
                 
@@ -397,26 +441,7 @@
         </div>
     </div>
     <!-- Progress bar End -->
-
-	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-		
-			<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
-			describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
-			thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
-			seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
-			apart from characterizing the strength of each one of us separately, also describes the
-			spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
-			Right around there four of us from different cities and universities, gathered together 
-			and decided to create an iGEM team with no geographical limitations, in contrast to the
-			norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
-			The idea for an iGEM team had been developing in each person’s mind separately, and then 
-			came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
-			Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
-			begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
-		
-		<b>Let’s meet the team!</b>
-	</p>
-	<br><br><br><br><br>
+	
 	<!-- in page menu -->
 	<div id="index" class="sideBlock">
 		<ul>
@@ -450,20 +475,99 @@
 			</li>
 		</ul>
 	</div>
+
+	<!-- Slideshow -->
+	<div id="carousel-team" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+		  <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
+		  <li data-target="#carousel-team" data-slide-to="1"></li>
+		  <li data-target="#carousel-team" data-slide-to="2"></li>
+		  <li data-target="#carousel-team" data-slide-to="3"></li>
+		  <li data-target="#carousel-team" data-slide-to="4"></li>
+		  <li data-target="#carousel-team" data-slide-to="5"></li>
+		  <li data-target="#carousel-team" data-slide-to="6"></li>
+		  <li data-target="#carousel-team" data-slide-to="7"></li>
+		  <li data-target="#carousel-team" data-slide-to="8"></li>
+
+
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item  active">
+				<img src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--team-call.gif" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/6/6e/T--Greece_United--bouno-2.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--volley.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--bouno-1.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--group-photo.png" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/1/14/T--Greece_United--group-photo-2.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--group-photo-3.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/2/2d/T--Greece_United--group-photo-4.jpg" class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+
+	<hr class="line">
+	
+
+	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+		<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
+		describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
+		thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
+		seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
+		apart from characterizing the strength of each one of us separately, also describes the
+		spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
+		Right around there four of us from different cities and universities, gathered together 
+		and decided to create an iGEM team with no geographical limitations, in contrast to the
+		norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
+		The idea for an iGEM team had been developing in each person’s mind separately, and then 
+		came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
+		Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
+		begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
+	
+	<b>Let’s meet the team!</b>
+	</p>
+<br>
+ 
+	<hr class="line">
+
 	<!--Team members-->
-    <section class="tMember-part">
-		<div class="h3" id="heading1" tabindex="-1" style="outline: none;">
-			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-				<b>Team Members</b>
+    <section class="tMember-part" >
+		<div class="h3" id="heading1" tabindex="-1" style="outline: none;  ">
+			
+			<p style=" background: linear-gradient(to right, #1F3C88,#c7e4fa); width: 100%; max-width:100%; text-align: justify; padding-left:400px; font-size:30px; color:#002060;">
+				<b><br>Team Members<br><br></b>
 			</p>
 		</div>
+
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+				
 				<!--Jordi-->
 				<div class="intro-all">
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>George Kontis</b> <br>
+						<b style=" font-size:20px; color:#B8EBFF;"><br>George Kontis</b> <br><br>
 						<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
 						<b>AGE</b>: 21 <br>
 						<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
@@ -491,7 +595,7 @@
 				<img src="https://2021.igem.org/wiki/images/e/e4/T--Greece_United--nef.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Nefeli Zikou</b> <br>
+					<b style=" font-size:20px; color:#B8EBFF;"><br>Nefeli Zikou</b> <br><br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 20 <br>
 					<b>ULTIMATE ABILITY</b>: Physics, AUTH <br>
@@ -519,7 +623,7 @@
 					<img src="https://2021.igem.org/wiki/images/8/83/T--Greece_United--dani.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>Daniel Kotsi</b> <br>
+						<b style=" font-size:20px; color:#B8EBFF;"><br>Daniel Kotsi</b> <br><br>
 						<b>ORIGINS</b>: Malia (not Matala), Greece<br>
 						<b>AGE</b>: 21 <br>
 						<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH  <br>
@@ -546,7 +650,7 @@
 				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--mel.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Melina Zikou</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Melina Zikou</b> <br><br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Computer Science, AUTH <br>
@@ -574,7 +678,7 @@
 				<img src="https://2021.igem.org/wiki/images/7/77/T--Greece_United--giann.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>John Thimianidis</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>John Thimianidis</b><br> <br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 20 <br>
 					<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH  <br>
@@ -601,7 +705,7 @@
 				<img src="https://2021.igem.org/wiki/images/4/49/T--Greece_United--paulos.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/8/80/T--Greece_United--pavlos-fun.png" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Paulos Chatzoudis</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Paulos Chatzoudis</b><br> <br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Animation & Interactive media, Akto Thessaloniki <br>
@@ -628,7 +732,7 @@
 				<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--mantis.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/d/d8/T--Greece_United--mantis-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Christos Mantis</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Christos Mantis</b><br> <br>
 					<b>ORIGINS</b>: Athens, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH  <br>
@@ -656,7 +760,7 @@
 				<img src="https://2021.igem.org/wiki/images/c/cc/T--Greece_United--mike.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/b/be/T--Greece_United--mike-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Mixalis Sarris</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Mixalis Sarris</b><br> <br>
 					<b>ORIGINS</b>: Athens, Greece<br>
 					<b>AGE</b>: 20 <br>
 					<b>ULTIMATE ABILITY</b>: Medicine, UOA <br>
@@ -684,7 +788,7 @@
 				<img src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Alkmini Zania</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Alkmini Zania</b><br> <br>
 					<b>ORIGINS</b>: Athens, Greece<br>
 					<b>AGE</b>: 22<br>
 					<b>ULTIMATE ABILITY</b>: Biology, UOA<br>
@@ -711,7 +815,7 @@
 				<img src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Nikolas Romanidis</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Nikolas Romanidis</b><br> <br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Economics, UoM<br>
@@ -737,7 +841,7 @@
 				<img src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--eva.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/d/d3/T--Greece_United--eva-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Evangelia Maleskou</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Evangelia Maleskou</b><br> <br>
 					<b>ORIGINS</b>: Athens, Greece<br>
 					<b>AGE</b>: 22 <br>
 					<b>ULTIMATE ABILITY</b>: Computer Science and Biomedical Informatics, UTH<br>
@@ -764,7 +868,7 @@
 				<img src="https://2021.igem.org/wiki/images/b/b9/T--Greece_United--anny.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--anny-fun.png" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Anastasia Tzima</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Anastasia Tzima</b><br> <br>
 					<b>ORIGINS</b>: Thessaloniki, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Economics, AUTH <br>
@@ -789,21 +893,24 @@
 			</div>               
 		</div>
 	</section>
+	<hr class="line">
 
-	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
+	<br> <br>
+	<p style="width: 100%; max-width: 1000px; text-align: justify;  margin-left:600px; font-size: 24px;">
 		
 		Of course, nothing would be possible without the help of our beloved PIs, advisors, 
 		instructors, and outside partners! Their dedication and work really shaped our journey. <br><br>
 	
 		<b>Let’s meet them!</b>
 	</p>
+	<br><br>
+	<hr class="line">
 	<br>
-	
 	<!-- PIs -->
 	<section class="tMember-part">
 		<div class="h3" id="heading2" tabindex="-1" style="outline: none;">
-			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-			<b>Principal Investigators</b>
+			<p style=" background: linear-gradient(to right, #1F3C88,#c7e4fa); width: 100%; max-width:100%; text-align: justify; padding-left:400px; font-size:30px; color:#002060;">
+			<b><br>Principal Investigators<br><br></b>
 			</p>
 		</div>
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
@@ -811,8 +918,8 @@
 				<div class="intro-all">
 					<img src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--kaldoudi.jpg" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--kaldoudi.jpg" alt="" class="hover d-none w-100">
-					<figcaption>
-						<b>Eleni Kaldoudi</b> <br>
+					<figcaption >
+						<b style=" font-size:20px; color:#5893D4;"><br>Eleni Kaldoudi</b><br> <br>
 						<b>POSITION</b>: Principal Investigator<br>
 						<b>COMMENT FROM THE TEAM</b>: Quadruple checking anything we do. Probably the only reason people don’t laugh at us today. 
 						<br>Always there in deadlines, payments, and parties. <br>
@@ -820,7 +927,7 @@
 					<div class="intro d-none">
 						<h3 class="card-title">Eleni Kaldoudi</h3>
 						<p class="card-text">
-							Eleni KALDOUDI is a Professor in Medical Physics and Medical Informatics in 
+							<br>Eleni Kaldoudi is a Professor in Medical Physics and Medical Informatics in 
 							the School of Medicine, Democritus University of Thrace (DUTH). Her 
 							research interests are within health informatics, and physics of medical and 
 							biomedical diagnostic techniques, areas in which she has published 2 books, 
@@ -846,7 +953,7 @@
 					<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--glukos.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--glukos.png" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>Nikolaos Glykos</b> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Nikolaos Glykos</b><br> <br>
 						<b>POSITION</b>: Principal Investigator<br>
 						<b>COMMENT FROM THE TEAM</b>: As his name says he is sweet*. He sweetly kills your dreams that you thought you had a sufficient model. We love him still.
 						<br>*(Glykos means sweet in Greek)
@@ -855,7 +962,7 @@
 					<div class="intro d-none">
 						<h3 class="card-title">Nikolaos Glykos</h3>
 						<p class="card-text">
-							Nicholas GLYKOS obtained his first degree on Biology at the University of 
+							<br>Nicholas Glykos obtained his first degree on Biology at the University of 
 							Athens, studying for his final year thesis with Prof. Hamodrakas on a new 
 							multiple sequence alignment algorithm. Being charmed by this 
 							computational work, he naturally decided to abandon Biology for Physics and 
@@ -879,30 +986,48 @@
 			<!---->
 			<!--Koffa-->
 			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+				<img src="https://2021.igem.org/wiki/images/1/1a/T--Greece_United--koffa.jpg" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/1/1a/T--Greece_United--koffa.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Maria D. Koffa</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Dr Margy Koffa</b><br> <br>
 					<b>POSITION</b>: Principal Investigator<br>
 					<b>COMMENT FROM THE TEAM</b>: Saved the project! What would we be without her scientific opinion and her lab?
 					<br>
 				</figcaption>
 				<div class="intro d-none">
-					<h3 class="card-title">Maria D. Koffa</h3>
+					<h3 class="card-title">Dr Margy Koffa</h3>
 					<p class="card-text">
-						Insert text<br>
-						Email: <h2 href="insert">insert</h2>
+						<br>Dr Margy Koffa is an Associate Professor of Cell Biology at the Department of Molecular Biology and Genetics 
+						Democritus University of Thrace, Director of the MSc Program “Translational Research in Biomedicine”, and head 
+						of the BioImaging Unit.	Prof. Koffa holds a Diploma in Biology (University of Athens, 1992) and a Ph.D. 
+						from the Medical School University of Crete, in collaboration with the National Hellenic Research Foundation (1997). 
+						She held postdoctoral researcher appointments at the University of Birmingham, Institute for Cancer Research 
+						(Prof. J. Kerr), University of Glasgow (Prof. B. Clements) and at the EMBL, Heidelberg (Prof. I. Mattaj). She has 
+						served as an expert evaluator for EC projects and for the General Secretariat for Research and Technology.  
+						Her research team in DMBG is interested in the regulation of cell division, aneuploidy and cancer, as well 
+						as mitotic cell response to different compounds, including inhibitors and drug-nanocarriers, and combines
+						molecular biology techniques with optical approaches and imaging analysis. 
+						She is the author of more than 44 publications. She has been awarded personal fellowships EMBO, Marie Curie
+						and Marie Curie re-integration Grant. Her research is supported by European and National competitive grants
+						including ERA.Net RUS-Pilot Joint Call for Innovation Projects, AICR-UK (Association for International Cancer 
+						Research), European Territorial Cooperation Programme Greece-Boulgaria 2007-2013, FNR- Luxembourg (Fonds National
+						de la Recherche Luxembourg) 2014-2017, Fondation Cancer 2018-2022, Entrepreneurship Competitiveness and Innovation 
+						(EPANEK) - NSRF 2014-2020.<br><br>
+<br>
+						Email: mkoffa@mbg.duth.gr<br>
 					</p>
 					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 				</div>
 			</div>
 			<!---->
+			
 			<!--Drosos-->
 			<div class="intro-all">
+				<br><br><br>
 				<img src="https://2021.igem.org/wiki/images/b/bf/T--Greece_United--drosos.jpg" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/b/bf/T--Greece_United--drosos.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b>Dr. Georgios I. Drosos</b> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Dr. Georgios I. Drosos</b><br> <br>
 					<b>POSITION</b>: Secondary Investigator<br>
 					<b>COMMENT FROM THE TEAM</b>: His deep knowledge of the problem we are tackling is the reason we were able to even start our project.
 					<br>
@@ -910,7 +1035,7 @@
 				<div class="intro d-none">
 					<h3 class="card-title">Dr. Georgios I. Drosos</h3>
 					<p class="card-text">
-						Dr. Georgios I. Drosos is an Orthopaedic Surgeon and a Chairman at the 
+						<br>Dr. Georgios I. Drosos is an Orthopaedic Surgeon and a Chairman at the 
 						University Department of Orthopaedic Surgery and a Professor of 
 						Orthopaedics in the School of Medicine, Democritus University of Thrace 
 						(DUTH). He has graduated from Medical School, Aristotle University of 
@@ -918,13 +1043,13 @@
 						in Athens (Naval Hospital of Athens, Greece) and U.K. (Royal United Hospital, 
 						Bath). He was a Medical Officer in Greek Navy until 2006. Since then, he has 
 						been a Member of Faculty, Medical School, DUTH. His special clinical and 
-						research interests lie among: Hip and Knee replacement (Fast-track / ERAS�Enhanced Recovery after Surgery, Short Stem Total Hip Arthroplasty, 
+						research interests lie among: Hip and Knee replacement (Fast-track / ERAS: Enhanced Recovery after Surgery, Short Stem Total Hip Arthroplasty, 
 						SuperPATH Minimal Invasive Surgery) Musculoskeletal infections 
 						(Osteomyelitis in Diabetic foot, Periprosthetic Joint Infection, Local 
 						antibiotic application), Orthopaedic trauma, Osteoporosis – Fragility 
 						fractures, Osteoarthritis. Georgios has 89 publications in International 
 						Journals.<br><br>
-						Email: drosos@med.duth.gr </a>
+						Email: drosos@med.duth.gr <br>
 					</p>
 					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 				</div>
@@ -936,8 +1061,8 @@
 	<!-- Advisor & instructor -->
 	<section class="tMember-part">
 		<div class="h3" id="heading3" tabindex="-1" style="outline: none;">
-		<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-			<b>Advisor & Instructor</b>
+			<p style=" background: linear-gradient(to right, #1F3C88,#c7e4fa); width: 100%; max-width:100%; text-align: justify; padding-left:400px; font-size:30px; color:#002060;">
+			<b><br>Advisor & Instructor<br><br></b>
 			</p>
 		</div>
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
@@ -946,7 +1071,7 @@
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>George Drosatos</b> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>George Drosatos</b><br> <br>
 						<b>POSITION</b>: Advisor | Dry Lab<br>
 						<b>COMMENT FROM THE TEAM</b>: The man who came to save the day. <br>
 					</figcaption>
@@ -954,6 +1079,7 @@
 						<h3 class="card-title">George Drosatos</h3>
 						<p class="card-text">
 							insert
+							<br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 					</div>
@@ -964,7 +1090,7 @@
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>Xristos</b> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Xristos</b><br> <br>
 						<b>POSITION</b>: Instructor | Wet Lab<br>
 						<b>COMMENT FROM THE TEAM</b>: insert <br>
 					</figcaption>
@@ -972,6 +1098,7 @@
 						<h3 class="card-title">Xristos</h3>
 						<p class="card-text">
 							insert
+							<br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 					</div>
@@ -984,8 +1111,8 @@
 	<!-- outside partner -->
 	<section class="tMember-part">
 		<div class="h3" id="heading4" tabindex="-1" style="outline: none;">
-			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-				<b>Outside Partner</b>
+			<p style=" background: linear-gradient(to right, #1F3C88,#c7e4fa); width: 100%; max-width:100%; text-align: justify; padding-left:400px; font-size:30px; color:#002060;">
+				<b><br>Outside Partner<br><br></b>
 			</p>
 		</div>
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
@@ -994,14 +1121,23 @@
 					<img src="https://2021.igem.org/wiki/images/3/3e/T--Greece_United--papageorgiou.jpg" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/3/3e/T--Greece_United--papageorgiou.jpg" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>John Papageorgiou</b> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Yiannis Papageorgiou</b><br> <br>
 						<b>POSITION</b>: Outside partner | Fundraising & Entrepreneurship<br>
 						<b>COMMENT FROM THE TEAM</b>: His unforgettable phrase “Λουξ φάση δικέ μου” might live in our minds forever. <br>
 					</figcaption>
 					<div class="intro d-none">
 						<h3 class="card-title">Yiannis Papageorgiou</h3>
 						<p class="card-text">
-							Yiannis Papageorgiou is senior student in the department of material science at university of Patras and has been accepted for master studies, after his graduation, at the department of finance and management engineering, Aegean university. Yiannis has work experience as corporate representative in business forums and his responsibilities were lead generation, sales and pitching to potential customers. He was co-founder and sales manager at an incubated startup project that was aiming to engage sports fans with their favorite sport team. During his early years as an undergrad student, he has attended multiple programs & seminars about entrepreneurship and product development. He is also certified growth marketer by Hellenic-American union and growthrocks. In his free time, he likes playing music, reading and mountain hiking. 
+							Yiannis Papageorgiou is senior student in the department of material science 
+							at university of Patras and has been accepted for master studies, after his graduation, 
+							at the department of finance and management engineering, Aegean university. Yiannis has 
+							work experience as corporate representative in business forums and his responsibilities 
+							were lead generation, sales and pitching to potential customers. He was co-founder and sales
+							 manager at an incubated startup project that was aiming to engage sports fans with their favorite 
+							 sport team. During his early years as an undergrad student, he has attended multiple programs & 
+							 seminars about entrepreneurship and product development. He is also certified growth marketer by 
+							 Hellenic-American union and growthrocks. In his free time, he likes playing music, reading and 
+							 mountain hiking. <br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 					</div>
@@ -1014,8 +1150,8 @@
 	<!-- Mentor -->
 	<section class="tMember-part">
 		<div class="h3" id="heading5" tabindex="-1" style="outline: none;">
-			<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-				<b>Mentor</b>
+			<p style=" background: linear-gradient(to right, #1F3C88,#c7e4fa); width: 100%; max-width:100%; text-align: justify; padding-left:400px; font-size:30px; color:#002060;">
+				<b><br>Mentor<br><br></b>
 			</p>
 		</div>
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
@@ -1024,13 +1160,14 @@
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b>Naina</b> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Naina</b><br> <br>
 						<b>POSITION</b>: Mentor<br>
 					</figcaption>
 					<div class="intro d-none">
 						<h3 class="card-title">Naina</h3>
 						<p class="card-text">
 							insert
+							<br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 					</div>
@@ -1180,7 +1317,13 @@
     }
 </script>
   
-  <!-- CODE CREDITS TO NCKU_Tainan 2019 || https://2019.igem.org/Team:NCKU_Tainan -->
+<!-- CODE CREDITS TO NCKU_Tainan 2019 || https://2019.igem.org/Team:NCKU_Tainan -->
+
+	<link rel="stylesheet" href="https://2019.igem.org/Team:NCKU_Tainan/css/4.3.1/bootstrap_min_css?action=raw&ctype=text/css"/>
+	<link rel="stylesheet" type="text/css" href="https://2019.igem.org/Team:NCKU_Tainan/css/universal?action=raw&ctype=text/css">
+    <link rel="stylesheet" href="https://2019.igem.org/Team:NCKU_Tainan/css/4.3.1/bootstrap_min_css?action=raw&ctype=text/css"/>
+	<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
+    <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
 </html>
 
 	
