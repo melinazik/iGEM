@@ -361,123 +361,165 @@
         </div>
     </div>
     
-    <style>
-    #content-tag {
-      background-color: #ffffff;
-      position: relative;
-      margin-top: 200px;
-    }
+    <div class="social-links">
+        
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
 
-    #content-tag p {
-      margin: 0;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      margin-top: 20px;
-      margin-bottom: 40px;
-      text-align: justify;
-    }
+    <style>
+        
+        
+        .social-links ul{
+            margin:10%  45%;
+            text-align:right;
+            display:flex;
+            position:absolute;
+            transform: translate(-50%, -50%);
+            color: rgb(0, 0, 0);
+        }
     
+        .social-links ul li{
+            list-style: none;
+            margin-right: 10%;
+        }
     
-    #content-tag .contentBlock {
-      float: none;
-      margin: 0 auto;
-    }
+        .social-links ul li a{
+            text-align: center;
+            line-height: 70px;
+            font-size:60px;
+            margin:0 30px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
     
-    
-    #content {
-        padding: 0px;
-        width: 100%;
-        margin-top: -7px;
-        margin-left: 0px;
-        border: none;
-        line-height: initial;
-    }
-    
-    
-    .contentBlock {
-      width: 64vw;
-      max-width: 900px;
-      float: right;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .content {
-      padding: 64px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px lightgray;
-      color: #121212;
-      margin-top: 40px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .content p:first-child {
-      margin-top: 0;
-    }
-    
-   
-    .content ul {
-      padding-inline-start: 20px;
-      list-style-image: none;
-      list-style-type: none;
-    }
-    
-    .content ul li {
-      display: flex;
-    }
-    
-    .content ul li::before {
-      content: "•";
-      color: #6281ef;
-    }
-    
-    .content .splide ul li::before {
-      content: unset;
-    }
-    
-    .content li {
-      margin: 10px;
-    }
-    
-    .content li::marker {
-      color: #6281ef;
-      font-family: "lato-heavy";
-      font-size: 1.3em;
-    }
-    
-    .content h4, .content h5 {
-      font-size: 1.2em;
-      text-transform: uppercase;
-      margin-block-end: 0.2em;
-      margin-block-start: 60px;
-    }
-    
-    .content h5 {
-      font-size: 1em;
-    }
-    
-    .content a {
-      color: #2e64ec;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-    }
-    
-    .content a.citation {
-      font-size: 0.6em;
-      vertical-align: super;
-    }
-    
-    .content-paragraph{
+        .social-links ul li a .fa{
+            position: relative;
+            color: rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        #content-tag {
+        background-color: #ffffff;
+        position: relative;
+        margin-top: 200px;
+        }
+
+        #content-tag p {
         margin: 0;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      margin-top: 20px;
-      margin-bottom: 40px;
-      text-align: justify;
-    }
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        text-align: justify;
+        }
+        
+        
+        #content-tag .contentBlock {
+        float: none;
+        margin: 0 auto;
+        }
+        
+        
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+        
+        
+        .contentBlock {
+        width: 64vw;
+        max-width: 900px;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        }
+        
+        .content {
+        padding: 64px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px lightgray;
+        color: #121212;
+        margin-top: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        }
+        
+        .content p:first-child {
+        margin-top: 0;
+        }
+        
+    
+        .content ul {
+        padding-inline-start: 20px;
+        list-style-image: none;
+        list-style-type: none;
+        }
+        
+        .content ul li {
+        display: flex;
+        }
+        
+        .content ul li::before {
+        content: "•";
+        color: #6281ef;
+        }
+        
+        .content .splide ul li::before {
+        content: unset;
+        }
+        
+        .content li {
+        margin: 10px;
+        }
+        
+        .content li::marker {
+        color: #6281ef;
+        font-family: "lato-heavy";
+        font-size: 1.3em;
+        }
+        
+        .content h4, .content h5 {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-block-end: 0.2em;
+        margin-block-start: 60px;
+        }
+        
+        .content h5 {
+        font-size: 1em;
+        }
+        
+        .content a {
+        color: #2e64ec;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        }
+        
+        .content a.citation {
+        font-size: 0.6em;
+        vertical-align: super;
+        }
+        
+        .content-paragraph{
+            margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        text-align: justify;
+        }
     
     </style>
 
