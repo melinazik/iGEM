@@ -378,7 +378,7 @@
             <div class="content">
                 <h2>Facebook</h2>
                 <p class="content-paragraph">In today's society, the use of social media has become a necessary daily activity. Social media is typically used for social interaction and access to news and information, and decision making. It is a valuable communication tool with others locally and worldwide, as well as to share, create, and spread information.For this reason, our presence in social media was strong and continuous since the spring of 2020. We managed to gather many followers that applauded our content and engaged with us frequently.</p>
-                <img class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/0/02/T--Greece_United--facebook--metrics.png">
+                <img id="img1" class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/0/02/T--Greece_United--facebook--metrics.png">
                 
                 <div id="myModal" class="modal">
                     <img class="modal-content" id="img01">
@@ -397,7 +397,7 @@
             <div class="content">
                 <h2>Instagram</h2>
                 <p class="content-paragraph">In today's society, the use of social media has become a necessary daily activity. Social media is typically used for social interaction and access to news and information, and decision making. It is a valuable communication tool with others locally and worldwide, as well as to share, create, and spread information.For this reason, our presence in social media was strong and continuous since the spring of 2020. We managed to gather many followers that applauded our content and engaged with us frequently.</p>
-                <img class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--instagram--metrics.png">
+                <img id="img2" class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--instagram--metrics.png">
                 
                 <div id="myModal" class="modal">
                     <img class="modal-content" id="img01">
@@ -416,7 +416,7 @@
             <div class="content">
                 <h2>LinkedIn</h2>
                 <p class="content-paragraph">In today's society, the use of social media has become a necessary daily activity. Social media is typically used for social interaction and access to news and information, and decision making. It is a valuable communication tool with others locally and worldwide, as well as to share, create, and spread information.For this reason, our presence in social media was strong and continuous since the spring of 2020. We managed to gather many followers that applauded our content and engaged with us frequently.</p>
-                <img class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/c/c9/T--Greece_United--linkedin--metrics.png">
+                <img id="img3" class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/c/c9/T--Greece_United--linkedin--metrics.png">
                 
                 <div id="myModal" class="modal">
                     <img class="modal-content" id="img01">
@@ -435,7 +435,7 @@
             <div class="content">
                 <h2>Twitter</h2>
                 <p class="content-paragraph">In today's society, the use of social media has become a necessary daily activity. Social media is typically used for social interaction and access to news and information, and decision making. It is a valuable communication tool with others locally and worldwide, as well as to share, create, and spread information.For this reason, our presence in social media was strong and continuous since the spring of 2020. We managed to gather many followers that applauded our content and engaged with us frequently.</p>
-                <img class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--twitter--metrics.png">
+                <img id="img4" class="social-metrics" style="align-self: center; width:80%;" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--twitter--metrics.png">
                 
                 <div id="myModal" class="modal">
                     <img class="modal-content" id="img01">
@@ -454,10 +454,36 @@
         var modal = document.getElementById('myModal');
          
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('social-metrics');
+        var img1 = document.getElementById('img1');
+        var img2 = document.getElementById('img2');
+        var img3 = document.getElementById('img3');
+        var img4 = document.getElementById('img4');
+
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
-        img.onclick = function(){
+
+        img1.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        }
+
+        img2.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        }
+
+        img3.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        }
+
+        img4.onclick = function(){
             modal.style.display = "block";
             modalImg.src = this.src;
             modalImg.alt = this.alt;
