@@ -1,4 +1,4 @@
-<html>
+<html>	
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -8,14 +8,23 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 		<link href="https://fonts.googleapis.com/css?family=Raleway|Sansita&display=swap" rel="stylesheet">
-	</head>
+<!-- General -->
+<style>
+/* CLEAR DEFAULT SETTINGS **/
+    #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
+    #content { padding:0px; width:100%; margin-top:-7px; margin-left:0px; border:none;}
+    body, html {background-color:white; width: 100%; height: 100%;}
+    #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
 
+    #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+</style>
 	<!-- general -->
 	<style>
 		/* bg color */
 	body
 	{
-		background: linear-gradient(#B7E0FF, #B8EBFF);
+                background: #B7E0FF;
+		/*background: linear-gradient(#B7E0FF, #B8EBFF);*/
  		background-size: 100% 1000vh;
 		text-align: justify;
 	}
@@ -26,7 +35,117 @@
 		border-radius: 5px;
 		border-color: #002060;
 	}
+	
 	</style>
+<!-- text wrapper -->
+<style>
+
+.igem_column_wrapper > p {
+  margin: 0;
+}
+
+main .content .quote,
+#HQ_page main .content .quote {
+  padding: 20px;
+  box-shadow: 0 0 10px lightgray;
+  margin: 40px;
+}
+
+main {
+  margin-top: -5px;
+  width: 100%;
+  background-color: #FAFAFC;
+  z-index: 10;
+  position: relative;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+main::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media (max-width: 800px) {
+  main {
+    justify-content: center;
+  }
+}
+
+.contentBlock {
+  width: auto;
+  max-width: 1000px; /* change size i think*/
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1024px) {
+  .contentBlock {
+    margin-right: 5vw;
+  }
+}
+/* @media (max-width: 800px) {
+  .contentBlock {
+    margin-right: unset;
+    width: 90%;
+    box-sizing: border-box;
+    max-width: 650px;
+  }
+} */
+
+.content {
+  padding: 64px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px lightgray;
+  color: #121212;
+  margin-top: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "lato-light";
+}
+@media (max-width: 800px) {
+  .content {
+    margin: 0 auto;
+    box-shadow: unset;
+    padding: 35px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 400px) {
+  .content {
+    padding: 20px;
+  }
+}
+
+.content a {
+  color: #002060;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.content a.citation {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
+
+
+#content {
+	padding: 0px;
+	width: 100%;
+	margin-top: -7px;
+	margin-left: 0px;
+	border: none;
+	line-height: initial;
+}
+
+
+</style>
+
  <!-- slideshow -->
  <style>
     .carousel .carousel-item {
@@ -37,7 +156,7 @@
     .carousel-item img {
         min-height: 555px;
         max-height: 765px;
-        object-fit:contain;
+        object-fit:cover;
       }
     
     </style>
@@ -476,80 +595,37 @@
 		</ul>
 	</div>
 
-	<!-- Slideshow -->
-	<div id="carousel-team" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-		  <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
-		  <li data-target="#carousel-team" data-slide-to="1"></li>
-		  <li data-target="#carousel-team" data-slide-to="2"></li>
-		  <li data-target="#carousel-team" data-slide-to="3"></li>
-		  <li data-target="#carousel-team" data-slide-to="4"></li>
-		  <li data-target="#carousel-team" data-slide-to="5"></li>
-		  <li data-target="#carousel-team" data-slide-to="6"></li>
-		  <li data-target="#carousel-team" data-slide-to="7"></li>
-		  <li data-target="#carousel-team" data-slide-to="8"></li>
-
-
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item  active">
-				<img src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--team-call.gif" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/6/6e/T--Greece_United--bouno-2.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--volley.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--bouno-1.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--group-photo.png" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/1/14/T--Greece_United--group-photo-2.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--group-photo-3.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/2/2d/T--Greece_United--group-photo-4.jpg" class="d-block w-100" alt="...">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
-		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		  <span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
-		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		  <span class="sr-only">Next</span>
-		</a>
-	  </div>
-
-	<hr class="line">
+	
+	<!-- <hr class="line"> -->
 	
 
-	<p style="width: 100%; max-width: 1000px; text-align: justify; padding-top: 200px; margin-left:400px; font-size: 24px;">
-		<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
-		describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
-		thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
-		seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
-		apart from characterizing the strength of each one of us separately, also describes the
-		spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
-		Right around there four of us from different cities and universities, gathered together 
-		and decided to create an iGEM team with no geographical limitations, in contrast to the
-		norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
-		The idea for an iGEM team had been developing in each person’s mind separately, and then 
-		came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
-		Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
-		begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
-	
-	<b>Let’s meet the team!</b>
-	</p>
-<br>
+
+<input id="headingTitleText" type="hidden" value="Parts">
+	<div class="contentBlock">
+		<div class="content">
+			<p style="width: 100%; max-width: 1000px; text-align: justify; font-size: 24px;">
+				<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
+				describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
+				thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
+				seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
+				apart from characterizing the strength of each one of us separately, also describes the
+				spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
+				Right around there four of us from different cities and universities, gathered together 
+				and decided to create an iGEM team with no geographical limitations, in contrast to the
+				norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
+				The idea for an iGEM team had been developing in each person’s mind separately, and then 
+				came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
+				Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
+				begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
+			
+			<b>Let’s meet the team!</b>
+			</p>
+		</div>		
+	</div>
+</input>
+<br><br> <br>
  
-	<hr class="line">
+	<!-- <hr class="line"> -->
 
 	<!--Team members-->
     <section class="tMember-part" >
@@ -1179,6 +1255,58 @@
 
 	<br><br><br><br><br><br>
 
+<!-- Slideshow -->
+	<div id="carousel-team" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+		  <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
+		  <li data-target="#carousel-team" data-slide-to="1"></li>
+		  <li data-target="#carousel-team" data-slide-to="2"></li>
+		  <li data-target="#carousel-team" data-slide-to="3"></li>
+		  <li data-target="#carousel-team" data-slide-to="4"></li>
+		  <li data-target="#carousel-team" data-slide-to="5"></li>
+		  <li data-target="#carousel-team" data-slide-to="6"></li>
+		  <li data-target="#carousel-team" data-slide-to="7"></li>
+		  <li data-target="#carousel-team" data-slide-to="8"></li>
+
+
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item  active">
+				<img src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--team-call.gif" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/6/6e/T--Greece_United--bouno-2.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--volley.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--bouno-1.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--group-photo.png" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/1/14/T--Greece_United--group-photo-2.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--group-photo-3.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="https://2021.igem.org/wiki/images/2/2d/T--Greece_United--group-photo-4.jpg" class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+
+
 	  <!--Dimmer Part-->
 	  <div class="dimmer d-none justify-content-center align-items-center">
 		<div class="card mb-3">
@@ -1325,5 +1453,3 @@
 	<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
     <script src="https://2019.igem.org/Team:NCKU_Tainan/js/4.3.1/bootstrap_min_js?action=raw&amp;ctype=text/javascript"></script>
 </html>
-
-	
