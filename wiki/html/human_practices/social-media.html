@@ -366,6 +366,7 @@
 		font-family: "montserrat-light" !important;
 		/* background-color: #002060; */
 		}
+
 		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
 		pointer-events: none;
 		}
@@ -379,6 +380,7 @@
 		opacity: 1;
 		transition: 0.5s;
 		}
+
 		#fixedOverlay .scroll-wrapper .scroll-area {
 		height: 100%;
 		width: 5vw;
@@ -386,11 +388,13 @@
 		align-items: center;
 		justify-content: center;
 		}
+
 		@media screen and (max-width: 767px) {
-		#fixedOverlay .scroll-wrapper .scroll-area {
-			width: 10vw;
+            #fixedOverlay .scroll-wrapper .scroll-area {
+                width: 10vw;
+            }
 		}
-		}
+
 		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
 		width: 30%;
 		height: 30%;
@@ -398,6 +402,7 @@
 		border-radius: 10px;
 		max-width: 7px;
 		}
+
 		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
 		width: 100%;
 		background: #002060;
@@ -414,9 +419,31 @@
 		display: block;
 		transition: 0.5s;
 		height: 87px;
-		}-->
+		}
 		
 		/* in page menu */
+        .indexbutton {
+            display: none;
+            color: #FAFAFC;
+            text-transform: capitalize;
+            font-size: 1.4rem;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 16px 0;
+            height: 62px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #6281EF;
+            z-index: 21;
+            transition: 0.5s;
+        }
+        @media (max-width: 800px) {
+            .indexbutton {
+                display: block;
+            }
+        }
+
 		.sideBlock 
 		{
 			text-transform: uppercase;
@@ -435,99 +462,119 @@
 			opacity: 80%;
 			border-radius: 15%;
 			padding-left: 20px;
-			z-index: 1;
+			z-index: 2;
 		}
+
 		@media (max-width: 1024px) {
-		.sideBlock {
-			margin: 200px 32px 0 4vw;
+            .sideBlock {
+                margin: 200px 32px 0 4vw;
+            }
 		}
-		}
+
 		.sideBlock b {
-		font-family: "montserrat-bold";
-		font-size: 1.4rem;
-		font-weight: bold;
-		margin-left: 0.25em;
-		display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 0.25em;
+            padding-bottom: 20px;
+            display: block;
 		}
+
 		.sideBlock ul {
-		margin: 1em 0;
-		padding: 0;
+            margin: 1em 0;
+            padding: 0;
 		}
+
 		.sideBlock a {
-		color: #002060;
-		text-decoration: none;
-		font-family: "lato-light", sans-serif;
+            color: #002060;
+            text-decoration: none;
+            font-family: "lato-light", sans-serif;
 		}
+
 		.sideBlock li {
-		margin: 24px;
-		list-style: none;
-		color: #002060;
-		font-size: 1.1rem;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		margin-left: 0.25em;
+            margin: 24px;
+            list-style: none;
+            color: #002060;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 0.25em;
 		}
+
 		.sideBlock li:last-child {
-		margin-bottom: 0;
+		    margin-bottom: 0;
 		}
+
 		.sideBlock li div {
-		max-width: 15px;
-		max-height: 15px;
-		box-sizing: border-box;
-		border: 1px solid;
-		color: #002060;
-		border-radius: 2px;
-		transition: 0.5s;
-		margin-right: 8px;
-		height: 10vw;
-		width: 10vh;
+            max-width: 15px;
+            max-height: 15px;
+            box-sizing: border-box;
+            border: 1px solid;
+            color: #002060;
+            border-radius: 2px;
+            transition: 0.5s;
+            margin-right: 8px;
+            height: 10vw;
+            width: 10vh;
 		}
+
 		.sideBlock li.active div {
-		background-color: #002060;
+		    background-color: #002060;
 		}
+
 		@media (max-width: 800px) {
-		
-		.sideBlock b {
-			display: block;
-			margin: 0;
-		}
-		.sideBlock ul {
-			display: inline-block;
-			text-align: start;
-			margin-top: 0;
-			margin-bottom: 30px;
-		}
-		.sideBlock li {
-			font-weight: bold;
-		}
-		.sideBlock li a {
-			color: #FAFAFC;
-		}
-		.sideBlock li div {
-			color: #FAFAFC;
-		}
-		.sideBlock li.active div {
-			background-color: #FAFAFC;
-		}
-		.sideBlock.notshow {
-			transform: translateY(calc(100% - 0px));
-		}
-		.sideBlock.open {
-			transform: translateY(0);
-		}
+            .sideBlock {
+                position: fixed;
+                bottom: 0;
+                padding: 0 64px;
+                background-color: #6281EF;
+                color: #FAFAFC;
+                float: unset;
+                margin: 0;
+                z-index: 20;
+                width: 100%;
+                box-sizing: border-box;
+                min-width: unset;
+                max-width: unset;
+                text-align: center;
+                transition: transform 0.5s;
+                top: unset;
+                transform: translateY(calc(100% - 62px));
+                display: fixed;
+                flex-direction: column;
+                align-items: center;
+            }
+            .sideBlock b {
+                display: block;
+                margin: 0;
+            }
+            .sideBlock ul {
+                display: inline-block;
+                text-align: start;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+            .sideBlock li {
+                font-weight: bold;
+            }
+            .sideBlock li a {
+                color: #FAFAFC;
+            }
+            .sideBlock li div {
+                color: #FAFAFC;
+            }
+            .sideBlock li.active div {
+                background-color: #FAFAFC;
+            }
+            .sideBlock.notshow {
+                transform: translateY(calc(100% - 900px));
+            }
+            .sideBlock.open {
+                transform: translateY(0);
+            }
 		}
 
 		
-		#sideMenu,
-		#top_title,
-		.patrollink,
-		#firstHeading,
-		#home_logo,
-		#sideMenu {
-			display: none;
-		}
-
 		#content {
 			padding: 0px;
 			width: 100%;
@@ -536,110 +583,29 @@
 			border: none;
 			line-height: initial;
 		}
-
-		body,
-		html {
-			background-color: white;
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0px;
-		}
-
-		#bodyContent h1,
-		#bodyContent h2,
-		#bodyContent h3,
-		#bodyContent h4,
-		#bodyContent h5 {
-			margin-bottom: 0px;
-		}
-
-		#bodyContent a[href ^="https://"],
-		.link-https {
-			padding-right: 0px;
-		}
-
-		#globalWrapper {
-			padding: 0px;
-		}
-
-		a {
-			color: initial;
-		}
-
-		#top_title {
-			display: none;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: unset;
-			font-weight: unset;
-			overflow: unset;
-			padding-top: unset;
-			padding-bottom: unset
-		}
-
-		ol {
-			line-height: unset
-		}
-
-		#HQ_page h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h {
-			font-family: unset;
-			font-weight: unset;
-		}
-		#HQ_page p{
-		font-size: unset;
-		font-family: unset;
-		text-align: unset;
-		margin: 0;
-		}
-
-		#content H1 {
-			font-weight: unset
-		}
-
-		#bodyContent h1,
-		#bodyContent h2 {
-			margin-bottom: unset
-		}
-
-		p br {
-			display: unset
-		}
-		li{
-		margin-bottom: unset !important;
-		}
+		
 	</style> 
+
 	<!-- back to top -->
 	<style>
 		#BacktoTop {
-		display: none;
-		position: fixed;
-		bottom: 20px;
-		right: 30px;
-		z-index: 99;
-		font-size: 18px;
-		border: none;
-		outline: none;
-		background-color: #B8EBFF;
-		color: white;
-		cursor: pointer;
-		padding: 15px;
-		border-radius: 30%;
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #B8EBFF;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 30%;
 		}
 
 		#BacktoTop:hover {
-		background-color: #002060;
+		    background-color: #002060;
 		}
 	</style>
 
@@ -667,7 +633,11 @@
     <!-- Progress bar End -->
 	
 	<!-- in page menu -->
+    
 	<div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+
+        <b>Social Media</b>
 		<ul>
 			<li class="active">
 				<div></div>
@@ -1089,7 +1059,7 @@
         
         .contentBlock {
         width: 64vw;
-        max-width: 900px;
+        max-width: 800px;
         float: right;
         display: flex;
         flex-direction: column;
@@ -1174,14 +1144,12 @@
     
     </style>
 
-
-
-
     <style>
             
         footer{
-            top: 600vh ;
+            top: 500vh ;
             position: absolute;
+            z-index:300;
             }
         
             .footer{ 
@@ -1464,3 +1432,4 @@
         </footer>
 
     </body>
+</html>
