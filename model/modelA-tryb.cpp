@@ -30,7 +30,7 @@ double n0 = 0;              // starting quantity of miRNA
 double n1 = 1.0;            // exosome number
 double k1 = 0.00144;        // 1/min : degradation of miRNA in target cell
 double kts = 288;           //copies/min : mRNA synthesis rate of the CMV promoter
-double kp = 0.7;            //TODO : mRNA percentage connected with ribosomes
+double kp = 0.024;            //TODO : mRNA percentage connected with ribosomes
 
 
 //behavioural equations of the model
