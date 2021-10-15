@@ -747,8 +747,102 @@
           <img class="demographic-imgs" src="https://2021.igem.org/wiki/images/0/03/T--Greece_United--survey--results--6.png"  style="width:80%;margin-top:30px;">
         </div>
     </div>
+
+    <br><br><br><br><br>
+    <h1 style="margin-left:calc((100%)/5.3); margin-top: 100px;">QUESTIONS</h1>
+
+
+    <div class="question-container">
+        <button class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;DNA contains information about the structure and function of the organism to which it belongs.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;RNA is synthesized based on DNA.</p>
+        </button>
+
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;Plants are living organisms.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;RNA can modify DNA.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;All organisms on Earth have a common ancestor.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;Some antibiotics are effective against viruses.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;Human somatic and gamete (eggs, sperm) cells have the same DNA.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;Mushrooms are plants.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;Genetically modified organisms (GMOs) are used to make drugs.</p>
+        </button>
+        <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;DNA fragments of genetically modified organisms we consume can modify or become integrated into the DNA of human cells.</p>
+        </button>
+         <button  class="questions">
+            <div class="indicator"></div>
+            <p>&nbsp;The use of stem cells for research or therapeutic purposes requires the killing of embryos.</p>
+        </button>
+    </div>
     
       <style>
+          .question-container button{
+            height: fit-content;
+            width: 80%;
+            border: none;
+            border-radius: 100px;
+            box-shadow: 1px 1px 5px #000000d5;
+            background-color: rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+            position: relative;
+            transition: 0.5s;
+            top: 0px;
+            display: flex;
+            align-items: center;
+            margin-left: calc((100%)/3.7);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            max-height: 100px;
+            box-sizing: border-box;
+            opacity: 1;
+            transition-delay: max-height 0.5s;
+            font-size: 1em;
+          }
+
+          .question-container button.questions:hover{
+             background-color:#48608aab;
+          }
+          .question-container {
+            width: 70%;
+            display: flex;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            flex-direction: column;
+        }
+
+        .question-container button.questions .indicator {
+            background-color: #6c8ec9ab;
+        }
+
+         .question-container button.questions {
+            background-color: #6c8ec985;
+        }
+
         .demographic-imgs{
             transition: transform .4s;
         }
