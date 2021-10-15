@@ -1,0 +1,405 @@
+<div id="hp-activities">
+    <div id="title">
+        <div class="heading2">Target GROUPS</div>
+        <div class="heading2 other">GROUPS</div>
+    </div>
+    <div id="box">
+        <div id="hp-intro">
+            <ul>
+                <li>
+                    <div class="kindergarten" turned_off=false></div>
+                    <p>Kindergarten</p>
+                </li>
+                <li>
+                    <div class="primary" turned_off=false></div>
+                    <p>Primary School</p>
+                </li>
+                <li>
+                    <div class="middle" turned_off=false></div>
+                    <p>Middle School</p>
+                </li>
+                <li>
+                    <div class="high" turned_off=false></div>
+                    <p>High School</p>
+                </li>
+                <li>
+                    <div class="students" turned_off=false></div>
+                    <p>Students</p>
+                </li>
+                <li>
+                    <div class="adults" turned_off=false></div>
+                    <p>Adults</p>
+                </li>
+
+            </ul>
+        </div>
+        <div id="hp-overview">
+            <div class="activity" id="ar">
+                <div class="points" id="ar-p">
+                    <div class="point unfilled"></div>
+                    <div class="point primary first" turned_off=true></div>
+                    <div class="point middle third" turned_off=true></div>
+                    <div class="point high fourth" turned_off=true></div>
+                    <div class="point students second" turned_off=true></div>
+                    <div class="point teachers first" turned_off=true></div>
+                    <div class="point adults third" turned_off=true></div>
+                </div>
+                <div class="title" id="ar-t">
+                    <a href="#heading1">
+                        <h1>The 6th SynBio sense</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="activity" id="book">
+                <div class="points" id="bk-p">
+                    <div class="point kindergarten first" turned_off=true></div>
+                    <div class="point primary" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point teachers third" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                </div>
+                <div class="title" id="bk-t">
+                    <a href="#heading2">
+                        <h1>Educational colouring book</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="activity" id="bioblox">
+                <div class="points" id="bb-p">
+                    <div class="point unfilled"></div>
+                    <div class="point primary second" turned_off=true></div>
+                    <div class="point middle fourth" turned_off=true></div>
+                    <div class="point high third" turned_off=true></div>
+                    <div class="point students first" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                </div>
+                <div class="title" id="bb-t">
+                    <a href="#heading3">
+                        <h1>"BioBlox" Gaming Tournament</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="activity" id="influencer">
+                <div class="points" id="bb-p">
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point high second" turned_off=true></div>
+                    <div class="point students third" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                    <div class="point adults first" turned_off=true></div>
+                </div>
+                <div class="title" id="les-t">
+                    <a href="#heading4">
+                        <h1>Inviting an Influencer</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="activity" id="lessons">
+                <div class="points" id="bb-p">
+                    <div class="point unfilled"></div>
+                    <div class="point primary third" turned_off=true></div>
+                    <div class="point middle first" turned_off=true></div>
+                    <div class="point high fourth" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                    <div class="point teachers second" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                </div>
+                <div class="title" id="les-t">
+                    <a href="#heading5">
+                        <h1>Lessons</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="activity" id="workshops">
+                <div class="points" id="wk-p">
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point middle fourth" turned_off=true></div>
+                    <div class="point high second" turned_off=true></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                    <div class="point unfilled"></div>
+                </div>
+                <div class="title" id="wk-t">
+                    <a href="#heading6">
+                        <h1>Workshops</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #hp-activities {
+  background-color: #121212;
+  font-family: "montserrat-light", sans-serif !important;
+  width: 100%;
+  height: fit-content;
+  padding: 200px 0;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#hp-activities a {
+  text-decoration: none;
+  color: #fafafc;
+}
+#hp-activities h1 {
+  font-size: 1.3vh !important;
+  font-weight: 100 !important;
+  text-align: center !important;
+  font-family: "montserrat-light", sans-serif !important;
+  transition: 0.4s ease-out;
+  position: relative;
+  top: 0px;
+}
+#hp-activities h1:hover {
+  color: #6281ef;
+  top: 2px;
+}
+@media (max-width: 350px) {
+  #hp-activities h1 {
+    font-size: 2.3vw !important;
+  }
+}
+@media (max-width: 800px) {
+  #hp-activities h1 {
+    font-size: 1.1em !important;
+  }
+}
+#hp-activities #title {
+  height: 10vh;
+}
+#hp-activities #title .heading2 {
+  font-family: "montserrat-black";
+  font-size: 6vw;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  text-align: end;
+  color: #FAFAFC;
+}
+#hp-activities #title .heading2.other {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FAFAFC;
+  line-height: 0.4em;
+}
+#hp-activities::before {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 140vh;
+  content: "";
+  pointer-events: none;
+  border-bottom: 2px solid #FAFAFC;
+  transform: scaleY(-1);
+  background-repeat: no-repeat;
+}
+@media (max-width: 420px) {
+  #hp-activities::before {
+    height: 120vh;
+  }
+}
+#hp-activities::after {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 140vh;
+  content: "";
+  pointer-events: none;
+  border-bottom: 2px solid #FAFAFC;
+  background-repeat: no-repeat;
+}
+@media (max-width: 420px) {
+  #hp-activities::after {
+    height: 120vh;
+  }
+}
+@media (max-width: 420px) {
+  #hp-activities {
+    height: 120vh;
+  }
+}
+#hp-activities #box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
+  flex-direction: initial;
+}
+@media (max-width: 767px) {
+  #hp-activities #box {
+    flex-direction: column-reverse;
+    width: 90%;
+    height: fit-content;
+  }
+}
+#hp-activities #box .kindergarten[turned_off=false] {
+  background-color: #81D4FA !important;
+  border: none !important;
+}
+#hp-activities #box .primary[turned_off=false] {
+  background-color: #F48FB1 !important;
+  border: none !important;
+}
+#hp-activities #box .middle[turned_off=false] {
+  background-color: #FFD762 !important;
+  border: none !important;
+}
+#hp-activities #box .high[turned_off=false] {
+  background-color: #6281EF !important;
+  border: none !important;
+}
+#hp-activities #box .students[turned_off=false] {
+  background-color: #FFA726 !important;
+  border: none !important;
+}
+#hp-activities #box .teachers[turned_off=false] {
+  background-color: #C5E1A5 !important;
+  border: none !important;
+}
+#hp-activities #box .adults[turned_off=false] {
+  background-color: #B39DDB !important;
+  border: none !important;
+}
+#hp-activities #box #hp-intro {
+  max-width: 25%;
+  background-color: #222222;
+  color: #FAFAFC;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 50vh;
+  width: fit-content;
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  #hp-activities #box #hp-intro {
+    width: 90%;
+    height: fit-content;
+    padding: 10px;
+    margin-top: 15px;
+    max-width: none;
+  }
+}
+#hp-activities #box #hp-overview {
+  background-color: #222222;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 50vh;
+  width: 55%;
+  -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
+}
+@media (max-width: 767px) {
+  #hp-activities #box #hp-overview {
+    height: fit-content;
+    width: 90%;
+  }
+}
+#hp-activities #box #hp-overview .activity {
+  width: 20%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#hp-activities #box #hp-overview .activity div {
+  width: 100%;
+}
+#hp-activities #box #hp-overview .activity .title {
+  height: 15%;
+  color: #fafafc;
+  font-size: 0.7em !important;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  #hp-activities #box #hp-overview .activity .title {
+    font-size: 0.4em !important;
+  }
+}
+#hp-activities #box #hp-overview .activity .points {
+  height: 85%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-top: 10px;
+}
+#hp-activities #box #hp-overview .activity .points .point {
+  border-radius: 100px;
+  box-sizing: border-box;
+  max-width: 4vh;
+  max-height: 4vh;
+  margin: 0 auto;
+  border: solid 0.15px #dcdcdc;
+  background-color: transparent;
+  transition: 1s;
+  height: 7vw;
+  width: 7vw;
+}
+@media (max-width: 767px) {
+  #hp-activities #box #hp-overview .activity .points .point {
+    margin: 10px auto;
+  }
+}
+#hp-activities #box #hp-overview .activity .points .unfilled {
+  animation: none;
+}
+#hp-activities #box ul {
+  list-style: none;
+  padding-inline-start: 20px;
+  margin: 0 auto;
+  height: 85%;
+  display: grid;
+  padding-top: 10px;
+}
+@media (max-width: 767px) {
+  #hp-activities #box ul {
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+    padding-inline-start: 20px;
+    padding-top: 0px;
+  }
+}
+#hp-activities #box ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  height: fit-content;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  #hp-activities #box ul li {
+    flex: 1 0 50%;
+    font-size: 3vw;
+    margin: 5px 0;
+  }
+}
+#hp-activities #box ul li div {
+  max-height: 4vh;
+  max-width: 4vh;
+  border-radius: 100%;
+  margin-right: 15px;
+  height: 7vw;
+  width: 7vw;
+}
+#hp-activities #box ul li p {
+  font-family: "montserrat-light", sans-serif !important;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-size: 1.3vw;
+}
+</style>
