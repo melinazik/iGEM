@@ -352,10 +352,76 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
-    
+    <style>
+		/* progress bar */
+		
+		#fixedOverlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 12;
+		top: 18px;
+		transition: 1s;
+		font-family: "montserrat-light" !important;
+		/* background-color: #002060; */
+		}
 
-	<!-- back to top -->
-	<style>
+		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
+		pointer-events: none;
+		}
+
+		#fixedOverlay .scroll-wrapper {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		justify-content: space-between;
+		opacity: 1;
+		transition: 0.5s;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area {
+		height: 100%;
+		width: 5vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+
+		@media screen and (max-width: 767px) {
+            #fixedOverlay .scroll-wrapper .scroll-area {
+                width: 10vw;
+            }
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+		width: 30%;
+		height: 30%;
+		background-color: rgba(98, 129, 239, 0.3);
+		border-radius: 10px;
+		max-width: 7px;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+		width: 100%;
+		background: #002060;
+		opacity: 100%;
+		height: 0%;
+		border-radius: 20px;
+		transition: background-color 0.5s;
+		}
+		
+		#fixedOverlay nav {
+		box-sizing: border-box;
+		z-index: 2;
+		pointer-events: none;
+		display: block;
+		transition: 0.5s;
+		height: 87px;
+		}
+
+	    /* back to top */
+	
 		#BacktoTop {
             display: none;
             position: fixed;
