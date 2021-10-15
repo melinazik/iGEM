@@ -23,8 +23,8 @@
 		/* bg color */
 	body
 	{
-                background: #B7E0FF;
-		/*background: linear-gradient(#B7E0FF, #B8EBFF);*/
+        /* background: #B7E0FF; */
+		background: linear-gradient(#B7E0FF, #B7E0FF);
  		background-size: 100% 1000vh;
 		text-align: justify;
 	}
@@ -37,6 +37,7 @@
 	}
 	
 	</style>
+	
 <!-- text wrapper -->
 <style>
 
@@ -56,7 +57,7 @@ main {
   width: 100%;
   background-color: #FAFAFC;
   z-index: 10;
-  position: relative;
+  position: sticky;
   padding-bottom: 50px;
   display: flex;
   flex-direction: row;
@@ -75,8 +76,8 @@ main::after {
 }
 
 .contentBlock {
-  width: auto;
-  max-width: 1000px; /* change size i think*/
+  width: 900vw;
+  max-width: 1100px; /* change size i think*/
   float: right;
   display: flex;
   flex-direction: column;
@@ -105,6 +106,8 @@ main::after {
   display: flex;
   flex-direction: column;
   font-family: "lato-light";
+  margin-right: 300px;
+
 }
 @media (max-width: 800px) {
   .content {
@@ -115,11 +118,11 @@ main::after {
     box-sizing: border-box;
   }
 }
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .content {
     padding: 20px;
   }
-}
+} */
 
 .content a {
   color: #002060;
@@ -185,13 +188,13 @@ main::after {
 	  padding-right:4%;
 	  /* background: linear-gradient(to right, #B7E0FF, #002060); */
 	}
-	/* 6 photes in a line */
+	/* 3 photes in a line */
 	.photo-wrapper .intro-all {
 	  width: 30%;
 	  margin: 10% 1%;
+	  margin-top:200px;
 	  cursor: pointer;
 	}
-	/*lg: destop*/
 	@media (min-width: 992px) { 
 	  .photo-wrapper .intro-all {
 		width: 25%;
@@ -411,8 +414,6 @@ main::after {
 			transform: translateY(0);
 		}
 		}
-
-		
 		#sideMenu,
 		#top_title,
 		.patrollink,
@@ -552,7 +553,7 @@ main::after {
             <div class="scroll-wrapper" >
                 <div id="sidebar-wrapper" class="scroll-area">
                     <div id="scrollbar-container">
-                        <div id="scrollbar" style="height: 3%;"></div>
+                        <div id="scrollbar" style="height: 85%;"></div>
                     </div>
                 </div>
                 
@@ -600,10 +601,11 @@ main::after {
 	
 
 
-<input id="headingTitleText" type="hidden" value="Parts">
+<!-- <input id="headingTitleText" type="hidden" value="Parts">
 	<div class="contentBlock">
-		<div class="content">
-			<p style="width: 100%; max-width: 1000px; text-align: justify; font-size: 24px;">
+		<div class="content"> -->
+			<!-- <h2> -->
+				<p style="width: 100%; margin-left:400px; max-width: 1000px; text-align: justify; font-size: 24px;">
 				<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
 				describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
 				thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
@@ -618,14 +620,15 @@ main::after {
 				Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
 				begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
 			
-			<b>Let’s meet the team!</b>
+			<b>Let’s meet the team!</b></h2>
 			</p>
-		</div>		
+		<!-- </div>		
 	</div>
-</input>
+</input> -->
+<!-- </div> -->
 <br><br> <br>
  
-	<!-- <hr class="line"> -->
+	<hr class="line">
 
 	<!--Team members-->
     <section class="tMember-part" >
@@ -1154,7 +1157,23 @@ main::after {
 					<div class="intro d-none">
 						<h3 class="card-title">George Drosatos</h3>
 						<p class="card-text">
-							insert
+							George Drosatos is an Assistant Researcher at the Institute for Language and Speech Processing,
+							Athena Research Center in Xanthi (Greece). He received his diploma thesis in Electrical and 
+							Computer Engineering from Democritus University of Thrace, Xanthi (Greece) in 2006. In addition, 
+							he acquired a Master’s degree (March 2010) and a PhD degree (December 2013) both from the 
+							Department of Electrical and Computer Engineering of the Democritus University of Thrace.
+							Furthermore, he was a Postdoctoral Fellow (2013-14) at the Institute for Language and Speech
+							Processing, Athena Research Center in Xanthi (Greece). In 2015-16, he was Associate Researcher
+							and Project Manager of CARRE Project at School of Medicine, Democritus University of Thrace in
+							Alexandroupoli. In 2017-18, he was Research Software Engineer in EROGamb Project in the 
+							Department of Computing and Informatics, Bournemouth University, UK. In total, he has 
+							participated as a researcher in 8 research projects. Dr. Drosatos has interdisciplinary 
+							background, and his research interests focus mainly on privacy-enhancing technologies, 
+							information security, and eHealth. Last but not least, during the past 5 years (2016-21),
+							he has taught undergraduate and postgraduate courses at the Democritus University of Thrace
+							(DUTH), the International Hellenic University (IHU) and the Neapolis University Pafos (NUP).<br><br>
+
+							Website: <a href="https://www.drosatos.info">https://www.drosatos.info</a>
 							<br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
@@ -1401,13 +1420,7 @@ main::after {
             $('#backtotop-wrapper').addClass('scrolled')
         } else $('#backtotop-wrapper').removeClass('scrolled')
     }
-    $(document).ready(function() {
-        $('#backtotop-wrapper').on('click', function() {
-            $('html, body').animate({
-                'scrollTop': $('body').offset().top
-            }, 2000);
-        });
-    });
+    
 
     function updateScrollbar() {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
