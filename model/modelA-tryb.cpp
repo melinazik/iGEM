@@ -18,19 +18,19 @@ using namespace std;
 
 
 //starting values & constants
-double k_syn = 0.5;    //
-double c1 = 0.6;       //
-double c2 = 0.6;       //
-double DmRNA = 0.41;   // m mol / min 
-double a_prot = 720.0; // aminoacids / min
-double L = 680.0;      // mikos
-double D_prot = 0.1;   // mol / min
-double k0 = 79000;     // min ^ -1
-double n0 = 0;         // starting quantity of miRNA
-double n1 = 1.0;       // exosome number
-double k1 = 0.5;       // degradation rate of complex / target
-double kts = 288;      //mirna/min - 3.2 me 6.4 ana s
-double kp = 8.0;       //
+double k_syn = 0.5;         // TODOvalue TODO: pre-miRNA synthesis rate from mRNA
+double c1 = 0.6;            // 1/min : pre-miRNA loading rate in exosomes
+double c2 = 0.6;            // 1/min : protein loading rate in exosomes
+double DmRNA = 0.41;        // 1/min : destruction rate of mRNA
+double a_prot = 240.0;      // aminoacids/min
+double L = 680.0;           // aminoacids : The Length of Lamp2b-CAP-GFP
+double D_prot = 0.00167;    // 1/min : Protein degredation rate
+double k0 = 7900;           // 1/min : exosome production rate
+double n0 = 0;              // starting quantity of miRNA
+double n1 = 1.0;            // exosome number
+double k1 = 0.00144;        // 1/min : degradation of miRNA in target cell
+double kts = 288;           //copies/min : mRNA synthesis rate of the CMV promoter
+double kp = 0.7;            //TODO : mRNA percentage connected with ribosomes
 
 
 //behavioural equations of the model
@@ -177,6 +177,7 @@ int main()
     bool P_first = false;
 
     //set run time
+    //currently runs in minutes (due to constant values)
     for (int t=0; t <100; t=t+1)
     {
         //counting previous values to calculate equilibrim
