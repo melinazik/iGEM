@@ -352,7 +352,194 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
+    <style>
+		/* progress bar */
+		
+		#fixedOverlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 12;
+		top: 18px;
+		transition: 1s;
+		font-family: "montserrat-light" !important;
+		/* background-color: #002060; */
+		}
 
+		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
+		pointer-events: none;
+		}
+
+		#fixedOverlay .scroll-wrapper {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		justify-content: space-between;
+		opacity: 1;
+		transition: 0.5s;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area {
+		height: 100%;
+		width: 5vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+
+		@media screen and (max-width: 767px) {
+            #fixedOverlay .scroll-wrapper .scroll-area {
+                width: 10vw;
+            }
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+		width: 30%;
+		height: 30%;
+		background-color: rgba(98, 129, 239, 0.3);
+		border-radius: 10px;
+		max-width: 7px;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+		width: 100%;
+		background: #002060;
+		opacity: 100%;
+		height: 0%;
+		border-radius: 20px;
+		transition: background-color 0.5s;
+		}
+		
+		#fixedOverlay nav {
+		box-sizing: border-box;
+		z-index: 2;
+		pointer-events: none;
+		display: block;
+		transition: 0.5s;
+		height: 87px;
+		}
+
+	    /* back to top */
+	
+		#BacktoTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #B8EBFF;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 30%;
+		}
+
+		#BacktoTop:hover {
+		    background-color: #002060;
+		}
+	</style>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
+
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper" >
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 3%;"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
+
+    <!-- back to top button -->
+    <script>
+        
+        var mybutton = document.getElementById("BacktoTop");
+    
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+    
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+    </script>
+     <script>
+    
+        var textSection = null;
+        var navbar = document.getElementById("navbar");
+    
+        window.addEventListener('load', function() {
+            textSection = document.querySelector('.elevate-navbar');
+            checkScrollPos();
+            checkBackToTopPos();
+        })
+        window.addEventListener('scroll', function() {
+            updateScrollbar();
+            checkNavbarPos();
+            checkScrollPos();
+            checkBackToTopPos();
+        });
+        function checkScrollPos() {
+            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+            let scrollWrapper = document.querySelector('.scroll-wrapper');
+            if (scrollbarBottom >= footerTop) {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+            } else {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+            }
+        }
+        function checkBackToTopPos() {
+            if ($(window).scrollTop() > 1000) {
+                $('#backtotop-wrapper').addClass('scrolled')
+            } else $('#backtotop-wrapper').removeClass('scrolled')
+        }
+        $(document).ready(function() {
+            $('#backtotop-wrapper').on('click', function() {
+                $('html, body').animate({
+                    'scrollTop': $('body').offset().top
+                }, 2000);
+            });
+        });
+    
+        function updateScrollbar() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - window.innerHeight;;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollbar").style.height = scrolled + "%";
+        }
+        
+        var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 400,
+                speedAsDuration: true,
+                offset: 160
+            });
+    
+            document.getElementById("fixedOverlay").classList.add("project");
+    </script>
 
 
 
