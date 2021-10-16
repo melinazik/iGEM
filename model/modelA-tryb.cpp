@@ -80,9 +80,9 @@ double eq_P (double a_prot, double L, double mRNA1, double mRNA2, double D_prot,
     return P_rate;
 }
 
-//calculates the change in protein concentration in a fraction of time
+//calculates the change in target concentration in a fraction of time
 //protein = rate of mRNA2 change per time
-//protein is TODO
+//target is TODO
 
 double eq_target (double n0, double n1, double c1, double miRNA, double k1, double t, double target)
 {
@@ -93,7 +93,6 @@ double eq_target (double n0, double n1, double c1, double miRNA, double k1, doub
 
 //calculates how many exososmes have been produced up to a certain time (t)
 //k0 exosomes are produced in a fraction of time
-//protein is TODO
 
 double eq_Exo (double k0, double t)
 {
