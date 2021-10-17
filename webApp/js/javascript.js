@@ -448,7 +448,7 @@ function parse(){
     // console.log(formInputMap);
 
     replaceOB();
-    
+
     var target = document.getElementById('chartContainer');
     var scrollContainer = target;
     do { //find scroll container
@@ -518,7 +518,7 @@ function replaceOB(){
                     var ratio = map[key2][3];
 
                     console.log(riskElementsMap[source]+ " -> " + riskElementsMap[target] + " ---- " + ratio);
-                    retrievedData[count] = {y: parseInt(ratio), label: String(riskElementsMap[source])};
+                    retrievedData[count] = {y: parseFloat(ratio), label: String(riskElementsMap[source])};
                     count++;
                 }
             }
