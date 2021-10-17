@@ -748,3 +748,121 @@ figcaption {
   max-width: 300px;
 }
 
+/* Info on Calculator */
+#content {
+  padding: 0px;
+  width: 100%;
+  margin-top: -7px;
+  margin-left: 0px;
+  border: none;
+  line-height: initial;
+}
+
+.content p.photo-desc {
+  text-align: center !important;
+  font-size: 0.8em !important;
+}
+
+.class-paragraph{
+  padding-left: 5px;
+  margin-right: 5px;
+  text-align: justify;
+
+}
+#content-tag {
+  background-color: #ffffff;
+  position: relative;
+}
+
+#content-tag p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+
+
+#content {
+  padding: 0px;
+  width: 100%;
+  margin-top: -7px;
+  margin-left: 0px;
+  border: none;
+  line-height: initial;
+}
+
+.content {
+  padding: 64px;
+  border-radius: 5px;
+  color: #121212;
+  margin-top: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align:justify;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+
+.content ul {
+  padding-inline-start: 20px;
+  list-style-image: none;
+  list-style-type: none;
+}
+
+.content ul li {
+  display: flex;
+}
+
+.content ul li::before {
+  content: "•";
+  color: #000000;
+}
+
+.content .splide ul li::before {
+  content: unset;
+}
+
+.content li {
+  margin: 10px;
+}
+
+.content li::marker {
+  color: #000000;
+  font-weight:bold;
+  font-size: 1em;
+}
+
+.content h4, .content h5 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-block-end: 0.2em;
+  margin-block-start: 60px;
+}
+
+
+
+.content-paragraph{
+  margin: 0;
+font-size: 1.2rem;
+line-height: 1.5;
+margin-top: 20px;
+margin-bottom: 40px;
+text-align: justify;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
