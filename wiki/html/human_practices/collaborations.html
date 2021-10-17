@@ -93,21 +93,7 @@
 		transform: translateY(-2000px);
 	}
 </style>
-<!-- loader -->
-<script>
-			
-	// Loader
-	window.addEventListener("load", function() 
-	{
-		let loader = document.getElementById('loader-bg');
-		
-		setTimeout(function() 
-		{
-			loader.classList.add('loaded')
-		}, 100);
-	});
 
-</script>
 
 <!-- nav bar -->
 <style>
@@ -204,17 +190,7 @@
 
 </style>
 
-<!-- navigation bar -->
-<script>
-	function changeColor(x){
-		x.style.background = '#5893D4';
-		x.style.color = '#002060';
-	}
 
-	function normalColor(x){
-		x.style.background = '#B7E0FF';
-	}
-</script>
 
 <!-- progress bar -->
 <style>
@@ -713,82 +689,7 @@
 		}
 </style>
 
-<!-- back to top button -->
-<script>
-	
-	var mybutton = document.getElementById("BacktoTop");
 
-	window.onscroll = function() {scrollFunction()};
-
-	function scrollFunction() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		mybutton.style.display = "block";
-	} else {
-		mybutton.style.display = "none";
-	}
-	}
-
-	function topFunction() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-	}
-</script>
-
-<!-- scroll script -->
-<script>
-
-	var textSection = null;
-	var navbar = document.getElementById("navbar");
-
-	window.addEventListener('load', function() {
-		textSection = document.querySelector('.elevate-navbar');
-		checkScrollPos();
-		checkBackToTopPos();
-	})
-	window.addEventListener('scroll', function() {
-		updateScrollbar();
-		checkNavbarPos();
-		checkScrollPos();
-		checkBackToTopPos();
-	});
-	function checkScrollPos() {
-		var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-		var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-		let scrollWrapper = document.querySelector('.scroll-wrapper');
-		if (scrollbarBottom >= footerTop) {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
-		} else {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
-		}
-	}
-	function checkBackToTopPos() {
-	if ($(window).scrollTop() > 1000) {
-		$('#backtotop-wrapper').addClass('scrolled')
-	} else $('#backtotop-wrapper').removeClass('scrolled')
-	}
-	$(document).ready(function() {
-	$('#backtotop-wrapper').on('click', function() {
-		$('html, body').animate({
-			'scrollTop': $('body').offset().top
-		}, 2000);
-	});
-	});
-
-	function updateScrollbar() {
-	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	var height = document.documentElement.scrollHeight - window.innerHeight;;
-	var scrolled = (winScroll / height) * 100;
-	document.getElementById("scrollbar").style.height = scrolled + "%";
-	}
-
-	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 400,
-		speedAsDuration: true,
-		offset: 160
-	});
-
-	document.getElementById("fixedOverlay").classList.add("project");
-</script>
 
 <!-- text wrapper -->
 <style>
@@ -1053,10 +954,10 @@ content: unset;
 
 	<!-- Back to Top Button -->
 	<button onclick="topFunction()" id="BacktoTop" title="Go to top">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-				<path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
-			</svg>
-	</button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+        </svg>
+    </button>
 	<!-- Back to Top Button End-->
 
 	<!-- Progress bar -->
@@ -1124,7 +1025,7 @@ content: unset;
 			<ul>
 				<li class="active">
 					<div></div>
-					<a href="#heading8">Science Arth Exhibition</a>
+					<a href="#heading8">Science Art Exhibition</a>
 				</li>
 			</ul>
 	</div>
@@ -1430,4 +1331,110 @@ content: unset;
 	</footer>
 
 </body>
+
+<!-- loader -->
+<script>
+			
+	// Loader
+	window.addEventListener("load", function() 
+	{
+		let loader = document.getElementById('loader-bg');
+		
+		setTimeout(function() 
+		{
+			loader.classList.add('loaded')
+		}, 100);
+	});
+
+</script>
+
+<!-- back to top button -->
+<script>
+    
+    var mybutton = document.getElementById("BacktoTop");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<!-- scroll script -->
+<script>
+
+	var textSection = null;
+	var navbar = document.getElementById("navbar");
+
+	window.addEventListener('load', function() {
+		textSection = document.querySelector('.elevate-navbar');
+		checkScrollPos();
+		checkBackToTopPos();
+	})
+	window.addEventListener('scroll', function() {
+		updateScrollbar();
+		checkNavbarPos();
+		checkScrollPos();
+		checkBackToTopPos();
+	});
+	function checkScrollPos() {
+		var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+		var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+		let scrollWrapper = document.querySelector('.scroll-wrapper');
+		if (scrollbarBottom >= footerTop) {
+			if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+		} else {
+			if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+		}
+	}
+	function checkBackToTopPos() {
+	if ($(window).scrollTop() > 1000) {
+		$('#backtotop-wrapper').addClass('scrolled')
+	} else $('#backtotop-wrapper').removeClass('scrolled')
+	}
+	$(document).ready(function() {
+	$('#backtotop-wrapper').on('click', function() {
+		$('html, body').animate({
+			'scrollTop': $('body').offset().top
+		}, 2000);
+	});
+	});
+
+	function updateScrollbar() {
+	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	var height = document.documentElement.scrollHeight - window.innerHeight;;
+	var scrolled = (winScroll / height) * 100;
+	document.getElementById("scrollbar").style.height = scrolled + "%";
+	}
+
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 400,
+		speedAsDuration: true,
+		offset: 160
+	});
+
+	document.getElementById("fixedOverlay").classList.add("project");
+</script>
+
+<!-- navigation bar -->
+<script>
+	function changeColor(x){
+		x.style.background = '#5893D4';
+		x.style.color = '#002060';
+	}
+
+	function normalColor(x){
+		x.style.background = '#B7E0FF';
+	}
+</script>
+
 </html>
