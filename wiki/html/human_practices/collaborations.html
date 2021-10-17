@@ -93,21 +93,7 @@
 		transform: translateY(-2000px);
 	}
 </style>
-<!-- loader -->
-<script>
-			
-	// Loader
-	window.addEventListener("load", function() 
-	{
-		let loader = document.getElementById('loader-bg');
-		
-		setTimeout(function() 
-		{
-			loader.classList.add('loaded')
-		}, 100);
-	});
 
-</script>
 
 <!-- nav bar -->
 <style>
@@ -204,17 +190,7 @@
 
 </style>
 
-<!-- navigation bar -->
-<script>
-	function changeColor(x){
-		x.style.background = '#5893D4';
-		x.style.color = '#002060';
-	}
 
-	function normalColor(x){
-		x.style.background = '#B7E0FF';
-	}
-</script>
 
 <!-- progress bar -->
 <style>
@@ -478,7 +454,8 @@
 <style>
             
 	footer{
-		top: 860vh ;
+		/* change footer place */
+		top: 1060vh ;
 		position: absolute;
 		}
 	
@@ -712,82 +689,7 @@
 		}
 </style>
 
-<!-- back to top button -->
-<script>
-	
-	var mybutton = document.getElementById("BacktoTop");
 
-	window.onscroll = function() {scrollFunction()};
-
-	function scrollFunction() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		mybutton.style.display = "block";
-	} else {
-		mybutton.style.display = "none";
-	}
-	}
-
-	function topFunction() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-	}
-</script>
-
-<!-- scroll script -->
-<script>
-
-	var textSection = null;
-	var navbar = document.getElementById("navbar");
-
-	window.addEventListener('load', function() {
-		textSection = document.querySelector('.elevate-navbar');
-		checkScrollPos();
-		checkBackToTopPos();
-	})
-	window.addEventListener('scroll', function() {
-		updateScrollbar();
-		checkNavbarPos();
-		checkScrollPos();
-		checkBackToTopPos();
-	});
-	function checkScrollPos() {
-		var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-		var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-		let scrollWrapper = document.querySelector('.scroll-wrapper');
-		if (scrollbarBottom >= footerTop) {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
-		} else {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
-		}
-	}
-	function checkBackToTopPos() {
-	if ($(window).scrollTop() > 1000) {
-		$('#backtotop-wrapper').addClass('scrolled')
-	} else $('#backtotop-wrapper').removeClass('scrolled')
-	}
-	$(document).ready(function() {
-	$('#backtotop-wrapper').on('click', function() {
-		$('html, body').animate({
-			'scrollTop': $('body').offset().top
-		}, 2000);
-	});
-	});
-
-	function updateScrollbar() {
-	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	var height = document.documentElement.scrollHeight - window.innerHeight;;
-	var scrolled = (winScroll / height) * 100;
-	document.getElementById("scrollbar").style.height = scrolled + "%";
-	}
-
-	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 400,
-		speedAsDuration: true,
-		offset: 160
-	});
-
-	document.getElementById("fixedOverlay").classList.add("project");
-</script>
 
 <!-- text wrapper -->
 <style>
@@ -801,7 +703,7 @@ margin: 0;
 font-size: 1.2rem;
 line-height: 1.5;
 margin-top: 20px;
-margin-bottom: 40px;
+margin-bottom: 20px;
 text-align: justify;
 }
 
@@ -822,12 +724,13 @@ margin: 0 auto;
 }
 
 
-.contentBlock {
-width: 64vw;
-max-width: 800px;
-float: right;
-display: flex;
-flex-direction: column;
+.contentBlock 
+{
+	width: 64vw;
+	max-width: 800px;
+	float: right;
+	display: flex;
+	flex-direction: column;
 }
 
 .content {
@@ -886,7 +789,7 @@ content: unset;
 	font-size: 1.2em;
 	text-transform: uppercase;
 	margin-block-end: 0.2em;
-	margin-block-start: 60px;
+	margin-block-start: 30px;
 }
 
 .content h5 {
@@ -1051,10 +954,10 @@ content: unset;
 
 	<!-- Back to Top Button -->
 	<button onclick="topFunction()" id="BacktoTop" title="Go to top">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-				<path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
-			</svg>
-	</button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+        </svg>
+    </button>
 	<!-- Back to Top Button End-->
 
 	<!-- Progress bar -->
@@ -1122,13 +1025,14 @@ content: unset;
 			<ul>
 				<li class="active">
 					<div></div>
-					<a href="#heading8">Science Arth Exhibition</a>
+					<a href="#heading8">Science Art Exhibition</a>
 				</li>
 			</ul>
 	</div>
 
 <!-- end of basic elements -->
 
+<!-- overview -->
 	<div style="margin-top: 200px;" id="content-tag">
 		<div class="contentBlock">
 			<div class="content">
@@ -1146,6 +1050,7 @@ content: unset;
 		</div>
 	</div>
 
+<!-- meet up -->
 	<div id="heading1">
 		<div style="margin-top: 200px;" id="content-tag">
 			<div class="contentBlock">
@@ -1163,7 +1068,94 @@ content: unset;
 			</div>
 		</div>
 	</div>
+	<!-- expartiments -->
 	<div id="heading2">
+		<div style="margin-top: 200px;" id="content-tag">
+			<div class="contentBlock">
+				<div class="content">
+					<h2>exARTpiments</h2>
+					<p class="content-paragraph">
+						iGEM is fun and inspiring but it can be really challenging. Every team has possibly
+						reached a point where they have tried and failed over and over again in a part of their
+						project, to the point of rethinking their life choices and why did they ever got involved 
+						with Synthetic Biology. We sometimes felt that too. But it is important to always remember
+						the beauty behind the hardships. That is what we tried to remind our fellow iGEMers with 
+						our collaboration “expARTiments”. <br><br>
+						We invited teams to send us photos of their projects, labs, or anything else they found 
+						artistic, and we created a mosaic
+ 						that shows through little moments the amazing journey we all had this year. 
+						We hoped that this would be a reminder for the
+ 						beauty that exists everywhere around you if you just know how to look. <br><br>
+						Below you can see our social media campaign to promote our collaboration.<br><br>
+						<!-- slideshow templates -->
+						<br><br>
+						The photos we received were breathtaking, interesting, and showed a variety of views
+						on science and art. It is important to destroy the gap between art and science and really
+						understand that those fields are intertwined in the most beautiful way. Everybody should be 
+						included in science, our artists and our artistic side of brains.<br><br>
+						The mosaic we made from all the photos can be seen below, but also each one individual photo.<br><br>
+						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="600px" height="auto">
+						<br><br>
+						<!-- slideshow with photos -->
+						<br><br>
+						Our collaboration involved the teams: 
+						<a href="https://2021.igem.org/Team:AFCM-Egypt/Collaborations" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/0/08/T--Greece_United--AFCM-Egypt-logo.jpg"  width="auto" height="30px">
+						</a> AFCM Egypt, 
+						<a href="https://2021.igem.org/Team:UPF_Barcelona/Collaborations" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/f/f7/T--Greece_United--Aria-UPFt-logo.jpg"  width="auto" height="40px">
+						</a>UPF_Barcelona, 
+						<a href="https://2021.igem.org/Team:Estonia_TUIT" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/1/1c/T--Greece_United--estonia-logo.png"  width="50px" height="auto">
+						</a>Estonia_TUIT, 
+						<a href="https://2021.igem.org/Team:Mingdao/Collaborations" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/1/10/T--Greece_United--Mindgao-logo.jpg"  width="30px" height="auto">
+						</a>Mingdao, 
+						<a href="https://2021.igem.org/Team:NU_Kazakhstan/Collaborations" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/b/b6/T--Greece_United--NU-Kaz-logo.jpg"  width="40px" height="auto">
+						</a>NU_Kazakhstan, 
+						<a href="https://2021.igem.org/Team:SZTA_RMG_Szeged/Collaborations" target="_blank">
+							<img src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--hungary-logo.jpg"  width="auto" height="30px">
+						</a>SZTA_RMG_Szeged 
+						and we want to thank them a lot for this amazing collaboration!<br> 						
+						</p>
+						<p style="font-size: 13px;">
+						__________________________________________________________<br>
+						This collaboration was inspired by the ELTA Science and Art project: COMMEMORATIVE SET OF STAMPS
+						<a href="https://www.elta.gr/Company/PressOffice/Pressreleases/tabid/753/newsid1179/1425/COMMEMORATIVE-SET-OF-STAMPS-SCIENCE-AND-ART-THROUGH-THE-MICROSCOPE/language/en-US/Default.aspx" target="_blank">
+						“SCIENCE AND ART THROUGH THE MICROSCOPE”</a> with photos by Maria Lambropoulou, Associate Professor of 
+						Histology-Embryology at the Democritus University of Thrace Medical School, a professor in our university.
+
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- how to igem -->
+	<div id="heading3">
+		<div style="margin-top: 200px;" id="content-tag">
+			<div class="contentBlock">
+				<div class="content">
+					<h2>Handbook: "How to iGEM"</h2>
+					<p class="content-paragraph">
+						When the idea of creating a guide for future iGEMers popped up in 
+						our team, we were nothing but excited! Later on, we realized that us 
+						alone could not possibly cover all the aspects of iGEM, nor provide suffice 
+						advice for all plausible case scenarios. Even if we tried, there are aspects 
+						that we cannot know about enough to pass the knowledge to someone else. A good 
+						example of that is that we are an undergraduate team, so for example we cannot 
+						really help a future High School team. <br><br>
+						So we decided to expand upon our partnership with the High School team KOREA_HS 
+						and ask them to give us their point of view as a High School team. You can see 
+						the whole guide in our <a href="https://2021.igem.org/Team:Greece_United/Contribution" target="_blank">Contribution page</a>
+						, where we uploaded it for other teams to use it and hopefully extend it.<br><br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- blood -->
+	<div id="heading4">
 		<div style="margin-top: 200px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
@@ -1193,114 +1185,108 @@ content: unset;
 			</div>
 		</div>
 	</div>
-	<div id="heading3">
-		<div style="margin-top: 200px;" id="content-tag">
-			<div class="contentBlock">
-				<div class="content">
-					<h2>Handbook: "How to iGEM"</h2>
-					<p class="content-paragraph">
-						When the idea of creating a guide for future iGEMers popped up in 
-						our team, we were nothing but excited! Later on, we realized that us 
-						alone could not possibly cover all the aspects of iGEM, nor provide suffice 
-						advice for all plausible case scenarios. Even if we tried, there are aspects 
-						that we cannot know about enough to pass the knowledge to someone else. A good 
-						example of that is that we are an undergraduate team, so for example we cannot 
-						really help a future High School team. <br><br>
-						So we decided to expand upon our partnership with the High School team KOREA_HS 
-						and ask them to give us their point of view as a High School team. You can see 
-						the whole guide in our <a href="https://2021.igem.org/Team:Greece_United/Contribution" target="_blank">Contribution page</a>
-						, where we uploaded it for other teams to use it and hopefully extend it.<br><br>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="heading4">
-		<div style="margin-top: 200px;" id="content-tag">
-			<div class="contentBlock">
-				<div class="content">
-					<h2>exARTpiments</h2>
-					<p class="content-paragraph">
-						iGEM is fun and inspiring but it can be really challenging. Every team has possibly
-						reached a point where they have tried and failed over and over again in a part of their
-						project, to the point of rethinking their life choices and why did they ever got involved 
-						with Synthetic Biology. We sometimes felt that too. But it is important to always remember
-						the beauty behind the hardships. That is what we tried to remind our fellow iGEMers with 
-						our collaboration “expARTiments”. <br><br>
-						We invited teams to send us photos of their projects, labs, or anything else they found 
-						artistic, and we created a mosaic
- 						that shows through little moments the amazing journey we all had this year. 
-						We hoped that this would be a reminder for the
- 						beauty that exists everywhere around you if you just know how to look. <br><br>
-						Below you can see our social media campaign to promote our collaboration.<br><br>
-						<!-- slideshow templates -->
-						<br><br>
-						The photos we received were breathtaking, interesting, and showed a variety of views
-						on science and art. It is important to destroy the gap between art and science and really
-						understand that those fields are intertwined in the most beautiful way. Everybody should be 
-						included in science, our artists and our artistic side of brains.<br><br>
-						The mosaic we made from all the photos can be seen below, but also each one individual photo.<br>
-						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="600px" height="auto">
-						<br><br>
-						<!-- slideshow with photos -->
-						<br><br>
-						Our collaboration involved the teams: 
-						<a href="https://2021.igem.org/Team:AFCM-Egypt/Collaborations" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/0/08/T--Greece_United--AFCM-Egypt-logo.jpg"  width="30px" height="auto">
-						</a> AFCM Egypt, 
-						<a href="https://2021.igem.org/Team:UPF_Barcelona/Collaborations" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/f/f7/T--Greece_United--Aria-UPFt-logo.jpg"  width="40px" height="auto">
-						</a>UPF_Barcelona, 
-						<a href="https://2021.igem.org/Team:Estonia_TUIT" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/1/1c/T--Greece_United--estonia-logo.png"  width="30px" height="auto">
-						</a>Estonia_TUIT, 
-						<a href="https://2021.igem.org/Team:Mingdao/Collaborations" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/1/10/T--Greece_United--Mindgao-logo.jpg"  width="30px" height="auto">
-						</a>Mingdao, 
-						<a href="https://2021.igem.org/Team:NU_Kazakhstan/Collaborations" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/b/b6/T--Greece_United--NU-Kaz-logo.jpg"  width="30px" height="auto">
-						</a>NU_Kazakhstan, 
-						<a href="https://2021.igem.org/Team:SZTA_RMG_Szeged/Collaborations" target="_blank">
-							<img src="https://2021.igem.org/wiki/images/0/08/T--Greece_United--AFCM-Egypt-logo.jpg"  width="30px" height="auto">
-						</a>SZTA_RMG_Szeged 
-						and we want to thank them a lot for this amazing collaboration.<br> 						
-						</p>
-						<p style="font-size: 13px;">
-						__________________________________________________________<br>
-						This collaboration was inspired by the ELTA Science and Art project: COMMEMORATIVE SET OF STAMPS
-						<a href="https://www.elta.gr/Company/PressOffice/Pressreleases/tabid/753/newsid1179/1425/COMMEMORATIVE-SET-OF-STAMPS-SCIENCE-AND-ART-THROUGH-THE-MICROSCOPE/language/en-US/Default.aspx">
-						“SCIENCE AND ART THROUGH THE MICROSCOPE”</a> with photos by Maria Lambropoulou, Associate Professor of 
-						Histology-Embryology at the Democritus University of Thrace Medical School, a professor in our university.
-
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- hungary -->
 	<div id="heading5">
 		<div style="margin-top: 200px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>iGEM Meet Up: Greek Edition</h2>
+					<h2>Collaboration with Team SZTA RMG SZEGED from Hungary</h2>
 					<p class="content-paragraph">
-						<br>Cooperating with the iGEM teams Athens, Crete, Thessaloniki and Thrace, 
-						we organized a two-day, the “iGEM Meet UP: Greek Edtition”, an online conference with multiple 
-						topics and speakers. You can see the whole activity 
-						<a href="https://2021.igem.org/Team:Greece_United/Collaborations/iGEMMeetUp" target="_blank">here</a>.<br>
-						<!-- TODO center -->
-						<img src="https://2021.igem.org/wiki/images/4/4d/T--Greece_United--meetup-1.png" width="300px" height="300px">
+						<br>We had the pleasure to collaborate with High School iGEM Team SZTA_RMG_Szeged from Hungary, 
+						whose project aims to develop a two-step miRNA detection system. The goal of our collaboration was 
+						to work on miRNAs. More specifically we worked to understand the underlying mechanism of miRNAs and 
+						miRNA-140 and also the problems and drawbacks of the miRNA detection methods commercially available currently.<br> <br>
+						From our part:<br><br>
+						<b>1)</b>&nbsp;We made a presentation of our work concerning the miRNA-140,<br> 
+						<b>2)</b>&nbsp;We made a presentation about miRNAs, exosomes and the interaction between them,<br>
+						<b>3)</b>&nbsp;The miRNA detection methods our wet lab team planned to use for the experiments.<br> 
+						<br>
+						From the other team’s part:<br>
+						<b>1)</b>&nbsp;They presented all the details about their miRNA detection system,<br> 
+						<b>2)</b>&nbsp;How they plan to implement it,<br> 
+						<b>3)</b>&nbsp;They run the software they developed on the sequence of the miRNA-140 that we currently are using. 
+						<br> <br>
+						As an extension to our collaboration, we presented to the team SZTA_RMG_Szeged two tutorials about 
+						CellDesigner and MatLab to educate them about their basic functions and how those programs can assist 
+						them in their work in Synthetic Biology, during but also after iGEM.<br> <br>
+						<img src="https://2021.igem.org/wiki/images/9/90/T--Greece_United--hungary-screen.png" width="500px">
+						<br>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- postcards -->
+	<div id="heading6">
+		<div style="margin-top: 200px;" id="content-tag">
+			<div class="contentBlock">
+				<div class="content">
+					<h2>Postcards</h2>
+					<p class="content-paragraph">
+						<br>Early in our iGEM year, iGEM Duesseldorf 
+						contacted us to invite us to 
+						participate in their collaboration. The goal was to gather postcards designed 
+						by iGEM teams all over the world! We jumped right in and designed our postcard too. <br>
+						You can see it below.	<br>
+						<!--slide show postcards  -->
+						<br>
+						Then we sent it over and payed the fee for it to be printed out almost 100 times by 
+						iGEM Duesseldorf and distributed to all the other participating teams. They then proceeded to 
+						mail us all the postcards. We still have not received them but having peeked a bit in the file 
+						they sent us, they all look amazing! <br> <br>
+						You can see more details about the collaboration in their
+						<a href="https://2021.igem.org/Team:Duesseldorf" target="_blank">wiki</a>.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- rosalind -->
+	<div id="heading7">
+		<div style="margin-top: 200px;" id="content-tag">
+			<div class="contentBlock">
+				<div class="content">
+					<h2>Rosalind Chronicles</h2>
+					<p class="content-paragraph">
+						<br>Our team collaborated with the organizing teams Patras, Thessaloniki, ULaval and Concordia_Montreal 
+						and many more participating teams in order to create a collection of past and future female scientists. <br>
+						A tribute to all those women that, without the proper recognition, shaped and advanced science to the level it 
+						is today. And a wish, for the next generation of female scientists, our team members, to take science to the next 
+						level without the obstacles that their predecessors faced.<br> <br>
+						You can see the detailed Rosalind Chronicles						
+						<a href="https://padlet.com/louisjacquesruel/Rosalind_Chronicles" target="_blank">here</a>.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- exhibition -->
+	<div id="heading8">
+		<div style="margin-top: 200px;" id="content-tag">
+			<div class="contentBlock">
+				<div class="content">
+					<h2>Science Art exhibition </h2>
+					<p class="content-paragraph">
+						<br>While reaching out to other teams, to invite them to our collaboration 
+						<b>“expARTiments”</b>, we had a happy surprise. Team TUIT Estonia not only 
+						agreed to participate, and sent us beautiful photos, but proposed an extension on our activity. <br><br>
+						Each year, they conduct an art exhibition with printed scientific photos. 
+						A perfect fit for “expARTiments”! So we asked the teams that participated in our 
+						collaboration for their approval and then proceeded to help team TUIT_ESTONIA, 
+						by sending them the photos from expARTiments.<br><br>
+						You can find more about the art exhibition on their						
+						<a href="https://2021.igem.org/Team:Estonia_TUIT" target="_blank">wiki</a>.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- footer -->
 	<footer>
 		<div class="footer">
 			<!-- Footer -->
-						
-				
-	
 			<br><br><br><br>
 			<hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
 			
@@ -1345,4 +1331,110 @@ content: unset;
 	</footer>
 
 </body>
+
+<!-- loader -->
+<script>
+			
+	// Loader
+	window.addEventListener("load", function() 
+	{
+		let loader = document.getElementById('loader-bg');
+		
+		setTimeout(function() 
+		{
+			loader.classList.add('loaded')
+		}, 100);
+	});
+
+</script>
+
+<!-- back to top button -->
+<script>
+    
+    var mybutton = document.getElementById("BacktoTop");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<!-- scroll script -->
+<script>
+
+	var textSection = null;
+	var navbar = document.getElementById("navbar");
+
+	window.addEventListener('load', function() {
+		textSection = document.querySelector('.elevate-navbar');
+		checkScrollPos();
+		checkBackToTopPos();
+	})
+	window.addEventListener('scroll', function() {
+		updateScrollbar();
+		checkNavbarPos();
+		checkScrollPos();
+		checkBackToTopPos();
+	});
+	function checkScrollPos() {
+		var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+		var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+		let scrollWrapper = document.querySelector('.scroll-wrapper');
+		if (scrollbarBottom >= footerTop) {
+			if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+		} else {
+			if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+		}
+	}
+	function checkBackToTopPos() {
+	if ($(window).scrollTop() > 1000) {
+		$('#backtotop-wrapper').addClass('scrolled')
+	} else $('#backtotop-wrapper').removeClass('scrolled')
+	}
+	$(document).ready(function() {
+	$('#backtotop-wrapper').on('click', function() {
+		$('html, body').animate({
+			'scrollTop': $('body').offset().top
+		}, 2000);
+	});
+	});
+
+	function updateScrollbar() {
+	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	var height = document.documentElement.scrollHeight - window.innerHeight;;
+	var scrolled = (winScroll / height) * 100;
+	document.getElementById("scrollbar").style.height = scrolled + "%";
+	}
+
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 400,
+		speedAsDuration: true,
+		offset: 160
+	});
+
+	document.getElementById("fixedOverlay").classList.add("project");
+</script>
+
+<!-- navigation bar -->
+<script>
+	function changeColor(x){
+		x.style.background = '#5893D4';
+		x.style.color = '#002060';
+	}
+
+	function normalColor(x){
+		x.style.background = '#B7E0FF';
+	}
+</script>
+
 </html>
