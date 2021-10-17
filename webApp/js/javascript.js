@@ -453,6 +453,7 @@ function parse(){
 
 
 function replaceOB(){
+    var retrievedData = [];
     
     // create copy of riskEvidencesMap to replace values
     var map = {};
@@ -481,10 +482,12 @@ function replaceOB(){
         
     });
 
+    var count = 0;
     var keys2 = Object.keys(map);
         keys2.forEach(key2 =>{
 
             if(map[key2][4] == 1){
+                
                 
                 if(Parser.parseAndEvaluateExpression(map[key2][0]) != false){
 
@@ -493,8 +496,34 @@ function replaceOB(){
                     var ratio = map[key2][3];
 
                     console.log(riskElementsMap[source]+ " -> " + riskElementsMap[target] + " ---- " + ratio);
+                    retrievedData[count] = {y: parseInt(ratio), label: String(riskElementsMap[source])};
+                    count++;
                 }
             }
     });
 
+    console.log(retrievedData);
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title:{
+            text: "Risk of Knee Osteoarthritis"
+        },
+        axisY: {
+            title: "Risk Factor"
+        },
+        data: [{        
+            type: "column",  
+            showInLegend: true, 
+            legendMarkerColor: "grey",
+            legendText: "Hello",
+            dataPoints: retrievedData
+        }]
+    });
+    chart.render();
+
+    
+    
+	
 }

@@ -17,8 +17,9 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 		<script src="../js/javascript.js"> </script>
-		<script src="../js/parser.js"> </script>
 
 	</head>
 
@@ -56,14 +57,6 @@
 			
 				<form id="form" class="form" onsubmit="return false;">
 
-					<!-- <select>
-						<div>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-						<option value="other">Other</option>
-					</div>
-					</select> -->
-
 					  <div id="container"> </div>
 
 					<button type="submit" onclick="parse()"> Okay </button>
@@ -73,7 +66,8 @@
 
 		</section>
 		
-		
+		<div id="chartContainer" style="height: 370px; width: 80%; align-content: 100px;"></div>
+
 		<!--footer-->
 		<footer>
 			<div class="footer-content">
