@@ -1,0 +1,1313 @@
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    </head>
+    <style>
+    
+        /* CLEAR DEFAULT SETTINGS **************************************************/
+    
+        #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
+        #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
+            #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+    
+        #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+    
+            body{
+            padding:0px;
+            margin:0px;
+    
+            background: white;
+    
+            font-family: 'Lato', sans-serif;
+    
+            display: flex;
+            flex-direction: column;
+            position: relative;
+    }
+    
+    </style>
+    
+    
+    <body>
+        <style>
+            #loader-wrapper {
+                display: flex;
+                align-items: center;
+                margin-top: calc((100%)/5);
+                justify-content: center;
+                height: 0.1vh;
+                width: 100vw;
+                z-index: 500;
+                position: fixed;
+                pointer-events: none;
+            }
+    
+            #loader-bg {
+                position: fixed;
+                height: 200vw;
+                width: 200vw;
+                transform: translateY(0);
+                background-color: #6C8EC9;
+                transition-property: height, width, border-radius, transform;
+                transition-duration: 0.5s;
+                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+                transition-delay: 0s, 0s, 0s, 1s;
+                border-radius: 0%;
+                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+                box-shadow: 0px 0px 27px 0px #6E91CB;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+    
+    
+            #loader-wrapper img {
+                width: 30vh;
+    
+            }
+    
+            #loader-wrapper h1 {
+                color: #fafafc;
+                text-transform: uppercase;
+                font-family: 'montserrat-black', sans-serif !important;
+                position: absolute;
+                transform: translateY(15vh);
+                font-size: 2.2vw;
+                opacity: 100%;
+            }
+    
+            #loader-bg.loaded 
+            {
+                height: 35vh;
+                width: 35vh;
+                border-radius: 70%;
+                transform: translateY(-2000px);
+            }
+        </style>
+    
+    
+        <div id="loader-wrapper">
+            <div id="loader-bg">
+                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+            </div>
+        </div>
+    
+        <script>
+    
+            // Loader
+            window.addEventListener("load", function() 
+            {
+                let loader = document.getElementById('loader-bg');
+    
+                setTimeout(function() 
+                {
+                    loader.classList.add('loaded')
+                }, 100);
+            });
+    
+        </script>
+    
+        <body>
+            <!-- Loading icon -->
+            <div class="loader"></div>
+    
+            <!-- Navigation Bar -->
+            <div class="navbar">
+                <div class="nav-bar-logo">
+                    <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">
+                        <div class="logo-header"></div>
+                    </a>
+                    <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">NOUS | AEGLE</a>
+                </div>
+    
+                <div class="right-navbar" id="navbarID">
+                    <ul id="nav">
+                        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Home">Home</a></li>
+                        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculator</a></li>
+                        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Info">Info</a></li>
+                        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/References">Bibliography</a></li>
+                    </ul>
+    
+                </div>
+            </div>
+    
+            <div style=" padding-bottom: 200px; padding-top: 200px"id="page-view">
+                <div id="title">Information</div>
+            </div>  
+    
+            <section class="after-nav">
+    
+                        <div class="content">
+    
+                            <h2>Introduction</h2>
+                            <p class="content-paragraph">Current trends in health reflect an important contemporary shift towards citizen engagement for health and prevention, as opposed to mere disease management.
+                                <br><br>However, broadcasting generic health messages (e.g. ‘do this, don’t do that’) has limited effects unless there is a convincing, easily perceived and personally customized body of evidence to back healthy choices.
+                                <br><br>OA risk calculators have been employed to help the public better perceive the risks and pitfalls of osteoarthritis. 
+                                <br><br>Most prominent tools shown in the table below use risk estimations for OA derived from specific studies to create a digital tool that shows OA risks to the public. </p>
+    
+                                <table>
+                                    <tr>
+                                        <td><p class="table-paragraph">OAPoI</p></td>
+                                        <td><p class="table-paragraph">Osteoarthritis Policy Model, Brigham and Women’s Hospital, USA<br> <br>
+                                            <a href="https://pivot.bwh.harvard.edu/ongoing-projects/oapol/">https://pivot.bwh.harvard.edu/ongoing-projects/oapol</a>
+                                            <br> <br> and  <br><br> <a href="http://calculator.oarisk.org/ ">http://calculator.oarisk.org </a></p></td>
+                                        <td><p class="table-paragraph">Initiated in 2006. A Monte Carlo computer simulation model to evaluate epidemiologic factors that affect knee OA. The model tracks every individual’s clinical course from the time of entry into the model to death, incorporating comorbidities, such as cancer, cardiovascular disease, and other musculoskeletal diseases, and traumatic knee injuries, such as anterior cruciate ligament and meniscal tears. The model then outputs population-level data, including our primary outcome measures: average quality-adjusted life expectancy and lifetime medical costs.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="table-paragraph">TOARP</p></td>
+                                        <td style="width:100px"><p class="table-paragraph">Osteoarthritis Risk Prediction (TOARP), University of California. USA <br><br>
+                                            Joseph GB et al. Tool for osteoarthritis risk prediction (TOARP) over 8 years using baseline clinical data, X-ray, and MRI: Data from the osteoarthritis initiative. J Magn Reson Imaging. 2018 Jun;47(6):1517-1526. doi: 10.1002/jmri.25892.</p></td>
+                                        <td><p class="table-paragraph">Published in 2018 Osteoarthritis Initiative (<a href="http://www.oai.ucsf.edu/">http://www.oai.ucsf.edu</a>) (11), a multi-center, longitudinal study of persons aged 45–79 years at enrollment, aimed at assessing biomarkers in OA including those derived from MR imaging.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="table-paragraph">MSK </p></td>
+                                        <td><p class="table-paragraph">Musculoskeletal Calculator, by Versus Arthritis and Imperial College London, UK<br><br>
+                                            <a href="https://www.versusarthritis.org/policy/resources-for-policy-makers/musculoskeletal-calculator/msk-calculator-faq/">https://www.versusarthritis.org/policy/resources-for-policy-makers/musculoskeletal-calculator/msk-calculator-faq/ </a></p></td>
+                                        <td><p class="table-paragraph">Uses data from UK specific clinical studies, such as (1) The English Longitudinal Study of Ageing (ELSA), (2) Health Survey for England (HSE) 2011, and (3) Clinical Practice Research Datalink (CPRD) to estimate prevalence of certain musculoskeletal disease including osteoarthritis.</p></td>
+                                    </tr>
+    
+                                  </table>
+                            <br><br><br>
+                            <p class="content-paragraph">
+                            NOUS team created a new OA risk calculator that uses medical evidence from recent high evidence level medical publications. 
+                            The NOUS OA Risk Calculator is expandable and can include new risk evidence when this is published. 
+                            The tool is based on the CARRE health risk ontology and expands the CARRE health risk database 
+                            (CARRE is an EU FP7 ICT project, Contract No. 611140, <a href="https://www.carre-project.eu/">https://www.carre-project.eu/</a>). 
+                            Use the NOUS OA Risk Calculator here: <a href="https://nous.carre-project.eu/">https://nous.carre-project.eu/</a>" 
+                            </p>
+    
+    
+                            <br><br><br>
+                            <h2>What data sources were used to calculate OA risks?</h2>
+                            <p class="content-paragraph">In order to identify high-level medical evidence of risk factors related to osteoarthritis, 
+                                2 team members (one student and one principal investigator) searched systematically in PubMed during September 2021. 
+                                PubMed (<a href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a>) is a biomedical citation database provided by the USA National Library of 
+                                Medicine and is considered one of the most comprehensive sources for biomedical literature search. The database provides 
+                                citation details for more than 33 million scientific publications in the biomedical sciences, including includes 
+                                guidelines and systematic reviews and meta-analyses produced by commonly accepted independent evidence bodies such as 
+                                Cochrane Collaboration</p>
+    
+                                <table>
+                                    <tr>
+                                        <p class="table-paragraph"><b>Risk factors identification methodology</b></p>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="table-paragraph">Query</p></td>
+                                        <td><p class="table-paragraph">(osteoarthritis risk) AND (meta-analysis) AND (last 5 years)</p></td>
+    
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Query as in PubMed</p></td>
+                                        <td><p class="table-paragraph">(("osteoarthritis"[MeSH Terms] OR "osteoarthritis"[All Fields] OR "osteoarthritides"[All Fields]) AND ("risk"[MeSH Terms] OR "risk"[All Fields])) AND ((y_5[Filter]) AND (meta-analysis[Filter]))  </p>
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Inclusion criteria</p></td>
+    
+                                        <td><p class="table-paragraph">meta-analyses reporting on risk for osteoarthritis<br><br>
+                                            in human studies <br><br>
+                                            in English language<br><br>
+                                            reporting values for relative risk ratio (RR) or odds ratio (OR) or hazard ratio (HR) <br><br>
+                                            reporting an acceptable level of evidence
+                                            </p></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Exclusion criteria</p></td>
+    
+                                        <td><p class="table-paragraph">studies considering their evidence level low or insufficient<br><br>
+                                            animal studies <br><br>
+                                            studies on risk or effectiveness of OA therapies<br><br>
+                                            studies on genetic susceptibility for OA<br><br>
+                                            studies on OA patients to identify risk for other disease
+    
+                                            </p></td>
+                                    </tr>
+                                </table>
+    
+                                <br><br><br>
+                                <table>
+                                    <tr>
+                                        <p class="table-paragraph"><b>Risk factors identification results</b></p>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="table-paragraph">Initially retrieved </p></td>
+                                        <td><p class="table-paragraph">393 publications</p></td>
+    
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Retained after inclusion/exclusion criteria</p></td>
+                                        <td><p class="table-paragraph">
+                                            <ol>
+                                                <li>&nbsp;&nbsp;Freiberg A, Bolm-Audorff U, Seidler A. The Risk of Knee Osteoarthritis in Professional Soccer Players. Dtsch Arztebl Int. 2021 Jan 29;118(4):49-55. doi: 10.3238/arztebl.m2021.0007</li>
+                                                <li>&nbsp;&nbsp;Nie D, Yan G, Zhou W, Wang Z, Yu G, Liu D, Yuan N, Li H. Metabolic syndrome and the incidence of knee osteoarthritis: A meta-analysis of prospective cohort studies. PLoS One. 2020 Dec 23;15(12):e0243576. doi: 10.1371/journal.pone.0243576. </li>
+                                                <li>&nbsp;&nbsp;Wang X, Perry TA, Arden N, Chen L, Parsons CM, Cooper C, Gates L, Hunter DJ. Occupational Risk in Knee Osteoarthritis: A Systematic Review and Meta-Analysis of Observational Studies. Arthritis Care Res (Hoboken). 2020 Sep;72(9):1213-1223. doi: 10.1002/acr.24333. </li>
+                                                <li>&nbsp;&nbsp;Wang J, Dong J, Yang J, Wang Y, Liu J. Association between statin use and incidence or progression of osteoarthritis: meta-analysis of observational studies. Osteoarthritis Cartilage. 2020 Sep;28(9):1170-1179. doi: 10.1016/j.joca.2020.04.007. </li>
+                                                <li>&nbsp;&nbsp;Poulsen E, Goncalves GH, Bricca A, Roos EM, Thorlund JB, Juhl CB. Knee osteoarthritis risk is increased 4-6 fold after knee injury - a systematic review and meta-analysis. Br J Sports Med. 2019 Dec;53(23):1454-1463. doi: 10.1136/bjsports-2018-100022. </li>
+                                                <li>&nbsp;&nbsp;Sun Y, Nold A, Glitsch U, Bochmann F. Hip Osteoarthritis and Physical Workload: Influence of Study Quality on Risk Estimations-A Meta-Analysis of Epidemiological Findings. Int J Environ Res Public Health. 2019 Jan 24;16(3):322. doi: 10.3390/ijerph16030322. </li>
+                                                <li>&nbsp;&nbsp;Zhang YM, Wang J, Liu XG. Association between hypertension and risk of knee osteoarthritis: A meta-analysis of observational studies. Medicine (Baltimore). 2017 Aug;96(32):e7584. doi: 10.1097/MD.0000000000007584. </li>
+                                                <li>&nbsp;&nbsp;Kong L, Wang L, Meng F, Cao J, Shen Y. Association between smoking and risk of knee osteoarthritis: a systematic review and meta-analysis. Osteoarthritis Cartilage. 2017 Jun;25(6):809-816. doi: 10.1016/j.joca.2016.12.020</li>
+                                           </ol>  </p>
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Results</p></td>
+    
+                                        <td><p class="table-paragraph">The above 8 publications produced: <br><br>
+                                            ­7 risk factors<br>
+                                           <ol>
+                                                <li>&nbsp;&nbsp;knee injury --> knee osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;occupational exposure --> knee osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;occupational exposure --> hip osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;soccer playing --> knee osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;metabolic syndrome --> knee osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;hypertension --> knee osteoarthritis</li>
+                                                <li>&nbsp;&nbsp;smoking --> knee osteoarthritis</li>
+                                           </ol>
+    
+                                           <br><br>
+                                           ­	27 different risk associations (OR= odds ratio, RR = relative risk)<br>
+                                           <ol>
+                                                <li>&nbsp;&nbsp;if knee injury = Anterior Cruciate Ligament injury<br>
+                                                    then knee osteoarthritis OR = 4.2 (2.2 to 8.0)</li>
+                                                <li>&nbsp;&nbsp;if knee injury = Meniscal Injury<br>
+                                                    then knee osteoarthritis OR = 6.3 (3.8 to 10.5) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if knee injury = (Meniscal Injury) AND (Anterior Cruciate Ligament Injury)<br>
+                                                    then knee osteoarthritis OR = 6.4 (4.9 to 8.3)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = agriculture<br>
+                                                    then knee osteoarthritis OR = 1.64 (1.33 to 2.1)
+                                                    </li>
+                                                    <li>&nbsp;&nbsp;if job = metal worker<br>
+                                                        then knee osteoarthritis OR = 1.85 (1.25 to 2.76)
+    
+                                                        </li>
+                                                <li>&nbsp;&nbsp;if job = building and construction<br>
+                                                    then knee osteoarthritis OR = 1.63 (1.39 to 1.92)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = floor and brick layer<br>
+                                                    then knee osteoarthritis OR = 2.51 (1.79 to 3.52)
+    
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = carpenter<br>
+                                                    then knee osteoarthritis OR = 2.49 (1.66 to 3.74)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = miner<br>
+                                                    then knee osteoarthritis OR = 1.47 (1.11 to 1.95)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = cleaner<br>
+                                                    then knee osteoarthritis OR = 1.51 (1.14 to 2.01)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = housework<br>
+                                                    then knee osteoarthritis OR = 1.93 (1.31 to 2.84)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = service worker<br>
+                                                    then knee osteoarthritis OR = 1.79 (1.36 to 2.37)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = craftsman<br>
+                                                    then knee osteoarthritis OR = 1.56 (1.17 to 2.09)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = lifting<br>
+                                                    then knee osteoarthritis OR = 1.39 (1.22 to 1.59) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = kneeling<br>
+                                                    then knee osteoarthritis OR = 1.29 (1.05 to 1.57) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = standing<br>
+                                                    then knee osteoarthritis OR = 1.30 (1.09 to 1.53) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = climbing<br>
+                                                    then knee osteoarthritis OR = 1.49 (1.20 to 1.86) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = squatting<br>
+                                                    then knee osteoarthritis OR = 1.48 (1.21 to 1.81) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = walking<br>
+                                                    then knee osteoarthritis OR = 1.23 (1.01 to 1.52) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = sitting<br>
+                                                    then knee osteoarthritis OR = 0.77 (0.70 to 0.84) protective
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if occupational activity = lifting<br>
+                                                    then hip osteoarthritis OR = 2.00 (1.34 to 2.99) 
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if job = agriculture<br>
+                                                    then hip osteoarthritis OR = 4.74 (2.84 to 7.89)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if (sex=male AND soccer playing status = professional)<br>
+                                                    then knee osteoarthritis OR = 2.25 (1.41 to 3.61)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;	if (sex = female AND metabolic syndrome diagnosis = yes) <br>
+                                                    then knee osteoarthritis RR = 1.23 (1.03 to 1.47)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if hypertension diagnosis = yes <br>
+                                                    then knee osteoarthritis OR = 1.49 (1.26 to 1.77)
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if (sex = male AND smoking status = smoker)<br>
+                                                    then knee osteoarthritis OR = 0.69 (0.58 to 0.80) protective
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if (sex = female AND smoking status = smoker)<br>
+                                                    then knee osteoarthritis OR = 0.89 (0.77 to 1.02) protective
+                                                    </li>
+                                                <li>&nbsp;&nbsp;if statin administration = yes<br>
+                                                    then osteoarthritis OR = 1.01 (0.96 to 1.05) no association
+                                                    </li>
+                                           </ol>
+                                            </p></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td><p class="table-paragraph">Limitations</p></td>
+    
+                                        <td><p class="table-paragraph">only meta-analyses were included, however, a wider search might reveal individual cohort studies of high quality  <br><br>
+                                                                    ­	search limited only to the last five years <br><br>
+                                                                    ­	search limited only to PubMed and primary search results <br><br>
+                                                                    ­	included only papers reporting risk for OA, future work should expand to include any risk associated with OA and related conditions, diseases and comorbidities
+    
+    
+                                            </p></td>
+                                    </tr>
+                                </table>
+    
+                            <br><br><br>
+                            <h2>The Software</h2>
+                            <p class="content-paragraph">CARRE risk factor ontology – conceptual model (CARRE D.2.2, 2014 <a href="https://www.carre-project.eu/project-info/deliverables-2/">https://www.carre-project.eu/project-info/deliverables-2/</a> 
+                                and available via the NCBO BioPortal <a href="https://bioportal.bioontology.org/ontologies/CARRE">https://bioportal.bioontology.org/ontologies/CARRE</a>).</p>
+    
+                                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--app--ontology.png">
+                                <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> CARRE risk factor ontology – conceptual model.</p>
+    
+                                <br><br><br>
+                                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/3/3c/T--Greece_United--app--architecture.png">
+                                <p style="align-self: center" class="photo-desc"><b>Figure 2:</b> System high level architecture.</p>
+    
+    
+                        </div>
+    
+    
+            </section>
+    
+            <!--footer-->
+            <footer>
+                <div class="footer-content">
+                    <div class="row">
+    
+                        <div class="col">
+                            <a href="https://igemnous.med.duth.gr/" target="_blank">
+                                <div class="logo-footer"></div> 
+                            </a>
+    
+                                <i class="fa fa-envelope fa-lg fa-fw"></i>
+                                <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
+                                <a class="footer-links" href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
+                        </div>
+    
+                        <div class="col">
+                            <h4>About Us</h4>
+                            <p class="footer-about">We are an interdisciplinary team of students from Greek Universities aiming to participate in iGEM Competition 2021.
+                            </p>
+                        </div>
+    
+                        <div class="col">
+                            <h4 class="follow-footer">Contact us</h4>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fab fa-instagram"></i></a><br>
+                                <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </footer>
+            <!-- /.footer -->
+        </body>
+    
+    <style>
+        html, body{
+        height:100%;
+        padding:0px;
+        margin:0px;
+    
+        font-family: 'Lato', sans-serif;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+    
+    /* -------------- NAVBAR ------------ */
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; /* Hide overflow */
+      background-color:#0B3648;/*#0E828A/* #333; /* Dark background color */
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    
+    .right-navbar {
+      align-self:flex-end;
+      overflow: hidden; /* Hide overflow */
+      margin-left: auto;
+      margin-right: 15px;
+    }
+    
+    /* Style the navigation bar links */
+    .right-navbar a {
+      float: right; /* Make sure that the links stay side-by-side */
+      display: block; /* Change the display to block, for responsive reasons (see below) */
+      color: white; /* White text color */
+      text-align: center; /* Center the text */
+      padding: 14px 20px; /* Add some padding */
+      text-decoration: none; /* Remove underline */
+      font-size: 1.2em;
+      overflow: hidden;
+    }
+    
+    #nav {
+      display: flex;
+      flex-direction: row;
+      list-style: none inside;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #nav li {
+      display: block;
+    }
+    
+    #nav li li a {
+      font-size: 90%;
+    }
+    
+    #nav ul {
+      padding: 0;
+      display: none;
+    
+    }
+    
+    #nav li:hover ul {
+      display: block;
+    }
+    
+    .right-navbar a:hover {
+      background-color: #ddd; /* Grey background color */
+      color: black; /* Black text color */
+    }
+    
+    /* responsive/collapsible nav bar */
+    .right-navbar .icon {
+      display: none;
+    }
+    
+    .nav-bar-logo {
+      padding: 14px 20px; /* Add some padding */
+      display: flex;
+    }
+    
+    .nav-bar-logo a{
+      font-weight: 400;
+      font-size: 1.4em;
+      color: white; /* White text color */
+      text-decoration: none; /* Remove underline */
+    }
+    
+    .logo-header {
+      position: relative;
+      height: 25px;
+      width: 25px;
+      background: url("https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png");
+      background-size: cover;
+      margin: 0 5px;
+    }
+    
+    /* -------------- NAVBAR END ------------ */
+    
+    
+    /* ------------FOOTER-------------*/
+    .logo-footer {
+      position: relative;
+      height: 70px;
+      width: 90px;
+      background: url("https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png");
+      background-size: cover;
+      padding-bottom: 120px;
+      padding-right: 80px;
+      margin-bottom: 45px;
+    }
+    
+    
+    footer {
+      background: #0B3648; /* Grey background */
+      padding:40px 0;
+      color: white;
+      height: 300px;
+      width: 100%;
+      position:relative;
+    }
+    
+    .footer-content{
+      max-width: 1170px;
+      margin:auto;
+      height:250px;
+      display:flex;
+    }
+    
+    .footer-section{
+      flex:1;
+      padding:25px;
+    }
+    
+    .footer-section .about h4{
+      color:white;
+    }
+    
+    .row{
+      display:flex;
+      flex-wrap:wrap;
+    }
+    
+    .col{
+      width:30%;
+      padding: 0 15px;
+    }
+    
+    .col h4{
+      font-size:18px;
+      color:#ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position:relative;
+    }
+    
+    .col h4::before{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      background-color:rgb(199, 169, 190);
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+    
+    .footer-about{
+      color: #bbbbbb;
+      width:70%;
+    }
+    
+    ul{
+      list-style: none;
+    }
+    
+    .col ul li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    
+    .col ul li span{
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration:none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+    }
+    
+    .social-links a{
+      display: inline-block;
+      height:40px;
+      width:40px;
+      background-color: rgba(255,255,255,0.2);
+      margin: 0 10px 10px 0;
+      text-align:center;
+      line-height:40px;
+      border-radius: 50%;
+      color:#ffffff;
+      transition: all 0.5s ease;
+    }
+    
+    .social-links .nous a{
+      padding-top: 10px;
+    }
+    
+    .social-links a:hover{
+      color: #24262b;
+      background-color: #ffffff;
+    }
+    
+    .social-links .fb a:hover{
+      color: #a53b28;
+      background-color: #ffffff;
+    }
+    
+    .footer-section .contact-info{
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    
+    .footer-section .nous{
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    
+    
+    .footer-links{
+      color: #bbbbbb;
+      text-decoration:none;
+    }
+    
+    .footer-links:hover{
+      color: #ffffff;
+    }
+    
+    
+    /*--responsive--*/
+    @media(max-width:767px){
+      .col{
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media(max-width:574px){
+      .col{
+        width: 100%;
+      }
+    }
+    
+    /*---------FOOTER END------------*/
+    
+    .main-text-home {
+      background-color: #0b3648d0;
+      color: white;
+      width: 800px;
+      padding: 50px;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      border-radius: 25px;
+    }
+    
+    .hr-osteo {
+      background-color: rgb(0, 0, 0);
+      border: 1.5px solid black;
+    }
+    
+    .hr-calc{
+      background-color: #082936;
+      border: 1.5px solid #082936;
+    }
+    
+    .hr-about{
+      background-color: #ffff;
+      border: 1.5px solid #ffff;
+    }
+    
+    .hr-sponsors{
+      background-color: #6066689c;
+      border: 1.5px solid #6066689c;
+      width:50%;
+    }
+    
+    
+    .home-section{
+      background-color: #0b36483a;
+    }
+    
+    .after-nav{
+      margin-top: 90px;
+    }
+    
+    #page-view {
+      width: 100%;
+      height: 60vh;
+      /* TODO : change picture */
+      background-image: url("https://2021.igem.org/wiki/images/d/de/T--Greece_United--OA--calculator--parkinson.png");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    #title{
+      color: white;
+      font-size: 4em;
+      align-self: center;
+    }
+    
+    #home-title{
+      color: white;
+      font-size: 5em;
+      align-self: center;
+      text-align: center;
+    }
+    
+    .section-title{
+      /* align-self: center; */
+      padding-top: 60px;
+      justify-content: center;
+      font-size: 3em;
+    }
+    
+    .home-content{
+      margin-left: auto;
+        margin-right: auto;
+        width: 40em;
+    }
+    
+    .section-calc{
+      justify-content: center;
+      padding-bottom: 80px;
+      background-color: #1b84ad5e;
+      color: #082936;
+      font-size: 18px;
+    }
+    
+    .section-osteo{
+      justify-content: center;
+      padding-bottom: 80px;
+      padding-top: 10px;
+      font-size: 18px;
+    }
+    
+    .section-about{
+      background-color: #0b3445da;
+      color: #ffff;
+      padding-bottom: 80px;
+      padding-top: 10px;
+      font-size: 18px;
+    }
+    
+    .section-sponsors{
+      padding-bottom: 80px;
+      padding-top: 10px;
+      font-size: 18px;
+    }
+    
+    .centered-container{
+      padding-right: 140px;
+      padding-left: 140px;
+      align-self: center;
+      grid-auto-columns: 1fr;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      text-align: center;
+    }
+    
+    .img-team{
+      padding-top: 40px;
+      padding-bottom: 30px;
+    
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      border-radius: 7%;
+      height: 450px;
+    }
+    
+    .img-team:hover{
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    /* ------------ SPONSORS -------------*/
+    
+    .img-sponsors{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    }
+    
+    .img-sponsors-intra{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 140px;
+    
+      margin-right: 60px;
+      margin-top: 30px;
+    
+      z-index: 1;
+    }
+    
+    .img-sponsors-alphabank{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 140px;
+      margin-top:40px;
+    
+    }
+    
+    .img-sponsors-democritus{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 150px;
+    
+      margin-right: 70px;
+    }
+    
+    .img-sponsors-deloitte{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 170px;
+    }
+    
+    .img-sponsors-exploria{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 70px;
+      margin-left: 60px;
+    }
+    
+    
+    .img-sponsors-athena{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 140px;
+    
+      margin-left: 40px;
+    }
+    
+    .img-sponsors-metrolab{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 100px;
+    
+      margin-top: 30px;
+    }
+    
+    .img-sponsors-bioemtech{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 60px;
+    
+      margin-bottom: 40px;
+    }
+    
+    .img-sponsors-winline{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 100px;
+    
+      margin-top: 40px;
+      margin-right: 40px;
+    }
+    
+    .img-sponsors-geneious{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 120px;
+    
+      margin-top: 40px;
+      margin-left: 40px;
+    }
+    
+    .img-sponsors-duth{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 160px;
+    
+      margin-top: 40px;
+      margin-right: 40px;
+    }
+    
+    .img-sponsors-htss{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: transform .4s;
+    
+      height: 130px;
+    }
+    
+    .img-sponsors-winline:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-duth:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-geneious:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-exploria:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-metrolab:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-democritus:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-deloitte:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-htss:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-athena:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-intra:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-bioemtech:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    .img-sponsors-alphabank:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      transform: scale(1.1); 
+    }
+    
+    strong {
+      font-size: 1.2em; 
+    }
+    
+    
+    /***** CALCULATOR *****/
+    
+    select {
+      display:block;
+      width:100%;
+      box-sizing:border-box;
+      margin:16px 0;
+      border:0;
+      background: #f1f1f1;
+      padding: 20px 40px;
+      outline:none;
+      color: black;
+      transition:0.5s;
+    }
+    
+    /* ------------ SPONSORS END-------------*/
+    
+    select:hover{
+      background: #e0dfdf;
+    }
+    
+    .main-holder {
+      width: 900px;
+      height: auto;
+      display: grid;
+      margin: 20px auto 20px auto;
+      box-shadow: 0 0 10px 4px #34495e;
+      background-color:white;
+      padding-left: 60px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    
+    .form{
+      display: grid;
+      border: 1px ;
+      width: 80%;
+      padding: 40px 0 0 40px;
+    }
+    
+    .form-text{
+      display:block;
+      width:100%;
+      box-sizing:border-box;
+      margin:16px 0;
+      border:0;
+      background: #f1f1f1;
+      padding: 20px 40px;
+      outline:none;
+      color: black;
+      transition:0.5s;
+    }
+    
+    .form-text:focus{
+      box-shadow: 0 0 10px 4px #34495e;
+    }
+    
+    .form-text:hover{
+      background: #e0dfdf;
+    }
+    
+    textarea.form-text{
+      resize:none;
+      height: 120px;
+    }
+    
+    button:hover {
+      opacity:0.7;
+    }
+    
+    /* style buttons*/
+    button {
+      border:0;
+      background:#0B3648;
+      color: #fff;
+      padding: 12px 50px;
+      cursor: pointer;
+      transition:0.5s;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+    
+    .img-osteo{
+      margin-top: 20px;
+    
+      border-radius: 100%;
+      height: 400px;
+    }
+    
+    
+    .img-osteo-container{
+      transition: transform .4s;
+    }
+    
+    .img-osteo-container:hover {
+      transform: scale(1.1); 
+    }
+    
+    .row-imgs {
+      padding-left: 0;
+      margin-left: -5px;
+      list-style: none;
+    }
+    
+    .row-imgs > li {
+      display: inline-block;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    
+    figcaption {
+      padding: 2px;
+      text-align: center;
+    
+      margin-top: 10px;
+      margin-bottom: 40px;
+    
+      font-weight: 1000;
+      transition: transform .4s;
+    
+      max-width: 300px;
+    
+    }
+    
+    .img-prof{
+    
+      border-radius: 60%;
+      height: 300px;
+      transition: transform .8s;
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+    
+    .img-prof:hover{
+      transform: scale(0.8); 
+    }
+    
+    .cv{
+      max-width: 300px;
+    }
+    
+    /* Info on Calculator */
+    #content {
+      padding: 0px;
+      width: 100%;
+      margin-top: -7px;
+      margin-left: 0px;
+      border: none;
+      line-height: initial;
+    }
+    
+    .content p.photo-desc {
+      text-align: center !important;
+      font-size: 0.8em !important;
+    }
+    
+    .class-paragraph{
+      padding-left: 5px;
+      margin-right: 5px;
+      text-align: justify;
+    
+    }
+    #content-tag {
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    #content-tag p {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: justify;
+    }
+    
+    
+    
+    #content {
+      padding: 0px;
+      width: 100%;
+      margin-top: -7px;
+      margin-left: 0px;
+      border: none;
+      line-height: initial;
+    }
+    
+    .content {
+      padding: 64px;
+      border-radius: 5px;
+      color: #121212;
+      margin-top: 40px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align:justify;
+    }
+    
+    .content p:first-child {
+      margin-top: 0;
+    }
+    
+    
+    .content ul {
+      padding-inline-start: 20px;
+      list-style-image: none;
+      list-style-type: none;
+    }
+    
+    .content ul li {
+      display: flex;
+    }
+    
+    .content ul li::before {
+      content: "•";
+      color: #000000;
+    }
+    
+    .content .splide ul li::before {
+      content: unset;
+    }
+    
+    .content li {
+      margin: 10px;
+    }
+    
+    .content li::marker {
+      color: #000000;
+      font-weight:bold;
+      font-size: 1em;
+    }
+    
+    .content h4, .content h5 {
+      font-size: 1.2em;
+      text-transform: uppercase;
+      margin-block-end: 0.2em;
+      margin-block-start: 60px;
+    }
+    
+    
+    
+    .content-paragraph{
+      margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
+    }
+    
+    td, th {
+      border: 1px solid black;
+      padding: 15px;
+    }
+    
+    table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    </style>
+    </html>
