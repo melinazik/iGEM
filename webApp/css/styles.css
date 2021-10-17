@@ -265,7 +265,7 @@ ul{
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: justify;
   border-radius: 25px;
 }
 
@@ -332,10 +332,11 @@ ul{
   font-size: 3em;
 }
 
-/* .home-content{
-  max-width: 1000px;
-  padding-left: 100px;
-} */
+.home-content{
+  margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+}
 
 .section-calc{
   justify-content: center;
