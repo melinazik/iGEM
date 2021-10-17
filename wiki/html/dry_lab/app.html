@@ -746,10 +746,12 @@
         }
     </script>
 
-    <div id="heading1">
+    
         <div style="margin-top: 200px; margin-left:300px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
+                    
+                    <div id="heading1"></div>
                     <h2>Introduction</h2>
                     <p class="content-paragraph">Current trends in health reflect an important contemporary shift towards citizen engagement for health and prevention, as opposed to mere disease management.
                         <br><br>However, broadcasting generic health messages (e.g. ‘do this, don’t do that’) has limited effects unless there is a convincing, easily perceived and personally customized body of evidence to back healthy choices.
@@ -778,18 +780,217 @@
                             </tr>
 
                           </table>
-                          <br><br><br>
-                          <p class="content-paragraph">
-                          NOUS team created a new OA risk calculator that uses medical evidence from recent high evidence level medical publications. 
-                          The NOUS OA Risk Calculator is expandable and can include new risk evidence when this is published. 
-                          The tool is based on the CARRE health risk ontology and expands the CARRE health risk database 
-                          (CARRE is an EU FP7 ICT project, Contract No. 611140, <a href="https://www.carre-project.eu/">https://www.carre-project.eu/</a> ). 
-                          Use the NOUS OA Risk Calculator here: <a href="https://nous.carre-project.eu/">https://nous.carre-project.eu/</a>" 
-                          </p>
+                    <br><br><br>
+                    <p class="content-paragraph">
+                    NOUS team created a new OA risk calculator that uses medical evidence from recent high evidence level medical publications. 
+                    The NOUS OA Risk Calculator is expandable and can include new risk evidence when this is published. 
+                    The tool is based on the CARRE health risk ontology and expands the CARRE health risk database 
+                    (CARRE is an EU FP7 ICT project, Contract No. 611140, <a href="https://www.carre-project.eu/">https://www.carre-project.eu/</a>). 
+                    Use the NOUS OA Risk Calculator here: <a href="https://nous.carre-project.eu/">https://nous.carre-project.eu/</a>" 
+                    </p>
+
+
+
+                    <div id="heading2"></div>
+                    <h2>What data sources were used to calculate OA risks?</h2>
+                    <p class="content-paragraph">In order to identify high-level medical evidence of risk factors related to osteoarthritis, 
+                        2 team members (one student and one principal investigator) searched systematically in PubMed during September 2021. 
+                        PubMed (<a href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a>) is a biomedical citation database provided by the USA National Library of 
+                        Medicine and is considered one of the most comprehensive sources for biomedical literature search. The database provides 
+                        citation details for more than 33 million scientific publications in the biomedical sciences, including includes 
+                        guidelines and systematic reviews and meta-analyses produced by commonly accepted independent evidence bodies such as 
+                        Cochrane Collaboration</p>
+
+                        <table>
+                            <tr>
+                                <p class="table-paragraph"><b>Risk factors identification methodology</b></p>
+                            </tr>
+                            <tr>
+                                <td><p class="table-paragraph">Query</p></td>
+                                <td><p class="table-paragraph">(osteoarthritis risk) AND (meta-analysis) AND (last 5 years)</p></td>
+
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Query as in PubMed</p></td>
+                                <td><p class="table-paragraph">(("osteoarthritis"[MeSH Terms] OR "osteoarthritis"[All Fields] OR "osteoarthritides"[All Fields]) AND ("risk"[MeSH Terms] OR "risk"[All Fields])) AND ((y_5[Filter]) AND (meta-analysis[Filter]))  </p>
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Inclusion criteria</p></td>
+
+                                <td><p class="table-paragraph">meta-analyses reporting on risk for osteoarthritis<br><br>
+                                    in human studies <br><br>
+                                    in English language<br><br>
+                                    reporting values for relative risk ratio (RR) or odds ratio (OR) or hazard ratio (HR) <br><br>
+                                    reporting an acceptable level of evidence
+                                    </p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Exclusion criteria</p></td>
+
+                                <td><p class="table-paragraph">studies considering their evidence level low or insufficient<br><br>
+                                    animal studies <br><br>
+                                    studies on risk or effectiveness of OA therapies<br><br>
+                                    studies on genetic susceptibility for OA<br><br>
+                                    studies on OA patients to identify risk for other disease
+                                    
+                                    </p></td>
+                            </tr>
+                        </table>
+
+                        <br><br><br>
+                        <table>
+                            <tr>
+                                <p class="table-paragraph"><b>Risk factors identification results</b></p>
+                            </tr>
+                            <tr>
+                                <td><p class="table-paragraph">Initially retrieved </p></td>
+                                <td><p class="table-paragraph">393 publications</p></td>
+
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Retained after inclusion/exclusion criteria</p></td>
+                                <td><p class="table-paragraph">
+                                    <ol>
+                                        <li>&nbsp;&nbsp;Freiberg A, Bolm-Audorff U, Seidler A. The Risk of Knee Osteoarthritis in Professional Soccer Players. Dtsch Arztebl Int. 2021 Jan 29;118(4):49-55. doi: 10.3238/arztebl.m2021.0007</li>
+                                        <li>&nbsp;&nbsp;Nie D, Yan G, Zhou W, Wang Z, Yu G, Liu D, Yuan N, Li H. Metabolic syndrome and the incidence of knee osteoarthritis: A meta-analysis of prospective cohort studies. PLoS One. 2020 Dec 23;15(12):e0243576. doi: 10.1371/journal.pone.0243576. </li>
+                                        <li>&nbsp;&nbsp;Wang X, Perry TA, Arden N, Chen L, Parsons CM, Cooper C, Gates L, Hunter DJ. Occupational Risk in Knee Osteoarthritis: A Systematic Review and Meta-Analysis of Observational Studies. Arthritis Care Res (Hoboken). 2020 Sep;72(9):1213-1223. doi: 10.1002/acr.24333. </li>
+                                        <li>&nbsp;&nbsp;Wang J, Dong J, Yang J, Wang Y, Liu J. Association between statin use and incidence or progression of osteoarthritis: meta-analysis of observational studies. Osteoarthritis Cartilage. 2020 Sep;28(9):1170-1179. doi: 10.1016/j.joca.2020.04.007. </li>
+                                        <li>&nbsp;&nbsp;Poulsen E, Goncalves GH, Bricca A, Roos EM, Thorlund JB, Juhl CB. Knee osteoarthritis risk is increased 4-6 fold after knee injury - a systematic review and meta-analysis. Br J Sports Med. 2019 Dec;53(23):1454-1463. doi: 10.1136/bjsports-2018-100022. </li>
+                                        <li>&nbsp;&nbsp;Sun Y, Nold A, Glitsch U, Bochmann F. Hip Osteoarthritis and Physical Workload: Influence of Study Quality on Risk Estimations-A Meta-Analysis of Epidemiological Findings. Int J Environ Res Public Health. 2019 Jan 24;16(3):322. doi: 10.3390/ijerph16030322. </li>
+                                        <li>&nbsp;&nbsp;Zhang YM, Wang J, Liu XG. Association between hypertension and risk of knee osteoarthritis: A meta-analysis of observational studies. Medicine (Baltimore). 2017 Aug;96(32):e7584. doi: 10.1097/MD.0000000000007584. </li>
+                                        <li>&nbsp;&nbsp;Kong L, Wang L, Meng F, Cao J, Shen Y. Association between smoking and risk of knee osteoarthritis: a systematic review and meta-analysis. Osteoarthritis Cartilage. 2017 Jun;25(6):809-816. doi: 10.1016/j.joca.2016.12.020</li>
+                                   </ol>  </p>
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Results</p></td>
+
+                                <td><p class="table-paragraph">The above 8 publications produced: <br><br>
+                                    ­7 risk factors<br>
+                                   <ol>
+                                        <li>&nbsp;&nbsp;knee injury --> knee osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;occupational exposure --> knee osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;occupational exposure --> hip osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;soccer playing --> knee osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;metabolic syndrome --> knee osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;hypertension --> knee osteoarthritis</li>
+                                        <li>&nbsp;&nbsp;smoking --> knee osteoarthritis</li>
+                                   </ol>
+
+                                   <br><br>
+                                   ­	27 different risk associations (OR= odds ratio, RR = relative risk)<br>
+                                   <ol>
+                                        <li>&nbsp;&nbsp;if knee injury = Anterior Cruciate Ligament injury<br>
+                                            then knee osteoarthritis OR = 4.2 (2.2 to 8.0)</li>
+                                        <li>&nbsp;&nbsp;if knee injury = Meniscal Injury<br>
+                                            then knee osteoarthritis OR = 6.3 (3.8 to 10.5) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if knee injury = (Meniscal Injury) AND (Anterior Cruciate Ligament Injury)<br>
+                                            then knee osteoarthritis OR = 6.4 (4.9 to 8.3)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = agriculture<br>
+                                            then knee osteoarthritis OR = 1.64 (1.33 to 2.1)
+                                            </li>
+                                            <li>&nbsp;&nbsp;if job = metal worker<br>
+                                                then knee osteoarthritis OR = 1.85 (1.25 to 2.76)
+                                                
+                                                </li>
+                                        <li>&nbsp;&nbsp;if job = building and construction<br>
+                                            then knee osteoarthritis OR = 1.63 (1.39 to 1.92)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = floor and brick layer<br>
+                                            then knee osteoarthritis OR = 2.51 (1.79 to 3.52)
+                                            
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = carpenter<br>
+                                            then knee osteoarthritis OR = 2.49 (1.66 to 3.74)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = miner<br>
+                                            then knee osteoarthritis OR = 1.47 (1.11 to 1.95)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = cleaner<br>
+                                            then knee osteoarthritis OR = 1.51 (1.14 to 2.01)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = housework<br>
+                                            then knee osteoarthritis OR = 1.93 (1.31 to 2.84)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = service worker<br>
+                                            then knee osteoarthritis OR = 1.79 (1.36 to 2.37)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = craftsman<br>
+                                            then knee osteoarthritis OR = 1.56 (1.17 to 2.09)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = lifting<br>
+                                            then knee osteoarthritis OR = 1.39 (1.22 to 1.59) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = kneeling<br>
+                                            then knee osteoarthritis OR = 1.29 (1.05 to 1.57) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = standing<br>
+                                            then knee osteoarthritis OR = 1.30 (1.09 to 1.53) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = climbing<br>
+                                            then knee osteoarthritis OR = 1.49 (1.20 to 1.86) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = squatting<br>
+                                            then knee osteoarthritis OR = 1.48 (1.21 to 1.81) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = walking<br>
+                                            then knee osteoarthritis OR = 1.23 (1.01 to 1.52) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = sitting<br>
+                                            then knee osteoarthritis OR = 0.77 (0.70 to 0.84) protective
+                                            </li>
+                                        <li>&nbsp;&nbsp;if occupational activity = lifting<br>
+                                            then hip osteoarthritis OR = 2.00 (1.34 to 2.99) 
+                                            </li>
+                                        <li>&nbsp;&nbsp;if job = agriculture<br>
+                                            then hip osteoarthritis OR = 4.74 (2.84 to 7.89)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if (sex=male AND soccer playing status = professional)<br>
+                                            then knee osteoarthritis OR = 2.25 (1.41 to 3.61)
+                                            </li>
+                                        <li>&nbsp;&nbsp;	if (sex = female AND metabolic syndrome diagnosis = yes) <br>
+                                            then knee osteoarthritis RR = 1.23 (1.03 to 1.47)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if hypertension diagnosis = yes <br>
+                                            then knee osteoarthritis OR = 1.49 (1.26 to 1.77)
+                                            </li>
+                                        <li>&nbsp;&nbsp;if (sex = male AND smoking status = smoker)<br>
+                                            then knee osteoarthritis OR = 0.69 (0.58 to 0.80) protective
+                                            </li>
+                                        <li>&nbsp;&nbsp;if (sex = female AND smoking status = smoker)<br>
+                                            then knee osteoarthritis OR = 0.89 (0.77 to 1.02) protective
+                                            </li>
+                                        <li>&nbsp;&nbsp;if statin administration = yes<br>
+                                            then osteoarthritis OR = 1.01 (0.96 to 1.05) no association
+                                            </li>
+                                   </ol>
+                                    </p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p class="table-paragraph">Limitations</p></td>
+
+                                <td><p class="table-paragraph">only meta-analyses were included, however, a wider search might reveal individual cohort studies of high quality  <br><br>
+­	search limited only to the last five years <br><br>
+­	search limited only to PubMed and primary search results <br><br>
+­	included only papers reporting risk for OA, future work should expand to include any risk associated with OA and related conditions, diseases and comorbidities
+
+                                    
+                                    </p></td>
+                            </tr>
+                        </table>
+                        
+
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
 
@@ -876,7 +1077,7 @@
         
         .content ul li::before {
         content: "•";
-        color: #6281ef;
+        color: #000000;
         }
         
         .content .splide ul li::before {
@@ -888,9 +1089,9 @@
         }
         
         .content li::marker {
-        color: #6281ef;
-        font-family: "lato-heavy";
-        font-size: 1.3em;
+        color: #000000;
+        font-weight:bold;
+        font-size: 1em;
         }
         
         .content h4, .content h5 {
@@ -905,7 +1106,7 @@
         }
         
         .content a {
-        color: #2e64ec;
+        color: #000000;
         text-decoration: none;
         text-align: center;
         cursor: pointer;
@@ -930,7 +1131,7 @@
     <style>
             
         footer{
-            top: 750vh ;
+            top: 1200vh ;
             position: absolute;
             z-index:300;
             }
