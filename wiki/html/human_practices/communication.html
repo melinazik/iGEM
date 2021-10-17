@@ -838,45 +838,48 @@
         }
         
         .content p:first-child {
-        margin-top: 0;
+         margin-top: 0;
         }
         
     
         .content ul {
-        padding-inline-start: 20px;
+            padding-inline-start: 20px;
 
-        list-style-type: none;
-        font-size: 1.2rem;
+            list-style-type: none;
+            font-size: 1.2rem;
 
         }
         
-        .content ul li {
+        .content li{
+            color: #000000;
             font-size: 1.2rem;
-        }
-
+            list-style-type: none;
+        }    
         .content ol li {
             font-size: 1.2rem;
 
         }
-        
+
+        .content ul li::marker {
+            color: #000000;
+            list-style-type: none;
+        }
+
         .content ul li::before {
-        font-size: 1.2rem;
-        color: #000000;
+            color: #000000;
+            font-size: 1.2rem;
+            list-style-type: none;
         }
         
         .content .splide ul li::before {
-        content: unset;
+            content: unset;
         }
         
-        .content li {
-        font-size: 1.2rem;
-
-        }
         
         .content li::marker {
             color: #000000;
-            font-size: 1.3em;
-            
+            font-size: 1.2rem;
+            list-style-type: none;
         }
         
         .content h4, .content h5 {
@@ -892,7 +895,6 @@
         }
         
         .content a {
-            color: #2e64ec;
             text-decoration: none;
             text-align: center;
             cursor: pointer;
@@ -928,25 +930,23 @@
                     <h2>Overview</h2>
                     <p class="content-paragraph">NOUS team dedicated considerable effort to communication. <br><br>
                         We designed and delivered diverse information exchange activities aimed to: </p>
-                        <ul>
-                            <li><b>-</b>&nbsp; communicate iGEM competition to the public and spread news of the NOUS team, our goals and our achievements </li>
-                            <li><b>-</b>&nbsp; convey science concepts to the public</li>
-                        </ul>
+                        
+                        <li><b>-</b>&nbsp; communicate iGEM competition to the public and spread news of the NOUS team, our goals and our achievements </li>
+                        <li><b>-</b>&nbsp; convey science concepts to the public</li>
+                        
                     </ol>
                     <p class="content-paragraph">Scientific communication to the public, or <b>MAKING SCIENCE EASY</b>, is critical for the future of our society, especially in the era of fake news, misinformation amidst escalating scientific discoveries in all fronts. </p>
                     <p class="content-paragraph">According to the National Academies of Sciences, Engineering, and Medicine [1], effective science communication should engage the right tools for the right purpose, which can be any or all of the list below:</b></p>
                     <ol>
-                        <li>&nbsp; share recent findings and excitement for science</li>
-                        <li>&nbsp; increase public appreciation of science</li>
-                        <li>&nbsp; increase knowledge and understanding of science</li>
-                        <li>&nbsp; influence the opinions, policy preferences or behavior of people</li>
-                        <li>&nbsp; ensure that a diversity of perspectives about science held by different groups are considered when solutions to societal problems are pursued</li>
+                        <li><b>1)</b>&nbsp; share recent findings and excitement for science</li>
+                        <li><b>2)</b>&nbsp; increase public appreciation of science</li>
+                        <li><b>3)</b>&nbsp; increase knowledge and understanding of science</li>
+                        <li><b>4)</b>&nbsp; influence the opinions, policy preferences or behavior of people</li>
+                        <li><b>5)</b>&nbsp; ensure that a diversity of perspectives about science held by different groups are considered when solutions to societal problems are pursued</li>
                     </ol>
                     <p class="content-paragraph">The Science of Science Communication identifies two different paradigms [2]:</p>
-                    <ul>
-                        <li><b>a)</b>&nbsp; &nbsp;	dissemination and </li>
-                        <li><b>b)</b>&nbsp; &nbsp;	participation</li>
-                    </ul>
+                    <li><b>a)</b>&nbsp; &nbsp;	dissemination and </li>
+                    <li><b>b)</b>&nbsp; &nbsp;	participation</li>
                     <p class="content-paragraph">Based on the above, we carried out diverse activities to address all objectives and include both communication paradigms. </p>
                 </div>
             </div>
@@ -1858,7 +1858,7 @@
 
                         <div id="heading12"></div>
                         <div style="margin-top: 200px;">
-                            <h2>ECESCON</h2>
+                            <h2>Community Partners</h2>
                                 <p class="content-paragraph">In our time as an iGEM team we had many wonderful opportunities to engage with other, usually student, teams that organized other competitions, student conferences etc. Due to our active presence in social media, they came in touch with us to ask us to promote their activities to our audience that is parted mostly from science enthusiasts. We kindly accepted all of those propositions resulting in being Community Partners with numerous other teams and organizations, that promoted our team as well.<br>Here are the activities and teams we partnered with.</p>
 
                         </div>
@@ -2169,3 +2169,4 @@
         </footer>
 
     </body>
+</html>
