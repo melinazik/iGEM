@@ -41,7 +41,7 @@ double k_dil = 0.0004813524; // 1/min : constant of DNA reduction in expression
 
 double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1)
 {
-    double mRNA1_rate =  n * kts  - DmRNA * mRNA1 - k_syn * mRNA1; 
+    double mRNA1_rate =  n * kts * DNA - DmRNA * mRNA1 - k_syn * mRNA1; 
 
     return mRNA1_rate;
 }
@@ -74,6 +74,7 @@ double eq_mRNA2 (double k_syn, double mRNA1, double DmRNA, double t, double mRNA
 
 double eq_P (double a_prot, double L, double mRNA1, double mRNA2, double D_prot, double c2, double t, double P) 
 {
+    // dP/dt=a/LmRNA-DprotP-C2*P 
     double P_rate = (a_prot/L) * kp * (mRNA1 + mRNA2) - D_prot * P - c2 * P; //D = rate of P change per time
 
     return P_rate;
@@ -100,7 +101,38 @@ double eq_Exo (double k0, double t)
     return Exo;
 }
 
+//equation for reduction of exression of DNA
+//describes the rate of reduction of the stregth of expression 
+// dDNA/dt=-Kdil
+// starting value DNA=1
 
+//equation for mRNA concentration
+//rate of change for the total mRNA transcripts
+//dmRNA/dt=KtsDNA-DmRNAmRNA
+//starting value = 0
+
+//equation for premRNA concentration
+//rate of change for the total premRNA transcripts
+// dpremiRNA/dt=KtsDNA-DpremiRNApremiRNA-C1*premiRNA
+//starting value = 0
+
+//miRnaex = 0
+//dmiRNAex/dt=c1 * premRNA // sunoliko miRNA se exosomata
+
+//exosomes without protein go elseweher so we dont take all the miRNA
+//dmiRNAu/dt = u * miRNAex + c * (1-u)*miRNAex // useful exososomes: u = 0.71 of exosomes take miRNA
+//c = 0.3
+
+//miRNAu/cell num gia miRNA ana kuttaro  sto telos tou programmatos
+//cell num = 1.49 * 10^8
+//deviation +- 0.46 * 10^8
+//calc worst case - add deviation (more cells = worst case)
+
+//run time 2 meres - oxi ola ta points - 
+//dokimi gia 2oro 
+
+//checks if the equations have reached an equillibrium
+//where produce equals loss
 
 bool equilibrium (double prev_value, double now_value)
 {
