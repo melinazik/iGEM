@@ -1,14 +1,13 @@
 /* https://2021.igem.org/Template:Greece_United/CSS_Footer */
 .footer{  
     flex-shrink: 0;
-    padding-top: 10px;
+    padding-top: 100px;
     bottom: 0 ;
     /* height:800px;  */
     /* position: absolute; */
     z-index:300;
     width:100%; 
     background:#002060;  
-    
 } 
 
 .footer ul{
