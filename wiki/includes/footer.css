@@ -1,4 +1,9 @@
 /* https://2021.igem.org/Template:Greece_United/CSS_Footer */
+
+footer{
+    z-index:300;
+}
+
 .footer{  
     flex-shrink: 0;
     padding-top: 100px;
