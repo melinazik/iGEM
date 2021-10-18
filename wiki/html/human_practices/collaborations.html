@@ -4,7 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 		<!-- other -->
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-        <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     </head>
     
 <!-- clear default settings -->
@@ -39,9 +38,12 @@
 	{
 		text-align: justify;
 	}
-	.img
+	.banner
 	{
-		align-self:center;
+		width:100%;
+		background-size: cover; 
+		margin-top:100px; 
+		z-index:10;
 	}
 </style>
 
@@ -779,121 +781,123 @@ content: unset;
 
 <!-- slideshow -->
 <style>
-	/* Slideshow container */
-	.slideshow-container {
-          max-width: 500px;
-          position: relative;
-          margin: auto;
-          border: 4px solid #CEDDEF;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-          background-color: rgba(0, 0, 0, 0.472);
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-          background-color: rgba(0, 0, 0, 0.883);
-        }
-        
-        /* Caption text */
-        .text {
-          color: #f2f2f2;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-        
-        /* Number text (1/3 etc) */
-        .numbertext {
-          color: #f2f2f2;
-          font-size: 12px;
-          padding: 8px 12px;
-          position: absolute;
-          top: 0;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dot1 {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .activeSlide1, .dot1:hover {
-          background-color: #717171;
-        }
+/* Slideshow container */
+.slideshow-container {
+		max-width: 300px;
+		position: relative;
+		margin: auto;
+		border: 4px solid #CEDDEF;
+	}
+	
+	/* Next & previous buttons */
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 16px;
+		margin-top: -22px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		background-color: rgba(0, 0, 0, 0.472);
+	}
+	
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+	
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+		background-color: rgba(0, 0, 0, 0.883);
+	}
+	
+	/* Caption text */
+	.text {
+		color: #f2f2f2;
+		font-size: 15px;
+		padding: 8px 12px;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		text-align: center;
+	}
+	
+	/* Number text (1/3 etc) */
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+	
+	/* The dots/bullets/indicators */
+	.dot1 {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+	
+	.activeSlide1, .dot1:hover {
+		background-color: #717171;
+	}
 
-        .dot2 {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .activeSlide2, .dot2:hover {
-          background-color: #717171;
-        }
-        
-        /* Fading animation */
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-        
-        @-webkit-keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-          .prev, .next,.text {font-size: 11px}
-        }
+	.dot2 {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+	
+	.activeSlide2, .dot2:hover {
+		background-color: #717171;
+	}
+	
+	/* Fading animation */
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+	
+	@-webkit-keyframes fade {
+		from {opacity: .4} 
+		to {opacity: 1}
+	}
+	
+	@keyframes fade {
+		from {opacity: .4} 
+		to {opacity: 1}
+	}
+	
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+		.prev, .next,.text {font-size: 11px}
+	}
 </style>
 
 <body>
 	<!-- header -->
-	<img src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--test-header.jpg" style="size: cover; margin-top:100px; z-index:9;">
-<!-- basic elements -->
+		<img  src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--test-header.jpg" class="banner">
+
+
+	<!-- basic elements -->
 
 	<!-- loader -->
 	<div id="loader-wrapper">
@@ -1185,27 +1189,6 @@ content: unset;
                     
                 	</div>
                     <br>
-                    
-                    <div style="text-align:center">
-                        <span class="dot1" onclick="currentSlide1(1)"></span> 
-                        <span class="dot1" onclick="currentSlide1(2)"></span> 
-                        <span class="dot1" onclick="currentSlide1(3)"></span> 
-                        <span class="dot1" onclick="currentSlide1(4)"></span> 
-                        <span class="dot1" onclick="currentSlide1(5)"></span> 
-                    </div>
-					
-					<br><br>
-					<p class="content-paragraph">
-						The photos we received were breathtaking, interesting, and showed a variety of views
-						on science and art. It is important to destroy the gap between art and science and really
-						understand that those fields are intertwined in the most beautiful way. Everybody should be 
-						included in science, our artists and our artistic side of brains.<br><br>
-						The mosaic we made from all the photos can be seen below, but also each one individual photo.<br><br>
-					</p>
-						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="700px" height="auto" style="align-self: center;">
-						<p class="photo-desc"><b>Figure 2:</b> Mosaic of Collaboration "expARTiments"</p>
-						<br><br>
-					
 					<!-- slideshow with photos -->
 					<div class="slideshow-container">
 						<div class="mySLides2 fade">
@@ -1393,38 +1376,63 @@ content: unset;
 						<a class="next" style="color: white;" onclick="plusSlides2(1)">&#10095;</a>
 						
 					</div>
+					
+
+                    <br><br>
 					<div style="text-align:center">
-						<span class="dot2" onclick="currentSlide(1)"></span> 
-						<span class="dot2" onclick="currentSlide(2)"></span> 
-						<span class="dot2" onclick="currentSlide(3)"></span> 
-						<span class="dot2" onclick="currentSlide(4)"></span> 
-						<span class="dot2" onclick="currentSlide(5)"></span> 
-						<span class="dot2" onclick="currentSlide(6)"></span> 
-						<span class="dot2" onclick="currentSlide(7)"></span> 
-						<span class="dot2" onclick="currentSlide(8)"></span> 
-						<span class="dot2" onclick="currentSlide(9)"></span> 
-						<span class="dot2" onclick="currentSlide(10)"></span> 
-						<span class="dot2" onclick="currentSlide(11)"></span> 
-						<span class="dot2" onclick="currentSlide(12)"></span> 
-						<span class="dot2" onclick="currentSlide(13)"></span> 
-						<span class="dot2" onclick="currentSlide(14)"></span> 
-						<span class="dot2" onclick="currentSlide(15)"></span> 
-						<span class="dot2" onclick="currentSlide(16)"></span> 
-						<span class="dot2" onclick="currentSlide(17)"></span> 
-						<span class="dot2" onclick="currentSlide(18)"></span> 
-						<span class="dot2" onclick="currentSlide(19)"></span> 
-						<span class="dot2" onclick="currentSlide(20)"></span> 
-						<span class="dot2" onclick="currentSlide(21)"></span> 
-						<span class="dot2" onclick="currentSlide(23)"></span> 
-						<span class="dot2" onclick="currentSlide(24)"></span> 
-						<span class="dot2" onclick="currentSlide(25)"></span> 
-						<span class="dot2" onclick="currentSlide(26)"></span> 
-						<span class="dot2" onclick="currentSlide(27)"></span> 
-						<span class="dot2" onclick="currentSlide(28)"></span> 
-						<span class="dot2" onclick="currentSlide(29)"></span> 
-						<span class="dot2" onclick="currentSlide(30)"></span> 
+						<span class="dot2" onclick="currentSlide2(1)"></span> 
+						<span class="dot2" onclick="currentSlide2(2)"></span> 
+						<span class="dot2" onclick="currentSlide2(3)"></span> 
+						<span class="dot2" onclick="currentSlide2(4)"></span> 
+						<span class="dot2" onclick="currentSlide2(5)"></span> 
+						<span class="dot2" onclick="currentSlide2(6)"></span> 
+						<span class="dot2" onclick="currentSlide2(7)"></span> 
+						<span class="dot2" onclick="currentSlide2(8)"></span> 
+						<span class="dot2" onclick="currentSlide2(9)"></span> 
+						<span class="dot2" onclick="currentSlide2(10)"></span> 
+						<span class="dot2" onclick="currentSlide2(11)"></span> 
+						<span class="dot2" onclick="currentSlide2(12)"></span> 
+						<span class="dot2" onclick="currentSlide2(13)"></span> 
+						<span class="dot2" onclick="currentSlide2(14)"></span> 
+						<span class="dot2" onclick="currentSlide2(15)"></span> 
+						<span class="dot2" onclick="currentSlide2(16)"></span> 
+						<span class="dot2" onclick="currentSlide2(17)"></span> 
+						<span class="dot2" onclick="currentSlide2(18)"></span> 
+						<span class="dot2" onclick="currentSlide2(19)"></span> 
+						<span class="dot2" onclick="currentSlide2(20)"></span> 
+						<span class="dot2" onclick="currentSlide2(21)"></span> 
+						<span class="dot2" onclick="currentSlide2(23)"></span> 
+						<span class="dot2" onclick="currentSlide2(24)"></span> 
+						<span class="dot2" onclick="currentSlide2(25)"></span> 
+						<span class="dot2" onclick="currentSlide2(26)"></span> 
+						<span class="dot2" onclick="currentSlide2(27)"></span> 
+						<span class="dot2" onclick="currentSlide2(28)"></span> 
+						<span class="dot2" onclick="currentSlide2(29)"></span> 
+						<span class="dot2" onclick="currentSlide2(30)"></span> 
 					</div>
 						
+                    
+                    <div style="text-align:center">
+                        <span class="dot1" onclick="currentSlide1(1)"></span> 
+                        <span class="dot1" onclick="currentSlide1(2)"></span> 
+                        <span class="dot1" onclick="currentSlide1(3)"></span> 
+                        <span class="dot1" onclick="currentSlide1(4)"></span> 
+                        <span class="dot1" onclick="currentSlide1(5)"></span> 
+                    </div>
+					
+					<br><br>
+					<p class="content-paragraph">
+						The photos we received were breathtaking, interesting, and showed a variety of views
+						on science and art. It is important to destroy the gap between art and science and really
+						understand that those fields are intertwined in the most beautiful way. Everybody should be 
+						included in science, our artists and our artistic side of brains.<br><br>
+						The mosaic we made from all the photos can be seen below, but also each one individual photo.<br><br>
+					</p>
+						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="700px" height="auto" style="align-self: center;">
+						<p class="photo-desc"><b>Figure 2:</b> Mosaic of Collaboration "expARTiments"</p>
+						<br><br><br>
+					
+					
 					<br><br>
 					<p class="content-paragraph">
 						Our collaboration involved the teams: 
@@ -1673,62 +1681,62 @@ content: unset;
 <!-- slideshow -->
 <script>
 	var slideIndex1 = 1;
-        var slideIndex2 = 1;
-        showSlides1(slideIndex1);
-        showSlides2(slideIndex2);
-        
-        function plusSlides1(n) {
-            showSlides1(slideIndex1 += n);
-        }
+	var slideIndex2 = 1;
+	showSlides1(slideIndex1);
+	showSlides2(slideIndex2);
+	
+	function plusSlides1(n) {
+		showSlides1(slideIndex1 += n);
+	}
 
-        function plusSlides2(n) {
-            showSlides2(slideIndex2 += n);
-        }
-        
-        function currentSlide1(n) {
-            showSlides1(slideIndex1 = n);
-        }
-       
-        function currentSlide2(n) {
-            showSlides2(slideIndex2 = n);
-        }
-        
-        function showSlides1(n) {
-            var i;
-            var slides1 = document.getElementsByClassName("mySlides1");
-            var dots1 = document.getElementsByClassName("dot1");
+	function plusSlides2(n) {
+		showSlides2(slideIndex2 += n);
+	}
+	
+	function currentSlide1(n) {
+		showSlides1(slideIndex1 = n);
+	}
+	
+	function currentSlide2(n) {
+		showSlides2(slideIndex2 = n);
+	}
+	
+	function showSlides1(n) {
+		var i;
+		var slides1 = document.getElementsByClassName("mySlides1");
+		var dots1 = document.getElementsByClassName("dot1");
 
 
-            if (n > slides1.length) {slideIndex1 = 1}    
-            if (n < 1) {slideIndex1 = slides1.length}
+		if (n > slides1.length) {slideIndex1 = 1}    
+		if (n < 1) {slideIndex1 = slides1.length}
 
-            for (i = 0; i < slides1.length; i++) {
-                slides1[i].style.display = "none";  
-            }
-            for (i = 0; i < dots1.length; i++) {
-                dots1[i].className = dots1[i].className.replace(" activeSlide1", "");
-            }
-            slides1[slideIndex1-1].style.display = "block";  
-            dots1[slideIndex1-1].className += " activeSlide1";
-        }
+		for (i = 0; i < slides1.length; i++) {
+			slides1[i].style.display = "none";  
+		}
+		for (i = 0; i < dots1.length; i++) {
+			dots1[i].className = dots1[i].className.replace(" activeSlide1", "");
+		}
+		slides1[slideIndex1-1].style.display = "block";  
+		dots1[slideIndex1-1].className += " activeSlide1";
+	}
 
-        function showSlides2(n) {
-            var i;
-            var slides2 = document.getElementsByClassName("mySlides2");
-            var dots2 = document.getElementsByClassName("dot2");
+	function showSlides2(n) {
+		var i;
+		var slides2 = document.getElementsByClassName("mySlides2");
+		var dots2 = document.getElementsByClassName("dot2");
 
-            if (n > slides2.length) {slideIndex2 = 1}    
-            if (n < 1) {slideIndex2 = slides2.length}
+		if (n > slides2.length) {slideIndex2 = 1}    
+		if (n < 1) {slideIndex2 = slides2.length}
 
-            for (i = 0; i < slides2.length; i++) {
-                slides2[i].style.display = "none";  
-            }
-            for (i = 0; i < dots2.length; i++) {
-                dots2[i].className = dots2[i].className.replace(" activeSlide2", "");
-            }
-            slides2[slideIndex2-1].style.display = "block";  
-            dots2[slideIndex2-1].className += " activeSlide2";
-        }
+		for (i = 0; i < slides2.length; i++) {
+			slides2[i].style.display = "none";  
+		}
+		for (i = 0; i < dots2.length; i++) {
+			dots2[i].className = dots2[i].className.replace(" activeSlide2", "");
+		}
+		slides2[slideIndex2-1].style.display = "block";  
+		dots2[slideIndex2-1].className += " activeSlide2";
+	}
 </script>
 
 
