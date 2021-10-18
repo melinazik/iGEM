@@ -755,7 +755,7 @@
 							<li><b>3)</b>&nbsp;&nbsp;Build a Genetic Circuit Model to investigate the feasibility of our proposed implementation and develop an approach to tackle the “low transfection” problem the Wet Lab team encountered.</li>
 							<li><b>4)</b>&nbsp;&nbsp;Combine our Exosome Production Model (1) with the Genetic Circuit Model (2) to draw conclusions on the general functionality of our proposed implementation.</li>
 					</p>
-
+					<br><br><br><br>
 					<div id="heading2"></div>
                     <h2>Exosome Model</h2>
                     <p class="content-paragraph">We created two models that calculates the levels of exosomes carrying miRNA to chondrocytes of the cartilage. 
@@ -804,7 +804,7 @@
 
 					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--app--ontology.png">
 					<p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.</p>
-
+					<br><br><br><br>
 					<div id="heading3"></div>
                     <h2>How the model works</h2>
 					<p class="content-paragraph">
@@ -874,18 +874,40 @@
 						$$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
 
 						where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
+					</p>
 
+					<br><br><br><br>
+					<div id="heading4"></div>
+                    <h2>Results</h2>
+					<p class="content-paragraph">
+						We ran our simulation for a time span of 24h.
+					</p>
 
+					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--app--ontology.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 5:</b>CAP and regular exosomes synthesized with [TF] = 24000</p>
 
+					<p class="content-paragraph">
+						Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h the amount of CAP exosomes synthesized 
+						is far greater than that of regular exosomes (Figure 5). This is a desired result, because it has been proven that CAP exosomes have 
+						higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely end up entering the blood stream. 
+						But why is there such a gap between these two types of exosomes? 
 
+						<br><br>
+
+						To find out, we thought it would be best to see the difference in the expression rates of pre miRNA and the Lamp2b-CAP membrane protein.
 					</p>
 
 
+					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--app--ontology.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Lamp2b-CAP and pre miRNA synthesis with [TF] = 24000 </p>
 
 
-
-
-
+					<p class="content-paragraph">
+						In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells. 
+						This result makes sense, because when the gene is transcripted once, we get at most a single prem iRNA molecule and an mRNA 
+						molecule which is likely translated more than once. Over the spam of 24h this adds up to having a higher level of the membrane 
+						protein and thus more CAP exosomes.
+					</p>
 
 
 
