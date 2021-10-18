@@ -813,7 +813,7 @@
                         The red and uncolored rectangles are complexes created from the combination of genes, transcription factors and/or inhibiting proteins. 
                         Said complex formations are described by the following equation type:
 
-						$$\frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
+						$$\small \frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
 
                         where:
                         
@@ -827,7 +827,7 @@
 
                         The correct combination of a gene and a transcription factor enables the gene to be expressed and synthesize the corresponding protein.
 
-						$$\frac{d[P]]}{dt} = k_s * [TF-DNA]$$
+						$$\small \frac{d[P]]}{dt} = k_s * [TF-DNA]$$
 
                         where:
                         
@@ -836,7 +836,7 @@
 
                         Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small synthesis rate due to leaky protein production.
 
-						$$\frac{d[P]]}{dt} = k_l * [DNA]$$
+						$$\small \frac{d[P]]}{dt} = k_l * [DNA]$$
 
                         where:
                         
@@ -847,7 +847,7 @@
                         Also, the product of the Repressor, the rtTR-KRAB protein, is in its inactivate state and can only be activated via the existence of 
                         the Doxycycline (Dox) in the cells environment. This interaction is described by the following equation:
 
-						$$\frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
+						$$\small \frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
 
                         where:
                         
@@ -855,11 +855,11 @@
 
                         Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the gene array due to cell dilution.
 
-                        $$\frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
+                        $$\small \frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
 
                         and
 
-                        $$\frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
+                        $$\small \frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
                         
                         where:
                         
@@ -951,7 +951,7 @@
 					<div id="heading5"></div>
                     <h2>Equations : General Categories</h2>
 					<p class="content-paragraph">In this table, you can find the general categories of the equations used to build our Genetic Circuit Model.</p>
-					<table>
+                    <table>
 						<tr>
 							<td><p class="table-paragraph"><b>Equation</b></p></td>
 							<td><p class="table-paragraph"><b>Description</b></p></td>
@@ -959,217 +959,61 @@
 
 						<tr>
 							<td>
-								$$\frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
+								$$\small \frac{d[TF-DNA]}{dt} = [TF] * [DNA] * k_{a} - [TF-DNA] * k_{d}$$
 							</td>
-							<td><p class="table-paragraph">Binding and dissociation of NF-κB to the sensor construct</p></td>
+							<td><p class="table-paragraph">This type of equation describes how a transcription factor (TF) binds and unbinds to a gene (DNA) to form a transcription factor-gene complex (TF-DNA), 
+                                based on two constants named ka and kd for binding and unbinding respectively</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
+								$$\small \frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
 							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.
                             </p></td>
 						</tr>
 
 						<tr>
 							<td>
-                                $$\frac{d[GV16 (amplifier)] } {dt} = [GV16]*[Amplifier]*k_{aGV16} - [GV16(amplifier)] * k_{dGV16}$$
+                                $$\small \frac{d[P]}{dt} = [TF-DNA] * k_{s}$$
 
 
 							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the amplifier construct.</p></td>
+							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein, based on the concentration of the transcription factor and gene complex (TF – DNA).</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Amino Acids]}{dt} = [rtTr-KRAB] * k_{deg}$$
+								$$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
 							</td>
-							<td><p class="table-paragraph">Inactive rtTR - KRAB degradation.</p></td>
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[GV16 (amplifier)]}{dt} = [GV16] * [Effector Gene] * k_{aGV16} - [GV16 (effector)] * {k_dGV16}$$
+								$$\small \frac{d[P]}{dt} = [DNA] * k_{l}$$
 							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the effector construct.
+							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein based on the basal protein expression rate.
                             </p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Effector Construct]}{dt} = [GV16 (effector)] * k_{s}$$
+								$$\small \frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
 							</td>
-							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
+							<td><p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Amino Acids]}{dt} = [GV16] * k_{degGV16} $$
+								$$\small \frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
 							</td>
-							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Gal4]}{dt} = [Thresholder Gene] * k_{s} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Gal4(effector)]}{dt} = [Gal4] * [Effector Gene] *k_{aGV16} - [Gal4(effector)]*k_{dGV16}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 to the amplifier construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[GV16]}{dt} = [Sensors] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[GV16]}{dt} = [GV16 (amplifier)] * k_{s} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[GV16]}{dt} = [Amplifier Gene] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Effector Protein]}{dt} = [Effector Gene] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Amino Acids]}{dt} = [Effector Construct] * k_{degGluv} $$
-							</td>
-							<td><p class="table-paragraph">Luciferase reporter degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[GV16]}{dt} = [Thresholder Gene] * k_{l} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids
-                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
-                                </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Effector Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Production of luciferace from amino acids
-                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
-                                
-                                </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [Sensor] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the sensor construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [Thresholder Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the thresholder construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [Repressor Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the repressor construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [Amplifier Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [Effector Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB Dox Complex]}{dt} = [rtTR-KRAB] * [Dox]*k_{dox} $$
-							</td>
-							<td><p class="table-paragraph">Binding of doxycycline to an inactive rtTR – KRAB, producing an active rtTR – KRAB. </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB GV16 Complex (effector)]}{dt} = [rtTR-KRAB Dox Complex] * [GV16 (effector)]*k_{artTR} - [rtTR-KRAB - GV16 Complex (effector)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 - VP16 bound effector construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB (effector)]}{dt} = [rtTR-KRAB Dox Complex] * [Effector Gene]*k_{artTR} - [rtTRKRAB(effector)]*k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the effector construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB-GV16 Complex (amplifier)]}{dt} = [rtTR-KRAB Dox Complex] *[GV16(amplifier)] * k_{artTR} -  [rtTRKRAB-GV16 Complex (amplifier)]*
-                                k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 - VP16 bound amplifier construct. </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB-Gal4 Complex (amplifier)]}{dt} = [rtTR-KRAB Dox Complex] * [Gal4 (amplifier)] * k_{artTR} - [rtTRKRAB -Gal4 Complex (amplifier)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 bound amplifier
-                                construct.
-                                 </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB (sensor)]}{dt} = [rtTR-KRAB Dox Complex] * [Sensor] * k_{artTR} - [rtTRKRAB (sensor)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the sensor construct.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[rtTRKRAB NFkB (sensor)]}{dt} = [rtTR-KRAB Dox Complex] * [NFkB (Sensor)] * k_{artTR} - [rtTRKRAB NFkB Complex (sensor)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the NFkB bound sensor construct.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [NFkB (Sensor)] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the NFkB bound sensor construct due to cell division.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\frac{d[Cell Division]}{dt} = [rtTR-KRAB  (Sensor)] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the rtTR – KRAB bound sensor construct due to cell division.
-                                </p>
-                            </td>
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
 						</tr>
 					  </table>
 
 
-                      <div id="heading5"></div>
+                      <div id="heading6"></div>
                     <h2>Equations</h2>
 					<p class="content-paragraph">In this table, you can find the equations used to build our Genetic Circuit Model</p>
 					<table>
@@ -1180,58 +1024,216 @@
 
 						<tr>
 							<td>
-								$$\frac{d[TF-DNA]}{dt} = [TF] * [DNA] * k_{a} - [TF-DNA] * k_{d}$$
+								$$\small \frac{d[Sensor NFkB Complex]}{dt}=\\[NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
 							</td>
-							<td><p class="table-paragraph">This type of equation describes how a transcription factor (TF) binds and unbinds to a gene (DNA) to form a transcription factor-gene complex (TF-DNA), 
-                                based on two constants named ka and kd for binding and unbinding respectively</p></td>
+							<td><p class="table-paragraph">Binding and dissociation of NF-κB to the sensor construct</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
+								$$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
 							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.
+							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.
                             </p></td>
 						</tr>
 
 						<tr>
 							<td>
-                                $$\frac{d[P]}{dt} = [TF-DNA] * k_{s}$$
+                                $$\small \frac{d[GV16 (amplifier)] } {dt} =\\[GV16]*[Amplifier]*k_{aGV16} - [GV16(amplifier)] * k_{dGV16}$$
 
 
 							</td>
-							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein, based on the concentration of the transcription factor and gene complex (TF – DNA).</p></td>
+							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the amplifier construct.</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
+								$$\small \frac{d[Amino Acids]}{dt} = [rtTr-KRAB] * k_{deg}$$
 							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
+							<td><p class="table-paragraph">Inactive rtTR - KRAB degradation.</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[P]}{dt} = [DNA] * k_{l}$$
+								$$\small \frac{d[GV16 (amplifier)]}{dt} =\\[GV16] * [Effector Gene] * k_{aGV16} - [GV16 (effector)] * {k_dGV16}$$
 							</td>
-							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein based on the basal protein expression rate.
+							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the effector construct.
                             </p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
+								$$\small \frac{d[Effector Construct]}{dt} = [GV16 (effector)] * k_{s}$$
 							</td>
-							<td><p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p></td>
+							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
+								$$\small \frac{d[Amino Acids]}{dt} = [GV16] * k_{degGV16} $$
 							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
+							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Gal4]}{dt} = [Thresholder Gene] * k_{s} * 0.01$$
+							</td>
+							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Gal4(effector)]}{dt} =\\[Gal4] * [Effector Gene] *k_{aGV16} - [Gal4(effector)]*k_{dGV16}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of Gal4 to the amplifier construct.
+                            </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[GV16]}{dt} = [Sensors] * k_{l} $$
+							</td>
+							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[GV16]}{dt} = [GV16 (amplifier)] * k_{s} $$
+							</td>
+							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[GV16]}{dt} = [Amplifier Gene] * k_{l} $$
+							</td>
+							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Effector Protein]}{dt} = [Effector Gene] * k_{l} $$
+							</td>
+							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Amino Acids]}{dt} = [Effector Construct] * k_{degGluv} $$
+							</td>
+							<td><p class="table-paragraph">Luciferase reporter degradation to amino acids.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[GV16]}{dt} = [Thresholder Gene] * k_{l} * 0.01$$
+							</td>
+							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids
+                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
+                                </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Effector Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
+							</td>
+							<td><p class="table-paragraph">Production of luciferace from amino acids
+                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
+                                
+                                </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [Sensor] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the sensor construct due to cell division.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [Thresholder Gene] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the thresholder construct due to cell division.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [Repressor Gene] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the repressor construct due to cell division.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [Amplifier Gene] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division.</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [Effector Gene] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division</p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB Dox Complex]}{dt} = [rtTR-KRAB] * [Dox]*k_{dox} $$
+							</td>
+							<td><p class="table-paragraph">Binding of doxycycline to an inactive rtTR – KRAB, producing an active rtTR – KRAB. </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB GV16 Complex (effector)]}{dt} =\\[rtTR-KRAB Dox Complex] * [GV16 (effector)]*k_{artTR} - [rtTR-KRAB - GV16 Complex (effector)] * k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 - VP16 bound effector construct.
+                            </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB (effector)]}{dt} =\\[rtTR-KRAB Dox Complex] * [Effector Gene]*k_{artTR} - [rtTRKRAB(effector)]*k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the effector construct.
+                            </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB-GV16 Complex (amplifier)]}{dt} =\\[rtTR-KRAB Dox Complex] *[GV16(amplifier)] * k_{artTR} -  [rtTRKRAB-GV16 Complex (amplifier)]*
+                                k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 - VP16 bound amplifier construct. </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB-Gal4 Complex (amplifier)]}{dt} =\\[rtTR-KRAB Dox Complex] * [Gal4 (amplifier)] * k_{artTR} - [rtTRKRAB -Gal4 Complex (amplifier)] * k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 bound amplifier
+                                construct.
+                                 </p></td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB (sensor)]}{dt} =\\[rtTR-KRAB Dox Complex] * [Sensor] * k_{artTR} -\\[rtTRKRAB (sensor)] * k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the sensor construct.
+                                </p>
+                            </td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[rtTRKRAB NFkB (sensor)]}{dt} =\\[rtTR-KRAB Dox Complex] * [NFkB (Sensor)] *k_{artTR} -\\[rtTRKRAB NFkB Complex (sensor)] * k_{drtTR}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the NFkB bound sensor construct.
+                                </p>
+                            </td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [NFkB (Sensor)] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the NFkB bound sensor construct due to cell division.
+                                </p>
+                            </td>
+						</tr>
+                        <tr>
+							<td>
+								$$\small \frac{d[Cell Division]}{dt} = [rtTR-KRAB  (Sensor)] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Dilution of the rtTR – KRAB bound sensor construct due to cell division.
+                                </p>
+                            </td>
 						</tr>
 					  </table>
+                    
+                   
 
 
 					<br><br><br><br>
