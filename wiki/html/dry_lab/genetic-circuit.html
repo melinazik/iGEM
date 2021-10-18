@@ -654,13 +654,13 @@
         <ul>
 			<li class="active">
 				<div></div>
-				<a href="#heading2">Model Parts</a>
+				<a href="#heading2">How the Genetic Circuit Model works</a>
 			</li>
 		</ul>
 		<ul>
 			<li class="active">
 				<div></div>
-				<a href="#heading3">How the Model Works</a>
+				<a href="#heading3">Why we created the Genetic Circuit model</a>
 			</li>
 		</ul>
 		<ul>
@@ -774,7 +774,7 @@
                     <h2>Introduction</h2>
                     <p class="content-paragraph">As analyzed in the <a href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1">exosome model overview</a>,
                          we created a genetic circuit, utilizing the CellDesigner 4.4 software, aiming to investigate the feasibility of our proposed implementation and 
-                         develop an approach to tackle the “low transfection” problem the Wet Lab team encountered (Goal #3). 
+                         develop an approach to tackle the <a href="heading3">"low transfection"</a> problem the Wet Lab team encountered (Goal #3). 
                          We also used this Genetic Circuit Model in combination with the Exosome Production Model to to draw conclusions on the general 
                          functionality of our proposed implementation (Goal #4).
 
@@ -792,9 +792,11 @@
                          <br><br>
 
                          You can find specific information on the exact function of each part in the <a href="https://2021.igem.org/Team:Greece_United/Parts">Wet Lab</a>  section of our Wiki. 
-                         <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--Genetic-Circuit.png">
+                      </p>   
+                      
+                      <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--Genetic-Circuit.png">
                          <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Genetic Circuit Model in CellDesigner 4.4</p>
-					</p>
+					
 					<br><br><br><br>
 					<div id="heading2"></div>
                     <h2>How the Genetic Circuit Model works</h2>
@@ -811,33 +813,34 @@
                         The red and uncolored rectangles are complexes created from the combination of genes, transcription factors and/or inhibiting proteins. 
                         Said complex formations are described by the following equation type:
 
-						$$\frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a ∙ [TF] ∙ [DNA] − k_d ∙ [TF-DNA]$$
+						$$\frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
 
                         where:
                         
-                        $$ TF  = Transcription factor$$
-                        $$ DNA  = Concentration of the Gene$$
-                        $$ TF-DNA  = Gene-Transcription Factor complex$$
-                        $$ k_a  = Binding constant of the Transcription Factor to its corresponding promoter$$
+                        $$ TF  = \;Transcription \;factor$$
+                        $$ DNA  = \;Concentration\; of\; the\; Gene$$
+                        $$ TF-DNA  = \;Gene-Transcription\; Factor \;complex$$
+                        $$ k_a  = \;Binding \;constant\; of \;the\; Transcription\; Factor \;to\; its\; corresponding\; promoter$$
 
                         $$ k_b  = Unbinding constant of the Transcription Factor to its corresponding promoter$$
+                        <br><br>
 
                         The correct combination of a gene and a transcription factor enables the gene to be expressed and synthesize the corresponding protein.
 
-						$$\frac{d[P]]}{dt} = k_s ∙ [TF-DNA]$$
+						$$\frac{d[P]]}{dt} = k_s * [TF-DNA]$$
 
                         where:
                         
-                        $$ P = Protein product of the gene $$
-                        $$ k_s = Protein synthesis constant$$
+                        $$ P = \;Protein\; product\; of\; the gene $$
+                        $$ k_s = \;Protein \;synthesis \;constant$$
 
                         Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small synthesis rate due to leaky protein production.
 
-						$$\frac{d[P]]}{dt} = k_l ∙ [DNA]$$
+						$$\frac{d[P]]}{dt} = k_l * [DNA]$$
 
                         where:
                         
-                        $$ k_l = Leaky protein synthesis constant $$
+                        $$ k_l = \;Leaky\; protein \;synthesis\; constant $$
 
                         The Thresholder and Repressor genes are not activated by a protein of the genetic circuit. 
                         They are constantly expressed utilizing transcription factors native to the cell, in order to maintain their restrictive function. 
@@ -848,7 +851,7 @@
 
                         where:
                         
-                        $$k_dox = Doxycycline – rtTR-KRAB association constant$$
+                        $$k_dox =\; Doxycycline – rtTR-KRAB \;association\;constant$$
 
                         Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the gene array due to cell dilution.
 
@@ -860,154 +863,87 @@
                         
                         where:
                         
-                        $$k_{deg-p} = Degradation rate of a protein$$
-                        $$k_{dil} = Dillution constant$$
+                        $$k_{deg-p} =\; Degradation \;rate \;of \;a\;protein$$
+                        $$k_{dil} = \;Dillution \;constant$$
 
 
 					</p>
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in CellDesigner 4.4.</p>
-
-					<p class="content-paragraph">
-						The assumptions we made were:
-						<li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.</li>
-						<li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
-						<li><b>b)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
-						<li><b>b)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run out.</li>
-					</p>
-
-
+	
 					<div id="heading3"></div>
-                    <h2>Model Parts</h2>
+                    <h2>Why we created the Genetic Circuit model</h2>
 					<p class="content-paragraph">
-						The model consists of three main parts. <br><br>
-						<b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b - CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
+						TDuring the development of the project, a problem occurred we named the “low transfection” problem, 
+                        because Mesenchymal Stem Cells are very difficult to transfect considering time, skills and resources. 
+                        The fact that we needed to do so with 5 different plasmids didn’t help our situation.
+
+                        <br><br>
+
+                        Our solution was to create this model, to determine whether we could exclude some parts of it in order to reduce the number of plasmids while 
+                        maintaining a significant amount of its functionality. In a different turn of events, we would use the simulations of the genetic circuit to 
+                        demonstrate how this solution would function in close to real-life conditions and compare the results with the Wet Lab approach.   
 					</p>
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
-						
-					<br><br>
-						
-					<p class="content-paragraph">
-						<b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to measure the effectiveness of our solution. We did that by calculating how many of the produced exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
-						<br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured quantities. Had those been known we could have approached the subject with even greater accuracy.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.</p>
-
-					<br><br>
-						
-					<p class="content-paragraph">
-						The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find out how these complex effects the production of the MMP-13 protein.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.</p>
-					<br><br><br><br>
-					<div id="heading3"></div>
-                    <h2>How the model works</h2>
-					<p class="content-paragraph">
-						<b><u>First Stage</u></b> <br>
-						The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate transcription factor via the CMV promoter. 
-						This is described by the following equation:<br>
-
-						$$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-						This equation describes the formation of a complex between the plasmids Gene and the complimentary Transcription Factor, 
-						where 
-						\(k_{bindCMV}\) 
-						and 
-						\(k_{unbindCMV}\) 
-						are the binding and unbinding constants of the TF to the CMV promoter.<br>
-
-						After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
-
-						$$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-						The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied by a transcription constant. 
-						This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase places nucleotides.
-
-						$$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
-
-						The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre miRNA. 
-						The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
-						After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to the produced exosomes. 
-
-						<br><br> 
-
-						Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP protein in its membrane. 
-						We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule. 
-						These two types of exosomes are produced at different rates. 
-						More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones who do not have it. 
-						Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the regular exosomes.
-
-						<br><br> 
-
-						This concludes the first part of our model.
-
-						<br><br><br> 
-
-						<b><u>Second Stage</u></b> <br>
-						The second part involves the transportation of the exosomes to the Chondrocytes. 
-						In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes have \(x\) times larger affinity
-						towards chondrocytes than regular exosomes do not. <br><br>
-
-						The equations we used are:
-
-						$$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
-
-						$$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
-
-						where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\) 
-						<br> <br>
-
-						Since there is not enough information on exosome modeling, we believed it would be best to keep this part as simple as possible, 
-						in order to avoid inaccuracies due to unnecessary complication.
-
-						<br><br><br> 
-
-						<b><u>Third Stage</u></b> <br>
-						The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells. 
-						We assumed that the concentration of the DICER is high enough that the creation of the complex is entirely based on the miRNA concentration.
-
-						$$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
-
-						where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
-					</p>
+					
 
 					<br><br><br><br>
 					<div id="heading4"></div>
                     <h2>Results</h2>
 					<p class="content-paragraph">
-						We ran our simulation for a time span of 24h.
+						The first exclusion was to the amplifier construct. We ran the simulation in CellDesigner and MATLAB. 
 					</p>
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 5:</b>CAP and regular exosomes synthesized with [TF] = 24000</p>
+					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/b/bd/T--Greece_United--Figure2-1.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in difference values of the amplifier construct.</p>
 
 					<p class="content-paragraph">
-						Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h the amount of CAP exosomes synthesized 
-						is far greater than that of regular exosomes (Figure 5). This is a desired result, because it has been proven that CAP exosomes have 
-						higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely end up entering the blood stream. 
-						But why is there such a gap between these two types of exosomes? 
+						The exclusion of the amplifier construct reduces the expression of the effector by a significant amount (Figure 3). 
+                        This small amount means that can theoretically exclude it from the genetic circuit. 
+                        But in order for this solution to work, we have to exclude at least one more plasmid.
 
 						<br><br>
 
-						To find out, we thought it would be best to see the difference in the expression rates of pre miRNA and the Lamp2b-CAP membrane protein.
+						The next construct we tested was that of the thresholder.
+
 					</p>
 
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Lamp2b-CAP and pre miRNA synthesis with [TF] = 24000 </p>
+					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/2/2e/T--Greece_United--Figure2-2.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Effector expression levels in different values of the thresholder construct.</p>
 
 
 					<p class="content-paragraph">
-						In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells. 
-						This result makes sense, because when the gene is transcripted once, we get at most a single prem iRNA molecule and an mRNA 
-						molecule which is likely translated more than once. Over the spam of 24h this adds up to having a higher level of the membrane 
-						protein and thus more CAP exosomes.
+						The results were like those of the exclusion of the amplifier construct, although in this case for a different reason. 
+                        The fact that there is an increased expression of the effector construct (Figure 4), meant that if there was no NF-kB in the cells, 
+                        we would have noticeable gene expression, therefore interfering with the wet lab results.
+					</p>
+
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--Figure2-3.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 5:</b> Effector expression levels in different values of Thresholder.</p>
+
+                    <p class="content-paragraph">
+						The absence of the thresholder construct can result in misleading results in the lab and uncontrollable expression (Figure 5). 
+                        This comes in direct contrast with the reason we use the genetic circuit in the first place. 
+                        Therefore, we concluded that its existence is all but necessary. 
+
+                        <br><br>
+
+                        The same can be said for the repressor construct, whose exclusion would leave us unable to turn off the circuit entirely.
+					</p>
+
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--Figure2-3.png">
+					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Effector expression levels in different values of Doxycycline (Dox)</p>
+
+                    <p class="content-paragraph">
+						As we can see in Figure 6 the repressor construct has a very important role in the regulation of our circuit and its removal 
+                        might prove to be more of an obstacle rather than a boost. 
+
+
+                        <br><br>
+
+                        After careful thought and examination of our simulation results, we concluded that we cannot use less than 4 plasmid constructs 
+                        and abandoned the lab experiment altogether. This is how the genetic circuit model contributed to the aid of the Wet Lab, as well 
+                        as the construction of the hybrid model that combines the genetic circuit and the exosome production model, to test our idea from 
+                        NF-kB to CAP-Exosome production.
 					</p>
 
 					<br><br><br><br>
