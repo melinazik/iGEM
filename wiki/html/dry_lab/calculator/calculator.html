@@ -1,1585 +1,211 @@
-  <html>
-  <head>
-    <<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+<html>
+  
+  <<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-
-  </head>
-  <style>
-
-      /* CLEAR DEFAULT SETTINGS **************************************************/
-
-      #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
-      #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
-          #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-
-      #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-
-          body{
-          padding:0px;
-          margin:0px;
-
-          background: white;
-
-          font-family: 'Lato', sans-serif;
-
-          display: flex;
-          flex-direction: column;
-          position: relative;
-  }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script type="text/javascript" src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_calc&action=raw&ctype=text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_calc&action=raw&ctype=text/css" />
 
 
-  <body>
-      <style>
-          #loader-wrapper {
-              display: flex;
-              align-items: center;
-              margin-top: calc((100%)/5);
-              justify-content: center;
-              height: 0.1vh;
-              width: 100vw;
-              z-index: 500;
-              position: fixed;
-              pointer-events: none;
-          }
+<style>
 
-          #loader-bg {
-              position: fixed;
-              height: 200vw;
-              width: 200vw;
-              transform: translateY(0);
-              background-color: #6C8EC9;
-              transition-property: height, width, border-radius, transform;
-              transition-duration: 0.5s;
-              transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-              transition-delay: 0s, 0s, 0s, 1s;
-              border-radius: 0%;
-              -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-              -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-              box-shadow: 0px 0px 27px 0px #6E91CB;
-              justify-content: center;
-              align-items: center;
-              display: flex;
-              flex-direction: column;
-              overflow: hidden;
-          }
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
+    #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
+        #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+
+    #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+
+        body{
+        padding:0px;
+        margin:0px;
+
+        background: white;
+
+        font-family: 'Lato', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+}
+
+</style>
 
 
-          #loader-wrapper img {
-              width: 30vh;
 
-          }
+<body>
+    <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
 
-          #loader-wrapper h1 {
-              color: #fafafc;
-              text-transform: uppercase;
-              font-family: 'montserrat-black', sans-serif !important;
-              position: absolute;
-              transform: translateY(15vh);
-              font-size: 2.2vw;
-              opacity: 100%;
-          }
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-          #loader-bg.loaded 
-          {
-              height: 35vh;
-              width: 35vh;
-              border-radius: 70%;
-              transform: translateY(-2000px);
-          }
-      </style>
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'montserrat-black', sans-serif !important;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded 
+        {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
+    </style>
 
 
-      <div id="loader-wrapper">
-          <div id="loader-bg">
-              <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-          </div>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
+
+    <script>
+
+        // Loader
+        window.addEventListener("load", function() 
+        {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function() 
+            {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+
+    </script>
+
+  
+    <!-- Loading icon -->
+    <div class="loader"></div>
+
+    <!-- Navigation Bar -->
+    <div style="margin-top:10px;" class="navbar">
+      <div class="nav-bar-logo">
+        <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">
+                <img class="logo-header" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+        </a>
+        <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">NOUS | AEGLE</a>
       </div>
 
-      <script>
+      <div class="right-navbar" id="navbarID">
+        <ul id="nav">
+          <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Home">Home</a></li>
+          <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculator</a></li>
+          <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Info">Info</a></li>
+          <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/References">Bibliography</a></li>
+        </ul>
 
-          // Loader
-          window.addEventListener("load", function() 
-          {
-              let loader = document.getElementById('loader-bg');
-
-              setTimeout(function() 
-              {
-                  loader.classList.add('loaded')
-              }, 100);
-          });
-
-      </script>
-
-    <body>
-      <!-- Loading icon -->
-      <div class="loader"></div>
-
-      <!-- Navigation Bar -->
-      <div style="margin-top:10px;" class="navbar">
-        <div class="nav-bar-logo">
-          <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">
-                  <img class="logo-header" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
-          </a>
-          <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">NOUS | AEGLE</a>
-        </div>
-
-        <div class="right-navbar" id="navbarID">
-          <ul id="nav">
-            <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Home">Home</a></li>
-            <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculator</a></li>
-            <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Info">Info</a></li>
-            <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/References">Bibliography</a></li>
-          </ul>
-
-        </div>
       </div>
-          <div style=" padding-bottom: 200px; padding-top: 200px"id="page-view">
+    </div>
+        <div style=" padding-bottom: 200px; padding-top: 200px"id="page-view">
 
-        <div id="title">Calculator</div>
-      </div>  <br><br>
+      <div id="title">Calculator</div>
+    </div>  <br><br>
 
-      <section class="after-nav">
+    <section class="after-nav">
 
-        <main class="main-holder">
+      <main class="main-holder">
 
-          <form id="form" class="form" onsubmit="return false;">
+        <form id="form" class="form" onsubmit="return false;">
 
-              <div id="container"> </div>
+            <div id="container"> </div>
 
-            <button type="submit" onclick="parse()"> Okay </button>
-          </form>
+          <button type="submit" onclick="parse()"> Okay </button>
+        </form>
 
-        </main>
+      </main>
 
-      </section>
+    </section>
 
 
-      <div id="chartContainer" style="height: 370px; width: 100%; align-content: 100px; margin-top: 100px;"></div>
+    <div id="chartContainer" style="height: 370px; width: 100%; align-content: 100px; margin-top: 100px;"></div>
 
-      <!--footer-->
-      <footer style="margin-top: 500px;">
-        <div class="footer-content">
-          <div class="row">
+    <!--footer-->
+    <footer style="margin-top: 500px;">
+      <div class="footer-content">
+        <div class="row">
 
-            <div class="col">
-              <a href="https://igemnous.med.duth.gr/" target="_blank">
-                <img class="logo-footer" src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
-              </a>
+          <div class="col">
+            <a href="https://igemnous.med.duth.gr/" target="_blank">
+              <img class="logo-footer" src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
+            </a>
 
-                <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
-                <a style="color: #bbbbbb;text-decoration:none;" class="footer-links" href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
-            </div>
-
-            <div class="col">
-              <h4>About Us</h4>
-              <p class="footer-about">We are an interdisciplinary team of students from Greek Universities aiming to participate in iGEM Competition 2021.
-              </p>
-            </div>
-
-            <div class="col">
-              <h4 class="follow-footer">Contact us</h4>
-              <div class="social-links">
-                <a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fab fa-instagram"></i></a><br>
-                              <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
-              </div>
-            </div>
+              <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
+              <a style="color: #bbbbbb;text-decoration:none;" class="footer-links" href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
           </div>
 
+          <div class="col">
+            <h4>About Us</h4>
+            <p class="footer-about">We are an interdisciplinary team of students from Greek Universities aiming to participate in iGEM Competition 2021.
+            </p>
+          </div>
+
+          <div class="col">
+            <h4 class="follow-footer">Contact us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fab fa-instagram"></i></a><br>
+                            <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
+            </div>
+          </div>
         </div>
-      </footer>
-      <!-- /.footer -->
-    </body>
-  <script>
-      var Parser = {
 
-      operators: ["!=", "=", ">=", "<=", ">", "<", "OR", "AND"],
+      </div>
+    </footer>
+    <!-- /.footer -->
+  </body>
 
-      parseAndEvaluateExpression: function(ex) {
-          var arr = ex.split("");
-          for (var i = 0; i < arr.length; i++) {
 
-              if (arr[i] !== " ") return this.parseWithStrings(ex);
-              console.error("ERROR: Expression cannot be empty!");
-              return false;
-          }
-      },
 
-      evaluate: function(condition, vars) {
-          // sort by key length
-          var sortedVals = Object.keys(vars).sort(function(a,b){return b.length>a.length;});
 
-          sortedVals.forEach(function(val){
-              condition = Parser.replaceAll(condition, val + " ", vars[val]);
-          });
-
-      //error control
-      if(condition.indexOf("OB_")>=0) {
-        console.error("===ERROR in OB replacement===");
-        console.error("--Condition:",condition);
-        console.error("--Observable:",
-        condition.substr(condition.indexOf("OB_"),5));
-        return false;
-      }
-
-          return this.parseAndEvaluateExpression(condition);
-      },
-
-      parseWithStrings: function(s) {
-          var op = this.determineOperatorPrecedenceAndLocation(s);
-          var start = op[0];
-          var left = s.substring(0, start).trim();
-          var right = s.substring(op[1]).trim();
-          var oper = s.substring(start, op[1]).trim();
-          var logType = this.logicalOperatorType(oper);
-
-          // console.log("PARSE: Left: \"" + left + "\" Right: \"" + right + "\" Operator: \"" + oper + "\"");
-
-          if (logType === 0) // encounters OR- recurse
-              return this.parseWithStrings(left) || this.parseWithStrings(right);
-          else if (logType === 1) // encounters AND- recurse
-              return this.parseWithStrings(left) && this.parseWithStrings(right);
-          var leftSansParen = this.removeParens(left);
-          var rightSansParen = this.removeParens(right);
-          if (this.isNumeric(leftSansParen) && this.isNumeric(rightSansParen))
-              return this.evaluateFloat(parseFloat(leftSansParen), oper, parseFloat(rightSansParen));
-          else return this.evaluateStr(leftSansParen, oper, rightSansParen); // assume they are strings
-      },
-
-      determineOperatorPrecedenceAndLocation: function(s) {
-          s = s.trim();
-          var minParens = 999999999999;
-          var currentMin = null;
-          for (var sampSize = 1; sampSize <= 3; sampSize++) {
-              for (var locInStr = 0; locInStr < (s.length + 1) - sampSize; locInStr++) {
-                  var endIndex = locInStr + sampSize;
-                  var sub;
-                  if ((endIndex < s.length && s[endIndex] === '='))
-                      sub = s.substring(locInStr, 2+endIndex).trim();
-                  else
-                      sub = s.substring(locInStr, endIndex).trim();
-                  if (this.isOperator(sub)) {
-                      // Idea here is to weight logical operators so that they will still be selected over other operators
-                      // when no parens are present
-                      var parens = (this.logicalOperatorType(sub) > -1) ? this.parens(s, locInStr) - 1 : this.parens(s, locInStr);
-                      if (parens <= minParens) {
-                          minParens = parens;
-                          currentMin = [locInStr, endIndex, parens];
-                      }
-                  }
-              }
-          }
-          return currentMin;
-      },
-
-      logicalOperatorType: function(op) {
-          if (op.trim()==="OR") {
-              return 0;
-          }
-          else if (op.trim()==="AND") {
-              return 1;
-          }
-          else {
-              return -1;
-          }
-      },
-
-      parens: function(s, loc) {
-          var parens = 0;
-          for (var i = 0; i < s.length; i++) {
-              if (s[i] === '(' && i < loc)
-                  parens++;
-              if (s[i] === ')' && i >= loc)
-                  parens++;
-          }
-          return parens;
-      },
-
-      removeParens: function(s) {
-          s = s.trim();
-          var keep="";
-          s.split("").forEach(function(c){
-              if (!(c === '(') && !(c === ')'))
-                  keep+=c;
-          });
-          return keep.toString().trim();
-      },
-
-      replaceAll: function(target, search, replacement) {
-        return target.split(search).join(replacement);
-    },
-
-      isOperator: function(op) {
-          return this.operators.indexOf(op.trim())>=0;
-      },
-
-      isNumeric: function(s) {
-        return !isNaN(parseFloat(s)) && isFinite(s);
-      },
-
-      evaluateFloat: function(left, op, right) {
-          if (op==="=") {
-              return left === right;
-          }
-          else if (op===">") {
-              return left > right;
-          }
-          else if (op==="<") {
-              return left < right;
-          }
-          else if (op==="<=") {
-              return left <= right;
-          }
-          else if (op===">=") {
-              return left >= right;
-          }
-          else if (op==="!=") {
-              return left != right;
-          }
-          else {
-              // console.error("ERROR: Operator type not recognized.");
-              return false;
-          }
-      },
-
-      fixQuotes: function(str){
-        return str.replace(/['"]+/g, '');
-
-      },
-
-      evaluateStr: function(left, op, right) {
-          if (op == "=" || op == "!=" ) {
-              return this.fixQuotes(left) === this.fixQuotes(right);
-          } else {
-              // console.error("ERROR: Operator type not recognized: " + left + " " +  op +  " " + right);
-              return false;
-          }
-      }
-
-  };
-
-  // Observable ID -> observable details
-  var observableMap = {};
-
-  // measurement type ID -> measurement type details
-  var measurementTypesMap = {};
-
-  // Risk element ID -> risk element name
-  var riskElementsMap = {};
-
-  // Risk evidence ID -> risk evidence details
-  var riskEvidencesMap = {};
-
-  // Observable ID -> observable value (html form)
-  var formInputMap = {};
-  window.addEventListener("load", function(){
-
-
-      let observablesURL = "https://devices.duth.carre-project.eu/sparql?default-graph-uri=http%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous&query=PREFIX+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3EPREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3EPREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3EPREFIX+%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Fsensors.owl%23%3EPREFIX+risk%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Frisk.owl%23%3EPREFIX+carreManufacturer%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fmanufacturers%2F%3EPREFIX+carreUsers%3A+%3Chttps%3A%2F%2Fcarre.kmi.open.ac.uk%2Fusers%2F%3E%0D%0ASELECT+%3Fobservable%2C+%3Fname%2C+%3Fmeasurement%2C+%3Fmodifiable%2C+%28COUNT%28%3Frisk_evidence%29+AS+%3FcountRV%29+FROM+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous%3E+%0D%0AWHERE+%7B++%0D%0A++%7B++++%3Fobservable+a+risk%3Aobservable%3Brisk%3Ahas_observable_name+%3Fname%3B%0D%0Arisk%3Ahas_observable_measurement_type+%3Fmeasurement.+OPTIONAL+%7B+%3Fobservable+risk%3Ahas_observable_modifiable_status+%3Fmodifiable+%7D+OPTIONAL+%7B%3Frisk_evidence+risk%3Ahas_risk_evidence_observable+%3Fobservable+%7D+FILTER+%28lang%28%3Fname%29%3D%27en%27%29%7D%7D&should-sponge=&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
-      let measurementTypesURL = "https://devices.duth.carre-project.eu/sparql?default-graph-uri=http%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous&query=PREFIX+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3EPREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3EPREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3EPREFIX+%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Fsensors.owl%23%3EPREFIX+risk%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Frisk.owl%23%3EPREFIX+carreManufacturer%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fmanufacturers%2F%3EPREFIX+carreUsers%3A+%3Chttps%3A%2F%2Fcarre.kmi.open.ac.uk%2Fusers%2F%3E%0D%0ASELECT+DISTINCT+%2A+FROM+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous%3E+%0D%0AWHERE+%7B++%0D%0A++%7B++++%3Fmeasurement_type+a+risk%3Ameasurement_type%3B+risk%3Ahas_measurement_type_name+%3Fname%3B+risk%3Ahas_datatype+%3Fdatatype.+OPTIONAL+%7B+%3Fmeasurement_type+risk%3Ahas_enumeration_values+%3Fenum_values.+FILTER+%28lang%28%3Fenum_values%29%3D%27en%27%29%7D+OPTIONAL+%7B+%3Fmeasurement_type+risk%3Ahas_label+%3Flabel.+FILTER+%28lang%28%3Flabel%29%3D%27en%27%29%7D%0D%0AFILTER+%28lang%28%3Fname%29%3D%27en%27%29%7D%7D&should-sponge=&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
-      let riskElementsURL = "https://devices.duth.carre-project.eu/sparql?default-graph-uri=http%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous&query=PREFIX+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3EPREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3EPREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3EPREFIX+%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Fsensors.owl%23%3EPREFIX+risk%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Frisk.owl%23%3EPREFIX+carreManufacturer%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fmanufacturers%2F%3EPREFIX+carreUsers%3A+%3Chttps%3A%2F%2Fcarre.kmi.open.ac.uk%2Fusers%2F%3E%0D%0ASELECT+DISTINCT+%2A+FROM+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous%3E+%0D%0AWHERE+%7B++%0D%0A++%7B++++%3Frisk_element+a+risk%3Arisk_element%3Brisk%3Ahas_risk_element_name+%3Fname%3B+risk%3Ahas_risk_element_modifiable_status+%3Fmodifiable.%0D%0AFILTER+%28lang%28%3Fname%29%3D%27en%27%29%7D%7D&should-sponge=&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
-      let riskEvidencesURL = "https://devices.duth.carre-project.eu/sparql?default-graph-uri=http%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous&query=PREFIX+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3EPREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3EPREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3EPREFIX+%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Fsensors.owl%23%3EPREFIX+risk%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fontology%2Frisk.owl%23%3EPREFIX+carreManufacturer%3A+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fmanufacturers%2F%3EPREFIX+carreUsers%3A+%3Chttps%3A%2F%2Fcarre.kmi.open.ac.uk%2Fusers%2F%3ESELECT+DISTINCT+%3Frisk_evidence+%3Fcondition+%3Fconfidence_interval_min+%3Fconfidence_interval_max+%3Frisk_evidence_ratio_value+%3Frisk_evidence_ratio_type+%3Frisk_factor+%3Fhas_risk_factor_source+%3Fhas_risk_factor_target+%3Fhas_risk_factor_association_type+FROM+%3Chttp%3A%2F%2Fcarre.kmi.open.ac.uk%2Fnous%3E+WHERE+%7B++%0D%0A++%3Frisk_evidence+a+risk%3Arisk_evidence+%3B++++%0D%0A+++risk%3Ahas_risk_factor+%3Frisk_factor%3B%0D%0A++++risk%3Ahas_risk_evidence_ratio_type+%3Frisk_evidence_ratio_type%3B+%0D%0A+++++++++risk%3Ahas_risk_evidence_ratio_value+%3Frisk_evidence_ratio_value.++++++%0D%0A+++++++++OPTIONAL+%7B+%3Frisk_evidence+risk%3Ahas_confidence_interval_max+%3Fconfidence_interval_max%3B+%0D%0A+++++++++++++risk%3Ahas_confidence_interval_min+%3Fconfidence_interval_min.+%7D++++++%0D%0A+++++++++++++%3Frisk_evidence+risk%3Ahas_risk_evidence_observable+%3Fob+%3B+%0D%0A+++++++++++++risk%3Ahas_observable_condition+%3Fcondition+.++++%0D%0A+++++++++++++%23details+for+risk+factor++++%0D%0A+++++++++++++%3Frisk_factor+risk%3Ahas_risk_factor_association_type+%3Fhas_risk_factor_association_type%3B++++%0D%0A+++++++++++++risk%3Ahas_risk_factor_source+%3Fhas_risk_factor_source%3B++++%0D%0A+++++++++++++risk%3Ahas_risk_factor_target+%3Fhas_risk_factor_target.++++++%7D&should-sponge=&format=application%2Fsparql-results%2Bjson&timeout=0&debug=on";
-
-
-      var mapObvSort = {};
-
-      // fetch observables JSON from URL
-      fetch(observablesURL)
-      .then(res => res.json())
-      .then((observables) => {
-
-          var string = JSON.stringify(observables);
-          const obj = JSON.parse(string);
-
-          const obv = obj.results.bindings;
-
-          Object.entries(obv).forEach((entry) => {
-              const [key, value] = entry;
-
-              var obvName = value.name.value;
-              var obvCountRV =  value.countRV.value;
-
-              var obvID = value.observable.value;
-              var x = obvID.search('OB');
-              var obvIDFinal = obvID.substr(x, x + 2);
-
-              var obvMesID = value.measurement.value;
-              var y = obvMesID.search('ME');
-              var obvMesIDFinal = obvMesID.substr(y, y + 2);
-
-              observableMap[obvIDFinal] = [obvMesIDFinal, obvName, obvCountRV];
-
-          });
-      })
-
-      // fetch measurement types JSON from URL
-      fetch(measurementTypesURL)
-      .then(res => res.json())
-      .then((measurementTypes) => {
-
-          var string = JSON.stringify(measurementTypes);
-          const obj = JSON.parse(string);
-
-          const mes = obj.results.bindings;
-
-          Object.entries(mes).forEach((entry) => {
-              const [key, value] = entry;
-
-              var mesLabel;
-
-              var mesID = value.measurement_type.value;
-              var x = mesID.search('ME');
-              var mesIDFinal = mesID.substr(x, x + 2);
-
-              var mesType = value.datatype.value;
-              var x = mesType.search('#');
-              var datatype = mesType.slice(x + 1);
-
-
-              if(datatype.valueOf() == 'enum'.valueOf() || datatype.valueOf() == 'boolean'.valueOf()){
-                  mesLabel = value.enum_values.value.split(';');
-
-              }
-              else if(mesIDFinal.valueOf() == "ME_25".valueOf()){
-                  mesLabel = "----";
-              }
-              else{
-                  mesLabel = value.label.value;
-              }
-
-              measurementTypesMap[mesIDFinal] = [datatype, mesLabel];
-          });
-
-          observableMap[Symbol.iterator] = function* () {
-              yield* [...Object.entries( observableMap)].sort((a, b) => (a[1])[2] - (b[1])[2]);
-          }
-
-          var container = document.getElementById("container");
-
-          // find ME that for each OB 
-          var keys = Object.keys([...observableMap]);
-          keys.forEach(key =>{
-              // TODO
-              if(parseInt([...observableMap][key][1][2])> 0){
-                  var mesID = [...observableMap][key][1][0];   
-
-                  // console.log(measurementTypesMap[mesID]);
-
-                  if(((measurementTypesMap[mesID])[0]).valueOf() == 'enum'.valueOf() ||
-                    ((measurementTypesMap[mesID])[0]).valueOf() == 'boolean'.valueOf()){
-
-                      // Create an <input> element, set its type and name attributes
-                      var select = document.createElement("select");
-                      select.id = [...observableMap][key][1][1];
-
-                      // TODO fix select - required (not working)
-                      // select.required = true;
-                      var option = document.createElement('option');
-
-                      option.disabled = true;
-                      option.selected = true;
-                      option.innerHTML = [...observableMap][key][1][1];
-                      select.appendChild(option);
-
-                      ((measurementTypesMap[mesID])[1]).forEach(async function(mes) {
-
-                          option = document.createElement('option');
-
-                          option.id = [...observableMap][key][0];
-
-                          option.class = "dropdown-content";
-                          option.innerHTML = mes;
-
-                          select.appendChild(option);
-                      })
-
-                      //TODO selects in reversed order
-                      // container.prepend(select);
-
-                      container.appendChild(select);
-
-                      console.log(container);
-                  }
-
-                  else {
-                      // Create an <input> element, set its type and name attributes
-                      var input = document.createElement("input");
-
-                      input.type = "text";
-                      input.className = 'form-text';
-                      input.placeholder = ([...observableMap][key])[1][1];
-                      input.id = [...observableMap][key][0];
-
-                      container.appendChild(input);
-                  }
-
-                  // Append a line break 
-                  container.appendChild(document.createElement("br"));
-              }
-
-          });
-
-      })
-
-      fetch(riskElementsURL)
-      .then(res => res.json())
-      .then((elements) => {
-
-          var string = JSON.stringify(elements);
-          const obj = JSON.parse(string);
-
-          const ele = obj.results.bindings;
-
-          Object.entries(ele).forEach((entry) => {
-              const [key, value] = entry;
-
-              var riskName = value.name.value;
-
-              var riskID = value.risk_element.value;
-              var x = riskID.search('RL');
-              var riskIDFinal = riskID.substr(x, x + 2);
-
-              riskElementsMap[riskIDFinal] = [riskName];
-          });
-      })
-
-      fetch(riskEvidencesURL)
-      .then(res => res.json())
-      .then((evidences) => {
-
-          var string = JSON.stringify(evidences);
-          const obj = JSON.parse(string);
-
-          const ev = obj.results.bindings;
-
-          Object.entries(ev).forEach((entry) => {
-              const [key, value] = entry;
-
-              var condition = value.condition.value;
-              // var min = value.confidece_interval_min.value;
-              // var max = value.confidece_interval_max.value;
-              var average = value.risk_evidence_ratio_value.value;
-
-              var evidence = value.risk_evidence.value;
-              var z = evidence.search('RV');
-              var evidenceID = evidence.substr(z, z + 2);
-
-              var source = value.has_risk_factor_source.value;
-              var x = source.search('RL');
-              var sourceID = source.substr(x, x + 2);
-
-              var target = value.has_risk_factor_target.value;
-              var y = target.search('RL');
-              var targetID = target.substr(y, y + 2);
-
-              riskEvidencesMap[evidenceID] = [condition, sourceID, targetID, average];
-              // console.log(Parser.parseAndEvaluateExpression(condition));
-          });
-
-      })
-
-      console.log(riskEvidencesMap);
-  }); 
-
-  function parse(){
-      var selects =  document.getElementsByTagName('select');
-      var inputs = document.getElementsByTagName('input');
-
-      // console.log(observableMap);
-      // console.log(measurementTypesMap);
-      for (var i = 0; i < selects.length; i++) {
-
-          // name of observable
-          var obName = selects[i].id;
-          var ob;
-
-          var keys = Object.keys(observableMap);
-          keys.forEach(key =>{
-
-              if (obName == observableMap[key][1]){
-                  ob = key;
-
-                  formInputMap[ob] =  selects[i].value;
-              }
-          });
-
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-          formInputMap[inputs[i].id] =  inputs[i].value;
-      }
-
-      // console.log(formInputMap);
-
-      replaceOB();
-
-      var target = document.getElementById('chartContainer');
-      var scrollContainer = target;
-      do { //find scroll container
-          scrollContainer = scrollContainer.parentNode;
-          if (!scrollContainer) return;
-          scrollContainer.scrollTop += 1;
-      } while (scrollContainer.scrollTop == 0);
-
-      var targetY = 0;
-      do { //find the top of target relatively to the container
-          if (target == scrollContainer) break;
-          targetY += target.offsetTop;
-      } while (target = target.offsetParent);
-
-      scroll = function(c, a, b, i) {
-          i++; if (i > 30) return;
-          c.scrollTop = a + (b - a) / 30 * i;
-          setTimeout(function(){ scroll(c, a, b, i); }, 20);
-      }
-      // start scrolling
-      scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-
-  }
-
-
-  function replaceOB(){
-      var retrievedData = [];
-
-      // create copy of riskEvidencesMap to replace values
-      var map = {};
-      for (var i in riskEvidencesMap){
-          map[i] = riskEvidencesMap[i];
-          map[i][4] = 0;
-      }
-
-      // TODO map return to default when button is pressed (Ajax query??)
-
-      var keys = Object.keys(formInputMap);
-      keys.forEach(key =>{
-
-          var keys2 = Object.keys(map);
-          keys2.forEach(key2 =>{
-
-              if(map[key2][0].search(key) >= 0){
-
-                  var text = map[key2][0].split(key).join(formInputMap[key]);
-
-                  map[key2][0] = text;
-                  map[key2][4] = 1;
-              }
-
-          });
-
-      });
-
-      var count = 0;
-      var keys2 = Object.keys(map);
-          keys2.forEach(key2 =>{
-
-              if(map[key2][4] == 1){
-
-
-                  if(Parser.parseAndEvaluateExpression(map[key2][0]) != false){
-
-                      var source = map[key2][1];
-                      var target = map[key2][2];
-                      var ratio = map[key2][3];
-
-                      console.log(riskElementsMap[source]+ " -> " + riskElementsMap[target] + " ---- " + ratio);
-                      retrievedData[count] = {y: parseFloat(ratio), label: String(riskElementsMap[source])};
-                      count++;
-                  }
-              }
-      });
-
-      console.log(retrievedData);
-
-      var chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          theme: "light2", // "light1", "light2", "dark1", "dark2"
-          title:{
-              text: "Risk of Knee Osteoarthritis"
-          },
-          axisY: {
-              title: "Risk Factor"
-          },
-          data: [{        
-              type: "column",  
-              showInLegend: true, 
-              legendMarkerColor: "grey",
-              legendText: "Hello",
-              dataPoints: retrievedData
-          }]
-      });
-      chart.render();
-  }
-
-  </script>
-  <style>
-    
-  /* -------------- NAVBAR ------------ */
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden; /* Hide overflow */
-    background-color:#0B3648;/*#0E828A/* #333; /* Dark background color */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-  }
-
-  .right-navbar {
-    align-self:flex-end;
-    overflow: hidden; /* Hide overflow */
-    margin-left: auto;
-    margin-right: 15px;
-  }
-
-  /* Style the navigation bar links */
-  .right-navbar a {
-    float: right; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2em;
-    overflow: hidden;
-  }
-
-  #nav {
-    display: flex;
-    flex-direction: row;
-    list-style: none inside;
-    margin: 0;
-    padding: 0;
-  }
-
-  #nav li {
-    display: block;
-  }
-
-  #nav li li a {
-    font-size: 90%;
-  }
-
-  #nav ul {
-    padding: 0;
-    display: none;
-
-  }
-
-  #nav li:hover ul {
-    display: block;
-  }
-
-  .right-navbar a:hover {
-    background-color: #ddd; /* Grey background color */
-    color: black; /* Black text color */
-  }
-
-  /* responsive/collapsible nav bar */
-  .right-navbar .icon {
-    display: none;
-  }
-
-  .nav-bar-logo {
-    padding: 14px 20px; /* Add some padding */
-    display: flex;
-  }
-
-  .nav-bar-logo a{
-    font-weight: 400;
-    font-size: 1.4em;
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline */
-  }
-
-  .logo-header {
-    position: relative;
-    height: 25px;
-    width: 25px;
-    
-    background-size: cover;
-    margin: 0 5px;
-  }
-
-  /* -------------- NAVBAR END ------------ */
-
-
-  /* ------------FOOTER-------------*/
-  .logo-footer {
-    position: relative;
-    height: 160px;
-    background-size: cover;
-    padding-bottom: 120px;
-    padding-right: 80px;
-    margin-bottom: 45px;
-  }
-
-
-  footer {
-    background: #0B3648; /* Grey background */
-    padding:40px 0;
-    color: white;
-    height: 300px;
-    width: 100%;
-    position:relative;
-  }
-
-  .footer-content{
-    max-width: 1170px;
-    margin:auto;
-    height:250px;
-    display:flex;
-  }
-
-  .footer-section{
-    flex:1;
-    padding:25px;
-  }
-
-  .footer-section .about h4{
-    color:white;
-  }
-
-  .row{
-    display:flex;
-    flex-wrap:wrap;
-  }
-
-  .col{
-    width:30%;
-    padding: 0 15px;
-  }
-
-  .col h4{
-    font-size:18px;
-    color:#ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position:relative;
-  }
-
-  .col h4::before{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    background-color:rgb(199, 169, 190);
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px;
-  }
-
-  .footer-about{
-    color: #bbbbbb;
-    width:70%;
-  }
-
-  ul{
-    list-style: none;
-  }
-
-  .col ul li:not(:last-child){
-    margin-bottom: 10px;
-  }
-
-  .col ul li span{
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-decoration:none;
-    font-weight: 300;
-    color: #bbbbbb;
-    display: block;
-  }
-
-  .social-links a{
-    display: inline-block;
-    height:40px;
-    width:40px;
-    background-color: rgba(255,255,255,0.2);
-    margin: 0 10px 10px 0;
-    text-align:center;
-    line-height:40px;
-    border-radius: 50%;
-    color:#ffffff;
-    transition: all 0.5s ease;
-  }
-
-  .social-links .nous a{
-    padding-top: 10px;
-  }
-
-  .social-links a:hover{
-    color: #24262b;
-    background-color: #ffffff;
-  }
-
-  .social-links .fb a:hover{
-    color: #a53b28;
-    background-color: #ffffff;
-  }
-
-  .footer-section .contact-info{
-    display: block;
-    font-size: 1.1em;
-    margin-bottom: 8px;
-  }
-
-  .footer-section .nous{
-    display: block;
-    font-size: 1.1em;
-    margin-bottom: 8px;
-  }
-
-
-  .footer-links{
-    color: #bbbbbb;
-    text-decoration:none;
-  }
-
-  .footer-links:hover{
-    color: #ffffff;
-  }
-
-
-  /*--responsive--*/
-  @media(max-width:767px){
-    .col{
-      width: 50%;
-      margin-bottom: 30px;
-    }
-  }
-
-  @media(max-width:574px){
-    .col{
-      width: 100%;
-    }
-  }
-
-  /*---------FOOTER END------------*/
-
-  .main-text-home {
-    background-color: #0b3648d0;
-    color: white;
-    width: 800px;
-    padding: 50px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify;
-    border-radius: 25px;
-  }
-
-  .hr-osteo {
-    background-color: rgb(0, 0, 0);
-    border: 1.5px solid black;
-  }
-
-  .hr-calc{
-    background-color: #082936;
-    border: 1.5px solid #082936;
-  }
-
-  .hr-about{
-    background-color: #ffff;
-    border: 1.5px solid #ffff;
-  }
-
-  .hr-sponsors{
-    background-color: #6066689c;
-    border: 1.5px solid #6066689c;
-    width:50%;
-  }
-
-
-  .home-section{
-    background-color: #0b36483a;
-  }
-
-  .after-nav{
-    margin-top: 90px;
-  }
-
-  #page-view {
-    width: 100%;
-    height: 60vh;
-    /* TODO : change picture */
-    background-image: url("https://2021.igem.org/wiki/images/d/de/T--Greece_United--OA--calculator--parkinson.png");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
-  #title{
-    color: white;
-    font-size: 4em;
-    align-self: center;
-  }
-
-  #home-title{
-    color: white;
-    font-size: 5em;
-    align-self: center;
-    text-align: center;
-  }
-
-  .section-title{
-    /* align-self: center; */
-    padding-top: 60px;
-    justify-content: center;
-    font-size: 3em;
-  }
-
-  .home-content{
-    margin-left: auto;
-      margin-right: auto;
-      width: 40em;
-  }
-
-  .section-calc{
-    justify-content: center;
-    padding-bottom: 80px;
-    background-color: #1b84ad5e;
-    color: #082936;
-    font-size: 18px;
-  }
-
-  .section-osteo{
-    justify-content: center;
-    padding-bottom: 80px;
-    padding-top: 10px;
-    font-size: 18px;
-  }
-
-  .section-about{
-    background-color: #0b3445da;
-    color: #ffff;
-    padding-bottom: 80px;
-    padding-top: 10px;
-    font-size: 18px;
-  }
-
-  .section-sponsors{
-    padding-bottom: 80px;
-    padding-top: 10px;
-    font-size: 18px;
-  }
-
-  .centered-container{
-    padding-right: 140px;
-    padding-left: 140px;
-    align-self: center;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: auto auto;
-    grid-template-rows: auto auto;
-    text-align: center;
-  }
-
-  .img-team{
-    padding-top: 40px;
-    padding-bottom: 30px;
-
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    border-radius: 7%;
-    height: 450px;
-  }
-
-  .img-team:hover{
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  /* ------------ SPONSORS -------------*/
-
-  .img-sponsors{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-  }
-
-  .img-sponsors-intra{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 140px;
-
-    margin-right: 60px;
-    margin-top: 30px;
-
-    z-index: 1;
-  }
-
-  .img-sponsors-alphabank{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 140px;
-    margin-top:40px;
-
-  }
-
-  .img-sponsors-democritus{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 150px;
-
-    margin-right: 70px;
-  }
-
-  .img-sponsors-deloitte{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 170px;
-  }
-
-  .img-sponsors-exploria{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 70px;
-    margin-left: 60px;
-  }
-
-
-  .img-sponsors-athena{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 140px;
-
-    margin-left: 40px;
-  }
-
-  .img-sponsors-metrolab{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 100px;
-
-    margin-top: 30px;
-  }
-
-  .img-sponsors-bioemtech{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 60px;
-
-    margin-bottom: 40px;
-  }
-
-  .img-sponsors-winline{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 100px;
-
-    margin-top: 40px;
-    margin-right: 40px;
-  }
-
-  .img-sponsors-geneious{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 120px;
-
-    margin-top: 40px;
-    margin-left: 40px;
-  }
-
-  .img-sponsors-duth{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 160px;
-
-    margin-top: 40px;
-    margin-right: 40px;
-  }
-
-  .img-sponsors-htss{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: transform .4s;
-
-    height: 130px;
-  }
-
-  .img-sponsors-winline:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-duth:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-geneious:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-exploria:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-metrolab:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-democritus:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-deloitte:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-htss:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-athena:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-intra:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-bioemtech:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  .img-sponsors-alphabank:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    transform: scale(1.1); 
-  }
-
-  strong {
-    font-size: 1.2em; 
-  }
-
-
-  /***** CALCULATOR *****/
-
-  select {
-    display:block;
-    width:100%;
-    box-sizing:border-box;
-    margin:16px 0;
-    border:0;
-    background: #f1f1f1;
-    padding: 20px 40px;
-    outline:none;
-    color: black;
-    transition:0.5s;
-  }
-
-  /* ------------ SPONSORS END-------------*/
-
-  select:hover{
-    background: #e0dfdf;
-  }
-
-  .main-holder {
-    width: 900px;
-    height: auto;
-    display: grid;
-    margin: 20px auto 20px auto;
-    box-shadow: 0 0 10px 4px #34495e;
-    background-color:white;
-    padding-left: 60px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-
-  .form{
-    display: grid;
-    border: 1px ;
-    width: 80%;
-    padding: 40px 0 0 40px;
-  }
-
-  .form-text{
-    display:block;
-    width:100%;
-    box-sizing:border-box;
-    margin:16px 0;
-    border:0;
-    background: #f1f1f1;
-    padding: 20px 40px;
-    outline:none;
-    color: black;
-    transition:0.5s;
-  }
-
-  .form-text:focus{
-    box-shadow: 0 0 10px 4px #34495e;
-  }
-
-  .form-text:hover{
-    background: #e0dfdf;
-  }
-
-  textarea.form-text{
-    resize:none;
-    height: 120px;
-  }
-
-  button:hover {
-    opacity:0.7;
-  }
-
-  /* style buttons*/
-  button {
-    border:0;
-    background:#0B3648;
-    color: #fff;
-    padding: 12px 50px;
-    cursor: pointer;
-    transition:0.5s;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-  }
-
-  .img-osteo{
-    margin-top: 20px;
-
-    border-radius: 100%;
-    height: 400px;
-  }
-
-
-  .img-osteo-container{
-    transition: transform .4s;
-  }
-
-  .img-osteo-container:hover {
-    transform: scale(1.1); 
-  }
-
-  .row-imgs {
-    padding-left: 0;
-    margin-left: -5px;
-    list-style: none;
-  }
-
-  .row-imgs > li {
-    display: inline-block;
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-
-  figcaption {
-    padding: 2px;
-    text-align: center;
-
-    margin-top: 10px;
-    margin-bottom: 40px;
-
-    font-weight: 1000;
-    transition: transform .4s;
-
-    max-width: 300px;
-
-  }
-
-  .img-prof{
-
-    border-radius: 60%;
-    height: 300px;
-    transition: transform .8s;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-  }
-
-  .img-prof:hover{
-    transform: scale(0.8); 
-  }
-
-  .cv{
-    max-width: 300px;
-  }
-
-  /* Info on Calculator */
-  #content {
-    padding: 0px;
-    width: 100%;
-    margin-top: -7px;
-    margin-left: 0px;
-    border: none;
-    line-height: initial;
-  }
-
-  .content p.photo-desc {
-    text-align: center !important;
-    font-size: 0.8em !important;
-  }
-
-  .class-paragraph{
-    padding-left: 5px;
-    margin-right: 5px;
-    text-align: justify;
-
-  }
-  #content-tag {
-    background-color: #ffffff;
-    position: relative;
-  }
-
-  #content-tag p {
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    text-align: justify;
-  }
-
-
-
-  #content {
-    padding: 0px;
-    width: 100%;
-    margin-top: -7px;
-    margin-left: 0px;
-    border: none;
-    line-height: initial;
-  }
-
-  .content {
-    padding: 64px;
-    border-radius: 5px;
-    color: #121212;
-    margin-top: 40px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    text-align:justify;
-  }
-
-  .content p:first-child {
-    margin-top: 0;
-  }
-
-
-  .content ul {
-    padding-inline-start: 20px;
-    list-style-image: none;
-    list-style-type: none;
-  }
-
-  .content ul li {
-    display: flex;
-  }
-
-  .content ul li::before {
-    content: "•";
-    color: #000000;
-  }
-
-  .content .splide ul li::before {
-    content: unset;
-  }
-
-  .content li {
-    margin: 10px;
-  }
-
-  .content li::marker {
-    color: #000000;
-    font-weight:bold;
-    font-size: 1em;
-  }
-
-  .content h4, .content h5 {
-    font-size: 1.2em;
-    text-transform: uppercase;
-    margin-block-end: 0.2em;
-    margin-block-start: 60px;
-  }
-
-
-
-  .content-paragraph{
-    margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: justify;
-  }
-
-  td, th {
-    border: 1px solid black;
-    padding: 15px;
-  }
-
-  table{
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  </style>
-  </html>
+</html>

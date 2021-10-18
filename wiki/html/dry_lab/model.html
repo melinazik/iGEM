@@ -1,12 +1,14 @@
 <html>
     <head>
-		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://2019.igem.org/Team:Poitiers/css/HomepageAnimations?action=raw&ctype=text/css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 		<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_fonts&action=raw&ctype=text/css" />
+    
+    
     </head>
+    
+        
     <style>
 
         /* CLEAR DEFAULT SETTINGS **************************************************/
@@ -17,18 +19,23 @@
     
         #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
     
-            body{
+        html {
+            height: 100%;
+            min-height: 100%;
+            font-family: 'Raleway', sans-serif;
+
+        }
+        
+        body{
             padding:0px;
             margin:0px;
-            
             background: white;
             
-            font-family: 'Lato', sans-serif;
+            font-family: 'Raleway', sans-serif;
     
             display: flex;
             flex-direction: column;
-            position: relative;
-    }
+        }
         
     </style>
 
@@ -77,7 +84,7 @@
             #loader-wrapper h1 {
                 color: #fafafc;
                 text-transform: uppercase;
-                font-family: 'montserrat-black', sans-serif !important;
+                font-family: 'Raleway', sans-serif;
                 position: absolute;
                 transform: translateY(15vh);
                 font-size: 2.2vw;
@@ -361,7 +368,7 @@
 		z-index: 12;
 		top: 18px;
 		transition: 1s;
-		font-family: "montserrat-light" !important;
+        font-family: 'Raleway', sans-serif;
 		/* background-color: #002060; */
 		}
 
@@ -485,7 +492,8 @@
 		.sideBlock a {
             color: #002060;
             text-decoration: none;
-            font-family: "lato-light", sans-serif;
+            font-family: 'Raleway', sans-serif;
+
 		}
 
 		.sideBlock li {
@@ -1274,6 +1282,9 @@
             border-collapse: collapse;
         }
 
+        h2 {
+            font-family: 'Raleway', sans-serif;
+        }
         .content p.photo-desc {
             text-align: center !important;
             font-size: 0.8em !important;
@@ -1313,8 +1324,8 @@
             margin-left: 0px;
             border: none;
             line-height: initial;
+
         }
-        
         
         .contentBlock {
         width: 64vw;
@@ -1322,6 +1333,8 @@
         float: right;
         display: flex;
         flex-direction: column;
+        font-family: 'Raleway', sans-serif;
+        
         }
         
         .content {
@@ -1333,6 +1346,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        flex: 1 0 auto;
         }
         
         .content p:first-child {
@@ -1398,38 +1412,38 @@
         
         .content-paragraph{
             margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+
         }
     
     </style>
 
     <style>
-            
-        footer{
-            top: 2500vh ;
-            position: absolute;
+        
+        .footer{  
+            flex-shrink: 0;
+            padding-top: 10px;
+            bottom: 0 ;
+            /* height:800px;  */
+            /* position: absolute; */
             z-index:300;
-            }
-        
-            .footer{ 
-                width:100%; 
-                height:800px; 
-                background:#002060;  
-                
-            } 
-        
-            .footer ul{
-                margin:4%  39%;
-                text-align:right;
-                display:flex;
-                position:absolute;
-                transform: translate(-50%, -50%);
-                color: white;
-            }
+            width:100%; 
+            background:#002060;  
+            
+        } 
+    
+        .footer ul{
+            margin:4%  39%;
+            text-align:right;
+            display:flex;
+            position:absolute;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
         
             .footer ul li{
                 list-style: none;
@@ -1645,7 +1659,6 @@
             }
         </style>
         
-        <footer>
             <div class="footer">
                 <!-- Footer -->
                          
@@ -1692,7 +1705,6 @@
             
             </div>
         
-        </footer>
 
     </body>
 </html>

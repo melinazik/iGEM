@@ -1,0 +1,104 @@
+/* https://2021.igem.org/Template:Greece_United/CSS_fonts */
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/5/52/T--Greece_United--fonts-Raleway-Regular.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/1/1a/T--Greece_United--fonts-Raleway-Bold.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/6/6f/T--Greece_United--fonts-Raleway-Black.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/a/a8/T--Greece_United--fonts-Raleway-BlackItalic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/b/be/T--Greece_United--fonts-Raleway-ExtraBold.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/3/3a/T--Greece_United--fonts-Raleway-ExtraBoldItalic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/d/de/T--Greece_United--fonts-Raleway-ExtraLight.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/b/bc/T--Greece_United--fonts-Raleway-ExtraLightItalic.ttf) format('truetype');
+  }
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/0/01/T--Greece_United--fonts-Raleway-Italic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/4/44/T--Greece_United--fonts-Raleway-Light.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/9/92/T--Greece_United--fonts-Raleway-LightItalic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/0/03/T--Greece_United--fonts-Raleway-Medium.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/9/93/T--Greece_United--fonts-Raleway-MediumItalic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/8/83/T--Greece_United--fonts-Raleway-SemiBold.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/c/cb/T--Greece_United--fonts-Raleway-Thin.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/4/49/T--Greece_United--fonts-Raleway-SemiBoldItalic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'Raleway';
+     
+    src: url(https://2021.igem.org/wiki/images/8/8f/T--Greece_United--fonts-Raleway-ThinItalic.ttf) format('truetype');
+  }
+
+
