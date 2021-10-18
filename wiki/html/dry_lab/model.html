@@ -638,7 +638,7 @@
 	<div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
 
-        <b>Osteoarthritis Risk<br>Factor Calculator</b>
+        <b>Model</b>
 		<ul>
 			<li class="active">
 				<div></div>
@@ -662,9 +662,23 @@
 				<div></div>
 				<a href="#heading4">Results</a>
 			</li>
+		</ul>
+		<ul>
 			<li class="active">
 				<div></div>
 				<a href="#heading5">Equations</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading6">Model Parts</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading7">Constants</a>
 			</li>
 		</ul>
 	</div>
@@ -1014,9 +1028,140 @@
 							</td>
 							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
 						</tr>
-					
-
 					  </table>
+
+
+					<br><br><br><br>
+					<div id="heading6"></div>
+                    <h2>Model Parts</h2>
+					<p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build our Exosome Production Model.</p>
+					<table>
+						<tr>
+							<td><p class="table-paragraph"><b>Class</b></p></td>
+							<td><p class="table-paragraph"><b>Name</b></p></td>
+							<td><p class="table-paragraph"><b>id</b></p></td>
+							<td><p class="table-paragraph"><b>Boundary Condition</b></p></td>
+							<td><p class="table-paragraph"><b>Description</b></p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">GENE</p></td>
+							<td><p class="table-paragraph">Plasmid Gene</p></td>
+							<td><p class="table-paragraph">S<sub>1</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Gene that codes miRNA & mRNA</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">RNA</p></td>
+							<td><p class="table-paragraph">mRNA</p></td>
+							<td><p class="table-paragraph">S<sub>12</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Mature mRNA that codes the Lamp2b-CAP protein</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">RNA</p></td>
+							<td><p class="table-paragraph">pre miRNA</p></td>
+							<td><p class="table-paragraph">S<sub>4</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">pre miRNA in HEK-293 cell</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">RNA</p></td>
+							<td><p class="table-paragraph">pre miRNA</p></td>
+							<td><p class="table-paragraph">S<sub>8</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">pre miRNA in chondrocyte</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">RNA</p></td>
+							<td><p class="table-paragraph">pre miRNA - mRNA <br> Complex</p></td>
+							<td><p class="table-paragraph">S<sub>64</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">RNA product before maturation</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">PROTEIN</p></td>
+							<td><p class="table-paragraph">CMV TF</p></td>
+							<td><p class="table-paragraph">S<sub>79</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Transcription Factor</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">PROTEIN</p></td>
+							<td><p class="table-paragraph">Lamp2b-CAP</p></td>
+							<td><p class="table-paragraph">S<sub>5</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Lamp2b-CAP in HEK-293 cell</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">PROTEIN</p></td>
+							<td><p class="table-paragraph">Lamp2b-CAP</p></td>
+							<td><p class="table-paragraph">S<sub>71</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Lamp2b-CAP in ECM </p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">DEGRADED</p></td>
+							<td><p class="table-paragraph">NucleicAcids</p></td>
+							<td><p class="table-paragraph">S<sub>88</sub></p></td>
+							<td><p class="table-paragraph">True</p></td>
+							<td><p class="table-paragraph">Degraded RNA in HEK-293 cell</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">DEGRADED</p></td>
+							<td><p class="table-paragraph">NucleicAcids</p></td>
+							<td><p class="table-paragraph">S<sub>90</sub></p></td>
+							<td><p class="table-paragraph">True</p></td>
+							<td><p class="table-paragraph">Degraded RNA in chondrocytes</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">DEGRADED</p></td>
+							<td><p class="table-paragraph">AminoAcids</p></td>
+							<td><p class="table-paragraph">S<sub>93</sub></p></td>
+							<td><p class="table-paragraph">True</p></td>
+							<td><p class="table-paragraph">Degraded RNA in HEK-293 cells</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">DEGRADED</p></td>
+							<td><p class="table-paragraph">AminoAcids</p></td>
+							<td><p class="table-paragraph">S<sub>96</sub></p></td>
+							<td><p class="table-paragraph">True</p></td>
+							<td><p class="table-paragraph">Degraded RNA in ECM</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">DEGRADED</p></td>
+							<td><p class="table-paragraph">AminoAcids</p></td>
+							<td><p class="table-paragraph">S<sub>97</sub></p></td>
+							<td><p class="table-paragraph">True</p></td>
+							<td><p class="table-paragraph">Degraded RNA in chondrocytes</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">COMPLEX</p></td>
+							<td><p class="table-paragraph">Exosome Complex 1</p></td>
+							<td><p class="table-paragraph">S<sub>73</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Exosome with premiRNA & Lamp2b-CAP</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">COMPLEX</p></td>
+							<td><p class="table-paragraph">Exosome Complex 2</p></td>
+							<td><p class="table-paragraph">S<sub>78</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Exosome with premiRNA</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">COMPLEX</p></td>
+							<td><p class="table-paragraph">TF Gene Complex</p></td>
+							<td><p class="table-paragraph">S<sub>82</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">TF & Gene binded complex</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">COMPLEX</p></td>
+							<td><p class="table-paragraph">miRNA-DICER Complex</p></td>
+							<td><p class="table-paragraph">S<sub>55</sub></p></td>
+							<td><p class="table-paragraph">False</p></td>
+							<td><p class="table-paragraph">Mature miRNA-140 with DICER protein</p></td>
+						</tr>
 
 					
                         
