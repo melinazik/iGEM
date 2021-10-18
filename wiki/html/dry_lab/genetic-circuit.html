@@ -892,7 +892,7 @@
 						The first exclusion was to the amplifier construct. We ran the simulation in CellDesigner and MATLAB. 
 					</p>
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/b/bd/T--Greece_United--Figure2-1.png">
+					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png">
 					<p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in difference values of the amplifier construct.</p>
 
 					<p class="content-paragraph">
@@ -930,7 +930,7 @@
                         The same can be said for the repressor construct, whose exclusion would leave us unable to turn off the circuit entirely.
 					</p>
 
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--Figure2-3.png">
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/b/bd/T--Greece_United--Figure2-1.png">
 					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Effector expression levels in different values of Doxycycline (Dox)</p>
 
                     <p class="content-paragraph">
@@ -948,8 +948,8 @@
 
 					<br><br><br><br>
 					<div id="heading5"></div>
-                    <h2>Equations</h2>
-					<p class="content-paragraph">In this table, you can find the equations used to build our Exosome Production Model.</p>
+                    <h2>Equations : General Categories</h2>
+					<p class="content-paragraph">In this table, you can find the equations used to build our Genetic Circuit Model</p>
 					<table>
 						<tr>
 							<td><p class="table-paragraph"><b>Equation</b></p></td>
@@ -958,38 +958,42 @@
 
 						<tr>
 							<td>
-								$$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] * k_{unbind}$$
+								$$\frac{d[TF-DNA]}{dt} = [TF] * [DNA] * k_{a} - [TF-DNA] * k_{d}$$
 							</td>
-							<td><p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV promoter</p></td>
+							<td><p class="table-paragraph">This type of equation describes how a transcription factor (TF) binds and unbinds to a gene (DNA) to form a transcription factor-gene complex (TF-DNA), 
+                                based on two constants named ka and kd for binding and unbinding respectively</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
+								$$\frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
 							</td>
-							<td><p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p></td>
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.
+                            </p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
+                                $$\frac{d[P]}{dt} = [TF-DNA] * k_{s}$$
+
 
 							</td>
-							<td><p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
+							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein, based on the concentration of the transcription factor and gene complex (TF – DNA).</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] *  k_{split_s}$$
+								$$\frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
 							</td>
-							<td><p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
 						</tr>
 
 						<tr>
 							<td>
-								$$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
+								$$\frac{d[P]}{dt} = [DNA] * k_{l}$$
 							</td>
-							<td><p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p></td>
+							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein based on the basal protein expression rate.
+                            </p></td>
 						</tr>
 
 						<tr>
@@ -1001,51 +1005,9 @@
 
 						<tr>
 							<td>
-								$$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
+								$$\frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
 							</td>
-							<td><p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
-							</td>
-							<td><p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
-							</td>
-							<td><p class="table-paragraph">Non-CAP Exosome endocytosis</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
-							</td>
-							<td><p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
-							</td>
-							<td><p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP protein complexes, as well as the miRNA-DICER complex</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
-							</td>
-							<td><p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
+							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
 						</tr>
 					  </table>
 
