@@ -772,21 +772,98 @@
                     
                     <div id="heading1"></div>
                     <h2>Introduction</h2>
-                    <p class="content-paragraph">We aimed at developing mathematical models and a genetic circuit in order better understand our Wet Lab experiments. The results from our Dry Lab work would later be used to adjust experiments, having had a prior estimation of the expected results deriving from our biological work.
-						<br><br> Our main goals were to:
-							<li><b>1)</b>&nbsp;&nbsp;develop an accurate model that describes the formation of exosomes and the delivery of miRNA-140 to the chondrocytes.</li>
-							<li><b>2)</b>&nbsp;&nbsp;help the Wet Lab team adjust the design of the ongoing experiments by consulting the results of our mathematical model simulations. </li>
-							<li><b>3)</b>&nbsp;&nbsp;Build a Genetic Circuit Model to investigate the feasibility of our proposed implementation and develop an approach to tackle the “low transfection” problem the Wet Lab team encountered.</li>
-							<li><b>4)</b>&nbsp;&nbsp;Combine our Exosome Production Model (1) with the Genetic Circuit Model (2) to draw conclusions on the general functionality of our proposed implementation.</li>
+                    <p class="content-paragraph">As analyzed in the <a href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1">exosome model overview</a>,
+                         we created a genetic circuit, utilizing the CellDesigner 4.4 software, aiming to investigate the feasibility of our proposed implementation and 
+                         develop an approach to tackle the “low transfection” problem the Wet Lab team encountered (Goal #3). 
+                         We also used this Genetic Circuit Model in combination with the Exosome Production Model to to draw conclusions on the general 
+                         functionality of our proposed implementation (Goal #4).
+
+                         <br><br>
+
+                         The genetic circuit consists of 5 parts, those being the Sensor, the Amplifier, the Effector, the Thresholder and the Repressor. 
+                         Each part plays a key role in the function of the genetic circuit, and its inclusion is vital for it to work as intended.
+
+                         <br><br>
+
+                         The Sensor and the Amplifier, create and enhance the signal respectively, so that the Effector will be activated. 
+                         At the same time the Thresholder and the Repressor keep the rest of the genes in check by forbidding their activation 
+                         and/or stopping their production (“turning it off”) at will, through the Safety Switch, if need be.
+
+                         <br><br>
+
+                         You can find specific information on the exact function of each part in the <a href="https://2021.igem.org/Team:Greece_United/Parts">Wet Lab</a>  section of our Wiki. 
+                         <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--Genetic-Circuit.png">
+                         <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Genetic Circuit Model in CellDesigner 4.4</p>
 					</p>
 					<br><br><br><br>
 					<div id="heading2"></div>
-                    <h2>Exosome Model</h2>
-                    <p class="content-paragraph">We created two models that calculates the levels of exosomes carrying miRNA to chondrocytes of the cartilage. 
-						The process of building each model is described below and is mainly based on literature data known to date. 
-						At first, we made our simulations and calculations and predicted the expected result of the Wet Lab experiments to guide them. 
-						Then, we compared our data to their findings and used it to fit our model and make it more accurate and closer to real-life conditions. 
-						Finally, we managed to create an accurate simulation for the HEK-293 cell line.
+                    <h2>How the Genetic Circuit Model works</h2>
+                    <p class="content-paragraph">At first glance the circuit might look intimidating, but it is composed of small simple parts, working together in harmony. 
+                        Let’s take it step by step and explain how it works. 
+                        
+                        <br><br>
+
+                        There are exactly 10 species used in the entirety of the circuit. Those are the above-mentioned genes, the NF-kB, Gal4-GV16, Gal4 and rtTR-KRAB 
+                        proteins as well as the products of the Effector which can be anything.
+
+                        <br><br>
+                        
+                        The red and uncolored rectangles are complexes created from the combination of genes, transcription factors and/or inhibiting proteins. 
+                        Said complex formations are described by the following equation type:
+
+						$$\frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a ∙ [TF] ∙ [DNA] − k_d ∙ [TF-DNA]$$
+
+                        where:
+                        
+                        $$ TF  = Transcription factor$$
+                        $$ DNA  = Concentration of the Gene$$
+                        $$ TF-DNA  = Gene-Transcription Factor complex$$
+                        $$ k_a  = Binding constant of the Transcription Factor to its corresponding promoter$$
+
+                        $$ k_b  = Unbinding constant of the Transcription Factor to its corresponding promoter$$
+
+                        The correct combination of a gene and a transcription factor enables the gene to be expressed and synthesize the corresponding protein.
+
+						$$\frac{d[P]]}{dt} = k_s ∙ [TF-DNA]$$
+
+                        where:
+                        
+                        $$ P = Protein product of the gene $$
+                        $$ k_s = Protein synthesis constant$$
+
+                        Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small synthesis rate due to leaky protein production.
+
+						$$\frac{d[P]]}{dt} = k_l ∙ [DNA]$$
+
+                        where:
+                        
+                        $$ k_l = Leaky protein synthesis constant $$
+
+                        The Thresholder and Repressor genes are not activated by a protein of the genetic circuit. 
+                        They are constantly expressed utilizing transcription factors native to the cell, in order to maintain their restrictive function. 
+                        Also, the product of the Repressor, the rtTR-KRAB protein, is in its inactivate state and can only be activated via the existence of 
+                        the Doxycycline (Dox) in the cells environment. This interaction is described by the following equation:
+
+						$$\frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
+
+                        where:
+                        
+                        $$k_dox = Doxycycline – rtTR-KRAB association constant$$
+
+                        Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the gene array due to cell dilution.
+
+                        $$\frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
+
+                        and
+
+                        $$\frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
+                        
+                        where:
+                        
+                        $$k_{deg-p} = Degradation rate of a protein$$
+                        $$k_{dil} = Dillution constant$$
+
+
 					</p>
 					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
                     <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in CellDesigner 4.4.</p>
