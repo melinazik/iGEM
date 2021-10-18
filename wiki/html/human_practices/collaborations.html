@@ -35,7 +35,7 @@
 
 <!-- general -->
 <style>
-	.body 
+	.p 
 	{
 		text-align: justify;
 	}
@@ -410,7 +410,7 @@
             
 	footer{
 		/* change footer place */
-		top: 1060vh ;
+		top: 1360vh ;
 		position: absolute;
 		}
 	
@@ -423,6 +423,7 @@
 	
 		.footer ul{
 			margin:4%  39%;
+			margin-bottom: 0px;
 			text-align:right;
 			display:flex;
 			position:absolute;
@@ -651,6 +652,11 @@ background-color: #ffffff;
 position: relative;
 }
 
+.content p.photo-desc 
+{
+	text-align: center !important;
+	font-size: 0.8em !important;
+}
 #content-tag p {
 margin: 0;
 font-size: 1.2rem;
@@ -770,12 +776,12 @@ content: unset;
 
 </style>
 
-<!-- slideshow -->
+<!-- slideshow 1 -->
 <style>
         
 	/* Slideshow container */
 	.slideshow-container {
-	  max-width: 800px;
+	  max-width: 400px;
 	  position: relative;
 	  margin: auto;
 	  border: 14px solid #CEDDEF;
@@ -830,20 +836,10 @@ content: unset;
 	}
 	
 	/* The dots/bullets/indicators */
-	.dot1 {
+	.dot {
 	  cursor: pointer;
-	  height: 15px;
-	  width: 15px;
-	  margin: 0 2px;
-	  background-color: #bbb;
-	  border-radius: 50%;
-	  display: inline-block;
-	  transition: background-color 0.6s ease;
-	}
-	.dot2 {
-	  cursor: pointer;
-	  height: 15px;
-	  width: 15px;
+	  height: 10px;
+	  width: 10px;
 	  margin: 0 2px;
 	  background-color: #bbb;
 	  border-radius: 50%;
@@ -851,12 +847,11 @@ content: unset;
 	  transition: background-color 0.6s ease;
 	}
 	
+	
 	.activeSlide, .dot:hover {
 	  background-color: #717171;
 	}
-	.activeSlide2, .dot:hover {
-	  background-color: #717171;
-	}
+	
 	
 	/* Fading animation */
 	.fade {
@@ -882,8 +877,27 @@ content: unset;
 	}
 </style>
 
-<body>
+<!-- slideshow 2 -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.slideshow-2 {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer}
+	.w3-badge {height:13px;width:13px;padding:0}
 
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: left;
+	}
+</style>
+
+
+<body>
+	<img src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--test-header.jpg" style="size: cover;">
 <!-- basic elements -->
 
 	<!-- loader -->
@@ -1097,9 +1111,9 @@ content: unset;
 	<div style="margin-top: 200px;" id="content-tag">
 		<div class="contentBlock">
 			<div class="content">
-				<h2>Overview</h2>
-				<p class="content-paragraph">Aesopos once said: “ισχύς εν τη ενώσει” *, and Pink Floyd sang
-					“Together we stand, divided we fall”. iGEM follows these wise words and urges teams to 
+				<h2><b>Overview</b></h2>
+				<p class="content-paragraph">Aesopos once said: <i>“ισχύς εν τη ενώσει” </i>*, and Pink Floyd sang
+					<i>“Together we stand, divided we fall”</i>. <br><br> iGEM follows these wise words and urges teams to 
 					interact with each other. No one can nor should stand alone. Collaboration, cooperation and 
 					teamwork is what makes each and one of us stronger and better.<br><br>
 					Our team managed to participate in multiple collaborations during this iGEM year, a
@@ -1107,6 +1121,9 @@ content: unset;
 					with completely different projects, opinions, and way of working was a very immersive and teaching
 					process we are glad to have lived. <br><br>
 					Below you may find all the collaborations NOUS orchestrated and participated in.
+				</p>
+				<p style="font-size: 15px;">
+					*Means “We are strong when we are together”, in ancient Greek.
 				</p>
 			</div>
 		</div>
@@ -1117,15 +1134,15 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>iGEM Meet Up: Greek Edition</h2>
-					<p class="content-paragraph">
+					<h2><b>iGEM Meet Up: Greek Edition</b></h2>
+					<p class="content-paragraph" style="text-align: justify;">
 						<br>Cooperating with the iGEM teams Athens, Crete, Thessaloniki and Thrace, 
 						we organized a two-day, the “iGEM Meet UP: Greek Edtition”, an online conference with multiple 
 						topics and speakers. You can see the whole activity 
 						<a href="https://2021.igem.org/Team:Greece_United/Collaborations/iGEMMeetUp" target="_blank">here</a>.<br><br>
-						<!-- TODO center -->
-						<img src="https://2021.igem.org/wiki/images/4/4d/T--Greece_United--meetup-1.png" width="350px">
 					</p>
+						<img style="align-self: center;" src="https://2021.igem.org/wiki/images/4/4d/T--Greece_United--meetup-1.png" href="https://2021.igem.org/Team:Greece_United/Collaborations/iGEMMeetUp" target="_blank" width="350px" >
+						<p class="photo-desc"><b>Figure 1:</b> iGEM Meet Up: Greek Edition Template </p>
 				</div>
 			</div>
 		</div>
@@ -1135,7 +1152,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>exARTpiments</h2>
+					<h2><b>exARTpiments</b></h2>
 					<p class="content-paragraph">
 						iGEM is fun and inspiring but it can be really challenging. Every team has possibly
 						reached a point where they have tried and failed over and over again in a part of their
@@ -1150,41 +1167,25 @@ content: unset;
  						beauty that exists everywhere around you if you just know how to look. <br><br>
 						Below you can see our social media campaign to promote our collaboration.<br><br>
 					</p>
-					<!-- slideshow templates -->
-					<div class="slideshow-container">
+					<!-- slideshow 2 templates -->
+					<div class="w3-content w3-display-container" style="max-width:800px">
+						<img class="mySlides" src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--art-temp-1.jpg" style="width:100%">
+						<img class="mySlides" src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--art-temp-2.jpg" style="width:100%">
+						<img class="mySlides" src="https://2021.igem.org/wiki/images/9/9c/T--Greece_United--art-temp-3.jpg" style="width:100%">
+						<img class="mySlides" src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--art-temp-4.jpg" style="width:100%">
+						<img class="mySlides" src="https://2021.igem.org/wiki/images/e/e1/T--Greece_United--art-temp-5.jpg" style="width:100%">
 
-						<div class="mySlides1 fade">
-							<img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--art-temp-1.jpg" style="width:100%">
+						<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+							<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+							<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
 						</div>
-						
-						<div class="mySlides1 fade">
-							<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--art-temp-2.jpg" style="width:100%">
-						</div>
-						
-						<div class="mySlides1 fade">
-							<img src="https://2021.igem.org/wiki/images/9/9c/T--Greece_United--art-temp-3.jpg" style="width:100%">
-						</div>
-				
-						<div class="mySlides1 fade">
-							<img src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--art-temp-4.jpg" style="width:100%">
-						</div>
-						
-						<div class="mySlides1 fade">
-							<img src="https://2021.igem.org/wiki/images/e/e1/T--Greece_United--art-temp-5.jpg" style="width:100%">
-						</div>
-				
-						<a class="prev" style="color: white;" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" style="color: white;" onclick="plusSlides(1)">&#10095;</a>
-						
 					</div>
-					<div style="text-align:center">
-						<span class="dot1" onclick="currentSlide(1)"></span> 
-						<span class="dot1" onclick="currentSlide(2)"></span> 
-						<span class="dot1" onclick="currentSlide(3)"></span> 
-						<span class="dot1" onclick="currentSlide(4)"></span> 
-						<span class="dot1" onclick="currentSlide(5)"></span> 
-					</div>
-			
+					
 					<br><br>
 					<p class="content-paragraph">
 						The photos we received were breathtaking, interesting, and showed a variety of views
@@ -1192,123 +1193,231 @@ content: unset;
 						understand that those fields are intertwined in the most beautiful way. Everybody should be 
 						included in science, our artists and our artistic side of brains.<br><br>
 						The mosaic we made from all the photos can be seen below, but also each one individual photo.<br><br>
-						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="700px" height="auto">
-						<br><br>
 					</p>
+						<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--expartiments-image.png" width="700px" height="auto" style="align-self: center;">
+						<p class="photo-desc"><b>Figure 2:</b> Mosaic of Collaboration "expARTiments"</p>
+						<br><br>
+					
 					<!-- slideshow with photos -->
 					<div class="slideshow-container">
-
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/2/2a/T--Greece_United--NUKaz-1.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Microbial culture preparation</figcaption>
+							<div class="text">
+								<p> iGEM NU_Kazakhstan</p>
+							</div>
 						</div>
-						
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--NUKaz-2.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Microbial culture preparation<br> 
-								process with aseptic technique using Bunsen burner</figcaption>
+							<div class="text">
+								<p> iGEM NU_Kazakhstan</p>
+							</div>
 						</div>
-						
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--NUKaz-3.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - ulture preparation process</figcaption>
+							<div class="text">
+								<p> iGEM NU_Kazakhstan</p>
+							</div>
 						</div>
-				
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/6/65/T--Greece_United--NUKaz-4.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Centrifugation process</figcaption>
+							<div class="text">
+								<p> iGEM NU_Kazakhstan</p>
+							</div>
 						</div>
-						
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--NUKaz-5.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+							<div class="text">
+								<p> iGEM NU_Kazakhstan</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/0/05/T--Greece_United--Mindgao-1.jpg" style="width:100%">
-							<figcaption>Team member undergoing streak-culture</figcaption>
+							<div class="text">
+								<p> iGEM Mingdao</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/5/5c/T--Greece_United--Aria-UPFt-1.jpg" style="width:100%">
-							<figcaption>Unknown fungus captured by Dimitrie Ivancic </figcaption>
+							<div class="text">
+								<p> iGEM UPF Barcelona</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/0/0d/T--Greece_United--Aria-UPFt-2.jpg" style="width:100%">
-							<figcaption>Unknown fungus captured by Dimitrie Ivancic </figcaption>
+							<div class="text">
+								<p> iGEM UPF Barcelona</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/e/e6/T--Greece_United--Aria-UPFt-3.jpg" style="width:100%">
-							<figcaption>Unknown fungus captured by Dimitrie Ivancic</figcaption>
+							<div class="text">
+								<p> iGEM UPF Barcelona</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/1/1b/T--Greece_United--Aria-UPFt-4.jpg" style="width:100%">
-							<figcaption>Unknown fungus captured by Teresa Castaño</figcaption>
+							<div class="text">
+								<p> iGEM UPF Barcelona</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/7/7d/T--Greece_United--egypt-1.png" style="width:100%">
-							<figcaption>Sarafina Nance, an Egyptian American astrophysicist who advocates for womens' rights</figcaption>
+							<div class="text">
+								<p> iGEM AFCM</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--egypt-2.jpg" style="width:100%">
-							<figcaption>Working room of the team, called "factory"</figcaption>
+							<div class="text">
+								<p> iGEM AFCM</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
-							<img src="https://2021.igem.org/wiki/images/9/99/T--Greece_United--egypt-3.png" style="width:100%">
-							<figcaption>Abstract drawn by the team's instructor <br>Howida Samir, related to Synbio</figcaption>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/c/cd/T--AFCM-EGYPT--COL3.png" style="width:100%">
+							<div class="text">
+								<p> iGEM AFCM</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
+						<div class="slideshow-1 fade">
 							<img src="https://2021.igem.org/wiki/images/e/ed/T--Greece_United--estonia-1.jpg" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
-							<img src="https://2021.igem.org/wiki/images/9/9d/T--AFCM-EGYPT--COL7.png" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--estonia-3.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
-							<img src="https://2021.igem.org/wiki/images/9/9d/T--AFCM-EGYPT--COL7.png" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/8/87/T--Greece_United--estonia-2.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
-							<img src="https://2021.igem.org/wiki/images/9/9d/T--AFCM-EGYPT--COL7.png" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/f/fc/T--Greece_United--estonia-4.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
 						</div>
-						<div class="mySlides2 fade">
-							<img src="https://2021.igem.org/wiki/images/9/9d/T--AFCM-EGYPT--COL7.png" style="width:100%">
-							<figcaption>iGEM NU_Kazakhstan - Nanodrop technique for measuring nucleic acid<br>
-								 concentrations in sample volume of one microliter</figcaption>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--estonia-5.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
 						</div>
-				
-						<a class="prev" style="color: white;" onclick="plusSlides2(-1)">&#10094;</a>
-						<a class="next" style="color: white;" onclick="plusSlides2(1)">&#10095;</a>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/1/1d/T--Greece_United--estonia-6.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/0/0b/T--Greece_United--estonia-7.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--estonia-8.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/6/6a/T--Greece_United--estonia-9.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/2/29/T--Greece_United--estonia-10.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="	https://2021.igem.org/wiki/images/8/8e/T--Greece_United--estonia-11.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM Estonia TUIT</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/1/11/T--Greece_United--hungary-art-1.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM SZTA_RMG_Szeged</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/7/75/T--Greece_United--hungary-art-2.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM SZTA_RMG_Szeged</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/a/aa/T--Greece_United--nous-art-1.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM NOUS (Greece_United)</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/6/69/T--Greece_United--nous-art-2.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM NOUS (Greece_United)</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--nous-art-3.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM NOUS (Greece_United)</p>
+							</div>
+						</div>
+						<div class="slideshow-1 fade">
+							<img src="https://2021.igem.org/wiki/images/d/db/T--Greece_United--nous-art-4.jpg" style="width:100%">
+							<div class="text">
+								<p> iGEM NOUS (Greece_United)</p>
+							</div>
+						</div>
+
+						<a class="prev" style="color: white;" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" style="color: white;" onclick="plusSlides(1)">&#10095;</a>
 						
 					</div>
-
 					<div style="text-align:center">
-						<span class="dot2" onclick="currentSlide2(1)"></span> 
-						<span class="dot2" onclick="currentSlide2(2)"></span> 
-						<span class="dot2" onclick="currentSlide2(3)"></span> 
-						<span class="dot2" onclick="currentSlide2(4)"></span> 
-						<span class="dot2" onclick="currentSlide2(5)"></span> 
-						<span class="dot2" onclick="currentSlide2(6)"></span> 
-						<span class="dot2" onclick="currentSlide2(7)"></span> 
-						<span class="dot2" onclick="currentSlide2(8)"></span> 
-						<span class="dot2" onclick="currentSlide2(9)"></span> 
-						<span class="dot2" onclick="currentSlide2(10)"></span> 
-						<span class="dot2" onclick="currentSlide2(11)"></span> 
-						<span class="dot2" onclick="currentSlide2(12)"></span> 
-						<span class="dot2" onclick="currentSlide2(13)"></span> 
-						<span class="dot2" onclick="currentSlide2(14)"></span> 
-						<span class="dot2" onclick="currentSlide2(15)"></span> 
-						<span class="dot2" onclick="currentSlide2(16)"></span> 
-						<span class="dot2" onclick="currentSlide2(17)"></span> 
-						<span class="dot2" onclick="currentSlide2(18)"></span> 
+						<span class="dot" onclick="currentSlide(1)"></span> 
+						<span class="dot" onclick="currentSlide(2)"></span> 
+						<span class="dot" onclick="currentSlide(3)"></span> 
+						<span class="dot" onclick="currentSlide(4)"></span> 
+						<span class="dot" onclick="currentSlide(5)"></span> 
+						<span class="dot" onclick="currentSlide(6)"></span> 
+						<span class="dot" onclick="currentSlide(7)"></span> 
+						<span class="dot" onclick="currentSlide(8)"></span> 
+						<span class="dot" onclick="currentSlide(9)"></span> 
+						<span class="dot" onclick="currentSlide(10)"></span> 
+						<span class="dot" onclick="currentSlide(11)"></span> 
+						<span class="dot" onclick="currentSlide(12)"></span> 
+						<span class="dot" onclick="currentSlide(13)"></span> 
+						<span class="dot" onclick="currentSlide(14)"></span> 
+						<span class="dot" onclick="currentSlide(15)"></span> 
+						<span class="dot" onclick="currentSlide(16)"></span> 
+						<span class="dot" onclick="currentSlide(17)"></span> 
+						<span class="dot" onclick="currentSlide(18)"></span> 
+						<span class="dot" onclick="currentSlide(19)"></span> 
+						<span class="dot" onclick="currentSlide(20)"></span> 
+						<span class="dot" onclick="currentSlide(21)"></span> 
+						<span class="dot" onclick="currentSlide(23)"></span> 
+						<span class="dot" onclick="currentSlide(24)"></span> 
+						<span class="dot" onclick="currentSlide(25)"></span> 
+						<span class="dot" onclick="currentSlide(26)"></span> 
+						<span class="dot" onclick="currentSlide(27)"></span> 
+						<span class="dot" onclick="currentSlide(28)"></span> 
+						<span class="dot" onclick="currentSlide(29)"></span> 
+						<span class="dot" onclick="currentSlide(30)"></span> 
 					</div>
-
-					<br><br><br>
+						
+					<br><br>
 					<p class="content-paragraph">
 						Our collaboration involved the teams: 
 						<a href="https://2021.igem.org/Team:AFCM-Egypt/Collaborations" target="_blank">
@@ -1348,7 +1457,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Handbook: "How to iGEM"</h2>
+					<h2><b>Handbook: "How To iGEM"</b></h2>
 					<p class="content-paragraph">
 						When the idea of creating a guide for future iGEMers popped up in 
 						our team, we were nothing but excited! Later on, we realized that us 
@@ -1371,7 +1480,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Blood Donation Event</h2>
+					<h2><b>Blood Donation Event</b></h2>
 					<p class="content-paragraph">
 						In our effort to battle the blood shortage in Greece we decided to organize a blood 
 						donation event in our city. You can see this event analytically in our 
@@ -1391,8 +1500,9 @@ content: unset;
 						was enlightening. This way we tried to tackle the blood shortage in a worldwide level as a big team,
 						with simultaneous events. You can see more information about their events in their 
 						<a heref="https://2021.igem.org/Team:Korea_HS" target="_blank">wiki</a>.<br><br>
-							<!-- slideshow -->
 					</p>
+					<img style="align-self: center;" src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--korea-blood.jpg" target="_blank" width="400px" >
+					<p class="photo-desc"><b>Figure 3:</b> KOREA_HS in dissemination activities for their blood donation event.</p>
 				</div>
 			</div>
 		</div>
@@ -1402,7 +1512,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Collaboration with Team SZTA RMG SZEGED from Hungary</h2>
+					<h2><b>Collaboration with Team SZTA RMG SZEGED from Hungary</b></h2>
 					<p class="content-paragraph">
 						<br>We had the pleasure to collaborate with High School iGEM Team SZTA_RMG_Szeged from Hungary, 
 						whose project aims to develop a two-step miRNA detection system. The goal of our collaboration was 
@@ -1421,9 +1531,12 @@ content: unset;
 						As an extension to our collaboration, we presented to the team SZTA_RMG_Szeged two tutorials about 
 						CellDesigner and MatLab to educate them about their basic functions and how those programs can assist 
 						them in their work in Synthetic Biology, during but also after iGEM.<br> <br>
-						<img src="https://2021.igem.org/wiki/images/9/90/T--Greece_United--hungary-screen.png" width="500px">
-						<br>
 					</p>
+					<img style="align-self: center;" src="https://2021.igem.org/wiki/images/9/90/T--Greece_United--hungary-screen.png" target="_blank" width="400px" >
+					<p class="photo-desc"><b>Figure 4:</b> Screenshot from our collaboration call with team SZTA RMG SZEGED.</p>
+				
+						<br>
+					
 				</div>
 			</div>
 		</div>
@@ -1433,14 +1546,20 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Postcards</h2>
+					<h2><b>Postcards</b></h2>
 					<p class="content-paragraph">
 						<br>Early in our iGEM year, iGEM Duesseldorf 
 						contacted us to invite us to 
 						participate in their collaboration. The goal was to gather postcards designed 
 						by iGEM teams all over the world! We jumped right in and designed our postcard too. <br>
 						You can see it below.	<br>
-						<!--slide show postcards  -->
+					</p>
+					<img style="align-self: center;" src="https://2021.igem.org/wiki/images/d/d2/T--Greece_United--postcard-2.png" target="_blank" width="400px" >
+					<p class="photo-desc"><b>Figure 5:</b> Front side of the postcard our team designed.</p>
+					<br>
+					<img style="align-self: center;" src="https://2021.igem.org/wiki/images/9/92/T--Greece_United--postcard-1.png" target="_blank" width="400px" >
+					<p class="photo-desc"><b>Figure 6:</b> Back side of the postcard our team designed.</p>
+					<p>
 						<br>
 						Then we sent it over and payed the fee for it to be printed out almost 100 times by 
 						iGEM Duesseldorf and distributed to all the other participating teams. They then proceeded to 
@@ -1458,7 +1577,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Rosalind Chronicles</h2>
+					<h2><b>Rosalind Chronicles</b></h2>
 					<p class="content-paragraph">
 						<br>Our team collaborated with the organizing teams Patras, Thessaloniki, ULaval and Concordia_Montreal 
 						and many more participating teams in order to create a collection of past and future female scientists. <br>
@@ -1477,7 +1596,7 @@ content: unset;
 		<div style="margin-top: 100px;" id="content-tag">
 			<div class="contentBlock">
 				<div class="content">
-					<h2>Science Art exhibition </h2>
+					<h2><b>Science Art exhibition</b></h2>
 					<p class="content-paragraph">
 						<br>While reaching out to other teams, to invite them to our collaboration 
 						<b>“expARTiments”</b>, we had a happy surprise. Team TUIT Estonia not only 
@@ -1493,8 +1612,6 @@ content: unset;
 			</div>
 		</div>
 	</div>
-
-
 
 	<!-- footer -->
 	<footer>
@@ -1545,7 +1662,7 @@ content: unset;
 
 </body>
 
-<!-- slideshow -->
+<!-- slideshow 1-->
 <script>
 	var slideIndex = 1;
 	showSlides(slideIndex);
@@ -1562,55 +1679,50 @@ content: unset;
 	function showSlides(n) 
 	{
 		var i;
-		var slides1 = document.getElementsByClassName("mySlides1");
-		var dots1 = document.getElementsByClassName("dot1");
+		var slides = document.getElementsByClassName("slideshow-1");
+		var dots = document.getElementsByClassName("dot");
 
-		if (n > slides1.length) {slideIndex = 1}    
-		if (n < 1) {slideIndex = slides1.length}
+		if (n > slides.length) {slideIndex = 1}    
+		if (n < 1) {slideIndex = slides.length}
 
-		for (i = 0; i < slides1.length; i++) {
-			slides1[i].style.display = "none";  
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
 		}
-		for (i = 0; i < dots1.length; i++) {
-			dots1[i].className = dots1[i].className.replace(" activeSlide", "");
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" activeSlide", "");
 		}
-		slides1[slideIndex-1].style.display = "block";  
-		dots1[slideIndex-1].className += " activeSlide";
+		slides[slideIndex-1].style.display = "block";  
+		dots[slideIndex-1].className += " activeSlide";
 	}
 </script>
 
 <!-- slideshow 2 -->
 <script>
-		
-	var slide2Index = 1;
-	showslides2(slide2Index);
-	
-	function plusslides2(n) {
-		showslides2(slide2Index += k);
-	}
-	
-	function currentSlide2(k) {
-		showslides2(slide2Index = k);
-	}
-	
-	// slideshow 2
-	function showslides2(k) 
-	{
-		var j;
-		var slides2 = document.getElementsByClassName("myslides2");
-		var dots2 = document.getElementsByClassName("dot2");
+	var slideIndex = 1;
+	showDivs(slideIndex);
 
-		if (k > slides2.length) {slide2Index = 1}    
-		if (k < 1) {slide2Index = slides2.length}
+	function plusDivs(n) {
+	showDivs(slideIndex += n);
+	}
 
-		for (j = 0; j < slides2.length; j++) {
-			slides2[j].style.display = "none";  
-		}
-		for (j = 0; j < dots2.length; j++) {
-			dots2[j].className = dots2[j].className.replace(" activeSlide2", "");
-		}
-		slides2[slide2Index-1].style.display = "block";  
-		dots2[slide2Index-1].className += " activeSlide2";
+	function currentDiv(n) {
+	showDivs(slideIndex = n);
+	}
+
+	function showDivs(n) {
+	var i;
+	var x = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("demo");
+	if (n > x.length) {slideIndex = 1}
+	if (n < 1) {slideIndex = x.length}
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";  
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" w3-white", "");
+	}
+	x[slideIndex-1].style.display = "block";  
+	dots[slideIndex-1].className += " w3-white";
 	}
 </script>
 
