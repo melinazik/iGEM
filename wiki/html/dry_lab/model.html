@@ -851,7 +851,30 @@
 						<b><u>Second Stage</u></b> <br>
 						The second part involves the transportation of the exosomes to the Chondrocytes. 
 						In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes have \(x\) times larger affinity
-						 towards chondrocytes than regular exosomes do not. 
+						towards chondrocytes than regular exosomes do not. <br><br>
+
+						The equations we used are:
+
+						$$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
+
+						$$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
+
+						where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\) 
+						<br> <br>
+
+						Since there is not enough information on exosome modeling, we believed it would be best to keep this part as simple as possible, 
+						in order to avoid inaccuracies due to unnecessary complication.
+
+						<br><br><br> 
+
+						<b><u>Third Stage</u></b> <br>
+						The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells. 
+						We assumed that the concentration of the DICER is high enough that the creation of the complex is entirely based on the miRNA concentration.
+
+						$$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
+
+						where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
+
 
 
 
