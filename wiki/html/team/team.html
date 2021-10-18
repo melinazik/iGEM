@@ -18,14 +18,15 @@
 
     #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
 </style>
-	<!-- general -->
-	<style>
-		/* bg color */
+
+<!-- general -->
+<style>
+	/* bg color */
 	body
 	{
-        /* background: #B7E0FF; */
+		/* background: #B7E0FF; */
 		/* background: linear-gradient(#B7E0FF, #B7E0FF); */
- 		background-size: 100% 1000vh;
+		background-size: 100% 1000vh;
 		text-align: justify;
 	}
 		/* Rounded border */
@@ -35,107 +36,42 @@
 		border-radius: 2px;
 		border-color:#CEDDEF;
 	}
-	
-	</style>
+
+
+	.banner
+	{
+		width:100%;
+		background-size: cover; 
+		margin-top:100px; 
+		z-index:10;
+	}
+</style>
 	
 <!-- text wrapper -->
 <style>
-
-.igem_column_wrapper > p {
-  margin: 0;
+	#content-tag {
+background-color: #ffffff;
+position: relative;
 }
 
-main .content .quote,
-#HQ_page main .content .quote {
-  padding: 20px;
-  box-shadow: 0 0 10px lightgray;
-  margin: 40px;
+.content p.photo-desc 
+{
+	text-align: center !important;
+	font-size: 0.8em !important;
+}
+#content-tag p {
+margin: 0;
+font-size: 1.2rem;
+line-height: 1.5;
+margin-top: 20px;
+margin-bottom: 20px;
+text-align: justify;
 }
 
-main {
-  margin-top: -5px;
-  width: 100%;
-  background-color: #FAFAFC;
-  z-index: 10;
-  position: sticky;
-  padding-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-evenly;
+#content-tag .contentBlock {
+float: none;
+margin: 0 auto;
 }
-main::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-@media (max-width: 800px) {
-  main {
-    justify-content: center;
-  }
-}
-
-.contentBlock {
-  width: 900vw;
-  max-width: 1100px; /* change size i think*/
-  float: right;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 1024px) {
-  .contentBlock {
-    margin-right: 5vw;
-  }
-}
-/* @media (max-width: 800px) {
-  .contentBlock {
-    margin-right: unset;
-    width: 90%;
-    box-sizing: border-box;
-    max-width: 650px;
-  }
-} */
-
-.content {
-  padding: 64px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px lightgray;
-  color: #121212;
-  margin-top: 40px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  font-family: "lato-light";
-  margin-right: 300px;
-
-}
-@media (max-width: 800px) {
-  .content {
-    margin: 0 auto;
-    box-shadow: unset;
-    padding: 35px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-/* @media (max-width: 400px) {
-  .content {
-    padding: 20px;
-  }
-} */
-
-.content a {
-  color: #002060;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-}
-.content a.citation {
-  font-size: 0.6em;
-  vertical-align: super;
-}
-
-
 
 #content {
 	padding: 0px;
@@ -146,399 +82,663 @@ main::after {
 	line-height: initial;
 }
 
+.contentBlock 
+{
+	width: 64vw;
+	max-width: 800px;
+	float: right;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+        padding: 64px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px lightgray;
+        color: #121212;
+        margin-top: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        }
+  
+
+.content p:first-child {
+margin-top: 0;
+}
+
+
+.content ul {
+padding-inline-start: 20px;
+
+list-style-image: none;
+list-style-type: none;
+}
+
+.content ul li {
+display: flex;
+font-size: 1.2rem;
+
+}
+
+.content ol li {
+	font-size: 1.2rem;
+
+}
+
+.content ul li::before {
+font-size: 1.2rem;
+color: #000000;
+}
+
+.content .splide ul li::before {
+content: unset;
+}
+
+.content li {
+	margin: 10px;
+}
+
+.content li::marker {
+	color: #000000;
+	font-size: 1.3em;
+}
+
+.content h4, .content h5 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	margin-block-end: 0.2em;
+	margin-block-start: 30px;
+}
+
+.content h5 {
+	font-size: 1.2rem;
+
+}
+
+.content a {
+	color: #2e64ec;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+.content a.citation {
+	font-size: 0.6em;
+	vertical-align: super;
+}
+
+.content-paragraph{
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: justify;
+}
 
 </style>
 
- <!-- slideshow -->
- <style>
-    .carousel .carousel-item {
-		/* width:auto; */
-		height:auto;
-      }
-      
-    .carousel-item img {
-        min-height: 555px;
-        max-height: 765px;
-        object-fit:cover;
-      }
-    
-    </style>
+<!-- slideshow -->
+<style>
+	/* Slideshow container */
+	.slideshow-container {
+          max-width: 800px;
+          position: relative;
+          margin: auto;
+          border: 4px solid #CEDDEF;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          background-color: rgba(0, 0, 0, 0.472);
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0, 0, 0, 0.883);
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot1 {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .activeSlide1, .dot1:hover {
+          background-color: #717171;
+        }
 
-	<!-- photos style-->
-	<style>
-	/*main*/
+        .dot2 {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .activeSlide2, .dot2:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        } */
+        
+        /* On smaller screens, decrease text size
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
+</style>
 
-	section.abstract {
-	  padding-top: 3%;
-	  padding-bottom:1%; 
-	  margin-left: 400px;
-	}
-	hr.abstract {
-	  margin-left: 10%;
-	  margin-right: 10%;
-	}
-	/*title*/
-	.team h2 {
-	  font-size: 3.75rem;
-	  color:#172544;
-	  text-align: center;
-	}
-	.photo-wrapper {
-	  padding-left: 15%;
-	  padding-right:4%;
-	  /* background: linear-gradient(to right, #B7E0FF, #002060); */
-	}
-	/* 3 photes in a line */
+<!-- photos style-->
+<style>
+/*main*/
+
+section.abstract {
+	padding-top: 3%;
+	padding-bottom:1%; 
+	margin-left: 400px;
+}
+hr.abstract {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+/*title*/
+.team h2 {
+	font-size: 3.75rem;
+	color:#172544;
+	text-align: center;
+}
+.photo-wrapper {
+	padding-left: 15%;
+	padding-right:4%;
+	/* background: linear-gradient(to right, #B7E0FF, #002060); */
+}
+/* 3 photes in a line */
+.photo-wrapper .intro-all {
+	width: 30%;
+	margin: 10% 1%;
+	margin-top:200px;
+	cursor: pointer;
+}
+@media (min-width: 992px) { 
 	.photo-wrapper .intro-all {
-	  width: 30%;
-	  margin: 10% 1%;
-	  margin-top:200px;
-	  cursor: pointer;
+	width: 25%;
+	margin: 0% 1%;
+	cursor: pointer;
 	}
-	@media (min-width: 992px) { 
-	  .photo-wrapper .intro-all {
-		width: 25%;
-		margin: 0% 1%;
-		cursor: pointer;
-	  }
-	} 
-	/* Dimmer */
-	.dimmer {
-	  position: fixed;
-	  display: flex;
-	  top: 0em ;
-	  left: 0em ;
-	  width: 100%;
-	  height: 100%;
-	  background-color:#ceddefdc;
-	  z-index: 10000;
-	  overflow-y: scroll;
-	}
-	/* might need revise because body tag */ /* backgroud become blur when dimmer show*/
-	.blurring .main, .blurring header, .blurring footer {
-	  -webkit-filter: blur(2px) grayscale(0);
-	  filter: blur(2px) grayscale(0);
-	  -webkit-transition: 800ms -webkit-filter ease;
-	  transition: 800ms -webkit-filter ease;
-	  transition: 800ms filter ease;
-	  transition: 800ms filter ease, 800ms -webkit-filter ease;
-	}
-	body.blurring {
-	  overflow: hidden; 
-	}
+} 
+/* Dimmer */
+.dimmer {
+	position: fixed;
+	display: flex;
+	top: 0em ;
+	left: 0em ;
+	width: 100%;
+	height: 100%;
+	background-color:#ceddefdc;
+	z-index: 10000;
+	overflow-y: scroll;
+}
+/* might need revise because body tag */ /* backgroud become blur when dimmer show*/
+.blurring .main, .blurring header, .blurring footer {
+	-webkit-filter: blur(2px) grayscale(0);
+	filter: blur(2px) grayscale(0);
+	-webkit-transition: 800ms -webkit-filter ease;
+	transition: 800ms -webkit-filter ease;
+	transition: 800ms filter ease;
+	transition: 800ms filter ease, 800ms -webkit-filter ease;
+}
+body.blurring {
+	overflow: hidden; 
+}
+.dimmer > .card {
+	z-index: 10005;
+	overflow: auto;
+	width: 80%;
+}
+.card-title {
+	margin-bottom: .5rem;
+}
+.card-text {
+	font-size: 1rem;
+}
+.card-text b {
+	font-weight: 700;
+}
+
+@media (min-width: 768px) { 
 	.dimmer > .card {
-	  z-index: 10005;
-	  overflow: auto;
-	  width: 80%;
+	width: 50%;
 	}
-	.card-title {
-	   margin-bottom: .5rem;
+}
+</style>
+
+<!-- in page menu & progress bar -->
+<style>
+	/* progress bar */
+	
+	#fixedOverlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 12;
+	top: 18px;
+	transition: 1s;
+	font-family: "montserrat-light" !important;
+	/* background-color: #002060; */
 	}
-	.card-text {
-	  font-size: 1rem;
-	  font-family:Arial, Helvetica, sans-serif;
+	#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
+	pointer-events: none;
 	}
-	.card-text b {
-	  font-weight: 700;
+
+	#fixedOverlay .scroll-wrapper {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	justify-content: space-between;
+	opacity: 1;
+	transition: 0.5s;
+	}
+	#fixedOverlay .scroll-wrapper .scroll-area {
+	height: 100%;
+	width: 5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+	@media screen and (max-width: 767px) {
+	#fixedOverlay .scroll-wrapper .scroll-area {
+		width: 10vw;
+	}
+	}
+	#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+	width: 30%;
+	height: 30%;
+	background-color: rgba(98, 129, 239, 0.3);
+	border-radius: 10px;
+	max-width: 7px;
+	}
+	#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+	width: 100%;
+	background: #002060;
+	opacity: 100%;
+	height: 0%;
+	border-radius: 20px;
+	transition: background-color 0.5s;
 	}
 	
-	@media (min-width: 768px) { 
-	  .dimmer > .card {
-		width: 50%;
-	  }
-	}
-	</style>
-
-	<!-- in page menu & progress bar -->
-	<style>
-		/* progress bar */
-		
-		#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-		font-family: "montserrat-light" !important;
-		/* background-color: #002060; */
-		}
-		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-		pointer-events: none;
-		}
-
-		#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-		}
-		#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
-		@media screen and (max-width: 767px) {
-		#fixedOverlay .scroll-wrapper .scroll-area {
-			width: 10vw;
-		}
-		}
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-		}
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-		}
-		
-		#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-		}-->
-		
-		/* in page menu */
-		.sideBlock 
-		{
-			text-transform: uppercase;
-			text-decoration: none;
-			float: left;
-			margin-left: 10vw;
-			margin-top: 400px;
-			position: -webkit-sticky;
-			position: fixed;
-			top: 30%;
-			margin: 200px 32px 0 4vw;
-			transform: translateY(-50%);
-			min-width: 20px;
-			max-width: 350px;
-			background: #ffffff;
-			opacity: 80%;
-			border-radius: 15%;
-			padding-left: 20px;
-			z-index: 1;
-		}
-		@media (max-width: 1024px) {
-		.sideBlock {
-			margin: 200px 32px 0 4vw;
-		}
-		}
-		.sideBlock b {
-		font-family: "montserrat-bold";
-		font-size: 1.4rem;
-		font-weight: bold;
-		margin-left: 0.25em;
-		display: block;
-		}
-		.sideBlock ul {
-		margin: 1em 0;
-		padding: 0;
-		}
-		.sideBlock a {
-		color: #002060;
+	#fixedOverlay nav {
+	box-sizing: border-box;
+	z-index: 2;
+	pointer-events: none;
+	display: block;
+	transition: 0.5s;
+	height: 87px;
+	}-->
+	
+	/* in page menu */
+	.sideBlock 
+	{
+		text-transform: uppercase;
 		text-decoration: none;
-		font-family: "lato-light", sans-serif;
-		}
-		.sideBlock li {
-		margin: 24px;
-		list-style: none;
-		color: #002060;
-		font-size: 1.1rem;
-		cursor: pointer;
+		float: left;
+		margin-left: 10vw;
+		margin-top: 400px;
+		position: -webkit-sticky;
+		position: fixed;
+		top: 30%;
+		margin: 200px 32px 0 4vw;
+		transform: translateY(-50%);
+		min-width: 20px;
+		max-width: 350px;
+		background: #ffffff;
+		opacity: 80%;
+		border-radius: 15%;
+		padding-left: 20px;
+		z-index: 1;
+	}
+	@media (max-width: 1024px) {
+	.sideBlock {
+		margin: 200px 32px 0 4vw;
+	}
+	}
+	.sideBlock b {
+	font-family: "montserrat-bold";
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-left: 0.25em;
+	display: block;
+	}
+	.sideBlock ul {
+	margin: 1em 0;
+	padding: 0;
+	}
+	.sideBlock a {
+	color: #002060;
+	text-decoration: none;
+	font-family: "lato-light", sans-serif;
+	}
+	.sideBlock li {
+	margin: 24px;
+	list-style: none;
+	color: #002060;
+	font-size: 1.1rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	margin-left: 0.25em;
+	}
+	.sideBlock li:last-child {
+	margin-bottom: 0;
+	}
+	.sideBlock li div {
+	max-width: 15px;
+	max-height: 15px;
+	box-sizing: border-box;
+	border: 1px solid;
+	color: #002060;
+	border-radius: 2px;
+	transition: 0.5s;
+	margin-right: 8px;
+	height: 10vw;
+	width: 10vh;
+	}
+	.sideBlock li.active div {
+	background-color: #002060;
+	}
+	@media (max-width: 800px) {
+	
+	.sideBlock b {
+		display: block;
+		margin: 0;
+	}
+	.sideBlock ul {
+		display: inline-block;
+		text-align: start;
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+	.sideBlock li {
+		font-weight: bold;
+	}
+	.sideBlock li a {
+		color: #FAFAFC;
+	}
+	.sideBlock li div {
+		color: #FAFAFC;
+	}
+	.sideBlock li.active div {
+		background-color: #FAFAFC;
+	}
+	.sideBlock.notshow {
+		transform: translateY(calc(100% - 0px));
+	}
+	.sideBlock.open {
+		transform: translateY(0);
+	}
+	}
+	#sideMenu,
+	#top_title,
+	.patrollink,
+	#firstHeading,
+	#home_logo,
+	#sideMenu {
+		display: none;
+	}
+
+	#content {
+		padding: 0px;
+		width: 100%;
+		margin-top: -7px;
+		margin-left: 0px;
+		border: none;
+		line-height: initial;
+	}
+
+	body,
+	html {
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0px;
+	}
+
+	#bodyContent h1,
+	#bodyContent h2,
+	#bodyContent h3,
+	#bodyContent h4,
+	#bodyContent h5 {
+		margin-bottom: 0px;
+	}
+
+	#bodyContent a[href ^="https://"],
+	.link-https {
+		padding-right: 0px;
+	}
+
+	#globalWrapper {
+		padding: 0px;
+	}
+
+	a {
+		color: initial;
+	}
+
+	#top_title {
+		display: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: unset;
+		font-weight: unset;
+		overflow: unset;
+		padding-top: unset;
+		padding-bottom: unset
+	}
+
+	ol {
+		line-height: unset
+	}
+
+	#HQ_page h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h {
+		font-family: unset;
+		font-weight: unset;
+	}
+	#HQ_page p{
+	font-size: unset;
+	font-family: unset;
+	text-align: unset;
+	margin: 0;
+	}
+
+	#content H1 {
+		font-weight: unset
+	}
+
+	#bodyContent h1,
+	#bodyContent h2 {
+		margin-bottom: unset
+	}
+
+	p br {
+		display: unset
+	}
+	li{
+	margin-bottom: unset !important;
+	}
+</style> 
+
+<!-- back to top -->
+<style>
+	#BacktoTop {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #B8EBFF;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 30%;
+	}
+
+	#BacktoTop:hover {
+	background-color: #002060;
+	}
+</style>
+	
+<!-- loader -->
+<style>
+	#loader-wrapper {
 		display: flex;
 		align-items: center;
-		margin-left: 0.25em;
-		}
-		.sideBlock li:last-child {
-		margin-bottom: 0;
-		}
-		.sideBlock li div {
-		max-width: 15px;
-		max-height: 15px;
-		box-sizing: border-box;
-		border: 1px solid;
-		color: #002060;
-		border-radius: 2px;
-		transition: 0.5s;
-		margin-right: 8px;
-		height: 10vw;
-		width: 10vh;
-		}
-		.sideBlock li.active div {
-		background-color: #002060;
-		}
-		@media (max-width: 800px) {
-		
-		.sideBlock b {
-			display: block;
-			margin: 0;
-		}
-		.sideBlock ul {
-			display: inline-block;
-			text-align: start;
-			margin-top: 0;
-			margin-bottom: 30px;
-		}
-		.sideBlock li {
-			font-weight: bold;
-		}
-		.sideBlock li a {
-			color: #FAFAFC;
-		}
-		.sideBlock li div {
-			color: #FAFAFC;
-		}
-		.sideBlock li.active div {
-			background-color: #FAFAFC;
-		}
-		.sideBlock.notshow {
-			transform: translateY(calc(100% - 0px));
-		}
-		.sideBlock.open {
-			transform: translateY(0);
-		}
-		}
-		#sideMenu,
-		#top_title,
-		.patrollink,
-		#firstHeading,
-		#home_logo,
-		#sideMenu {
-			display: none;
-		}
-
-		#content {
-			padding: 0px;
-			width: 100%;
-			margin-top: -7px;
-			margin-left: 0px;
-			border: none;
-			line-height: initial;
-		}
-
-		body,
-		html {
-			background-color: white;
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0px;
-		}
-
-		#bodyContent h1,
-		#bodyContent h2,
-		#bodyContent h3,
-		#bodyContent h4,
-		#bodyContent h5 {
-			margin-bottom: 0px;
-		}
-
-		#bodyContent a[href ^="https://"],
-		.link-https {
-			padding-right: 0px;
-		}
-
-		#globalWrapper {
-			padding: 0px;
-		}
-
-		a {
-			color: initial;
-		}
-
-		#top_title {
-			display: none;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: unset;
-			font-weight: unset;
-			overflow: unset;
-			padding-top: unset;
-			padding-bottom: unset
-		}
-
-		ol {
-			line-height: unset
-		}
-
-		#HQ_page h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h {
-			font-family: unset;
-			font-weight: unset;
-		}
-		#HQ_page p{
-		font-size: unset;
-		font-family: unset;
-		text-align: unset;
-		margin: 0;
-		}
-
-		#content H1 {
-			font-weight: unset
-		}
-
-		#bodyContent h1,
-		#bodyContent h2 {
-			margin-bottom: unset
-		}
-
-		p br {
-			display: unset
-		}
-		li{
-		margin-bottom: unset !important;
-		}
-	</style> 
-	<!-- back to top -->
-	<style>
-		#BacktoTop {
-		display: none;
+		margin-top: calc((100%)/5);
+		justify-content: center;
+		height: 0.1vh;
+		width: 100vw;
+		z-index: 500;
 		position: fixed;
-		bottom: 20px;
-		right: 30px;
-		z-index: 99;
-		font-size: 18px;
-		border: none;
-		outline: none;
-		background-color: #B8EBFF;
-		color: white;
-		cursor: pointer;
-		padding: 15px;
-		border-radius: 30%;
-		}
+		pointer-events: none;
+	}
 
-		#BacktoTop:hover {
-		background-color: #002060;
-		}
-	</style>
+	#loader-bg {
+		position: fixed;
+		height: 200vw;
+		width: 200vw;
+		transform: translateY(0);
+		background-color: #6C8EC9;
+		transition-property: height, width, border-radius, transform;
+		transition-duration: 0.5s;
+		transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+		transition-delay: 0s, 0s, 0s, 1s;
+		border-radius: 0%;
+		-webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+		-moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+		box-shadow: 0px 0px 27px 0px #6E91CB;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
 	
-	<body >
+	#loader-wrapper img {
+		width: 30vh;
+
+	}
+
+	#loader-wrapper h1 {
+		color: #fafafc;
+		text-transform: uppercase;
+		font-family: 'montserrat-black', sans-serif !important;
+		position: absolute;
+		transform: translateY(15vh);
+		font-size: 2.2vw;
+		opacity: 100%;
+	}
+
+	#loader-bg.loaded 
+	{
+		height: 35vh;
+		width: 35vh;
+		border-radius: 70%;
+		transform: translateY(-2000px);
+	}
+</style>
+
+
+<body>
+
+	<!-- loader -->
+	<div id="loader-wrapper">
+		<div id="loader-bg">
+			<img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+		</div>
+	</div>
+	
+	<!-- header -->
+	<img  src="https://2021.igem.org/wiki/images/8/82/T--Greece_United--header-team.png" class="banner">
 	<!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg width="24" height="24" viewBox="0 0 24 24">
@@ -564,6 +764,12 @@ main::after {
 	
 	<!-- in page menu -->
 	<div id="index" class="sideBlock">
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading0">Introduction</a>
+			</li>
+		</ul>
 		<ul>
 			<li class="active">
 				<div></div>
@@ -597,35 +803,33 @@ main::after {
 	</div>
 
 	
-	<!-- <hr class="line"> -->
-	
-
-
-<!-- <input id="headingTitleText" type="hidden" value="Parts">
-	<div class="contentBlock">
-		<div class="content"> -->
-			<!-- <h2> -->
-				<p style="width: 100%; margin-left:400px; max-width: 1000px; text-align: justify; font-size: 24px;">
-				<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
-				describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
-				thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
-				seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
-				apart from characterizing the strength of each one of us separately, also describes the
-				spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
-				Right around there four of us from different cities and universities, gathered together 
-				and decided to create an iGEM team with no geographical limitations, in contrast to the
-				norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
-				The idea for an iGEM team had been developing in each person’s mind separately, and then 
-				came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
-				Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
-				begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
-			
-			<b>Let’s meet the team!</b></h2>
-			</p>
-		<!-- </div>		
+	<div id="heading0">
+		<div style="margin-top: 100px;" id="content-tag">
+			<div class="contentBlock" style="margin-bottom: 100px;;">
+				<div class="content">
+					<h2><b>NOUS aka Greece United</b></h2><br>
+					<p class="content-paragraph" style="text-align: justify;">
+					<!-- <p style="width: 100%; margin-left:400px; max-width: 1000px; text-align: justify; font-size: 24px;"> -->
+						<b>“NOUS”</b> is an ancient Greek word (νοῦς) translated as “brain”. A general definition 
+						describes “NOUS” as a set of cognitive abilities, such as, consciousness, perception, 
+						thought and memory. <br><br> On the other hand, “NOUS” in French, literally means “we”. We 
+						seek to act as a unity through communication, which is our keystone. So, the word “NOUS” 
+						apart from characterizing the strength of each one of us separately, also describes the
+						spirit of the team as a whole.<br><br>13th of October 2019: The official birthday of NOUS. 
+						Right around there four of us from different cities and universities, gathered together 
+						and decided to create an iGEM team with no geographical limitations, in contrast to the
+						norm for Greek iGEM teams, and not for the upcoming competition, but for the next year. 
+						The idea for an iGEM team had been developing in each person’s mind separately, and then 
+						came a small push from our favorite PI, who brought us all together to connect our visions.<br><br> 
+						Less than a year later, the rest of the members were recruited, and the fun (but also the work) 
+						begun! Now we are 12 members, from 5 different universities and 4 different cities!<br><br>
+					
+						<b>Let’s meet the team!</b></h2>
+					</p>
+				</div>
+			</div>		
+		</div>
 	</div>
-</input> -->
-<!-- </div> -->
 <br><br> <br>
  
 	<hr class="line">
@@ -641,33 +845,33 @@ main::after {
 
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
 				
-				<!--Jordi-->
-				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
-					<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt="" class="hover d-none w-100">
-					<figcaption>
-						<b style=" font-size:20px; color:#5893D4;"><br>George Kontis</b> <br><br>
-						<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
-						<b>AGE</b>: 21 <br>
-						<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
-						<b>LOVES</b>: Literally anything that has to do with the sea <br>
-						<b>FIELD</b>: Fundraising, Wet Lab<br>
-						<b>TITLE</b>: Team leader & Head of Entrepreneurship<br>
-					</figcaption>
-					<div class="intro d-none">
-						<h3 class="card-title">aka Jordi</h3>
-						<p class="card-text">
-							<b>CLASSIFIED AS</b>: The one who tries to keep everything in place<br>
-							<b>MISSION</b>: Make everyone love whiskey <br>
-							<b>MOTO</b>: Think logically<br>
-							<b>KARAOKE GO-TO</b>: Sober - TOOL<br>
-							<b>COMPLETED MISSIONS</b>: Became Head of Entrepreneurship<br>
-							<b>LEFT HIS MARK BY</b>: Managing to take up a totally different sector he never worked before<br>
-							<b>EXTENT OF POWER</b>: UNKNOWN<br>
-						</p>
-						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
-					</div>
+			<!--Jordi-->
+			<div class="intro-all">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt="" class="hover d-none w-100">
+				<figcaption>
+					<b style=" font-size:20px; color:#5893D4;"><br>Jordi Kontis</b> <br><br>
+					<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
+					<b>AGE</b>: 21 <br>
+					<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
+					<b>LOVES</b>: Literally anything that has to do with the sea <br>
+					<b>FIELD</b>: Fundraising, Wet Lab<br>
+					<b>TITLE</b>: Team leader & Head of Entrepreneurship<br>
+				</figcaption>
+				<div class="intro d-none">
+					<h3 class="card-title">aka Jordi</h3>
+					<p class="card-text">
+						<b>CLASSIFIED AS</b>: The one who tries to keep everything in place<br>
+						<b>MISSION</b>: Make everyone love whiskey <br>
+						<b>MOTO</b>: Think logically<br>
+						<b>KARAOKE GO-TO</b>: Sober - TOOL<br>
+						<b>COMPLETED MISSIONS</b>: Became Head of Entrepreneurship<br>
+						<b>LEFT HIS MARK BY</b>: Managing to take up a totally different sector he never worked before<br>
+						<b>EXTENT OF POWER</b>: UNKNOWN<br>
+					</p>
+					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
 				</div>
+			</div>
 			<!---->
 			<!--Nefeli-->
 			<div class="intro-all">
@@ -771,7 +975,7 @@ main::after {
 						<b>CLASSIFIED AS</b>: The fun, the serious, the philosopher (or not)<br>
 						<b>MOTO</b>: You only need to find yourself. Everything else can be Googled.<br>
 						<b>KARAOKE GO-TO</b>: Crazy train, Ozzy Osbourne<br>
-						<b>COMPLETED MISSIONS</b>: -<br>
+						<b>COMPLETED MISSIONS</b>: Playing that elevator music in (almost) every group call but composed the one needed for the video.<br>
 						<b>LEFT HIS MARK BY</b>: Never letting a call go by without screen sharing.<br>
 						<b>EXTENT OF POWER</b>: UNKNOWN<br>
 					</p>
@@ -784,7 +988,7 @@ main::after {
 				<img src="https://2021.igem.org/wiki/images/4/49/T--Greece_United--paulos.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/8/80/T--Greece_United--pavlos-fun.png" alt="" class="hover d-none w-100">
 				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Paulos Chatzoudis</b><br> <br>
+					<b style=" font-size:20px; color:#5893D4;"><br>Pavlos Chatzoudis</b><br> <br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 21 <br>
 					<b>ULTIMATE ABILITY</b>: Animation & Interactive media, Akto Thessaloniki <br>
@@ -892,23 +1096,23 @@ main::after {
 			<!--Nikolas-->
 			<div class="intro-all">
 				<img src="https://2021.igem.org/wiki/images/3/30/T--Greece_United--nikolas.jpg" alt="" class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/3/30/T--Greece_United--nikolas.jpg" alt="" class="hover d-none w-100">
+				<img src="https://2021.igem.org/wiki/images/d/d0/T--Greece_United--nikolas-fun.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
 					<b style=" font-size:20px; color:#5893D4;"><br>Nikolas Romanidis</b><br> <br>
 					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
 					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Economics, UoM<br>
-					<b>HOBBIES</b>: -<br>
+					<b>ULTIMATE ABILITY</b>: Economics, UM<br>
+					<b>HOBBIES</b>: Boxing, finance, cryptocurrency<br>
 					<b>FIELD</b>: Fundraising, Public Relations<br>
 				</figcaption>
 				<div class="intro d-none">
-					<h3 class="card-title">aka Nikolas <br> (dare you call him anything else)</h3>
+					<h3 class="card-title">aka Nikolas </h3> <p style="font-size: 16px;">(dare you call him anything else...)</p><br>
 					<p class="card-text">
-						<b>CLASSIFIED AS</b>: -<br>
-						<b>MOTO</b>: -<br>
-						<b>KARAOKE GO-TO</b>: -<br>
-						<b>COMPLETED MISSIONS</b>: -<br>
-						<b>LEFT HIS MARK BY</b>: -<br>
+						<b>CLASSIFIED AS</b>: The new guy<br>
+						<b>MOTO</b>: Veni, vidi, vici<br>
+						<b>KARAOKE GO-TO</b>: Uparxo, Kazatzidis<br>
+						<b>COMPLETED MISSIONS</b>: Has seen all the mafia movies available.<br> Hoped to use them to make "an offer that he can't resude".<br>
+						<b>LEFT HIS MARK BY</b>: Transitioning extremely quickly from fun to serious when he had to talk to someone important.<br>
 						<b>EXTENT OF POWER</b>: UNKNOWN<br>
 					</p>
 					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
@@ -972,17 +1176,83 @@ main::after {
 			</div>               
 		</div>
 	</section>
-	<hr class="line">
 
-	<br> <br>
-	<p style="width: 100%; max-width: 1000px; text-align: justify;  margin-left:600px; font-size: 24px;">
-		
-		Of course, nothing would be possible without the help of our beloved PIs, advisors, 
-		instructors, and outside partners! Their dedication and work really shaped our journey. <br><br>
-	
-		<b>Let’s meet them!</b>
-	</p>
 	<br><br>
+
+	<!-- slideshow -->
+	<div class="slideshow-container">
+		<div class="mySlides1 ">
+			<img src="https://2021.igem.org/wiki/images/6/6e/T--Greece_United--bouno-2.jpg" style="width:100%">
+		</div>
+		<div class="mySlides1 ">
+			<img src="https://2021.igem.org/wiki/images/2/23/T--Greece_United--group-photo-2.png" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--volley.jpg" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/0/0b/T--Greece_United--working-3.png" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/2/2d/T--Greece_United--group-photo-4.jpg" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--bouno-1.jpg" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/a/ab/T--Greece_United--working.png" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--group-photo.png" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/b/b4/T--Greece_United--working-2.png" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--group-photo-3.jpg" style="width:100%">
+		</div>
+		<div class="mySlides1">
+			<img src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--team-call.gif" style="width:100%">
+		</div>
+
+		<a class="prev" style="color: white;" onclick="plusSlides1(-1)">&#10094;</a>
+		<a class="next" style="color: white;" onclick="plusSlides1(1)">&#10095;</a>
+	
+	</div>
+	<br>
+	<div style="text-align:center">
+		<span class="dot1" onclick="currentSlide1(1)"></span> 
+		<span class="dot1" onclick="currentSlide1(2)"></span> 
+		<span class="dot1" onclick="currentSlide1(3)"></span> 
+		<span class="dot1" onclick="currentSlide1(4)"></span> 
+		<span class="dot1" onclick="currentSlide1(5)"></span> 
+		<span class="dot1" onclick="currentSlide1(6)"></span> 
+		<span class="dot1" onclick="currentSlide1(7)"></span> 
+		<span class="dot1" onclick="currentSlide1(8)"></span> 
+		<span class="dot1" onclick="currentSlide1(9)"></span> 
+		<span class="dot1" onclick="currentSlide1(10)"></span> 
+		<span class="dot1" onclick="currentSlide1(11)"></span> 
+
+	</div>
+	<!-- end of slideshow -->
+
+	<br><br>
+	<hr class="line">
+	
+	<div style="margin-top: 100px;" id="content-tag">
+		<div class="contentBlock" style="margin-bottom: 30px; margin-top:30px;">
+			<div class="content">
+				<p class="content-paragraph" style="text-align: justify;">
+		
+					Of course, nothing would be possible without the help of our beloved PIs, advisors, 
+					instructors, and outside partner, and mentor! Their dedication and hardwork really shaped our journey. <br><br>
+				
+					<b>Let’s meet them!</b>
+				</p>
+			</div>
+		</div>
+	</div>
+	<br>
 	<hr class="line">
 	<br>
 	<!-- PIs -->
@@ -995,7 +1265,7 @@ main::after {
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
 				<!--Kaldoudi-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--kaldoudi.jpg" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/a/a4/T--Greece_United--kaldoudi-bw.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/0/0f/T--Greece_United--kaldoudi.jpg" alt="" class="hover d-none w-100">
 					<figcaption >
 						<b style=" font-size:20px; color:#5893D4;"><br>Eleni Kaldoudi</b><br> <br>
@@ -1029,7 +1299,7 @@ main::after {
 				<!---->
 				<!--Glukos-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--glukos.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/c/c6/T--Greece_United--glukos-bw.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--glukos.png" alt="" class="hover d-none w-100">
 					<figcaption>
 						<b style=" font-size:20px; color:#5893D4;"><br>Nikolaos Glykos</b><br> <br>
@@ -1065,7 +1335,7 @@ main::after {
 			<!---->
 			<!--Koffa-->
 			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/1/1a/T--Greece_United--koffa.jpg" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/6/6d/T--Greece_United--koffa-bw.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/1/1a/T--Greece_United--koffa.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
 					<b style=" font-size:20px; color:#5893D4;"><br>Dr Margy Koffa</b><br> <br>
@@ -1103,7 +1373,7 @@ main::after {
 			<!--Drosos-->
 			<div class="intro-all">
 				<br><br><br>
-				<img src="https://2021.igem.org/wiki/images/b/bf/T--Greece_United--drosos.jpg" alt="" class="normal w-100">
+				<img src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--drosos-bw.png" alt="" class="normal w-100">
 				<img src="https://2021.igem.org/wiki/images/b/bf/T--Greece_United--drosos.jpg" alt="" class="hover d-none w-100">
 				<figcaption>
 					<b style=" font-size:20px; color:#5893D4;"><br>Dr. Georgios I. Drosos</b><br> <br>
@@ -1148,7 +1418,7 @@ main::after {
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
 				<!--drosatos-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/7/78/T--Greece_United--drosatos.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/6/63/T--Greece_United--drosatos-bw.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/7/78/T--Greece_United--drosatos.png" alt="" class="hover d-none w-100">
 					<figcaption>
 						<b style=" font-size:20px; color:#5893D4;"><br>George Drosatos</b><br> <br>
@@ -1184,15 +1454,15 @@ main::after {
 				<!---->
 				<!--xristos-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
-					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<img src="https://2021.igem.org/wiki/images/c/ce/T--Greece_United--christos-bw.jpg" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/4/49/T--Greece_United--christos.jpg" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b style=" font-size:20px; color:#5893D4;"><br>Xristos</b><br> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Christos Efstathiou</b><br> <br>
 						<b>POSITION</b>: Instructor | Wet Lab<br>
-						<b>COMMENT FROM THE TEAM</b>: insert <br>
+						<b>COMMENT FROM THE TEAM</b>: Always there for an opinion of an experienced one when we needed him. <br>
 					</figcaption>
 					<div class="intro d-none">
-						<h3 class="card-title">Xristos</h3>
+						<h3 class="card-title">Christos Efstathiou</h3>
 						<p class="card-text">
 							insert
 							<br>
@@ -1215,7 +1485,7 @@ main::after {
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
 				<!--papageorgiou-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/3/3e/T--Greece_United--papageorgiou.jpg" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/4/4c/T--Greece_United--papageorgiou-bw.png" alt="" class="normal w-100">
 					<img src="https://2021.igem.org/wiki/images/3/3e/T--Greece_United--papageorgiou.jpg" alt="" class="hover d-none w-100">
 					<figcaption>
 						<b style=" font-size:20px; color:#5893D4;"><br>Yiannis Papageorgiou</b><br> <br>
@@ -1255,16 +1525,25 @@ main::after {
 			<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
 				<!--papageorgiou-->
 				<div class="intro-all">
-					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="normal w-100">
-					<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt="" class="hover d-none w-100">
+					<img src="https://2021.igem.org/wiki/images/8/80/T--Greece_United--naina-bw.png" alt="" class="normal w-100">
+					<img src="https://2021.igem.org/wiki/images/8/88/T--Greece_United--naina.png" alt="" class="hover d-none w-100">
 					<figcaption>
-						<b style=" font-size:20px; color:#5893D4;"><br>Naina</b><br> <br>
+						<b style=" font-size:20px; color:#5893D4;"><br>Naina Goel</b><br> <br>
 						<b>POSITION</b>: Mentor<br>
 					</figcaption>
 					<div class="intro d-none">
-						<h3 class="card-title">Naina</h3>
+						<h3 class="card-title">Naina Goel</h3>
 						<p class="card-text">
-							insert
+							Naina Goel is a dual PhD Scholar at KU Leuven University, Campus Kortrijk and University of Ghent.<br>
+							My research interests includes host-microbiota interactions, molecular biology, computational biology.<br>
+							I am also coach for STEAM+ challenge, Decolonize Nature in collaboration with African Museum, Brussels.<br>
+							I am representative of Idea Lab project that focuses on Open Science: A new paradigm for science, research 
+							and community in the 21st Century.<br>
+							I am cofounder of an initiative that focuses on Learning for Sustainability, L4S, promotes quality 
+							education around the globe. <br>
+							I am Young Zoologist member of Royal Belgium Zoological Society. <br>
+							I am also focusing on empowering under developed and developing societies by introducing the concept 
+							of social entrepreneurship.<br>
 							<br>
 						</p>
 						<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()" aria-label="close">Close</button>
@@ -1277,71 +1556,19 @@ main::after {
 
 	<br><br><br><br><br><br>
 
-<!-- Slideshow -->
-	<div id="carousel-team" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-		  <li data-target="#carousel-team" data-slide-to="0" class="active"></li>
-		  <li data-target="#carousel-team" data-slide-to="1"></li>
-		  <li data-target="#carousel-team" data-slide-to="2"></li>
-		  <li data-target="#carousel-team" data-slide-to="3"></li>
-		  <li data-target="#carousel-team" data-slide-to="4"></li>
-		  <li data-target="#carousel-team" data-slide-to="5"></li>
-		  <li data-target="#carousel-team" data-slide-to="6"></li>
-		  <li data-target="#carousel-team" data-slide-to="7"></li>
-		  <li data-target="#carousel-team" data-slide-to="8"></li>
-
-
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item  active">
-				<img src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--team-call.gif" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/6/6e/T--Greece_United--bouno-2.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--volley.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--bouno-1.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--group-photo.png" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/1/14/T--Greece_United--group-photo-2.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--group-photo-3.jpg" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="https://2021.igem.org/wiki/images/2/2d/T--Greece_United--group-photo-4.jpg" class="d-block w-100" alt="...">
-			</div>
+	<!--Dimmer Part-->
+	<div class="dimmer d-none justify-content-center align-items-center">
+	<div class="card mb-3">
+		<div class="row no-gutters">
+		<div class="col-md-5">
+			<img class="card-img" src="" alt="">
 		</div>
-		<a class="carousel-control-prev" href="#carousel-team" role="button" data-slide="prev">
-		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		  <span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carousel-team" role="button" data-slide="next">
-		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		  <span class="sr-only">Next</span>
-		</a>
-	  </div>
-
-
-	  <!--Dimmer Part-->
-	  <div class="dimmer d-none justify-content-center align-items-center">
-		<div class="card mb-3">
-		  <div class="row no-gutters">
-			<div class="col-md-5">
-			  <img class="card-img" src="" alt="">
-			</div>
-			<div class="col-md-7 d-flex">
-			  <div class="intro card-body d-flex flex-column align-self-stretch"></div>
-			</div>
-		  </div>
-		</div> 
-	  </div>
+		<div class="col-md-7 d-flex">
+			<div class="intro card-body d-flex flex-column align-self-stretch"></div>
+		</div>
+		</div>
+	</div> 
+	</div>
 	</body>
 
 	<script src="https://2019.igem.org/Team:NCKU_Tainan/js/jquery-3_4_1_min_js?action=raw&amp;ctype=text/javascript"></script>
@@ -1391,7 +1618,8 @@ main::after {
 			$("body").removeClass("blurring");    
 		}
 	</script>
-	<!-- progress bar & in page menu -->
+
+<!-- progress bar & in page menu -->
 <script>
     
     var textSection = null;
@@ -1440,6 +1668,7 @@ main::after {
 
         document.getElementById("fixedOverlay").classList.add("project");
 </script>
+
 <!-- back to top button -->
 <script>
     
@@ -1460,7 +1689,84 @@ main::after {
     document.documentElement.scrollTop = 0;
     }
 </script>
-  
+
+<!-- slideshow -->
+<script>
+	var slideIndex1 = 1;
+	var slideIndex2 = 1;
+	showSlides1(slideIndex1);
+	showSlides2(slideIndex2);
+	
+	function plusSlides1(n) {
+		showSlides1(slideIndex1 += n);
+	}
+
+	function plusSlides2(n) {
+		showSlides2(slideIndex2 += n);
+	}
+	
+	function currentSlide1(n) {
+		showSlides1(slideIndex1 = n);
+	}
+	
+	function currentSlide2(n) {
+		showSlides2(slideIndex2 = n);
+	}
+	
+	function showSlides1(n) {
+		var i;
+		var slides1 = document.getElementsByClassName("mySlides1");
+		var dots1 = document.getElementsByClassName("dot1");
+
+
+		if (n > slides1.length) {slideIndex1 = 1}    
+		if (n < 1) {slideIndex1 = slides1.length}
+
+		for (i = 0; i < slides1.length; i++) {
+			slides1[i].style.display = "none";  
+		}
+		for (i = 0; i < dots1.length; i++) {
+			dots1[i].className = dots1[i].className.replace(" activeSlide1", "");
+		}
+		slides1[slideIndex1-1].style.display = "block";  
+		dots1[slideIndex1-1].className += " activeSlide1";
+	}
+
+	function showSlides2(n) {
+		var i;
+		var slides2 = document.getElementsByClassName("mySlides2");
+		var dots2 = document.getElementsByClassName("dot2");
+
+		if (n > slides2.length) {slideIndex2 = 1}    
+		if (n < 1) {slideIndex2 = slides2.length}
+
+		for (i = 0; i < slides2.length; i++) {
+			slides2[i].style.display = "none";  
+		}
+		for (i = 0; i < dots2.length; i++) {
+			dots2[i].className = dots2[i].className.replace(" activeSlide2", "");
+		}
+		slides2[slideIndex2-1].style.display = "block";  
+		dots2[slideIndex2-1].className += " activeSlide2";
+	}
+</script>
+
+<!-- loader -->
+<script>
+			
+	// Loader
+	window.addEventListener("load", function() 
+	{
+		let loader = document.getElementById('loader-bg');
+		
+		setTimeout(function() 
+		{
+			loader.classList.add('loaded')
+		}, 100);
+	});
+
+</script>
+
 <!-- CODE CREDITS TO NCKU_Tainan 2019 || https://2019.igem.org/Team:NCKU_Tainan -->
 
 	<link rel="stylesheet" href="https://2019.igem.org/Team:NCKU_Tainan/css/4.3.1/bootstrap_min_css?action=raw&ctype=text/css"/>
