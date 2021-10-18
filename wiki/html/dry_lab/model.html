@@ -662,6 +662,10 @@
 				<div></div>
 				<a href="#heading4">Results</a>
 			</li>
+			<li class="active">
+				<div></div>
+				<a href="#heading5">Equations</a>
+			</li>
 		</ul>
 	</div>
 
@@ -909,7 +913,110 @@
 						protein and thus more CAP exosomes.
 					</p>
 
+					<br><br><br><br>
+					<div id="heading5"></div>
+                    <h2>Equations</h2>
+					<p class="content-paragraph">In this table, you can find the equations used to build our Exosome Production Model.</p>
+					<table>
+						<tr>
+							<td><p class="table-paragraph"><b>Equation</b></p></td>
+							<td><p class="table-paragraph"><b>Description</b></p></td>
+						</tr>
 
+						<tr>
+							<td>
+								$$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] * k_{unbind}$$
+							</td>
+							<td><p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV promoter</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
+							</td>
+							<td><p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
+
+							</td>
+							<td><p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] *  k_{split_s}$$
+							</td>
+							<td><p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
+							</td>
+							<td><p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
+							</td>
+							<td><p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p></td>
+						</tr>
+
+						<tr>
+							<td>
+								$$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
+							</td>
+							<td><p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
+							</td>
+							<td><p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
+							</td>
+							<td><p class="table-paragraph">Non-CAP Exosome endocytosis</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
+							</td>
+							<td><p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
+							</td>
+							<td><p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP protein complexes, as well as the miRNA-DICER complex</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
+							</td>
+							<td><p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
+						</tr>
+						<tr>
+							<td>
+								$$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
+							</td>
+							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
+						</tr>
+					
+
+					  </table>
 
 					
                         
@@ -1067,7 +1174,7 @@
     <style>
             
         footer{
-            top: 1200vh ;
+            top: 2500vh ;
             position: absolute;
             z-index:300;
             }
