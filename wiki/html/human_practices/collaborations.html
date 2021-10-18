@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
 		<!-- other -->
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     </head>
     
 <!-- clear default settings -->
@@ -114,6 +114,7 @@
     /* overflow: hidden;  */
     margin-left: auto;
     margin-right: 15px;
+	cursor:pointer;
     }
 
     /* Style the navigation bar links */
@@ -147,7 +148,6 @@
     #nav ul {
     padding: 0;
     display: none;
-
     }
 
     #nav li:hover ul {
@@ -157,6 +157,7 @@
     .right-navbar a:hover, .dropdown:hover{
     background-color: #B7E0FF; /* Grey background color */
     color: #002060; /* Black text color */
+	pointer-events:visible;
     }
  
     /* Header */
@@ -776,128 +777,122 @@ content: unset;
 
 </style>
 
-<!-- slideshow 1 -->
+<!-- slideshow -->
 <style>
-        
 	/* Slideshow container */
 	.slideshow-container {
-	  max-width: 400px;
-	  position: relative;
-	  margin: auto;
-	  border: 14px solid #CEDDEF;
-	  background:#CEDDEF ;
-	}
-	
-	/* Next & previous buttons */
-	.prev, .next {
-	  cursor: pointer;
-	  position: absolute;
-	  top: 50%;
-	  width: auto;
-	  padding: 16px;
-	  margin-top: -22px;
-	  color: white;
-	  font-weight: bold;
-	  font-size: 18px;
-	  transition: 0.6s ease;
-	  border-radius: 0 3px 3px 0;
-	  user-select: none;
-	  background-color: rgba(0, 0, 0, 0.472);
-	}
-	/* Position the "next button" to the right */
-	.next {
-	  right: 0;
-	  border-radius: 3px 0 0 3px;
-	}
-	
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover, .next:hover {
-	  background-color: rgba(0, 0, 0, 0.883);
-	}
-	
-	/* Caption text */
-	.text {
-	  color: #f2f2f2;
-	  font-size: 15px;
-	  padding: 8px 12px;
-	  position: absolute;
-	  bottom: 8px;
-	  width: 100%;
-	  text-align: center;
-	}
-	
-	/* Number text (1/3 etc) */
-	.numbertext {
-	  color: #f2f2f2;
-	  font-size: 12px;
-	  padding: 8px 12px;
-	  position: absolute;
-	  top: 0;
-	}
-	
-	/* The dots/bullets/indicators */
-	.dot {
-	  cursor: pointer;
-	  height: 10px;
-	  width: 10px;
-	  margin: 0 2px;
-	  background-color: #bbb;
-	  border-radius: 50%;
-	  display: inline-block;
-	  transition: background-color 0.6s ease;
-	}
-	
-	
-	.activeSlide, .dot:hover {
-	  background-color: #717171;
-	}
-	
-	
-	/* Fading animation */
-	.fade {
-	  -webkit-animation-name: fade;
-	  -webkit-animation-duration: 1.5s;
-	  animation-name: fade;
-	  animation-duration: 1.5s;
-	}
-	
-	@-webkit-keyframes fade {
-	  from {opacity: .4} 
-	  to {opacity: 1}
-	}
-	
-	@keyframes fade {
-	  from {opacity: .4} 
-	  to {opacity: 1}
-	}
-	
-	/* On smaller screens, decrease text size */
-	@media only screen and (max-width: 300px) {
-	  .prev, .next,.text {font-size: 11px}
-	}
+          max-width: 500px;
+          position: relative;
+          margin: auto;
+          border: 4px solid #CEDDEF;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          background-color: rgba(0, 0, 0, 0.472);
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0, 0, 0, 0.883);
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot1 {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .activeSlide1, .dot1:hover {
+          background-color: #717171;
+        }
+
+        .dot2 {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .activeSlide2, .dot2:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
 </style>
-
-<!-- slideshow 2 -->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-	.slideshow-2 {display:none}
-	.w3-left, .w3-right, .w3-badge {cursor:pointer}
-	.w3-badge {height:13px;width:13px;padding:0}
-
-	.text {
-	  color: #f2f2f2;
-	  font-size: 15px;
-	  padding: 8px 12px;
-	  position: absolute;
-	  bottom: 8px;
-	  width: 100%;
-	  text-align: left;
-	}
-</style>
-
 
 <body>
-	<img src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--test-header.jpg" style="size: cover;">
+	<!-- header -->
+	<img src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--test-header.jpg" style="size: cover; margin-top:100px; z-index:9;">
 <!-- basic elements -->
 
 	<!-- loader -->
@@ -1070,7 +1065,7 @@ content: unset;
 			<ul>
 				<li class="active">
 					<div></div>
-					<a href="#heading3">"How To: iGEM"</a>
+					<a href="#heading3">How To: iGEM</a>
 				</li>
 			</ul>
 			<ul>
@@ -1167,24 +1162,37 @@ content: unset;
  						beauty that exists everywhere around you if you just know how to look. <br><br>
 						Below you can see our social media campaign to promote our collaboration.<br><br>
 					</p>
-					<!-- slideshow 2 templates -->
-					<div class="w3-content w3-display-container" style="max-width:800px">
-						<img class="mySlides" src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--art-temp-1.jpg" style="width:100%">
-						<img class="mySlides" src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--art-temp-2.jpg" style="width:100%">
-						<img class="mySlides" src="https://2021.igem.org/wiki/images/9/9c/T--Greece_United--art-temp-3.jpg" style="width:100%">
-						<img class="mySlides" src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--art-temp-4.jpg" style="width:100%">
-						<img class="mySlides" src="https://2021.igem.org/wiki/images/e/e1/T--Greece_United--art-temp-5.jpg" style="width:100%">
-
-						<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-							<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-							<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-								<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+					<!-- slideshow templates -->
+					<div class="slideshow-container">
+						<div class="mySlides1 fade">
+							<img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--art-temp-1.jpg" style="width:100%">
 						</div>
-					</div>
+						<div class="mySlides1 fade">
+							<img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--art-temp-2.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1 fade">
+							<img src="https://2021.igem.org/wiki/images/9/9c/T--Greece_United--art-temp-3.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1 fade">
+							<img src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--art-temp-4.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1 fade">
+							<img src="https://2021.igem.org/wiki/images/e/e1/T--Greece_United--art-temp-5.jpg" style="width:100%">
+						</div>
+
+						<a class="prev" style="color: white;" onclick="plusSlides1(-1)">&#10094;</a>
+                    	<a class="next" style="color: white;" onclick="plusSlides1(1)">&#10095;</a>
+                    
+                	</div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                        <span class="dot1" onclick="currentSlide1(1)"></span> 
+                        <span class="dot1" onclick="currentSlide1(2)"></span> 
+                        <span class="dot1" onclick="currentSlide1(3)"></span> 
+                        <span class="dot1" onclick="currentSlide1(4)"></span> 
+                        <span class="dot1" onclick="currentSlide1(5)"></span> 
+                    </div>
 					
 					<br><br>
 					<p class="content-paragraph">
@@ -1200,221 +1208,221 @@ content: unset;
 					
 					<!-- slideshow with photos -->
 					<div class="slideshow-container">
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/2/2a/T--Greece_United--NUKaz-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NU_Kazakhstan</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--NUKaz-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NU_Kazakhstan</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--NUKaz-3.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NU_Kazakhstan</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/6/65/T--Greece_United--NUKaz-4.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NU_Kazakhstan</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--NUKaz-5.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NU_Kazakhstan</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/0/05/T--Greece_United--Mindgao-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Mingdao</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/5/5c/T--Greece_United--Aria-UPFt-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM UPF Barcelona</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/0/0d/T--Greece_United--Aria-UPFt-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM UPF Barcelona</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/e/e6/T--Greece_United--Aria-UPFt-3.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM UPF Barcelona</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/1/1b/T--Greece_United--Aria-UPFt-4.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM UPF Barcelona</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/7/7d/T--Greece_United--egypt-1.png" style="width:100%">
 							<div class="text">
 								<p> iGEM AFCM</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--egypt-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM AFCM</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/c/cd/T--AFCM-EGYPT--COL3.png" style="width:100%">
 							<div class="text">
 								<p> iGEM AFCM</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/e/ed/T--Greece_United--estonia-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--estonia-3.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/8/87/T--Greece_United--estonia-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/f/fc/T--Greece_United--estonia-4.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--estonia-5.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/1/1d/T--Greece_United--estonia-6.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/0/0b/T--Greece_United--estonia-7.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--estonia-8.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/6/6a/T--Greece_United--estonia-9.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/2/29/T--Greece_United--estonia-10.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="	https://2021.igem.org/wiki/images/8/8e/T--Greece_United--estonia-11.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM Estonia TUIT</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/1/11/T--Greece_United--hungary-art-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM SZTA_RMG_Szeged</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/7/75/T--Greece_United--hungary-art-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM SZTA_RMG_Szeged</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/a/aa/T--Greece_United--nous-art-1.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NOUS (Greece_United)</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/6/69/T--Greece_United--nous-art-2.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NOUS (Greece_United)</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--nous-art-3.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NOUS (Greece_United)</p>
 							</div>
 						</div>
-						<div class="slideshow-1 fade">
+						<div class="mySLides2 fade">
 							<img src="https://2021.igem.org/wiki/images/d/db/T--Greece_United--nous-art-4.jpg" style="width:100%">
 							<div class="text">
 								<p> iGEM NOUS (Greece_United)</p>
 							</div>
 						</div>
 
-						<a class="prev" style="color: white;" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" style="color: white;" onclick="plusSlides(1)">&#10095;</a>
+						<a class="prev" style="color: white;" onclick="plusSlides2(-1)">&#10094;</a>
+						<a class="next" style="color: white;" onclick="plusSlides2(1)">&#10095;</a>
 						
 					</div>
 					<div style="text-align:center">
-						<span class="dot" onclick="currentSlide(1)"></span> 
-						<span class="dot" onclick="currentSlide(2)"></span> 
-						<span class="dot" onclick="currentSlide(3)"></span> 
-						<span class="dot" onclick="currentSlide(4)"></span> 
-						<span class="dot" onclick="currentSlide(5)"></span> 
-						<span class="dot" onclick="currentSlide(6)"></span> 
-						<span class="dot" onclick="currentSlide(7)"></span> 
-						<span class="dot" onclick="currentSlide(8)"></span> 
-						<span class="dot" onclick="currentSlide(9)"></span> 
-						<span class="dot" onclick="currentSlide(10)"></span> 
-						<span class="dot" onclick="currentSlide(11)"></span> 
-						<span class="dot" onclick="currentSlide(12)"></span> 
-						<span class="dot" onclick="currentSlide(13)"></span> 
-						<span class="dot" onclick="currentSlide(14)"></span> 
-						<span class="dot" onclick="currentSlide(15)"></span> 
-						<span class="dot" onclick="currentSlide(16)"></span> 
-						<span class="dot" onclick="currentSlide(17)"></span> 
-						<span class="dot" onclick="currentSlide(18)"></span> 
-						<span class="dot" onclick="currentSlide(19)"></span> 
-						<span class="dot" onclick="currentSlide(20)"></span> 
-						<span class="dot" onclick="currentSlide(21)"></span> 
-						<span class="dot" onclick="currentSlide(23)"></span> 
-						<span class="dot" onclick="currentSlide(24)"></span> 
-						<span class="dot" onclick="currentSlide(25)"></span> 
-						<span class="dot" onclick="currentSlide(26)"></span> 
-						<span class="dot" onclick="currentSlide(27)"></span> 
-						<span class="dot" onclick="currentSlide(28)"></span> 
-						<span class="dot" onclick="currentSlide(29)"></span> 
-						<span class="dot" onclick="currentSlide(30)"></span> 
+						<span class="dot2" onclick="currentSlide(1)"></span> 
+						<span class="dot2" onclick="currentSlide(2)"></span> 
+						<span class="dot2" onclick="currentSlide(3)"></span> 
+						<span class="dot2" onclick="currentSlide(4)"></span> 
+						<span class="dot2" onclick="currentSlide(5)"></span> 
+						<span class="dot2" onclick="currentSlide(6)"></span> 
+						<span class="dot2" onclick="currentSlide(7)"></span> 
+						<span class="dot2" onclick="currentSlide(8)"></span> 
+						<span class="dot2" onclick="currentSlide(9)"></span> 
+						<span class="dot2" onclick="currentSlide(10)"></span> 
+						<span class="dot2" onclick="currentSlide(11)"></span> 
+						<span class="dot2" onclick="currentSlide(12)"></span> 
+						<span class="dot2" onclick="currentSlide(13)"></span> 
+						<span class="dot2" onclick="currentSlide(14)"></span> 
+						<span class="dot2" onclick="currentSlide(15)"></span> 
+						<span class="dot2" onclick="currentSlide(16)"></span> 
+						<span class="dot2" onclick="currentSlide(17)"></span> 
+						<span class="dot2" onclick="currentSlide(18)"></span> 
+						<span class="dot2" onclick="currentSlide(19)"></span> 
+						<span class="dot2" onclick="currentSlide(20)"></span> 
+						<span class="dot2" onclick="currentSlide(21)"></span> 
+						<span class="dot2" onclick="currentSlide(23)"></span> 
+						<span class="dot2" onclick="currentSlide(24)"></span> 
+						<span class="dot2" onclick="currentSlide(25)"></span> 
+						<span class="dot2" onclick="currentSlide(26)"></span> 
+						<span class="dot2" onclick="currentSlide(27)"></span> 
+						<span class="dot2" onclick="currentSlide(28)"></span> 
+						<span class="dot2" onclick="currentSlide(29)"></span> 
+						<span class="dot2" onclick="currentSlide(30)"></span> 
 					</div>
 						
 					<br><br>
@@ -1662,69 +1670,67 @@ content: unset;
 
 </body>
 
-<!-- slideshow 1-->
+<!-- slideshow -->
 <script>
-	var slideIndex = 1;
-	showSlides(slideIndex);
-	
-	function plusSlides(n) {
-		showSlides(slideIndex += n);
-	}
-	
-	function currentSlide(n) {
-		showSlides(slideIndex = n);
-	}
-	
-	// slideshow 1
-	function showSlides(n) 
-	{
-		var i;
-		var slides = document.getElementsByClassName("slideshow-1");
-		var dots = document.getElementsByClassName("dot");
+	var slideIndex1 = 1;
+        var slideIndex2 = 1;
+        showSlides1(slideIndex1);
+        showSlides2(slideIndex2);
+        
+        function plusSlides1(n) {
+            showSlides1(slideIndex1 += n);
+        }
 
-		if (n > slides.length) {slideIndex = 1}    
-		if (n < 1) {slideIndex = slides.length}
+        function plusSlides2(n) {
+            showSlides2(slideIndex2 += n);
+        }
+        
+        function currentSlide1(n) {
+            showSlides1(slideIndex1 = n);
+        }
+       
+        function currentSlide2(n) {
+            showSlides2(slideIndex2 = n);
+        }
+        
+        function showSlides1(n) {
+            var i;
+            var slides1 = document.getElementsByClassName("mySlides1");
+            var dots1 = document.getElementsByClassName("dot1");
 
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";  
-		}
-		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" activeSlide", "");
-		}
-		slides[slideIndex-1].style.display = "block";  
-		dots[slideIndex-1].className += " activeSlide";
-	}
+
+            if (n > slides1.length) {slideIndex1 = 1}    
+            if (n < 1) {slideIndex1 = slides1.length}
+
+            for (i = 0; i < slides1.length; i++) {
+                slides1[i].style.display = "none";  
+            }
+            for (i = 0; i < dots1.length; i++) {
+                dots1[i].className = dots1[i].className.replace(" activeSlide1", "");
+            }
+            slides1[slideIndex1-1].style.display = "block";  
+            dots1[slideIndex1-1].className += " activeSlide1";
+        }
+
+        function showSlides2(n) {
+            var i;
+            var slides2 = document.getElementsByClassName("mySlides2");
+            var dots2 = document.getElementsByClassName("dot2");
+
+            if (n > slides2.length) {slideIndex2 = 1}    
+            if (n < 1) {slideIndex2 = slides2.length}
+
+            for (i = 0; i < slides2.length; i++) {
+                slides2[i].style.display = "none";  
+            }
+            for (i = 0; i < dots2.length; i++) {
+                dots2[i].className = dots2[i].className.replace(" activeSlide2", "");
+            }
+            slides2[slideIndex2-1].style.display = "block";  
+            dots2[slideIndex2-1].className += " activeSlide2";
+        }
 </script>
 
-<!-- slideshow 2 -->
-<script>
-	var slideIndex = 1;
-	showDivs(slideIndex);
-
-	function plusDivs(n) {
-	showDivs(slideIndex += n);
-	}
-
-	function currentDiv(n) {
-	showDivs(slideIndex = n);
-	}
-
-	function showDivs(n) {
-	var i;
-	var x = document.getElementsByClassName("mySlides");
-	var dots = document.getElementsByClassName("demo");
-	if (n > x.length) {slideIndex = 1}
-	if (n < 1) {slideIndex = x.length}
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "none";  
-	}
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" w3-white", "");
-	}
-	x[slideIndex-1].style.display = "block";  
-	dots[slideIndex-1].className += " w3-white";
-	}
-</script>
 
 <!-- loader -->
 <script>
