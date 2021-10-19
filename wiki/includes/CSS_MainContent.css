@@ -1,0 +1,151 @@
+td,
+th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.content p.photo-desc {
+    text-align: center !important;
+    font-size: 0.8em !important;
+}
+
+.class-paragraph {
+    padding-left: 5px;
+    margin-right: 5px;
+    text-align: justify;
+
+}
+
+#content-tag {
+    background-color: #ffffff;
+    position: relative;
+}
+
+#content-tag p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+
+#content-tag .contentBlock {
+    float: none;
+    margin: 0 auto;
+}
+
+#content {
+    padding: 0px;
+    width: 100%;
+    margin-top: -7px;
+    margin-left: 0px;
+    border: none;
+    line-height: initial;
+}
+
+.contentBlock {
+    width: 64vw;
+    max-width: 1200px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.content {
+    padding: 64px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px lightgray;
+    color: #121212;
+    margin-top: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.content p:first-child {
+    margin-top: 0;
+}
+
+
+.content ul {
+    padding-inline-start: 20px;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+.content ul li {
+    display: flex;
+}
+
+.content ul li::before {
+    list-style-type: none;
+
+    color: #000000;
+}
+
+.content .splide ul li::before {
+    content: unset;
+}
+
+.content li {
+    margin: 10px;
+    font-size: 1.2em;
+    list-style-type: none;
+
+
+}
+
+.content li::marker {
+    color: #000000;
+    font-weight: bold;
+}
+
+.content h4,
+.content h5 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-block-end: 0.2em;
+    margin-block-start: 60px;
+}
+
+.content h5 {
+    font-size: 1em;
+}
+
+.content a {
+    color: #000000;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.content a.citation {
+    font-size: 0.6em;
+    vertical-align: super;
+}
+
+.content-paragraph {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
+
+}
+
+

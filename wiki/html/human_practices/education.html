@@ -1,366 +1,348 @@
 <html>
-     
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
-		<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-        <!-- <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_fonts&action=raw&ctype=text/css" /> -->
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-     
-    
-        
-    <style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-        /* CLEAR DEFAULT SETTINGS **************************************************/
-        
-        #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
-        #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
-            #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-    
-        #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-    
-        html {
-            height: 100%;
-            min-height: 100%;
-            font-family: 'Raleway', sans-serif;
-
-        }
-        
-        body{
-            padding:0px;
-            margin:0px;
-            background: white;
-            
-            font-family: 'Raleway', sans-serif;
-    
-            display: flex;
-            flex-direction: column;
-        }
-        
-    </style>
+<!-- TODO 
+    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_fonts&action=raw&ctype=text/css" /> -->
 
 
-    <body>
-        <style>
-            #loader-wrapper {
-                display: flex;
-                align-items: center;
-                margin-top: calc((100%)/5);
-                justify-content: center;
-                height: 0.1vh;
-                width: 100vw;
-                z-index: 500;
-                position: fixed;
-                pointer-events: none;
-            }
-    
-            #loader-bg {
-                position: fixed;
-                height: 200vw;
-                width: 200vw;
-                transform: translateY(0);
-                background-color: #6C8EC9;
-                transition-property: height, width, border-radius, transform;
-                transition-duration: 0.5s;
-                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-                transition-delay: 0s, 0s, 0s, 1s;
-                border-radius: 0%;
-                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-                box-shadow: 0px 0px 27px 0px #6E91CB;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-    
-            
-            #loader-wrapper img {
-                width: 30vh;
-    
-            }
-    
-            #loader-wrapper h1 {
-                color: #fafafc;
-                text-transform: uppercase;
-                font-family: 'Raleway', sans-serif;
-                position: absolute;
-                transform: translateY(15vh);
-                font-size: 2.2vw;
-                opacity: 100%;
-            }
-    
-            #loader-bg.loaded 
-            {
-                height: 35vh;
-                width: 35vh;
-                border-radius: 70%;
-                transform: translateY(-2000px);
-            }
-        </style>
-    
-    
-        <div id="loader-wrapper">
-            <div id="loader-bg">
-                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-            </div>
-        </div>
+<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
 
-        <!-- header -->
-	    <img  src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--header-education.png" class="banner">
+<script type="text/javascript" src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript"> </script>
 
-        <style>
-            
-            .banner{
-
-                width:100%;
-                background-size: cover; 
-                margin-top:90px; 
-                z-index:5;
-            }
-        </style>
-    
-        <script>
-                    
-            // Loader
-            window.addEventListener("load", function() 
-            {
-                let loader = document.getElementById('loader-bg');
-                
-                setTimeout(function() 
-                {
-                    loader.classList.add('loaded')
-                }, 100);
-            });
-    
-        </script>
 
 <style>
-    /* Navigation Bar */
-    /* -------------- NAVBAR ------------ */
-    .right-navbar {
-    align-self:flex-end;
-    /* overflow: hidden;  */
-    margin-left: auto;
-    margin-right: 15px;
-    }
+    /* CLEAR DEFAULT SETTINGS **************************************************/
 
-    /* Style the navigation bar links */
-    .right-navbar a {
-    float: right; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2em;
-    /* overflow: hidden; */
-    }
-
-    #nav {
-    display: flex;
-    flex-direction: row;
-    list-style: none inside;
-    margin: 0;
-    padding: 0;
-    }
-
-    #nav li {
-    display: block;
-    }
-
-    #nav li li a {
-    font-size: 90%;
-    }
-
-    #nav ul {
-    padding: 0;
-    display: none;
-
-    }
-
-    #nav li:hover ul {
-    display: block;
-    }
-
-    .right-navbar a:hover, .dropdown:hover{
-    background-color: #B7E0FF; /* Grey background color */
-    color: #002060; /* Black text color */
-    }
- 
-    /* Header */
-    .circles{
-        background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
-        background-size:cover;	
-        opacity:80%;	
-        margin:0; 
-        width: 100%;
-        background-repeat:no-repeat;
-    }
-
-    .dropdown-content {
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
         display: none;
-        position: absolute;
-        background-color: #B7E0FF;
-        opacity: 80%;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 10;
     }
 
-    .dropdown-content a {
-        float: none;
-        color: #002060;
-        padding: 14px 18px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
     }
 
-    .dropdown-content a:hover {
-        background-color: #5893D4;
-        color: #002060;
-    }
-      
-
-    .dropdown:hover .dropdown-content {
-        display: block;
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
     }
 
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    html {
+        height: 100%;
+        min-height: 100%;
+        font-family: 'Raleway', sans-serif;
+
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+        background: white;
+
+        font-family: 'Raleway', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 
+<style>
 
+/* table education */
+
+#education {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ #education td, #education th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ #education caption {
+   background-color: #002060;
+   color: white;
+   font-size: large;
+   padding: 8px;
+   text-align: left;
+ }
+ 
+ #education tr:nth-child(even){background-color: #eff4ff;}
+ 
+ #education tr:hover {background-color: #ddd;}
+ 
+ #education th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #002060;
+   color: white;
+   font-weight: 100;
+ }
+
+ #education a:link {color: #5245da;} 
+ #education a:visited {color: #002060}  
+ #education a:hover {color: #002060}  
+ #education a:active {color: #C0F0FC}  
+ 
+#education2 {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ #education2 td, #education2 th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ #education2 caption {
+   background-color: #002060;
+   color: white;
+   font-size: large;
+   padding: 8px;
+   text-align: left;
+ }
+ 
+ #education2 tr:nth-child(even){background-color: #eff4ff;}
+ 
+ 
+#education2 th {
+   text-align: left;
+ }
+
+ #education2 th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #002060;
+   color: white;
+   font-weight: 100;
+   width: 20%;
+ }
+
+ #education2-external {
+   width: 100%;
+   border: 5px;
+   border-width: 5px;
+   border-color: chartreuse;
+ }
+
+</style>>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
+
+    <!-- header -->
+    <img src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--header-education.png" class="banner">
+
+    <style>
+        .banner {
+
+            width: 100%;
+            background-size: cover;
+            margin-top: 90px;
+            z-index: 5;
+        }
+    </style>
+
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
+
+
+    <!-- dropdown menu-->
     <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
-        <div style="padding: 14px 20px;
-        display: flex;
-        cursor: pointer;">
+        <div style="padding: 14px 20px;display: flex;cursor: pointer;">
             <a href="https://2021.igem.org/Team:Greece_United" class="active">
-                
-
-                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
-
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
             </a>
         </div>
 
-
-        <div class="right-navbar" >
+        <div class="right-navbar">
             <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
-
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                        onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
                         </div>
-                    </div> 
-                </li>
-                
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content" >
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-                        </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
                         </button>
                         <div class="dropdown-content">
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
                         </div>
-                    </div> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
                         </button>
                         <div class="dropdown-content">
-                            
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
             </ul>
-            
         </div>
     </div>
 
 
     <script>
         // Navigation Bar
-        function changeColor(x){
+        function changeColor(x) {
             x.style.background = '#5893D4';
             x.style.color = '#002060';
         }
 
-        function normalColor(x){
+        function normalColor(x) {
             x.style.background = '#B7E0FF';
         }
     </script>
@@ -372,268 +354,12 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
-    <!-- in page menu & progress bar -->
-	<style>
-		/* progress bar */
-		
-		#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-        font-family: 'Raleway', sans-serif;
-		/* background-color: #002060; */
-		}
 
-		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-		pointer-events: none;
-		}
-
-		#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-		}
-
-		#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
-
-		@media screen and (max-width: 767px) {
-            #fixedOverlay .scroll-wrapper .scroll-area {
-                width: 10vw;
-            }
-		}
-
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-		}
-
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-		}
-		
-		#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-		}
-		
-		/* in page menu */
-        .indexbutton {
-            display: none;
-            color: #FAFAFC;
-            text-transform: capitalize;
-            font-size: 1.4rem;
-            width: 100%;
-            text-align: center;
-            font-weight: bold;
-            padding: 16px 0;
-            height: 62px;
-            box-sizing: border-box;
-            cursor: pointer;
-            background-color: #6281EF;
-            z-index: 21;
-            transition: 0.5s;
-        }
-        @media (max-width: 800px) {
-            .indexbutton {
-                display: block;
-            }
-        }
-
-		.sideBlock 
-		{
-			text-transform: uppercase;
-			text-decoration: none;
-			float: left;
-			margin-left: 10vw;
-			margin-top: 400px;
-			position: -webkit-sticky;
-			position: fixed;
-			top: 30%;
-			margin: 200px 32px 0 4vw;
-			transform: translateY(-50%);
-			min-width: 20px;
-			max-width: 350px;
-			background: #ffffff;
-			opacity: 80%;
-			border-radius: 15%;
-			padding-left: 20px;
-			z-index: 2;
-		}
-
-		@media (max-width: 1024px) {
-            .sideBlock {
-                margin: 200px 32px 0 4vw;
-            }
-		}
-
-		.sideBlock b {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-left: 0.25em;
-            padding-bottom: 20px;
-            display: block;
-		}
-
-		.sideBlock ul {
-            margin: 1em 0;
-            padding: 0;
-		}
-
-		.sideBlock a {
-            color: #002060;
-            text-decoration: none;
-            font-family: 'Raleway', sans-serif;
-
-		}
-
-		.sideBlock li {
-            margin: 24px;
-            list-style: none;
-            color: #002060;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            margin-left: 0.25em;
-		}
-
-		.sideBlock li:last-child {
-		    margin-bottom: 0;
-		}
-
-		.sideBlock li div {
-            max-width: 15px;
-            max-height: 15px;
-            box-sizing: border-box;
-            border: 1px solid;
-            color: #002060;
-            border-radius: 2px;
-            transition: 0.5s;
-            margin-right: 8px;
-            height: 10vw;
-            width: 10vh;
-		}
-
-		.sideBlock li.active div {
-		    background-color: #002060;
-		}
-
-		@media (max-width: 800px) {
-            .sideBlock {
-                position: fixed;
-                bottom: 0;
-                padding: 0 64px;
-                background-color: #6281EF;
-                color: #FAFAFC;
-                float: unset;
-                margin: 0;
-                z-index: 20;
-                width: 100%;
-                box-sizing: border-box;
-                min-width: unset;
-                max-width: unset;
-                text-align: center;
-                transition: transform 0.5s;
-                top: unset;
-                transform: translateY(calc(100% - 62px));
-                display: fixed;
-                flex-direction: column;
-                align-items: center;
-            }
-            .sideBlock b {
-                display: block;
-                margin: 0;
-            }
-            .sideBlock ul {
-                display: inline-block;
-                text-align: start;
-                margin-top: 0;
-                margin-bottom: 30px;
-            }
-            .sideBlock li {
-                font-weight: bold;
-            }
-            .sideBlock li a {
-                color: #FAFAFC;
-            }
-            .sideBlock li div {
-                color: #FAFAFC;
-            }
-            .sideBlock li.active div {
-                background-color: #FAFAFC;
-            }
-            .sideBlock.notshow {
-                transform: translateY(calc(100% - 900px));
-            }
-            .sideBlock.open {
-                transform: translateY(0);
-            }
-		}
-
-		
-		#content {
-			padding: 0px;
-			width: 100%;
-			margin-top: -7px;
-			margin-left: 0px;
-			border: none;
-			line-height: initial;
-		}
-		
-	</style> 
-
-	<!-- back to top -->
-	<style>
-		#BacktoTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #B8EBFF;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 30%;
-		}
-
-		#BacktoTop:hover {
-		    background-color: #002060;
-		}
-	</style>
 
     <!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
         </svg>
     </button>
     <!-- Back to Top Button End-->
@@ -641,484 +367,937 @@
     <!-- Progress bar -->
     <div id="globalWrapper">
         <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper" >
+            <div class="scroll-wrapper">
                 <div id="sidebar-wrapper" class="scroll-area">
                     <div id="scrollbar-container">
                         <div id="scrollbar" style="height: 3%;"></div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <!-- Progress bar End -->
-	
-	<!-- in page menu -->
-    
-	<div id="index" class="sideBlock">
+
+    <!-- in page menu -->
+
+    <div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
 
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading1">Where it all began!</a>
-			</li>
-		</ul>
         <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading2">biology comic book </a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading3">educational games </a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading4">Educational slideshows</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading5">Educational portal </a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading6">Osteoarthritis <br>risk calculator</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading7">high school students</a>
-			</li>
-		</ul>
-	</div>
+            <li class="active">
+                <div></div>
+                <a href="#heading0">Overview</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Where it all began!</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">biology comic book </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">educational games </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading4">Educational slideshows</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading5">Educational portal </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading6">Osteoarthritis <br>risk calculator</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading7">Educational Activities</a>
+            </li>
+        </ul>
+    </div>
 
 
-    <script>
-    
-        var textSection = null;
-        var navbar = document.getElementById("navbar");
-    
-        window.addEventListener('load', function() {
-            textSection = document.querySelector('.elevate-navbar');
-            checkScrollPos();
-            checkBackToTopPos();
-        })
-        window.addEventListener('scroll', function() {
-            updateScrollbar();
-            checkNavbarPos();
-            checkScrollPos();
-            checkBackToTopPos();
-        });
-        function checkScrollPos() {
-            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-            let scrollWrapper = document.querySelector('.scroll-wrapper');
-            if (scrollbarBottom >= footerTop) {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
-            } else {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
-            }
-        }
-        function checkBackToTopPos() {
-            if ($(window).scrollTop() > 1000) {
-                $('#backtotop-wrapper').addClass('scrolled')
-            } else $('#backtotop-wrapper').removeClass('scrolled')
-        }
-        $(document).ready(function() {
-            $('#backtotop-wrapper').on('click', function() {
-                $('html, body').animate({
-                    'scrollTop': $('body').offset().top
-                }, 2000);
-            });
-        });
-    
-        function updateScrollbar() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - window.innerHeight;;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollbar").style.height = scrolled + "%";
-        }
-        
-        var scroll = new SmoothScroll('a[href*="#"]', {
-                speed: 400,
-                speedAsDuration: true,
-                offset: 160
-            });
-    
-            document.getElementById("fixedOverlay").classList.add("project");
-    </script>
-    <!-- back to top button -->
-    <script>
-        
-        var mybutton = document.getElementById("BacktoTop");
-    
-        window.onscroll = function() {scrollFunction()};
-    
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-        }
-    
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
-    </script>
+    <!-- main content -->
+    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
 
-    
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-            <div class="contentBlock">
-                <div class="content">
-                    
-                    <h2>Overview</h2>
-                    <p class="content-paragraph">
-                        
-                        Once our team was formed with members from diverse scientific fields, we faced a real (and surprising) problem: to establish a 
-                        common understanding of synthetic biology amongst all team members. Some long discussions later, we ended up with a short and 
-                        funny video on the definition of Synthetic Biology. 
+                <div id="heading0"></div>
 
-						<br><br> 
+                <h2>Overview</h2>
 
-                        This initial educational video was indeed our team’s very first tangible outcome! 
+                <p class="content-paragraph">
 
-						<br><br> 
+                    Once our team was formed with members from diverse scientific fields, we faced a real (and
+                    surprising) problem: to establish a
+                    common understanding of synthetic biology amongst all team members. Some long discussions later, we
+                    ended up with a short and
+                    funny video on the definition of Synthetic Biology.
 
-                        Via the process of creating this first educational item and the final item itself, we managed to explain synthetic biology 
-                        to our friends and family and secure their support to embark into the iGEM endeavor. We also used it to explain the field 
-                        of our efforts to initial sponsors and supporters. 
+                    <br><br>
 
-						<br><br> 
+                    This initial educational video was indeed our team’s very first tangible outcome!
 
-                        The fulfilment of achieving so much with such a simple educational item was disproportionally huge!!! And this was a unanimous 
-                        silent decision amongst all team members to embark into the educational experience and make it a vital part of our project to 
-                        design and deliver interactive and participatory educational tools on synthetic biology and activities to diverse audiences. 
+                    <br><br>
 
-						<br><br> 
+                    Via the process of creating this first educational item and the final item itself, we managed to
+                    explain synthetic biology
+                    to our friends and family and secure their support to embark into the iGEM endeavor. We also used it
+                    to explain the field
+                    of our efforts to initial sponsors and supporters.
 
-                        The following paragraphs present a synopsis of the various educational tools and activities we designed and delivered, 
-                        loosely using Bloom’s taxonomy to describe each contribution, for example to identify the level of learning (levels include: 
-                        knowledge, comprehension, application and analysis) and formulate learning outcomes (levels include: recall, examine, apply, 
-                        analyze, evaluate, create). 
+                    <br><br>
 
-						<br><br> 
+                    The fulfilment of achieving so much with such a simple educational item was disproportionally
+                    huge!!! And this was a unanimous
+                    silent decision amongst all team members to embark into the educational experience and make it a
+                    vital part of our project to
+                    design and deliver interactive and participatory educational tools on synthetic biology and
+                    activities to diverse audiences.
 
-                        Our contribution is along three pillars 
+                    <br><br>
 
-							<li><b>a)</b>&nbsp;&nbsp;novel educational material and tools </li>
-							<li><b>b)</b>&nbsp;&nbsp;education and communication activities for the general public and special societal groups</li>
-							<li><b>c)</b>&nbsp;&nbsp;structured educational events for high school students </li>
+                    The following paragraphs present a synopsis of the various educational tools and activities we
+                    designed and delivered,
+                    loosely using Bloom’s taxonomy* to describe each contribution, for example to identify the level of
+                    learning (levels include:
+                    knowledge, comprehension, application and analysis) and formulate learning outcomes (levels include:
+                    recall, examine, apply,
+                    analyze, evaluate, create).
 
-                    </p>
-                    <p class="content-paragraph">
-                        In total, our contribution to education covers novel material and events designed for and delivered for audiences in all 
-                        levels of education, spanning from kindergarten to higher and lifelong continuing education. 
+                    <br>
+                    <br>
 
-						<br><br> 
+                    Our contribution is along three pillars
 
-                        Note that since the distinction between education and communication is not always easy, some of the activities and 
-                        material may be included in both wiki pages. 
+                    <li>a)&nbsp;&nbsp;novel educational material and tools </li>
+                    <li>b)&nbsp;&nbsp;education and communication activities for the general public and special societal
+                        groups</li>
+                    <li>c)&nbsp;&nbsp;structured educational events for high school students </li>
+
+                </p>
+                <p class="content-paragraph">
+                    In total, our contribution to education covers novel material and events designed for and delivered
+                    for audiences in all
+                    levels of education, spanning from kindergarten to higher and lifelong continuing education.
+
+                    <br><br>
+
+                    Note that since the distinction between education and communication is not always easy, some of the
+                    activities and
+                    material may be included in both wiki pages.
+                </p>
+
+                <div style="font-size: 0.9em; font-style: italic; " class="references">
+
+                * Bloom, B. S.; Engelhart, M. D.; Furst, E. J.; Hill, W. H.; Krathwohl, D. R. (1956). Taxonomy
+                of educational objectives: The classification of educational goals. Handbook I: Cognitive
+                domain. New York: David McKay Company
+                </div>
+
+                
+
+                <br><br><br><br>
+                <h2>Educational Tools & Materials</h2>
 
 
-					</p>
+                <div id="heading1"></div>
 
-                    <br><br><br><br>
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>Where it all began! Synthetic biology in 3:50 minutes </caption>
 
-                    <h3>References</h3>
-                    <div style="font-size: 0.7em; font-style: italic; " class="references">
-                        
-                        <ol>
-                            <li>Bloom, B. S.; Engelhart, M. D.; Furst, E. J.; Hill, W. H.; Krathwohl, D. R. (1956). Taxonomy of educational objectives: The classification of educational goals. Handbook I: Cognitive domain. New York: David McKay Company.</li>
-                            <li>Rehage, Kenneth J.; Anderson, Lorin W.; Sosniak, Lauren A. (eds.). Bloom's taxonomy: A forty-year retrospective. Yearbook of the National Society for the Study of Education. 93. Chicago: National Society for the Study of Education, 1994. ISSN 1744-7984.</li>
-                        </ol>
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>To explain the concept of synthetic biology </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>Video, with graphics, voice and subtitles to allow inclusivity</td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Comprehension </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>All ages, preferably high school and older audiences</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>Basic biology terminology</td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>Upon completion, the person will be able to:
+                                    <br/>
+                                    &nbsp;&nbsp;- explain what is synthetic biology and what it is not
+                                    <br/>
+                                    &nbsp;&nbsp;- identify the relationship of synthetic biology to other fields of science
+                                    <br/>
+                                    &nbsp;&nbsp;- list the main objectives of synthetic biology
+                                    <br/>
+                                    &nbsp;&nbsp;- name some example outcomes of synthetic biology
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>The video was developed via interactions within our multidisciplinary team. Hence,
+                                    it has been used as a teaser to spark discussions with sponsors, and other
+                                    audiences.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>Total of 347 views on YouTube and a lot more during communication and education
+                                    sessions held by our team</td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">Watch the video!</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <br><br><br><br>
+
+
+                <div id="heading2"></div>
+
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>“The Adventures of Little Aaron” A biology comic book</caption>
+
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>To introduce to basic human body systems and its basic building blocks </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>Comic book, digital and printed </td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Knowledge and comprehension  </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>Kindergarten and primary schools, but all audiences are welcome</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>
+                                    Upon completion, the person will be able to 
+                                    <br/>
+                                    &nbsp;&nbsp;- ­	name major body systems and organs 
+                                    <br/>
+                                    &nbsp;&nbsp;- ­	identify cells as the body building blocks at a microscopic level
+                                    <br/>
+                                    &nbsp;&nbsp;- ­	discuss the role of DNA in biodiversity  
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>This comic book is intended to be used by an educator or parent/guardian for interactive sessions with kids in order to spark discussions on the function of the human body, its cells as building blocks and the role of DNA in biodiversity.  
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>The book is available online for free download. It can also be printed. We have used it in several communication activities for fun. Most importantly, the book was the backbone of our educational activity for 23 unaccompanied refugee kids in the ages 7-10 hosted in the Alexandroupoli shelter. We devised this fun 10-page book to smoothly approach the sensitive audience of unaccompanied refugee children. Apart from introducing to basic biology, we used the adventures of little Aaron to show that it is possible to make your dreams come true and open a dialogue on dreaming big and trying hard. </td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td><a href="https://2021.igem.org/Team:Greece_United/Education/Comic">Browse the comic!</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br><br><br>
+
+
+                <div id="heading3"></div>
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>Synthetic biology online educational games</caption>
+
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>To build up knowledge on basic biology and synthetic biology concepts via simple educational games  </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>A website with a toolbox of three different online educational games </td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Knowledge   </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>Highschool and older</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>Some familiarization with basic biology concepts </td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>
+                                    Upon completion, the person will be able to 
+                                    <br/>
+                                    &nbsp;&nbsp;- define basic biology concepts 
+                                    <br/>
+                                    &nbsp;&nbsp;- spell out basic biology terminology 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>The interactive word games implemented in this toolbox can be part of collaborative learning activities, thus promoting discussions on biology. In some occasions, we asked adult participants in our communication activities (e.g. HELEXPO and ECECSON exhibitions) to test play with the tool and act as our beta testers. This responsible role was a good excuse for a number of otherwise seemingly busy professionals to engage with a basic biology educational game, have fun and eventually delve into specialized and even philosophical discussions on synthetic biology with our team members. The public and us alike had the chance to participate in exciting debates instigated by a simple ‘hangman’ word game. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>The online tool was used in all communication activities, and for fun sessions within our team. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td><a href="https://2021.igem.org/Team:Greece_United/Education/Games">See more about the games!</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <br><br><br><br>
+
+
+                <div id="heading4"></div>
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>Educational slideshows</caption>
+
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>To explain introductory concepts in biology, cell biology, genetics, synthetic biology, biological model building, and bioethics </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>Slideshows </td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Knowledge and comprehension    </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>Highschool and undergraduate</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>Basic knowledge of biology </td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>
+                                    Upon completion, the person will be able to 
+                                    <br/>
+                                    &nbsp;&nbsp;- ­discuss on basic concepts of biology, cell biology, genetics, synthetic biology, biological model building, and bioethics
+                                    <br/>
+                                    &nbsp;&nbsp;- ­identify basic terminology in the above fields 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>The slideshows are integrated together with the educational games in the Teams Educational Toolkit {link to wiki page} to provide a holistic experience combining passive self-learning and experiential learning.  The slideshows were used in several educational events to form a basis for an open dialogue with the audience. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>Have been used as instructional material in education and communication activities of the team and also are available for self-learning along with the educational word games. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td><a href="https://2021.igem.org/Team:Greece_United/Education/Slideshows">Watch the slideshows!</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br><br><br>
+
+
+                <div id="heading5"></div>
+
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>Educational portal</caption>
+
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>To provide a holistic educational experience for collaborative learning and teaching in heterogeneous learner groups   </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>Integrated web platform that meshes educational tools described above, namely the comic book, digital word games, and instructional slideshows </td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Knowledge and comprehension    </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>Heterogeneous groups including learners from different levels, spanning from kindergarten to highschool and higher education</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>None </td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>
+                                    Upon completion, the person will be able to 
+                                    <br/>&nbsp;&nbsp;-­­ name major body systems and organs 
+                                    <br/>&nbsp;&nbsp;- ­­identify cells as the body building blocks at a microscopic level 
+                                    <br/>&nbsp;&nbsp;- ­discuss the role of DNA in biodiversity  
+                                    <br/>&nbsp;&nbsp;- ­discuss on basic concepts of biology, cell biology, genetics, synthetic biology, biological model building, and bioethics
+                                    <br/>&nbsp;&nbsp;- ­identify and spell basic terminology in the above fields 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>The platform is designed to provide an integrated approach to an introduction to biology concepts. The combination of different educational activities and instructional models creates the perfect environment for parents or educators to learn together with their children while engaging in fun activities. We have used the portal in many of our education and communication activities to spark discussions with the audience and engage them in entertaining educational sessions. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>Have been used as instructional material in education and communication activities of the team and also are available for self-learning along with the educational word games. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td><a href="https://2021.igem.org/Team:Greece_United/Education/Portal">Learn more about the portal!</a>
+                                    <br/> 
+                                    <a href="https://2021.igem.org/Team:Greece_United/Education/Portal">TODO: Visit the portal!</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br><br><br>
+
+
+                <div id="heading6"></div>
+
+                <div class="education">
+                    <table id="education" cellspacing="0">
+                        <caption>Osteoarthritis risk calculator</caption>
+
+                        <tbody>
+                            <tr>
+                                <th>Objective</th>
+                                <td>Το increase health literacy, boost awareness on health risk factors and support collaborative decision making in health  </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td>Online osteoarthritis health risk calculator tool</td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Level of learning</th>
+                                <td>Application and Analysis    </td>
+                            </tr>
+                            <tr>
+                                <th>Level of audience</th>
+                                <td>University, continuing education</td>
+                            </tr>
+                            <tr>
+                                <th>Prerequisites</th>
+                                <td>Basic knowledge of everyday statistics terminology </td>
+                            </tr>
+                            <tr>
+                                <th>Learning outcomes</th>
+                                <td>
+                                    Upon completion, the person will be able to 
+                                    <br/>&nbsp;&nbsp;-­	will be able to identify major risk factors for osteoarthritis (as dictated by current medical evidence)
+                                    <br/>&nbsp;&nbsp;-­	understand personal odds for developing osteoarthritis 
+                                    <br/>&nbsp;&nbsp;-­	prioritize behavioural and other personal choices to reduce osteoarthritis risk  
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Two-way dialogue</th>
+                                <td>The tool is designed to be used by citizens and also in doctor-patient consultation sessions, in order to initiate discussions on osteoarthritis risk awareness and prevention. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Impact</th>
+                                <td>The online OA calculator was released days before the wiki freeze. Impact will be accessed via structured evaluation based on volunteers, using standard instruments on health literacy and patient empowerment assessment, after Ethics Committee approval of the respective research protocol. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>More info</th>
+                                <td>
+                                    <a href="https://2021.igem.org/Team:Greece_United/Model/App">Read about the methodology and development details!</a>
+                                    <br/> 
+                                    <a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculate your osteoarthritis risk!</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <br><br><br><br>
+
+                <h2>Educational Activities</h2>
+
+                <p class="content-paragraph">
+                    Using the educational materials and tools described above we have designed and implemented education
+                    and science communication
+                    activities for the general public and for special community groups (see more on communication in the
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication">Education and Communication</a>
+                    page).
+                </p>
+
+                    <h3>Educational events for general public and special groups</h3>
+
+                    <div class="education2">
+
+                        <table id="education2-external" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <table id="education2" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <td>Lab On the Street</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <td>TODO</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Audience</th>
+                                                    <td>General Public</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Activity</th>
+                                                    <td>Interactive presentations, live discussions, educational games & experiments</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Learn more</th>
+                                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication">­ Read more about the event</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <th>
+                                        <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                    </th>
+                                </tr>
+
+
+                                <tr>
+                                    <th>
+                                        <table id="education2" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <td>BioGirls</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <td>25,26 Sep & 3,4 Oct 2021</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Audience</th>
+                                                    <td>Girls ages 10-14</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Activity</th>
+                                                    <td>Interactive presentations, live discussions, educational games & experiments</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Learn more</th>
+                                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication">­ Read more about the event</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <th>
+                                        <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                    </th>
+                                </tr>
+                                
+                                
+
+                                <tr>
+                                    <th>
+                                        <table id="education2" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <td>Fun with Biology</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <td>TODO</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Audience</th>
+                                                    <td>Unacompanied refugee kids 7-10</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Activity</th>
+                                                    <td>Online educational experience, exploting the comic book to open discussion on basic biology facts.</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Learn more</th>
+                                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication">­ Read more about the event</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <th>
+                                        <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                    </th>
+                                </tr>                                
+                               
+                            </tbody>
+                        </table>
                     </div>
+                    
 
-                    <br><br><br><br>
+                    <br><br>
+                    <br><br>
+
+                <p class="content-paragraph">
+                    Also we designed and delivered several structured educational activities for high school students,
+                    listed below.
+
+                </p>
+
+                <br>
+
+                <div id="heading7"></div>
+                <h3>Educational events for high school students</h3>
+
+                <div class="education2">
+
+                    <table id="education2-external" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>Hungarian iGEM high school team SZTA_RMG_Szeged</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>12 October 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>iGEM high school team</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Tutorial on MATLAB and Cell Designer </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>Korean iGEM high school team KOREA_HS</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>4 October 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>iGEM high school team</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Tutorial on MATLAB </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>Summer School of the Center for Talented Youth (CTY), Anatolia College, Thessaloniki, Greece, in collaboration with John Hopkins University, USA </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>13 July 2021 </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>Talented high school students from all over Greece in 4 different CTY classes. Over 50 students aged 12 - 16 years old. </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Inspirational presentation of the iGEM competition and discussion on careers in science. Basics of synthetic biology.  </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>Pierce High School, Athens, Greece </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>3 June 2021 </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>2 class units, 15-17 years old </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Tutorial on “Viruses and their Impact in Contemporary Biology”. Discussed virus biology and how we can use viruses and bacteria in synthetic biology. In addition, we introduced possible applications in medicine, therapeutics, agriculture and other fields  </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
 
 
-                    <div id="heading1"></div>
-                    <h3>Where it all began! Synthetic biology in 3:50 minutes </h3>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading2"></div>
-                    <h3>“The Adventures of Little Aaron” A biology comic book </h3>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading3"></div>
-                    <h3>Synthetic biology online educational games</h3>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading4"></div>
-                    <h3>Educational slideshows</h3>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading5"></div>
-                    <h3>Educational portal </h3>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading6"></div>
-                    <h3>Osteoarthritis risk calculator </h3>
-
-                    <br><br><br><br>
-
-                    <p class="content-paragraph">
-                        Using the educational materials and tools described above we have designed and implemented education and science communication 
-                        activities for the general public and for special community groups (see more on communication in the 
-                        <a href="https://2021.igem.org/Team:Greece_United/Communication">Education and Communication</a> page).
-
-                        <br><br>
+                            
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>National High School Student Conference “Magic of Physics” </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>29 May 2021 </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>More than 20 high school students  </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Basics of synthetic biology and a tutorial on iGEM competition  </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
 
 
-                        <li><b>-</b>&nbsp;&nbsp; <a href="https://2021.igem.org/Team:Greece_United/Communication">Lab On the Street</a></li>
-                        <li><b>-</b>&nbsp;&nbsp; <a href="https://2021.igem.org/Team:Greece_United/Communication">Bio Girls</a></li>
-                        <li><b>-</b>&nbsp;&nbsp; <a href="https://2021.igem.org/Team:Greece_United/Communication">­	Fun with Biology for children </a></li>
+                            
+                            <tr>
+                                <th>
+                                    <table id="education2" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>School</th>
+                                                <td>Scouts group in Alexandroupoli, Greece </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <td>10 April 2021 </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Audience</th>
+                                                <td>8 boys and girls, ages 11-14 years old</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <td>Basics of synthetic biology including interesting applications. Engagement with the educational games developed by the team. </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th>
+                                    <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png"/>
+                                </th>
+                            </tr>
 
-                    </p>
-
-                    <p class="content-paragraph">
-                        Also we designed and delivered several structured educational activities for high school students, listed below.
-
-                    </p>
-
-                    <br><br><br><br>
-
-
-                    <div id="heading7"></div>
-                    <h3>Educational events for high school students</h3>
-
+                        </tbody>
+                    </table>
 
 
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
-    
+    </div>
 
 
+    <footer class="footer">
+        <!-- Footer -->
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
 
-    <style>
-        td, th {
-            border: 1px solid black;
-            padding: 15px;
-        }
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
 
-        table{
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        h2 {
-            font-family: 'Raleway', sans-serif;
-        }
-        .content p.photo-desc {
-            text-align: center !important;
-            font-size: 0.8em !important;
-        }
-
-        .class-paragraph{
-            padding-left: 5px;
-            margin-right: 5px;
-            text-align: justify;
-
-        }
-        #content-tag {
-        background-color: #ffffff;
-        position: relative;
-        }
-
-        #content-tag p {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
-        }
-        
-        
-        #content-tag .contentBlock {
-        float: none;
-        margin: 0 auto;
-        }
-        
-        
-        #content {
-            padding: 0px;
-            width: 100%;
-            margin-top: -7px;
-            margin-left: 0px;
-            border: none;
-            line-height: initial;
-
-        }
-        
-        .contentBlock {
-        width: 64vw;
-        max-width: 1200px;
-        float: right;
-        display: flex;
-        flex-direction: column;
-        font-family: 'Raleway', sans-serif;
-        
-        }
-        
-        .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-        }
-        
-        .content p:first-child {
-        margin-top: 0;
-        }
-        
-    
-        .content ul {
-        padding-inline-start: 20px;
-        list-style-image: none;
-        list-style-type: none;
-        }
-        
-        .content ul li {
-        display: flex;
-        }
-        
-        .content ul li::before {
-			list-style-type: none;
-
-        color: #000000;
-        }
-        
-        .content .splide ul li::before {
-        content: unset;
-        }
-        
-        .content li {
-        margin: 10px;
-        font-size: 1.2em;
-        list-style-type: none;
+        <br><br><br><br><br><br><br><br>
 
 
-        }
-        
-        .content li::marker {
-        color: #000000;
-        font-weight:bold;
-        }
-        
-        .content h4, .content h5 {
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-block-end: 0.2em;
-        margin-block-start: 60px;
-        }
-        
-        .content h5 {
-        font-size: 1em;
-        }
-        
-        .content a {
-        color: #000000;
-        
-        text-align: center;
-        cursor: pointer;
-        }
-        
-        .content a.citation {
-        font-size: 0.6em;
-        vertical-align: super;
-        }
-        
-        .content-paragraph{
-            margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            text-align: justify;
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
 
-        }
-    
-    </style>
+            </div>
 
-    <style>
-        
-        
-        </style>
-        
-            <footer class="footer">
-                <!-- Footer -->
-                         
-                    
-        
-                <br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                    
-                <br><br><br><br><br><br><br><br>
-                        
-                    
-                <div style="display:flex;flex-wrap:wrap; ">
-                    <div class="col">
-                        <a href="https://igemnous.med.duth.gr/" target="_blank">
-                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);" 
-                                 src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
-                        </a>
-                       
-                    </div>
-                    
-                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                        <div class="footer_sponsors" style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                            <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                            <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;" ></a>
-                            <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-                        </div>
-                    </div>
-        
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
                 </div>
-            
-            </footer>
-        
+            </div>
 
-    </body>
+        </div>
+
+    </footer>
+</body>
+
 </html>

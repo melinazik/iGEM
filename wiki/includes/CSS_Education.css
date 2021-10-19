@@ -1,0 +1,75 @@
+/* table education */
+
+#education {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ #education td, #education th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ #education caption {
+   background-color: #002060;
+   color: white;
+   font-size: large;
+   padding: 8px;
+   text-align: left;
+ }
+ 
+ #education tr:nth-child(even){background-color: #eff4ff;}
+ 
+ #education tr:hover {background-color: #ddd;}
+ 
+ #education th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #002060;
+   color: white;
+   font-weight: 100;
+ }
+
+
+
+ 
+#education2 {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ #education2 td, #education2 th {
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+
+ #education2 caption {
+   background-color: #002060;
+   color: white;
+   font-size: large;
+   padding: 8px;
+   text-align: left;
+ }
+ 
+ #education2 tr:nth-child(even){background-color: #eff4ff;}
+ 
+ #education2 th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #002060;
+   color: white;
+   font-weight: 100;
+   width: 20%;
+ }
+
+ #education2-external {
+   width: 100%;
+   border: 5px;
+   border-width: 5px;
+   border-color: chartreuse;
+ }
+ 
