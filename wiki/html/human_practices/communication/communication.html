@@ -19,6 +19,22 @@
     </script>
     <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+    <!-- Remove -->
+    <link rel="stylesheet" type="text/css" href="./mediawiki/style.css" />
+    <link rel="stylesheet" type="text/css" href="./mediawiki/table_styles.css" />
+    <script type="text/javascript" src="./mediawiki/jquery.tablesorter.min.js"> </script>
+    <script type="text/javascript" src="./mediawiki/2021_skin.js"> </script>
+
+    <link rel="stylesheet" type="text/css" href="./CSS_Footer.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS_Footer_Icons.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS_InPageMenu.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS_NavBar.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS_MainContent.css" />
+    <script type="text/javascript" src="./JS_NavBar.js"> </script>
+
+
+    <!-- Remove Up to here -->
+
 </head>
 <style>
     /* CLEAR DEFAULT SETTINGS **************************************************/
@@ -69,65 +85,6 @@
 
 
 <body>
-    <style>
-        #loader-wrapper {
-            display: flex;
-            align-items: center;
-            margin-top: calc((100%)/5);
-            justify-content: center;
-            height: 0.1vh;
-            width: 100vw;
-            z-index: 500;
-            position: fixed;
-            pointer-events: none;
-        }
-
-        #loader-bg {
-            position: fixed;
-            height: 200vw;
-            width: 200vw;
-            transform: translateY(0);
-            background-color: #6C8EC9;
-            transition-property: height, width, border-radius, transform;
-            transition-duration: 0.5s;
-            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-            transition-delay: 0s, 0s, 0s, 1s;
-            border-radius: 0%;
-            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-            box-shadow: 0px 0px 27px 0px #6E91CB;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-
-        #loader-wrapper img {
-            width: 30vh;
-
-        }
-
-        #loader-wrapper h1 {
-            color: #fafafc;
-            text-transform: uppercase;
-            font-family: 'montserrat-black', sans-serif !important;
-            position: absolute;
-            transform: translateY(15vh);
-            font-size: 2.2vw;
-            opacity: 100%;
-        }
-
-        #loader-bg.loaded {
-            height: 35vh;
-            width: 35vh;
-            border-radius: 70%;
-            transform: translateY(-2000px);
-        }
-    </style>
-
-
     <div id="loader-wrapper">
         <div id="loader-bg">
             <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
@@ -144,7 +101,6 @@
             }, 100);
         });
     </script>
-
 
 
 
@@ -319,267 +275,7 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
-    <style>
-        /* progress bar */
 
-        #fixedOverlay {
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            z-index: 12;
-            top: 18px;
-            transition: 1s;
-            font-family: "montserrat-light" !important;
-            /* background-color: #002060; */
-        }
-
-        #fixedOverlay[bg=none],
-        #fixedOverlay[bg=dark] {
-            pointer-events: none;
-        }
-
-        #fixedOverlay .scroll-wrapper {
-            display: flex;
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            justify-content: space-between;
-            opacity: 1;
-            transition: 0.5s;
-        }
-
-        #fixedOverlay .scroll-wrapper .scroll-area {
-            height: 100%;
-            width: 5vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media screen and (max-width: 767px) {
-            #fixedOverlay .scroll-wrapper .scroll-area {
-                width: 10vw;
-            }
-        }
-
-        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-            width: 30%;
-            height: 30%;
-            background-color: rgba(98, 129, 239, 0.3);
-            border-radius: 10px;
-            max-width: 7px;
-        }
-
-        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-            width: 100%;
-            background: #002060;
-            opacity: 100%;
-            height: 0%;
-            border-radius: 20px;
-            transition: background-color 0.5s;
-        }
-
-        #fixedOverlay nav {
-            box-sizing: border-box;
-            z-index: 2;
-            pointer-events: none;
-            display: block;
-            transition: 0.5s;
-            height: 87px;
-        }
-
-        /* back to top */
-
-        #BacktoTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #B8EBFF;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 30%;
-        }
-
-        #BacktoTop:hover {
-            background-color: #002060;
-        }
-
-        .indexbutton {
-            display: none;
-            color: #FAFAFC;
-            text-transform: capitalize;
-            font-size: 1.4rem;
-            width: 100%;
-            text-align: center;
-            font-weight: bold;
-            padding: 16px 0;
-            height: 62px;
-            box-sizing: border-box;
-            cursor: pointer;
-            background-color: #6281EF;
-            z-index: 21;
-            transition: 0.5s;
-        }
-
-        @media (max-width: 800px) {
-            .indexbutton {
-                display: block;
-            }
-        }
-
-        .sideBlock {
-            text-transform: uppercase;
-            text-decoration: none;
-            float: left;
-            margin-left: 10vw;
-            margin-top: 400px;
-            position: -webkit-sticky;
-            position: fixed;
-            top: 30%;
-            margin: 200px 32px 0 4vw;
-            transform: translateY(-50%);
-            min-width: 20px;
-            max-width: 350px;
-            background: #ffffff;
-            opacity: 80%;
-            border-radius: 15%;
-            padding-left: 20px;
-            z-index: 2;
-        }
-
-        @media (max-width: 1024px) {
-            .sideBlock {
-                margin: 200px 32px 0 4vw;
-            }
-        }
-
-        .sideBlock b {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-left: 0.25em;
-            padding-bottom: 20px;
-            display: block;
-        }
-
-        .sideBlock ul {
-            margin: 1em 0;
-            padding: 0;
-        }
-
-        .sideBlock a {
-            color: #002060;
-            text-decoration: none;
-            font-family: "lato-light", sans-serif;
-        }
-
-        .sideBlock li {
-            margin: 24px;
-            list-style: none;
-            color: #002060;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            margin-left: 0.25em;
-        }
-
-        .sideBlock li:last-child {
-            margin-bottom: 0;
-        }
-
-        .sideBlock li div {
-            max-width: 15px;
-            max-height: 15px;
-            box-sizing: border-box;
-            border: 1px solid;
-            color: #002060;
-            border-radius: 2px;
-            transition: 0.5s;
-            margin-right: 8px;
-            height: 10vw;
-            width: 10vh;
-        }
-
-        .sideBlock li.active div {
-            background-color: #002060;
-        }
-
-        @media (max-width: 800px) {
-            .sideBlock {
-                position: fixed;
-                bottom: 0;
-                padding: 0 64px;
-                background-color: #6281EF;
-                color: #FAFAFC;
-                float: unset;
-                margin: 0;
-                z-index: 20;
-                width: 100%;
-                box-sizing: border-box;
-                min-width: unset;
-                max-width: unset;
-                text-align: center;
-                transition: transform 0.5s;
-                top: unset;
-                transform: translateY(calc(100% - 62px));
-                display: fixed;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .sideBlock b {
-                display: block;
-                margin: 0;
-            }
-
-            .sideBlock ul {
-                display: inline-block;
-                text-align: start;
-                margin-top: 0;
-                margin-bottom: 30px;
-            }
-
-            .sideBlock li {
-                font-weight: bold;
-            }
-
-            .sideBlock li a {
-                color: #FAFAFC;
-            }
-
-            .sideBlock li div {
-                color: #FAFAFC;
-            }
-
-            .sideBlock li.active div {
-                background-color: #FAFAFC;
-            }
-
-            .sideBlock.notshow {
-                transform: translateY(calc(100% - 900px));
-            }
-
-            .sideBlock.open {
-                transform: translateY(0);
-            }
-        }
-
-
-        #content {
-            padding: 0px;
-            width: 100%;
-            margin-top: -7px;
-            margin-left: 0px;
-            border: none;
-            line-height: initial;
-        }
-    </style>
 
     <script>
         function changeColor(x) {
@@ -726,201 +422,8 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script>
-        var textSection = null;
-        var navbar = document.getElementById("navbar");
-
-        window.addEventListener('load', function () {
-            textSection = document.querySelector('.elevate-navbar');
-            checkScrollPos();
-            checkBackToTopPos();
-        })
-        window.addEventListener('scroll', function () {
-            updateScrollbar();
-            checkNavbarPos();
-            checkScrollPos();
-            checkBackToTopPos();
-        });
-
-        function checkScrollPos() {
-            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-            let scrollWrapper = document.querySelector('.scroll-wrapper');
-            if (scrollbarBottom >= footerTop) {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
-                    "true");
-            } else {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
-                    "false");
-            }
-        }
-
-        function checkBackToTopPos() {
-            if ($(window).scrollTop() > 1000) {
-                $('#backtotop-wrapper').addClass('scrolled')
-            } else $('#backtotop-wrapper').removeClass('scrolled')
-        }
-        $(document).ready(function () {
-            $('#backtotop-wrapper').on('click', function () {
-                $('html, body').animate({
-                    'scrollTop': $('body').offset().top
-                }, 2000);
-            });
-        });
-
-        function updateScrollbar() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - window.innerHeight;;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollbar").style.height = scrolled + "%";
-        }
-
-        var scroll = new SmoothScroll('a[href*="#"]', {
-            speed: 400,
-            speedAsDuration: true,
-            offset: 160
-        });
-
-        document.getElementById("fixedOverlay").classList.add("project");
-    </script>
 
 
-
-    <style>
-        #content-tag {
-            background-color: #ffffff;
-            position: relative;
-        }
-
-        #content-tag p {
-            margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-
-
-        #content-tag .contentBlock {
-            float: none;
-            margin: 0 auto;
-        }
-
-
-        #content {
-            padding: 0px;
-            width: 100%;
-            margin-top: -7px;
-            margin-left: 0px;
-            border: none;
-            line-height: initial;
-        }
-
-
-        .contentBlock {
-            width: 64vw;
-            max-width: 1200px;
-            float: right;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content {
-            padding: 64px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px lightgray;
-            color: #121212;
-            margin-top: 40px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content p:first-child {
-            margin-top: 0;
-        }
-
-
-        .content ul {
-            padding-inline-start: 20px;
-
-            list-style-type: none;
-            font-size: 1.2rem;
-
-        }
-
-        .content li {
-            color: #000000;
-            font-size: 1.2rem;
-            list-style-type: none;
-        }
-
-        .content ol li {
-            font-size: 1.2rem;
-
-        }
-
-        .content ul li::marker {
-            color: #000000;
-            list-style-type: none;
-        }
-
-        .content ul li::before {
-            color: #000000;
-            font-size: 1.2rem;
-            list-style-type: none;
-        }
-
-        .content .splide ul li::before {
-            content: unset;
-        }
-
-
-        .content li::marker {
-            color: #000000;
-            font-size: 1.2rem;
-            list-style-type: none;
-        }
-
-        .content h4,
-        .content h5 {
-            font-size: 1.2em;
-            text-transform: uppercase;
-            margin-block-end: 0.2em;
-            margin-block-start: 60px;
-        }
-
-        .content h5 {
-            font-size: 1.2rem;
-
-        }
-
-        .content a {
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .content a.citation {
-            font-size: 0.6em;
-            vertical-align: super;
-        }
-
-        .content-paragraph {
-            margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            text-align: justify;
-        }
-
-        .content p.photo-desc {
-            text-align: center !important;
-            font-size: 0.8em !important;
-        }
-    </style>
 
 
     <div id="heading1">
@@ -939,30 +442,30 @@
 
                         According to the National Academies of Sciences, Engineering, and Medicine [1], effective
                         science communication
-                        should engage the right tools for the right purpose, which can be any or all of the following:
+                        should engage the right tools for the right purpose, which can be any or all of the
+                        following:<br /><br />
+
+                        1)&nbsp; share recent findings and excitement for science<br />
+                        2)&nbsp; increase public appreciation of science<br />
+                        3)&nbsp; increase knowledge and understanding of science<br />
+                        4)&nbsp; influence the opinions, policy preferences or behavior of people<br />
+                        5)&nbsp; ensure that a diversity of perspectives about science held by different groups are
+                        considered when solutions to societal problems are pursued<br />
 
                     </p>
 
-
-                    <li><b>1)</b>&nbsp; share recent findings and excitement for science</li>
-                    <li><b>2)</b>&nbsp; increase public appreciation of science</li>
-                    <li><b>3)</b>&nbsp; increase knowledge and understanding of science</li>
-                    <li><b>4)</b>&nbsp; influence the opinions, policy preferences or behavior of people</li>
-                    <li><b>5)</b>&nbsp; ensure that a diversity of perspectives about science held by different groups
-                        are considered when solutions to societal problems are pursued</li>
-
-
                     <p class="content-paragraph">
 
-                        The Science of Science Communication identifies two different paradigms [2]:</p>
+                        The Science of Science Communication identifies two different paradigms [2]:<br /><br />
 
-                    <li><b>a)</b>&nbsp; &nbsp; dissemination and </li>
-                    <li><b>b)</b>&nbsp; &nbsp; participation</li>
+                        a)&nbsp; &nbsp; dissemination and<br />
+                        b)&nbsp; &nbsp; participation
+                    </p>
+
                     <p class="content-paragraph">Based on the above, we carried out diverse activities to address all
                         objectives and include both communication paradigms.
 
                         <br><br>
-
 
                         During 2021, the pandemic of COVID-19 greatly challenged our system of education and its
                         constituents. However, our team saw an opportunity
@@ -989,18 +492,117 @@
                         of 3D printed project memorabilia.
 
                         <!-- TODO SLIDESHOW -->
-
-
                     </p>
 
-
-                    <br><br>
                     <br><br>
 
-                    <h2>Science Communication Activities at-a-Glance ((for more details, visit each individual activity
-                        wiki
-                        page)</h2>
+                    <h2>Science Communication Activities at-a-Glance</h2>
+                    <h3> (for more details, visit each individual activitywiki page)</h3>
 
+                    <br><br>
+                    <style>
+                        /* table education */
+
+                        #education {
+                            font-family: Arial, Helvetica, sans-serif;
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        #education td,
+                        #education th {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                        }
+
+                        #education caption {
+                            background-color: #002060;
+                            color: white;
+                            font-size: large;
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        #education tr:nth-child(even) {
+                            background-color: #eff4ff;
+                        }
+
+                        #education tr:hover {
+                            background-color: #ddd;
+                        }
+
+                        #education th {
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            text-align: left;
+                            background-color: #002060;
+                            color: white;
+                            font-weight: 100;
+                            width: 20%;
+                        }
+
+                        #education a:link {
+                            color: #5245da;
+                        }
+
+                        #education a:visited {
+                            color: #002060
+                        }
+
+                        #education a:hover {
+                            color: #002060
+                        }
+
+                        #education a:active {
+                            color: #C0F0FC
+                        }
+
+                        #education2 {
+                            font-family: Arial, Helvetica, sans-serif;
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        #education2 td,
+                        #education2 th {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                        }
+
+                        #education2 caption {
+                            background-color: #002060;
+                            color: white;
+                            font-size: large;
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        #education2 tr:nth-child(even) {
+                            background-color: #eff4ff;
+                        }
+
+
+                        #education2 th {
+                            text-align: left;
+                        }
+
+                        #education2 th {
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            text-align: left;
+                            background-color: #002060;
+                            color: white;
+                            font-weight: 100;
+                            width: 20%;
+                        }
+
+                        #education2-external {
+                            width: 100%;
+                            border: 5px;
+                            border-width: 5px;
+                            border-color: chartreuse;
+                        }
+                    </style>
 
 
                     <div id="heading1"></div>
@@ -1013,43 +615,54 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of science
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or behavior of
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of
                                         people
                                         science
                                         <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are considered
+                                        &nbsp;&nbsp;#5 ensure diversity of society’s perspectives are considered
                                         when solutions are pursued
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Participation (followed by a dissemination session)</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, adults</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>During major events, such as HELEXPO, voluntary blood donation events, vaccine
+                                        centers and via the team’s social media </td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>The material was designed to trigger curiosity and eventually convey knowledge
+                                        while changing perceptions in several central concepts of biology and synthetic
+                                        biology. Design methods included team brainstorming, literature research, team
+                                        investigators’ research experience and the input from the DUTH Ethics Committee
+                                        (via comments preceding approval of the survey protocol)</td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>The survey was designed to include questions with a TRUE/FALSE answer, meant to
+                                        trigger curiosity on biology and synthetic biology science concepts. The
+                                        participants were not given the correct answer immediately but were directed to
+                                        the team’s social media and other planned educational activities to find the
+                                        correct answer and interact with the team members on the scientific concepts
+                                        included in the survey. </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>Total of 277 participants</td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos"> </a>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Survey">See the
+                                            NOUS survey!</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1070,43 +683,46 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of science
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or behavior of
-                                        people
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
+                                        <br />
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
                                         science
                                         <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are considered
-                                        when solutions are pursued
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Dissemination</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, all ages, emphasis on teenagers, youth, adults</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>Via team’s social media. Available on-line in YouTube</td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>Special effort to break down knowledge about central synthetic biology concepts
+                                        and the scientific procedure. Use of easy to grasp graphics, specifically
+                                        designed by the team, animation and funny approach to explain science.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>Via comments and discussion in YouTube and the team’s social media.</td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>Four videos with a total of 1652 views </td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos"> </a>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">Enjoy
+                                            our videos! </a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -1126,44 +742,49 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of science
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or behavior
-                                        of people
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
+                                        <br />
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
                                         science
-                                        <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Participation, dissemination</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>Material available on our social media platforms </td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>We draw on our education and experience to create a number of introductory
+                                        biology science quizzes to engage the public into fun scientific activities. The
+                                        design was driven by basic biology knowledge and was also inspired by basic
+                                        questions asked by members of our team with a background other than biology and
+                                        science. To create an integrated fun experience for the public, we added science
+                                        fun facts and famous science quotes. </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>Via posts, comments and other reactions on the social media.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>Total of 70 science quizzes, complemented by 20 science fun facts and famous
+                                        quotes.</td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/SocialMedia">See
+                                            our social media buzz!</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1182,44 +803,50 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of science
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or
-                                        behavior of people
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
+                                        <br />
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
                                         science
-                                        <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Participation</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, adults, youth and teenagers</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>The event was held in conjunction with a voluntary blood donation event in the
+                                        center of the Alexandroupoli city and was advertised via social media and
+                                        mailing lists of Volunteer Blood Donor groups in Alexandroupolis </td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>We designed hands-on experiments on basic biology concepts using everyday
+                                        material to show that working with biology is not necessarily a high-cost
+                                        activity that requires highly specialized infrastructure. The design considered
+                                        biosafety issues and measures against COVID-19 pandemic. </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>Experiments were repeated as visitors passed by. A rolling presentation and a
+                                        working microscope on site triggered fruitful discussions on biology and
+                                        synthetic biology concepts. </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>More than 60 visitors. </td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a
+                                            href="https://2021.igem.org/Team:Greece_United/Communication/LabOnTheStreet"></a>See
+                                        our market street presense!</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1237,45 +864,50 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
                                         science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or
-                                        behavior of people
-                                        science
+                                        &nbsp;&nbsp;#1 share recent findings and excitement for science
                                         <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Dissemination and Participation</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, adults and youth</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>A workshop invited by and implemented at TEDx DUTH 2021. The workshop and the
+                                        material used there in was disseminated via TEDx DUTH social media and media
+                                        advertisement channels and the team’s social media.</td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>The workshop presentation and public interaction was designed to present the
+                                        collateral findings of the team after one and half year collaborative work on a
+                                        scientific project. Namely, how to manage with detail in our lives, how to
+                                        identify when detail is important and when not. We drew from our experience as a
+                                        newly founded research team, with the goal to convey our findings and at the
+                                        same time highlight the fact that science is a process that also improves
+                                        personal skills. </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>The workshop was designed as an open dialogue with the audience. </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>More than 30 participants</td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/TEDx">Learn more
+                                            about the detail!</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1294,45 +926,62 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of
+                                        &nbsp;&nbsp;#1 share recent findings and excitement for science
+                                        <br />
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
+                                        <br />
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
+                                        <br />
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
                                         science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or
-                                        behavior of people
-                                        science
-                                        <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
+                                        &nbsp;&nbsp;#5 ensure diversity of society’s perspectives are considered when
+                                        solutions are pursued
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Dissemination</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, adults</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>Via team’s social media and during HELEXPO 2021</td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>We developed a thorough presentation of our project in layman’s term, to deliver
+                                        to the international commercial exhibition 85th HELEXPO, Thessaloniki, Greece as
+                                        part of the Democritus University of Thrace booth in the Akademia Pavilion. The
+                                        presentation was given to visitors of the booth for the entire duration of the
+                                        exhibition from 11 to 19 September 2021. Our focus was to highlight the burden
+                                        of osteoarthritis and explain the potential of synthetic biology to develop
+                                        novel solution for the cure of this disease and other health problems alike. The
+                                        presentation was specially designed to address common misconceptions about
+                                        biosafety issues and help confront fake news such as those we experience about
+                                        the COVID-19 vaccine technology. </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>The presentation was given in an interactive manner, tailored to the needs of
+                                        each visitor. </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>More than 350 visitors, including the Greek Minister (Niki Kerameos) and Deputy
+                                        Minister of Education (Aggelos Syrigos), the Dean of Democritus University of
+                                        Thrace (Prof. Alexandros Polychronidis), and the Mayor of Alexandroupolis (Mr.
+                                        Ioannis Zampoukis), the Chairman of Deloitte Alexander Competence Center and
+                                        numerous other policy makers, company representatives, researchers and the
+                                        general public. </td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/TIF">Visit our
+                                            booth at HELEXPO!</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1353,45 +1002,57 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of
-                                        science
+                                        &nbsp;&nbsp;#1 share recent findings and excitement for science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or
-                                        behavior of people
-                                        science
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
+                                        <br />
+                                        &nbsp;&nbsp;#4 influence the opinions, policy preferences or behavior of people
+                                        science
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Dissemination</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public, youth and adults </td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>Via team’s social media and ECESCON 2021 dissemination channels</td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>We developed a thorough presentation of our project in layman’s term,
+                                        to deliver to ECESCON 2021 participants. The presentation was given to visitors
+                                        of the online
+                                        ‘booth’ at the virtual exhibition held during the 2021
+                                        <a href="https://sfhmmy.gr/en/home">Greek Electrical & Computer Engineering
+                                            Student Conference</a>
+                                        Our focus was to highlight the burden of osteoarthritis and explain the
+                                        potential of synthetic biology to develop novel solution for the cure of this
+                                        disease and other health problems alike. We emphasized the role of engineering
+                                        and computing in the design and development of health solutions. The aim was to
+                                        raise awareness of biomedical applications for the electrical and computer
+                                        engineering.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>The presentation and discussion was given in an interactive manner, tailored to
+                                        the needs of each visitor. </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>More than 30 online visitors. </td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/ECESCON">Learn
+                                            more about our virtual booth!</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1412,62 +1073,57 @@
                                 <tr>
                                     <th>Goal</th>
                                     <td>
-                                        &nbsp;&nbsp;<b>#3</b> increase knowledge and understanding of
-                                        science
+                                        &nbsp;&nbsp;#2 increase public appreciation of science
                                         <br />
-                                        &nbsp;&nbsp;<b>#4</b> influence the opinions, policy preferences or
-                                        behavior of people
-                                        science
-                                        <br />
-                                        &nbsp;&nbsp;<b>#5</b> ensure diversity of society’s perspectives are
-                                        considered when solutions are pursued
+                                        &nbsp;&nbsp;#3 increase knowledge and understanding of science
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Paradigm</th>
-                                    <td></td>
+                                    <td>Participation, dissemination</td>
                                 </tr>
                                 <tr>
                                     <th>Target audience</th>
-                                    <td></td>
+                                    <td>General public</td>
                                 </tr>
                                 <tr>
                                     <th>Dissemination</th>
-                                    <td></td>
+                                    <td>Via social media and mailing lists of Volunteer Blood Donor groups in
+                                        Alexandroupolis and Greece</td>
                                 </tr>
                                 <tr>
                                     <th>Designing the Material</th>
-                                    <td></td>
+                                    <td>We developed a comprehensible presentation of our team’s project and iGEM
+                                        competition to present during blood donation events co-organized by our team and
+                                        Volunteer Blood Donation Groups in Alexandroupoli. We also designed a live
+                                        interaction with volunteer blood donors during the donation session. We strived
+                                        to highlight that cientists are also aware of common societal challenges and
+                                        participate in community events. We disseminated the know-how of organizing such
+                                        an event to our iGEM partner teams. </td>
                                 </tr>
                                 <tr>
                                     <th>Encouraging Open Dialogue</th>
-                                    <td></td>
+                                    <td>During the blood donation events, we challenged participants to consider
+                                        synthetic biology breakthroughs. We also outreached in the university community
+                                        to invite people to participate in community activities. Finally, we initiated
+                                        an open dialogue on societal issues and volunteerism with other iGEM teams.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Impact</th>
-                                    <td></td>
+                                    <td>Total of 53 blood units, engagement with more than 53 citizens and encouragement
+                                        of organization of more such events held by other parties. </td>
                                 </tr>
                                 <tr>
                                     <th>More info</th>
-                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/Videos">
-                                        </a></td>
+                                    <td><a href="https://2021.igem.org/Team:Greece_United/Communication/BloodDonation">Experience
+                                            the event and become a blood donor too!</a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-
-                    <br><br><br><br><br>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div id="heading12">
-            <div style="margin-left: 300px;margin-top: 200px; padding-bottom:100px;" id="content-tag">
-                <div class="contentBlock">
-
+                    <div id="heading12"></div>
 
                     <div style="margin-top: 200px;">
                         <h2>Community Partners</h2>
@@ -1485,7 +1141,7 @@
                             activities and teams we
                             partnered with.</p>
 
-                        <img style="width:60%; align-self: center; border-radius: 10px;"
+                        <img style="width:70%; align-self: center; border-radius: 10px;"
                             src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--OA--survey--nasa--spaceapps.png">
                         <p style="align-self: center" class="photo-desc"><b>NASA Space App Challenge</b> by the
                             Greek New Space
@@ -1547,536 +1203,71 @@
                                 Department of Alexandroupolis:</b> supported us in our blood donation event.</p>
 
                     </div>
-
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <!-- Footer -->
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
 
             </div>
 
-            <style>
-                /* table education */
-
-                #education {
-                    font-family: Arial, Helvetica, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
-                }
-
-                #education td,
-                #education th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
-
-                #education caption {
-                    background-color: #002060;
-                    color: white;
-                    font-size: large;
-                    padding: 8px;
-                    text-align: left;
-                }
-
-                #education tr:nth-child(even) {
-                    background-color: #eff4ff;
-                }
-
-                #education tr:hover {
-                    background-color: #ddd;
-                }
-
-                #education th {
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    text-align: left;
-                    background-color: #002060;
-                    color: white;
-                    font-weight: 100;
-                }
-
-                #education a:link {
-                    color: #5245da;
-                }
-
-                #education a:visited {
-                    color: #002060
-                }
-
-                #education a:hover {
-                    color: #002060
-                }
-
-                #education a:active {
-                    color: #C0F0FC
-                }
-
-                #education2 {
-                    font-family: Arial, Helvetica, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
-                }
-
-                #education2 td,
-                #education2 th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
-
-                #education2 caption {
-                    background-color: #002060;
-                    color: white;
-                    font-size: large;
-                    padding: 8px;
-                    text-align: left;
-                }
-
-                #education2 tr:nth-child(even) {
-                    background-color: #eff4ff;
-                }
-
-
-                #education2 th {
-                    text-align: left;
-                }
-
-                #education2 th {
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    text-align: left;
-                    background-color: #002060;
-                    color: white;
-                    font-weight: 100;
-                    width: 20%;
-                }
-
-                #education2-external {
-                    width: 100%;
-                    border: 5px;
-                    border-width: 5px;
-                    border-color: chartreuse;
-                }
-            </style>
-
-
-            <style>
-                #hp-activities {
-                    background-color: #ffffff;
-                    width: 100%;
-                    height: fit-content;
-                    padding: 200px 0;
-                    position: relative;
-                    z-index: 3;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                #hp-activities a {
-                    text-decoration: none;
-                    color: #021d3d;
-                }
-
-                #hp-activities h1 {
-                    font-size: 1.3vh !important;
-                    font-weight: 100 !important;
-                    text-align: center !important;
-                    transition: 0.4s ease-out;
-                    position: relative;
-                    top: 0px;
-                }
-
-                #hp-activities h1:hover {
-                    color: #6281ef;
-                    top: 2px;
-                }
-
-                @media (max-width: 350px) {
-                    #hp-activities h1 {
-                        font-size: 2.3vw !important;
-                    }
-                }
-
-                @media (max-width: 800px) {
-                    #hp-activities h1 {
-                        font-size: 1.1em !important;
-                    }
-                }
-
-                #hp-activities #title {
-                    height: 10vh;
-                }
-
-                #hp-activities #title .heading2 {
-                    font-family: 'Lato', sans-serif;
-
-                    font-size: 6vw;
-                    text-transform: uppercase;
-                    display: block;
-                    width: 100%;
-                    text-align: end;
-                    color: #021d3d;
-                }
-
-                #hp-activities #title .heading3 {
-                    font-family: 'Lato', sans-serif;
-
-                    font-size: 3vw;
-                    text-transform: uppercase;
-                    display: block;
-                    width: 100%;
-                    color: #021d3d;
-                    text-align: left;
-                }
-
-                #hp-activities::before {
-                    z-index: 2;
-                    position: absolute;
-                    width: 100%;
-                    height: 140vh;
-                    content: "";
-                    pointer-events: none;
-                    border-bottom: 2px solid #FAFAFC;
-                    transform: scaleY(-1);
-                    background-repeat: no-repeat;
-                }
-
-                @media (max-width: 420px) {
-                    #hp-activities::before {
-                        height: 120vh;
-                    }
-                }
-
-                #hp-activities::after {
-                    z-index: 2;
-                    position: absolute;
-                    width: 100%;
-                    height: 140vh;
-                    content: "";
-                    pointer-events: none;
-                    border-bottom: 2px solid #FAFAFC;
-                    background-repeat: no-repeat;
-                }
-
-                @media (max-width: 420px) {
-                    #hp-activities::after {
-                        height: 120vh;
-                    }
-                }
-
-                @media (max-width: 420px) {
-                    #hp-activities {
-                        height: 120vh;
-                    }
-                }
-
-                #hp-activities #box {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    height: 70vh;
-                    flex-direction: initial;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box {
-                        flex-direction: column-reverse;
-                        width: 90%;
-                        height: fit-content;
-                    }
-                }
-
-                #hp-activities #box .primary {
-                    background-color: #c38ff4 !important;
-                }
-
-                #hp-activities #box .middle {
-                    background-color: #ff8e62 !important;
-                }
-
-                #hp-activities #box .high {
-                    background-color: #64bb8d !important;
-                }
-
-                #hp-activities #box .students {
-                    background-color: #f34040 !important;
-                }
-
-                #hp-activities #box .adults {
-                    background-color: #ddcb2d !important;
-                }
-
-
-
-                #hp-activities #box .general {
-                    background-color: #e65a5a !important;
-                }
-
-                #hp-activities #box .industry {
-                    background-color: #6a8dad !important;
-                }
-
-                #hp-activities #box .scientists {
-                    background-color: #bbb264 !important;
-                }
-
-                #hp-activities #box .policy {
-                    background-color: #b464bb !important;
-                }
-
-
-                #hp-activities #box #hp-intro {
-                    max-width: 25%;
-                    background-color: #021d3d;
-                    color: #CEDDEF;
-                    padding: 20px;
-                    box-sizing: border-box;
-                    height: 50vh;
-                    width: fit-content;
-                    -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                    -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                    white-space: nowrap;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box #hp-intro {
-                        width: 90%;
-                        height: fit-content;
-                        padding: 10px;
-                        margin-top: 15px;
-                        max-width: none;
-                    }
-                }
-
-                #hp-activities #box #hp-overview {
-                    background-color: #CEDDEF;
-                    display: flex;
-                    padding: 20px;
-                    box-sizing: border-box;
-                    height: 50vh;
-                    width: 55%;
-                    -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                    -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box #hp-overview {
-                        height: fit-content;
-                        width: 90%;
-                    }
-                }
-
-                #hp-activities #box #hp-overview .activity {
-                    width: 20%;
-                    padding-left: 2px;
-                    padding-right: 2px;
-                }
-
-                #hp-activities #box #hp-overview .activity div {
-                    width: 100%;
-                }
-
-                #hp-activities #box #hp-overview .activity .title {
-                    height: 15%;
-                    color: #fafafc;
-                    font-size: 0.7em !important;
-                    text-align: center;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box #hp-overview .activity .title {
-                        font-size: 0.4em !important;
-                    }
-                }
-
-                #hp-activities #box #hp-overview .activity .points {
-                    height: 85%;
-                    display: grid;
-                    grid-auto-columns: 1fr;
-                    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-                    padding-top: 10px;
-                }
-
-                #hp-activities #box #hp-overview .activity .points .point {
-                    border-radius: 100px;
-                    box-sizing: border-box;
-                    max-width: 4vh;
-                    max-height: 4vh;
-                    margin: 0 auto;
-                    border: solid 2px #021d3d;
-                    background-color: transparent;
-                    transition: 1s;
-                    height: 7vw;
-                    width: 7vw;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box #hp-overview .activity .points .point {
-                        margin: 10px auto;
-                    }
-                }
-
-                #hp-activities #box #hp-overview .activity .points .unfilled {
-                    animation: none;
-                }
-
-                #hp-activities #box ul {
-                    list-style: none;
-                    padding-inline-start: 20px;
-                    margin: 0 auto;
-                    height: 85%;
-                    display: grid;
-                    padding-top: 10px;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box ul {
-                        flex-wrap: wrap;
-                        display: flex;
-                        height: 100%;
-                        padding-inline-start: 20px;
-                        padding-top: 0px;
-                    }
-                }
-
-                #hp-activities #box ul li {
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1em;
-                    height: fit-content;
-                    margin: 0;
-                }
-
-                @media (max-width: 767px) {
-                    #hp-activities #box ul li {
-                        flex: 1 0 50%;
-                        font-size: 3vw;
-                        margin: 5px 0;
-                    }
-                }
-
-                #hp-activities #box ul li div {
-                    max-height: 4vh;
-                    max-width: 4vh;
-                    border-radius: 100%;
-                    margin-right: 15px;
-                    height: 7vw;
-                    width: 7vw;
-                }
-
-                #hp-activities #box ul li p {
-                    font-family: "montserrat-light", sans-serif !important;
-                    margin-block-end: 0;
-                    margin-block-start: 0;
-                    font-size: 1.3vw;
-                }
-            </style>
-            <!--  TARGET GROUPS END -->
-            <style>
-                .event-overview {
-                    margin-top: 30px;
-                    border-radius: 2%;
-                    padding: 20px 40px 40px 40px;
-                    background-color: #002060;
-                }
-
-                .event-overview b {
-                    font-size: 24px;
-                    font-weight: bold;
-                    color: #CEDDEF;
-                    text-shadow: 2px 2px 4px #CEDDEF;
-
-                }
-
-                .event-overview p {
-                    margin: 0;
-                    font-size: 1.2rem;
-                    line-height: 1.5;
-                    text-align: justify;
-                    color: #CEDDEF;
-                }
-
-                .event-overview li {
-                    list-style-type: '-';
-                    color: #CEDDEF;
-                    font-size: 1.2em;
-                }
-
-                .event-overview li::marker {
-                    color: #CEDDEF;
-                    font-size: 1.2em;
-                }
-            </style>
-
-
-
-
-
-
-
-
-            <footer class="footer">
-
-                <br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i
-                                class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
-                                aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
-                                aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
-                                class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg"
-                            target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i
-                                class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
-                                aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-
-                <br><br><br><br><br><br><br><br>
-
-
-                <div style="display:flex;flex-wrap:wrap; ">
-                    <div class="col">
-                        <a href="https://igemnous.med.duth.gr/" target="_blank">
-                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
-                                src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
-                        </a>
-
-                    </div>
-
-                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                        <div class="footer_sponsors"
-                            style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                            <a href="https://duth.gr/" target="_blank"><img
-                                    src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
-                                    style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                            <a href="https://www.geneious.com/" target="_blank"><img
-                                    src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
-                                    style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
-                                    src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
-                                    style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
-                            <a href="https://bioemtech.com/" target="_blank"><img
-                                    src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
-                                    style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-                        </div>
-                    </div>
-
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
                 </div>
+            </div>
 
+        </div>
 
-
-            </footer>
+    </footer>
 
 </body>
 
