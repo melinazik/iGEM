@@ -1,3 +1,5 @@
+// https://2021.igem.org/Template:Greece_United/JS_NavBar
+
 /* NavBar Script */
 
 var textSection = null;
@@ -77,11 +79,3 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-function changeColor(x) {
-    x.style.background = '#5893D4';
-    x.style.color = '#002060';
-}
-
-function normalColor(x) {
-    x.style.background = '#B7E0FF';
-}
