@@ -18,7 +18,6 @@ using namespace std;
 
 
 //starting values & constants
-double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA
 double c1 = 0.6;             // 1/min : pre-miRNA loading rate in exosomes
 double c2 = 0.6;             // 1/min : protein loading rate in exosomes
 double DmRNA = 0.41;         // 1/min : destruction rate of mRNA
@@ -33,18 +32,12 @@ double kts = 288;            // copies/min : mRNA synthesis rate of the CMV prom
 double kp = 0.024;           // % : mRNA percentage connected with ribosomes
 double k_dil = 0.0004813524; // 1/min : constant of DNA reduction in expression
 
+
+//double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
+
+
 //behavioural equations of the model
 
-//calculates the change in mRNA1 concentration in a fraction of time
-//mRNA1_rate = rate of mRNA1 change per time
-//mRNA1 is TODO
-
-double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1)
-{
-    double mRNA1_rate =  n * kts * DNA - DmRNA * mRNA1 - k_syn * mRNA1; 
-
-    return mRNA1_rate;
-}
 
 //calculates the change in miRNA concentration in a fraction of time
 //miRNA_rate = rate of miRNA change per time
@@ -55,17 +48,6 @@ double eq_miRNA (double c1, double mRNA1, double k_syn, double t, double miRNA)
     double miRNA_rate = k_syn * mRNA1 - c1 *  miRNA; 
 
     return miRNA_rate;
-}
-
-//calculates the change in mRNA2 concentration in a fraction of time
-//mRNA2_rate = rate of mRNA2 change per time
-//mRNA2 is TODO
-
-double eq_mRNA2 (double k_syn, double mRNA1, double DmRNA, double t, double mRNA2)
-{
-    double mRNA2_rate = k_syn * mRNA1 - DmRNA * mRNA2; //C = rate of mRNA2 change per time
-
-    return mRNA2_rate;
 }
 
 //calculates the change in protein concentration in a fraction of time
@@ -131,24 +113,36 @@ double eq_Exo (double k0, double t)
 //run time 2 meres - oxi ola ta points - 
 //dokimi gia 2oro 
 
+//------------------------------------
+    //mRNA1 and mRNA2 equations are to be used when ksyn in known.
+    //Through literature research we found that almost 90% of them turn into miRNA
+    //so the assumption that they fully do, does not highly affect the model
+
+    /*//calculates the change in mRNA2 concentration in a fraction of time
+    //mRNA2_rate = rate of mRNA2 change per time
+
+    double eq_mRNA2 (double k_syn, double mRNA1, double DmRNA, double t, double mRNA2)
+    {
+        double mRNA2_rate = k_syn * mRNA1 - DmRNA * mRNA2; //C = rate of mRNA2 change per time
+
+        return mRNA2_rate;
+    }
+
+    //calculates the change in mRNA1 concentration in a fraction of time
+    //mRNA1_rate = rate of mRNA1 change per time
+
+    double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1)
+    {
+        double mRNA1_rate =  n * kts * DNA - DmRNA * mRNA1 - k_syn * mRNA1; 
+
+        return mRNA1_rate;
+    }*/
+//------------------------------------
+
+
+
 //checks if the equations have reached an equillibrium
 //where produce equals loss
-
-bool equilibrium (double prev_value, double now_value)
-{
-    bool equi;
-
-    if(prev_value - now_value == 0)
-    {
-        equi = true;
-    }
-    else
-    {
-       equi = false;
-    }
-
-    return equi ;
-}
 
 
 int main()
@@ -259,86 +253,9 @@ int main()
         file << miRNA_exo << " ,";
         file << P_exo << " ," ;
 
-        //calculate if each equation has reached equilibrium using the previous and current values
-        if(equilibrium(mRNA1_prev, mRNA1) == true)
-        {
-            file << t << " ,";
-        }  
-        else
-        {
-            file << "not yet" << " ,";
-        }
-        
-        if(equilibrium(miRNA_prev, miRNA) == true)
-        {
-            file << t << " ,";
-
-            if (miRNA_first == false)
-            {   
-                //since equlibrium was reached
-                //calculate the average concetration of miRNA in the exosomes that were produced up to now
-                //Average miRNA = total miRNA / times of calculation
-                AVG_miRNA = miRNA_in_exo / t;
-                cout << "Average cocentration of miRNA in exosomes before equilibrium: [miRNA]= " << AVG_miRNA << "for t = " << t << endl;
-
-                //initialize to calculate concentration after equilibrium
-                miRNA_in_exo = 0;
-
-                miRNA_first = true;
-            }
-        }  
-        else
-        {
-            file << "not yet" << " ,";
-        }
-
-        if(equilibrium(P_prev, P) == true)
-        {
-            file << t << " ,";
-
-            if (P_first == false)
-            {
-                //since equlibrium was reached
-                //calculate the average concetration protein in the exosomes that were produced up to now
-                //Average protein = total protein / times of calculation
-                AVG_P = P_in_exo / t;
-
-                cout << "Average cocentration of protein in exosomes before equilibrium: [protein]= " << AVG_P << "for t = " << t << endl;
-                
-                //initialize to calculate concentration after equilibrium
-                P_in_exo = 0;
-
-                P_first = true;
-            }
-        }  
-        else
-        {
-            file << "not yet" << " ,";
-        }
-
-        if(equilibrium(target_prev, target) == true)
-        {
-            file << t << " ,";
-        }  
-        else
-        {
-            file << "not yet" << " ,";
-        }
-
-        if(equilibrium(mRNA2_prev, mRNA2) == true)
-        {
-            file << t << " ,\n";
-        }  
-        else
-        {
-            file << "not yet" << " ,\n";
-        }
-
-        //variable to keep the t were equilibrium happened
-        times = t;
     }
 
-    //miRNA concentration after equlibrium - util the end of the program
+    //miRNA concentration after equlibrium - until the end of the program
     AVG_miRNA = miRNA_in_exo / times;
 
     cout << "Average miRNA concentration in exosomes after equilibrium [miRNA] = " << AVG_miRNA << "for t = " << times << endl;
