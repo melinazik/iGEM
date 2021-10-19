@@ -35,7 +35,7 @@ double cell_num = 149000000; // Mean number of cells in a joint
 double cell_dev = 46000000;  // +- : standar deviation of number of cells 
 double u = 0.71;             // % : exosomes that take miRNA
 double c = 0.3;              //
-
+double DpremiRNA = 0.4089;   // 1/min : premiRNA destruction rate
 double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
 
 
@@ -107,11 +107,11 @@ double eq_mRNA (double DNA, double mRNA)
 //rate of change for the total premRNA transcripts
 //starting value premRNA = 0
 
-double eq_premRNA (double DNA, double premRNA)
+double eq_premiRNA (double DNA, double premiRNA)
 {
-    double premRNA_rate = kts * DNA - DmRNA * premRNA - c1 * premRNA; 
+    double premiRNA_rate = kts * DNA - DpremiRNA * premiRNA - c1 * premiRNA; 
 
-    return premRNA_rate;
+    return premiRNA_rate;
 }
 
 //equation for miRNA that goes into exosomes
@@ -204,8 +204,8 @@ int main()
     double mRNA = 0;
     double mRNA_rate = 0;
 
-    double premRNA = 0;
-    double premRNA_rate = 0;
+    double premiRNA = 0;
+    double premiRNA_rate = 0;
 
     double miRNA_exos = 0;
     double miRNA_exos_rate = 0;
@@ -223,10 +223,10 @@ int main()
         mRNA_rate = eq_mRNA (DNA, mRNA);
         mRNA = mRNA + mRNA_rate;
 
-        premRNA_rate = eq_premRNA (DNA, premRNA);
-        premRNA = premRNA + premRNA_rate;
+        premiRNA_rate = eq_premiRNA (DNA, premiRNA);
+        premiRNA = premiRNA + premiRNA_rate;
 
-        miRNA_exos_rate = eq_miRNA_exos(premRNA_rate);
+        miRNA_exos_rate = eq_miRNA_exos(premiRNA_rate);
         miRNA_exos = miRNA_exos + miRNA_exos_rate;
 
         P_exos_rate = eq_P_exos(P_rate);
@@ -258,7 +258,7 @@ int main()
         file << Exo << " ,";
         file << target << " ,";
         file << DNA << " ,";
-        file << premRNA << " ,";
+        file << premiRNA << " ,";
         file << miRNA_u << " ,";
         file << miRNA_exos << " ,";
         file << P_exos << " , \n" ;
@@ -290,7 +290,7 @@ int main()
     cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u << endl;
     cout << "Useful exosomes (with miRNA): Exos = " << Exo * u << endl;
 
-    cout << "the cells of a joint would averagely produce: [miRNA] = "<< miRNA * cell_num << " , [miRNA useful] = " << miRNA_u * cell_num << "transported by" << Exo * u * cell_num << endl;
+    cout << "the cells of a joint would averagely produce: [miRNA] = "<< miRNA * cell_num << " , [miRNA useful] = " << miRNA_u * cell_num << "transported by: " << Exo * u * cell_num <<" exosomes"<< endl;
 
 
 
