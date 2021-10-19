@@ -1435,94 +1435,101 @@
 
 
 					<br><br><br><br>
-					<div id="heading7"></div>
+					<div id="heading8"></div>
                     <h2>Constants</h2>
 					<p class="content-paragraph">In this table, you can find the values of the constants we used in the equations of the Exosome Production Model.</p>
 					<table>
 						<tr>
-							<td><p class="table-paragraph"><b>Name</b></p></td>
+							<td><p class="table-paragraph"><b>ID</b></p></td>
 							<td><p class="table-paragraph"><b>Value</b></p></td>
 							<td><p class="table-paragraph"><b>Units</b></p></td>
 							<td><p class="table-paragraph"><b>Comments</b></p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>degma</sub></p></td>
-							<td><p class="table-paragraph">0.0068333</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Degredation of RNA</p></td>
+							<td><p class="table-paragraph">k<sub>aGV16</sub></p></td>
+							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
+							<td><p class="table-paragraph">N<sup>-1</sup> * s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Gal4-VP16 - DNA on-rate binding constant</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>degp</sub></p></td>
-							<td><p class="table-paragraph">2.7833333E-5</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Degredation of proteins</p></td>
+							<td><p class="table-paragraph">k<sub>dGV16</sub></p></td>
+							<td><p class="table-paragraph">0.01</p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Gal4-VP16 - DNA off-rate constant.</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>translation</sub></p></td>
-							<td><p class="table-paragraph">0.27777778</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Proteins translated per second</p></td>
+							<td><p class="table-paragraph">k<sub>l</sub></p></td>
+							<td><p class="table-paragraph">0.00125</p></td>
+							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Leaky protein production rate</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>split</sub></p></td>
-							<td><p class="table-paragraph">0.83</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Split of the RNA compolex due to maturation</p></td>
+							<td><p class="table-paragraph">k<sub>deg</sub></p></td>
+							<td><p class="table-paragraph">2.79045 * 10<sup>-5</sup></p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Average protein degradation rate</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>degp</sub></p></td>
-							<td><p class="table-paragraph">0.8</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Activation of miRNA-DICER complex</p></td>
+							<td><p class="table-paragraph">k<sub>aNFkB</sub></p></td>
+							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">NF-κB - DNA on-rate binding constant</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>p-exosome</sub></p></td>
-							<td><p class="table-paragraph">0.010167</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Loading of protein to exosome</p></td>
+							<td><p class="table-paragraph">k<sub>dNFkB</sub></p></td>
+							<td><p class="table-paragraph">0.01</p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">NF-κB - DNA off-rate constant</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>r-exosome</sub></p></td>
-							<td><p class="table-paragraph">0.010167</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Loading of premiRNA to exosome</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>transcription</sub></p></td>
-							<td><p class="table-paragraph">4.8</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">RNA molecules transcripted per second</p></td>
+							<td><p class="table-paragraph">k<sub>s</sub></p></td>
+							<td><p class="table-paragraph">0.25</p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Protein production rate</p></td>
 						</tr>
 						<tr>
 							<td><p class="table-paragraph">k<sub>dil</sub></p></td>
-							<td><p class="table-paragraph">8.02254E-6</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
+							<td><p class="table-paragraph">8.02254 * 10<sup>-6</sup></p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
 							<td><p class="table-paragraph">Dilution rate</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>load</sub></p></td>
+							<td><p class="table-paragraph">k<sub>artTR</sub></p></td>
+							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
+							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Dilution rate</p></td>
+						</tr>
+                        <tr>
+							<td><p class="table-paragraph">k<sub>dox</sub></p></td>
+							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
+							<td><p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Doxycycline – rtTR-KRAB association constant</p></td>
+						</tr>
+						<tr>
+							<td><p class="table-paragraph">k<sub>drtTR</sub></p></td>
 							<td><p class="table-paragraph">0.01</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">CAP exosome endocytosis constant</p></td>
+							<td><p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">rtTR-KRAB - DNA on-rate binding constant</p></td>
 						</tr>
 						<tr>
-							<td><p class="table-paragraph">k<sub>loadCAP</sub></p></td>
-							<td><p class="table-paragraph">0.2</p></td>
-							<td><p class="table-paragraph">per num per sec</p></td>
-							<td><p class="table-paragraph">Exosome endocytosis constant</p></td>
+							<td><p class="table-paragraph">k<sub>degluc</sub></p></td>
+							<td><p class="table-paragraph">9.62704 * 10<sup>-5</sup></p></td>
+							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Firefly luciferase degradation rate</p></td>
 						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>bind</sub></p></td>
-							<td><p class="table-paragraph">0.145</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Binding Constant</p></td>
+                        <tr>
+							<td><p class="table-paragraph">k<sub>deggal4</sub></p></td>
+							<td><p class="table-paragraph">1.15525 * 10<sup>-4</sup></p></td>
+							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Gal4 degradation rate</p></td>
 						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>unbind</sub></p></td>
-							<td><p class="table-paragraph">0.00159</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Dissassosiation constant </p></td>
+                        <tr>
+							<td><p class="table-paragraph">k<sub>deggv16</sub></p></td>
+							<td><p class="table-paragraph">1.54033 * 10<sup>-4</sup></p></td>
+							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
+							<td><p class="table-paragraph">Gal4-VP16 degradation rate</p></td>
 						</tr>
+						
 						
                     
 					</table>
