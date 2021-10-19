@@ -36,7 +36,7 @@ double cell_dev = 46000000;  // +- : standar deviation of number of cells
 double u = 0.71;             // % : exosomes that take miRNA
 double c = 0.3;              //
 
-//double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
+double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
 
 
 //behavioural equations of the model
@@ -44,7 +44,7 @@ double c = 0.3;              //
 //calculates the change in miRNA concentration in a fraction of time
 //miRNA_rate = rate of miRNA change per time
 
-double eq_miRNA (double c1, double mRNA1, double k_syn, double miRNA) 
+double eq_miRNA (double mRNA1, double miRNA) 
 {
     double miRNA_rate = k_syn * mRNA1 - c1 *  miRNA; 
 
@@ -54,7 +54,7 @@ double eq_miRNA (double c1, double mRNA1, double k_syn, double miRNA)
 //calculates the change in protein concentration in a fraction of time
 //protein = rate of mRNA2 change per time
 
-double eq_P (double a_prot, double L, double mRNA, double D_prot, double c2, double P) 
+double eq_P (double mRNA, double P) 
 {
     double P_rate = (a_prot/L) * mRNA - D_prot * P - c2 * P; //D = rate of P change per time
 
@@ -64,7 +64,7 @@ double eq_P (double a_prot, double L, double mRNA, double D_prot, double c2, dou
 //calculates the change in target concentration in a fraction of time
 //protein = rate of mRNA2 change per time
 
-double eq_target (double n0, double n1, double c1, double miRNA, double k1, double target)
+double eq_target (double miRNA, double target)
 {
     double target_rate = n0 + c1 * miRNA * n1 - k1 * target; //E = rate of target change per time
 
@@ -74,7 +74,7 @@ double eq_target (double n0, double n1, double c1, double miRNA, double k1, doub
 //calculates how many exososmes have been produced up to a certain time (t)
 //k0 exosomes are produced in a fraction of time
 
-double eq_Exo (double k0, double t)
+double eq_Exo (double t)
 {
     double Exo = k0 * t;
 
@@ -96,7 +96,7 @@ double eq_DNA ()
 //rate of change for the total mRNA transcripts
 //starting value mRNA = 0
 
-double eq_mRNA (double kts, double DmRNA, double k_syn, double DNA, double mRNA)
+double eq_mRNA (double DNA, double mRNA)
 {
     double mRNA_rate = kts * DNA - DmRNA * mRNA; 
 
@@ -107,7 +107,7 @@ double eq_mRNA (double kts, double DmRNA, double k_syn, double DNA, double mRNA)
 //rate of change for the total premRNA transcripts
 //starting value premRNA = 0
 
-double eq_premRNA ( double kts, double DmRNA, double k_syn, double DNA, double mRNA, double premRNA)
+double eq_premRNA (double DNA, double premRNA)
 {
     double premRNA_rate = kts * DNA - DmRNA * premRNA - c1 * premRNA; 
 
@@ -116,18 +116,29 @@ double eq_premRNA ( double kts, double DmRNA, double k_syn, double DNA, double m
 
 //equation for miRNA that goes into exosomes
 //total miRNA concentration in exosomes
-//starting value miRnaex = 0
+//starting value miRna_exos = 0
 
-double eq_miRNA_exos (double premRNA)
+double eq_miRNA_exos (double premRNA_rate)
 {
-    double miRNA_exos =  premRNA * c1; 
+    double miRNA_exos_rate = (c1 / k0) * premRNA_rate; 
 
-    return miRNA_exos;
+    return miRNA_exos_rate;
 }
 
-//exosomes without protein go elseweher so not all miRNA goes to target cells
+//equation for protein that goes into exosomes
+//total protein concentration in exosomes
+//starting value P_exo = 0
 
-double eq_miRNA_u (double miRNA_exos, double kts, double DmRNA, double k_syn, double DNA, double mRNA)
+double eq_P_exos (double P_rate)
+{
+    double P_exos_rate = (c2 / (u * k0)) * P_rate; 
+
+    return P_exos_rate;
+}
+
+//exosomes without the protein go elseweher so not all miRNA goes to target cells
+
+double eq_miRNA_u (double miRNA_exos)
 {
     double miRNA_u =  u * miRNA_exos + c * (1-u) * miRNA_exos ; 
 
@@ -168,17 +179,13 @@ int main()
     std::ofstream file;
 
     //file name
-    file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_results_01.csv");
+    file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_v03_results.csv");
 
     //titles of csv file
     file << "time, mRNA1, miRNA, P, Exo, target, mRNA2, miRNA in exosomes, protein in exosomes, eq in mRNA1, eq in miRNA, eq in P, eq in target, eq in mRNA2\n";
 
-    //initial quantities are zero - the cell does not produce yet
+    //initial quantities are zero - the cell has not produced yet
     //initial rates are zero - the cell does not produce yet
-
-    double mRNA1 = 0;
-    double mRNA1_rate = 0; 
-
     double miRNA = 0;
     double miRNA_rate = 0; 
 
@@ -190,60 +197,53 @@ int main()
     double target = 0;
     double target_rate = 0; 
 
-    double mRNA2 = 0;
-    double mRNA2_rate = 0; 
-    
-    //how much miRNA and protein is distributed to exosomes
-    double miRNA_exo = 0;
-    double P_exo = 0;
+    double DNA = 1;
+    double DNA_rate = 0;
 
-    //before equilibrium we count the produced miRNA and protein 
-    //and divide it by the number of produced exosomes
-    //we calculate averagely how much miRNA and protein an exosome has
-    double AVG_miRNA = 0;
-    double AVG_P = 0;
-    
-    //counters for total miRNA and protein in exosomes
-    double P_in_exo = 0;
-    double miRNA_in_exo = 0;
+    double mRNA = 0;
+    double mRNA_rate = 0;
 
-    //variable to help with the calculation of equilibrium
-    int times;
+    double premRNA = 0;
+    double premRNA_rate = 0;
 
-    // boolean to check if it is the first time we calculate the values for exosomes before equilibrium
-    // this changes to true when the equation reaches equilibrium
-    // we don't have to calculate the exosome miRNA and protein averagely after the equilibrium
-    bool miRNA_first = false;
-    bool P_first = false;
+    double miRNA_exos = 0;
+    double miRNA_exos_rate = 0;
+
+    double P_exos = 0;
+    double P_exos_rate = 0;
+
+    double miRNA_u = 0;
 
     //set run time
     //currently runs in minutes (due to constant values)
-    for (int t=0; t <100; t=t+1)
+    for (int t=0; t <10; t=t+1)
     {
-        //counting previous values to calculate equilibrim
-        double mRNA1_prev = mRNA1;
-        double mRNA2_prev = mRNA2;
-        double miRNA_prev = miRNA;
-        double target_prev = target;
-        double P_prev = P;
-        
         //calling functions with equations
-        mRNA1_rate = eq_mRNA1 (1.0, kts, DmRNA, k_syn, t, mRNA1);
-        mRNA1 = mRNA1 + mRNA1_rate;
+        mRNA_rate = eq_mRNA (DNA, mRNA);
+        mRNA = mRNA + mRNA_rate;
 
-        miRNA_rate = eq_miRNA (c1, mRNA1, k_syn, t, miRNA);
+        premRNA_rate = eq_premRNA (DNA, premRNA);
+        premRNA = premRNA + premRNA_rate;
+
+        miRNA_exos_rate = eq_miRNA_exos(premRNA_rate);
+        miRNA_exos = miRNA_exos + miRNA_exos_rate;
+
+        P_exos_rate = eq_P_exos(P_rate);
+        P_exos = P_exos + P_exos_rate;
+
+        miRNA_rate = eq_miRNA (mRNA, miRNA);
         miRNA = miRNA + miRNA_rate;
 
-        mRNA2_rate = eq_mRNA2 (k_syn, mRNA1, DmRNA, t, mRNA2);
-        mRNA2 = mRNA2 + mRNA2_rate;
+        DNA_rate = eq_DNA ();
+        DNA = DNA + DNA_rate;
 
-        P_rate = eq_P (a_prot, L, mRNA1, mRNA2, D_prot, c2, t, P);
+        P_rate = eq_P (mRNA, P);
         P = P + P_rate;
         
-        target = eq_target (n0, n1, c1, miRNA, k1, t, target);
+        target = eq_target (miRNA, target);
         target = target + target_rate;
 
-        Exo = eq_Exo (k0, t);
+        Exo = eq_Exo (t);
 
         
         if (Exo > 0)
