@@ -137,6 +137,7 @@ double eq_P_exos (double P_rate)
 }
 
 //exosomes without the protein go elseweher so not all miRNA goes to target cells
+//useful miRNA - miRNA tha goes to exosomes
 
 double eq_miRNA_u (double miRNA_exos)
 {
@@ -182,7 +183,7 @@ int main()
     file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_v03_results.csv");
 
     //titles of csv file
-    file << "time, mRNA1, miRNA, P, Exo, target, mRNA2, miRNA in exosomes, protein in exosomes, eq in mRNA1, eq in miRNA, eq in P, eq in target, eq in mRNA2\n";
+    file << "time, mRNA, miRNA, Protein, Exosomes, target, DNA, premRNA, miRNA useful, miRNA in exos, Protein in exos\n";
 
     //initial quantities are zero - the cell has not produced yet
     //initial rates are zero - the cell does not produce yet
@@ -244,38 +245,42 @@ int main()
         target = target + target_rate;
 
         Exo = eq_Exo (t);
-
         
-        if (Exo > 0)
-        {
-            //calculate protein and miRNA that fo to the exosomes that were produced in this moment
-            miRNA_exo = c1 * miRNA / k0;
-            P_exo = c2 * P / k0;
+        miRNA_u = miRNA_u + eq_miRNA_u(miRNA_exos);
 
-            //add it to the total counter of miRNA and protein in the total exosomes
-            miRNA_in_exo = miRNA_in_exo + miRNA_exo;
-            P_in_exo = P_in_exo + P_exo;
-        }
-
-        
+                
         //add values to the .cvs file
         //caution! should be added in the correct order matching the titles
         file << t << " ,";
-        file << mRNA1 << " ,";
+        file << mRNA << " ,";
         file << miRNA << " ,";
         file << P << " ,";
         file << Exo << " ,";
         file << target << " ,";
-        file << mRNA2 << " ,";
-        file << miRNA_exo << " ,";
-        file << P_exo << " ," ;
-
+        file << DNA << " ,";
+        file << premRNA << " ,";
+        file << miRNA_u << " ,";
+        file << miRNA_exos << " ,";
+        file << P_exos << " , \n" ;
+        
     }
 
 
-    cout << "Average miRNA concentration in exosomes after equilibrium [miRNA] = " << AVG_miRNA << "for t = " << times << endl;
+    cout << "Total miRNA concentration in exosomes: [miRNA] = " << miRNA_exos << endl;
 
-    cout << "Average protein concentration in exosomes after equilibrium [protein] = " << AVG_P << "for t = " << times << endl;
+    //Calculate miRNA concentration per cell in the joint
+    double miRNA_in_cell = miRNA_u/cell_num; 
+
+    //worst case
+    double worst = miRNA_u/(cell_num + cell_dev);
+
+    //best case
+    double best = miRNA_u/(cell_num - cell_dev);
+
+    cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell << endl;
+    cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst << endl;
+    cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best << endl;
+
 
     //close file at the end of the program
     file.close();
