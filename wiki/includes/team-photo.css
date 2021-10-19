@@ -1,0 +1,195 @@
+/* https://2021.igem.org/Template:Greece_United/team/photos/css */
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+    width:100%;
+    height: auto;
+    background-color: #ECE2D0;
+    font-family: "Segoe UI","微軟正黑體",sans-serif;
+    overflow-y: scroll;
+}
+
+.h1, h1 {
+    font-size:3.75em;
+}
+p {
+    word-wrap: break-word;
+}
+/* Navagation Bar */
+
+
+nav {
+    background-color: #254F6E;
+    opacity:0.96;
+    font-size:1.3em;
+}
+.navbar-brand {
+    width: 10vw;
+    height:10vh;
+}
+
+.navbar-brand img {
+    width: 15vw;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+}
+.dropdown-menu {
+    background-color: #fffdf6;
+    border-radius: 0 0 .25rem .25rem;
+    margin-top: 1.05rem;
+    border-style: none;
+}
+
+.dropdown-menu a:hover { 
+    background-color: #afcee2; 
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu:before {
+    /*在menu跟dropdown中間加一塊透明的block*/
+    content: "";
+    display: block;
+    position: absolute;
+    height: 25px;
+    top: -25px;
+    left: 0;
+    right: 0;
+}
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    /*target active才不會讓滑鼠滑上去的時候沒改變*/
+    pointer-events: none;
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .navbar-expand-lg .navbar-nav.navbar-nav {
+        flex-grow: 1;
+        padding: 0 10% 0 15%;
+    }
+}
+/*.breadshape{
+    width: 24em;
+    height: 2.3em;
+    margin-left:-3em;
+    -webkit-transform: skew(-50deg);
+    -moz-transform: skew(0deg);
+    -o-transform: skew(20deg);
+    background: #254F6E;
+    opacity:0.96;
+}
+*/
+.bread {
+    height: 2.5em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    opacity:0.96;
+}
+.bread .shape {
+    width: calc(20% - 2.5em);
+    height: 100%;
+    margin-right: 0px!important;
+    display: inline-block;
+    position: absolute;
+    background: #254F6E;
+}
+.bread::after {
+    content: ""; 
+    position: absolute;
+    left: calc(20% - 2.5em);
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid #254F6E;
+    border-right: 2.5em solid transparent;
+}
+#breadtext a:hover{
+    color:rgb(99, 38, 38);
+}
+#breadtext a{
+    color:grey;
+}
+
+#breadtext{
+    font-style:none;
+    color:white;
+}
+
+/* Context */
+
+/* SideNav */
+
+@media (min-width: 992px) { 
+    .sidenav {
+    
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+        height: 100vh;
+        margin: 0;
+    }
+}
+.sidenav ul {
+    list-style-type: none;
+    position:fixed;
+    
+}
+
+.sidenav a {
+    font-size: 1.2em;
+    color: grey;
+}
+.sidenav a.active {
+    font-size: 2em;
+    color: black;
+}
+
+/* main */
+main {
+    width: 81.5%;
+    padding-top: 12vh;
+}
+@media (min-width: 992px) { 
+    main {
+        -ms-flex: 0 0 80%;
+        flex: 0 0 80%;
+        max-width: 80%;
+        margin: 0;
+    }
+
+}
+.pageName {
+    width: 100%;
+    border-bottom-style:solid; 
+    border-bottom-width:medium;
+    margin-bottom: 5vh;
+    margin-top:10vh;
+}
+
+main section {
+    padding: 5vh 10vw 5vh 0;
+}
+
+#firstHeading{
+    display:none;
+}
+
+.logo_2019{
+    display:none;
+}
+
+#top_title{
+    display:none;
+}
+
+#mw-content-text.p{
+    display:none;
+}
