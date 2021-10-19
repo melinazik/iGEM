@@ -1,126 +1,151 @@
 <html>
-    <head>
-		<<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
-        
-        <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
-        <script type="text/javascript" src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript"> </script>
-        <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    </head>
+<head>
+    <<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+    </script>
+    <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+<style>
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
+
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
+
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
+
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+
+        background: white;
+        background-size: 100% 1000vh;
+        font-family: 'Lato', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+</style>
+
+
+<body>
     <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
 
-        /* CLEAR DEFAULT SETTINGS **************************************************/
-        
-        #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
-        #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
-            #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-    
-        #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-    
-            body{
-           padding:0px;
-            margin:0px;
-    
-            background: white;
-            background-size: 100% 1000vh;
-            font-family: 'Lato', sans-serif;
-    
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
             display: flex;
             flex-direction: column;
-            position: relative;
-    }
-        
+            overflow: hidden;
+        }
+
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'montserrat-black', sans-serif !important;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
     </style>
 
 
-    <body>
-        <style>
-            #loader-wrapper {
-                display: flex;
-                align-items: center;
-                margin-top: calc((100%)/5);
-                justify-content: center;
-                height: 0.1vh;
-                width: 100vw;
-                z-index: 500;
-                position: fixed;
-                pointer-events: none;
-            }
-    
-            #loader-bg {
-                position: fixed;
-                height: 200vw;
-                width: 200vw;
-                transform: translateY(0);
-                background-color: #6C8EC9;
-                transition-property: height, width, border-radius, transform;
-                transition-duration: 0.5s;
-                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-                transition-delay: 0s, 0s, 0s, 1s;
-                border-radius: 0%;
-                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-                box-shadow: 0px 0px 27px 0px #6E91CB;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-    
-            
-            #loader-wrapper img {
-                width: 30vh;
-    
-            }
-    
-            #loader-wrapper h1 {
-                color: #fafafc;
-                text-transform: uppercase;
-                font-family: 'montserrat-black', sans-serif !important;
-                position: absolute;
-                transform: translateY(15vh);
-                font-size: 2.2vw;
-                opacity: 100%;
-            }
-    
-            #loader-bg.loaded 
-            {
-                height: 35vh;
-                width: 35vh;
-                border-radius: 70%;
-                transform: translateY(-2000px);
-            }
-        </style>
-    
-    
-        <div id="loader-wrapper">
-            <div id="loader-bg">
-                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-            </div>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
         </div>
-    
-        <script>
-                    
-            // Loader
-            window.addEventListener("load", function() 
-            {
-                let loader = document.getElementById('loader-bg');
-                
-                setTimeout(function() 
-                {
-                    loader.classList.add('loaded')
-                }, 100);
-            });
-    
-        </script>
+    </div>
 
- 
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
+
+
 
 
     <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
@@ -128,126 +153,164 @@
         display: flex;
         cursor: pointer;">
             <a href="https://2021.igem.org/Team:Greece_United" class="active">
-                
 
-                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
 
             </a>
         </div>
 
 
-        <div class="right-navbar" >
+        <div class="right-navbar">
             <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                        onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
                         </div>
-                    </div> 
-                </li>
-                
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content" >
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-                        </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
                         </button>
                         <div class="dropdown-content">
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
                         </div>
-                    </div> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
                         </button>
                         <div class="dropdown-content">
-                            
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
             </ul>
-            
+
         </div>
     </div>
 
 
-     
+
 
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
@@ -257,76 +320,77 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <style>
-		/* progress bar */
-		
-		#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-		font-family: "montserrat-light" !important;
-		/* background-color: #002060; */
-		}
+        /* progress bar */
 
-		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-		pointer-events: none;
-		}
+        #fixedOverlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+            top: 18px;
+            transition: 1s;
+            font-family: "montserrat-light" !important;
+            /* background-color: #002060; */
+        }
 
-		#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-		}
+        #fixedOverlay[bg=none],
+        #fixedOverlay[bg=dark] {
+            pointer-events: none;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
+        #fixedOverlay .scroll-wrapper {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+            opacity: 1;
+            transition: 0.5s;
+        }
 
-		@media screen and (max-width: 767px) {
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            height: 100%;
+            width: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
             #fixedOverlay .scroll-wrapper .scroll-area {
                 width: 10vw;
             }
-		}
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-		}
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(98, 129, 239, 0.3);
+            border-radius: 10px;
+            max-width: 7px;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-		}
-		
-		#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-		}
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+            width: 100%;
+            background: #002060;
+            opacity: 100%;
+            height: 0%;
+            border-radius: 20px;
+            transition: background-color 0.5s;
+        }
 
-	    /* back to top */
-	
-		#BacktoTop {
+        #fixedOverlay nav {
+            box-sizing: border-box;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+            transition: 0.5s;
+            height: 87px;
+        }
+
+        /* back to top */
+
+        #BacktoTop {
             display: none;
             position: fixed;
             bottom: 20px;
@@ -340,11 +404,11 @@
             cursor: pointer;
             padding: 15px;
             border-radius: 30%;
-		}
+        }
 
-		#BacktoTop:hover {
-		    background-color: #002060;
-		}
+        #BacktoTop:hover {
+            background-color: #002060;
+        }
 
         .indexbutton {
             display: none;
@@ -362,59 +426,59 @@
             z-index: 21;
             transition: 0.5s;
         }
+
         @media (max-width: 800px) {
             .indexbutton {
                 display: block;
             }
         }
 
-		.sideBlock 
-		{
-			text-transform: uppercase;
-			text-decoration: none;
-			float: left;
-			margin-left: 10vw;
-			margin-top: 400px;
-			position: -webkit-sticky;
-			position: fixed;
-			top: 30%;
-			margin: 200px 32px 0 4vw;
-			transform: translateY(-50%);
-			min-width: 20px;
-			max-width: 350px;
-			background: #ffffff;
-			opacity: 80%;
-			border-radius: 15%;
-			padding-left: 20px;
-			z-index: 2;
-		}
+        .sideBlock {
+            text-transform: uppercase;
+            text-decoration: none;
+            float: left;
+            margin-left: 10vw;
+            margin-top: 400px;
+            position: -webkit-sticky;
+            position: fixed;
+            top: 30%;
+            margin: 200px 32px 0 4vw;
+            transform: translateY(-50%);
+            min-width: 20px;
+            max-width: 350px;
+            background: #ffffff;
+            opacity: 80%;
+            border-radius: 15%;
+            padding-left: 20px;
+            z-index: 2;
+        }
 
-		@media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .sideBlock {
                 margin: 200px 32px 0 4vw;
             }
-		}
+        }
 
-		.sideBlock b {
+        .sideBlock b {
             font-size: 1.4rem;
             font-weight: bold;
             margin-left: 0.25em;
             padding-bottom: 20px;
             display: block;
-		}
+        }
 
-		.sideBlock ul {
+        .sideBlock ul {
             margin: 1em 0;
             padding: 0;
-		}
+        }
 
-		.sideBlock a {
+        .sideBlock a {
             color: #002060;
             text-decoration: none;
             font-family: "lato-light", sans-serif;
-		}
+        }
 
-		.sideBlock li {
+        .sideBlock li {
             margin: 24px;
             list-style: none;
             color: #002060;
@@ -423,13 +487,13 @@
             display: flex;
             align-items: center;
             margin-left: 0.25em;
-		}
+        }
 
-		.sideBlock li:last-child {
-		    margin-bottom: 0;
-		}
+        .sideBlock li:last-child {
+            margin-bottom: 0;
+        }
 
-		.sideBlock li div {
+        .sideBlock li div {
             max-width: 15px;
             max-height: 15px;
             box-sizing: border-box;
@@ -440,13 +504,13 @@
             margin-right: 8px;
             height: 10vw;
             width: 10vh;
-		}
+        }
 
-		.sideBlock li.active div {
-		    background-color: #002060;
-		}
+        .sideBlock li.active div {
+            background-color: #002060;
+        }
 
-		@media (max-width: 800px) {
+        @media (max-width: 800px) {
             .sideBlock {
                 position: fixed;
                 bottom: 0;
@@ -468,250 +532,45 @@
                 flex-direction: column;
                 align-items: center;
             }
+
             .sideBlock b {
                 display: block;
                 margin: 0;
             }
+
             .sideBlock ul {
                 display: inline-block;
                 text-align: start;
                 margin-top: 0;
                 margin-bottom: 30px;
             }
+
             .sideBlock li {
                 font-weight: bold;
             }
+
             .sideBlock li a {
                 color: #FAFAFC;
             }
+
             .sideBlock li div {
                 color: #FAFAFC;
             }
+
             .sideBlock li.active div {
                 background-color: #FAFAFC;
             }
+
             .sideBlock.notshow {
                 transform: translateY(calc(100% - 900px));
             }
+
             .sideBlock.open {
                 transform: translateY(0);
             }
-		}
-
-		
-		#content {
-			padding: 0px;
-			width: 100%;
-			margin-top: -7px;
-			margin-left: 0px;
-			border: none;
-			line-height: initial;
-		}
-		
-	</style>
-
-    <!-- Back to Top Button -->
-    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
-        </svg>
-    </button>
-    <!-- Back to Top Button End-->
-
-    <!-- Progress bar -->
-    <div id="globalWrapper">
-        <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper" >
-                <div id="sidebar-wrapper" class="scroll-area">
-                    <div id="scrollbar-container">
-                        <div id="scrollbar" style="height: 3%;"></div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- Progress bar End -->
-
-    <!-- in page menu -->
-    
-	<div id="index" class="sideBlock">
-        <div id="indexbutton" class="indexbutton">Index</div>
-
-        <b>Communication</b>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading1">Overview</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading2">Lab on The Street</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading3">TIF HELEXPO</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading4">Risk Calculator</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading5">Blood Donation Event</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading6">Survey</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading7">YouTube Videos</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading8">Social Media</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading9">TEDx</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading10">Media Interviews</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading11">ECESCON</a>
-			</li>
-		</ul>
-        <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading12">Community Partners</a>
-			</li>
-		</ul>
-	</div>
-
-    <!-- back to top button -->
-    <script>
-        
-        var mybutton = document.getElementById("BacktoTop");
-    
-        window.onscroll = function() {scrollFunction()};
-    
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-        }
-    
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
-    </script>
-     <script>
-    
-        var textSection = null;
-        var navbar = document.getElementById("navbar");
-    
-        window.addEventListener('load', function() {
-            textSection = document.querySelector('.elevate-navbar');
-            checkScrollPos();
-            checkBackToTopPos();
-        })
-        window.addEventListener('scroll', function() {
-            updateScrollbar();
-            checkNavbarPos();
-            checkScrollPos();
-            checkBackToTopPos();
-        });
-        function checkScrollPos() {
-            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-            let scrollWrapper = document.querySelector('.scroll-wrapper');
-            if (scrollbarBottom >= footerTop) {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
-            } else {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
-            }
-        }
-        function checkBackToTopPos() {
-            if ($(window).scrollTop() > 1000) {
-                $('#backtotop-wrapper').addClass('scrolled')
-            } else $('#backtotop-wrapper').removeClass('scrolled')
-        }
-        $(document).ready(function() {
-            $('#backtotop-wrapper').on('click', function() {
-                $('html, body').animate({
-                    'scrollTop': $('body').offset().top
-                }, 2000);
-            });
-        });
-    
-        function updateScrollbar() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - window.innerHeight;;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollbar").style.height = scrolled + "%";
-        }
-        
-        var scroll = new SmoothScroll('a[href*="#"]', {
-                speed: 400,
-                speedAsDuration: true,
-                offset: 160
-            });
-    
-            document.getElementById("fixedOverlay").classList.add("project");
-    </script>
-
-
-
-    <style>
-        #content-tag {
-        background-color: #ffffff;
-        position: relative;
         }
 
-        #content-tag p {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
-        }
-        
-        
-        #content-tag .contentBlock {
-        float: none;
-        margin: 0 auto;
-        }
-        
-        
+
         #content {
             padding: 0px;
             width: 100%;
@@ -720,32 +579,248 @@
             border: none;
             line-height: initial;
         }
-        
-        
+    </style>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
+
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper">
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 3%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
+
+    <!-- in page menu -->
+
+    <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+
+        <b>Communication</b>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Overview</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Lab on The Street</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">TIF HELEXPO</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading4">Risk Calculator</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading5">Blood Donation Event</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading6">Survey</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading7">YouTube Videos</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading8">Social Media</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading9">TEDx</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading10">Media Interviews</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading11">ECESCON</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading12">Community Partners</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- back to top button -->
+    <script>
+        var mybutton = document.getElementById("BacktoTop");
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script>
+        var textSection = null;
+        var navbar = document.getElementById("navbar");
+
+        window.addEventListener('load', function () {
+            textSection = document.querySelector('.elevate-navbar');
+            checkScrollPos();
+            checkBackToTopPos();
+        })
+        window.addEventListener('scroll', function () {
+            updateScrollbar();
+            checkNavbarPos();
+            checkScrollPos();
+            checkBackToTopPos();
+        });
+
+        function checkScrollPos() {
+            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+            let scrollWrapper = document.querySelector('.scroll-wrapper');
+            if (scrollbarBottom >= footerTop) {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                    "true");
+            } else {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                    "false");
+            }
+        }
+
+        function checkBackToTopPos() {
+            if ($(window).scrollTop() > 1000) {
+                $('#backtotop-wrapper').addClass('scrolled')
+            } else $('#backtotop-wrapper').removeClass('scrolled')
+        }
+        $(document).ready(function () {
+            $('#backtotop-wrapper').on('click', function () {
+                $('html, body').animate({
+                    'scrollTop': $('body').offset().top
+                }, 2000);
+            });
+        });
+
+        function updateScrollbar() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - window.innerHeight;;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollbar").style.height = scrolled + "%";
+        }
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
+    </script>
+
+
+
+    <style>
+        #content-tag {
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        #content-tag p {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+
+        #content-tag .contentBlock {
+            float: none;
+            margin: 0 auto;
+        }
+
+
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+
+
         .contentBlock {
-        width: 64vw;
-        max-width: 1200px;
-        float: right;
-        display: flex;
-        flex-direction: column;
+            width: 64vw;
+            max-width: 1200px;
+            float: right;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+            padding: 64px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px lightgray;
+            color: #121212;
+            margin-top: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .content p:first-child {
-         margin-top: 0;
+            margin-top: 0;
         }
-        
-    
+
+
         .content ul {
             padding-inline-start: 20px;
 
@@ -753,12 +828,13 @@
             font-size: 1.2rem;
 
         }
-        
-        .content li{
+
+        .content li {
             color: #000000;
             font-size: 1.2rem;
             list-style-type: none;
-        }    
+        }
+
         .content ol li {
             font-size: 1.2rem;
 
@@ -774,42 +850,43 @@
             font-size: 1.2rem;
             list-style-type: none;
         }
-        
+
         .content .splide ul li::before {
             content: unset;
         }
-        
-        
+
+
         .content li::marker {
             color: #000000;
             font-size: 1.2rem;
             list-style-type: none;
         }
-        
-        .content h4, .content h5 {
+
+        .content h4,
+        .content h5 {
             font-size: 1.2em;
             text-transform: uppercase;
             margin-block-end: 0.2em;
             margin-block-start: 60px;
         }
-        
+
         .content h5 {
             font-size: 1.2rem;
 
         }
-        
+
         .content a {
             text-decoration: none;
             text-align: center;
             cursor: pointer;
         }
-        
+
         .content a.citation {
             font-size: 0.6em;
             vertical-align: super;
         }
-        
-        .content-paragraph{
+
+        .content-paragraph {
             margin: 0;
             font-size: 1.2rem;
             line-height: 1.5;
@@ -822,11 +899,9 @@
             text-align: center !important;
             font-size: 0.8em !important;
         }
-    
-    
     </style>
 
-    
+
     <div id="heading1">
         <div style="margin-left: 300px;margin-top: 200px;" id="content-tag">
             <div class="contentBlock">
@@ -834,24 +909,32 @@
                     <h2>Overview</h2>
                     <p class="content-paragraph">NOUS team dedicated considerable effort to communication. <br><br>
                         We designed and delivered diverse information exchange activities aimed to: </p>
-                        
-                        <li><b>-</b>&nbsp; communicate iGEM competition to the public and spread news of the NOUS team, our goals and our achievements </li>
-                        <li><b>-</b>&nbsp; convey science concepts to the public</li>
-                        
+
+                    <li><b>-</b>&nbsp; communicate iGEM competition to the public and spread news of the NOUS team, our
+                        goals and our achievements </li>
+                    <li><b>-</b>&nbsp; convey science concepts to the public</li>
+
                     </ol>
-                    <p class="content-paragraph">Scientific communication to the public, or <b>MAKING SCIENCE EASY</b>, is critical for the future of our society, especially in the era of fake news, misinformation amidst escalating scientific discoveries in all fronts. </p>
-                    <p class="content-paragraph">According to the National Academies of Sciences, Engineering, and Medicine [1], effective science communication should engage the right tools for the right purpose, which can be any or all of the list below:</b></p>
+                    <p class="content-paragraph">Scientific communication to the public, or <b>MAKING SCIENCE EASY</b>,
+                        is critical for the future of our society, especially in the era of fake news, misinformation
+                        amidst escalating scientific discoveries in all fronts. </p>
+                    <p class="content-paragraph">According to the National Academies of Sciences, Engineering, and
+                        Medicine [1], effective science communication should engage the right tools for the right
+                        purpose, which can be any or all of the list below:</b></p>
                     <ol>
                         <li><b>1)</b>&nbsp; share recent findings and excitement for science</li>
                         <li><b>2)</b>&nbsp; increase public appreciation of science</li>
                         <li><b>3)</b>&nbsp; increase knowledge and understanding of science</li>
                         <li><b>4)</b>&nbsp; influence the opinions, policy preferences or behavior of people</li>
-                        <li><b>5)</b>&nbsp; ensure that a diversity of perspectives about science held by different groups are considered when solutions to societal problems are pursued</li>
+                        <li><b>5)</b>&nbsp; ensure that a diversity of perspectives about science held by different
+                            groups are considered when solutions to societal problems are pursued</li>
                     </ol>
-                    <p class="content-paragraph">The Science of Science Communication identifies two different paradigms [2]:</p>
-                    <li><b>a)</b>&nbsp; &nbsp;	dissemination and </li>
-                    <li><b>b)</b>&nbsp; &nbsp;	participation</li>
-                    <p class="content-paragraph">Based on the above, we carried out diverse activities to address all objectives and include both communication paradigms. </p>
+                    <p class="content-paragraph">The Science of Science Communication identifies two different paradigms
+                        [2]:</p>
+                    <li><b>a)</b>&nbsp; &nbsp; dissemination and </li>
+                    <li><b>b)</b>&nbsp; &nbsp; participation</li>
+                    <p class="content-paragraph">Based on the above, we carried out diverse activities to address all
+                        objectives and include both communication paradigms. </p>
                 </div>
             </div>
         </div>
@@ -866,7 +949,7 @@
             <div id="hp-intro">
                 <ul>
                     <li>
-                        <div class="general" ></div>
+                        <div class="general"></div>
                         <p>General Public</p>
                     </li>
                     <li>
@@ -878,14 +961,14 @@
                         <p>Policy Makers</p>
                     </li>
                     <li>
-                        <div class="scientists" ></div>
+                        <div class="scientists"></div>
                         <p>Scientists</p>
                     </li>
-                  
+
                 </ul>
             </div>
             <div id="hp-overview">
-      
+
                 <div class="activity">
                     <div class="points">
                         <div class="point general"></div>
@@ -913,24 +996,24 @@
                     </div>
                 </div>
                 <div class="activity">
-                  <div class="points">
-                    <div class="point general"></div>
-                    <div class="point industry"></div>
-                    <div class="point unfilled"></div>
-                    <div class="point scientists"></div>
-                  </div>
-                  <div class="title">
-                      <a href="#heading4">
-                          <h1>Risk Calculator</h1>
-                      </a>
-                  </div>
-              </div>
+                    <div class="points">
+                        <div class="point general"></div>
+                        <div class="point industry"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point scientists"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading4">
+                            <h1>Risk Calculator</h1>
+                        </a>
+                    </div>
+                </div>
                 <div class="activity">
                     <div class="points">
-                      <div class="point general"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
+                        <div class="point general"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
                     </div>
                     <div class="title">
                         <a href="#heading5">
@@ -940,36 +1023,36 @@
                 </div>
                 <div class="activity">
                     <div class="points">
-                      <div class="point general"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
+                        <div class="point general"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
                     </div>
-                    <div class="title" >
+                    <div class="title">
                         <a href="#heading6">
                             <h1>Survey</h1>
                         </a>
                     </div>
                 </div>
                 <div class="activity">
-                  <div class="points">
-                    <div class="point general"></div>
-                    <div class="point unfilled"></div>
-                    <div class="point unfilled"></div>
-                    <div class="point unfilled"></div>
-                  </div>
-                  <div class="title">
-                      <a href="#heading7">
-                          <h1>YouTube Videos</h1>
-                      </a>
-                  </div>
-              </div>
+                    <div class="points">
+                        <div class="point general"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading7">
+                            <h1>YouTube Videos</h1>
+                        </a>
+                    </div>
+                </div>
                 <div class="activity">
                     <div class="points">
-                      <div class="point general"></div>
-                      <div class="point industry"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
+                        <div class="point general"></div>
+                        <div class="point industry"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
                     </div>
                     <div class="title">
                         <a href="#heading8">
@@ -979,10 +1062,10 @@
                 </div>
                 <div class="activity">
                     <div class="points">
-                      <div class="point general"></div>
-                      <div class="point industry"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
+                        <div class="point general"></div>
+                        <div class="point industry"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
                     </div>
                     <div class="title">
                         <a href="#heading9">
@@ -991,97 +1074,97 @@
                     </div>
                 </div>
                 <div class="activity">
-                  <div class="points">
-                    <div class="point general"></div>
-                    <div class="point industry"></div>
-                    <div class="point policy"></div>
-                    <div class="point scientists"></div>
-                  </div>
-                  <div class="title">
-                      <a href="#heading10">
-                          <h1>Interviews in the Media</h1>
-                      </a>
-                  </div>
-              </div>
-              <div class="activity">
-                <div class="points">
-                  <div class="point general"></div>
-                  <div class="point unfilled"></div>
-                  <div class="point unfilled"></div>
-                  <div class="point scientists"></div>
+                    <div class="points">
+                        <div class="point general"></div>
+                        <div class="point industry"></div>
+                        <div class="point policy"></div>
+                        <div class="point scientists"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading10">
+                            <h1>Interviews in the Media</h1>
+                        </a>
+                    </div>
                 </div>
-                <div class="title">
-                    <a href="#heading11">
-                        <h1>ECESCON</h1>
-                    </a>
+                <div class="activity">
+                    <div class="points">
+                        <div class="point general"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point scientists"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading11">
+                            <h1>ECESCON</h1>
+                        </a>
+                    </div>
                 </div>
-            </div>
-      
+
             </div>
         </div>
-      </div>
-      
-      <div id="hp-activities">
-          <div id="title">
-              <div class="heading3">General Public</div>
-          </div>
-          <div id="box">
-              <div id="hp-intro">
-                  <ul>
-                      <li>
-                          <div class="primary" ></div>
-                          <p>Primary School</p>
-                      </li>
-                      <li>
-                          <div class="middle"></div>
-                          <p>Middle School</p>
-                      </li>
-                      <li>
-                          <div class="high"></div>
-                          <p>High School</p>
-                      </li>
-                      <li>
-                          <div class="students" ></div>
-                          <p>Students</p>
-                      </li>
-                      <li>
-                          <div class="adults" ></div>
-                          <p>Adults</p>
-                      </li>
-      
-                  </ul>
-              </div>
-              <div id="hp-overview">
-      
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point primary"></div>
-                          <div class="point middle"></div>
-                          <div class="point high"></div>
-                          <div class="point students"></div>
-                          <div class="point adults"></div>
-                      </div>
-                      <div class="title">
-                          <a href="#heading2">
-                              <h1>Lab on The Street</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point unfilled"></div>
-                          <div class="point unfilled"></div>
-                          <div class="point high"></div>
-                          <div class="point students"></div>
-                          <div class="point adults"></div>
-                      </div>
-                      <div class="title">
-                          <a href="#heading3">
-                              <h1>TIF HELEXPO</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
+    </div>
+
+    <div id="hp-activities">
+        <div id="title">
+            <div class="heading3">General Public</div>
+        </div>
+        <div id="box">
+            <div id="hp-intro">
+                <ul>
+                    <li>
+                        <div class="primary"></div>
+                        <p>Primary School</p>
+                    </li>
+                    <li>
+                        <div class="middle"></div>
+                        <p>Middle School</p>
+                    </li>
+                    <li>
+                        <div class="high"></div>
+                        <p>High School</p>
+                    </li>
+                    <li>
+                        <div class="students"></div>
+                        <p>Students</p>
+                    </li>
+                    <li>
+                        <div class="adults"></div>
+                        <p>Adults</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="hp-overview">
+
+                <div class="activity">
+                    <div class="points">
+                        <div class="point primary"></div>
+                        <div class="point middle"></div>
+                        <div class="point high"></div>
+                        <div class="point students"></div>
+                        <div class="point adults"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading2">
+                            <h1>Lab on The Street</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="points">
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point high"></div>
+                        <div class="point students"></div>
+                        <div class="point adults"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading3">
+                            <h1>TIF HELEXPO</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
                     <div class="points">
                         <div class="point unfilled"></div>
                         <div class="point unfilled"></div>
@@ -1095,35 +1178,35 @@
                         </a>
                     </div>
                 </div>
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point unfilled"></div>
-                          <div class="point unfilled"></div>
-                          <div class="point unfilled"></div>
-                          <div class="point students"></div>
-                          <div class="point adults"></div>
-                      </div>
-                      <div class="title">
-                          <a href="#heading5">
-                              <h1>Blood Donation Event</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point primary"></div>
-                          <div class="point middle"></div>
-                          <div class="point high"></div>
-                          <div class="point students"></div>
-                          <div class="point adults "></div>
-                      </div>
-                      <div class="title" >
-                          <a href="#heading6">
-                              <h1>Survey</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
+                <div class="activity">
+                    <div class="points">
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point students"></div>
+                        <div class="point adults"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading5">
+                            <h1>Blood Donation Event</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="points">
+                        <div class="point primary"></div>
+                        <div class="point middle"></div>
+                        <div class="point high"></div>
+                        <div class="point students"></div>
+                        <div class="point adults "></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading6">
+                            <h1>Survey</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
                     <div class="points">
                         <div class="point primary"></div>
                         <div class="point middle"></div>
@@ -1137,35 +1220,35 @@
                         </a>
                     </div>
                 </div>
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point unfilled"></div>
-                          <div class="point middle"></div>
-                          <div class="point high"></div>
-                          <div class="point students"></div>
-                          <div class="point adults"></div>
-                      </div>
-                      <div class="title">
-                          <a href="#heading8">
-                              <h1>Social Media</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
-                      <div class="points">
-                          <div class="point unfilled"></div>
-                          <div class="point unfilled"></div>
-                          <div class="point high"></div>
-                          <div class="point students"></div>
-                          <div class="point adults"></div>
-                      </div>
-                      <div class="title">
-                          <a href="#heading9">
-                              <h1>TEDx</h1>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="activity">
+                <div class="activity">
+                    <div class="points">
+                        <div class="point unfilled"></div>
+                        <div class="point middle"></div>
+                        <div class="point high"></div>
+                        <div class="point students"></div>
+                        <div class="point adults"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading8">
+                            <h1>Social Media</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="points">
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point high"></div>
+                        <div class="point students"></div>
+                        <div class="point adults"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading9">
+                            <h1>TEDx</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity">
                     <div class="points">
                         <div class="point unfilled"></div>
                         <div class="point middle"></div>
@@ -1180,26 +1263,26 @@
                     </div>
                 </div>
                 <div class="activity">
-                  <div class="points" id="wk-p">
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point unfilled"></div>
-                      <div class="point students"></div>
-                      <div class="point unfilled"></div>
-                  </div>
-                  <div class="title">
-                      <a href="#heading11">
-                          <h1>ECESCON</h1>
-                      </a>
-                  </div>
-              </div>
-      
-              </div>
-          </div>
-      </div>
-      
-      <style>
-          #hp-activities {
+                    <div class="points" id="wk-p">
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point unfilled"></div>
+                        <div class="point students"></div>
+                        <div class="point unfilled"></div>
+                    </div>
+                    <div class="title">
+                        <a href="#heading11">
+                            <h1>ECESCON</h1>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #hp-activities {
             background-color: #ffffff;
             width: 100%;
             height: fit-content;
@@ -1211,10 +1294,12 @@
             align-items: center;
             justify-content: center;
         }
+
         #hp-activities a {
             text-decoration: none;
             color: #021d3d;
         }
+
         #hp-activities h1 {
             font-size: 1.3vh !important;
             font-weight: 100 !important;
@@ -1223,26 +1308,31 @@
             position: relative;
             top: 0px;
         }
+
         #hp-activities h1:hover {
             color: #6281ef;
             top: 2px;
         }
+
         @media (max-width: 350px) {
             #hp-activities h1 {
-            font-size: 2.3vw !important;
+                font-size: 2.3vw !important;
             }
         }
+
         @media (max-width: 800px) {
             #hp-activities h1 {
-            font-size: 1.1em !important;
+                font-size: 1.1em !important;
             }
         }
+
         #hp-activities #title {
             height: 10vh;
         }
+
         #hp-activities #title .heading2 {
             font-family: 'Lato', sans-serif;
-        
+
             font-size: 6vw;
             text-transform: uppercase;
             display: block;
@@ -1250,10 +1340,10 @@
             text-align: end;
             color: #021d3d;
         }
-        
+
         #hp-activities #title .heading3 {
             font-family: 'Lato', sans-serif;
-        
+
             font-size: 3vw;
             text-transform: uppercase;
             display: block;
@@ -1261,7 +1351,7 @@
             color: #021d3d;
             text-align: left;
         }
-        
+
         #hp-activities::before {
             z-index: 2;
             position: absolute;
@@ -1273,11 +1363,13 @@
             transform: scaleY(-1);
             background-repeat: no-repeat;
         }
+
         @media (max-width: 420px) {
             #hp-activities::before {
-            height: 120vh;
+                height: 120vh;
             }
         }
+
         #hp-activities::after {
             z-index: 2;
             position: absolute;
@@ -1288,16 +1380,19 @@
             border-bottom: 2px solid #FAFAFC;
             background-repeat: no-repeat;
         }
+
         @media (max-width: 420px) {
             #hp-activities::after {
-            height: 120vh;
+                height: 120vh;
             }
         }
+
         @media (max-width: 420px) {
             #hp-activities {
-            height: 120vh;
+                height: 120vh;
             }
         }
+
         #hp-activities #box {
             display: flex;
             align-items: center;
@@ -1306,46 +1401,54 @@
             height: 70vh;
             flex-direction: initial;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box {
-            flex-direction: column-reverse;
-            width: 90%;
-            height: fit-content;
+                flex-direction: column-reverse;
+                width: 90%;
+                height: fit-content;
             }
         }
-        
+
         #hp-activities #box .primary {
             background-color: #c38ff4 !important;
         }
-        #hp-activities #box .middle{
+
+        #hp-activities #box .middle {
             background-color: #ff8e62 !important;
         }
-        #hp-activities #box .high{
+
+        #hp-activities #box .high {
             background-color: #64bb8d !important;
         }
-        #hp-activities #box .students{
+
+        #hp-activities #box .students {
             background-color: #f34040 !important;
         }
-        #hp-activities #box .adults{
+
+        #hp-activities #box .adults {
             background-color: #ddcb2d !important;
         }
-        
-        
-        
+
+
+
         #hp-activities #box .general {
             background-color: #e65a5a !important;
         }
-        #hp-activities #box .industry{
+
+        #hp-activities #box .industry {
             background-color: #6a8dad !important;
         }
-        #hp-activities #box .scientists{
+
+        #hp-activities #box .scientists {
             background-color: #bbb264 !important;
         }
-        #hp-activities #box .policy{
-            background-color:#b464bb !important;
+
+        #hp-activities #box .policy {
+            background-color: #b464bb !important;
         }
-        
-        
+
+
         #hp-activities #box #hp-intro {
             max-width: 25%;
             background-color: #021d3d;
@@ -1359,15 +1462,17 @@
             box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
             white-space: nowrap;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box #hp-intro {
-            width: 90%;
-            height: fit-content;
-            padding: 10px;
-            margin-top: 15px;
-            max-width: none;
+                width: 90%;
+                height: fit-content;
+                padding: 10px;
+                margin-top: 15px;
+                max-width: none;
             }
         }
+
         #hp-activities #box #hp-overview {
             background-color: #CEDDEF;
             display: flex;
@@ -1379,31 +1484,37 @@
             -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
             box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.57);
         }
+
         @media (max-width: 767px) {
             #hp-activities #box #hp-overview {
-            height: fit-content;
-            width: 90%;
+                height: fit-content;
+                width: 90%;
             }
         }
+
         #hp-activities #box #hp-overview .activity {
             width: 20%;
             padding-left: 2px;
             padding-right: 2px;
         }
+
         #hp-activities #box #hp-overview .activity div {
             width: 100%;
         }
+
         #hp-activities #box #hp-overview .activity .title {
             height: 15%;
             color: #fafafc;
             font-size: 0.7em !important;
             text-align: center;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box #hp-overview .activity .title {
-            font-size: 0.4em !important;
+                font-size: 0.4em !important;
             }
         }
+
         #hp-activities #box #hp-overview .activity .points {
             height: 85%;
             display: grid;
@@ -1411,6 +1522,7 @@
             grid-auto-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             padding-top: 10px;
         }
+
         #hp-activities #box #hp-overview .activity .points .point {
             border-radius: 100px;
             box-sizing: border-box;
@@ -1423,14 +1535,17 @@
             height: 7vw;
             width: 7vw;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box #hp-overview .activity .points .point {
-            margin: 10px auto;
+                margin: 10px auto;
             }
         }
+
         #hp-activities #box #hp-overview .activity .points .unfilled {
             animation: none;
         }
+
         #hp-activities #box ul {
             list-style: none;
             padding-inline-start: 20px;
@@ -1439,15 +1554,17 @@
             display: grid;
             padding-top: 10px;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box ul {
-            flex-wrap: wrap;
-            display: flex;
-            height: 100%;
-            padding-inline-start: 20px;
-            padding-top: 0px;
+                flex-wrap: wrap;
+                display: flex;
+                height: 100%;
+                padding-inline-start: 20px;
+                padding-top: 0px;
             }
         }
+
         #hp-activities #box ul li {
             display: flex;
             align-items: center;
@@ -1455,13 +1572,15 @@
             height: fit-content;
             margin: 0;
         }
+
         @media (max-width: 767px) {
             #hp-activities #box ul li {
-            flex: 1 0 50%;
-            font-size: 3vw;
-            margin: 5px 0;
+                flex: 1 0 50%;
+                font-size: 3vw;
+                margin: 5px 0;
             }
         }
+
         #hp-activities #box ul li div {
             max-height: 4vh;
             max-width: 4vh;
@@ -1470,622 +1589,689 @@
             height: 7vw;
             width: 7vw;
         }
+
         #hp-activities #box ul li p {
             font-family: "montserrat-light", sans-serif !important;
             margin-block-end: 0;
             margin-block-start: 0;
             font-size: 1.3vw;
         }
-      
-      
-      </style>
-      <!--  TARGET GROUPS END -->
-      <style>
-          .event-overview{
-            margin-top:30px;
+    </style>
+    <!--  TARGET GROUPS END -->
+    <style>
+        .event-overview {
+            margin-top: 30px;
             border-radius: 2%;
-            padding:20px 40px 40px 40px;
-            background-color:#002060;
-          }
+            padding: 20px 40px 40px 40px;
+            background-color: #002060;
+        }
 
-          .event-overview b{
+        .event-overview b {
             font-size: 24px;
             font-weight: bold;
             color: #CEDDEF;
             text-shadow: 2px 2px 4px #CEDDEF;
-              
-          }
 
-          .event-overview p{
+        }
+
+        .event-overview p {
             margin: 0;
             font-size: 1.2rem;
             line-height: 1.5;
             text-align: justify;
             color: #CEDDEF;
-          }
+        }
 
-          .event-overview li{
+        .event-overview li {
             list-style-type: '-';
             color: #CEDDEF;
             font-size: 1.2em;
         }
 
-          .event-overview li::marker {
+        .event-overview li::marker {
             color: #CEDDEF;
             font-size: 1.2em;
         }
+    </style>
 
-      </style>
 
-        
-            <div style="margin-left: 300px" id="content-tag">
-                <div class="contentBlock">
-                    <div class="content">
+    <div style="margin-left: 300px" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
 
-                        <div id="heading2"></div>
-                        <div>
-                            <h2>Lab on The Street</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Scientists
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination, participation
-                                </p>
-                            </div>
-                        </div>
-
-                        <div id="heading3"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>85<sup>th</sup> Thessaloniki International Fair (TIF) HELEXPO</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Policy Makers, Scientists
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                    <li>&nbsp; &nbsp;ensure that a diversity of perspectives about science held by different groups are considered when solutions to societal problems are pursued</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination, participation
-                                </p>
-                            </div>
-                        </div>
-
-                        <div id="heading4"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Risk Calculator</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Scientists
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;participation
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading5"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Blood Donation Event</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination, participation
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading6"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Survey</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;participation
-                                </p>
-                            </div>
-                            <p class="content-paragraph">To probe the diversity of perspectives about the science of biology and synthetic biology held by the public and consider these in the design of respective solutions (Science Communication Goal #5) we designed a field survey. Main objectives were:</p>
-                            <ol>
-                                <li><b>a)</b>&nbsp; to assess the public's understanding of key biological concepts, and </li>
-                                <li><b>b)</b>&nbsp; to gather views on general policy issues related to synthetic biology </li>
-                            </ol>
-
-                            <p class="content-paragraph">The field survey was approved by the Research Ethics Committee of Democritus University of Thrace (approval no. 12/22-07-2021).</p>
-                            <p class="content-paragraph">The survey comprised of a questionnaire with 2 parts. Each question was designed to be either FALSE or TRUE and the participants could answer using a 5-point Likert scale: Strongly Disagree, Disagree, Don't know, Agree, Strongly Agree. </p>
-                            <br>
-                            <p class="content-paragraph">The section about general understanding of biological concepts consisted of the following questions. </p>
-                            <ol>
-                                <li><b>1.</b>&nbsp; &nbsp;DNA contains information about the structure and function of the organism to which it belongs.</li>
-                                <li><b>2.</b>&nbsp; &nbsp;RNA is synthesized based on DNA.</li>
-                                <li><b>3.</b>&nbsp; &nbsp;Plants are living organisms.</li>
-                                <li><b>4.</b>&nbsp; &nbsp;RNA can modify DNA.</li>
-                                <li><b>5.</b>&nbsp; &nbsp;All organisms on Earth have a common ancestor.</li>
-                                <li><b>6.</b>&nbsp; &nbsp;Some antibiotics are effective against viruses.</li>
-                                <li><b>7.</b>&nbsp; &nbsp;Human somatic and gamete (eggs, sperm) cells have the same DNA.</li>
-                                <li><b>8.</b>&nbsp; &nbsp;Mushrooms are plants.</li>
-                                <li><b>9.</b>&nbsp; &nbsp;Genetically modified organisms (GMOs) are used to make drugs.</li>
-                                <li><b>10.</b>&nbsp; &nbsp;DNA fragments of genetically modified organisms we consume can modify or become integrated into the DNA of human cells./li>
-                                <li><b>11.</b>&nbsp; &nbsp;The use of stem cells for research or therapeutic purposes requires the killing of embryos.</li>
-                            </ol>
-
-                            <p class="content-paragraph">The second section of the survey contained questions on the general public’s opinion on policy issues of synthetic biology. The questions were:</p>
-                                <ol>
-                                    <li><b>1.</b>&nbsp; &nbsp;A genetically modified organism or cell is any organism or cell whose genetic material has been modified using genetic engineering techniques. I understand this definition.</li>
-                                    <li><b>2.</b>&nbsp; &nbsp;Genetic modification of organisms or cells is, by definition, immoral.</li>
-                                    <li><b>3.</b>&nbsp; &nbsp;Consumption of any genetically modified organism (GMO) is proven to be dangerous to health.</li>
-                                    <li><b>4.</b>&nbsp; &nbsp;The use of GMOs for drug production is a beneficial practice. </li>
-                                    <li><b>5.</b>&nbsp; &nbsp;Genetic modification of human somatic cells for the treatment of diseases could be beneficial (cell changes are not inherited in the offspring).</li>
-                                    <li><b>6.</b>&nbsp; &nbsp;Genetic modification of human somatic cells for the treatment of diseases is dangerous and should not be investigated.</li>
-                                </ol>
-
-                            <p class="content-paragraph">The survey was advertised via the team's <a href="#heading8">social media</a> and the questionnaires were handed out to the public in major team events, including the <a href="#heading3">85<sup>th</sup> HELEXPO 2021 International Fair</a> in Thessaloniki, Greece and in Blood Donation Clinics. 
-                            <p class="content-paragraph">The survey results can be seen <a href="https://2021.igem.org/Team:Greece_United/Communication/Survey">here.</a></p>
-                        </div>
-
-                        <div id="heading7"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>YouTube Videos</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading8"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Social Media</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination, participation
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading9"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>TEDx</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;participation
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading10"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Interviews in the Media</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Policy Makers, Scientists
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                    <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li> 
-                                    <li>&nbsp; &nbsp;ensure that a diversity of perspectives about science held by different groups are considered when solutions to societal problems are pursued</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading11"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>ECESCON</h2>
-                            <div class="event-overview"> 
-                                <p>
-                                    <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Scientists
-                                </p>
-                                <p >
-                                    <b>Goal&nbsp;&nbsp;|</b> 
-                                    <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
-                                    <li>&nbsp; &nbsp;increase public appreciation of science</li>
-                                    <li>&nbsp; &nbsp;increase knowledge and understanding of science</li> 
-                                </p>
-                                <p>
-                                    <b>Paradigm|</b>&nbsp;&nbsp;	dissemination
-                                </p>
-                            </div>
-                            
-                        </div>
-
-                        <div id="heading12"></div>
-                        <div style="margin-top: 200px;">
-                            <h2>Community Partners</h2>
-                                <p class="content-paragraph">In our time as an iGEM team we had many wonderful opportunities to engage with other, usually student, teams that organized other competitions, student conferences etc. Due to our active presence in social media, they came in touch with us to ask us to promote their activities to our audience that is parted mostly from science enthusiasts. We kindly accepted all of those propositions resulting in being Community Partners with numerous other teams and organizations, that promoted our team as well.<br>Here are the activities and teams we partnered with.</p>
-
-                        </div>
-                        <img style="width:60%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--OA--survey--nasa--spaceapps.png">
-                        <p style="align-self: center" class="photo-desc"><b>NASA Space App Challenge</b> by the Greek New Space Society. NASA International Space Apps Challenge is annual NASA's global hackathon that serves as an innovation incubation and civic engagement program.</p>
-                        <br>
-                        <img style="width:70%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png">
-                        <p style="align-self: center" class="photo-desc"><b>PharmaSpace:</b>Congress on Pharmaceutical Science and Space Science by Greek Pharmaceutical Students' Federation (GPSF) Patras and Greek Pharmaceutical Students' Federation (GPSF).</p>
-                        <br>
-                        <img style="width:40%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/f/fa/T--Greece_United--OA--survey--ecescon--logo.png">
-                        <p style="align-self: center" class="photo-desc"><b>ECESCON:</b> Electrical and Computer Engineering Student Conference of Greece, 2021.</p>
-                        <br>
-                        <img style="width:40%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/1/12/T--Greece_United--OA--theck--and--the--city.png">
-                        <p style="align-self: center" class="photo-desc"><b>Tech and the City:</b> From students to entrepreneurs: Start up stories - personal growth - future tech, Aristotle University of Thessaloniki.</p>
-                        <br>
-                        <img style="width:30%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--steth.png">
-                        <p style="align-self: center" class="photo-desc"><b>Technology Club of Thrace:</b>Supported us during the Bio Girls event and discussed with us many times about our project and progress.</p>
-                        <br>
-                        <img style="width:30%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--dimos--alexandroupolis.png">
-                        <p style="align-self: center" class="photo-desc"><b>Municipality of Alexandroupolis:</b>Supported us in the local community.</p>
-                        <br>
-                        <img style="width:30%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--ethelontes--aleka.jpg">
-                        <p style="align-self: center" class="photo-desc"><b>Blood Donors Club of Alexandroupolis:</b> supported us in our blood donation event.</p>
-                        <br>
-                        <img style="width:40%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--ethelontes--aleka2.jpg">
-                        <p style="align-self: center" class="photo-desc"><b>Volunteering Club of Alexandroupolis:</b> supported us in our blood donation event.</p>
-                        <br>
-                        <img style="width:30%; align-self: center; border-radius: 10px;" src="https://2021.igem.org/wiki/images/a/a7/T--Greece_United--ethelontes--aleka3.jpg">
-                        <p style="align-self: center" class="photo-desc"><b>Scientific Society of Greek Medicine Students, Department of Alexandroupolis:</b> supported us in our blood donation event.</p>
-
-                        
-
+                <div id="heading2"></div>
+                <div>
+                    <h2>Lab on The Street</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Scientists
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination, participation
+                        </p>
                     </div>
                 </div>
+
+                <div id="heading3"></div>
+                <div style="margin-top: 200px;">
+                    <h2>85<sup>th</sup> Thessaloniki International Fair (TIF) HELEXPO</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Policy Makers,
+                            Scientists
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                            <li>&nbsp; &nbsp;ensure that a diversity of perspectives about science held by different
+                                groups are considered when solutions to societal problems are pursued</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination, participation
+                        </p>
+                    </div>
+                </div>
+
+                <div id="heading4"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Risk Calculator</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Scientists
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp;participation
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading5"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Blood Donation Event</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination, participation
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading6"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Survey</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp;participation
+                        </p>
+                    </div>
+                    <p class="content-paragraph">To probe the diversity of perspectives about the science of biology and
+                        synthetic biology held by the public and consider these in the design of respective solutions
+                        (Science Communication Goal #5) we designed a field survey. Main objectives were:</p>
+                    <ol>
+                        <li><b>a)</b>&nbsp; to assess the public's understanding of key biological concepts, and </li>
+                        <li><b>b)</b>&nbsp; to gather views on general policy issues related to synthetic biology </li>
+                    </ol>
+
+                    <p class="content-paragraph">The field survey was approved by the Research Ethics Committee of
+                        Democritus University of Thrace (approval no. 12/22-07-2021).</p>
+                    <p class="content-paragraph">The survey comprised of a questionnaire with 2 parts. Each question was
+                        designed to be either FALSE or TRUE and the participants could answer using a 5-point Likert
+                        scale: Strongly Disagree, Disagree, Don't know, Agree, Strongly Agree. </p>
+                    <br>
+                    <p class="content-paragraph">The section about general understanding of biological concepts
+                        consisted of the following questions. </p>
+                    <ol>
+                        <li><b>1.</b>&nbsp; &nbsp;DNA contains information about the structure and function of the
+                            organism to which it belongs.</li>
+                        <li><b>2.</b>&nbsp; &nbsp;RNA is synthesized based on DNA.</li>
+                        <li><b>3.</b>&nbsp; &nbsp;Plants are living organisms.</li>
+                        <li><b>4.</b>&nbsp; &nbsp;RNA can modify DNA.</li>
+                        <li><b>5.</b>&nbsp; &nbsp;All organisms on Earth have a common ancestor.</li>
+                        <li><b>6.</b>&nbsp; &nbsp;Some antibiotics are effective against viruses.</li>
+                        <li><b>7.</b>&nbsp; &nbsp;Human somatic and gamete (eggs, sperm) cells have the same DNA.</li>
+                        <li><b>8.</b>&nbsp; &nbsp;Mushrooms are plants.</li>
+                        <li><b>9.</b>&nbsp; &nbsp;Genetically modified organisms (GMOs) are used to make drugs.</li>
+                        <li><b>10.</b>&nbsp; &nbsp;DNA fragments of genetically modified organisms we consume can modify
+                            or become integrated into the DNA of human cells./li>
+                        <li><b>11.</b>&nbsp; &nbsp;The use of stem cells for research or therapeutic purposes requires
+                            the killing of embryos.</li>
+                    </ol>
+
+                    <p class="content-paragraph">The second section of the survey contained questions on the general
+                        public’s opinion on policy issues of synthetic biology. The questions were:</p>
+                    <ol>
+                        <li><b>1.</b>&nbsp; &nbsp;A genetically modified organism or cell is any organism or cell whose
+                            genetic material has been modified using genetic engineering techniques. I understand this
+                            definition.</li>
+                        <li><b>2.</b>&nbsp; &nbsp;Genetic modification of organisms or cells is, by definition, immoral.
+                        </li>
+                        <li><b>3.</b>&nbsp; &nbsp;Consumption of any genetically modified organism (GMO) is proven to be
+                            dangerous to health.</li>
+                        <li><b>4.</b>&nbsp; &nbsp;The use of GMOs for drug production is a beneficial practice. </li>
+                        <li><b>5.</b>&nbsp; &nbsp;Genetic modification of human somatic cells for the treatment of
+                            diseases could be beneficial (cell changes are not inherited in the offspring).</li>
+                        <li><b>6.</b>&nbsp; &nbsp;Genetic modification of human somatic cells for the treatment of
+                            diseases is dangerous and should not be investigated.</li>
+                    </ol>
+
+                    <p class="content-paragraph">The survey was advertised via the team's <a href="#heading8">social
+                            media</a> and the questionnaires were handed out to the public in major team events,
+                        including the <a href="#heading3">85<sup>th</sup> HELEXPO 2021 International Fair</a> in
+                        Thessaloniki, Greece and in Blood Donation Clinics.
+                        <p class="content-paragraph">The survey results can be seen <a
+                                href="https://2021.igem.org/Team:Greece_United/Communication/Survey">here.</a></p>
+                </div>
+
+                <div id="heading7"></div>
+                <div style="margin-top: 200px;">
+                    <h2>YouTube Videos</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading8"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Social Media</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination, participation
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading9"></div>
+                <div style="margin-top: 200px;">
+                    <h2>TEDx</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp;participation
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading10"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Interviews in the Media</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Industry, Policy Makers,
+                            Scientists
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                            <li>&nbsp; &nbsp;influence the opinions, policy preferences or behavior of people</li>
+                            <li>&nbsp; &nbsp;ensure that a diversity of perspectives about science held by different
+                                groups are considered when solutions to societal problems are pursued</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading11"></div>
+                <div style="margin-top: 200px;">
+                    <h2>ECESCON</h2>
+                    <div class="event-overview">
+                        <p>
+                            <b>Target Group&nbsp;&nbsp;|</b> &nbsp; &nbsp;General Public, Scientists
+                        </p>
+                        <p>
+                            <b>Goal&nbsp;&nbsp;|</b>
+                            <li>&nbsp; &nbsp;share recent findings and excitement for science</li>
+                            <li>&nbsp; &nbsp;increase public appreciation of science</li>
+                            <li>&nbsp; &nbsp;increase knowledge and understanding of science</li>
+                        </p>
+                        <p>
+                            <b>Paradigm|</b>&nbsp;&nbsp; dissemination
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="heading12"></div>
+                <div style="margin-top: 200px;">
+                    <h2>Community Partners</h2>
+                    <p class="content-paragraph">In our time as an iGEM team we had many wonderful opportunities to
+                        engage with other, usually student, teams that organized other competitions, student conferences
+                        etc. Due to our active presence in social media, they came in touch with us to ask us to promote
+                        their activities to our audience that is parted mostly from science enthusiasts. We kindly
+                        accepted all of those propositions resulting in being Community Partners with numerous other
+                        teams and organizations, that promoted our team as well.<br>Here are the activities and teams we
+                        partnered with.</p>
+
+                </div>
+                <img style="width:60%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--OA--survey--nasa--spaceapps.png">
+                <p style="align-self: center" class="photo-desc"><b>NASA Space App Challenge</b> by the Greek New Space
+                    Society. NASA International Space Apps Challenge is annual NASA's global hackathon that serves as an
+                    innovation incubation and civic engagement program.</p>
+                <br>
+                <img style="width:70%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/5/57/T--Greece_United--OA--survey--pharmaspace.png">
+                <p style="align-self: center" class="photo-desc"><b>PharmaSpace:</b>Congress on Pharmaceutical Science
+                    and Space Science by Greek Pharmaceutical Students' Federation (GPSF) Patras and Greek
+                    Pharmaceutical Students' Federation (GPSF).</p>
+                <br>
+                <img style="width:40%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/f/fa/T--Greece_United--OA--survey--ecescon--logo.png">
+                <p style="align-self: center" class="photo-desc"><b>ECESCON:</b> Electrical and Computer Engineering
+                    Student Conference of Greece, 2021.</p>
+                <br>
+                <img style="width:40%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/1/12/T--Greece_United--OA--theck--and--the--city.png">
+                <p style="align-self: center" class="photo-desc"><b>Tech and the City:</b> From students to
+                    entrepreneurs: Start up stories - personal growth - future tech, Aristotle University of
+                    Thessaloniki.</p>
+                <br>
+                <img style="width:30%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--steth.png">
+                <p style="align-self: center" class="photo-desc"><b>Technology Club of Thrace:</b>Supported us during
+                    the Bio Girls event and discussed with us many times about our project and progress.</p>
+                <br>
+                <img style="width:30%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--dimos--alexandroupolis.png">
+                <p style="align-self: center" class="photo-desc"><b>Municipality of Alexandroupolis:</b>Supported us in
+                    the local community.</p>
+                <br>
+                <img style="width:30%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--ethelontes--aleka.jpg">
+                <p style="align-self: center" class="photo-desc"><b>Blood Donors Club of Alexandroupolis:</b> supported
+                    us in our blood donation event.</p>
+                <br>
+                <img style="width:40%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--ethelontes--aleka2.jpg">
+                <p style="align-self: center" class="photo-desc"><b>Volunteering Club of Alexandroupolis:</b> supported
+                    us in our blood donation event.</p>
+                <br>
+                <img style="width:30%; align-self: center; border-radius: 10px;"
+                    src="https://2021.igem.org/wiki/images/a/a7/T--Greece_United--ethelontes--aleka3.jpg">
+                <p style="align-self: center" class="photo-desc"><b>Scientific Society of Greek Medicine Students,
+                        Department of Alexandroupolis:</b> supported us in our blood donation event.</p>
+
+
+
             </div>
-        
-          
-    <style>        
-        footer{
-            top: 2400vh ;
+        </div>
+    </div>
+
+
+    <style>
+        footer {
+            top: 2400vh;
             position: absolute;
-            z-index:300;
+            z-index: 300;
 
-            }
-        
-            .footer{ 
-                width:100%; 
-                height:800px; 
-                background:#002060;  
-                
-            } 
-        
-            .footer ul{
-                margin:4%  39%;
-                text-align:right;
-                display:flex;
-                position:absolute;
-                transform: translate(-50%, -50%);
-                color: white;
-            }
-        
-            .footer ul li{
-                list-style: none;
-                margin-right: 10%;
-            }
-        
-            .footer h4{
-                text-align: center;
-                background-color:none;
-                position: absolute;
-                margin: 120px 0 0 36%;
-                font-size: 12px;
-            }
-        
-            .footer ul li a{
-                text-align: center;
-                line-height: 70px;
-                font-size:30px;
-                margin:0 10px;
-                display: block;
-                position: relative;
-                z-index: 1;
-            }
-        
-            .footer ul li a .fa{
-                position: relative;
-                color: white;
-                transition: 0.5s;
-            }
-        
-            /* Facebook social icon */
-            .facebook a:hover .fa{
-                color: #3b5998;
-                transform: rotateY(360deg);
-            }
-        
-            .facebook a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #3b5998;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-        
-            .facebook a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #3b5998;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* Twitter social icon */
-            .twitter a:hover .fa{
-                color:  #55acee;
-                transform: rotateY(360deg);
-            }
-        
-            .twitter a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background:  #55acee;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* Instagram social icon */
-            .instagram a:hover .fa{
-                color: #C32AA3;
-                transform: rotateY(360deg);
-            }
-        
-            .instagram a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #C32AA3;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* LinkedIn social icon */
-            .linkedin a:hover .fa{
-                color: #0e76a8;
-                transform: rotateY(360deg);
-            }
-        
-            .linkedin a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #0e76a8;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* YouTube social icon */
-            .youtube a:hover .fa{
-                color: #c4302b;
-                transform: rotateY(360deg);
-            }
-        
-            .youtube a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #c4302b;
-                transition:0.5s;
-                z-index: 2;
-            }     
-        
-            /* Mail social icon */
-            .mail a:hover .fa{
-                color: #dd4b39;
-                transform: rotateY(360deg);
-            }
-        
-            .mail a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #dd4b39;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* GitHub social icon */
-            .github a:hover .fa{
-                color: #171515;
-                transform: rotateY(360deg);
-            }
-        
-            .github a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #171515;
-                transition:0.5s;
-                z-index: 2;
-            }
-        
-            /* Website icon */
-            .website a:hover .fa{
-                color: #949794;
-                transform: rotateY(360deg);
-            }
-        
-            .website a:before{
-                content:'';
-                position: absolute;
-                top:100%;
-                left:0;
-                background: #949794;
-                transition:0.5s;
-                z-index: 2;
-            }    
-            
-        
-            .footer_sponsors img {
-                width: 60%;
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-                transition: all 0.3s ease-in-out;
-                opacity: 0.75;
-        
-            }
-        
-            .footer_sponsors img:hover {
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(0%);
-                opacity: 1;
-            }
-        
-            .col{
-                width:30%;
-                padding-right: 250px;
-            }
-        
-            .col h4{
-                font-size:24px;
-                color:#ffffff;
-                text-transform: capitalize;
-                margin-bottom: 70px;
-                margin-top: -70px;
-                font-weight: 500;
-                position:relative;
-            }
-        
-            .col ul li:not(:last-child){
-                margin-bottom: 10px;
-            }
-        
-            .col ul li span{
-                font-size: 16px;
-                text-transform: capitalize;
-                color: #ffffff;
-                text-decoration:none;
-                font-weight: 300;
-                color: #bbbbbb;
-                display: block;
-            }
-        </style>
-        
-        <footer>
-            <div class="footer">
-                <!-- Footer -->
-                         
-                    
-        
-                <br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                    
-                <br><br><br><br><br><br><br><br>
-                        
-                    
-                <div style="display:flex;flex-wrap:wrap; ">
-                    <div class="col">
-                        <a href="https://igemnous.med.duth.gr/" target="_blank">
-                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);" 
-                                 src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
-                        </a>
-                       
-                    </div>
-                    
-                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                        <div class="footer_sponsors" style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                            <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                            <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;" ></a>
-                            <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-                        </div>
-                    </div>
-        
+        }
+
+        .footer {
+            width: 100%;
+            height: 800px;
+            background: #002060;
+
+        }
+
+        .footer ul {
+            margin: 4% 39%;
+            text-align: right;
+            display: flex;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .footer ul li {
+            list-style: none;
+            margin-right: 10%;
+        }
+
+        .footer h4 {
+            text-align: center;
+            background-color: none;
+            position: absolute;
+            margin: 120px 0 0 36%;
+            font-size: 12px;
+        }
+
+        .footer ul li a {
+            text-align: center;
+            line-height: 70px;
+            font-size: 30px;
+            margin: 0 10px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer ul li a .fa {
+            position: relative;
+            color: white;
+            transition: 0.5s;
+        }
+
+        /* Facebook social icon */
+        .facebook a:hover .fa {
+            color: #3b5998;
+            transform: rotateY(360deg);
+        }
+
+        .facebook a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #3b5998;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+
+        .facebook a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #3b5998;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* Twitter social icon */
+        .twitter a:hover .fa {
+            color: #55acee;
+            transform: rotateY(360deg);
+        }
+
+        .twitter a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #55acee;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* Instagram social icon */
+        .instagram a:hover .fa {
+            color: #C32AA3;
+            transform: rotateY(360deg);
+        }
+
+        .instagram a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #C32AA3;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* LinkedIn social icon */
+        .linkedin a:hover .fa {
+            color: #0e76a8;
+            transform: rotateY(360deg);
+        }
+
+        .linkedin a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #0e76a8;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* YouTube social icon */
+        .youtube a:hover .fa {
+            color: #c4302b;
+            transform: rotateY(360deg);
+        }
+
+        .youtube a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #c4302b;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* Mail social icon */
+        .mail a:hover .fa {
+            color: #dd4b39;
+            transform: rotateY(360deg);
+        }
+
+        .mail a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #dd4b39;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* GitHub social icon */
+        .github a:hover .fa {
+            color: #171515;
+            transform: rotateY(360deg);
+        }
+
+        .github a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #171515;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        /* Website icon */
+        .website a:hover .fa {
+            color: #949794;
+            transform: rotateY(360deg);
+        }
+
+        .website a:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #949794;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+
+        .footer_sponsors img {
+            width: 60%;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all 0.3s ease-in-out;
+            opacity: 0.75;
+
+        }
+
+        .footer_sponsors img:hover {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .col {
+            width: 30%;
+            padding-right: 250px;
+        }
+
+        .col h4 {
+            font-size: 24px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 70px;
+            margin-top: -70px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .col ul li span {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+        }
+    </style>
+
+    <footer>
+        <div class="footer">
+            <!-- Footer -->
+
+
+
+            <br><br><br><br>
+            <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+            <ul>
+                <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                            aria-hidden="true"></i></a></li>
+                <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                            aria-hidden="true"></i></a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg"
+                        target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                            aria-hidden="true"></i></a></li>
+                <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                            aria-hidden="true"></i></a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+            <br><br><br><br><br><br><br><br>
+
+
+            <div style="display:flex;flex-wrap:wrap; ">
+                <div class="col">
+                    <a href="https://igemnous.med.duth.gr/" target="_blank">
+                        <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                            src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                    </a>
+
                 </div>
-            
-            </div>
-        
-        </footer>
 
-    </body>
+                <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                    <div class="footer_sponsors"
+                        style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                        <a href="https://duth.gr/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                                style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                        <a href="https://www.geneious.com/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                                style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                                style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                        <a href="https://bioemtech.com/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                                style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
 </html>

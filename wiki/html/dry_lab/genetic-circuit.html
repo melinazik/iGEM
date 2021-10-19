@@ -1,133 +1,157 @@
 <html>
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
-    
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
-    <script type="text/javascript" src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript"> </script>
-    <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-     
-    
-        
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+</script>
+<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<style>
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
+
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
+
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
+
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    html {
+        height: 100%;
+        min-height: 100%;
+        font-family: 'Raleway', sans-serif;
+
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+        background: white;
+
+        font-family: 'Raleway', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+
+<body>
     <style>
-
-        /* CLEAR DEFAULT SETTINGS **************************************************/
-        
-        #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
-        #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
-            #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-    
-        #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-    
-        html {
-            height: 100%;
-            min-height: 100%;
-            font-family: 'Raleway', sans-serif;
-
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
         }
-        
-        body{
-            padding:0px;
-            margin:0px;
-            background: white;
-            
-            font-family: 'Raleway', sans-serif;
-    
+
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
-        
+
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
     </style>
 
 
-    <body>
-        <style>
-            #loader-wrapper {
-                display: flex;
-                align-items: center;
-                margin-top: calc((100%)/5);
-                justify-content: center;
-                height: 0.1vh;
-                width: 100vw;
-                z-index: 500;
-                position: fixed;
-                pointer-events: none;
-            }
-    
-            #loader-bg {
-                position: fixed;
-                height: 200vw;
-                width: 200vw;
-                transform: translateY(0);
-                background-color: #6C8EC9;
-                transition-property: height, width, border-radius, transform;
-                transition-duration: 0.5s;
-                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-                transition-delay: 0s, 0s, 0s, 1s;
-                border-radius: 0%;
-                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-                box-shadow: 0px 0px 27px 0px #6E91CB;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-    
-            
-            #loader-wrapper img {
-                width: 30vh;
-    
-            }
-    
-            #loader-wrapper h1 {
-                color: #fafafc;
-                text-transform: uppercase;
-                font-family: 'Raleway', sans-serif;
-                position: absolute;
-                transform: translateY(15vh);
-                font-size: 2.2vw;
-                opacity: 100%;
-            }
-    
-            #loader-bg.loaded 
-            {
-                height: 35vh;
-                width: 35vh;
-                border-radius: 70%;
-                transform: translateY(-2000px);
-            }
-        </style>
-    
-    
-        <div id="loader-wrapper">
-            <div id="loader-bg">
-                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-            </div>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
         </div>
-    
-        <script>
-                    
-            // Loader
-            window.addEventListener("load", function() 
-            {
-                let loader = document.getElementById('loader-bg');
-                
-                setTimeout(function() 
-                {
-                    loader.classList.add('loaded')
-                }, 100);
-            });
-    
-        </script>
+    </div>
 
- 
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
+
+
 
 
     <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
@@ -135,123 +159,158 @@
         display: flex;
         cursor: pointer;">
             <a href="https://2021.igem.org/Team:Greece_United" class="active">
-                
 
-                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
 
             </a>
         </div>
 
 
-        <div class="right-navbar" >
+        <div class="right-navbar">
             <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                        onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
                         </div>
-                    </div> 
-                </li>
-                
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content" >
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-                        </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
                         </button>
                         <div class="dropdown-content">
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
                         </div>
-                    </div> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
                         </button>
                         <div class="dropdown-content">
-                            
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
             </ul>
-            
+
         </div>
     </div>
 
 
-     
+
 
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
@@ -261,75 +320,76 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- in page menu & progress bar -->
-	<style>
-		/* progress bar */
-		
-		#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-        font-family: 'Raleway', sans-serif;
-		/* background-color: #002060; */
-		}
+    <style>
+        /* progress bar */
 
-		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-		pointer-events: none;
-		}
+        #fixedOverlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+            top: 18px;
+            transition: 1s;
+            font-family: 'Raleway', sans-serif;
+            /* background-color: #002060; */
+        }
 
-		#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-		}
+        #fixedOverlay[bg=none],
+        #fixedOverlay[bg=dark] {
+            pointer-events: none;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
+        #fixedOverlay .scroll-wrapper {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+            opacity: 1;
+            transition: 0.5s;
+        }
 
-		@media screen and (max-width: 767px) {
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            height: 100%;
+            width: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
             #fixedOverlay .scroll-wrapper .scroll-area {
                 width: 10vw;
             }
-		}
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-		}
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(98, 129, 239, 0.3);
+            border-radius: 10px;
+            max-width: 7px;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-		}
-		
-		#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-		}
-		
-		/* in page menu */
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+            width: 100%;
+            background: #002060;
+            opacity: 100%;
+            height: 0%;
+            border-radius: 20px;
+            transition: background-color 0.5s;
+        }
+
+        #fixedOverlay nav {
+            box-sizing: border-box;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+            transition: 0.5s;
+            height: 87px;
+        }
+
+        /* in page menu */
         .indexbutton {
             display: none;
             color: #FAFAFC;
@@ -346,60 +406,60 @@
             z-index: 21;
             transition: 0.5s;
         }
+
         @media (max-width: 800px) {
             .indexbutton {
                 display: block;
             }
         }
 
-		.sideBlock 
-		{
-			text-transform: uppercase;
-			text-decoration: none;
-			float: left;
-			margin-left: 10vw;
-			margin-top: 400px;
-			position: -webkit-sticky;
-			position: fixed;
-			top: 30%;
-			margin: 200px 32px 0 4vw;
-			transform: translateY(-50%);
-			min-width: 20px;
-			max-width: 350px;
-			background: #ffffff;
-			opacity: 80%;
-			border-radius: 15%;
-			padding-left: 20px;
-			z-index: 2;
-		}
+        .sideBlock {
+            text-transform: uppercase;
+            text-decoration: none;
+            float: left;
+            margin-left: 10vw;
+            margin-top: 400px;
+            position: -webkit-sticky;
+            position: fixed;
+            top: 30%;
+            margin: 200px 32px 0 4vw;
+            transform: translateY(-50%);
+            min-width: 20px;
+            max-width: 350px;
+            background: #ffffff;
+            opacity: 80%;
+            border-radius: 15%;
+            padding-left: 20px;
+            z-index: 2;
+        }
 
-		@media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .sideBlock {
                 margin: 200px 32px 0 4vw;
             }
-		}
+        }
 
-		.sideBlock b {
+        .sideBlock b {
             font-size: 1.4rem;
             font-weight: bold;
             margin-left: 0.25em;
             padding-bottom: 20px;
             display: block;
-		}
+        }
 
-		.sideBlock ul {
+        .sideBlock ul {
             margin: 1em 0;
             padding: 0;
-		}
+        }
 
-		.sideBlock a {
+        .sideBlock a {
             color: #002060;
             text-decoration: none;
             font-family: 'Raleway', sans-serif;
 
-		}
+        }
 
-		.sideBlock li {
+        .sideBlock li {
             margin: 24px;
             list-style: none;
             color: #002060;
@@ -408,13 +468,13 @@
             display: flex;
             align-items: center;
             margin-left: 0.25em;
-		}
+        }
 
-		.sideBlock li:last-child {
-		    margin-bottom: 0;
-		}
+        .sideBlock li:last-child {
+            margin-bottom: 0;
+        }
 
-		.sideBlock li div {
+        .sideBlock li div {
             max-width: 15px;
             max-height: 15px;
             box-sizing: border-box;
@@ -425,13 +485,13 @@
             margin-right: 8px;
             height: 10vw;
             width: 10vh;
-		}
+        }
 
-		.sideBlock li.active div {
-		    background-color: #002060;
-		}
+        .sideBlock li.active div {
+            background-color: #002060;
+        }
 
-		@media (max-width: 800px) {
+        @media (max-width: 800px) {
             .sideBlock {
                 position: fixed;
                 bottom: 0;
@@ -453,51 +513,58 @@
                 flex-direction: column;
                 align-items: center;
             }
+
             .sideBlock b {
                 display: block;
                 margin: 0;
             }
+
             .sideBlock ul {
                 display: inline-block;
                 text-align: start;
                 margin-top: 0;
                 margin-bottom: 30px;
             }
+
             .sideBlock li {
                 font-weight: bold;
             }
+
             .sideBlock li a {
                 color: #FAFAFC;
             }
+
             .sideBlock li div {
                 color: #FAFAFC;
             }
+
             .sideBlock li.active div {
                 background-color: #FAFAFC;
             }
+
             .sideBlock.notshow {
                 transform: translateY(calc(100% - 900px));
             }
+
             .sideBlock.open {
                 transform: translateY(0);
             }
-		}
+        }
 
-		
-		#content {
-			padding: 0px;
-			width: 100%;
-			margin-top: -7px;
-			margin-left: 0px;
-			border: none;
-			line-height: initial;
-		}
-		
-	</style> 
 
-	<!-- back to top -->
-	<style>
-		#BacktoTop {
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+    </style>
+
+    <!-- back to top -->
+    <style>
+        #BacktoTop {
             display: none;
             position: fixed;
             bottom: 20px;
@@ -511,17 +578,17 @@
             cursor: pointer;
             padding: 15px;
             border-radius: 30%;
-		}
+        }
 
-		#BacktoTop:hover {
-		    background-color: #002060;
-		}
-	</style>
+        #BacktoTop:hover {
+            background-color: #002060;
+        }
+    </style>
 
     <!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
         </svg>
     </button>
     <!-- Back to Top Button End-->
@@ -529,1016 +596,1563 @@
     <!-- Progress bar -->
     <div id="globalWrapper">
         <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper" >
+            <div class="scroll-wrapper">
                 <div id="sidebar-wrapper" class="scroll-area">
                     <div id="scrollbar-container">
                         <div id="scrollbar" style="height: 3%;"></div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <!-- Progress bar End -->
-	
-	<!-- in page menu -->
-    
-	<div id="index" class="sideBlock">
+
+    <!-- in page menu -->
+
+    <div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
 
         <b>Genetic Circuit</b>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading1">Introduction</a>
-			</li>
-		</ul>
         <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading2">Circuit Model: Explained</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading3">Genetic Circuit: Purpose</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading4">Results</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading5">Equations: General Categories</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading6">Equations</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading7">Parts</a>
-			</li>
-		</ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Introduction</a>
+            </li>
+        </ul>
         <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading8">Constants</a>
-			</li>
-		</ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Circuit Model: Explained</a>
+            </li>
+        </ul>
         <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading9">Hybrid Model</a>
-			</li>
-		</ul>
-	</div>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">Genetic Circuit: Purpose</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading4">Results</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading5">Equations: General Categories</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading6">Equations</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading7">Parts</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading8">Constants</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading9">Hybrid Model</a>
+            </li>
+        </ul>
+    </div>
 
 
     <script>
-    
         var textSection = null;
         var navbar = document.getElementById("navbar");
-    
-        window.addEventListener('load', function() {
+
+        window.addEventListener('load', function () {
             textSection = document.querySelector('.elevate-navbar');
             checkScrollPos();
             checkBackToTopPos();
         })
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             updateScrollbar();
             checkNavbarPos();
             checkScrollPos();
             checkBackToTopPos();
         });
+
         function checkScrollPos() {
             var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
             var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
             let scrollWrapper = document.querySelector('.scroll-wrapper');
             if (scrollbarBottom >= footerTop) {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                    "true");
             } else {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                    "false");
             }
         }
+
         function checkBackToTopPos() {
             if ($(window).scrollTop() > 1000) {
                 $('#backtotop-wrapper').addClass('scrolled')
             } else $('#backtotop-wrapper').removeClass('scrolled')
         }
-        $(document).ready(function() {
-            $('#backtotop-wrapper').on('click', function() {
+        $(document).ready(function () {
+            $('#backtotop-wrapper').on('click', function () {
                 $('html, body').animate({
                     'scrollTop': $('body').offset().top
                 }, 2000);
             });
         });
-    
+
         function updateScrollbar() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - window.innerHeight;;
             var scrolled = (winScroll / height) * 100;
             document.getElementById("scrollbar").style.height = scrolled + "%";
         }
-        
+
         var scroll = new SmoothScroll('a[href*="#"]', {
-                speed: 400,
-                speedAsDuration: true,
-                offset: 160
-            });
-    
-            document.getElementById("fixedOverlay").classList.add("project");
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
     </script>
     <!-- back to top button -->
     <script>
-        
         var mybutton = document.getElementById("BacktoTop");
-    
-        window.onscroll = function() {scrollFunction()};
-    
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
         function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-        }
-    
+
         function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 
-    
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-            <div class="contentBlock">
-                <div class="content">
-                    
-                    <div id="heading1"></div>
-                    <h2>Introduction</h2>
-                    <p class="content-paragraph">As analyzed in the <a href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1">exosome model overview</a>,
-                         we created a genetic circuit, utilizing the CellDesigner 4.4 software, aiming to investigate the feasibility of our proposed implementation and 
-                         develop an approach to tackle the <a href="heading3">"low transfection"</a> problem the Wet Lab team encountered (Goal #3). 
-                         We also used this Genetic Circuit Model in combination with the Exosome Production Model to to draw conclusions on the general 
-                         functionality of our proposed implementation (Goal #4).
-
-                         <br><br>
-
-                         The genetic circuit consists of 5 parts, those being the Sensor, the Amplifier, the Effector, the Thresholder and the Repressor. 
-                         Each part plays a key role in the function of the genetic circuit, and its inclusion is vital for it to work as intended.
-
-                         <br><br>
-
-                         The Sensor and the Amplifier, create and enhance the signal respectively, so that the Effector will be activated. 
-                         At the same time the Thresholder and the Repressor keep the rest of the genes in check by forbidding their activation 
-                         and/or stopping their production (“turning it off”) at will, through the Safety Switch, if need be.
-
-                         <br><br>
-
-                         You can find specific information on the exact function of each part in the <a href="https://2021.igem.org/Team:Greece_United/Parts">Wet Lab</a>  section of our Wiki. 
-                      </p>   
-                      
-                      <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--Genetic-Circuit.png">
-                         <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Genetic Circuit Model in CellDesigner 4.4</p>
-					
-					<br><br><br><br>
-					<div id="heading2"></div>
-                    <h2>How the Genetic Circuit Model works</h2>
-                    <p class="content-paragraph">At first glance the circuit might look intimidating, but it is composed of small simple parts, working together in harmony. 
-                        Let’s take it step by step and explain how it works. 
-                        
-                        <br><br>
 
-                        There are exactly 10 species used in the entirety of the circuit. Those are the above-mentioned genes, the NF-kB, Gal4-GV16, Gal4 and rtTR-KRAB 
-                        proteins as well as the products of the Effector which can be anything.
+    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
 
-                        <br><br>
-                        
-                        The red and uncolored rectangles are complexes created from the combination of genes, transcription factors and/or inhibiting proteins. 
-                        Said complex formations are described by the following equation type:
+                <div id="heading1"></div>
+                <h2>Introduction</h2>
+                <p class="content-paragraph">As analyzed in the <a
+                        href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1">exosome model
+                        overview</a>,
+                    we created a genetic circuit, utilizing the CellDesigner 4.4 software, aiming to investigate the
+                    feasibility of our proposed implementation and
+                    develop an approach to tackle the <a href="heading3">"low transfection"</a> problem the Wet Lab team
+                    encountered (Goal #3).
+                    We also used this Genetic Circuit Model in combination with the Exosome Production Model to to draw
+                    conclusions on the general
+                    functionality of our proposed implementation (Goal #4).
 
-						$$\small \frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
+                    <br><br>
 
-                        where:
-                        
-                        $$ TF  = \;Transcription \;factor$$
-                        $$ DNA  = \;Concentration\; of\; the\; Gene$$
-                        $$ TF-DNA  = \;Gene-Transcription\; Factor \;complex$$
-                        $$ k_a  = \;Binding \;constant\; of \;the\; Transcription\; Factor \;to\; its\; corresponding\; promoter$$
+                    The genetic circuit consists of 5 parts, those being the Sensor, the Amplifier, the Effector, the
+                    Thresholder and the Repressor.
+                    Each part plays a key role in the function of the genetic circuit, and its inclusion is vital for it
+                    to work as intended.
 
-                        $$ k_b  = Unbinding constant of the Transcription Factor to its corresponding promoter$$
-                        <br><br>
+                    <br><br>
 
-                        The correct combination of a gene and a transcription factor enables the gene to be expressed and synthesize the corresponding protein.
+                    The Sensor and the Amplifier, create and enhance the signal respectively, so that the Effector will
+                    be activated.
+                    At the same time the Thresholder and the Repressor keep the rest of the genes in check by forbidding
+                    their activation
+                    and/or stopping their production (“turning it off”) at will, through the Safety Switch, if need be.
 
-						$$\small \frac{d[P]]}{dt} = k_s * [TF-DNA]$$
+                    <br><br>
 
-                        where:
-                        
-                        $$ P = \;Protein\; product\; of\; the gene $$
-                        $$ k_s = \;Protein \;synthesis \;constant$$
+                    You can find specific information on the exact function of each part in the <a
+                        href="https://2021.igem.org/Team:Greece_United/Parts">Wet Lab</a> section of our Wiki.
+                </p>
 
-                        Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small synthesis rate due to leaky protein production.
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--Genetic-Circuit.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Genetic Circuit Model in
+                    CellDesigner 4.4</p>
 
-						$$\small \frac{d[P]]}{dt} = k_l * [DNA]$$
+                <br><br><br><br>
+                <div id="heading2"></div>
+                <h2>How the Genetic Circuit Model works</h2>
+                <p class="content-paragraph">At first glance the circuit might look intimidating, but it is composed of
+                    small simple parts, working together in harmony.
+                    Let’s take it step by step and explain how it works.
 
-                        where:
-                        
-                        $$ k_l = \;Leaky\; protein \;synthesis\; constant $$
+                    <br><br>
 
-                        The Thresholder and Repressor genes are not activated by a protein of the genetic circuit. 
-                        They are constantly expressed utilizing transcription factors native to the cell, in order to maintain their restrictive function. 
-                        Also, the product of the Repressor, the rtTR-KRAB protein, is in its inactivate state and can only be activated via the existence of 
-                        the Doxycycline (Dox) in the cells environment. This interaction is described by the following equation:
+                    There are exactly 10 species used in the entirety of the circuit. Those are the above-mentioned
+                    genes, the NF-kB, Gal4-GV16, Gal4 and rtTR-KRAB
+                    proteins as well as the products of the Effector which can be anything.
 
-						$$\small \frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
+                    <br><br>
 
-                        where:
-                        
-                        $$k_dox =\; Doxycycline – rtTR-KRAB \;association\;constant$$
+                    The red and uncolored rectangles are complexes created from the combination of genes, transcription
+                    factors and/or inhibiting proteins.
+                    Said complex formations are described by the following equation type:
 
-                        Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the gene array due to cell dilution.
+                    $$\small \frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
 
-                        $$\small \frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
+                    where:
 
-                        and
+                    $$ TF = \;Transcription \;factor$$
+                    $$ DNA = \;Concentration\; of\; the\; Gene$$
+                    $$ TF-DNA = \;Gene-Transcription\; Factor \;complex$$
+                    $$ k_a = \;Binding \;constant\; of \;the\; Transcription\; Factor \;to\; its\; corresponding\;
+                    promoter$$
 
-                        $$\small \frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
-                        
-                        where:
-                        
-                        $$k_{deg-p} =\; Degradation \;rate \;of \;a\;protein$$
-                        $$k_{dil} = \;Dillution \;constant$$
+                    $$ k_b = Unbinding constant of the Transcription Factor to its corresponding promoter$$
+                    <br><br>
 
+                    The correct combination of a gene and a transcription factor enables the gene to be expressed and
+                    synthesize the corresponding protein.
 
-					</p>
-	
-					<div id="heading3"></div>
-                    <h2>Why we created the Genetic Circuit model</h2>
-					<p class="content-paragraph">
-						TDuring the development of the project, a problem occurred we named the “low transfection” problem, 
-                        because Mesenchymal Stem Cells are very difficult to transfect considering time, skills and resources. 
-                        The fact that we needed to do so with 5 different plasmids didn’t help our situation.
+                    $$\small \frac{d[P]]}{dt} = k_s * [TF-DNA]$$
 
-                        <br><br>
+                    where:
 
-                        Our solution was to create this model, to determine whether we could exclude some parts of it in order to reduce the number of plasmids while 
-                        maintaining a significant amount of its functionality. In a different turn of events, we would use the simulations of the genetic circuit to 
-                        demonstrate how this solution would function in close to real-life conditions and compare the results with the Wet Lab approach.   
-					</p>
+                    $$ P = \;Protein\; product\; of\; the gene $$
+                    $$ k_s = \;Protein \;synthesis \;constant$$
 
-					
+                    Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small
+                    synthesis rate due to leaky protein production.
 
-					<br><br><br><br>
-					<div id="heading4"></div>
-                    <h2>Results</h2>
-					<p class="content-paragraph">
-						The first exclusion was to the amplifier construct. We ran the simulation in CellDesigner and MATLAB. 
-					</p>
+                    $$\small \frac{d[P]]}{dt} = k_l * [DNA]$$
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in difference values of the amplifier construct.</p>
+                    where:
 
-					<p class="content-paragraph">
-						The exclusion of the amplifier construct reduces the expression of the effector by a significant amount (Figure 3). 
-                        This small amount means that can theoretically exclude it from the genetic circuit. 
-                        But in order for this solution to work, we have to exclude at least one more plasmid.
+                    $$ k_l = \;Leaky\; protein \;synthesis\; constant $$
 
-						<br><br>
+                    The Thresholder and Repressor genes are not activated by a protein of the genetic circuit.
+                    They are constantly expressed utilizing transcription factors native to the cell, in order to
+                    maintain their restrictive function.
+                    Also, the product of the Repressor, the rtTR-KRAB protein, is in its inactivate state and can only
+                    be activated via the existence of
+                    the Doxycycline (Dox) in the cells environment. This interaction is described by the following
+                    equation:
 
-						The next construct we tested was that of the thresholder.
-
-					</p>
+                    $$\small \frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
 
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/2/2e/T--Greece_United--Figure2-2.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Effector expression levels in different values of the thresholder construct.</p>
-
-
-					<p class="content-paragraph">
-						The results were like those of the exclusion of the amplifier construct, although in this case for a different reason. 
-                        The fact that there is an increased expression of the effector construct (Figure 4), meant that if there was no NF-kB in the cells, 
-                        we would have noticeable gene expression, therefore interfering with the wet lab results.
-					</p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--Figure2-3.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 5:</b> Effector expression levels in different values of Thresholder.</p>
-
-                    <p class="content-paragraph">
-						The absence of the thresholder construct can result in misleading results in the lab and uncontrollable expression (Figure 5). 
-                        This comes in direct contrast with the reason we use the genetic circuit in the first place. 
-                        Therefore, we concluded that its existence is all but necessary. 
-
-                        <br><br>
-
-                        The same can be said for the repressor construct, whose exclusion would leave us unable to turn off the circuit entirely.
-					</p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/b/bd/T--Greece_United--Figure2-1.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Effector expression levels in different values of Doxycycline (Dox)</p>
-
-                    <p class="content-paragraph">
-						As we can see in Figure 6 the repressor construct has a very important role in the regulation of our circuit and its removal 
-                        might prove to be more of an obstacle rather than a boost. 
-
-
-                        <br><br>
-
-                        After careful thought and examination of our simulation results, we concluded that we cannot use less than 4 plasmid constructs 
-                        and abandoned the lab experiment altogether. This is how the genetic circuit model contributed to the aid of the Wet Lab, as well 
-                        as the construction of the hybrid model that combines the genetic circuit and the exosome production model, to test our idea from 
-                        NF-kB to CAP-Exosome production.
-					</p>
-
-					<br><br><br><br>
-
-					<div id="heading5"></div>
-                    <h2>Equations : General Categories</h2>
-					<p class="content-paragraph">In this table, you can find the general categories of the equations used to build our Genetic Circuit Model.</p>
-                    <table>
-						<tr>
-							<td><p class="table-paragraph"><b>Equation</b></p></td>
-							<td><p class="table-paragraph"><b>Description</b></p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[TF-DNA]}{dt} = [TF] * [DNA] * k_{a} - [TF-DNA] * k_{d}$$
-							</td>
-							<td><p class="table-paragraph">This type of equation describes how a transcription factor (TF) binds and unbinds to a gene (DNA) to form a transcription factor-gene complex (TF-DNA), 
-                                based on two constants named ka and kd for binding and unbinding respectively</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor Complex] * k_{dNFkB}$$
-							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.
-                            </p></td>
-						</tr>
-
-						<tr>
-							<td>
-                                $$\small \frac{d[P]}{dt} = [TF-DNA] * k_{s}$$
-
-
-							</td>
-							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein, based on the concentration of the transcription factor and gene complex (TF – DNA).</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
-							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[P]}{dt} = [DNA] * k_{l}$$
-							</td>
-							<td><p class="table-paragraph">This type of equation describes the transcription and translation of a protein based on the basal protein expression rate.
-                            </p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
-							</td>
-							<td><p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Here is an example of the previously mentioned equation type.</p></td>
-						</tr>
-					  </table>
-
-                      <br><br><br><br>
-                      <div id="heading6"></div>
-                    <h2>Equations</h2>
-					<p class="content-paragraph">In this table, you can find the equations used to build our Genetic Circuit Model</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>Equation</b></p></td>
-							<td><p class="table-paragraph"><b>Description</b></p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Sensor NFkB Complex]}{dt}= $$ $$[NFkB] * [Sensor] * k_{aNFkB}$$ $$ - [Sensor Complex] * k_{dNFkB}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of NF-κB to the sensor construct</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.
-                            </p></td>
-						</tr>
-
-						<tr>
-							<td>
-                                $$\small \frac{d[GV16 (amplifier)] } {dt} = [GV16]*[Amplifier]*k_{aGV16} - [GV16(amplifier)] * k_{dGV16}$$
-
-
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the amplifier construct.</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Amino Acids]}{dt} = [rtTr-KRAB] * k_{deg}$$
-							</td>
-							<td><p class="table-paragraph">Inactive rtTR - KRAB degradation.</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[GV16 (amplifier)]}{dt} = $$ $$[GV16] * [Effector Gene] * k_{aGV16} - $$ $$ [GV16 (effector)] * {k_dGV16}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the effector construct.
-                            </p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Effector Construct]}{dt} = [GV16 (effector)] * k_{s}$$
-							</td>
-							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\small \frac{d[Amino Acids]}{dt} = [GV16] * k_{degGV16} $$
-							</td>
-							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Gal4]}{dt} = [Thresholder Gene] * k_{s} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Gal4(effector)]}{dt} $$ $$= [Gal4] * [Effector Gene] *k_{aGV16} - $$ $$[Gal4(effector)]*k_{dGV16}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of Gal4 to the amplifier construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [Sensors] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [GV16 (amplifier)] * k_{s} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [Amplifier Gene] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Effector Protein]}{dt} = [Effector Gene] * k_{l} $$
-							</td>
-							<td><p class="table-paragraph">Production of luciferase reporter from amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Amino Acids]}{dt} = [Effector Construct] * k_{degGluv} $$
-							</td>
-							<td><p class="table-paragraph">Luciferase reporter degradation to amino acids.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[GV16]}{dt} = [Thresholder Gene] * k_{l} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Production of Gal4 - VP16 from amino acids
-                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
-                                </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Effector Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
-							</td>
-							<td><p class="table-paragraph">Production of luciferace from amino acids
-                                The repressed leaky production rate was set to 1% of the unrepressed leaky production rate.
-                                
-                                </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [Sensor] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the sensor construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [Thresholder Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the thresholder construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [Repressor Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the repressor construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [Amplifier Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division.</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [Effector Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the amplifier construct due to cell division</p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB Dox Complex]}{dt} = [rtTR-KRAB] * [Dox]*k_{dox} $$
-							</td>
-							<td><p class="table-paragraph">Binding of doxycycline to an inactive rtTR – KRAB, producing an active rtTR – KRAB. </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB GV16 Complex (effector)]}{dt} = $$ $$[rtTR-KRAB Dox Complex] * [GV16 (effector)]*k_{artTR} - $$ $$[rtTR-KRAB - GV16 Complex (effector)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 - VP16 bound effector construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB (effector)]}{dt} = $$ $$[rtTR-KRAB Dox Complex] * [Effector Gene]*k_{artTR} - $$ $$[rtTRKRAB(effector)]*k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the effector construct.
-                            </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB-GV16 Complex (amplifier)]}{dt} = $$ $$[rtTR-KRAB Dox Complex] *[GV16(amplifier)] * k_{artTR} - $$ $$ [rtTRKRAB-GV16 Complex (amplifier)]*
-                                k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 - VP16 bound amplifier construct. </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB-Gal4 Complex (amplifier)]}{dt} = $$ $$ [rtTR-KRAB Dox Complex] * [Gal4 (amplifier)] * k_{artTR} - $$ $$ [rtTRKRAB -Gal4 Complex (amplifier)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 bound amplifier
+                    where:
+
+                    $$k_dox =\; Doxycycline – rtTR-KRAB \;association\;constant$$
+
+                    Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the
+                    gene array due to cell dilution.
+
+                    $$\small \frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
+
+                    and
+
+                    $$\small \frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
+
+                    where:
+
+                    $$k_{deg-p} =\; Degradation \;rate \;of \;a\;protein$$
+                    $$k_{dil} = \;Dillution \;constant$$
+
+
+                </p>
+
+                <div id="heading3"></div>
+                <h2>Why we created the Genetic Circuit model</h2>
+                <p class="content-paragraph">
+                    TDuring the development of the project, a problem occurred we named the “low transfection” problem,
+                    because Mesenchymal Stem Cells are very difficult to transfect considering time, skills and
+                    resources.
+                    The fact that we needed to do so with 5 different plasmids didn’t help our situation.
+
+                    <br><br>
+
+                    Our solution was to create this model, to determine whether we could exclude some parts of it in
+                    order to reduce the number of plasmids while
+                    maintaining a significant amount of its functionality. In a different turn of events, we would use
+                    the simulations of the genetic circuit to
+                    demonstrate how this solution would function in close to real-life conditions and compare the
+                    results with the Wet Lab approach.
+                </p>
+
+
+
+                <br><br><br><br>
+                <div id="heading4"></div>
+                <h2>Results</h2>
+                <p class="content-paragraph">
+                    The first exclusion was to the amplifier construct. We ran the simulation in CellDesigner and
+                    MATLAB.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in
+                    difference values of the amplifier construct.</p>
+
+                <p class="content-paragraph">
+                    The exclusion of the amplifier construct reduces the expression of the effector by a significant
+                    amount (Figure 3).
+                    This small amount means that can theoretically exclude it from the genetic circuit.
+                    But in order for this solution to work, we have to exclude at least one more plasmid.
+
+                    <br><br>
+
+                    The next construct we tested was that of the thresholder.
+
+                </p>
+
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/2/2e/T--Greece_United--Figure2-2.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Effector expression levels in different
+                    values of the thresholder construct.</p>
+
+
+                <p class="content-paragraph">
+                    The results were like those of the exclusion of the amplifier construct, although in this case for a
+                    different reason.
+                    The fact that there is an increased expression of the effector construct (Figure 4), meant that if
+                    there was no NF-kB in the cells,
+                    we would have noticeable gene expression, therefore interfering with the wet lab results.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/a/ad/T--Greece_United--Figure2-3.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 5:</b> Effector expression levels in
+                    different values of Thresholder.</p>
+
+                <p class="content-paragraph">
+                    The absence of the thresholder construct can result in misleading results in the lab and
+                    uncontrollable expression (Figure 5).
+                    This comes in direct contrast with the reason we use the genetic circuit in the first place.
+                    Therefore, we concluded that its existence is all but necessary.
+
+                    <br><br>
+
+                    The same can be said for the repressor construct, whose exclusion would leave us unable to turn off
+                    the circuit entirely.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/b/bd/T--Greece_United--Figure2-1.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Effector expression levels in different
+                    values of Doxycycline (Dox)</p>
+
+                <p class="content-paragraph">
+                    As we can see in Figure 6 the repressor construct has a very important role in the regulation of our
+                    circuit and its removal
+                    might prove to be more of an obstacle rather than a boost.
+
+
+                    <br><br>
+
+                    After careful thought and examination of our simulation results, we concluded that we cannot use
+                    less than 4 plasmid constructs
+                    and abandoned the lab experiment altogether. This is how the genetic circuit model contributed to
+                    the aid of the Wet Lab, as well
+                    as the construction of the hybrid model that combines the genetic circuit and the exosome production
+                    model, to test our idea from
+                    NF-kB to CAP-Exosome production.
+                </p>
+
+                <br><br><br><br>
+
+                <div id="heading5"></div>
+                <h2>Equations : General Categories</h2>
+                <p class="content-paragraph">In this table, you can find the general categories of the equations used to
+                    build our Genetic Circuit Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Equation</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Description</b></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[TF-DNA]}{dt} = [TF] * [DNA] * k_{a} - [TF-DNA] * k_{d}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">This type of equation describes how a transcription factor (TF)
+                                binds and unbinds to a gene (DNA) to form a transcription factor-gene complex (TF-DNA),
+                                based on two constants named ka and kd for binding and unbinding respectively</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Sensor NFkB Complex]}{dt} = [NFkB] * [Sensor] * k_{aNFkB} - [Sensor
+                            Complex] * k_{dNFkB}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Here is an example of the previously mentioned equation type.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[P]}{dt} = [TF-DNA] * k_{s}$$
+
+
+                        </td>
+                        <td>
+                            <p class="table-paragraph">This type of equation describes the transcription and translation
+                                of a protein, based on the concentration of the transcription factor and gene complex
+                                (TF – DNA).</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Here is an example of the previously mentioned equation type.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[P]}{dt} = [DNA] * k_{l}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">This type of equation describes the transcription and translation
+                                of a protein based on the basal protein expression rate.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}*
+                            k_{p-exosome}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Here is an example of the previously mentioned equation type.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br><br><br><br>
+                <div id="heading6"></div>
+                <h2>Equations</h2>
+                <p class="content-paragraph">In this table, you can find the equations used to build our Genetic Circuit
+                    Model</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Equation</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Description</b></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Sensor NFkB Complex]}{dt}= $$ $$[NFkB] * [Sensor] * k_{aNFkB}$$ $$ -
+                            [Sensor Complex] * k_{dNFkB}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of NF-κB to the sensor construct</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [Sensor NFkB Complex] * k_{s}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16 (amplifier)] } {dt} = [GV16]*[Amplifier]*k_{aGV16} - [GV16(amplifier)]
+                            * k_{dGV16}$$
+
+
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the amplifier
+                                construct.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Amino Acids]}{dt} = [rtTr-KRAB] * k_{deg}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Inactive rtTR - KRAB degradation.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16 (amplifier)]}{dt} = $$ $$[GV16] * [Effector Gene] * k_{aGV16} - $$ $$
+                            [GV16 (effector)] * {k_dGV16}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of Gal4 - VP16 to the effector
                                 construct.
-                                 </p></td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB (sensor)]}{dt} =$$ $$ [rtTR-KRAB Dox Complex] * [Sensor] * k_{artTR} - $$ $$ [rtTRKRAB (sensor)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the sensor construct.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[rtTRKRAB NFkB (sensor)]}{dt} =$$ $$ [rtTR-KRAB Dox Complex] * [NFkB (Sensor)] *k_{artTR} - $$ $$[rtTRKRAB NFkB Complex (sensor)] * k_{drtTR}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of rtTR – KRAB the NFkB bound sensor construct.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [NFkB (Sensor)] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the NFkB bound sensor construct due to cell division.
-                                </p>
-                            </td>
-						</tr>
-                        <tr>
-							<td>
-								$$\small \frac{d[Cell Division]}{dt} = [rtTR-KRAB  (Sensor)] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Dilution of the rtTR – KRAB bound sensor construct due to cell division.
-                                </p>
-                            </td>
-						</tr>
-					  </table>
-                    
-                   
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Effector Construct]}{dt} = [GV16 (effector)] * k_{s}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of luciferase reporter from amino acids.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Amino Acids]}{dt} = [GV16] * k_{degGV16} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Gal4]}{dt} = [Thresholder Gene] * k_{s} * 0.01$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 - VP16 degradation to amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Gal4(effector)]}{dt} $$ $$= [Gal4] * [Effector Gene] *k_{aGV16} - $$
+                            $$[Gal4(effector)]*k_{dGV16}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of Gal4 to the amplifier construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [Sensors] * k_{l} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [GV16 (amplifier)] * k_{s} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [Amplifier Gene] * k_{l} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Effector Protein]}{dt} = [Effector Gene] * k_{l} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of luciferase reporter from amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Amino Acids]}{dt} = [Effector Construct] * k_{degGluv} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Luciferase reporter degradation to amino acids.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[GV16]}{dt} = [Thresholder Gene] * k_{l} * 0.01$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids
+                                The repressed leaky production rate was set to 1% of the unrepressed leaky production
+                                rate.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Effector Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of luciferace from amino acids
+                                The repressed leaky production rate was set to 1% of the unrepressed leaky production
+                                rate.
+
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [Sensor] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the sensor construct due to cell division.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [Thresholder Gene] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the thresholder construct due to cell division.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [Repressor Gene] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the repressor construct due to cell division.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [Amplifier Gene] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the amplifier construct due to cell division.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [Effector Gene] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the amplifier construct due to cell division</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB Dox Complex]}{dt} = [rtTR-KRAB] * [Dox]*k_{dox} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding of doxycycline to an inactive rtTR – KRAB, producing an
+                                active rtTR – KRAB. </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB GV16 Complex (effector)]}{dt} = $$ $$[rtTR-KRAB Dox Complex] *
+                            [GV16 (effector)]*k_{artTR} - $$ $$[rtTR-KRAB - GV16 Complex (effector)] * k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 - VP16 bound
+                                effector construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB (effector)]}{dt} = $$ $$[rtTR-KRAB Dox Complex] * [Effector
+                            Gene]*k_{artTR} - $$ $$[rtTRKRAB(effector)]*k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the effector construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB-GV16 Complex (amplifier)]}{dt} = $$ $$[rtTR-KRAB Dox Complex]
+                            *[GV16(amplifier)] * k_{artTR} - $$ $$ [rtTRKRAB-GV16 Complex (amplifier)]*
+                            k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 - VP16 bound
+                                amplifier construct. </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB-Gal4 Complex (amplifier)]}{dt} = $$ $$ [rtTR-KRAB Dox Complex] *
+                            [Gal4 (amplifier)] * k_{artTR} - $$ $$ [rtTRKRAB -Gal4 Complex (amplifier)] * k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 bound amplifier
+                                construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB (sensor)]}{dt} =$$ $$ [rtTR-KRAB Dox Complex] * [Sensor] *
+                            k_{artTR} - $$ $$ [rtTRKRAB (sensor)] * k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the sensor construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[rtTRKRAB NFkB (sensor)]}{dt} =$$ $$ [rtTR-KRAB Dox Complex] * [NFkB
+                            (Sensor)] *k_{artTR} - $$ $$[rtTRKRAB NFkB Complex (sensor)] * k_{drtTR}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the NFkB bound sensor
+                                construct.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [NFkB (Sensor)] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the NFkB bound sensor construct due to cell division.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\small \frac{d[Cell Division]}{dt} = [rtTR-KRAB (Sensor)] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution of the rtTR – KRAB bound sensor construct due to cell
+                                division.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
 
 
-					<br><br><br><br>
-					<div id="heading7"></div>
-                    <h2>Model Parts</h2>
-					<p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build our Exosome Production Model.</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>Class</b></p></td>
-							<td><p class="table-paragraph"><b>Name</b></p></td>
-							<td><p class="table-paragraph"><b>id</b></p></td>
-							<td><p class="table-paragraph"><b>Boundary Condition</b></p></td>
-							<td><p class="table-paragraph"><b>Description</b></p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">sensor</p></td>
-							<td><p class="table-paragraph">S<sub>1</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Sensor construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">amplifier</p></td>
-							<td><p class="table-paragraph">S<sub>19</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Amplifier construct</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">effector</p></td>
-							<td><p class="table-paragraph">S<sub>28</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Effector Construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">repressor </p></td>
-							<td><p class="table-paragraph">S<sub>15</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">OFF-switch construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">thresholder</p></td>
-							<td><p class="table-paragraph">S<sub>29</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Thresholder construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">GV16</p></td>
-							<td><p class="table-paragraph">S<sub>54</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4-VP16 Transcription Factor</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">NF-kappa-B</p></td>
-							<td><p class="table-paragraph">S<sub>45</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">NF-kB input signal</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">EFFECTOR</p></td>
-							<td><p class="table-paragraph">S<sub>57</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Genetic circuit output</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">rtTR-KRAB</p></td>
-							<td><p class="table-paragraph">S<sub>8</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Inactive rtTR-KRAB transcriptional repressor</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">NF-_kappa_B RE-NF- _kappa_B (sensor)</p></td>
-							<td><p class="table-paragraph">S<sub>43</sub></p></td>
-							<td><p class="table-paragraph">False/p></td>
-							<td><p class="table-paragraph">NF-κB in complex with the sensor construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR (sensor)</p></td>
-							<td><p class="table-paragraph">S<sub>40</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">rtTR-KRAB in complex with the sensor construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">RE-rtTR_NF-_kappa_B RENF-_kappa_B (sensor)</p></td>
-							<td><p class="table-paragraph">S<sub>39</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">NF-κB and rtTR-KRAB in complex with the sensor construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">UAS-GV16 (effector)</p></td>
-							<td><p class="table-paragraph">S<sub>34</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4 in complex with the effector construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR_UAS-Gal4 (effector)</p></td>
-							<td><p class="table-paragraph">S<sub>36</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4 and rtTR-KRAB in complex with the effector construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR (effector)</p></td>
-							<td><p class="table-paragraph">S<sub>42</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">rtTR-KRAB in complex with the effector construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">RE-rtTR_UAS-GV16 (effector)</p></td>
-							<td><p class="table-paragraph">S<sub>38</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4-VP16 and rtTR-KRAB in complex with the effector construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">UAS-Gal4 (amplifier)</p></td>
-							<td><p class="table-paragraph">S<sub>31</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4 in complex with the amplifier construct</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">UAS-GV16 (amplifier)</p></td>
-							<td><p class="table-paragraph">S<sub>33</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4 in complex with the amplifier construct</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR_UAS-Gal4 (amplifier)</p></td>
-							<td><p class="table-paragraph">S<sub>35</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gal4 and rtTR-KRAB in complex with the amplifier construct</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR (amplifier)</p></td>
-							<td><p class="table-paragraph">S<sub>41</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">rtTR-KRAB in complex with the amplifier construct</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TRE-rtTR_UAS-GV16 (amplifier)</p></td>
-							<td><p class="table-paragraph">S<sub>37</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">rtTR-KRAB in complex with the amplifier construct</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">SIMPLE_MOLECULE</p></td>
-							<td><p class="table-paragraph">Dox</p></td>
-							<td><p class="table-paragraph">S<sub>58</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Amino acids</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">aa</p></td>
-							<td><p class="table-paragraph">S<sub>30</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Amino acids</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">lost</p></td>
-							<td><p class="table-paragraph">S<sub>30</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Lost DNA constructs due to dilution through cell division</p></td>
-						</tr>
 
 
-					</table>
+                <br><br><br><br>
+                <div id="heading7"></div>
+                <h2>Model Parts</h2>
+                <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build
+                    our Exosome Production Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Class</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Name</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>id</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Boundary Condition</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Description</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">sensor</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>1</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Sensor construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">amplifier</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>19</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">effector</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>28</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Effector Construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">repressor </p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>15</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">OFF-switch construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">thresholder</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>29</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Thresholder construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">GV16</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>54</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4-VP16 Transcription Factor</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-kappa-B</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>45</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-kB input signal</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">EFFECTOR</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>57</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Genetic circuit output</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>8</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Inactive rtTR-KRAB transcriptional repressor</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-_kappa_B RE-NF- _kappa_B (sensor)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>43</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False/p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-κB in complex with the sensor construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR (sensor)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>40</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB in complex with the sensor construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">RE-rtTR_NF-_kappa_B RENF-_kappa_B (sensor)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>39</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-κB and rtTR-KRAB in complex with the sensor construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">UAS-GV16 (effector)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>34</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 in complex with the effector construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR_UAS-Gal4 (effector)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>36</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 and rtTR-KRAB in complex with the effector construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR (effector)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>42</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB in complex with the effector construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">RE-rtTR_UAS-GV16 (effector)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>38</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4-VP16 and rtTR-KRAB in complex with the effector construct
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">UAS-Gal4 (amplifier)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>31</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 in complex with the amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">UAS-GV16 (amplifier)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>33</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 in complex with the amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR_UAS-Gal4 (amplifier)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>35</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 and rtTR-KRAB in complex with the amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR (amplifier)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>41</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB in complex with the amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TRE-rtTR_UAS-GV16 (amplifier)</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>37</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB in complex with the amplifier construct</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">SIMPLE_MOLECULE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dox</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>58</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Amino acids</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">aa</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>30</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Amino acids</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">lost</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>30</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lost DNA constructs due to dilution through cell division</p>
+                        </td>
+                    </tr>
+
+
+                </table>
 
 
 
-					<br><br><br><br>
-					<div id="heading8"></div>
-                    <h2>Constants</h2>
-					<p class="content-paragraph">In this table, you can find the values of the constants we used in the equations of the Exosome Production Model.</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>ID</b></p></td>
-							<td><p class="table-paragraph"><b>Value</b></p></td>
-							<td><p class="table-paragraph"><b>Units</b></p></td>
-							<td><p class="table-paragraph"><b>Comments</b></p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>aGV16</sub></p></td>
-							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
-							<td><p class="table-paragraph">N<sup>-1</sup> * s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Gal4-VP16 - DNA on-rate binding constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>dGV16</sub></p></td>
-							<td><p class="table-paragraph">0.01</p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Gal4-VP16 - DNA off-rate constant.</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>l</sub></p></td>
-							<td><p class="table-paragraph">0.00125</p></td>
-							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Leaky protein production rate</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>deg</sub></p></td>
-							<td><p class="table-paragraph">2.79045 * 10<sup>-5</sup></p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Average protein degradation rate</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>aNFkB</sub></p></td>
-							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">NF-κB - DNA on-rate binding constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>dNFkB</sub></p></td>
-							<td><p class="table-paragraph">0.01</p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">NF-κB - DNA off-rate constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>s</sub></p></td>
-							<td><p class="table-paragraph">0.25</p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Protein production rate</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>dil</sub></p></td>
-							<td><p class="table-paragraph">8.02254 * 10<sup>-6</sup></p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Dilution rate</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>artTR</sub></p></td>
-							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
-							<td><p class="table-paragraph"> s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Dilution rate</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">k<sub>dox</sub></p></td>
-							<td><p class="table-paragraph">1.66 * 10<sup>-6</sup></p></td>
-							<td><p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Doxycycline – rtTR-KRAB association constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>drtTR</sub></p></td>
-							<td><p class="table-paragraph">0.01</p></td>
-							<td><p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">rtTR-KRAB - DNA on-rate binding constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>degluc</sub></p></td>
-							<td><p class="table-paragraph">9.62704 * 10<sup>-5</sup></p></td>
-							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Firefly luciferase degradation rate</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">k<sub>deggal4</sub></p></td>
-							<td><p class="table-paragraph">1.15525 * 10<sup>-4</sup></p></td>
-							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Gal4 degradation rate</p></td>
-						</tr>
-                        <tr>
-							<td><p class="table-paragraph">k<sub>deggv16</sub></p></td>
-							<td><p class="table-paragraph">1.54033 * 10<sup>-4</sup></p></td>
-							<td><p class="table-paragraph">s<sup>-1</sup></p></td>
-							<td><p class="table-paragraph">Gal4-VP16 degradation rate</p></td>
-						</tr>
-						
-						
-                    
-					</table>
+                <br><br><br><br>
+                <div id="heading8"></div>
+                <h2>Constants</h2>
+                <p class="content-paragraph">In this table, you can find the values of the constants we used in the
+                    equations of the Exosome Production Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>ID</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Value</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Units</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Comments</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>aGV16</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.66 * 10<sup>-6</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">N<sup>-1</sup> * s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4-VP16 - DNA on-rate binding constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>dGV16</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.01</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4-VP16 - DNA off-rate constant.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>l</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.00125</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Leaky protein production rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>deg</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">2.79045 * 10<sup>-5</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Average protein degradation rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>aNFkB</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.66 * 10<sup>-6</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-κB - DNA on-rate binding constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>dNFkB</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.01</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NF-κB - DNA off-rate constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>s</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.25</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Protein production rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>dil</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">8.02254 * 10<sup>-6</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>artTR</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.66 * 10<sup>-6</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>dox</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.66 * 10<sup>-6</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Doxycycline – rtTR-KRAB association constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>drtTR</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.01</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">rtTR-KRAB - DNA on-rate binding constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>degluc</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">9.62704 * 10<sup>-5</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Firefly luciferase degradation rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>deggal4</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.15525 * 10<sup>-4</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4 degradation rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>deggv16</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">1.54033 * 10<sup>-4</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">s<sup>-1</sup></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gal4-VP16 degradation rate</p>
+                        </td>
+                    </tr>
 
-                    <br><br><br><br>
-					<div id="heading9"></div>
-                    <h2>The Genetic Circuit - Exosomes Model Hybrid Model</h2>
-					<p class="content-paragraph"> 
-                        Since we were unable to conduct the necessary experiments in the wet lab, we decided to create a model to simulate it from start to finish.
-                        <br><br>
-
-                        We simply replaced the effector of the Genetic Circuit with the Exosome Model.
-
-                        <br><br>
-
-                        This way, the miRNA-140 carrying exosomes are produced when the cell is in an inflammatory environment, 
-                        such the one of Osteoarthritis, via the NF-kB transcription factor.
-
-                    </p>
-
-                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--Hybrid-Model.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 7:</b>The Genetic Circuit – Exosome Production Hybrid Model in CellDesigner 4.4</p>
-
-                    <br><br><br><br>
-                    <h2>Results</h2>
-					<p class="content-paragraph"> 
-                        To compare our results, we are going to measure the effects of different values on the production of exosomes. 
-                        
-                    </p>
-
-                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/7/79/T--Greece_United--Figure4-1.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 8:</b>CAP Exosome production in different levels of NF-kB</p>
-
-                    <p class="content-paragraph"> 
-                        Having the Genetic Circuit as part of the exosome production, gives it the flexibility of activating only when necessary and according to the levels 
-                        of NF-kB in the cell (Figure 8). This means that the production of exosomes is dynamic and reactive to the level of the inflammation, instead of 
-                        constant and pro-active.
-                        
-                    </p>
-
-                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--Figure4-2.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Exosome production in different levels of Doxycycline (Dox).</p>
 
 
-                    <p class="content-paragraph"> 
-                        It is also important to note that the inclusion of the genetic circuit means that we can switch off the production of exosomes at any given moment (Figure 9), 
-                        simply by inducing Doxycycline to the system. This is important, because it makes the system considerably more secure and allows for more complicated 
-                        experiments to be conducted in the lab.
-                        
-                    </p>
+                </table>
 
-                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--Figure4-3.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Exosome production in the Exosome Production Model & Genetic Circuit-Exosome Production Hybrid Model.</p>
+                <br><br><br><br>
+                <div id="heading9"></div>
+                <h2>The Genetic Circuit - Exosomes Model Hybrid Model</h2>
+                <p class="content-paragraph">
+                    Since we were unable to conduct the necessary experiments in the wet lab, we decided to create a
+                    model to simulate it from start to finish.
+                    <br><br>
 
-                    <p class="content-paragraph"> 
-                        On the other side of the spectrum, we can see that the single plasmid transfected cell that utilizes the CMV promoter for constant expression produces a 
-                        significant amount more exosomes (Figure 10). This is mostly since the genetic circuit is designed to be expressed under certain conditions and have 
-                        control over the expression of the effector. It is also important to note that the difference between the two models is not significant enough to mark 
-                        the genetic circuit as significant.
+                    We simply replaced the effector of the Genetic Circuit with the Exosome Model.
 
-                        <br><br>
+                    <br><br>
 
-                        Although the genetic circuit model produces less CAP Exosomes, it provides safety measures and an adaptable dynamic expression system, both of which are crucial elements to 
-                        designing a solution of Osteoarthritis with the aid of synthetic biology.
-                        
-                    </p>
+                    This way, the miRNA-140 carrying exosomes are produced when the cell is in an inflammatory
+                    environment,
+                    such the one of Osteoarthritis, via the NF-kB transcription factor.
 
-                    <br><br><br><br>
-                    <h2>Tools</h2>
-					<p class="content-paragraph"> 
-                        To create our models and calculate our results we used the software CellDesigner v4.4, as well as MATLABs SimBiology Model 
-                        Builder and Model Analyzer, to validate our results. Both software's have a user interface that enables the user to create visual 
-                        representation of the models (architecture of the model) and use equations to model their interactions. Then you can use the built-in 
-                        simulator of CellDesigner v4.4 or MATLAB's SimBiology Model Analyzer to simulate the model.
+                </p>
 
-                        <br><br>
+                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--Hybrid-Model.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>The Genetic Circuit – Exosome
+                    Production Hybrid Model in CellDesigner 4.4</p>
 
-                        More information on how these two pieces of software work, can be found in our educational page, 
-                        where we have fully documented their functionality by creating two tutorials for beginners.
-                    </p>
+                <br><br><br><br>
+                <h2>Results</h2>
+                <p class="content-paragraph">
+                    To compare our results, we are going to measure the effects of different values on the production of
+                    exosomes.
 
-                    <br><br><br><br>
-                    <h3>References</h3>
-                    <div style="font-size: 0.7em; font-style: italic; " class="references">
-                        
-                        <ol>
-                            <li> A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol. 25, no. 1, pp. 102–119, 2017. </li>
-                        </ol>
-                    </div>
+                </p>
+
+                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/7/79/T--Greece_United--Figure4-1.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>CAP Exosome production in different
+                    levels of NF-kB</p>
+
+                <p class="content-paragraph">
+                    Having the Genetic Circuit as part of the exosome production, gives it the flexibility of activating
+                    only when necessary and according to the levels
+                    of NF-kB in the cell (Figure 8). This means that the production of exosomes is dynamic and reactive
+                    to the level of the inflammation, instead of
+                    constant and pro-active.
+
+                </p>
+
+                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--Figure4-2.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Exosome production in different levels
+                    of Doxycycline (Dox).</p>
+
+
+                <p class="content-paragraph">
+                    It is also important to note that the inclusion of the genetic circuit means that we can switch off
+                    the production of exosomes at any given moment (Figure 9),
+                    simply by inducing Doxycycline to the system. This is important, because it makes the system
+                    considerably more secure and allows for more complicated
+                    experiments to be conducted in the lab.
+
+                </p>
+
+                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--Figure4-3.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Exosome production in the Exosome
+                    Production Model & Genetic Circuit-Exosome Production Hybrid Model.</p>
+
+                <p class="content-paragraph">
+                    On the other side of the spectrum, we can see that the single plasmid transfected cell that utilizes
+                    the CMV promoter for constant expression produces a
+                    significant amount more exosomes (Figure 10). This is mostly since the genetic circuit is designed
+                    to be expressed under certain conditions and have
+                    control over the expression of the effector. It is also important to note that the difference
+                    between the two models is not significant enough to mark
+                    the genetic circuit as significant.
+
+                    <br><br>
+
+                    Although the genetic circuit model produces less CAP Exosomes, it provides safety measures and an
+                    adaptable dynamic expression system, both of which are crucial elements to
+                    designing a solution of Osteoarthritis with the aid of synthetic biology.
+
+                </p>
+
+                <br><br><br><br>
+                <h2>Tools</h2>
+                <p class="content-paragraph">
+                    To create our models and calculate our results we used the software CellDesigner v4.4, as well as
+                    MATLABs SimBiology Model
+                    Builder and Model Analyzer, to validate our results. Both software's have a user interface that
+                    enables the user to create visual
+                    representation of the models (architecture of the model) and use equations to model their
+                    interactions. Then you can use the built-in
+                    simulator of CellDesigner v4.4 or MATLAB's SimBiology Model Analyzer to simulate the model.
+
+                    <br><br>
+
+                    More information on how these two pieces of software work, can be found in our educational page,
+                    where we have fully documented their functionality by creating two tutorials for beginners.
+                </p>
+
+                <br><br><br><br>
+                <h3>References</h3>
+                <div style="font-size: 0.7em; font-style: italic; " class="references">
+
+                    <ol>
+                        <li> A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
+                            therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
+                            25, no. 1, pp. 102–119, 2017. </li>
+                    </ol>
                 </div>
             </div>
         </div>
-    
+    </div>
+
 
 
 
     <style>
-
-        
-
-
-        td, th {
+        td,
+        th {
             border: 1px solid black;
             padding: 15px;
         }
 
-        table{
+        table {
             width: 100%;
             border-collapse: collapse;
         }
@@ -1546,38 +2160,40 @@
         h2 {
             font-family: 'Raleway', sans-serif;
         }
+
         .content p.photo-desc {
             text-align: center !important;
             font-size: 0.8em !important;
         }
 
-        .class-paragraph{
+        .class-paragraph {
             padding-left: 5px;
             margin-right: 5px;
             text-align: justify;
 
         }
+
         #content-tag {
-        background-color: #ffffff;
-        position: relative;
+            background-color: #ffffff;
+            position: relative;
         }
 
         #content-tag p {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
         }
-        
-        
+
+
         #content-tag .contentBlock {
-        float: none;
-        margin: 0 auto;
+            float: none;
+            margin: 0 auto;
         }
-        
-        
+
+
         #content {
             padding: 0px;
             width: 100%;
@@ -1587,91 +2203,92 @@
             line-height: initial;
 
         }
-        
+
         .contentBlock {
-        width: 64vw;
-        max-width: 1200px;
-        float: right;
-        display: flex;
-        flex-direction: column;
-        font-family: 'Raleway', sans-serif;
-        
+            width: 64vw;
+            max-width: 1200px;
+            float: right;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Raleway', sans-serif;
+
         }
-        
+
         .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
+            padding: 64px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px lightgray;
+            color: #121212;
+            margin-top: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
         }
-        
+
         .content p:first-child {
-        margin-top: 0;
+            margin-top: 0;
         }
-        
-    
+
+
         .content ul {
-        padding-inline-start: 20px;
-        list-style-image: none;
-        list-style-type: none;
+            padding-inline-start: 20px;
+            list-style-image: none;
+            list-style-type: none;
         }
-        
+
         .content ul li {
-        display: flex;
+            display: flex;
         }
-        
+
         .content ul li::before {
-			list-style-type: none;
+            list-style-type: none;
 
-        color: #000000;
+            color: #000000;
         }
-        
+
         .content .splide ul li::before {
-        content: unset;
+            content: unset;
         }
-        
+
         .content li {
-        margin: 10px;
-        font-size: 1.2em;
-        list-style-type: none;
+            margin: 10px;
+            font-size: 1.2em;
+            list-style-type: none;
 
 
         }
-        
+
         .content li::marker {
-        color: #000000;
-        font-weight:bold;
+            color: #000000;
+            font-weight: bold;
         }
-        
-        .content h4, .content h5 {
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-block-end: 0.2em;
-        margin-block-start: 60px;
-        }
-        
+
+        .content h4,
         .content h5 {
-        font-size: 1em;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-block-end: 0.2em;
+            margin-block-start: 60px;
         }
-        
+
+        .content h5 {
+            font-size: 1em;
+        }
+
         .content a {
-        color: #000000;
-        
-        text-align: center;
-        cursor: pointer;
+            color: #000000;
+
+            text-align: center;
+            cursor: pointer;
         }
-        
+
         .content a.citation {
-        font-size: 0.6em;
-        vertical-align: super;
+            font-size: 0.6em;
+            vertical-align: super;
         }
-        
-        .content-paragraph{
+
+        .content-paragraph {
             margin: 0;
             font-size: 1.2rem;
             line-height: 1.5;
@@ -1680,60 +2297,77 @@
             text-align: justify;
 
         }
-    
     </style>
 
     <style>
-        
-        
-        </style>
-        
-            <div class="footer">
-                <!-- Footer -->
-                         
-                    
-        
-                <br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                    
-                <br><br><br><br><br><br><br><br>
-                        
-                    
-                <div style="display:flex;flex-wrap:wrap; ">
-                    <div class="col">
-                        <a href="https://igemnous.med.duth.gr/" target="_blank">
-                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);" 
-                                 src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
-                        </a>
-                       
-                    </div>
-                    
-                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                        <div class="footer_sponsors" style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                            <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                            <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;" ></a>
-                            <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-                        </div>
-                    </div>
-        
-                </div>
-            
-            </div>
-        
 
-    </body>
+
+    </style>
+
+    <div class="footer">
+        <!-- Footer -->
+
+
+
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
+
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
 </html>

@@ -1,133 +1,157 @@
 <html>
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
-    
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
-    <script type="text/javascript" src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript"> </script>
-    <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-     
-    
-        
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+</script>
+<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<style>
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
+
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
+
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
+
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    html {
+        height: 100%;
+        min-height: 100%;
+        font-family: 'Raleway', sans-serif;
+
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+        background: white;
+
+        font-family: 'Raleway', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+
+<body>
     <style>
-
-        /* CLEAR DEFAULT SETTINGS **************************************************/
-        
-        #sideMenu, #top_title, .patrollink, #firstHeading,  #home_logo, #sideMenu { display:none; }
-        #content { padding:0px; width:100%; margin-top:7px; margin-left:0px; border:none;}
-            #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-    
-        #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-    
-        html {
-            height: 100%;
-            min-height: 100%;
-            font-family: 'Raleway', sans-serif;
-
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
         }
-        
-        body{
-            padding:0px;
-            margin:0px;
-            background: white;
-            
-            font-family: 'Raleway', sans-serif;
-    
+
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
-        
+
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
     </style>
 
 
-    <body>
-        <style>
-            #loader-wrapper {
-                display: flex;
-                align-items: center;
-                margin-top: calc((100%)/5);
-                justify-content: center;
-                height: 0.1vh;
-                width: 100vw;
-                z-index: 500;
-                position: fixed;
-                pointer-events: none;
-            }
-    
-            #loader-bg {
-                position: fixed;
-                height: 200vw;
-                width: 200vw;
-                transform: translateY(0);
-                background-color: #6C8EC9;
-                transition-property: height, width, border-radius, transform;
-                transition-duration: 0.5s;
-                transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-                transition-delay: 0s, 0s, 0s, 1s;
-                border-radius: 0%;
-                -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-                -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-                box-shadow: 0px 0px 27px 0px #6E91CB;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-    
-            
-            #loader-wrapper img {
-                width: 30vh;
-    
-            }
-    
-            #loader-wrapper h1 {
-                color: #fafafc;
-                text-transform: uppercase;
-                font-family: 'Raleway', sans-serif;
-                position: absolute;
-                transform: translateY(15vh);
-                font-size: 2.2vw;
-                opacity: 100%;
-            }
-    
-            #loader-bg.loaded 
-            {
-                height: 35vh;
-                width: 35vh;
-                border-radius: 70%;
-                transform: translateY(-2000px);
-            }
-        </style>
-    
-    
-        <div id="loader-wrapper">
-            <div id="loader-bg">
-                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-            </div>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
         </div>
-    
-        <script>
-                    
-            // Loader
-            window.addEventListener("load", function() 
-            {
-                let loader = document.getElementById('loader-bg');
-                
-                setTimeout(function() 
-                {
-                    loader.classList.add('loaded')
-                }, 100);
-            });
-    
-        </script>
+    </div>
 
- 
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
+
+
 
 
     <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
@@ -135,123 +159,158 @@
         display: flex;
         cursor: pointer;">
             <a href="https://2021.igem.org/Team:Greece_United" class="active">
-                
 
-                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;" src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
 
             </a>
         </div>
 
 
-        <div class="right-navbar" >
+        <div class="right-navbar">
             <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                        onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
-                             <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
                         </button>
                         <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
                         </div>
-                    </div> 
-                </li>
-                
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content" >
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-                        </div>
-                    </div> 
+                    </div>
                 </li>
 
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
                         </button>
                         <div class="dropdown-content">
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
-                            <a  onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
                         </div>
-                    </div> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown" style="float: left;">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
                         </button>
                         <div class="dropdown-content">
-                            
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)" href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
                         </div>
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;" 
-                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
                         </button>
-                    </div> 
+                    </div>
                 </li>
             </ul>
-            
+
         </div>
     </div>
 
 
-     
+
 
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
@@ -261,75 +320,76 @@
     <!-- ---------------------------------------------------- -->
     <!-- ---------------------------------------------------- -->
     <!-- in page menu & progress bar -->
-	<style>
-		/* progress bar */
-		
-		#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-        font-family: 'Raleway', sans-serif;
-		/* background-color: #002060; */
-		}
+    <style>
+        /* progress bar */
 
-		#fixedOverlay[bg=none], #fixedOverlay[bg=dark] {
-		pointer-events: none;
-		}
+        #fixedOverlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+            top: 18px;
+            transition: 1s;
+            font-family: 'Raleway', sans-serif;
+            /* background-color: #002060; */
+        }
 
-		#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-		}
+        #fixedOverlay[bg=none],
+        #fixedOverlay[bg=dark] {
+            pointer-events: none;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		}
+        #fixedOverlay .scroll-wrapper {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+            opacity: 1;
+            transition: 0.5s;
+        }
 
-		@media screen and (max-width: 767px) {
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            height: 100%;
+            width: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
             #fixedOverlay .scroll-wrapper .scroll-area {
                 width: 10vw;
             }
-		}
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-		}
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(98, 129, 239, 0.3);
+            border-radius: 10px;
+            max-width: 7px;
+        }
 
-		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-		}
-		
-		#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-		}
-		
-		/* in page menu */
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+            width: 100%;
+            background: #002060;
+            opacity: 100%;
+            height: 0%;
+            border-radius: 20px;
+            transition: background-color 0.5s;
+        }
+
+        #fixedOverlay nav {
+            box-sizing: border-box;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+            transition: 0.5s;
+            height: 87px;
+        }
+
+        /* in page menu */
         .indexbutton {
             display: none;
             color: #FAFAFC;
@@ -346,60 +406,60 @@
             z-index: 21;
             transition: 0.5s;
         }
+
         @media (max-width: 800px) {
             .indexbutton {
                 display: block;
             }
         }
 
-		.sideBlock 
-		{
-			text-transform: uppercase;
-			text-decoration: none;
-			float: left;
-			margin-left: 10vw;
-			margin-top: 400px;
-			position: -webkit-sticky;
-			position: fixed;
-			top: 30%;
-			margin: 200px 32px 0 4vw;
-			transform: translateY(-50%);
-			min-width: 20px;
-			max-width: 350px;
-			background: #ffffff;
-			opacity: 80%;
-			border-radius: 15%;
-			padding-left: 20px;
-			z-index: 2;
-		}
+        .sideBlock {
+            text-transform: uppercase;
+            text-decoration: none;
+            float: left;
+            margin-left: 10vw;
+            margin-top: 400px;
+            position: -webkit-sticky;
+            position: fixed;
+            top: 30%;
+            margin: 200px 32px 0 4vw;
+            transform: translateY(-50%);
+            min-width: 20px;
+            max-width: 350px;
+            background: #ffffff;
+            opacity: 80%;
+            border-radius: 15%;
+            padding-left: 20px;
+            z-index: 2;
+        }
 
-		@media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .sideBlock {
                 margin: 200px 32px 0 4vw;
             }
-		}
+        }
 
-		.sideBlock b {
+        .sideBlock b {
             font-size: 1.4rem;
             font-weight: bold;
             margin-left: 0.25em;
             padding-bottom: 20px;
             display: block;
-		}
+        }
 
-		.sideBlock ul {
+        .sideBlock ul {
             margin: 1em 0;
             padding: 0;
-		}
+        }
 
-		.sideBlock a {
+        .sideBlock a {
             color: #002060;
             text-decoration: none;
             font-family: 'Raleway', sans-serif;
 
-		}
+        }
 
-		.sideBlock li {
+        .sideBlock li {
             margin: 24px;
             list-style: none;
             color: #002060;
@@ -408,13 +468,13 @@
             display: flex;
             align-items: center;
             margin-left: 0.25em;
-		}
+        }
 
-		.sideBlock li:last-child {
-		    margin-bottom: 0;
-		}
+        .sideBlock li:last-child {
+            margin-bottom: 0;
+        }
 
-		.sideBlock li div {
+        .sideBlock li div {
             max-width: 15px;
             max-height: 15px;
             box-sizing: border-box;
@@ -425,13 +485,13 @@
             margin-right: 8px;
             height: 10vw;
             width: 10vh;
-		}
+        }
 
-		.sideBlock li.active div {
-		    background-color: #002060;
-		}
+        .sideBlock li.active div {
+            background-color: #002060;
+        }
 
-		@media (max-width: 800px) {
+        @media (max-width: 800px) {
             .sideBlock {
                 position: fixed;
                 bottom: 0;
@@ -453,51 +513,58 @@
                 flex-direction: column;
                 align-items: center;
             }
+
             .sideBlock b {
                 display: block;
                 margin: 0;
             }
+
             .sideBlock ul {
                 display: inline-block;
                 text-align: start;
                 margin-top: 0;
                 margin-bottom: 30px;
             }
+
             .sideBlock li {
                 font-weight: bold;
             }
+
             .sideBlock li a {
                 color: #FAFAFC;
             }
+
             .sideBlock li div {
                 color: #FAFAFC;
             }
+
             .sideBlock li.active div {
                 background-color: #FAFAFC;
             }
+
             .sideBlock.notshow {
                 transform: translateY(calc(100% - 900px));
             }
+
             .sideBlock.open {
                 transform: translateY(0);
             }
-		}
+        }
 
-		
-		#content {
-			padding: 0px;
-			width: 100%;
-			margin-top: -7px;
-			margin-left: 0px;
-			border: none;
-			line-height: initial;
-		}
-		
-	</style> 
 
-	<!-- back to top -->
-	<style>
-		#BacktoTop {
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+    </style>
+
+    <!-- back to top -->
+    <style>
+        #BacktoTop {
             display: none;
             position: fixed;
             bottom: 20px;
@@ -511,17 +578,17 @@
             cursor: pointer;
             padding: 15px;
             border-radius: 30%;
-		}
+        }
 
-		#BacktoTop:hover {
-		    background-color: #002060;
-		}
-	</style>
+        #BacktoTop:hover {
+            background-color: #002060;
+        }
+    </style>
 
     <!-- Back to Top Button -->
     <button onclick="topFunction()" id="BacktoTop" title="Go to top">
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/>
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
         </svg>
     </button>
     <!-- Back to Top Button End-->
@@ -529,671 +596,1072 @@
     <!-- Progress bar -->
     <div id="globalWrapper">
         <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper" >
+            <div class="scroll-wrapper">
                 <div id="sidebar-wrapper" class="scroll-area">
                     <div id="scrollbar-container">
                         <div id="scrollbar" style="height: 3%;"></div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <!-- Progress bar End -->
-	
-	<!-- in page menu -->
-    
-	<div id="index" class="sideBlock">
+
+    <!-- in page menu -->
+
+    <div id="index" class="sideBlock">
         <div id="indexbutton" class="indexbutton">Index</div>
 
         <b>Model</b>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading1">Introduction</a>
-			</li>
-		</ul>
         <ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading2">Model Parts</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading3">How the Model Works</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading4">Results</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading5">Equations</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading6">Model Parts</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading7">Constants</a>
-			</li>
-		</ul>
-	</div>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Introduction</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Model Parts</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">How the Model Works</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading4">Results</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading5">Equations</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading6">Model Parts</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading7">Constants</a>
+            </li>
+        </ul>
+    </div>
 
 
     <script>
-    
         var textSection = null;
         var navbar = document.getElementById("navbar");
-    
-        window.addEventListener('load', function() {
+
+        window.addEventListener('load', function () {
             textSection = document.querySelector('.elevate-navbar');
             checkScrollPos();
             checkBackToTopPos();
         })
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             updateScrollbar();
             checkNavbarPos();
             checkScrollPos();
             checkBackToTopPos();
         });
+
         function checkScrollPos() {
             var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
             var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
             let scrollWrapper = document.querySelector('.scroll-wrapper');
             if (scrollbarBottom >= footerTop) {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                    "true");
             } else {
-                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                    "false");
             }
         }
+
         function checkBackToTopPos() {
             if ($(window).scrollTop() > 1000) {
                 $('#backtotop-wrapper').addClass('scrolled')
             } else $('#backtotop-wrapper').removeClass('scrolled')
         }
-        $(document).ready(function() {
-            $('#backtotop-wrapper').on('click', function() {
+        $(document).ready(function () {
+            $('#backtotop-wrapper').on('click', function () {
                 $('html, body').animate({
                     'scrollTop': $('body').offset().top
                 }, 2000);
             });
         });
-    
+
         function updateScrollbar() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - window.innerHeight;;
             var scrolled = (winScroll / height) * 100;
             document.getElementById("scrollbar").style.height = scrolled + "%";
         }
-        
+
         var scroll = new SmoothScroll('a[href*="#"]', {
-                speed: 400,
-                speedAsDuration: true,
-                offset: 160
-            });
-    
-            document.getElementById("fixedOverlay").classList.add("project");
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
     </script>
     <!-- back to top button -->
     <script>
-        
         var mybutton = document.getElementById("BacktoTop");
-    
-        window.onscroll = function() {scrollFunction()};
-    
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
         function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-        }
-    
+
         function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 
-    
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-            <div class="contentBlock">
-                <div class="content">
-                    
-                    <div id="heading1"></div>
-                    <h2>Introduction</h2>
-                    <p class="content-paragraph">We aimed at developing mathematical models and a genetic circuit in order better understand our Wet Lab experiments. The results from our Dry Lab work would later be used to adjust experiments, having had a prior estimation of the expected results deriving from our biological work.
-						<br><br> Our main goals were to:
-							<li><b>1)</b>&nbsp;&nbsp;develop an accurate model that describes the formation of exosomes and the delivery of miRNA-140 to the chondrocytes.</li>
-							<li><b>2)</b>&nbsp;&nbsp;help the Wet Lab team adjust the design of the ongoing experiments by consulting the results of our mathematical model simulations. </li>
-							<li><b>3)</b>&nbsp;&nbsp;Build a Genetic Circuit Model to investigate the feasibility of our proposed implementation and develop an approach to tackle the “low transfection” problem the Wet Lab team encountered.</li>
-							<li><b>4)</b>&nbsp;&nbsp;Combine our Exosome Production Model (1) with the Genetic Circuit Model (2) to draw conclusions on the general functionality of our proposed implementation.</li>
-					</p>
-					<br><br><br><br>
-					<div id="heading2"></div>
-                    <h2>Exosome Model</h2>
-                    <p class="content-paragraph">We created two models that calculates the levels of exosomes carrying miRNA to chondrocytes of the cartilage. 
-						The process of building each model is described below and is mainly based on literature data known to date. 
-						At first, we made our simulations and calculations and predicted the expected result of the Wet Lab experiments to guide them. 
-						Then, we compared our data to their findings and used it to fit our model and make it more accurate and closer to real-life conditions. 
-						Finally, we managed to create an accurate simulation for the HEK-293 cell line.
-					</p>
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in CellDesigner 4.4.</p>
 
-					<p class="content-paragraph">
-						The assumptions we made were:
-						<li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.</li>
-						<li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
-						<li><b>b)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
-						<li><b>b)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run out.</li>
-					</p>
+    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
 
+                <div id="heading1"></div>
+                <h2>Introduction</h2>
+                <p class="content-paragraph">We aimed at developing mathematical models and a genetic circuit in order
+                    better understand our Wet Lab experiments. The results from our Dry Lab work would later be used to
+                    adjust experiments, having had a prior estimation of the expected results deriving from our
+                    biological work.
+                    <br><br> Our main goals were to:
+                    <li><b>1)</b>&nbsp;&nbsp;develop an accurate model that describes the formation of exosomes and the
+                        delivery of miRNA-140 to the chondrocytes.</li>
+                    <li><b>2)</b>&nbsp;&nbsp;help the Wet Lab team adjust the design of the ongoing experiments by
+                        consulting the results of our mathematical model simulations. </li>
+                    <li><b>3)</b>&nbsp;&nbsp;Build a Genetic Circuit Model to investigate the feasibility of our
+                        proposed implementation and develop an approach to tackle the “low transfection” problem the Wet
+                        Lab team encountered.</li>
+                    <li><b>4)</b>&nbsp;&nbsp;Combine our Exosome Production Model (1) with the Genetic Circuit Model (2)
+                        to draw conclusions on the general functionality of our proposed implementation.</li>
+                </p>
+                <br><br><br><br>
+                <div id="heading2"></div>
+                <h2>Exosome Model</h2>
+                <p class="content-paragraph">We created two models that calculates the levels of exosomes carrying miRNA
+                    to chondrocytes of the cartilage.
+                    The process of building each model is described below and is mainly based on literature data known
+                    to date.
+                    At first, we made our simulations and calculations and predicted the expected result of the Wet Lab
+                    experiments to guide them.
+                    Then, we compared our data to their findings and used it to fit our model and make it more accurate
+                    and closer to real-life conditions.
+                    Finally, we managed to create an accurate simulation for the HEK-293 cell line.
+                </p>
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in
+                    CellDesigner 4.4.</p>
 
-					<div id="heading3"></div>
-                    <h2>Model Parts</h2>
-					<p class="content-paragraph">
-						The model consists of three main parts. <br><br>
-						<b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b - CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
-						
-					<br><br>
-						
-					<p class="content-paragraph">
-						<b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to measure the effectiveness of our solution. We did that by calculating how many of the produced exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
-						<br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured quantities. Had those been known we could have approached the subject with even greater accuracy.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.</p>
-
-					<br><br>
-						
-					<p class="content-paragraph">
-						The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find out how these complex effects the production of the MMP-13 protein.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.</p>
-					<br><br><br><br>
-					<div id="heading3"></div>
-                    <h2>How the model works</h2>
-					<p class="content-paragraph">
-						<b><u>First Stage</u></b> <br>
-						The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate transcription factor via the CMV promoter. 
-						This is described by the following equation:<br>
-
-						$$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-						This equation describes the formation of a complex between the plasmids Gene and the complimentary Transcription Factor, 
-						where 
-						\(k_{bindCMV}\) 
-						and 
-						\(k_{unbindCMV}\) 
-						are the binding and unbinding constants of the TF to the CMV promoter.<br>
-
-						After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
-
-						$$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-						The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied by a transcription constant. 
-						This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase places nucleotides.
-
-						$$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
-
-						The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre miRNA. 
-						The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
-						After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to the produced exosomes. 
-
-						<br><br> 
-
-						Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP protein in its membrane. 
-						We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule. 
-						These two types of exosomes are produced at different rates. 
-						More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones who do not have it. 
-						Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the regular exosomes.
-
-						<br><br> 
-
-						This concludes the first part of our model.
-
-						<br><br><br> 
-
-						<b><u>Second Stage</u></b> <br>
-						The second part involves the transportation of the exosomes to the Chondrocytes. 
-						In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes have \(x\) times larger affinity
-						towards chondrocytes than regular exosomes do not. <br><br>
-
-						The equations we used are:
-
-						$$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
-
-						$$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
-
-						where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\) 
-						<br> <br>
-
-						Since there is not enough information on exosome modeling, we believed it would be best to keep this part as simple as possible, 
-						in order to avoid inaccuracies due to unnecessary complication.
-
-						<br><br><br> 
-
-						<b><u>Third Stage</u></b> <br>
-						The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells. 
-						We assumed that the concentration of the DICER is high enough that the creation of the complex is entirely based on the miRNA concentration.
-
-						$$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
-
-						where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
-					</p>
-
-					<br><br><br><br>
-					<div id="heading4"></div>
-                    <h2>Results</h2>
-					<p class="content-paragraph">
-						We ran our simulation for a time span of 24h.
-					</p>
-
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 5:</b>CAP and regular exosomes synthesized with [TF] = 24000</p>
-
-					<p class="content-paragraph">
-						Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h the amount of CAP exosomes synthesized 
-						is far greater than that of regular exosomes (Figure 5). This is a desired result, because it has been proven that CAP exosomes have 
-						higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely end up entering the blood stream. 
-						But why is there such a gap between these two types of exosomes? 
-
-						<br><br>
-
-						To find out, we thought it would be best to see the difference in the expression rates of pre miRNA and the Lamp2b-CAP membrane protein.
-					</p>
+                <p class="content-paragraph">
+                    The assumptions we made were:
+                    <li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.</li>
+                    <li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
+                    <li><b>b)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
+                    <li><b>b)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
+                        out.</li>
+                </p>
 
 
-					<img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);" src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
-					<p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Lamp2b-CAP and pre miRNA synthesis with [TF] = 24000 </p>
+                <div id="heading3"></div>
+                <h2>Model Parts</h2>
+                <p class="content-paragraph">
+                    The model consists of three main parts. <br><br>
+                    <b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how
+                    many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b -
+                    CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
+
+                <br><br>
+
+                <p class="content-paragraph">
+                    <b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to
+                    measure the effectiveness of our solution. We did that by calculating how many of the produced
+                    exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
+                    <br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured
+                    quantities. Had those been known we could have approached the subject with even greater accuracy.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.
+                </p>
+
+                <br><br>
+
+                <p class="content-paragraph">
+                    The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER
+                    protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a
+                    single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get
+                    degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find
+                    out how these complex effects the production of the MMP-13 protein.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.
+                </p>
+                <br><br><br><br>
+                <div id="heading3"></div>
+                <h2>How the model works</h2>
+                <p class="content-paragraph">
+                    <b><u>First Stage</u></b> <br>
+                    The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate
+                    transcription factor via the CMV promoter.
+                    This is described by the following equation:<br>
+
+                    $$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
+
+                    This equation describes the formation of a complex between the plasmids Gene and the complimentary
+                    Transcription Factor,
+                    where
+                    \(k_{bindCMV}\)
+                    and
+                    \(k_{unbindCMV}\)
+                    are the binding and unbinding constants of the TF to the CMV promoter.<br>
+
+                    After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
+
+                    $$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
+
+                    The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied
+                    by a transcription constant.
+                    This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase
+                    places nucleotides.
+
+                    $$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
+
+                    The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre
+                    miRNA.
+                    The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
+                    After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
+                    the produced exosomes.
+
+                    <br><br>
+
+                    Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP
+                    protein in its membrane.
+                    We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule.
+                    These two types of exosomes are produced at different rates.
+                    More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones
+                    who do not have it.
+                    Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the
+                    regular exosomes.
+
+                    <br><br>
+
+                    This concludes the first part of our model.
+
+                    <br><br><br>
+
+                    <b><u>Second Stage</u></b> <br>
+                    The second part involves the transportation of the exosomes to the Chondrocytes.
+                    In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes
+                    have \(x\) times larger affinity
+                    towards chondrocytes than regular exosomes do not. <br><br>
+
+                    The equations we used are:
+
+                    $$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
+
+                    $$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
+
+                    where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\)
+                    <br> <br>
+
+                    Since there is not enough information on exosome modeling, we believed it would be best to keep this
+                    part as simple as possible,
+                    in order to avoid inaccuracies due to unnecessary complication.
+
+                    <br><br><br>
+
+                    <b><u>Third Stage</u></b> <br>
+                    The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells.
+                    We assumed that the concentration of the DICER is high enough that the creation of the complex is
+                    entirely based on the miRNA concentration.
+
+                    $$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
+
+                    where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
+                </p>
+
+                <br><br><br><br>
+                <div id="heading4"></div>
+                <h2>Results</h2>
+                <p class="content-paragraph">
+                    We ran our simulation for a time span of 24h.
+                </p>
+
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 5:</b>CAP and regular exosomes synthesized
+                    with [TF] = 24000</p>
+
+                <p class="content-paragraph">
+                    Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h the
+                    amount of CAP exosomes synthesized
+                    is far greater than that of regular exosomes (Figure 5). This is a desired result, because it has
+                    been proven that CAP exosomes have
+                    higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely end up
+                    entering the blood stream.
+                    But why is there such a gap between these two types of exosomes?
+
+                    <br><br>
+
+                    To find out, we thought it would be best to see the difference in the expression rates of pre miRNA
+                    and the Lamp2b-CAP membrane protein.
+                </p>
 
 
-					<p class="content-paragraph">
-						In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells. 
-						This result makes sense, because when the gene is transcripted once, we get at most a single prem iRNA molecule and an mRNA 
-						molecule which is likely translated more than once. Over the spam of 24h this adds up to having a higher level of the membrane 
-						protein and thus more CAP exosomes.
-					</p>
-
-					<br><br><br><br>
-					<div id="heading5"></div>
-                    <h2>Equations</h2>
-					<p class="content-paragraph">In this table, you can find the equations used to build our Exosome Production Model.</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>Equation</b></p></td>
-							<td><p class="table-paragraph"><b>Description</b></p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] * k_{unbind}$$
-							</td>
-							<td><p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV promoter</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
-							</td>
-							<td><p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
-
-							</td>
-							<td><p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] *  k_{split_s}$$
-							</td>
-							<td><p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA Complex during maturation</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
-							</td>
-							<td><p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
-							</td>
-							<td><p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p></td>
-						</tr>
-
-						<tr>
-							<td>
-								$$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
-							</td>
-							<td><p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
-							</td>
-							<td><p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
-							</td>
-							<td><p class="table-paragraph">Non-CAP Exosome endocytosis</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
-							</td>
-							<td><p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
-							</td>
-							<td><p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP protein complexes, as well as the miRNA-DICER complex</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
-							</td>
-							<td><p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
-						</tr>
-						<tr>
-							<td>
-								$$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
-							</td>
-							<td><p class="table-paragraph">Lost DNA due to cell division</p></td>
-						</tr>
-					  </table>
+                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                    src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
+                <p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Lamp2b-CAP and pre miRNA synthesis with
+                    [TF] = 24000 </p>
 
 
-					<br><br><br><br>
-					<div id="heading6"></div>
-                    <h2>Model Parts</h2>
-					<p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build our Exosome Production Model.</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>Class</b></p></td>
-							<td><p class="table-paragraph"><b>Name</b></p></td>
-							<td><p class="table-paragraph"><b>id</b></p></td>
-							<td><p class="table-paragraph"><b>Boundary Condition</b></p></td>
-							<td><p class="table-paragraph"><b>Description</b></p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">GENE</p></td>
-							<td><p class="table-paragraph">Plasmid Gene</p></td>
-							<td><p class="table-paragraph">S<sub>1</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Gene that codes miRNA & mRNA</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">RNA</p></td>
-							<td><p class="table-paragraph">mRNA</p></td>
-							<td><p class="table-paragraph">S<sub>12</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Mature mRNA that codes the Lamp2b-CAP protein</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">RNA</p></td>
-							<td><p class="table-paragraph">pre miRNA</p></td>
-							<td><p class="table-paragraph">S<sub>4</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">pre miRNA in HEK-293 cell</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">RNA</p></td>
-							<td><p class="table-paragraph">pre miRNA</p></td>
-							<td><p class="table-paragraph">S<sub>8</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">pre miRNA in chondrocyte</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">RNA</p></td>
-							<td><p class="table-paragraph">pre miRNA - mRNA <br> Complex</p></td>
-							<td><p class="table-paragraph">S<sub>64</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">RNA product before maturation</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">CMV TF</p></td>
-							<td><p class="table-paragraph">S<sub>79</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Transcription Factor</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">Lamp2b-CAP</p></td>
-							<td><p class="table-paragraph">S<sub>5</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Lamp2b-CAP in HEK-293 cell</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">PROTEIN</p></td>
-							<td><p class="table-paragraph">Lamp2b-CAP</p></td>
-							<td><p class="table-paragraph">S<sub>71</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Lamp2b-CAP in ECM </p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">NucleicAcids</p></td>
-							<td><p class="table-paragraph">S<sub>88</sub></p></td>
-							<td><p class="table-paragraph">True</p></td>
-							<td><p class="table-paragraph">Degraded RNA in HEK-293 cell</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">NucleicAcids</p></td>
-							<td><p class="table-paragraph">S<sub>90</sub></p></td>
-							<td><p class="table-paragraph">True</p></td>
-							<td><p class="table-paragraph">Degraded RNA in chondrocytes</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">AminoAcids</p></td>
-							<td><p class="table-paragraph">S<sub>93</sub></p></td>
-							<td><p class="table-paragraph">True</p></td>
-							<td><p class="table-paragraph">Degraded RNA in HEK-293 cells</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">AminoAcids</p></td>
-							<td><p class="table-paragraph">S<sub>96</sub></p></td>
-							<td><p class="table-paragraph">True</p></td>
-							<td><p class="table-paragraph">Degraded RNA in ECM</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">DEGRADED</p></td>
-							<td><p class="table-paragraph">AminoAcids</p></td>
-							<td><p class="table-paragraph">S<sub>97</sub></p></td>
-							<td><p class="table-paragraph">True</p></td>
-							<td><p class="table-paragraph">Degraded RNA in chondrocytes</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">Exosome Complex 1</p></td>
-							<td><p class="table-paragraph">S<sub>73</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Exosome with premiRNA & Lamp2b-CAP</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">Exosome Complex 2</p></td>
-							<td><p class="table-paragraph">S<sub>78</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Exosome with premiRNA</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">TF Gene Complex</p></td>
-							<td><p class="table-paragraph">S<sub>82</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">TF & Gene binded complex</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">COMPLEX</p></td>
-							<td><p class="table-paragraph">miRNA-DICER Complex</p></td>
-							<td><p class="table-paragraph">S<sub>55</sub></p></td>
-							<td><p class="table-paragraph">False</p></td>
-							<td><p class="table-paragraph">Mature miRNA-140 with DICER protein</p></td>
-						</tr>
+                <p class="content-paragraph">
+                    In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells.
+                    This result makes sense, because when the gene is transcripted once, we get at most a single prem
+                    iRNA molecule and an mRNA
+                    molecule which is likely translated more than once. Over the spam of 24h this adds up to having a
+                    higher level of the membrane
+                    protein and thus more CAP exosomes.
+                </p>
 
-					</table>
+                <br><br><br><br>
+                <div id="heading5"></div>
+                <h2>Equations</h2>
+                <p class="content-paragraph">In this table, you can find the equations used to build our Exosome
+                    Production Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Equation</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Description</b></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] *
+                            k_{unbind}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV
+                                promoter</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
+
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA
+                                Complex during maturation</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] * k_{split_s}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA
+                                Complex during maturation</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            $$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Non-CAP Exosome endocytosis</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP
+                                protein complexes, as well as the miRNA-DICER complex</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lost DNA due to cell division</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lost DNA due to cell division</p>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <br><br><br><br>
+                <div id="heading6"></div>
+                <h2>Model Parts</h2>
+                <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build
+                    our Exosome Production Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Class</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Name</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>id</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Boundary Condition</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Description</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">GENE</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Plasmid Gene</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>1</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Gene that codes miRNA & mRNA</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">RNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">mRNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>12</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Mature mRNA that codes the Lamp2b-CAP protein</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">RNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">pre miRNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>4</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">pre miRNA in HEK-293 cell</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">RNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">pre miRNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>8</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">pre miRNA in chondrocyte</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">RNA</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">pre miRNA - mRNA <br> Complex</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>64</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">RNA product before maturation</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">CMV TF</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>79</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Transcription Factor</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lamp2b-CAP</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>5</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lamp2b-CAP in HEK-293 cell</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">PROTEIN</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lamp2b-CAP</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>71</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Lamp2b-CAP in ECM </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NucleicAcids</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>88</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">True</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degraded RNA in HEK-293 cell</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">NucleicAcids</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>90</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">True</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degraded RNA in chondrocytes</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">AminoAcids</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>93</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">True</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degraded RNA in HEK-293 cells</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">AminoAcids</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>96</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">True</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degraded RNA in ECM</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">DEGRADED</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">AminoAcids</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>97</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">True</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degraded RNA in chondrocytes</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Exosome Complex 1</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>73</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Exosome with premiRNA & Lamp2b-CAP</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Exosome Complex 2</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>78</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Exosome with premiRNA</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TF Gene Complex</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>82</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">TF & Gene binded complex</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">COMPLEX</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">miRNA-DICER Complex</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">S<sub>55</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">False</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Mature miRNA-140 with DICER protein</p>
+                        </td>
+                    </tr>
+
+                </table>
 
 
 
-					<br><br><br><br>
-					<div id="heading7"></div>
-                    <h2>Constants</h2>
-					<p class="content-paragraph">In this table, you can find the values of the constants we used in the equations of the Exosome Production Model.</p>
-					<table>
-						<tr>
-							<td><p class="table-paragraph"><b>Name</b></p></td>
-							<td><p class="table-paragraph"><b>Value</b></p></td>
-							<td><p class="table-paragraph"><b>Units</b></p></td>
-							<td><p class="table-paragraph"><b>Comments</b></p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>degma</sub></p></td>
-							<td><p class="table-paragraph">0.0068333</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Degredation of RNA</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>degp</sub></p></td>
-							<td><p class="table-paragraph">2.7833333E-5</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Degredation of proteins</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>translation</sub></p></td>
-							<td><p class="table-paragraph">0.27777778</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Proteins translated per second</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>split</sub></p></td>
-							<td><p class="table-paragraph">0.83</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Split of the RNA compolex due to maturation</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>degp</sub></p></td>
-							<td><p class="table-paragraph">0.8</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Activation of miRNA-DICER complex</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>p-exosome</sub></p></td>
-							<td><p class="table-paragraph">0.010167</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Loading of protein to exosome</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>r-exosome</sub></p></td>
-							<td><p class="table-paragraph">0.010167</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Loading of premiRNA to exosome</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>transcription</sub></p></td>
-							<td><p class="table-paragraph">4.8</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">RNA molecules transcripted per second</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>dil</sub></p></td>
-							<td><p class="table-paragraph">8.02254E-6</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Dilution rate</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>load</sub></p></td>
-							<td><p class="table-paragraph">0.01</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">CAP exosome endocytosis constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>loadCAP</sub></p></td>
-							<td><p class="table-paragraph">0.2</p></td>
-							<td><p class="table-paragraph">per num per sec</p></td>
-							<td><p class="table-paragraph">Exosome endocytosis constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>bind</sub></p></td>
-							<td><p class="table-paragraph">0.145</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Binding Constant</p></td>
-						</tr>
-						<tr>
-							<td><p class="table-paragraph">k<sub>unbind</sub></p></td>
-							<td><p class="table-paragraph">0.00159</p></td>
-							<td><p class="table-paragraph">per sec</p></td>
-							<td><p class="table-paragraph">Dissassosiation constant </p></td>
-						</tr>
-					</table>
+                <br><br><br><br>
+                <div id="heading7"></div>
+                <h2>Constants</h2>
+                <p class="content-paragraph">In this table, you can find the values of the constants we used in the
+                    equations of the Exosome Production Model.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph"><b>Name</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Value</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Units</b></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph"><b>Comments</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>degma</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.0068333</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degredation of RNA</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>degp</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">2.7833333E-5</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Degredation of proteins</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>translation</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.27777778</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Proteins translated per second</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>split</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.83</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Split of the RNA compolex due to maturation</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>degp</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.8</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Activation of miRNA-DICER complex</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>p-exosome</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.010167</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Loading of protein to exosome</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>r-exosome</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.010167</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Loading of premiRNA to exosome</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>transcription</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">4.8</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">RNA molecules transcripted per second</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>dil</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">8.02254E-6</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dilution rate</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>load</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.01</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">CAP exosome endocytosis constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>loadCAP</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.2</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per num per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Exosome endocytosis constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>bind</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.145</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Binding Constant</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="table-paragraph">k<sub>unbind</sub></p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">0.00159</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">per sec</p>
+                        </td>
+                        <td>
+                            <p class="table-paragraph">Dissassosiation constant </p>
+                        </td>
+                    </tr>
+                </table>
 
-                    <br><br><br><br>
+                <br><br><br><br>
 
-                    <h3>References</h3>
-                    <div style="font-size: 0.7em; font-style: italic; " class="references">
-                        
-                        <ol>
-                            <li> Y. Liang, X. Xu, X. Li, J. Xiong, B. Li, L. Duan, D. Wang, and J. Xia, “Chondrocyte-targeted MicroRNA delivery by engineered exosomes toward a cell-free osteoarthritis therapy,” ACS Applied Materials & Interfaces, vol. 12, no. 33, pp. 36938–36947, 2020.</li>
-                            <li>“Median mrna half-life,” Median mRNA half-life - Mammals - BNID 112681. [Online]. Available: https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112681&ver=6&trm=median%2Btranscription%2Brate&org=. [Accessed: 17-Oct-2021]. </li>
-                            <li>J. G. Betancur and Y. Tomari, “Dicer is dispensable for asymmetric RISC loading in mammals,” RNA, vol. 18, no. 1, pp. 24–30, 2011. </li>
-                            <li>E. R. Kingston and D. P. Bartel, “Global analyses of the dynamics of mammalian microrna metabolism,” bioRxiv, 01-Jan-2019. [Online]. Available: https://www.biorxiv.org/content/10.1101/607150v1.full. [Accessed: 17-Oct-2021]. </li>
-                            <li>“Hek cell splitting and maintenance,” HEK Cell Splitting and Maintenance | Şen Lab. [Online]. Available: http://receptor.nsm.uh.edu/research/protocols/experimental/hekcells-split. [Accessed: 17-Oct-2021]. </li>
-                            <li>A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol. 25, no. 1, pp. 102–119, 2017. </li>
-                        </ol>
-                    </div>
+                <h3>References</h3>
+                <div style="font-size: 0.7em; font-style: italic; " class="references">
+
+                    <ol>
+                        <li> Y. Liang, X. Xu, X. Li, J. Xiong, B. Li, L. Duan, D. Wang, and J. Xia,
+                            “Chondrocyte-targeted MicroRNA delivery by engineered exosomes toward a cell-free
+                            osteoarthritis therapy,” ACS Applied Materials & Interfaces, vol. 12, no. 33, pp.
+                            36938–36947, 2020.</li>
+                        <li>“Median mrna half-life,” Median mRNA half-life - Mammals - BNID 112681. [Online]. Available:
+                            https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112681&ver=6&trm=median%2Btranscription%2Brate&org=.
+                            [Accessed: 17-Oct-2021]. </li>
+                        <li>J. G. Betancur and Y. Tomari, “Dicer is dispensable for asymmetric RISC loading in mammals,”
+                            RNA, vol. 18, no. 1, pp. 24–30, 2011. </li>
+                        <li>E. R. Kingston and D. P. Bartel, “Global analyses of the dynamics of mammalian microrna
+                            metabolism,” bioRxiv, 01-Jan-2019. [Online]. Available:
+                            https://www.biorxiv.org/content/10.1101/607150v1.full. [Accessed: 17-Oct-2021]. </li>
+                        <li>“Hek cell splitting and maintenance,” HEK Cell Splitting and Maintenance | Şen Lab.
+                            [Online]. Available:
+                            http://receptor.nsm.uh.edu/research/protocols/experimental/hekcells-split. [Accessed:
+                            17-Oct-2021]. </li>
+                        <li>A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
+                            therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
+                            25, no. 1, pp. 102–119, 2017. </li>
+                    </ol>
                 </div>
             </div>
         </div>
-    
+    </div>
+
 
 
 
     <style>
-        td, th {
+        td,
+        th {
             border: 1px solid black;
             padding: 15px;
         }
 
-        table{
+        table {
             width: 100%;
             border-collapse: collapse;
         }
@@ -1201,38 +1669,40 @@
         h2 {
             font-family: 'Raleway', sans-serif;
         }
+
         .content p.photo-desc {
             text-align: center !important;
             font-size: 0.8em !important;
         }
 
-        .class-paragraph{
+        .class-paragraph {
             padding-left: 5px;
             margin-right: 5px;
             text-align: justify;
 
         }
+
         #content-tag {
-        background-color: #ffffff;
-        position: relative;
+            background-color: #ffffff;
+            position: relative;
         }
 
         #content-tag p {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
         }
-        
-        
+
+
         #content-tag .contentBlock {
-        float: none;
-        margin: 0 auto;
+            float: none;
+            margin: 0 auto;
         }
-        
-        
+
+
         #content {
             padding: 0px;
             width: 100%;
@@ -1242,91 +1712,92 @@
             line-height: initial;
 
         }
-        
+
         .contentBlock {
-        width: 64vw;
-        max-width: 1200px;
-        float: right;
-        display: flex;
-        flex-direction: column;
-        font-family: 'Raleway', sans-serif;
-        
+            width: 64vw;
+            max-width: 1200px;
+            float: right;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Raleway', sans-serif;
+
         }
-        
+
         .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
+            padding: 64px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px lightgray;
+            color: #121212;
+            margin-top: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
         }
-        
+
         .content p:first-child {
-        margin-top: 0;
+            margin-top: 0;
         }
-        
-    
+
+
         .content ul {
-        padding-inline-start: 20px;
-        list-style-image: none;
-        list-style-type: none;
+            padding-inline-start: 20px;
+            list-style-image: none;
+            list-style-type: none;
         }
-        
+
         .content ul li {
-        display: flex;
+            display: flex;
         }
-        
+
         .content ul li::before {
-			list-style-type: none;
+            list-style-type: none;
 
-        color: #000000;
+            color: #000000;
         }
-        
+
         .content .splide ul li::before {
-        content: unset;
+            content: unset;
         }
-        
+
         .content li {
-        margin: 10px;
-        font-size: 1.2em;
-        list-style-type: none;
+            margin: 10px;
+            font-size: 1.2em;
+            list-style-type: none;
 
 
         }
-        
+
         .content li::marker {
-        color: #000000;
-        font-weight:bold;
+            color: #000000;
+            font-weight: bold;
         }
-        
-        .content h4, .content h5 {
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-block-end: 0.2em;
-        margin-block-start: 60px;
-        }
-        
+
+        .content h4,
         .content h5 {
-        font-size: 1em;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-block-end: 0.2em;
+            margin-block-start: 60px;
         }
-        
+
+        .content h5 {
+            font-size: 1em;
+        }
+
         .content a {
-        color: #000000;
-        
-        text-align: center;
-        cursor: pointer;
+            color: #000000;
+
+            text-align: center;
+            cursor: pointer;
         }
-        
+
         .content a.citation {
-        font-size: 0.6em;
-        vertical-align: super;
+            font-size: 0.6em;
+            vertical-align: super;
         }
-        
-        .content-paragraph{
+
+        .content-paragraph {
             margin: 0;
             font-size: 1.2rem;
             line-height: 1.5;
@@ -1335,60 +1806,77 @@
             text-align: justify;
 
         }
-    
     </style>
 
     <style>
-        
-        
-        </style>
-        
-            <footer class="footer">
-                <!-- Footer -->
-                         
-                    
-        
-                <br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                
-                <ul>
-                    <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
-                </ul>
-                <br><br><br><br><br><br><br>
-                <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-                    
-                <br><br><br><br><br><br><br><br>
-                        
-                    
-                <div style="display:flex;flex-wrap:wrap; ">
-                    <div class="col">
-                        <a href="https://igemnous.med.duth.gr/" target="_blank">
-                            <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);" 
-                                 src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png"> 
-                        </a>
-                       
-                    </div>
-                    
-                    <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                        <div class="footer_sponsors" style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                            <a href="https://duth.gr/" target="_blank"><img src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png" style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                            <a href="https://www.geneious.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png" style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                            <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg" style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;" ></a>
-                            <a href="https://bioemtech.com/" target="_blank"><img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png" style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-                        </div>
-                    </div>
-        
-                </div>
-            
-            </footer>
-        
 
-    </body>
+
+    </style>
+
+    <footer class="footer">
+        <!-- Footer -->
+
+
+
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
+
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
 </html>
