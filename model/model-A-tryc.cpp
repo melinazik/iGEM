@@ -35,7 +35,7 @@ double cell_num = 149000000; // Mean number of cells in a joint
 double cell_dev = 46000000;  // +- : standar deviation of number of cells 
 double u = 0.71;             // % : exosomes that take miRNA
 double c = 0.3;              //
-double DpremiRNA = 0.0001;   // 1/min : premiRNA destruction rate
+double DpremRNA = 0.0001;   // 1/min :  premRNA destruction rate
 double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
 
 
@@ -44,9 +44,9 @@ double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Val
 //calculates the change in miRNA concentration in a fraction of time
 //miRNA_rate = rate of miRNA change per time
 
-double eq_miRNA (double mRNA1, double miRNA) 
+double eq_miRNA (double mRNA, double miRNA) 
 {
-    double miRNA_rate = k_syn * mRNA1 - c1 *  miRNA; 
+    double miRNA_rate = k_syn * mRNA - c1 *  miRNA; 
 
     return miRNA_rate;
 }
@@ -107,11 +107,11 @@ double eq_mRNA (double DNA, double mRNA)
 //rate of change for the total premRNA transcripts
 //starting value premRNA = 0
 
-double eq_premiRNA (double DNA, double premiRNA)
+double eq_premRNA (double DNA, double  premRNA)
 {
-    double premiRNA_rate = kts * DNA - DpremiRNA * premiRNA - c1 * premiRNA; 
+    double  premRNA_rate = kts * DNA - DpremRNA *  premRNA - c1 *  premRNA; 
 
-    return premiRNA_rate;
+    return premRNA_rate;
 }
 
 //equation for miRNA that goes into exosomes
@@ -204,8 +204,8 @@ int main()
     double mRNA = 0;
     double mRNA_rate = 0;
 
-    double premiRNA = 0;
-    double premiRNA_rate = 0;
+    double  premRNA = 0;
+    double  premRNA_rate = 0;
 
     double miRNA_exos = 0;
     double miRNA_exos_rate = 0;
@@ -229,10 +229,10 @@ int main()
             mRNA_rate = eq_mRNA (DNA, mRNA);
             mRNA = mRNA + mRNA_rate;
 
-            premiRNA_rate = eq_premiRNA (DNA, premiRNA);
-            premiRNA = premiRNA + premiRNA_rate;
+            premRNA_rate = eq_premRNA (DNA,  premRNA);
+            premRNA =  premRNA +  premRNA_rate;
 
-            miRNA_exos_rate = eq_miRNA_exos(premiRNA_rate);
+            miRNA_exos_rate = eq_miRNA_exos( premRNA_rate);
             miRNA_exos = miRNA_exos + miRNA_exos_rate;
 
             P_exos_rate = eq_P_exos(P_rate);
@@ -264,7 +264,7 @@ int main()
             file << Exo << " ,";
             file << target << " ,";
             file << DNA << " ,";
-            file << premiRNA << " ,";
+            file <<  premRNA << " ,";
             file << miRNA_u << " ,";
             file << miRNA_exos << " ,";
             file << P_exos << " , \n" ;
@@ -277,14 +277,14 @@ int main()
     cout << "Total miRNA concentration in exosomes: [miRNA] = " << miRNA_exos << endl;
 
     //Calculate miRNA concentration per cell in the joint
-    double miRNA_in_cell = miRNA_u/cell_num; 
+    double miRNA_in_cell = miRNA_u / cell_num; 
 
     //worst case
-    double worst = miRNA_u/(cell_num + cell_dev);
+    double worst = miRNA_u / (cell_num + cell_dev);
 
     //best case
-    double best = miRNA_u/(cell_num - cell_dev);
-
+    double best = miRNA_u / (cell_num - cell_dev);
+ 
     cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell << endl;
     cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst << endl;
     cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best << endl;
@@ -292,15 +292,33 @@ int main()
 
     //results by wet
     cout << "protein concentration produced by cell: [P] = " << P << endl;
-
-    //big picture
     cout << "miRNA concentration produced in total: [miRNA] = " << miRNA << endl;
     cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u << endl;
     cout << "Useful exosomes (with miRNA): Exos = " << Exo * u << endl;
 
     cout << "the cells of a joint would averagely produce: [miRNA] = "<< miRNA * cell_num << " , [miRNA useful] = " << miRNA_u * cell_num << "transported by: " << Exo * u * cell_num <<" exosomes"<< endl;
 
+    //big picture
+    //Let the therapy be intriduced using 3.000 trasnfected cells
+    
+    //Calculate miRNA concentration per cell in the joint
+    miRNA_in_cell = miRNA_u * 3000 / cell_num; 
 
+    //worst case
+    worst = miRNA_u *3000 / (cell_num + cell_dev);
+
+    //best case
+    best = miRNA_u * 3000 / (cell_num - cell_dev);
+    
+    cout << " ----- results by 3000 cells ---- big picture" << endl;
+    cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell  << endl;
+    cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst << endl;
+    cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best << endl;
+
+    cout << "protein concentration produced by cell: [P] = " << P * 3000 << endl;
+    cout << "miRNA concentration produced in total: [miRNA] = " << miRNA * 3000 << endl;
+    cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u  * 3000 << endl;
+    cout << "Useful exosomes (with miRNA): Exos = " << Exo * u * 3000 << endl;
 
     //close file at the end of the program
     file.close();
