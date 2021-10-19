@@ -1,9 +1,12 @@
+/* https://2021.igem.org/Template:Greece_United/CSS_NavBar */
+
+/* Navigation Bar */
+/* -------------- NAVBAR ------------ */
 .right-navbar {
     align-self: flex-end;
     /* overflow: hidden;  */
     margin-left: auto;
     margin-right: 15px;
-    cursor: pointer;
 }
 
 /* Style the navigation bar links */
@@ -43,6 +46,7 @@
 #nav ul {
     padding: 0;
     display: none;
+
 }
 
 #nav li:hover ul {
@@ -50,12 +54,11 @@
 }
 
 .right-navbar a:hover,
-.dropdown2:hover {
+.dropdown:hover {
     background-color: #B7E0FF;
     /* Grey background color */
     color: #002060;
     /* Black text color */
-    pointer-events: visible;
 }
 
 /* Header */
@@ -66,6 +69,35 @@
     margin: 0;
     width: 100%;
     background-repeat: no-repeat;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #B7E0FF;
+    opacity: 80%;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #002060;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #5893D4;
+    color: #002060;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown2-content {
@@ -91,8 +123,72 @@
     background-color: #5893D4;
     color: #002060;
 }
-
-
 .dropdown2:hover .dropdown2-content {
     display: block;
+}
+
+.right-navbar a:hover,
+.dropdown2:hover {
+    background-color: #B7E0FF;
+    /* Grey background color */
+    color: #002060;
+    /* Black text color */
+}
+
+
+/* loader */
+#loader-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: calc((100%)/5);
+    justify-content: center;
+    height: 0.1vh;
+    width: 100vw;
+    z-index: 500;
+    position: fixed;
+    pointer-events: none;
+}
+
+#loader-bg {
+    position: fixed;
+    height: 200vw;
+    width: 200vw;
+    transform: translateY(0);
+    background-color: #6C8EC9;
+    transition-property: height, width, border-radius, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+    transition-delay: 0s, 0s, 0s, 1s;
+    border-radius: 0%;
+    -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+    -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+    box-shadow: 0px 0px 27px 0px #6E91CB;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+#loader-wrapper img {
+    width: 30vh;
+
+}
+
+#loader-wrapper h1 {
+    color: #fafafc;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    transform: translateY(15vh);
+    font-size: 2.2vw;
+    opacity: 100%;
+}
+
+#loader-bg.loaded {
+    height: 35vh;
+    width: 35vh;
+    border-radius: 70%;
+    transform: translateY(-2000px);
 }
