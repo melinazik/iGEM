@@ -217,7 +217,7 @@ int main()
 
     //set run time
     //currently runs in minutes (due to constant values)
-    for (int t=0; t <10; t=t+1)
+    for (int t=0; t <2880; t=t+1)
     {
         //calling functions with equations
         mRNA_rate = eq_mRNA (DNA, mRNA);
@@ -280,6 +280,18 @@ int main()
     cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell << endl;
     cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst << endl;
     cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best << endl;
+
+
+    //results by wet
+    cout << "protein concentration produced by cell: [P] = " << P << endl;
+
+    //big picture
+    cout << "miRNA concentration produced in total: [miRNA] = " << miRNA << endl;
+    cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u << endl;
+    cout << "Useful exosomes (with miRNA): Exos = " << Exo * u << endl;
+
+    cout << "the cells of a joint would averagely produce: [miRNA] = "<< miRNA * cell_num << " , [miRNA useful] = " << miRNA_u * cell_num << "transported by" << Exo * u * cell_num << endl;
+
 
 
     //close file at the end of the program
