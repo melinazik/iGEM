@@ -31,19 +31,20 @@ double k1 = 0.00144;         // 1/min : degradation of miRNA in target cell
 double kts = 288;            // copies/min : mRNA synthesis rate of the CMV promoter
 double kp = 0.024;           // % : mRNA percentage connected with ribosomes
 double k_dil = 0.0004813524; // 1/min : constant of DNA reduction in expression
-
+double cell_num = 149000000; // Mean number of cells in a joint
+double cell_dev = 46000000;  // +- : standar deviation of number of cells 
+double u = 0.71;             // % : exosomes that take miRNA
+double c = 0.3;              //
 
 //double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
 
 
 //behavioural equations of the model
 
-
 //calculates the change in miRNA concentration in a fraction of time
 //miRNA_rate = rate of miRNA change per time
-//miRNA is TODO
 
-double eq_miRNA (double c1, double mRNA1, double k_syn, double t, double miRNA) 
+double eq_miRNA (double c1, double mRNA1, double k_syn, double miRNA) 
 {
     double miRNA_rate = k_syn * mRNA1 - c1 *  miRNA; 
 
@@ -52,21 +53,18 @@ double eq_miRNA (double c1, double mRNA1, double k_syn, double t, double miRNA)
 
 //calculates the change in protein concentration in a fraction of time
 //protein = rate of mRNA2 change per time
-//protein is TODO
 
-double eq_P (double a_prot, double L, double mRNA1, double mRNA2, double D_prot, double c2, double t, double P) 
+double eq_P (double a_prot, double L, double mRNA, double D_prot, double c2, double P) 
 {
-    // dP/dt=a/LmRNA-DprotP-C2*P 
-    double P_rate = (a_prot/L) * kp * (mRNA1 + mRNA2) - D_prot * P - c2 * P; //D = rate of P change per time
+    double P_rate = (a_prot/L) * mRNA - D_prot * P - c2 * P; //D = rate of P change per time
 
     return P_rate;
 }
 
 //calculates the change in target concentration in a fraction of time
 //protein = rate of mRNA2 change per time
-//target is TODO
 
-double eq_target (double n0, double n1, double c1, double miRNA, double k1, double t, double target)
+double eq_target (double n0, double n1, double c1, double miRNA, double k1, double target)
 {
     double target_rate = n0 + c1 * miRNA * n1 - k1 * target; //E = rate of target change per time
 
@@ -85,36 +83,59 @@ double eq_Exo (double k0, double t)
 
 //equation for reduction of exression of DNA
 //describes the rate of reduction of the stregth of expression 
-// dDNA/dt=-Kdil
-// starting value DNA=1
+// starting value DNA = 1
+
+double eq_DNA ()
+{
+    double DNA_rate = - k_dil; 
+
+    return DNA_rate;
+}
 
 //equation for mRNA concentration
 //rate of change for the total mRNA transcripts
-//dmRNA/dt=KtsDNA-DmRNAmRNA
-//starting value = 0
+//starting value mRNA = 0
+
+double eq_mRNA (double kts, double DmRNA, double k_syn, double DNA, double mRNA)
+{
+    double mRNA_rate = kts * DNA - DmRNA * mRNA; 
+
+    return mRNA_rate;
+}
 
 //equation for premRNA concentration
 //rate of change for the total premRNA transcripts
-// dpremiRNA/dt=KtsDNA-DpremiRNApremiRNA-C1*premiRNA
-//starting value = 0
+//starting value premRNA = 0
 
-//miRnaex = 0
-//dmiRNAex/dt=c1 * premRNA // sunoliko miRNA se exosomata
+double eq_premRNA ( double kts, double DmRNA, double k_syn, double DNA, double mRNA, double premRNA)
+{
+    double premRNA_rate = kts * DNA - DmRNA * premRNA - c1 * premRNA; 
 
-//exosomes without protein go elseweher so we dont take all the miRNA
-//dmiRNAu/dt = u * miRNAex + c * (1-u)*miRNAex // useful exososomes: u = 0.71 of exosomes take miRNA
-//c = 0.3
+    return premRNA_rate;
+}
 
-//miRNAu/cell num gia miRNA ana kuttaro  sto telos tou programmatos
-//cell num = 1.49 * 10^8
-//deviation +- 0.46 * 10^8
-//calc worst case - add deviation (more cells = worst case)
+//equation for miRNA that goes into exosomes
+//total miRNA concentration in exosomes
+//starting value miRnaex = 0
 
-//run time 2 meres - oxi ola ta points - 
-//dokimi gia 2oro 
+double eq_miRNA_exos (double premRNA)
+{
+    double miRNA_exos =  premRNA * c1; 
+
+    return miRNA_exos;
+}
+
+//exosomes without protein go elseweher so not all miRNA goes to target cells
+
+double eq_miRNA_u (double miRNA_exos, double kts, double DmRNA, double k_syn, double DNA, double mRNA)
+{
+    double miRNA_u =  u * miRNA_exos + c * (1-u) * miRNA_exos ; 
+
+    return miRNA_u;
+}
 
 //------------------------------------
-    //mRNA1 and mRNA2 equations are to be used when ksyn in known.
+    //mRNA1 and mRNA2 equations are to be used when ksyn in known to provide better accuracy
     //Through literature research we found that almost 90% of them turn into miRNA
     //so the assumption that they fully do, does not highly affect the model
 
@@ -133,18 +154,14 @@ double eq_Exo (double k0, double t)
 
     double eq_mRNA1 (double n, double kts, double DmRNA, double k_syn, double t, double mRNA1)
     {
-        double mRNA1_rate =  n * kts * DNA - DmRNA * mRNA1 - k_syn * mRNA1; 
+        double mRNA1_rate =  n * kts - DmRNA * mRNA1 - k_syn * mRNA1; 
 
         return mRNA1_rate;
     }*/
 //------------------------------------
 
 
-
-//checks if the equations have reached an equillibrium
-//where produce equals loss
-
-
+//main
 int main()
 {
     // initialize csv file
@@ -255,13 +272,9 @@ int main()
 
     }
 
-    //miRNA concentration after equlibrium - until the end of the program
-    AVG_miRNA = miRNA_in_exo / times;
 
     cout << "Average miRNA concentration in exosomes after equilibrium [miRNA] = " << AVG_miRNA << "for t = " << times << endl;
 
-    //protein concentration after equlibrium - util the end of the program
-    AVG_P = P_in_exo / times;
     cout << "Average protein concentration in exosomes after equilibrium [protein] = " << AVG_P << "for t = " << times << endl;
 
     //close file at the end of the program
