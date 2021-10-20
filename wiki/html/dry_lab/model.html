@@ -879,8 +879,8 @@
                             The assumptions we made were:
                             <li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.</li>
                             <li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
-                            <li><b>b)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
-                            <li><b>b)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
+                            <li><b>c)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
+                            <li><b>d)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
                                 out.</li>
                         </p>
                 </div>
@@ -1019,7 +1019,7 @@
         <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
-                    <div id="heading2">
+                    <div id="heading3">
                         <div class="header">
                             <h1>Exosome Model</h1>
                         </div>
@@ -1028,164 +1028,66 @@
                             <h3>Approach B</h3>
                         </div>
                         <p class="content-paragraph">
-                            We created two models that calculates the levels of exosomes carrying miRNA
-                            to chondrocytes of the cartilage.
-                            The process of building each model is described below and is mainly based on literature data known
-                            to date.
-                            At first, we made our simulations and calculations and predicted the expected result of the Wet Lab
-                            experiments to guide them.
-                            Then, we compared our data to their findings and used it to fit our model and make it more accurate
-                            and closer to real-life conditions.
-                            Finally, we managed to create an accurate simulation for the HEK-293 cell line.
-                        </p>
-                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                            src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in
-                            CellDesigner v4.4.</p>
-
-                        <p class="content-paragraph">
+                            The idea of this model is similar to the previous one. The only difference is the method used for simulations.
+                            That means the equations and the constants are different, though they still describe the same phenomenon.<br>
+                            We constructed an ODE (ordinary differential equation) model to better understand the 
+                            modelled processes, contributing in this way to the laboratory aspect of our project and to 
+                            answer the following questions.<br><br>
+                            <b>1.</b>	Is our project’s therapeutic potential based on its design enough according to parameters found in literature?<br>
+                            <b>2.</b>	Are our laboratory results correct in magnitude?<br>
+                            <b>3.</b>	Redefining some parameters using our results, since literature doesn’t cover with detail this area of 
+                            study, do we still have therapeutic potential?<br><br>
+                            Our model describes the expression of our construct, meaning the synthesis of the membrane protein 
+                            Lamp2b-GFP-CAP and miRNA 140 and their packaging in exosomes.<br><br>
+                                
                             The assumptions we made were:
-                            <li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.</li>
-                            <li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
-                            <li><b>b)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
-                            <li><b>b)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
-                                out.</li>
+                            <li><b>1)</b>&nbsp;&nbsp;The cell is cultivated in ideal conditions, so exosome production is stable</li>
+                            <li><b>2)</b>&nbsp;&nbsp;The loading of mRNA into exosomes can be ignored because of its great length and because it lacks sequences which would lead to loading (1)</li>
+                            <li><b>3)</b>&nbsp;&nbsp;The time interval between the pre-miRNA synthesis and the loading of the exosomes is too short to take into account</li>
+                            <li><b>4)</b>&nbsp;&nbsp;The pre-miRNA that is loaded into exosomes is divided evenly in them</li>
+                            <li><b>5)</b>&nbsp;&nbsp;The packaging of protein to exosome and finishing of translation happen simultaneously because of a short time interval that can be ignored. </li>
+                            <li><b>6)</b>&nbsp;&nbsp;The diffusion of the protein in the other membranes of the cell is ignored</li>
+
                         </p>
-                </div>
-
-                <div id="heading3"></div>
-                    <div class="header">
-                        <h3>Model Parts</h3>
-                    </div>
-                    <p class="content-paragraph">
-                        The model consists of three main parts. <br><br>
-                        <b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how
-                        many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b -
-                        CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
-                    </p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                        src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
-
-                    <br><br>
-
-                    <p class="content-paragraph">
-                        <b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to
-                        measure the effectiveness of our solution. We did that by calculating how many of the produced
-                        exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
-                        <br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured
-                        quantities. Had those been known we could have approached the subject with even greater accuracy.
-                    </p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                        src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.
-                    </p>
-
-                    <br><br>
-
-                    <p class="content-paragraph">
-                        The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER
-                        protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a
-                        single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get
-                        degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find
-                        out how these complex effects the production of the MMP-13 protein.
-                    </p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                        src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.
-                    </p>
-                    <br><br><br><br>
-                    <div id="heading3"></div>
-                    <div class="header">
-                        <h3>How the Model Works</h3>
-                    </div>
-                    <p class="content-paragraph">
-                        <b><u>First Stage</u></b> <br>
-                        The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate
-                        transcription factor via the CMV promoter.
-                        This is described by the following equation:<br>
-
-                        $$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-                        This equation describes the formation of a complex between the plasmids Gene and the complimentary
-                        Transcription Factor,
-                        where
-                        \(k_{bindCMV}\)
-                        and
-                        \(k_{unbindCMV}\)
-                        are the binding and unbinding constants of the TF to the CMV promoter.<br>
-
-                        After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
-
-                        $$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-                        The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied
-                        by a transcription constant.
-                        This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase
-                        places nucleotides.
-
-                        $$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
-
-                        The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre
-                        miRNA.
-                        The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
-                        After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
-                        the produced exosomes.
-
-                        <br><br>
-
-                        Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP
-                        protein in its membrane.
-                        We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule.
-                        These two types of exosomes are produced at different rates.
-                        More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones
-                        who do not have it.
-                        Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the
-                        regular exosomes.
-
-                        <br><br>
-
-                        This concludes the first part of our model.
-
                         <br><br><br>
+                        <div class="header">
+                            <h3>How the Model Works</h3>
+                        </div>
+                        <p class="content-paragraph">
+                            The model is written in <b>C++</b> code language and is parted from several variables and literature constants that 
+                            are used to complete the ordinary differential equations we developed.<br>
 
-                        <b><u>Second Stage</u></b> <br>
-                        The second part involves the transportation of the exosomes to the Chondrocytes.
-                        In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes
-                        have \(x\) times larger affinity
-                        towards chondrocytes than regular exosomes do not. <br><br>
+                            It simulates the behaviour of one cell, trasfected with one plasmid. With simple calculations in the end it shows 
+                            the effect more cells would have, if the treament was actually used in real life conditions.<br><br>
 
-                        The equations we used are:
+                            There is an equation describing the rate of change of the concentration of every substance partaking in this process.<br>
 
-                        $$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
+                            To achieve this, we used multiple functions that described the rate. At the same time, we stored the current value of every element.
+                            Setting 1 minute as a fraction of time in this example, we were able to add to the value that was calculated the previous moment, 
+                            the current rate of change in its concentration. That results in the total concentration up to that moment.<br>
 
-                        $$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
+                            The equations also calculate the produced exosomes, how many of them will receive the protein in order to be more efficient 
+                            and reach the target cells, how much miRNA will be induced in exosomes, but also the total produced concentration of miRNA and protein.<br><br>
 
-                        where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\)
-                        <br> <br>
+                            The program successfully, and without delay, iterates these equations for a certain period of time, 
+                            adjustable by the user. We have successfully run it for a time period of two days. Total lines of code 325.<br><br>                       
+                        </p>
 
-                        Since there is not enough information on exosome modeling, we believed it would be best to keep this
-                        part as simple as possible,
-                        in order to avoid inaccuracies due to unnecessary complication.
-
-                        <br><br><br>
-
-                        <b><u>Third Stage</u></b> <br>
-                        The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells.
-                        We assumed that the concentration of the DICER is high enough that the creation of the complex is
-                        entirely based on the miRNA concentration.
-
-                        $$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
-
-                        where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
-                    </p>
+                        <img style="width:50%; align-self:center;  border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/b/b4/T--Greece_United--eq-model.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 5:</b> Screenshot from the C++ code of the exosome model.<br> Functions and equations that are used.</p>
+                        <br><br>
+                        <img style="width:50%; align-self:center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/5/54/T--Greece_United--rates-model.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 6:</b> Screenshot from the C++ code of the exosome model.<br> Use of rates to calculate total values.</p>
+                        <p>
+                            You can find our C++ code in executable form in our <a href="https://github.com/melinazik/iGEM/blob/main/model/model-A-tryc.cpp" target="_blank">github.</a><br>
+                            With appropriate changes it can be used to model many similar situations.<br><br> 
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         <!-- Results -->
         <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
@@ -1194,6 +1096,10 @@
                     <div id="heading4">
                         <div class="header">
                             <h1>Results</h1>
+                        </div>
+                        <br><br><br>
+                        <div class="header">
+                            <h3>Approach A</h3>
                         </div>
                         <p class="content-paragraph">
                             We ran our simulation for a time span of 24h.
@@ -1234,6 +1140,10 @@
                             higher level of the membrane
                             protein and thus more CAP exosomes.
                         </p>
+                        <br><br><br>
+                        <div class="header">
+                            <h3>Approach B</h3>
+                        </div>
                     </div>
                 </div>
             </div>
