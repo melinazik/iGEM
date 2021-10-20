@@ -21,8 +21,8 @@ using namespace std;
 double c1 = 0.6;             // 1/min : pre-miRNA loading rate in exosomes
 double c2 = 0.6;             // 1/min : protein loading rate in exosomes
 double DmRNA = 0.41;         // 1/min : destruction rate of mRNA
-double a_prot = 720.0;       // aminoacids/min
-double L = 680.0;            // aminoacids : The Length of Lamp2b-CAP-GFP
+double a_prot = 3017.644;    // nucleotides/min
+double L = 2040.00;          // nucleotides : The Length of Lamp2b-CAP-GFP
 double D_prot = 0.00167;     // 1/min : Protein degredation rate
 double k0 = 7900;            // 1/min : exosome production rate
 double n0 = 0;               // starting quantity of miRNA
