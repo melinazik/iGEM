@@ -27,16 +27,16 @@ double D_prot = 0.00167;     // 1/min : Protein degredation rate
 double k0 = 7900;            // 1/min : exosome production rate
 double n0 = 0;               // starting quantity of miRNA
 double n1 = 1.0;             // exosome number
-double k1 = 0.00144;         // 1/min : degradation of miRNA in target cell
+double DmiRNA = 0.00144;     // 1/min :  premRNA destruction rate
 double kts = 288;            // copies/min : mRNA synthesis rate of the CMV promoter
-double kp = 0.024;           // % : mRNA percentage connected with ribosomes
+double kp = 0.7;             // % : mRNA percentage connected with ribosomes
 double k_dil = 0.0004813524; // 1/min : constant of DNA reduction in expression
 double cell_num = 149000000; // Mean number of cells in a joint
 double cell_dev = 46000000;  // +- : standar deviation of number of cells 
 double u = 0.71;             // % : exosomes that take miRNA
-double c = 0.3;              //
-double DpremRNA = 0.0001;   // 1/min :  premRNA destruction rate
-double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
+double c = 0.3;              // % : exosomes without the protein that reach cells 
+
+//double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Value not yet fully determined
 
 
 //behavioural equations of the model
@@ -44,9 +44,10 @@ double k_syn = 0.024;        // 1/min : pre-miRNA synthesis rate from mRNA | Val
 //calculates the change in miRNA concentration in a fraction of time
 //miRNA_rate = rate of miRNA change per time
 
-double eq_miRNA (double mRNA, double miRNA) 
+double eq_miRNA (double mRNA, double miRNA, double DNA) 
 {
-    double miRNA_rate = k_syn * mRNA - c1 *  miRNA; 
+    
+    double miRNA_rate = kts * DNA -  DmiRNA * miRNA - c1 * miRNA; 
 
     return miRNA_rate;
 }
@@ -56,20 +57,21 @@ double eq_miRNA (double mRNA, double miRNA)
 
 double eq_P (double mRNA, double P) 
 {
-    double P_rate = (a_prot/L) * mRNA - D_prot * P - c2 * P; //D = rate of P change per time
-
+    
+    double P_rate = (a_prot/L) * kp * mRNA - D_prot * P - c2 * P; //D = rate of P change per time
+    
     return P_rate;
 }
 
 //calculates the change in target concentration in a fraction of time
 //protein = rate of mRNA2 change per time
 
-double eq_target (double miRNA, double target)
-{
-    double target_rate = n0 + c1 * miRNA * n1 - k1 * target; //E = rate of target change per time
+// double eq_target (double miRNA, double target)
+// {
+//     double target_rate = n0 + c1 * miRNA * n1 -   DmiRNA * target; //E = rate of target change per time
 
-    return target_rate;
-}
+//     return target_rate;
+// }
 
 //calculates how many exososmes have been produced up to a certain time (t)
 //k0 exosomes are produced in a fraction of time
@@ -85,10 +87,18 @@ double eq_Exo (double t)
 //describes the rate of reduction of the stregth of expression 
 // starting value DNA = 1
 
-double eq_DNA ()
+double eq_DNA (double DNA, double t)
 {
-    double DNA_rate = - k_dil; 
+    double DNA_rate;
 
+    if (DNA > 0)
+    {
+    DNA_rate = - k_dil; 
+    }
+    else
+    {
+        DNA_rate =0;
+    }
     return DNA_rate;
 }
 
@@ -103,24 +113,15 @@ double eq_mRNA (double DNA, double mRNA)
     return mRNA_rate;
 }
 
-//equation for premRNA concentration
-//rate of change for the total premRNA transcripts
-//starting value premRNA = 0
-
-double eq_premRNA (double DNA, double  premRNA)
-{
-    double  premRNA_rate = kts * DNA - DpremRNA *  premRNA - c1 *  premRNA; 
-
-    return premRNA_rate;
-}
 
 //equation for miRNA that goes into exosomes
 //total miRNA concentration in exosomes
 //starting value miRna_exos = 0
+//in all of the exosomes created
 
-double eq_miRNA_exos (double premRNA_rate)
+double eq_miRNA_exos (double miRNA)
 {
-    double miRNA_exos_rate = (c1 / k0) * premRNA_rate; 
+    double miRNA_exos_rate = c1 * miRNA; 
 
     return miRNA_exos_rate;
 }
@@ -129,15 +130,16 @@ double eq_miRNA_exos (double premRNA_rate)
 //total protein concentration in exosomes
 //starting value P_exo = 0
 
-double eq_P_exos (double P_rate)
+double eq_P_exos (double P)
 {
-    double P_exos_rate = (c2 / (u * k0)) * P_rate; 
+    double P_exos_rate = c2 * P; 
 
     return P_exos_rate;
 }
 
 //exosomes without the protein go elseweher so not all miRNA goes to target cells
 //useful miRNA - miRNA tha goes to exosomes
+//miRNA that goes into cells
 
 double eq_miRNA_u (double miRNA_exos)
 {
@@ -183,7 +185,7 @@ int main()
     file.open ("C:\\workspace\\iGEM\\----PROJECT-----\\DL\\model\\A\\code\\model_A_v03_results.csv");
 
     //titles of csv file
-    file << "time, mRNA, miRNA, Protein, Exosomes, target, DNA, premRNA, miRNA useful, miRNA in exos, Protein in exos\n";
+    file << "time, mRNA, miRNA, Protein, Exosomes, DNA, miRNA useful, miRNA in exos, Protein in exos\n";
 
     //initial quantities are zero - the cell has not produced yet
     //initial rates are zero - the cell does not produce yet
@@ -195,17 +197,14 @@ int main()
 
     double Exo = 0;
 
-    double target = 0;
-    double target_rate = 0; 
+    // double target = 0;
+    // double target_rate = 0; 
 
     double DNA = 1;
     double DNA_rate = 0;
 
     double mRNA = 0;
     double mRNA_rate = 0;
-
-    double  premRNA = 0;
-    double  premRNA_rate = 0;
 
     double miRNA_exos = 0;
     double miRNA_exos_rate = 0;
@@ -217,64 +216,68 @@ int main()
 
     int times;
 
+
+    //counters for total
+    double miRNA_total = 0;
+    double P_total = 0;
+
     //set run time
     //currently runs in minutes (due to constant values)
 
-    if (DNA > 0)
+    
+    for (int t=0; t <2880; t=t+1)
     {
-        for (int t=0; t <2880; t=t+1)
-        {
-            
-            //calling functions with equations
-            mRNA_rate = eq_mRNA (DNA, mRNA);
-            mRNA = mRNA + mRNA_rate;
+        
+        //calling functions with equations
+        mRNA_rate = eq_mRNA (DNA, mRNA);
+        mRNA = mRNA + mRNA_rate;
 
-            premRNA_rate = eq_premRNA (DNA,  premRNA);
-            premRNA =  premRNA +  premRNA_rate;
+        miRNA_exos_rate = eq_miRNA_exos( miRNA);
+        miRNA_exos = miRNA_exos + miRNA_exos_rate;
 
-            miRNA_exos_rate = eq_miRNA_exos( premRNA_rate);
-            miRNA_exos = miRNA_exos + miRNA_exos_rate;
+        P_exos_rate = eq_P_exos(P);
+        P_exos = P_exos + P_exos_rate;
 
-            P_exos_rate = eq_P_exos(P_rate);
-            P_exos = P_exos + P_exos_rate;
+        miRNA_rate = eq_miRNA (mRNA, miRNA, DNA);
+        miRNA = miRNA + miRNA_rate;
 
-            miRNA_rate = eq_miRNA (mRNA, miRNA);
-            miRNA = miRNA + miRNA_rate;
+        DNA_rate = eq_DNA (DNA, t);
+        DNA = DNA + DNA_rate;
 
-            DNA_rate = eq_DNA ();
-            DNA = DNA + DNA_rate;
+        P_rate = eq_P (mRNA, P);
+        P = P + P_rate;
+        
+        // target = eq_target (miRNA, target);
+        // target = target + target_rate;
 
-            P_rate = eq_P (mRNA, P);
-            P = P + P_rate;
-            
-            target = eq_target (miRNA, target);
-            target = target + target_rate;
+        Exo = eq_Exo (t);
+        
+        miRNA_u = miRNA_u + eq_miRNA_u(miRNA_exos);
 
-            Exo = eq_Exo (t);
-            
-            miRNA_u = miRNA_u + eq_miRNA_u(miRNA_exos);
 
-                    
-            //add values to the .cvs file
-            //caution! should be added in the correct order matching the titles
-            file << t << " ,";
-            file << mRNA << " ,";
-            file << miRNA << " ,";
-            file << P << " ,";
-            file << Exo << " ,";
-            file << target << " ,";
-            file << DNA << " ,";
-            file <<  premRNA << " ,";
-            file << miRNA_u << " ,";
-            file << miRNA_exos << " ,";
-            file << P_exos << " , \n" ;
-            
-            times = t;
-        }
+        //counters for total
+        miRNA_total = miRNA_total + kts * DNA;
+
+        P_total = P_total + (a_prot/L) * kp * mRNA;
+                
+        //add values to the .cvs file
+        //caution! should be added in the correct order matching the titles
+        file << t << " ,";
+        file << mRNA << " ,";
+        file << miRNA << " ,";
+        file << P << " ,";
+        file << Exo << " ,";
+        //file << target << " ,";
+        file << DNA << " ,";
+        file << miRNA_u << " ,";
+        file << miRNA_exos << " ,";
+        file << P_exos << " , \n" ;
+        
+        times = t;
     }
+    
 
     cout << "Total runtime: " << times << endl;
-    cout << "Total miRNA concentration in exosomes: [miRNA] = " << miRNA_exos << endl;
 
     //Calculate miRNA concentration per cell in the joint
     double miRNA_in_cell = miRNA_u / cell_num; 
@@ -291,35 +294,32 @@ int main()
 
 
     //results by wet
-    cout << "protein concentration produced by cell: [P] = " << P << endl;
-    cout << "miRNA concentration produced in total: [miRNA] = " << miRNA << endl;
+    cout << "miRNA concentration produced in total: [miRNA] = " << miRNA_total << endl;
+    cout << "protein concentration produced in total: [P] = " << P_total << endl;
+    cout << "Total miRNA concentration in exosomes: [miRNA] = " << miRNA_exos << endl;
     cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u << endl;
     cout << "Useful exosomes (with miRNA): Exos = " << Exo * u << endl;
+    cout << " " << endl;
 
-    cout << "the cells of a joint would averagely produce: [miRNA] = "<< miRNA * cell_num << " , [miRNA useful] = " << miRNA_u * cell_num << "transported by: " << Exo * u * cell_num <<" exosomes"<< endl;
 
     //big picture
-    //Let the therapy be intriduced using 3.000 trasnfected cells
-    
-    //Calculate miRNA concentration per cell in the joint
-    miRNA_in_cell = miRNA_u * 3000 / cell_num; 
+    //Let the therapy be intriduced using in_cell trasnfected cells
 
-    //worst case
-    worst = miRNA_u *3000 / (cell_num + cell_dev);
+    int in_cell = 1000;
 
-    //best case
-    best = miRNA_u * 3000 / (cell_num - cell_dev);
-    
-    cout << " ----- results by 3000 cells ---- big picture" << endl;
-    cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell  << endl;
-    cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst << endl;
-    cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best << endl;
+    for(int i=1000; i<=5000; i+=1000)
+    {
+        in_cell = i;
+        cout << " ----- results by " << in_cell << " cells ---- big picture" << endl;
+        cout << "miRNA concentration per cell in the joint - average: [miRNA] = " << miRNA_in_cell * in_cell  << endl;
+        cout << "miRNA concentration per cell in the joint - worst case: [miRNA] = " << worst * in_cell  << endl;
+        cout << "miRNA concentration per cell in the joint - best case: [miRNA] = " << best * in_cell << endl;
 
-    cout << "protein concentration produced by cell: [P] = " << P * 3000 << endl;
-    cout << "miRNA concentration produced in total: [miRNA] = " << miRNA * 3000 << endl;
-    cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u  * 3000 << endl;
-    cout << "Useful exosomes (with miRNA): Exos = " << Exo * u * 3000 << endl;
-
+        cout << "miRNA concentration produced in total: [miRNA] = " << miRNA_total * in_cell << endl;
+        cout << "protein concentration produced in total: [P] = " << P_total * in_cell  << endl;
+        cout << "miRNA concentration that got in exosomes: [miRNA useful] = " << miRNA_u  * in_cell << endl;
+        cout << " " << endl;
+    }
     //close file at the end of the program
     file.close();
 }
