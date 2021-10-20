@@ -1,185 +1,211 @@
 <!DOCTYPE html>
+
+
 <html>
- 
+<head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../css/test-styles.css" />
-    <!--<script src="../../js/test-js.js"> </script>-->
+    <style>
+        
+        .card-icon {
+          z-index: 1;
+        }
+         
+        .icon {
+          padding: 10%;
+          width:80%;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+          max-width: 260px;
+        }
 
-<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-    
-     
+        .info-section {
+            margin: auto;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .cardcolors {
+            --bg-color: #4D6D9A;
+            --bg-color-light: #86B3D1;
+            --text-color-hover: #ffffff;
+            --box-shadow-color: #99CED3;
+        }
+
+        .c-card {
+            margin: auto;
+            margin-bottom: 20px;
+            margin-right: 100px;
+            width: 220px;
+            height: 321px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 14px 26px rgba(128,128,128,0.2);
+            transition: all 0.3s ease-out;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 0px !important;
+        }
+
+            .c-card:hover {
+                transform: translateY(-5px) scale(1.005) translateZ(0);
+                box-shadow: 0 24px 36px rgba(0,0,0,0.11), 0 24px 46px var(--box-shadow-color);
+                text-decoration: none;
+            }
+
+                .c-card:hover .overlay {
+                    transform: scale(4) translateZ(0);
+                }
+
+                .c-card:hover .circle {
+                    border-color: var(--bg-color-light);
+                    background: var(--bg-color);
+                }
+
+                    .c-card:hover .circle:after {
+                        background: var(--bg-color-light);
+                    }
+
+                .c-card:hover p {
+                    color: var(--text-color-hover);
+                }
+
+            .c-card:active {
+                transform: scale(1) translateZ(0);
+                box-shadow: 0 15px 24px rgba(0,0,0,0.11), 0 15px 24px var(--box-shadow-color);
+            }
+
+            .c-card p {
+                font-size: 20px;
+                color: #99CED3;
+                margin-top: 30px;
+                z-index: 1000;
+                transition: color 0.3s ease-out;
+                text-decoration: none;
+            }
+
+        .circle {
+            width: 131px;
+            height: 131px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease-out;
+        }
+
+            .circle:after {
+                content: "";
+                width: 118px;
+                height: 118px;
+                display: block;
+                position: absolute;
+                background: var(--bg-color);
+                border-radius: 50%;
+                transition: opacity 0.3s ease-out;
+            }
+
+            .circle svg {
+                z-index: 10000;
+                transform: translateZ(0);
+            }
+
+        .overlay {
+            width: 118px;
+            position: absolute;
+            height: 118px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            top: 70px;
+            left: 50px;
+            z-index: 0;
+            transition: transform 0.3s ease-out;
+        }
+
+        .front-cover {
+            width: 100%;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+</html>
+
+<html>
 <body>
 
-    <h2>this is mantis he is not praying</h2>
+<hr style="margin-left:80px; margin-right:80px; font-size:30px;">
 
-    <table style="width:100%">
-        <tr> <!-- row 1-->
-            <td> <!--column 1-->
-                <img id="og-img" src="https://2021.igem.org/wiki/images/0/03/T--Greece_United--mike.jpg" alt="Mike" onclick="imgonclick()">
+</br>
+    <div class="info-section">
 
-                <div id="modal" class="modal">
-
-                    <span class="close" onclick ="spanonclick()">&times;</span>
-
-                    <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mike-fun">
-                    
-                    <div id="caption">
-                        <h3>Mike</h3>
-                        <h2>
-                            CLASSIFIED AS: Chandler Bing’s and Gregory House’s sarcastic love child <br/>
-                            
-                            HATES: people who won’t accept the truth <br/>
-                            
-                            KARAOKE GO-TO: anything but he won’t know the exact lyrics <br/>
-                        </h2>   
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2019.igem.org/Team:Exeter/Human_Practices" class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                              <img src="https://2019.igem.org/wiki/images/9/94/T--Exeter--problem_icon.png"
+                              alt="HP Icon"
+                              class="icon card-icon" />
+                        </div>
+                        <p>Problem</p>
+                    </a>
                 </div>
-            </td>
-        
-
-            <td> <!--column 2-->
-                <img id="og-img" src="https://2021.igem.org/wiki/images/0/03/T--Greece_United--mike.jpg" alt="Mike" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                    <span class="close" onclick ="spanonclick()">&times;</span>
-
-                    <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mike-fun">
-                    
-                    <div id="caption">
-                        <h3>Mike</h3>
-                        <h2>
-                            CLASSIFIED AS: Chandler Bing’s and Gregory House’s sarcastic love child <br/>
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2019.igem.org/Team:Exeter/Hardware" class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
                             
-                            HATES: people who won’t accept the truth <br/>
-                            
-                            KARAOKE GO-TO: anything but he won’t know the exact lyrics <br/>
-                        </h2>   
-                    </div>
+                       <img src="https://2019.igem.org/wiki/images/7/73/T--Exeter--Solution_icon.png"
+                              alt="Bio Icon"
+                              class="icon card-icon" />
+
+                        </div>
+                        <p>Solution</p>
+                    </a>
                 </div>
-            </td>
-
-            <td><!--column 3-->
-                <img id="og-img" src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt="alkmini" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt="alkmini-fun">
-                
-                <div id="caption">
-                column 3  
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2019.igem.org/Team:Exeter/Design" class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2019.igem.org/wiki/images/d/df/T--Exeter--iconbio.png"
+                              alt="Bio Icon"
+                              class="icon card-icon" />
+                         
+                        </div>
+                        <p>Synthetic Biology</p>
+                    </a>
                 </div>
-            </td>
-        </tr>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2019.igem.org/Team:Exeter/Human_Practices?human_practices" class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2019.igem.org/wiki/images/0/0f/T--Exeter--iconhp.png"
+                              alt="HP Icon"
+                              class="icon card-icon" />
+                        </div>
+                        <p>Human Practices</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <tr>
-            <td> <!--column 1-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
 
-                <div id="modal" class="modal">
 
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-
-            <td> <!--column 2-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-
-            <td> <!--column 3-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-        </tr>
-
-        <tr>
-            <td> <!--column 1-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-
-            <td> <!--column 2-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-
-            <td> <!--column 3-->
-                <img id="og-img" src="https://igemnous.med.duth.gr/wp-content/uploads/2021/01/mantis-scaled.jpg" alt="Mantis" onclick="imgonclick()">
-
-                <div id="modal" class="modal">
-
-                <span class="close" onclick ="spanonclick()">&times;</span>
-
-                <img class="modal-content" id="fun-img" src="https://2021.igem.org/wiki/images/d/de/T--Greece_United--mike-fun.png" alt="mantis-fun">
-                
-                <div id="caption">caption</div>
-            </td>
-        </tr>
-
-    </table>
-
-    <h1> hello this is a try</h1>
 
 </body>
+</html>
 
-<script>
-    //code for modal function
-        var modal = document.getElementById("modal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("og-img");
-        var modalImg = document.getElementById("fun-img");
-        var captionText = document.getElementById("caption");
-
-        img.onclick = function()
-        {
-            modal.style.display = "block";
-            //captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() 
-        { 
-            modal.style.display = "none";
-        }
-    //end of modal code
-</script>
 </html>
