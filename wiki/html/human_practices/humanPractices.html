@@ -489,7 +489,7 @@
 
         .contentBlock {
             width: 64vw;
-            max-width: 800px;
+            max-width: 1000px; /*change box size*/
             float: right;
             display: flex;
             flex-direction: column;
@@ -852,6 +852,35 @@
 
     </style>
 
+    <!-- header text -->
+    <style>
+        .events-wrapper h1 
+        {
+        font-family: "montserrat-light", sans-serif !important;
+        text-transform: uppercase;
+        color: #1F3C88;
+        padding-bottom: 30px;
+
+        }
+        .events-wrapper .header {
+        padding-bottom: 30px;
+        line-height: 0.8;
+        }
+        .events-wrapper .header h1 {
+        font-size: 50px;
+        margin-block-end: 0;
+        }
+        
+        .events-wrapper .header h2 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #5893D4;
+        }
+        
+    </style>
+
     <body>
         <!-- basic elements -->
 
@@ -1057,6 +1086,30 @@
                     <a href="#heading2">Integrated Human Practices</a>
                 </li>
             </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading3">Formulating the Idea</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading4">Refining the Design</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading5">Towards Implementation</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading6">Enterpreneurship</a>
+                </li>
+            </ul>
         </div>
 
         <!-- end of basic elements -->
@@ -1064,10 +1117,18 @@
         
         <!-- human overview -->
         <div id="heading1">
-            <div style="margin-top: 100px;" id="content-tag">
+            <div style=" margin-left:300px; margin-top: 100px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Human Practices</b></h2><br>
+                        <!-- <h2><b>Human Practices</b></h2><br> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Human Practices</h1>
+                                    <h2>Overview</h2>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">
                             First, we are born. Life around us seems quirky and to 
                             explore it, we are tought how to walk. From the moment we take 
@@ -1100,10 +1161,11 @@
             </div>
         </div>
         <br><br><br>
-        <!-- cards -->
-        <div class="info-section">
 
-            <div class="container">
+        <!-- cards -->
+        <div class="info-section" style="margin-left:370px;">
+
+            <div class="container ">
                 <div class="row">
                     <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
                         <a href="https://2021.igem.org/Team:Greece_United/Human_Practices#heading2" class="c-card cardcolors">
@@ -1169,11 +1231,18 @@
 
         <!-- integrated overviwe -->
         <div id="heading2">
-            <div style="margin-top: 200px;" id="content-tag">
+            <div style="margin-top: 200px; margin-left:300px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Integrated Human Practices</b></h2>
-
+                        <!-- <h2><b>Integrated Human Practices</b></h2> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Integrated</h1>
+                                    <h2>Human Practices</h2>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">The love of science and the desire for 
                             impact brought us together in the NOUS team. One simple goal: to 
                             create new science and solve a real-world problem. <br><br>
@@ -1206,11 +1275,18 @@
 
         <!-- integrated 1 -->
         <div id="heading3">
-            <div style="margin-top: 100px;" id="content-tag">
+            <div style="margin-top: 100px; margin-left:300px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Formulating the Idea</b></h2><br>
-
+                        <!-- <h2><b>Formulating the Idea</b></h2><br> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Formulating</h1>
+                                    <h2>the Idea</h2>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">
                             <b>Contact with the Hellenic League Against Rheumatism (EL.AN. A.)</b><br>
                             <b>Date: April 03, 2021</b><br>
@@ -1262,11 +1338,18 @@
 
         <!-- integrated 2 -->
         <div id="heading4">
-            <div style="margin-top: 100px;" id="content-tag">
+            <div style="margin-top: 100px; margin-left:300px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Refining the Design</b></h2><br>
-
+                        <!-- <h2><b>Refining the Design</b></h2><br> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Refining</h1>
+                                    <h2>the Design</h2>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">
                             <b>Call with Prof. George Skretas</b><br>
                             <b>Date: May 11, 2021</b><br>
@@ -1329,11 +1412,18 @@
 
         <!-- integrated 3 -->
         <div id="heading5">
-            <div style="margin-top: 100px;" id="content-tag">
+            <div style="margin-top: 100px; margin-left:300px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Towards Implementation</b></h2><br>
-
+                        <!-- <h2><b>Towards Implementation</b></h2><br> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Towards</h1>
+                                    <h2>Implementation</h2>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">
                             <b>Contact with a Greek MP</b><br>
                             <b>Date: July 17, 2021</b><br>
@@ -1352,7 +1442,6 @@
                             considered for inclusion in the public insurance reimbursement scheme, especially if it is affordable. <br><br>
                             <br><br><br>
 
-                        <p>
                             <b>Discussion with a biotech company on alternative technologies for tissue engineering</b><br>
                             <b>Date: September 03, 2021</b><br>
                             <b>Major Issue:</b> Using a gel to hold and deliver mesenchymal stem cells via injection <br>
@@ -1435,109 +1524,151 @@
 
         <!-- integrated 4 -->
         <div id="heading6">
-            <div style="margin-top: 100px;" id="content-tag">
+            <div style="margin-top: 100px; margin-left:300px;" id="content-tag">
                 <div class="contentBlock">
                     <div class="content">
-                        <h2><b>Towards Implementation</b></h2><br>
-
+                        <!-- <h2><b>Enterpreneurship</b></h2><br> -->
+                        <div class="events-wrapper">
+                            <div id="events">
+                                <div class="header">
+                                    <h1>Enterpreneurship</h1>
+                                </div>
+                            </div>
+                        </div>
                         <p class="content-paragraph">
-                            <b>Contact with a Greek MP</b><br>
-                            <b>Date: July 17, 2021</b><br>
-                            <b>Major Issue:</b> How can a new treatment be supported by public insurance?<br>
-                            <b>Resolution:</b> The chances are greater with an effective and cheaper solution.<br><br>
+                            <b>Discussion with Alexios Kontis</b><br>
+                            <b>Date: May 2, 2021</b><br>
+                            <b>Major Issue:</b>How to raise funds? What is a business plan?<br>
+                            <b>Resolution:</b> A draft layout of the contents of a business plan and what each section means.<br><br>
 
                                 
-                            Christos A. Dermentzopoulos is a Lawyer and Member of the Hellenic Parliament.<br><br>
-                            The primary reason for our communication with a representative of the Greek Parliament was 
-                            to try to understand whether a proposed treatment could be supported by the state. In addition, 
-                            we wanted to know if the state could set up structures so that people with osteoarthritis could 
-                            receive our proposed treatment more directly.<br><br>
+                            Alexios Kontis is an experienced strategy and operations consultant 
+                            with more than 25 years of work in the field. We hold various meeting concerning 
+                            the entrepreneurial aspect of our project seeking for guidance and advice.<br><br>
                             
-                            He informed us that state records report that about 1 to 1.5 million people suffer from the disease 
-                            in Greece. After EOF (the FDA Greek equivalent) clearance, an effective treatment would be quickly 
-                            considered for inclusion in the public insurance reimbursement scheme, especially if it is affordable. <br><br>
-                            <br><br><br>
+                            At the beginning, Mr. Kontis helped us to build a solid fundraising plan in order to cover 
+                            all of our financial needs. His help consisted on advices and feedback on: <br><br>
+                            
+                            <b>i)</b> our business proposal <br>
+                            ­<b>ii)</b> our pitching presentation <br>
+                            ­<b>iii)</b> organizing the structure of our fundraising plan<br><br>
+                            ­
+                            Later on, Mr. Kontis gave us foundational advices concerning our business plan and idea. More specifically, 
+                            he helped us: <br><br>
 
-                        <p>
-                            <b>Discussion with a biotech company on alternative technologies for tissue engineering</b><br>
-                            <b>Date: September 03, 2021</b><br>
-                            <b>Major Issue:</b> Using a gel to hold and deliver mesenchymal stem cells via injection <br>
-                            <b>Resolution:</b> A gel CAN be used to hold and deliver the proposed therapy. This opens the opportunity for an injectable delivery rather than surgical placement. <br><br>
+                            <b>i)</b> organize the structure of our business plan (sections, content etc.) <br>
+                            ­<b>ii)</b> reviewed and gave valuable feedback on the final drafts of our business plan. <br><br>
+                            ­
+                            To sum up, Mr. Kontis contributed to making us better understand the entrepreneurial world, to help us 
+                            strategically organize the abovementioned sector and how to detect and take up valuable opportunities in 
+                            order to implement our business idea.<br><br><br>
 
-                                
-                            “ClexBio” is a biotech company that is looking for solutions for tissue engineering and 
-                            single – cell techniques. “ClexBio” focuses mainly on microfluidics and hydrogel technologies.
-                            In our contact with the company, we had the opportunity to talk with Tia Tidwell who is a Lead Scientist at Translational 
-                            Research sector of the company.<br><br>
+                        
+                            <b>Discussion with DELOITTE</b><br>
+                            <b>Date: September 13, 2021</b><br>
+                            <b>Major Issue:</b> Impress one of our biggest sponsors with our progress. Get feedback on methodology of developing a business plan.  <br>
+                            <b>Resolution:</b> Comments on how to finalize our business plan.<br><br>
+
+                            
+                            With 45 years of presence in the Greek market, Deloitte Greece provides consulting, financial advisory, risk advisory, 
+                            tax & legal, audit & assurance services. Deloitte is one of our big sponsors and we had the opportunity to visit their 
+                            offices in Thessaloniki, and thus better understand how such a renowned company works.<br><br>
+
+                            At the same time, we met a team consisting of business strategists, market analysts and marketeers and we had the pleasure 
+                            to conversate with them about the implementation of our therapy. Finally, we met and presented our work to Mr. Kafatos, who 
+                            is Deloitte Greece Clients & Industries Leader, Head of Strategy Practice and in charge of the Deloitte Alexander 
+                            Competence Center.<br><br>
+                            During the discussion, we discussed best practices on developing a business plan.<br><br>
+                            <br>
                         </p>
-                        <img style="align-self: center;  border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--korea-blood.jpg" target="_blank" width="400px">
-                        <p class="photo-desc"><b>Figure 5:</b> Tia Tidwell: Lead Scientist - Translational Research</p><br><br>
-                    
-                        <p>   
-                            The company is currently considering approaches that include spheroids and microbeads. 
-                            After presenting our approach to Ms. Tidwell, we were given the opportunity to solve some 
-                            questions regarding the implementation of the proposed therapeutic approach. Our concerns 
-                            on the company’s technology and the way that we could use it were the following:<br><br>
-
-                            <b>•</b> Can mammalian cells and mesenchymal stem cells in particular fit and survive inside the microbeads of a gel? <br>
-                            ­<b>•</b> Could this technology evolve in injectable form? <br>
-                            ­<b>•</b> To what extent do cells communicate with the environment? Are they metabolically active?<br>
-                            ­<b>•</b> What is the degree of toxicity caused by currently available gels in neighboring cells?<br><br>
-
-                            In the discussion that followed, we realized that the size of the alginate microbeads is ideal so that the 
-                            cells that we are using can be administered via this gel. In fact, this technology already has 
-                            the potential to evolve into something injectable.<br><br>
-                            Also, it was confirmed that the cells inside this bio-gel maintain an adequate viability and 
-                            communication with the neighboring cells, making it ideal for our idea. There is no concern regarding 
-                            the toxicity of this gel for the human body as it is specifically designed with biomaterials for this 
-                            purpose. the well-tolerated environment of the gel and the very good communication of the cells around 
-                            and through it allow its use. <br><br>
-                            The only remaining concern is that although an adequate viability of the cells is maintained, 
-                            the cells seem to go through a quiescent phase. However, this is something that, according to Ms. 
-                            Tidwell, is still under research, with very promising progress being achieved. Even though this bio-gel 
-                            has not been clinically approved yet, it is a very good prospect to combine with our proposed treatment 
-                            method as it is expected to be approved soon.<br><br>
-                            In this way, our idea began to take on a new trajectory, regarding the means of administration. 
-                            Our approach so far included the surgery of the patient. However, the potential of this technology 
-                            combined with our project, makes it more painless and less time consuming to rehabilitate the patient 
-                            making an injectable form possible.<br><br>
-                        </p>
-                        <img style="align-self: center;  border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"src="https://2021.igem.org/wiki/images/3/33/T--Greece_United--romanidou.jpg" target="_blank" width="400px">
-                        <p class="photo-desc"><b>Figure 3:</b> Screenshot from our meeting with T. Tidwell </p><br><br>
-
 
                         <p>  
-                            <b>Discussion with a microbiologist</b><br>
-                            <b>Date: September 23, 2021</b><br>
-                            <b>Major Issue:</b> How and where to place the final envisaged product? <br>
-                            <b>Resolution:</b> Preferably a minimally invasive kit for outpatient use. Preferably separate diagnostic and therapeutic kit, so as to diversify marketing.<br><br>
+                            <b>Discussion with DENIUM</b><br>
+                            <b>Date: October 14, 2021</b><br>
+                            <b>Major Issue:</b> Looking ahead… Key success predictors while designing a start-up<br>
+                            <b>Resolution:</b> Pay special attention to the people, i.e. the team. Shape your idea and develop a good business plan. <br><br>
 
                          
-                            The envisaged final product of the proposed method is a medical kit with all the biological 
-                            parts required for the delivery of the solution to the osteoarthritic joint (either transdermally or via injection).<br><br>
+                            Demium is an international talent investor company, operating with strong presence in 5 European countries and 
+                            managing 8 business incubator programs. We had the pleasure to hold two meetings with Mr. George Platanas, Head of the 
+                            incubation program in Greece.<br><br>
 
-                            Therefore, we visited a practicing microbiologist Dr. Fotini Sopasi to better understand the management 
-                            of diagnostic and therapeutic kits and their positioning in the market.<br><br>
-                            Could such a kit be picked up from your own clinic and later proceed with a patient's treatment protocol?<br><br>
-                            “Well, the legislation in Greece requires doctors of the respective specialty to manage the diagnosis or treatment of 
-                            a specific disease. The final envisaged kit of the treatment you are investigating would be prescribed and handled  
-                            in cooperation with a specialist orthopedist.<br><br>
-                            For a diagnostic or therapeutic kit to hit the market for use directly by the patient means that the kit 
-                            is easy to use and is as non-invasive as possible.<br><br>
-                            In a diagnostic laboratory like this one, we could certainly undertake the diagnosis part of your proposed solution.”<br><br>
-                            Question: “How feasible would it be for diagnostic laboratories like yours to work with orthopedic experts for the 
-                            early diagnosis of osteoarthritis by recognizing certain exosomes that are considered to be biomarkers?”<br><br>
-                            “Well, the idea of biomarkers is inevitably something that would give impetus to the early diagnosis of osteoarthritis. 
-                            However, to be honest, my own laboratory at the moment does not have the necessary equipment for the characterization of exosomes, 
-                            but it is something that I am sure that other colleagues would agree to invest in and promote in their daily practice, if 
-                            these biomarkers are promising”.<br><br>
+                            During our meetings we pitched our project with the purpose of receiving feedback concerning: <br><br>
+
+                            <b>i)</b> our business idea and team <br>
+                            ­<b>ii)</b> the implementation and action plan we have designed.<br>
+
+                            It was very important for us to receive feedback from a company that has great expertise in the field of start-ups. 
+                            Mr. Platanas helped us understand the importance of a great team, the number of persons that usually make the team so 
+                            as to work efficiently and the process required to implement our business idea<br><br>
+                            Last but not least, Mr. Platanas impressed by our work, saw a promising future for our business idea and thus insists 
+                            that after the iGEM competition we must enroll in Demium incubation program with the potential of getting pre-seeded and 
+                            receive a financial support.<br><br><br>
                         </p>
-                        <img style="align-self: center;  border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--korea-blood.jpg" target="_blank" width="400px">
-                        <p class="photo-desc"><b>Figure 3:</b> Photo from our visit to the laboratory of Ms. Sopasi - Romanidou</p><br><br>
+                        <p>  
+                            <b>Discussion with ELPEN</b><br>
+                            <b>Date: October 16, 2021</b><br>
+                            <b>Major Issue:</b> Looking ahead… How to design a promising implementation approach<br>
+                            <b>Resolution:</b> Should normally get the therapy successfully through clinical trial phase I and II, before looking out for an investment from big pharma. <br><br>
+
+                         
+                            ELPEN is a prestigious Greek pharmaceutical company, consisting of more than 600 hundred employers, 
+                            with strong presence in the Greek and European market and has the largest educational center for translational 
+                            research in the Balkans. We had the pleasure to communicate with Mr. Verivakis Georgios, Commercial Director of the company.<br><br>
+
+                            We communicated with him in order to have an inside view of how pharmaceutical companies work and how that 
+                            affects our proposed implementation. After presenting our work and discussing many topics, we understood 
+                            that for a pharmaceutical company to invest in a therapy, first promising results must be shown and it is 
+                            common also (as a prerequisite) that the therapy should have passed successfully clinical trials of phase I and II, 
+                            for the investment to be granted.<br><br>
+
+                            This information changed our thoughts, because our strategic planning consisted of an investment of a pharmaceutical company 
+                            at the stage of clinical phase I. Although, this made us consider other options for funding during the early stages.<br><br>
+
+                            <br>
+                        </p>
+                        <p>
+                            <b>Participation in ARCIMEDES Business Accelerator </b><br>
+                            <b>Date: March to June, 2021</b><br>
+                            <b>Major Issue:</b> How to start a start-up?   <br>
+                            <b>Resolution:</b> A toolbox of best practices, hands-on experience and support on how to start a business around our idea<br><br>
+
+                         
+                            ARCHIMEDES is the acceleration center of National and Kapodistrian University of Athens. Its purpose is to promote 
+                            entrepreneurship within the University’s community, as well as to support researchers and potential entrepreneurs 
+                            to develop their ideas and bring them to the market.<br><br>
+
+                            We are glad to have been given the opportunity to participate in the 3rd cycle of ARCHIMEDES acceleration 
+                            program and have been 1 of the 15 selected teams to enroll. This journey begun in March 19 of 2021 and is 
+                            still ongoing as the program ends in February 2022.<br><br>
+
+                            We have actively participated in all the workshops organized, which really 
+                            helped us solidify our entrepreneurial idea, learning from experienced businessmen, 
+                            such as Mr. Siemos Vasilis and Dr. Livieratos Antonis, but also through a process of 
+                            trial and error. The workshops analyzed and helps us understand crucial entrepreneurial terms 
+                            (such as the SWOT analysis, the Business model canvas etc.).<br><br>
+                            The 1st part of the 3rd cycle of ARCHIMEDES acceleration program concluded in 19th of July giving us the opportunity to pitch 
+                            our idea to many representatives of “landmark” companies in the Greek market (such as Vodafone Greece) and many investors.<br><br>
+                            Today, we are still participating in the 2nd part of the 3rd cycle of ARCHIMEDES acceleration program, which mainly consist of 
+                            helping the teams build a solid business plan based on their business idea.<br><br>
+                            Dr. Dimitrakopoulos Yiannis holds the positions of Adjunct Lecturer at Athens University of Economics and Business and Technology Transfer Office Manager 
+                            at ARCHIMEDES, acceleration center of National and Kapodistrian University of Athens. <br><br>
+                            Because of his field of expertise, we contacted Dr. Dimitrakopoulos in order to get informed about patent 
+                            regulations and the procedures required. He gave us an insight about how patent agencies and regulations 
+                            work in Greece and Europe. He also gave us valuable feedback after our project pitching, about:<br><br>
+                            <b>i)</b> how to apply for a patent <br>
+                            ­<b>ii)</b> which are the most important sections of our project that we should consider patenting<br>
+                            ­<b>iii)</b> how we should work with confidentiality, in order to be eligible to apply for a patent.<br><br>
+
+                            All in all, Dr. Dimitrakopoulos has been of great help and importance on developing our business plan and idea.   <br><br>
+                            <br><br>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <footer class="footer">
 
             <br><br><br><br>
