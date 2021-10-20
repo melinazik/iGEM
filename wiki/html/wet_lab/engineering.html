@@ -1,102 +1,1155 @@
 <html>
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------- NOT UPLOADING START --------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-  
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
-    <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
 
-<link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-    
-     
-	
-<script src="../../js/javascript.js"> </script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
-	
-	<!--  top bar ------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
 
-	<div class="top_bar">
-		
-		<div class="bar_wrapping"> 
-			
-			<a href="https://2021.igem.org/">
-				<div class="bar_button main_page"> 
-				</div>
-			</a>
-
-			<div class="bar_button general_menu"> </div>
-			
-		</div>						
-	
-	</div>
-	
-	
-	<!--  menu content  ------------------------------------------------------>
-
-	<div class="menu_container">
-		<div class="menu_wrapper">
-		
-			<div class="menu_tabs_general_wrapper">
-			
-				<!-- navigation -->
-				<div class="menu_tabs_content navigation" id="navigation_tab_content">
-				</div>
-			
-			</div>
-			
-		</div>
-	</div>	
-	
-
-<!---------------------------------------------------------------------------->
-<!--- Content of the page  --->
-<!---------------------------------------------------------------------------->
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+    </script>
+    <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-<div class="igem_content_wrapper">
-	<div class="igem_column_wrapper">
-		<div class="clear extra_space"></div>		
-		<div class="clear extra_space"></div>
+ 
+</head>
+<style>
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
+
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
+
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
+
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+
+        background: white;
+        background-size: 100% 1000vh;
+        font-family: 'Lato', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+</style>
 
 
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------- NOT UPLOADING END ----------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
-<!--------------------------------------------------------------------------->
+<body>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
 
-<html>
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
 
-
-<div class="column full_size judges-will-not-evaluate">
-<h3>★  ALERT! </h3>
-<p>This page is used by the judges to evaluate your team for the <a href="https://2021.igem.org/Judging/Medals">medal criterion</a> or <a href="https://2021.igem.org/Judging/Awards"> award listed below</a>. </p>
-<p> Delete this box in order to be evaluated for this medal criterion and/or award. See more information at <a href="https://2021.igem.org/Judging/Pages_for_Awards"> Instructions for Pages for awards</a>.</p>
-</div>
-
-
-<div class="clear"></div>
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
 
 
-<div class="column full_size">
-<h1>Engineering Success</h1>
-<h3> Silver Medal Criterion #1</h3>
 
-<p>Demonstrate engineering success in a part of your project by going through at least one iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.
-<br><br>
-Please see the <a href="https://2021.igem.org/Judging/Medals">2021 Medals Page</a> for more information. 
-</p>
+    <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
+        <div style="padding: 14px 20px;
+        display: flex;
+        cursor: pointer;">
+            <a href="https://2021.igem.org/Team:Greece_United" class="active">
 
 
-<p>If you plan to show engineering success by creating a new Part that has been shown to work as expected, you must document your contribution on the Part's Main Page on the <a href="http://parts.igem.org/Main_Page">Registry</a> for your team to be eligible for this criteria.</p>
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
 
-</div>
+            </a>
+        </div>
 
+
+        <div class="right-navbar">
+            <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        </button>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Measurement">MEASUREMENT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/ProofofConcept">PROOF OF CONCEPT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Improve">IMPROVE</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        </button>
+                        <div class="dropdown-content">
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ------------------- PAGE CONTENT-------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+
+
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
+        }
+
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
+
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper">
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 3%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
+
+    <!-- in page menu -->
+
+    <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading0">Overview</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Genetic Circuit Model</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Exosome Production Model</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">Genetic construct assembly </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
+        }
+
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <script>
+        var mybutton = document.getElementById("BacktoTop");
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+
+
+    <div id="heading0">
+        <div style="margin-left: 300px;margin-top: 200px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <h2>Overview</h2>
+                    <p class="content-paragraph">
+
+                        Throughout the project we practiced good engineering and research principles strictly conforming
+                        to standards and ethics.
+                        Here we present the engineering cycle for three major components:
+
+                    </p>
+
+                    <br><br>
+                    <style>
+                        /* table education */
+
+                        #education {
+                            /*font-family: Arial, Helvetica, sans-serif;*/
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        #education td,
+                        #education th {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: left;
+                            vertical-align: middle;
+                        }
+
+                        #education caption {
+                            background-color: #002060;
+                            color: white;
+                            font-size: large;
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        #education tr:nth-child(even) {
+                            background-color: #eff4ff;
+                        }
+
+                        #education tr:hover {
+                            background-color: #ddd;
+                        }
+
+                        #education th {
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            text-align: left;
+                            background-color: #002060;
+                            color: white;
+                            font-weight: 100;
+                            width: 10%;
+                        }
+
+                        #education a:link {
+                            color: #5245da;
+                        }
+
+                        #education a:visited {
+                            color: #002060
+                        }
+
+                        #education a:hover {
+                            color: #002060
+                        }
+
+                        #education a:active {
+                            color: #C0F0FC
+                        }
+
+                        #education2 {
+                            /*font-family: Arial, Helvetica, sans-serif;*/
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        #education2 td,
+                        #education2 th {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: left;
+                            vertical-align: middle;
+                        }
+
+                        #education2 caption {
+                            background-color: #002060;
+                            color: white;
+                            font-size: large;
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        #education2 tr:nth-child(even) {
+                            background-color: #eff4ff;
+                        }
+
+
+                        #education2 th {
+                            text-align: left;
+                        }
+
+                        #education2 th {
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            text-align: left;
+                            background-color: #002060;
+                            color: white;
+                            font-weight: 100;
+                            width: 10%;
+                        }
+
+                        #education2-external {
+                            width: 100%;
+                            border: 5px;
+                            border-width: 5px;
+                            border-color: chartreuse;
+                            background: white !important;
+
+                        }
+
+                        #education2-external th {
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                            font-weight: 100;
+                        }
+                    </style>
+
+
+                    <div id="heading1"></div>
+                    <h3>1. Genetic Circuit Model</h3>
+
+                    <div class="education2">
+
+                        <table id="education2-external" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <b>1st Cycle</b>
+                                    </th>
+                                    <th>
+                                        <table id="education2" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Design</th>
+                                                    <td>In order to construct the genetic circuit, we first had to think
+                                                        about the different species (DNA, Protein molecules) we had to
+                                                        add and think about how they would interact with each other
+                                                        (architecture of the model). So, we wrote down a list of the
+                                                        species, found the appropriate equations that describe their
+                                                        interactions and accurate biological constants which should be
+                                                        added to the respective equations.</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Build</th>
+                                                    <td>We then started building the circuit in the CellDesigner
+                                                        software. The circuit consisted mainly of Genes, Proteins and
+                                                        complexes that interact with each other. After that we added the
+                                                        reactions and equations that describe each biological
+                                                        interaction.
+                                                        <br /><br />There were two main types of reactions:
+                                                        <br /><br />
+                                                        1)&nbsp;Heterodimer association:
+                                                        𝑑[𝑇𝐹-𝐷𝑁𝐴]/𝑑𝑡 = 𝑘𝑎 ∙ [𝑇𝐹] ∙ [𝐷𝑁𝐴] − 𝑘𝑑 ∙
+                                                        [𝑇𝐹-𝐷𝑁𝐴]<br />
+                                                        Which describes the binding and dissociation of a given
+                                                        transcription factor (TF) to its corresponding DNA molecule,
+                                                        therefore forming a complex.
+                                                        <br /><br />
+                                                        2)&nbsp;State transition: 𝑑[𝑃]/𝑑𝑡 = 𝑘𝑠 ∙
+                                                        [𝑇𝐹-𝐷𝑁𝐴]<br />
+                                                        Which describes the formation of a protein, induced by its
+                                                        corresponding transcription factor (TF) – gene(DNA) complex
+                                                        <br /><br />
+                                                        For specific information of how the model functions you can go
+                                                        to the DryLab/Genetic Circuit Model page of our wiki.
+                                                        <br /><br />
+                                                        The remaining equations were mainly to describe protein
+                                                        degradation
+                                                        <br /><br />
+                                                        d[aa]/dt = [P]* k_deg<br />
+                                                        Where any given protein (P) would have a constant degradation
+                                                        rate (k_deg) over a set time period
+                                                        <br /><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Test</th>
+                                                    <td>We ran simulations on the built in CellDesigner simulator and
+                                                        interpreted the results.<br /><br />
+                                                        After a few test-runs we analyzed our results and found out that
+                                                        there are many things wrong with our circuit design.
+                                                        During long periods of time our circuit did not stop being
+                                                        expressed which is something that does not conform with reality.
+                                                        Furthermore, we got some negative values, like that of the
+                                                        sensor, which was problematic.
+                                                        <br /><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Learn</th>
+                                                    <td>These results could be interpreted as if there was something
+                                                        wrong in our architecture, equations or something was missing
+                                                        entirely.
+                                                        <br /><br />
+                                                        We concluded that we had to change some of our values and
+                                                        equations, in order to make our circuit more accurate and
+                                                        applicable to real world scenarios.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <th style="width: 30%;">
+                                        <img style="width:100%; align-self: center; border-radius: 10px;"
+                                            src="https://2021.igem.org/wiki/images/0/03/T--Greece_United--Eng01.png" />
+
+                                        <br />NF-kB Genetic Circuit v01<br /><br />
+
+                                        <br /><br /><br />
+
+                                        <img style="width:100%; align-self: center; border-radius: 10px;"
+                                            src="https://2021.igem.org/wiki/images/8/8a/T--Greece_United--Eng01a.png" />
+
+                                        <br /><br />NF-kB Genetic Circuit v01 Simulation results<br /><br />
+                                    </th>
+                                </tr>
+
+
+
+
+
+                                <tr>
+                                    <th>
+                                        <b>2nd Cycle</b>
+                                    </th>
+                                    <th>
+                                        <table id="education2" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Design</th>
+                                                    <td>This time around we decided to change a few of our equations and
+                                                        correct the mistakes we made in others. Also, we decided to add
+                                                        another species to the circuit, which we named “lost” and it
+                                                        represents the destruction of a gene, due to cell division. This
+                                                        ensured that our results would be more accurate during long
+                                                        periods of time.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Build</th>
+                                                    <td>
+                                                        We added a reaction to each of the genes and gene-protein
+                                                        complexes to signify cell dilution.<br /><br />
+                                                        The equation we used was: d[lost]/dt = [Gene] * kdil<br /><br />
+                                                        In addition, we corrected some of our equations and fixed the
+                                                        values of some constants that were outright incorrect and this
+                                                        is the result.<br /><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Test</th>
+                                                    <td>After we finished building the circuit, we ran a few simulations
+                                                        for different time periods, which led us to the results on the
+                                                        right.
+                                                        <br /><br />
+                                                        In the second version of the circuit, not only are there no
+                                                        negative values, but we managed to make it run accurately over
+                                                        long time periods.
+                                                        The only species the value of which does not become 0 is the
+                                                        NF-kB. The reason is that we did not add a degradation equation
+                                                        to it,
+                                                        because during inflammation there is a constant supply of NF-kB
+                                                        being produced, therefore adding it would mess up our results.
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Success</th>
+                                                    <td>In conclusion, we developed a genetic circuit that can
+                                                        accurately calculate the expression its effector for different
+                                                        values of NF-kB.
+                                                        The results provided by this model, helped us determine the
+                                                        value of adding such a circuit to our project and gave us
+                                                        knowledge on how we can correctly model biological pathways.
+                                                        <br /><br />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                    <th style="width: 30%;">
+                                        <img style="width:100%; align-self: center; border-radius: 10px;"
+                                            src="https://2021.igem.org/wiki/images/7/70/T--Greece_United--Eng02a.png" />
+
+                                        <br />NF-kB Genetic Circuit v02.<br /><br />
+
+                                        <br /><br />
+
+                                        <img style="width:100%; align-self: center; border-radius: 10px;"
+                                            src="https://2021.igem.org/wiki/images/c/cd/T--Greece_United--Eng02.png" />
+
+                                        <br />NF-kB Genetic Circuit v02 Simulation results 1 of 2<br /><br />
+
+
+                                        <img style="width:100%; align-self: center; border-radius: 10px;"
+                                            src="https://2021.igem.org/wiki/images/c/c7/T--Greece_United--Eng02b.png" />
+
+                                        <br />NF-kB Genetic Circuit v02 Simulation results 2 of 2<br /><br />
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                        <br><br><br><br>
+
+
+                        <div id="heading2"></div>
+                        <h3>2. Exosome Production Model</h3>
+
+                        <div class="education2">
+                            <table id="education2-external" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <b>1st Cycle</b>
+                                        </th>
+                                        <th>
+                                            <table id="education2" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Design</th>
+                                                        <td>The second model we built was the “Exosome Production
+                                                            Model”. This model starts with a single plasmid that
+                                                            produces an RNA molecule. This RNA molecule is sub-divided
+                                                            into two new RNA molecules, the pre-miRNA and the mRNA,
+                                                            which codes for the Lamp2b-CAP protein. The pre-miRNA and
+                                                            the Lamp2b-CAP are then loaded into exosomes, which are the
+                                                            product of the model.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Build</th>
+                                                        <td>To make this model we used two types of equations
+                                                            representing a State Transition and a Heterodimer
+                                                            Association/Disassociation.
+                                                            <br /><br />The two equation types are represented as such:
+                                                            <br /><br />
+                                                            1)&nbsp;State Transition: d[RNA or P]/dt = kst* [RNA or P]
+                                                            <br />
+                                                            2)&nbsp;Heterodimer Association: d[Exosome]/dt = ke* [RNA] *
+                                                            [P]<br />
+
+                                                            <br /><br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Test</th>
+                                                        <td>We ran the model and interpreted the results.<br /><br />
+                                                            Certain values, like that of the RNA Complex, remained
+                                                            unchanged throughout the simulation time,
+                                                            something that is not intended to happen. The results from
+                                                            this model were all over the place, mainly because we had a
+                                                            bad architecture design.
+                                                            <br /><br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Learn</th>
+                                                        <td>A few things had to change for the next iteration of the
+                                                            Exosome Production Model. First, we had to change the way
+                                                            the exosomes are produced from a two step to a one step
+                                                            reaction. Secondly, we needed to add another type of exosome
+                                                            that did not contain the Lamp2b-CAP protein. We learned from
+                                                            our literature that even though these exosomes have a lower
+                                                            synthesis rate, that rate is significant, and they needed to
+                                                            be factored in.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </th>
+                                        <th style="width: 30%;">
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--Eng03.png" />
+
+                                            <br />Exosome Production Model v01<br /><br />
+
+                                            <br /><br /><br />
+
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--Eng03a.png" />
+
+                                            <br /><br />Exosome Production Model v01 Simulation results<br /><br />
+                                        </th>
+                                    </tr>
+
+
+
+
+
+                                    <tr>
+                                        <th>
+                                            <b>2nd Cycle</b>
+                                        </th>
+                                        <th>
+                                            <table id="education2" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Design</th>
+                                                        <td>The design of the 2nd iteration of the Exosome Production
+                                                            Model was more of an overhaul,
+                                                            since we kept only a small number of things from the
+                                                            previous one.
+                                                            We added a transcription factor that binds to the gene, the
+                                                            complex of which activates the synthesis of the RNA
+                                                            molecules.
+                                                            Also, we added the new type of exosomes, that only contains
+                                                            the pre-miRNA, and changed the production of both exosomes
+                                                            to take only a single step, instead of two. The last things
+                                                            we changed was the removal of
+                                                            a reaction that converted the RNA Complex to mRNA, skipping
+                                                            the production of the pre-miRNA.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Build</th>
+                                                        <td>
+                                                            We kept the equation types of the previous iteration of the
+                                                            model, and added one more, that being the Reversible
+                                                            Heterodimer Association, that helps form the transcription
+                                                            factor-gene complex.
+                                                            <br /><br />
+                                                            The three equation types are represented as
+                                                            such:<br /><br />
+
+                                                            1)&nbsp;Reversible Heterodimer Association: d[TF-GENE
+                                                            Complex]/dt = [TF]*[GENE]*ka – [TF-GENE Complex]*kd
+                                                            <br /><br />
+                                                            2)&nbsp;State Transition: d[RNA or P]/dt = kst* [RNA or P]
+                                                            <br /><br />
+                                                            3)&nbsp;Heterodimer Association: d[Exosome]/dt = ke* [RNA] *
+                                                            [P]<br /><br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Test</th>
+                                                        <td>We run the model and interpreted our results.<br /><br />
+                                                            The results of the 2nd version of the Exosome Production
+                                                            Model were more accurate and representative of the real
+                                                            world.
+                                                            The two types of exosomes were synthesized as expected from
+                                                            our literature and during long operations, all values
+                                                            eventually approached to 0.
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Success</th>
+                                                        <td>In conclusion, the model we created can calculate the number
+                                                            of exosomes synthesized, with and without the Lamp2b-CAP
+                                                            protein.
+                                                            The importance of this model was significant, because the
+                                                            results given could us aid to design a more effective
+                                                            solution to tackle the problem of osteoarthritis.
+                                                            <br /><br />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </th>
+                                        <th style="width: 30%;">
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/1/1d/T--Greece_United--Eng004.png" />
+
+                                            <br />Exosome Production Model v02<br /><br />
+
+                                            <br /><br />
+
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/9/98/T--Greece_United--Eng04a.png" />
+
+                                            <br />Exosome Production Model v02 Simulation results<br /><br />
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                        <br><br><br><br>
+
+
+
+
+                        <div id="heading3"></div>
+                        <h3>3. Genetic construct assembly (part:BBa_K3840312)</h3>
+
+                        <div class="education2">
+                            <table id="education2-external" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <b>1st Cycle</b>
+                                        </th>
+                                        <th>
+                                            <table id="education2" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Design</th>
+                                                        <td>
+                                                            The purpose of the part is to be transfected in HEK293T
+                                                            cells and be expressed under constant expression. For that,
+                                                            we needed to assemble a genetic construct, to be able to
+                                                            perform the transfection.
+                                                            <br /><br />
+                                                            Plasmid design: pcDNA3 GFP LIC cloning vector (6D) was
+                                                            chosen and ordered from Addgene.
+                                                            <br /><br />
+                                                            Insert design: as described in the Design page and ordered
+                                                            as a gene fragment from IDT.
+                                                            <br /><br />
+                                                            The digestions and ligation were performed in silico using
+                                                            Geneious.
+                                                            <br /><br />
+                                                            The experimental design for developing the
+                                                            construct:<br /><br />
+                                                            &nbsp;• Amplification of the plasmid backbone<br />
+                                                            &nbsp;• Suspension of the Gene Fragment from IDT
+                                                            (insert)<br />
+                                                            &nbsp;• Insert double digestion (HindIII, NheI)<br />
+                                                            &nbsp;• Plasmid double digestion (HindIII, XbaI)<br />
+                                                            &nbsp;• Plasmid and Insert Ligation<br />
+                                                            &nbsp;• Bacteria Transformation<br /><br />
+                                                            Experiments to assess if the construct is
+                                                            assembled:<br /><br />
+                                                            &nbsp;• Diagnostic Digestions<br />
+                                                            &nbsp;• Gel electrophoresis<br />
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Build</th>
+                                                        <td>
+                                                            Plasmid Amplification: The plasmid was received in a
+                                                            bacterial stab and was amplified. The purified plasmid DNA
+                                                            was measured on Nanodrop giving a concentration of 110ng/μl
+                                                            while the 260/280 & 260/230 ratios were 2.00 & 2.12, meaning
+                                                            that the isolated DNA was of high purity.<br /><br />
+                                                            Suspension of the Gene Fragment: The Gene Fragment was
+                                                            received dry and we had to resuspend it. We measured the
+                                                            resuspended insert on Nanodrop and we had a concentration of
+                                                            approximately 5 ng/μl. So, in total we had about 500ng of
+                                                            our insert.<br /><br />
+                                                            Digestions and ligation: 7.5μl of the insert digestion
+                                                            (37.5ng of 2.7kb) and 4.5μl of the plasmid digestion (50ng
+                                                            of 5kb) were ligated<br /><br />
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Test</th>
+                                                        <td>We ran 10μl of the ligation mix in an agarose gel to see if
+                                                            the ligation has worked.
+                                                            <br /><br />
+                                                            Electrophoresis showed that the plasmid was ligated in many
+                                                            different combinations, and we could not spot the construct
+                                                            that we designed (vector,5kb + insert, 2.7kb = 7.7kb)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Learn</th>
+                                                        <td>
+                                                            After the digestion of the plasmid, the gene of GFP was left
+                                                            with HindIII and XbaI sticky ends. Which means that it could
+                                                            ligate with both the plasmid and the insert, making many
+                                                            combinations possible in the ligation. So, we had to change
+                                                            our design concerning the digestions & ligations.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </th>
+                                        <th style="width: 30%;">
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--Eng05a.png" />
+
+                                            <br />Plasmid design<br /><br /><br /><br /><br /><br />
+
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--Eng05d.png" />
+
+
+                                            <br /><br /><br />
+
+                                        </th>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <th>
+                                            <b>2nd Cycle</b>
+                                        </th>
+                                        <th>
+                                            <table id="education2" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Design</th>
+                                                        <td>To surpass this problem we thought of performing a gel
+                                                            extraction after the digestion of the plasmid. This way, we
+                                                            would be able to spot the band in an agarose gel which
+                                                            corresponds to the GFP gene that we do not need and causes
+                                                            the problems in the ligation.
+                                                            <br /><br />
+                                                            Also, considering that the insert is about half the size of
+                                                            the vector and that a normal molar ratio of insert to vector
+                                                            ratio is about 3:1, we thought of increasing the amount of
+                                                            insert in the ligation reaction.
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Build</th>
+                                                        <td>
+                                                            We put our plasmid for digestion exactly as the previous
+                                                            time and we performed gel extraction. <br /><br />
+                                                            We condensed our samples using Speedvac, so that we can use
+                                                            more DNA in the ligation reaction and finally achieved the
+                                                            desired ratio of 1:4 vector to insert.<br /><br />
+                                                            The next step was to transform the bacteria with these 2
+                                                            ligation mixes and eventually we performed plasmid
+                                                            purification preps to isolate the plasmid DNA.<br /><br />
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Test</th>
+                                                        <td>We measured each sample on Nanodrop and then performed
+                                                            diagnostic digestions followed by a gel electrophoresis.
+                                                            <br /><br />
+                                                            We tested about 50 bacterial colonies. Electrophoresis
+                                                            showed no DNA (the only visible bands are ladder bands and
+                                                            control bands of ordered plasmid).
+
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Learn</th>
+                                                        <td>
+                                                            Based on our measurements, the most probable reason that the
+                                                            genetic construct was not observed, is because of problems
+                                                            in the plasmid purification preparations.
+                                                            <br /><br />
+                                                            We believed that because the bacteria survived in the LB
+                                                            even though Ampicillin was added in all the transformations
+                                                            that we tried. Theoretically, even in the case of an
+                                                            infection, the other bacteria should not be able to survive.
+                                                            Therefore, we should have chosen more wisely the kit we used
+                                                            or try some other kits or plasmid purification protocols to
+                                                            isolate the plasmid DNA.
+                                                            <br /><br />
+                                                            A way to answer this question would be to choose a plasmid
+                                                            backbone which enabled us for a blue/white screening at the
+                                                            stage of the colonies selection. In that way, we would be
+                                                            able to discern the colonies that were equipped with the
+                                                            insert. So, if we noticed after the blue/white screening
+                                                            colonies that had the insert, we would conclude that the
+                                                            problem was indeed during the plasmid DNA purification. In
+                                                            the case that there were no colonies with the insert we
+                                                            should rethink some things concerning the ligation process.
+                                                            This approach would also help us to make our experiments
+                                                            more time efficient, which means more experiments which
+                                                            “translates” to more results.
+                                                            <br /><br />
+
+                                                            Another weak aspect of our design is that we decided to
+                                                            order our insert from IDT as a gene fragment. The problem
+                                                            with that is that a very low amount of DNA was available
+                                                            from our insert to use in the ligations. We should have
+                                                            tried to order our insert in a high copy vector, which would
+                                                            enable us to amplify it limitlessly.
+                                                            A 3rd engineering cycle is about to begin.
+                                                            <br/><br/>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </th>
+                                        <th style="width: 30%;">
+                                            <img style="width:100%; align-self: center; border-radius: 10px;"
+                                                src="https://2021.igem.org/wiki/images/a/a5/T--Greece_United--Eng06a.png" />
+
+
+                                            <br /><br />
+
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                        <br><br><br><br>
+
+
+
+                    </div>
+
+                    <br><br><br><br>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <footer class="footer">
+        <!-- Footer -->
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
+
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
 
 </html>

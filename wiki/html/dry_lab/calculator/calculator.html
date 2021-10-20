@@ -2,231 +2,247 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
-<script type="text/javascript"
-  src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_ajaxapis&action=raw&ctype=text/javascript">
-</script>
-<script type="text/javascript"
-  src="https://2021.igem.org/wiki/index.php?title=Template:reece_United/JS_canvas&action=raw&ctype=text/javascript">
-</script>
-<script type="text/javascript"
-  src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_calc&action=raw&ctype=text/javascript">
-</script>
-<link rel="stylesheet" type="text/css"
-  href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_calc&action=raw&ctype=text/css" />
 
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_Jquery&action=raw&ctype=text/javascript">
+</script>
+
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_Chart&action=raw&ctype=text/javascript">
+</script>
+
+
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_calc&action=raw&ctype=text/javascript">
+</script>
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_calc&action=raw&ctype=text/css" />
+
+
+<!--
+<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700'>
+-->
 
 <style>
-  /* CLEAR DEFAULT SETTINGS **************************************************/
+    /* CLEAR DEFAULT SETTINGS **************************************************/
 
-  #sideMenu,
-  #top_title,
-  .patrollink,
-  #firstHeading,
-  #home_logo,
-  #sideMenu {
-    display: none;
-  }
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
 
-  #content {
-    padding: 0px;
-    width: 100%;
-    margin-top: 7px;
-    margin-left: 0px;
-    border: none;
-  }
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
 
-  #bodyContent h1,
-  #bodyContent h2,
-  #bodyContent h3,
-  #bodyContent h4,
-  #bodyContent h5 {
-    margin-bottom: 0px;
-  }
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
 
-  #bodyContent a[href ^="https://"],
-  .link-https {
-    padding-right: 0px;
-  }
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
 
-  body {
-    padding: 0px;
-    margin: 0px;
+    body {
+        padding: 0px;
+        margin: 0px;
 
-    background: white;
+        background: white;
 
-    font-family: 'Lato', sans-serif;
+        font-family: 'Lato', sans-serif;
 
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 </style>
 
 
 
 <body>
-  <style>
-    #loader-wrapper {
-      display: flex;
-      align-items: center;
-      margin-top: calc((100%)/5);
-      justify-content: center;
-      height: 0.1vh;
-      width: 100vw;
-      z-index: 500;
-      position: fixed;
-      pointer-events: none;
-    }
+    <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
 
-    #loader-bg {
-      position: fixed;
-      height: 200vw;
-      width: 200vw;
-      transform: translateY(0);
-      background-color: #6C8EC9;
-      transition-property: height, width, border-radius, transform;
-      transition-duration: 0.5s;
-      transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-      transition-delay: 0s, 0s, 0s, 1s;
-      border-radius: 0%;
-      -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-      -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-      box-shadow: 0px 0px 27px 0px #6E91CB;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-
-    #loader-wrapper img {
-      width: 30vh;
-
-    }
-
-    #loader-wrapper h1 {
-      color: #fafafc;
-      text-transform: uppercase;
-      font-family: 'montserrat-black', sans-serif !important;
-      position: absolute;
-      transform: translateY(15vh);
-      font-size: 2.2vw;
-      opacity: 100%;
-    }
-
-    #loader-bg.loaded {
-      height: 35vh;
-      width: 35vh;
-      border-radius: 70%;
-      transform: translateY(-2000px);
-    }
-  </style>
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
 
-  <div id="loader-wrapper">
-    <div id="loader-bg">
-      <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-    </div>
-  </div>
+        #loader-wrapper img {
+            width: 30vh;
 
-  <script>
-    // Loader
-    window.addEventListener("load", function () {
-      let loader = document.getElementById('loader-bg');
+        }
 
-      setTimeout(function () {
-        loader.classList.add('loaded')
-      }, 100);
-    });
-  </script>
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'montserrat-black', sans-serif !important;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
+    </style>
 
 
-  <!-- Loading icon -->
-  <div class="loader"></div>
-
-  <!-- Navigation Bar -->
-  <div style="margin-top:10px;" class="navbar">
-    <div class="nav-bar-logo">
-      <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">
-        <img class="logo-header"
-          src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
-      </a>
-      <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">NOUS | AEGLE</a>
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
     </div>
 
-    <div class="right-navbar" id="navbarID">
-      <ul id="nav">
-        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Home">Home</a></li>
-        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculator</a></li>
-        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Info">Info</a></li>
-        <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/References">Bibliography</a></li>
-      </ul>
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
 
-    </div>
-  </div>
-  <div style=" padding-bottom: 200px; padding-top: 200px" id="page-view">
-
-    <div id="title">Calculator</div>
-  </div> <br><br>
-
-  <section class="after-nav">
-
-    <main class="main-holder">
-
-      <form id="form" class="form" onsubmit="return false;">
-
-        <div id="container"> </div>
-
-        <button type="submit" onclick="parse()"> Okay </button>
-      </form>
-
-    </main>
-
-  </section>
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
 
 
-  <div id="chartContainer" style="height: 370px; width: 100%; align-content: 100px; margin-top: 100px;"></div>
+    <!-- Loading icon -->
+    <div class="loader"></div>
 
-  <!--footer-->
-  <footer style="margin-top: 500px;">
-    <div class="footer-content">
-      <div class="row">
-
-        <div class="col">
-          <a href="https://igemnous.med.duth.gr/" target="_blank">
-            <img class="logo-footer"
-              src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
-          </a>
-
-          <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
-          <a style="color: #bbbbbb;text-decoration:none;" class="footer-links"
-            href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
+    <!-- Navigation Bar -->
+    <div style="margin-top:10px;" class="navbar">
+        <div class="nav-bar-logo">
+            <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">
+                <img class="logo-header"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+            </a>
+            <a href="https://2021.igem.org/Team:Greece_United/Model/App/Home" class="active">NOUS | AEGLE</a>
         </div>
 
-        <div class="col">
-          <h4>About Us</h4>
-          <p class="footer-about">We are an interdisciplinary team of students from Greek Universities aiming to
-            participate in iGEM Competition 2021.
-          </p>
-        </div>
+        <div class="right-navbar" id="navbarID">
+            <ul id="nav">
+                <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Home">Home</a></li>
+                <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">Calculator</a></li>
+                <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/Info">Info</a></li>
+                <li><a href="https://2021.igem.org/Team:Greece_United/Model/App/References">Bibliography</a></li>
+            </ul>
 
-        <div class="col">
-          <h4 class="follow-footer">Contact us</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/nous_igem/" target="_blank"><i class="fab fa-instagram"></i></a><br>
-            <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
-                class="fab fa-youtube"></i></a>
-            <a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
-          </div>
         </div>
-      </div>
+    </div>
+    <div style=" padding-bottom: 200px; padding-top: 200px" id="page-view">
 
+        <div id="title">Calculator</div>
+    </div> <br><br>
+
+    <section class="after-nav">
+
+        <main class="main-holder">
+
+            <form id="form" class="form" onsubmit="return false;">
+
+                <div id="container"> </div>
+
+                <button type="submit" onclick="parse()"> Okay </button>
+            </form>
+
+        </main>
+
+    </section>
+
+
+    <div id="chartContainer"
+        style="height: 300px; width: 100%; align-content: 100px; margin-top: 100px; margin-bottom: 100px; padding-bottom: 100px; padding-top: 100px;">
+        <canvas id="chartContainer2"></canvas>
     </div>
 
+    <!--footer-->
+    <footer style="margin-top: 500px;">
+        <div class="footer-content">
+            <div class="row">
+
+                <div class="col">
+                    <a href="https://igemnous.med.duth.gr/" target="_blank">
+                        <img class="logo-footer"
+                            src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                    </a>
+
+                    <a class="footer-links" href="mailto:igemnous@gmail.com">igemnous@gmail.com</a><br>
+                    <a style="color: #bbbbbb;text-decoration:none;" class="footer-links"
+                        href="https://igemnous.med.duth.gr/">igemnous.med.duth.gr</a>
+                </div>
+
+                <div class="col">
+                    <h4>About Us</h4>
+                    <p class="footer-about">We are an interdisciplinary team of students from Greek Universities
+                        aiming to participate in iGEM Competition 2021.
+                    </p>
+                </div>
+
+                <div class="col">
+                    <h4 class="follow-footer">Contact us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/iGEMNous" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/IgemNous" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                                class="fab fa-instagram"></i></a><br>
+                        <a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="mailto:igemnous@gmail.com" target="_blank"><i
+                                class="fa fa-envelope fa-lg fa-fw"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
     <!-- /.footer -->
 </body>
 
