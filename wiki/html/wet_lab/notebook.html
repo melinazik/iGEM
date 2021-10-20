@@ -1,60 +1,1626 @@
 <html>
-	<link rel="stylesheet" type="text/css" href="../../css/home-style.css" />
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700' >
-    <script src="../../js/home-js.js"> </script>
-	<link rel="stylesheet" type="text/css" href="../../css/notebook-style.css" />
 
-	
-	<body>
-		<div class="book">
-			<div id="pages" class="pages">
-			<div class="page">LAB BOOK</div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-			<div class="page"></div>
-		
-			</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+<script type="text/javascript"
+	src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+</script>
+<script type="text/javascript"
+	src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Notebook&action=raw&ctype=text/javascript">
+</script>
+<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+
+CSS_Notebook
+
+
+<style>
+	/* CLEAR DEFAULT SETTINGS **************************************************/
+
+	#sideMenu,
+	#top_title,
+	.patrollink,
+	#firstHeading,
+	#home_logo,
+	#sideMenu {
+		display: none;
+	}
+
+	#content {
+		padding: 0px;
+		width: 100%;
+		margin-top: 7px;
+		margin-left: 0px;
+		border: none;
+	}
+
+	#bodyContent h1,
+	#bodyContent h2,
+	#bodyContent h3,
+	#bodyContent h4,
+	#bodyContent h5 {
+		margin-bottom: 0px;
+	}
+
+	#bodyContent a[href ^="https://"],
+	.link-https {
+		padding-right: 0px;
+	}
+
+	html {
+		height: 100%;
+		min-height: 100%;
+		font-family: 'Raleway', sans-serif;
+
+	}
+
+	body {
+		padding: 0px;
+		margin: 0px;
+		background: white;
+
+		font-family: 'Raleway', sans-serif;
+
+		display: flex;
+		flex-direction: column;
+	}
+</style>
+
+
+<body>
+	<style>
+		#loader-wrapper {
+			display: flex;
+			align-items: center;
+			margin-top: calc((100%)/5);
+			justify-content: center;
+			height: 0.1vh;
+			width: 100vw;
+			z-index: 500;
+			position: fixed;
+			pointer-events: none;
+		}
+
+		#loader-bg {
+			position: fixed;
+			height: 200vw;
+			width: 200vw;
+			transform: translateY(0);
+			background-color: #6C8EC9;
+			transition-property: height, width, border-radius, transform;
+			transition-duration: 0.5s;
+			transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+			transition-delay: 0s, 0s, 0s, 1s;
+			border-radius: 0%;
+			-webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+			-moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+			box-shadow: 0px 0px 27px 0px #6E91CB;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+		}
+
+
+		#loader-wrapper img {
+			width: 30vh;
+
+		}
+
+		#loader-wrapper h1 {
+			color: #fafafc;
+			text-transform: uppercase;
+			font-family: 'montserrat-black', sans-serif !important;
+			position: absolute;
+			transform: translateY(15vh);
+			font-size: 2.2vw;
+			opacity: 100%;
+		}
+
+		#loader-bg.loaded {
+			height: 35vh;
+			width: 35vh;
+			border-radius: 70%;
+			transform: translateY(-2000px);
+		}
+	</style>
+
+
+	<div id="loader-wrapper">
+		<div id="loader-bg">
+			<img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
 		</div>
-		
-		<script>
-			var pages = document.getElementsByClassName('page');
+	</div>
 
-			for(var i = 0; i < pages.length; i++){
-				var page = pages[i];
-				if (i % 2 === 0){
-					page.style.zIndex = (pages.length - i);
-				}
+	<script>
+		// Loader
+		window.addEventListener("load", function () {
+			let loader = document.getElementById('loader-bg');
+
+			setTimeout(function () {
+				loader.classList.add('loaded')
+			}, 100);
+		});
+	</script>
+
+
+
+
+	<div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
+		<div style="padding: 14px 20px;
+        display: flex;
+        cursor: pointer;">
+			<a href="https://2021.igem.org/Team:Greece_United" class="active">
+
+
+				<img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+					src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+
+			</a>
+		</div>
+
+
+		<div class="right-navbar">
+			<ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+						</button>
+					</div>
+				</li>
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+						</button>
+						<div class="dropdown-content">
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+						</button>
+						<div class="dropdown-content">
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+						</button>
+						<div class="dropdown-content">
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+							PRACTICES</a>
+						</button>
+						<div class="dropdown-content">
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Human_Practices/Integrated">INTEGRATED</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">FINANCES</a>
+						</button>
+						<div class="dropdown-content">
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="dropdown" style="float: left;">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+						</button>
+						<div class="dropdown-content">
+
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+								href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="dropdown">
+						<button
+							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Graphics'">GRAPHICS</a>
+						</button>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+
+
+
+	<!-- ---------------------------------------------------- -->
+	<!-- ---------------------------------------------------- -->
+	<!-- ---------------------------------------------------- -->
+	<!-- ------------------- PAGE CONTENT-------------------- -->
+	<!-- ---------------------------------------------------- -->
+	<!-- ---------------------------------------------------- -->
+	<!-- ---------------------------------------------------- -->
+	<!-- in page menu & progress bar -->
+	<style>
+		/* progress bar */
+
+		#fixedOverlay {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			z-index: 12;
+			top: 18px;
+			transition: 1s;
+			font-family: "montserrat-light" !important;
+			/* background-color: #002060; */
+		}
+
+		#fixedOverlay[bg=none],
+		#fixedOverlay[bg=dark] {
+			pointer-events: none;
+		}
+
+		#fixedOverlay .scroll-wrapper {
+			display: flex;
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			justify-content: space-between;
+			opacity: 1;
+			transition: 0.5s;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area {
+			height: 100%;
+			width: 5vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		@media screen and (max-width: 767px) {
+			#fixedOverlay .scroll-wrapper .scroll-area {
+				width: 10vw;
+			}
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+			width: 30%;
+			height: 30%;
+			background-color: rgba(98, 129, 239, 0.3);
+			border-radius: 10px;
+			max-width: 7px;
+		}
+
+		#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+			width: 100%;
+			background: #002060;
+			opacity: 100%;
+			height: 0%;
+			border-radius: 20px;
+			transition: background-color 0.5s;
+		}
+
+		#fixedOverlay nav {
+			box-sizing: border-box;
+			z-index: 2;
+			pointer-events: none;
+			display: block;
+			transition: 0.5s;
+			height: 87px;
+		}
+
+		/* in page menu */
+		.indexbutton {
+			display: none;
+			color: #FAFAFC;
+			text-transform: capitalize;
+			font-size: 1.4rem;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			padding: 16px 0;
+			height: 62px;
+			box-sizing: border-box;
+			cursor: pointer;
+			background-color: #6281EF;
+			z-index: 21;
+			transition: 0.5s;
+		}
+
+		@media (max-width: 800px) {
+			.indexbutton {
+				display: block;
+			}
+		}
+
+		.sideBlock {
+			text-transform: uppercase;
+			text-decoration: none;
+			float: left;
+			margin-left: 10vw;
+			margin-top: 400px;
+			position: -webkit-sticky;
+			position: fixed;
+			top: 30%;
+			margin: 200px 32px 0 4vw;
+			transform: translateY(-50%);
+			min-width: 20px;
+			max-width: 350px;
+			background: #ffffff;
+			opacity: 80%;
+			border-radius: 15%;
+			padding-left: 20px;
+			z-index: 2;
+		}
+
+		@media (max-width: 1024px) {
+			.sideBlock {
+				margin: 200px 32px 0 4vw;
+			}
+		}
+
+		.sideBlock b {
+			font-size: 1.4rem;
+			font-weight: bold;
+			margin-left: 0.25em;
+			padding-bottom: 20px;
+			display: block;
+		}
+
+		.sideBlock ul {
+			margin: 1em 0;
+			padding: 0;
+		}
+
+		.sideBlock a {
+			color: #002060;
+			text-decoration: none;
+			font-family: "lato-light", sans-serif;
+		}
+
+		.sideBlock li {
+			margin: 24px;
+			list-style: none;
+			color: #002060;
+			font-size: 1.1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			margin-left: 0.25em;
+		}
+
+		.sideBlock li:last-child {
+			margin-bottom: 0;
+		}
+
+		.sideBlock li div {
+			max-width: 15px;
+			max-height: 15px;
+			box-sizing: border-box;
+			border: 1px solid;
+			color: #002060;
+			border-radius: 2px;
+			transition: 0.5s;
+			margin-right: 8px;
+			height: 10vw;
+			width: 10vh;
+		}
+
+		.sideBlock li.active div {
+			background-color: #002060;
+		}
+
+		@media (max-width: 800px) {
+			.sideBlock {
+				position: fixed;
+				bottom: 0;
+				padding: 0 64px;
+				background-color: #6281EF;
+				color: #FAFAFC;
+				float: unset;
+				margin: 0;
+				z-index: 20;
+				width: 100%;
+				box-sizing: border-box;
+				min-width: unset;
+				max-width: unset;
+				text-align: center;
+				transition: transform 0.5s;
+				top: unset;
+				transform: translateY(calc(100% - 62px));
+				display: fixed;
+				flex-direction: column;
+				align-items: center;
 			}
 
-			document.addEventListener('DOMContentLoaded', function(){
-				for(var i = 0; i < pages.length; i++){
-				//Or var page = pages[i];
-					pages[i].pageNum = i + 1;
-					pages[i].onclick=function(){
-						if (this.pageNum % 2 === 0){
-							this.classList.remove('flipped');
-							this.previousElementSibling.classList.remove('flipped');
-						}
-						
-						else{
-							this.classList.add('flipped');
-							this.nextElementSibling.classList.add('flipped');
-						}
-					}
-				}
-			})
+			.sideBlock b {
+				display: block;
+				margin: 0;
+			}
 
-		</script>
-	</body>
+			.sideBlock ul {
+				display: inline-block;
+				text-align: start;
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+
+			.sideBlock li {
+				font-weight: bold;
+			}
+
+			.sideBlock li a {
+				color: #FAFAFC;
+			}
+
+			.sideBlock li div {
+				color: #FAFAFC;
+			}
+
+			.sideBlock li.active div {
+				background-color: #FAFAFC;
+			}
+
+			.sideBlock.notshow {
+				transform: translateY(calc(100% - 900px));
+			}
+
+			.sideBlock.open {
+				transform: translateY(0);
+			}
+		}
+
+
+		#content {
+			padding: 0px;
+			width: 100%;
+			margin-top: -7px;
+			margin-left: 0px;
+			border: none;
+			line-height: initial;
+		}
+	</style>
+
+	<!-- back to top -->
+	<style>
+		#BacktoTop {
+			display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 30px;
+			z-index: 99;
+			font-size: 18px;
+			border: none;
+			outline: none;
+			background-color: #B8EBFF;
+			color: white;
+			cursor: pointer;
+			padding: 15px;
+			border-radius: 30%;
+		}
+
+		#BacktoTop:hover {
+			background-color: #002060;
+		}
+	</style>
+
+	<script>
+		function changeColor(x) {
+			x.style.background = '#5893D4';
+			x.style.color = '#002060';
+		}
+
+		function normalColor(x) {
+			x.style.background = '#B7E0FF';
+		}
+	</script>
+
+	<!-- Back to Top Button -->
+	<button onclick="topFunction()" id="BacktoTop" title="Go to top">
+		<svg width="24" height="24" viewBox="0 0 24 24">
+			<path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+		</svg>
+	</button>
+	<!-- Back to Top Button End-->
+
+	<!-- Progress bar -->
+	<div id="globalWrapper">
+		<div id="fixedOverlay" bg="none">
+			<div class="scroll-wrapper">
+				<div id="sidebar-wrapper" class="scroll-area">
+					<div id="scrollbar-container">
+						<div id="scrollbar" style="height: 3%;"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Progress bar End -->
+
+	<!-- in page menu -->
+
+	<!-- <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+
+        
+		<ul>
+			<li class="active">
+				<div></div>
+				<a href="#heading1">Introduction</a>
+			</li>
+		</ul>
+        
+	</div> -->
+
+
+	<script>
+		var textSection = null;
+		var navbar = document.getElementById("navbar");
+
+		window.addEventListener('load', function () {
+			textSection = document.querySelector('.elevate-navbar');
+			checkScrollPos();
+			checkBackToTopPos();
+		})
+		window.addEventListener('scroll', function () {
+			updateScrollbar();
+			checkNavbarPos();
+			checkScrollPos();
+			checkBackToTopPos();
+		});
+
+		function checkScrollPos() {
+			var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+			var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+			let scrollWrapper = document.querySelector('.scroll-wrapper');
+			if (scrollbarBottom >= footerTop) {
+				if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+					"true");
+			} else {
+				if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+					"false");
+			}
+		}
+
+		function checkBackToTopPos() {
+			if ($(window).scrollTop() > 1000) {
+				$('#backtotop-wrapper').addClass('scrolled')
+			} else $('#backtotop-wrapper').removeClass('scrolled')
+		}
+		$(document).ready(function () {
+			$('#backtotop-wrapper').on('click', function () {
+				$('html, body').animate({
+					'scrollTop': $('body').offset().top
+				}, 2000);
+			});
+		});
+
+		function updateScrollbar() {
+			var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			var height = document.documentElement.scrollHeight - window.innerHeight;;
+			var scrolled = (winScroll / height) * 100;
+			document.getElementById("scrollbar").style.height = scrolled + "%";
+		}
+
+		var scroll = new SmoothScroll('a[href*="#"]', {
+			speed: 400,
+			speedAsDuration: true,
+			offset: 160
+		});
+
+		document.getElementById("fixedOverlay").classList.add("project");
+	</script>
+
+	<script>
+		function changeColor(x) {
+			x.style.background = '#5893D4';
+			x.style.color = '#002060';
+		}
+
+		function normalColor(x) {
+			x.style.background = '#B7E0FF';
+		}
+	</script>
+
+	<!-- Back to Top Button -->
+	<script>
+		var mybutton = document.getElementById("BacktoTop");
+
+		window.onscroll = function () {
+			scrollFunction()
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+
+
+
+	<main>
+		<section style="margin-top: -150vh">
+			<div class="section-title row">
+				<div class="left mobile-curve">
+					<p id="indicate"></p>
+				</div>
+				<div class="line-divider nonCenter">
+					<div class="box-mobile mobile-curve"></div>
+					<div class="line mobile-curve"></div>
+					<div class="circle top"></div>
+				</div>
+
+			</div>
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+							<h1 class="iteration-nr">29/11 - 05/12 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<h1 class="iteration-title headingForIndex">November 2020</h1>
+							<p class="content-paragraph">After long research, reading papers on different subjects and
+								various projects from the
+								past years we concluded that our project would concern Osteoarthritis and in particular
+								we would propose a new approach for the treatment of this musculoskeletal disease. You
+								can find more on what our idea included in the beginning and ow it all started on the
+								following link (link για description)
+
+								<br><br>
+
+								We made our final decision about our project on <b>December 3<sup>rd</sup></b>.
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+							<h1 class="iteration-nr">06/12 - 12/12 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<h1 class="iteration-title headingForIndex">December 2020</h1>
+							<p class="content-paragraph">After we concluded on the project we studied more specific
+								things about Osteoarthritis in pathophysiological and molecular level so that we had a
+								clearer idea on what is happening in a joint when a patient suffers from Osteoarthritis.
+								We tried to answer the following questions: How it begins? What causes it? Which
+								molecules and cell types play an important role in an Osteoarthritic joint? Which are
+								the existing therapies for this disease? What should happen in order to stop the
+								progression of the disease.
+
+								<br><br>
+
+								Trying to answer these questions we had the need as a team to have a meeting with
+								someone who has experience with this disease and is a professional Orthopaedic Surgeon.
+								For that purpose, we prepared a presentation about our team, the competition and our
+								idea as it was in the beginning and contacted Dr. Georgios I. Drosos (Orthopaedic
+								Surgeon and a Chairman at the University Department of Orthopaedic Surgery and a
+								Professor of Orthopaedics in the School of Medicine, Democritus University of Thrace).
+								Thankfully Dr. Drosos was very interested in our project which led to his recruitment in
+								our team on 10/12 as a PI to help us throughout the duration of the competition.
+
+								<br><br>
+
+								First iGEM Stuff Call : <b>December 11<sup>th</sup></b>
+								<br><br>
+
+								Also, on 11/12 we held our first igem stuff call to have a session discussing all the
+								things concerning the iGEM competition. We held a weekly “iGEM stuff” call every week
+								after that to discuss all terms and conditions of the competition, the deadlines, the
+								medal criteria, the awards, the registry and the safety form, in order to make sure that
+								the whole team has a clear idea of what we need to do in the competition in order to
+								succeed.
+
+								<br><br>
+
+								Also, on the 11<sup>th</sup> of December we held our first igem stuff call to have a
+								session discussing all the
+								things concerning the iGEM competition. We held a weekly “iGEM stuff” call every week
+								after that to discuss all terms and conditions of the competition, the deadlines, the
+								medal criteria, the awards, the registry and the safety form, in order to make sure that
+								the whole team has a clear idea of what we need to do in the competition in order to
+								succeed.
+
+								<hr>
+
+							</p>
+						</div>
+					</div>
+
+					<div class="section-iteration row">
+						<div class="left">
+							<h1 class="iteration-nr">13/12 - 16/01 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<p class="content-paragraph">As it is expected every team in a competition of these
+								standards as the iGEM, needs a financial support, so in this week we had to compose our
+								project proposal containing a meticulous description of the competition, of all the
+								members of the team, including the Principal Investigators, a very descriptive analysis
+								of our project concerning both the wet lab and the dry lab and last but not least the
+								budget that we were expecting to need for the implementation of our project.
+
+								<br><br>
+
+								At the same time, a pitching presentation was prepared containing a short description of
+								the competition, our team, our project and our needs in order to present when holding a
+								meeting a candidate sponsor. On 16/01 the first version of our proposal and pitching
+								presentation was formed.
+
+								<br><br>
+
+								Our wet lab team was focused on understanding every aspect of the pathophysiology of
+								Osteoarthritis at a molecular level. We started our first efforts to select which cell
+								type is the most suitable for our approach and which factors should be expressed on our
+								genetic circuit forming a primitive design of our experiments and writing it down on the
+								project proposal. (for more information on what was the thinking process in order to
+								conclude on the experiments we run you can click on the following link (link gia
+								engineering).
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+							<h1 class="iteration-nr">17/01 - 30/01 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<h1 class="iteration-title headingForIndex">January 2021</h1>
+							<p class="content-paragraph">
+								On 17/12 we contacted the first companies which we were hoping
+								to be our sponsors while the project proposal was being daily updated with additions of
+								every aspect.
+
+								<br><br>
+
+								The wet lab team was perfecting the text on the project proposal concerning the
+								Osteoarthritis and the Wet Lab experiments. We also formed a list containing the most
+								promising factors to be included in our genetic circuit, where we added new things as
+								soon as we learned about them. We aimed to find 3-4 factors in total, which would affect
+								the anabolic and the catabolic pathways in the articular cartilage and the pain that the
+								patient is experiencing during Osteoarthritis.
+								<hr>
+
+
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+							<h1 class="iteration-nr">31/01 - 22/02 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<p class="content-paragraph">
+								We took a break for the semester exams of our departments.
+
+								<hr>
+
+								
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+
+							<h1 class="iteration-nr">22/02 - 28/02 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<h1 class="iteration-title headingForIndex">February 2021</h1>
+							<p class="content-paragraph">
+								The Wet team Lab started analyzing the sequences of our genetic circuit and choosing
+								the vectors in which our genetic would be inserted. We held our call on 25/02 to discuss
+								our ideas.
+
+								<br><br>
+
+								We started studying in order to choose whether the transfection of the cells in our
+								approach would be transient or stable. We considered all the advantages and
+								disadvantages of each method both for our approach as a treatment and the feasibility of
+								it to implement it in the Lab. We held our call on 28/02 to discuss our ideas.
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+
+							<h1 class="iteration-nr">01/03 - 07/03 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<h1 class="iteration-title headingForIndex">March 2021</h1>
+							<p class="content-paragraph">
+								The Wet Lab of our team started reconsidering the genetic circuit and exploring other
+								alternatives based on RNA circuits. We studied papers considering the RNA circuits and
+								tried to design an RNA circuit that would be suitable for our approach. We held a
+								meeting on 7/03 to discuss our new findings.
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+
+							<h1 class="iteration-nr">08/03 - 14/03 </h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<p class="content-paragraph">
+								The wet lab studied ways for measuring the factors expressed by the genetic circuit and
+								design of the experiments.
+								Research and study in order to find the protocols and kits most suitable for our
+								approach. We held a meeting to discuss
+								our new findings on 14/03.
+
+								<br><br>
+
+								Another concern that we had to resolve was what experiments we should run in order to be
+								sure that our circuit produced the expected factors and would eventually have effects in
+								an osteoarthritic joint. We tried to find a way to simulate the Osteoarthritic
+								environment in vitro or ex vivo while excluding the possibility of running in vivo
+								experiments due to the restrictions of both time and the competition. We held our
+								meeting on 21/03 to talk about the new things that came up.
+
+								<br><br>
+
+								In parallel, our team started thinking and researching what needed to be done in order
+								to open a crowdfunding page.
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-part">
+				<div class="full-iteration">
+					<div class="section-iteration row">
+						<div class="left">
+
+							<h1 class="iteration-nr">22/03 - 28/03</h1>
+						</div>
+						<div class="line-divider">
+							<div class="line"></div>
+						</div>
+						<div class="right">
+							<p class="content-paragraph">
+								Our Wet Lab team had done a lot of research. We were in very good level of knowledge
+								regarding Osteoarthritis at all levels, and specifically at a molecular level. But we
+								had many alternatives for our project, including the protocols that we would have to use
+								if we concluded in any of them. Therefore, we needed the opinion of an experienced one,
+								working on Osteoarthritis at a molecular level to help us decide which were the most
+								promising and at the same time most feasible of our alternatives.
+
+								<br><br>
+
+								For that purpose, we worked in this week to prepare a document which meticulously
+								described our idea and the steps that we were planning to make in the laboratory
+								(experiments and protocols). We contacted, the one to later become one of our Principal
+								Investigator, Mrs. Maria Margy Koffa. Mrs. Koffa is a professor on the department of
+								Molecular Biology & Genetics, head of the Cellular Biology Laboratory and has had
+								previous experience on Osteoarthritis.
+
+								<br><br>
+
+								Also, our team concluded on what needed to be done in order to open a crowdfunding page
+								and from point and on (25/03) we started designing our crowdfunding page.
+
+								<br><br>
+
+								While posting various scientific related posts on our social media throughout this whole
+								time, our project reveal started on 27/03. We prepared a total of 7 posts dedicated to
+								our project with many hints and riddles for our followers to find our project idea.
+								<hr>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</main>
+
+	<style>
+		main {
+			height: fit-content;
+			background-color: #ffffff;
+			position: absolute;
+			top: 200vh;
+			margin-left: 400px;
+			width: 80%;
+			z-index: 3;
+		}
+
+
+		main section {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			width: calc(100% - 280px);
+			margin: 0 90px 0 190px;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section {
+				width: 100vw;
+				margin: 0 auto;
+			}
+		}
+
+		main section h1 {
+			text-transform: uppercase;
+			font-size: 2.5em;
+		}
+
+		main section .section-title h1 {
+			margin-block-end: 0em;
+			font-size: 3.5em;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .section-title h1 {
+				font-size: 2em;
+			}
+		}
+
+		main section .section-title svg {
+			width: 100px;
+		}
+
+		main section .section-title .right {
+			display: block !important;
+			padding: 100px 0 0 !important;
+		}
+
+		main section .iteration-title {
+			display: grid;
+			margin-block-start: 0em;
+			margin-block-end: 0em;
+			font-size: 2.3em;
+		}
+
+		main section .row {
+			display: flex;
+			width: 100%;
+		}
+
+		main section .row .left,
+		main section .row .right {
+			display: flex;
+			align-items: center;
+			padding: 20px 0px;
+		}
+
+		main section .row .line-divider {
+			display: flex;
+			width: 20%;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .line-divider {
+				width: 15%;
+				justify-content: initial;
+			}
+		}
+
+		main section .row .line-divider.nonCenter {
+			align-items: initial;
+			z-index: 2;
+		}
+
+		main section .row .line-divider .line {
+			width: 7px;
+			background-color: #5893d4;
+			height: 100%;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .line-divider .line.mobile-curve {
+				width: 0;
+			}
+		}
+
+		main section .row .line-divider .circle {
+			width: 35px;
+			height: 35px;
+			border-radius: 40px;
+			background-color: #5893d4;
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+		}
+
+		main section .row .line-divider .circle.top {
+			margin-top: -15px;
+			width: 20px;
+			height: 20px;
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .line-divider .circle.top {
+				visibility: hidden;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .line-divider .circle {
+				width: 8vw;
+				height: 8vw;
+				transform: translateX(55%);
+			}
+		}
+
+		main section .row .left {
+			width: 20%;
+			justify-content: flex-end;
+			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .left {
+				background-color: #121212;
+				color: #FAFAFC;
+				width: 15%;
+				justify-content: center;
+				z-index: 2;
+			}
+		}
+
+		main section .row .left h1 {
+			cursor: pointer;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .left h1 {
+				text-orientation: sideways;
+			}
+		}
+
+		main section .row .left .iteration-nr {
+			margin-block-end: 0em;
+			margin-block-start: 0em;
+			font-size: 2.1vw;
+			text-align: right;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .left .iteration-nr {
+				display: none;
+			}
+		}
+
+		main section .row .left svg {
+			position: absolute;
+			opacity: 0;
+		}
+
+		main section .row .left svg#click-info-desktop {
+			width: 100px;
+			transform: translate(-170px, -44px);
+			text-transform: initial;
+		}
+
+		main section .row .left svg.visible {
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .left.mobile-curve {
+				border-top: solid 7px #5893d4;
+			}
+		}
+
+		main section .row .right {
+			width: 60%;
+			display: block;
+		}
+
+		@media screen and (max-width: 767px) {
+			main section .row .right {
+				width: 70%;
+				padding: 0;
+			}
+		}
+
+		main section .row .right .iteration-nr {
+			display: none;
+		}
+
+		main section .row .right .iteration-nr.mobile {
+			cursor: pointer;
+		}
+
+		main section .row .right svg#click-info-mobile {
+			width: 70px;
+			transform: translate(140px, -50px);
+			position: absolute;
+			opacity: 0;
+		}
+
+		main section .row .right svg.visible {
+			opacity: 1 !important;
+		}
+
+		main section .row .right img {
+			width: 100%;
+			box-shadow: 1px 1px 10px #00000029;
+		}
+
+		main section .row .iteration-part {
+			text-align: right;
+		}
+
+
+
+		main section .section-iteration .left {
+			padding: 10px 0;
+		}
+
+		main section .section-iteration .right {
+			display: block;
+		}
+
+		main section .accordion {
+			overflow: hidden;
+			max-height: 0;
+			transition: max-height 0.2s ease-out;
+		}
+
+		main section .accordion.visible {
+			max-height: initial;
+		}
+
+		main section .accordion.visible .circle {
+			opacity: 1;
+		}
+
+		main section #separator {
+			transition-duration: 0.2s;
+			transition-timing-function: ease-out;
+			height: fit-content;
+		}
+
+		section .section-part {
+			width: 100%;
+		}
+
+		section .section-part .full-iteration {
+			width: 100%;
+		}
+
+		section .section-part .full-iteration:last-child .left,
+		section .section-part .full-iteration:last-child .right {
+			padding-bottom: 30px;
+		}
+
+		section#overview {
+			max-width: calc(100% - 330px);
+			margin: 0px auto 60px auto;
+			width: 60vw;
+		}
+
+		section#overview .overview-wrapper {
+			padding: 20px 40px;
+			box-shadow: 0 0 5px #00000029;
+			box-sizing: border-box;
+			padding: 40px 60px;
+		}
+
+		section#overview .overview-wrapper h2 {
+			text-transform: uppercase;
+			padding: 30px 0;
+			font-size: 2.5em;
+		}
+
+		@media screen and (max-width: 767px) {
+			section#overview .overview-wrapper {
+				padding: 15px 30px;
+				box-shadow: none;
+			}
+		}
+
+		section#overview .overview-wrapper p {
+			font-size: 1.5em;
+		}
+
+		@media screen and (max-width: 767px) {
+			section#overview {
+				width: 80vw;
+			}
+		}
+
+		section#overview button {
+			padding: 40px;
+			font-size: 3vh;
+			text-transform: uppercase;
+			background-color: #5893d4;
+			border-radius: 80px;
+			border: none;
+			color: #fafafc;
+			margin: 20px;
+			cursor: pointer;
+			box-shadow: 0 16px 32px -12px #5893d4;
+			transition: 0.3s ease-out;
+			position: relative;
+			top: 0;
+		}
+
+		section#overview button:hover {
+			top: -5px;
+			box-shadow: 0 16px 32px -16px #5893d4;
+		}
+	</style>
+
+
+	<style>
+		/* table styles */
+		td,
+		th {
+			border: 1px solid black;
+			padding: 15px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		/* content box */
+		.content p.photo-desc {
+			text-align: center !important;
+			font-size: 0.8em !important;
+		}
+
+		.class-paragraph {
+			padding-left: 5px;
+			margin-right: 5px;
+			text-align: justify;
+
+		}
+
+		#content-tag {
+			background-color: #ffffff;
+			position: relative;
+		}
+
+		#content-tag p {
+			margin: 0;
+			font-size: 1.2rem;
+			line-height: 1.5;
+			margin-top: 20px;
+			margin-bottom: 40px;
+			text-align: justify;
+		}
+
+
+		#content-tag .contentBlock {
+			float: none;
+			margin: 0 auto;
+		}
+
+
+		#content {
+			padding: 0px;
+			width: 100%;
+			margin-top: -7px;
+			margin-left: 0px;
+			border: none;
+			line-height: initial;
+		}
+
+
+		.contentBlock {
+			width: 64vw;
+			max-width: 1200px;
+			float: right;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.content {
+			padding: 64px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px lightgray;
+			color: #121212;
+			margin-top: 40px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			flex: 1 0 auto;
+		}
+
+
+		.content p:first-child {
+			margin-top: 0;
+		}
+
+
+		.content ul {
+			padding-inline-start: 20px;
+			list-style-image: none;
+			list-style-type: none;
+		}
+
+		.content ul li {
+			display: flex;
+		}
+
+		.content ul li::before {
+			content: "•";
+			color: #000000;
+		}
+
+		.content .splide ul li::before {
+			content: unset;
+		}
+
+		.content li {
+			margin: 10px;
+		}
+
+		.content li::marker {
+			color: #000000;
+			font-weight: bold;
+			font-size: 1em;
+		}
+
+		.content h4,
+		.content h5 {
+			font-size: 1.2em;
+			text-transform: uppercase;
+			margin-block-end: 0.2em;
+			margin-block-start: 60px;
+		}
+
+		.content h5 {
+			font-size: 1em;
+		}
+
+		.content a {
+			color: #000000;
+
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.content a.citation {
+			font-size: 0.6em;
+			vertical-align: super;
+		}
+
+		.content-paragraph {
+			margin: 0;
+			font-size: 1.2rem;
+			line-height: 1.5;
+			margin-top: 20px;
+			margin-bottom: 40px;
+			text-align: justify;
+		}
+	</style>
+
+
+	<footer style="margin-top: 800vh" class="footer">
+		<!-- Footer -->
+
+
+
+		<br><br><br><br>
+		<hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+		<ul>
+			<li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+						aria-hidden="true"></i></a></li>
+			<li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+						aria-hidden="true"></i></a></li>
+			<li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+						class="fa fa-instagram" aria-hidden="true"></i></a></li>
+			<li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+						aria-hidden="true"></i></a></li>
+			<li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+						class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			<li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+						class="fa fa-youtube" aria-hidden="true"></i></a></li>
+			<li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+						aria-hidden="true"></i></a></li>
+			<li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+						aria-hidden="true"></i></a></li>
+		</ul>
+		<br><br><br><br><br><br><br>
+		<hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+		<br><br><br><br><br><br><br><br>
+
+
+		<div style="display:flex;flex-wrap:wrap; ">
+			<div class="col">
+				<a href="https://igemnous.med.duth.gr/" target="_blank">
+					<img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+						src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+				</a>
+
+			</div>
+
+			<div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+				<div class="footer_sponsors"
+					style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+					<a href="https://duth.gr/" target="_blank"><img
+							src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+							style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+					<a href="https://www.geneious.com/" target="_blank"><img
+							src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+							style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+					<a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+							src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+							style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+					<a href="https://bioemtech.com/" target="_blank"><img
+							src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+							style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+
+
+</body>
 
 </html>
