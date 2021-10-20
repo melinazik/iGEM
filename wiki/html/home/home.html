@@ -219,59 +219,6 @@
     }
 </style>
     
-<!-- home -->
-<style>
-    /* Home */
-    #wrap {
-        height: 10vh;
-    }
-
-    .container {
-        height: 1vh;
-
-    }
-
-    .p3 {
-        z-index: 10;
-        position: relative;
-        width: 300px;
-        left: calc((100%)/1.25);
-        font-size: 30px;
-        /* color: #002060; */
-        font-weight: bold;
-        margin-top: -270px;
-    }
-
-    .p4 {
-        z-index: 10;
-        position: relative;
-        width: 400px;
-        text-align: justify;
-        left: calc((100%)/1.5);
-        top: -450px;
-        font-size: 24px;
-        color: #002060;
-    }
-
-
-
-    .oa-people {
-        width: 700px;
-        padding-top: 100px;
-        margin-left: 50px;
-        transition: transform .8s;
-
-    }
-
-    .oa-people:hover {
-        width: 700px;
-        padding-top: 100px;
-        margin-left: 50px;
-        transform: scale(1.2);
-    }
-
-    /* Footer */
-</style>
 
 <header class="circles" id="banner">
 
@@ -304,6 +251,142 @@
     }
 </style>
 
+<!-- cards -->
+<style>
+        
+    .card-icon {
+      z-index: 1;
+    }
+     
+    .icon {
+      padding: 10%;
+      width:80%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      max-width: 160px;
+    }
+
+    .info-section {
+        margin: auto;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .cardcolors {
+        --bg-color: #1F3C88;
+        --bg-color-light: #1F3C88;
+        --text-color-hover: #ffffff;
+        /* --box-shadow-color: #99CED3; */
+    }
+
+    .c-card {
+        margin: auto;
+        margin-bottom: 20px;
+        margin-right: 70px;
+        width: 220px;
+        height: 321px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        box-shadow: 0 14px 26px rgba(128,128,128,0.2);
+        transition: all 0.3s ease-out;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 0px !important;
+    }
+
+        .c-card:hover {
+            transform: translateY(-5px) scale(1.005) translateZ(0);
+            box-shadow: 0 24px 36px rgba(163, 33, 33, 0.11), 0 24px 46px var(--box-shadow-color);
+            text-decoration: none;
+        }
+
+            .c-card:hover .overlay {
+                transform: scale(4) translateZ(0);
+            }
+
+            .c-card:hover .circle {
+                border-color: var(--bg-color-light);
+                background: var(--bg-color);
+            }
+
+                .c-card:hover .circle:after {
+                    background: var(--bg-color-light);
+                }
+
+            .c-card:hover p {
+                color: var(--text-color-hover);
+            }
+
+        .c-card:active {
+            transform: scale(1) translateZ(0);
+            box-shadow: 0 15px 24px rgba(0,0,0,0.11), 0 15px 24px var(--box-shadow-color);
+        }
+
+        .c-card p {
+            font-size: 20px;
+            color: #5893D4;
+            margin-top: 30px;
+            z-index: 8;
+            transition: color 0.3s ease-out;
+            text-decoration: none;
+        }
+
+    .circle {
+        width: 162px;
+        height: 162px;
+        border-radius: 60%;
+        background: #fff;
+        border: 2px solid var(--bg-color);
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease-out;
+    }
+
+        .circle:after {
+            content: "";
+            width: 160px;
+            height: 160px;
+            display: block;
+            position: absolute;
+            background: var(--bg-color);
+            border-radius: 50%;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .circle svg {
+            z-index: 10000;
+            transform: translateZ(0);
+        }
+
+    .overlay {
+        width: 118px;
+        position: absolute;
+        height: 118px;
+        border-radius: 50%;
+        background: var(--bg-color);
+        top: 70px;
+        left: 50px;
+        z-index: 0;
+        transition: transform 0.3s ease-out;
+    }
+
+    .front-cover {
+        width: 100%;
+        height: 100vh;
+    }
+
+</style>
+
 <!-- aling stuff -->
 <style>
     .container {
@@ -328,12 +411,17 @@
 
 <!-- background -->
 <style>
+    hr.line {
+		border-top: 8px solid #bbb;
+		border-radius: 2px;
+		border-color: #002060;
+	}
     
     body {
         padding: 0px;
         margin: 0px;
 
-        background: linear-gradient(#F9FAFC, #002060); /*#F9FAFC,*/
+        
         background-size: 100% 1000vh;
         font-family: 'Lato', sans-serif;
 
@@ -357,6 +445,11 @@
 		font-size: 30px;
 		color: #5893D4;
 		}
+
+        .back
+        {
+            background: linear-gradient(#F9FAFC, #002060); /*#F9FAFC,*/
+        }
 		
 </style>
 
@@ -522,10 +615,9 @@
 
         </div>
     </div>
-
-
+    <main id="main" class="back">
 <!-- 1 -->
-<div class="container" style="margin-top:600px; margin-bottom: 300px; margin-left: 100px;">
+ <div class="container" style="margin-top:70px; margin-bottom:200px; margin-left: 100px;">
     <div class="image">
         <p style="float: left; font:raleway; z-index: 10; font-size: 40px; width: 1000px; color: #002060; ">
             <b>║ OSTEOARTHRITIS <br><br></b>
@@ -550,62 +642,80 @@
         <img style="position:sticky; float:right; width:800px;"  src="https://2021.igem.org/wiki/images/6/62/T--Greece_United--OA--joint--gif.gif">
 
     </div>
+</div> 
+
+
+<img src="https://2021.igem.org/wiki/images/6/6d/T--Greece_United--home-2.png" style="width:80%; margin-bottom:300px;margin-left:100px; align-self:center;">
+<br><br><br>
+<video src="https://2021.igem.org/wiki/images/6/60/T--Greece_United--logo-animation-video.mp4" muted autoplay="" width="65%" height="auto" style="margin-left:300px; border-radius: 40px;"></video>
+<br>
+<img src="https://2021.igem.org/wiki/images/e/ed/T--Greece_United--home-3.png" style="width:90%;  margin-left:100px;">
+<br><br>
+<img src="https://2021.igem.org/wiki/images/8/8b/T--Greece_United--home-4.png" style="width:90%;  margin-left:100px;">
+<br><br>
+<img src="https://2021.igem.org/wiki/images/d/d8/T--Greece_United--home-5.png" style="width:70%; margin-left:200px;">
+<br><br>
+<img src="https://2021.igem.org/wiki/images/4/40/T--Greece_United--home-6.png" style="width:80%; margin-left:200px;">
+<br><br>
+<img src="https://2021.igem.org/wiki/images/2/25/T--Greece_United--home-7.png" style="width:80%;  margin-bottom:200px; margin-left:200px;">
+<br><br><br>
+
+<!-- cards -->
+<div class="info-section" style="margin-left:200px; ">
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                <a href="https://2021.igem.org/Team:Greece_United/Description" target="_blank" class="c-card cardcolors">
+                    <div class="overlay"></div>
+                    <div class="circle">
+                          <img src="https://2021.igem.org/wiki/images/5/56/T--Greece_United--project-card.png"
+                          alt="HP Icon"
+                          class="icon card-icon" />
+                    </div>
+                    <p> Project</p>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block; ">
+                <a href="https://2021.igem.org/Team:Greece_United/Design" target="_blank"class="c-card cardcolors">
+                    <div class="overlay"></div>
+                    <div class="circle">
+                        
+                   <img src="https://2021.igem.org/wiki/images/9/97/T--Greece_United--wl-card.png"
+                          alt="Bio Icon"
+                          class="icon card-icon" />
+                    </div>
+                    <p>Wet Lab</p>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block; ">
+                <a href="https://2021.igem.org/Team:Greece_United/Model" target="_blank"class="c-card cardcolors">
+                    <div class="overlay"></div>
+                    <div class="circle">
+                        <img src="https://2021.igem.org/wiki/images/c/ca/T--NIT_Warangal--icons--flowchart.png"
+                          alt="Bio Icon"
+                          class="icon card-icon" />
+                    </div>
+                    <p>Dry Lab</p>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block; ">
+                <a href="https://2021.igem.org/Team:Greece_United/Entrepreneurship" target="_blank"class="c-card cardcolors">
+                    <div class="overlay"></div>
+                    <div class="circle">
+                        <img src="https://2021.igem.org/wiki/images/1/1a/T--Greece_United--fr-card.png"
+                          alt="Bio Icon"
+                          class="icon card-icon" />
+                    </div>
+                    <p>Entrepreneurship</p>
+                </a>
+            </div>
+        </div>
+        
+    </div>
 </div>
-
-<!-- 2 -->
-<div class="container" style="margin-top:600px; margin-bottom: 300px; margin-left: 100px;">
-    <div class="image">
-        <img class="square"style="position:sticky; margin-left:100px; float:left; width:800px;"  src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--OA--humans.png">
-    </div>
-    <div class="text">
-       
-        <p style="float: right; font:raleway; text-align: right; z-index: 10; margin-right:100px; font-size: 40px; width: 1000px; color: #002060; ">
-            <span class="accentB"><b> AFFECTS ║ <br><br></b></span>
-    
-            <span class="accentB">7</span> % of the world population <br><br>
-    
-            <span class="accentB">15</span> % of people over 60 <br><br>
-            <span class="accentB">4</span> % of them are severely disabled<br><br>
-
-            <b>One of the top 10 causes of paralysis</b><br><br>
-            
-        </p>
-    </div>
-</div>
-
-<!-- 3 -->
-<div class="container" style="margin-top:600px; margin-bottom: 300px; margin-left: 100px;">
-    <div class="image">
-        <img class="square"style="position:sticky; margin-left:100px; float:left; width:1000px;"  src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--OA--humans.png">
-    </div>
-    <div class="text">
-       
-        <p style="float: right; font:raleway; text-align: right; z-index: 10; margin-right:100px; font-size: 40px; width: 1000px; color: #002060; ">
-            <span class="accentB"><b> AFFECTS ║ <br><br></b></span>
-    
-            <span class="accentB">7</span> % of the world population <br><br>
-    
-            <span class="accentB">15</span> % of people over 60 <br><br>
-            <span class="accentB">4</span> % of them are severely disabled<br><br>
-
-            <b>One of the top 10 causes of paralysis</b><br><br>
-            
-        </p>
-    </div>
-</div>
-
-<img src="https://2021.igem.org/wiki/images/6/6d/T--Greece_United--home-2.png" style="width:100%">
-
-
-
-
-<img src="https://2021.igem.org/wiki/images/e/ed/T--Greece_United--home-3.png" style="width:100%">
-<img src="https://2021.igem.org/wiki/images/8/8b/T--Greece_United--home-4.png" style="width:100%">
-<img src="https://2021.igem.org/wiki/images/d/d8/T--Greece_United--home-5.png" style="width:100%">
-<img src="https://2021.igem.org/wiki/images/4/40/T--Greece_United--home-6.png" style="width:100%">
-<img src="https://2021.igem.org/wiki/images/2/25/T--Greece_United--home-7.png" style="width:100%">
-
-
+<br><br>
+</main>
 <!--<footer> -->
      <div class="footer">
 
@@ -668,7 +778,7 @@
         </div>
 
     </div>
-</footer>--> -->
+</footer>
 
 </body>
 <script>
