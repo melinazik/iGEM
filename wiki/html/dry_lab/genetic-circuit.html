@@ -873,19 +873,19 @@
 
                     The red and uncolored rectangles are complexes created from the combination of genes, transcription
                     factors and/or inhibiting proteins.
-                    Said complex formations are described by the following equation type:
+                    These complex formations are described by the following equation type:
 
                     $$\small \frac{d[𝑇𝐹-𝐷𝑁𝐴]}{dt} = k_a * [TF] * [DNA] − k_d * [TF-DNA]$$
 
                     where:
 
-                    $$ TF = \;Transcription \;factor$$
-                    $$ DNA = \;Concentration\; of\; the\; Gene$$
-                    $$ TF-DNA = \;Gene-Transcription\; Factor \;complex$$
-                    $$ k_a = \;Binding \;constant\; of \;the\; Transcription\; Factor \;to\; its\; corresponding\;
+                    $$\small TF = \;Transcription \;factor$$
+                    $$\small DNA = \;Concentration\; of\; the\; Gene$$
+                    $$\small TF-DNA = \;Gene-Transcription\; Factor \;complex$$
+                    $$\small k_a = \;Binding \;constant\; of \;the\; Transcription\; Factor \;to\; its\; corresponding\;
                     promoter$$
 
-                    $$ k_b = Unbinding constant of the Transcription Factor to its corresponding promoter$$
+                    $$\small k_b = Unbinding constant of the Transcription Factor to its corresponding promoter$$
                     <br><br>
 
                     The correct combination of a gene and a transcription factor enables the gene to be expressed and
@@ -944,7 +944,7 @@
                 </div>
                 <br>
                 <p class="content-paragraph">
-                    During the development of the project, a problem occurred we named the “low transfection” problem,
+                    During the development of the project, a problem occurred. We named the “low transfection” problem,
                     because Mesenchymal Stem Cells are very difficult to transfect considering time, skills and
                     resources.
                     The fact that we needed to do so with 5 different plasmids didn’t help our situation.
@@ -975,12 +975,12 @@
                 <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
                     src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png" >
                 <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in
-                    difference values of the amplifier construct.</p>
+                    different values of the amplifier construct.</p>
 
                 <p class="content-paragraph">
                     The exclusion of the amplifier construct reduces the expression of the effector by a significant
                     amount (Figure 3).
-                    This small amount means that can theoretically exclude it from the genetic circuit.
+                    This small amount means that we can theoretically exclude it from the genetic circuit.
                     But in order for this solution to work, we have to exclude at least one more plasmid.
 
                     <br><br>
@@ -1013,7 +1013,7 @@
                     The absence of the thresholder construct can result in misleading results in the lab and
                     uncontrollable expression (Figure 5).
                     This comes in direct contrast with the reason we use the genetic circuit in the first place.
-                    Therefore, we concluded that its existence is all but necessary.
+                    Therefore, we concluded that its existence is necessary.
 
                     <br><br>
 
@@ -1289,7 +1289,7 @@
                             $$\small \frac{d[GV16]}{dt} = [Thresholder Gene] * k_{l} * 0.01$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids
+                            <p class="table-paragraph">Production of Gal4 - VP16 from amino acids.
                                 The repressed leaky production rate was set to 1% of the unrepressed leaky production
                                 rate.
                             </p>
@@ -1300,7 +1300,7 @@
                             $$\small \frac{d[Effector Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Production of luciferace from amino acids
+                            <p class="table-paragraph">Production of luciferace from amino acids.
                                 The repressed leaky production rate was set to 1% of the unrepressed leaky production
                                 rate.
 
@@ -1344,7 +1344,7 @@
                             $$\small \frac{d[Cell Division]}{dt} = [Effector Gene] * k_{dil} $$
                         </td>
                         <td>
-                            <p class="table-paragraph">Dilution of the amplifier construct due to cell division</p>
+                            <p class="table-paragraph">Dilution of the effector construct due to cell division</p>
                         </td>
                     </tr>
                     <tr>
@@ -1373,7 +1373,7 @@
                             Gene]*k_{artTR} - $$ $$[rtTRKRAB(effector)]*k_{drtTR}$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the effector construct.
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the effector construct.
                             </p>
                         </td>
                     </tr>
@@ -1384,7 +1384,7 @@
                             k_{drtTR}$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 - VP16 bound
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 - VP16 bound
                                 amplifier construct. </p>
                         </td>
                     </tr>
@@ -1394,7 +1394,7 @@
                             [Gal4 (amplifier)] * k_{artTR} - $$ $$ [rtTRKRAB -Gal4 Complex (amplifier)] * k_{drtTR}$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the Gal4 bound amplifier
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the Gal4 bound amplifier
                                 construct.
                             </p>
                         </td>
@@ -1405,7 +1405,7 @@
                             k_{artTR} - $$ $$ [rtTRKRAB (sensor)] * k_{drtTR}$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the sensor construct.
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the sensor construct.
                             </p>
                         </td>
                     </tr>
@@ -1415,7 +1415,7 @@
                             (Sensor)] *k_{artTR} - $$ $$[rtTRKRAB NFkB Complex (sensor)] * k_{drtTR}$$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB the NFkB bound sensor
+                            <p class="table-paragraph">Binding and dissociation of rtTR – KRAB to the NFkB bound sensor
                                 construct.
                             </p>
                         </td>
@@ -1634,7 +1634,7 @@
                             <p class="table-paragraph">S<sub>43</sub></p>
                         </td>
                         <td>
-                            <p class="table-paragraph">False/p>
+                            <p class="table-paragraph">False</p>
                         </td>
                         <td>
                             <p class="table-paragraph">NF-κB in complex with the sensor construct</p>
@@ -1662,7 +1662,7 @@
                             <p class="table-paragraph">COMPLEX</p>
                         </td>
                         <td>
-                            <p class="table-paragraph">RE-rtTR_NF-_kappa_B RENF-_kappa_B (sensor)</p>
+                            <p class="table-paragraph">TRE-rtTR_NF-_kappa_B RENF-_kappa_B (sensor)</p>
                         </td>
                         <td>
                             <p class="table-paragraph">S<sub>39</sub></p>
