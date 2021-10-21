@@ -542,7 +542,81 @@
 	</script>
 
 	<!-- header text -->
+	<style>
+		#education {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
 
+		#education td,
+		#education th {
+			border: 1px solid rgb(255, 255, 255);
+			padding: 8px;
+		}
+
+		#education caption {
+			background-color: #5893d4;
+			color: white;
+			font-size: large;
+			padding: 8px;
+			text-align: left;
+		}
+
+		#education tr:nth-child(even) {
+			background-color: #a3a3a32c;
+		}
+
+		#education tr:hover {
+			background-color: #a3a3a349;
+		}
+
+		#education th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #5893d4;
+			color: white;
+			font-weight: 100;
+		}
+
+		#education a:link {
+			color: #020108;
+			text-decoration: none;
+		}
+
+		#education a:visited {
+			color: #002060
+		}
+
+		#education a:hover {
+			color: #e2b205
+		}
+
+		#education a:active {
+			color: #C0F0FC
+		}
+
+		/* top-left border-radius */
+		#education tr:first-child th:first-child {
+			border-top-left-radius: 6px;
+		}
+
+		/* top-right border-radius */
+		#education tr:first-child th:last-child {
+			border-top-right-radius: 6px;
+		}
+
+		/* bottom-left border-radius */
+		#education tr:last-child td:first-child {
+			border-bottom-left-radius: 6px;
+		}
+
+		/* bottom-right border-radius */
+		#education tr:last-child td:last-child {
+			border-bottom-right-radius: 6px;
+		}
+	</style>
 
 	<div style="margin-top: 50px; padding-bottom:100px;" id="content-tag">
 		<div class="contentBlock">
@@ -550,8 +624,149 @@
 				<div class="header">
 				</div>
 				<p class="content-paragraph">
-					
+					During our journey in the iGEM 2021 competition we got to partner with a high school team from South
+					Korea named iGEM Korea HS. This partnership was achieved based on common elements of our projects.
+					<br><br>
+					Korea HS project: A cancer-specific short Cell Penetrating Peptide (CPP) is designed for efficient
+					delivery of CYP1A1-reppressing siRNA into target cells.
+					<br><br>
+					Greece_United project: Cells are genetically modified to produce exosomes fused with a Chondrocyte
+					Affinity Peptide (CAP) to target specifically Chondrocytes and loaded with microRNA 140 which will
+					eventually be released inside the Chondrocytes to halt the progression of Osteoarthritis.
+					<br><br>
+					Both projects involve research in Therapeutics. Although each team targets a completely different
+					disease, both approaches share some important elements.
+					<br><br>
+					<table id="education">
+						<tr>
+							<th>Common Elements</th>
+							<th>Greece_United [aka NOUS]</th>
+							<th>Korea HS</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>use of peptides to target specific cells and allow the insertion of certain RNA
+									molecules inside them</td>
+								<td>CAP</td>
+								<td>CPP</td>
+							</tr>
+							<tr>
+								<td>use of RNAs to repress the expression of certain genes</td>
+								<td>miRNA(mir-140)
+									to repress expression of genes in osteoarthritic chondrocytes
+								</td>
+								<td>siRNA
+									to repress the expression of genes in cancer cells
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br><br>
+
+					The partnership started with both teams presenting their projects to each other and discussing every
+					aspect of it in detail. Wetlab, drylab and human practices were all mentioned and discussed.
 				</p>
+				<br><br>
+				<h2>Wet Lab Partnership</h2>
+				<p class="content-paragraph">
+
+					We held weekly calls and discussed any idea that came up and any progress that was made.
+					<br><br>
+					The ultimate goal is to expand both projects and design a generic diagnostic kit based on RNA
+					molecules and fluorescents aptamers interactions that could then be customized either for cancer
+					markers or for osteoarthritis markers via a specific short sequence in the end of the RNA molecule.
+					<br><br>
+
+
+				</p>
+				<img style="width:85%; align-self: center; "
+					src="https://2021.igem.org/wiki/images/9/99/T--Greece_United--partnership.png">
+
+
+				<p class="content-paragraph">
+
+					As our experiments were in progress we were in contact and shared our protocols. In fact, one of the
+					assays that Korea_HS had in their design seemed very suitable for our needs as well and of course
+					they were happy to share any knowledge they had gathered to help us perform similar experiments.
+					<br><br>
+					Overall, we achieved a fruitful partnership, with the following major transfers of knowledge
+					<br><br>
+
+				</p>
+
+				<h2>MTT assay [Korea_HS -> Greece_United]</h2>
+				<p class="content-paragraph">
+					Korea_HS uses the MTT assay in order to measure the cytotoxicity of their Cell Penetrating Peptide.
+					As we also planned to measure the cytotoxicity of the modified exosomes with the Chondrocyte
+					Affinity Peptide, we held a tutorial meeting on how to perform an MTT assay and what consumables
+					would be needed in such case. Korea_HS shared with us best lab practices and troubleshooting related
+					to implementing the assay.
+					<br><br>
+				</p>
+
+
+				<h2>CYP1P1 western blot [Greece_United -> Korea_HS]</h2>
+				<p class="content-paragraph">
+					Korea_HS managed to insert the CYP1A1-repressing siRNA in the cells and measured the expression of
+					the CYP1A1 gene in the cell line used by performing Western Blot. However, the team faced problems
+					interpreting the results and making sure that every observed result was caused because of the siRNA.
+					<br><br>
+					At that point, we stepped in to look at the western blot images and we offered our opinion on the
+					probable interpretation of each result. We also proposed some additional experiments to help
+					Korea_HS determine whether the observations were indeed due to the siRNA they used. More
+					specifically, we explained what a scrambled siRNA is, encouraged them to use a control siRNA and we
+					shared with them best practices on how to design and order it.
+
+					<br><br>
+				</p>
+				<img style="width:85%; align-self: center; "
+					src="https://2021.igem.org/wiki/images/2/23/T--Greece_United--partnership1.png">
+				<br><br>
+
+				<h2>Dry Lab [Greece_United -> Korea_HS]</h2>
+				<p class="content-paragraph">
+					During our regular meetings, we presented the Genetic Circuit Model and the Exosome Production
+					Model, which we designed in CellDesigner v4.4 and MATLAB. This sparked a number of questions on the
+					software tools we used. Hence, we created and delivered two tutorials for CellDesigner v4.4 and
+					MATLABs’ Simbiology Model Builder & Model Analyzer.
+					<br><br>
+
+				</p>
+
+				<h2>Human Practices [Greece_United + Korea_HS]</h2>
+				<p class="content-paragraph">
+					After establishing a good Wet Lab and Dry Lab partnership, we decided to work together in human
+					practices aspects of our projects.
+					<br><br>
+					<b>Blood donation:</b> Both teams collaboratively planned and organized a blood donation event. Two blood
+					donation events were held simultaneously in Greece and South Korea, in Autumn of 2021. The goal was
+					to help raise awareness of the Blood Shortage Problem on a worldwide scale.
+					<br><br>
+
+				</p>
+
+				<img style="width:70%; align-self: center; "
+					src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--korea-blood.jpg ">
+					<p class="photo-desc">KOREA HS members during Blood Donation Event</p>
+				<br><br>
+
+				<img style="width:70%; align-self: center; "
+					src="https://2021.igem.org/wiki/images/6/6b/T--Greece_United--partnership-blood.png">
+					<p class="photo-desc">NOUS members during Blood Donation Event</p>
+
+				<br><br>
+				<br>
+
+				<p class="content-paragraph">
+					<b>“How to iGEM” high school edition:</b> Currently in Greece, there are no high school iGEM teams, so we had the idea to compose a meticulous and descriptive guide on how to establish an iGEM team and participate in the iGEM competition in order to inspire and help the high school students of Greece. Consequently, we engaged our partners Korea_HS, a high school iGEM team for advice on the perspective of a high schooler team within iGEM. They were very willing to help us and eventually we collaborated on the composition of the guide. 
+					<br><br>
+					<b>1st Global iGEM Diagnostics & Therapeutics Conference:</b>
+					 We also had the pleasure to participate in the 1st Global iGEM Diagnostics & Therapeutics Conference event organized by Korea_HS. During this event we got to meet other teams from all over the world, hear about their projects and present our own. After each presentation, there were short sessions where the presenters’ answered questions and got feedback for their presentation. Our team presented best practices on troubleshooting in organizing an iGEM project. 
+					<br><br>
+
+				</p>
+
 
 			</div>
 		</div>
