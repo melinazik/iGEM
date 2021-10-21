@@ -5,1224 +5,1200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
 
 <link rel="stylesheet" type="text/css"
-	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
 <link rel="stylesheet" type="text/css"
-	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
 <link rel="stylesheet" type="text/css"
-	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
 <link rel="stylesheet" type="text/css"
-	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
 
 <link rel="stylesheet" type="text/css"
-	href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
 <script type="text/javascript"
-	src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
 </script>
 <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <!-- clear default settings -->
 <style>
-	/* CLEAR DEFAULT SETTINGS **************************************************/
+    /* CLEAR DEFAULT SETTINGS **************************************************/
 
-	#sideMenu,
-	#top_title,
-	.patrollink,
-	#firstHeading,
-	#home_logo,
-	#sideMenu {
-		display: none;
-	}
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
 
-	#content {
-		padding: 0px;
-		width: 100%;
-		margin-top: 7px;
-		margin-left: 0px;
-		border: none;
-	}
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
 
-	#bodyContent h1,
-	#bodyContent h2,
-	#bodyContent h3,
-	#bodyContent h4,
-	#bodyContent h5 {
-		margin-bottom: 0px;
-	}
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
 
-	#bodyContent a[href ^="https://"],
-	.link-https {
-		padding-right: 0px;
-	}
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
 
-	html {
-		height: 100%;
-		min-height: 100%;
-		font-family: 'Raleway', sans-serif;
+    html {
+        height: 100%;
+        min-height: 100%;
+        font-family: 'Raleway', sans-serif;
 
-	}
+    }
 
-	body {
-		padding: 0px;
-		margin: 0px;
-		background: white;
+    body {
+        padding: 0px;
+        margin: 0px;
+        background: white;
 
-		font-family: 'Raleway', sans-serif;
+        font-family: 'Raleway', sans-serif;
 
-		display: flex;
-		flex-direction: column;
-	}
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 
 <!-- general -->
 <style>
-	.p {
-		text-align: justify;
-	}
+    .p {
+        text-align: justify;
+    }
 
-	.banner {
-		width: 100%;
-		background-size: cover;
-		margin-top: 100px;
-		z-index: 10;
-	}
+    .banner {
+        width: 100%;
+        background-size: cover;
+        margin-top: 100px;
+        z-index: 10;
+    }
 </style>
 
 <!-- loader -->
 <style>
-	#loader-wrapper {
-		display: flex;
-		align-items: center;
-		margin-top: calc((100%)/5);
-		justify-content: center;
-		height: 0.1vh;
-		width: 100vw;
-		z-index: 500;
-		position: fixed;
-		pointer-events: none;
-	}
+    #loader-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: calc((100%)/5);
+        justify-content: center;
+        height: 0.1vh;
+        width: 100vw;
+        z-index: 500;
+        position: fixed;
+        pointer-events: none;
+    }
 
-	#loader-bg {
-		position: fixed;
-		height: 200vw;
-		width: 200vw;
-		transform: translateY(0);
-		background-color: #6C8EC9;
-		transition-property: height, width, border-radius, transform;
-		transition-duration: 0.5s;
-		transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-		transition-delay: 0s, 0s, 0s, 1s;
-		border-radius: 0%;
-		-webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-		-moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-		box-shadow: 0px 0px 27px 0px #6E91CB;
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		overflow: hidden;
-	}
+    #loader-bg {
+        position: fixed;
+        height: 200vw;
+        width: 200vw;
+        transform: translateY(0);
+        background-color: #6C8EC9;
+        transition-property: height, width, border-radius, transform;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+        transition-delay: 0s, 0s, 0s, 1s;
+        border-radius: 0%;
+        -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+        -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+        box-shadow: 0px 0px 27px 0px #6E91CB;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
 
 
-	#loader-wrapper img {
-		width: 30vh;
+    #loader-wrapper img {
+        width: 30vh;
 
-	}
+    }
 
-	#loader-wrapper h1 {
-		color: #fafafc;
-		text-transform: uppercase;
-		font-family: 'montserrat-black', sans-serif !important;
-		position: absolute;
-		transform: translateY(15vh);
-		font-size: 2.2vw;
-		opacity: 100%;
-	}
+    #loader-wrapper h1 {
+        color: #fafafc;
+        text-transform: uppercase;
+        font-family: 'montserrat-black', sans-serif !important;
+        position: absolute;
+        transform: translateY(15vh);
+        font-size: 2.2vw;
+        opacity: 100%;
+    }
 
-	#loader-bg.loaded {
-		height: 35vh;
-		width: 35vh;
-		border-radius: 70%;
-		transform: translateY(-2000px);
-	}
+    #loader-bg.loaded {
+        height: 35vh;
+        width: 35vh;
+        border-radius: 70%;
+        transform: translateY(-2000px);
+    }
 </style>
 
 <!-- nav bar -->
 <style>
-	/* Navigation Bar */
-	/* -------------- NAVBAR ------------ */
-	.right-navbar {
-		align-self: flex-end;
-		/* overflow: hidden;  */
-		margin-left: auto;
-		margin-right: 15px;
-		cursor: pointer;
-	}
+    /* Navigation Bar */
+    /* -------------- NAVBAR ------------ */
+    .right-navbar {
+        align-self: flex-end;
+        /* overflow: hidden;  */
+        margin-left: auto;
+        margin-right: 15px;
+        cursor: pointer;
+    }
 
-	/* Style the navigation bar links */
-	.right-navbar a {
-		float: right;
-		/* Make sure that the links stay side-by-side */
-		display: block;
-		/* Change the display to block, for responsive reasons (see below) */
-		color: white;
-		/* White text color */
-		text-align: center;
-		/* Center the text */
-		padding: 14px 20px;
-		/* Add some padding */
-		text-decoration: none;
-		/* Remove underline */
-		font-size: 1.2em;
-		/* overflow: hidden; */
-	}
+    /* Style the navigation bar links */
+    .right-navbar a {
+        float: right;
+        /* Make sure that the links stay side-by-side */
+        display: block;
+        /* Change the display to block, for responsive reasons (see below) */
+        color: white;
+        /* White text color */
+        text-align: center;
+        /* Center the text */
+        padding: 14px 20px;
+        /* Add some padding */
+        text-decoration: none;
+        /* Remove underline */
+        font-size: 1.2em;
+        /* overflow: hidden; */
+    }
 
-	#nav {
-		display: flex;
-		flex-direction: row;
-		list-style: none inside;
-		margin: 0;
-		padding: 0;
-	}
+    #nav {
+        display: flex;
+        flex-direction: row;
+        list-style: none inside;
+        margin: 0;
+        padding: 0;
+    }
 
-	#nav li {
-		display: block;
-	}
+    #nav li {
+        display: block;
+    }
 
-	#nav li li a {
-		font-size: 90%;
-	}
+    #nav li li a {
+        font-size: 90%;
+    }
 
-	#nav ul {
-		padding: 0;
-		display: none;
-	}
+    #nav ul {
+        padding: 0;
+        display: none;
+    }
 
-	#nav li:hover ul {
-		display: block;
-	}
+    #nav li:hover ul {
+        display: block;
+    }
 
-	.right-navbar a:hover,
-	.dropdown:hover {
-		background-color: #B7E0FF;
-		/* Grey background color */
-		color: #002060;
-		/* Black text color */
-		pointer-events: visible;
-	}
+    .right-navbar a:hover,
+    .dropdown:hover {
+        background-color: #B7E0FF;
+        /* Grey background color */
+        color: #002060;
+        /* Black text color */
+        pointer-events: visible;
+    }
 
-	/* Header */
-	.circles {
-		background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
-		background-size: cover;
-		opacity: 80%;
-		margin: 0;
-		width: 100%;
-		background-repeat: no-repeat;
-	}
+    /* Header */
+    .circles {
+        background-image: url("https://2021.igem.org/wiki/images/1/16/T--Greece_United--header.png");
+        background-size: cover;
+        opacity: 80%;
+        margin: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+    }
 
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #B7E0FF;
-		opacity: 80%;
-		min-width: 160px;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		z-index: 10;
-	}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #B7E0FF;
+        opacity: 80%;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
 
-	.dropdown-content a {
-		float: none;
-		color: #002060;
-		padding: 14px 18px;
-		text-decoration: none;
-		display: block;
-		text-align: left;
-	}
+    .dropdown-content a {
+        float: none;
+        color: #002060;
+        padding: 14px 18px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
 
-	.dropdown-content a:hover {
-		background-color: #5893D4;
-		color: #002060;
-	}
+    .dropdown-content a:hover {
+        background-color: #5893D4;
+        color: #002060;
+    }
 
 
-	.dropdown:hover .dropdown-content {
-		display: block;
-	}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 
 <!-- progress bar -->
 <style>
-	#fixedOverlay {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		z-index: 12;
-		top: 18px;
-		transition: 1s;
-		font-family: "montserrat-light" !important;
-		/* background-color: #002060; */
-	}
+    #fixedOverlay {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 12;
+        top: 18px;
+        transition: 1s;
+        font-family: "montserrat-light" !important;
+        /* background-color: #002060; */
+    }
 
-	#fixedOverlay[bg=none],
-	#fixedOverlay[bg=dark] {
-		pointer-events: none;
-	}
+    #fixedOverlay[bg=none],
+    #fixedOverlay[bg=dark] {
+        pointer-events: none;
+    }
 
-	#fixedOverlay .scroll-wrapper {
-		display: flex;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		justify-content: space-between;
-		opacity: 1;
-		transition: 0.5s;
-	}
+    #fixedOverlay .scroll-wrapper {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-between;
+        opacity: 1;
+        transition: 0.5s;
+    }
 
-	#fixedOverlay .scroll-wrapper .scroll-area {
-		height: 100%;
-		width: 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+    #fixedOverlay .scroll-wrapper .scroll-area {
+        height: 100%;
+        width: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-	@media screen and (max-width: 767px) {
-		#fixedOverlay .scroll-wrapper .scroll-area {
-			width: 10vw;
-		}
-	}
+    @media screen and (max-width: 767px) {
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            width: 10vw;
+        }
+    }
 
-	#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-		width: 30%;
-		height: 30%;
-		background-color: rgba(98, 129, 239, 0.3);
-		border-radius: 10px;
-		max-width: 7px;
-	}
+    #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+        width: 30%;
+        height: 30%;
+        background-color: rgba(98, 129, 239, 0.3);
+        border-radius: 10px;
+        max-width: 7px;
+    }
 
-	#fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-		width: 100%;
-		background: #002060;
-		opacity: 100%;
-		height: 0%;
-		border-radius: 20px;
-		transition: background-color 0.5s;
-	}
+    #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+        width: 100%;
+        background: #002060;
+        opacity: 100%;
+        height: 0%;
+        border-radius: 20px;
+        transition: background-color 0.5s;
+    }
 
-	#fixedOverlay nav {
-		box-sizing: border-box;
-		z-index: 2;
-		pointer-events: none;
-		display: block;
-		transition: 0.5s;
-		height: 87px;
-	}
+    #fixedOverlay nav {
+        box-sizing: border-box;
+        z-index: 2;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        height: 87px;
+    }
 </style>
 
 <!-- back to top -->
 <style>
-	#BacktoTop {
-		display: none;
-		position: fixed;
-		bottom: 20px;
-		right: 30px;
-		z-index: 99;
-		font-size: 18px;
-		border: none;
-		outline: none;
-		background-color: #B8EBFF;
-		color: white;
-		cursor: pointer;
-		padding: 15px;
-		border-radius: 30%;
-	}
+    #BacktoTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #B8EBFF;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 30%;
+    }
 
-	#BacktoTop:hover {
-		background-color: #002060;
-	}
+    #BacktoTop:hover {
+        background-color: #002060;
+    }
 
-	.indexbutton {
-		display: none;
-		color: #FAFAFC;
-		text-transform: capitalize;
-		font-size: 1.4rem;
-		width: 100%;
-		text-align: center;
-		font-weight: bold;
-		padding: 16px 0;
-		height: 62px;
-		box-sizing: border-box;
-		cursor: pointer;
-		background-color: #6281EF;
-		z-index: 21;
-		transition: 0.5s;
-	}
+    .indexbutton {
+        display: none;
+        color: #FAFAFC;
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        padding: 16px 0;
+        height: 62px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: #6281EF;
+        z-index: 21;
+        transition: 0.5s;
+    }
 
-	@media (max-width: 800px) {
-		.indexbutton {
-			display: block;
-		}
-	}
+    @media (max-width: 800px) {
+        .indexbutton {
+            display: block;
+        }
+    }
 </style>
 
 <!-- in page menu -->
 <style>
-	.sideBlock {
-		text-transform: uppercase;
-		text-decoration: none;
-		float: left;
-		margin-left: 10vw;
-		margin-top: 400px;
-		position: -webkit-sticky;
-		position: fixed;
-		top: 30%;
-		margin: 200px 32px 0 4vw;
-		transform: translateY(-50%);
-		min-width: 20px;
-		max-width: 350px;
-		background: #ffffff;
-		opacity: 80%;
-		border-radius: 15%;
-		padding-left: 20px;
-		z-index: 2;
-	}
+    .sideBlock {
+        text-transform: uppercase;
+        text-decoration: none;
+        float: left;
+        margin-left: 10vw;
+        margin-top: 400px;
+        position: -webkit-sticky;
+        position: fixed;
+        top: 30%;
+        margin: 200px 32px 0 4vw;
+        transform: translateY(-50%);
+        min-width: 20px;
+        max-width: 350px;
+        background: #ffffff;
+        opacity: 80%;
+        border-radius: 15%;
+        padding-left: 20px;
+        z-index: 2;
+    }
 
-	@media (max-width: 1024px) {
-		.sideBlock {
-			margin: 200px 32px 0 4vw;
-		}
-	}
+    @media (max-width: 1024px) {
+        .sideBlock {
+            margin: 200px 32px 0 4vw;
+        }
+    }
 
-	.sideBlock b {
-		font-size: 1.4rem;
-		font-weight: bold;
-		margin-left: 0.25em;
-		padding-bottom: 20px;
-		display: block;
-	}
+    .sideBlock b {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 0.25em;
+        padding-bottom: 20px;
+        display: block;
+    }
 
-	.sideBlock ul {
-		margin: 1em 0;
-		padding: 0;
-	}
+    .sideBlock ul {
+        margin: 1em 0;
+        padding: 0;
+    }
 
-	.sideBlock a {
-		color: #002060;
-		text-decoration: none;
-		font-family: "lato-light", sans-serif;
-	}
+    .sideBlock a {
+        color: #002060;
+        text-decoration: none;
+        font-family: "lato-light", sans-serif;
+    }
 
-	.sideBlock li {
-		margin: 24px;
-		list-style: none;
-		color: #002060;
-		font-size: 1.1rem;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		margin-left: 0.25em;
-	}
+    .sideBlock li {
+        margin: 24px;
+        list-style: none;
+        color: #002060;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-left: 0.25em;
+    }
 
-	.sideBlock li:last-child {
-		margin-bottom: 0;
-	}
+    .sideBlock li:last-child {
+        margin-bottom: 0;
+    }
 
-	.sideBlock li div {
-		max-width: 15px;
-		max-height: 15px;
-		box-sizing: border-box;
-		border: 1px solid;
-		color: #002060;
-		border-radius: 2px;
-		transition: 0.5s;
-		margin-right: 8px;
-		height: 10vw;
-		width: 10vh;
-	}
+    .sideBlock li div {
+        max-width: 15px;
+        max-height: 15px;
+        box-sizing: border-box;
+        border: 1px solid;
+        color: #002060;
+        border-radius: 2px;
+        transition: 0.5s;
+        margin-right: 8px;
+        height: 10vw;
+        width: 10vh;
+    }
 
-	.sideBlock li.active div {
-		background-color: #002060;
-	}
+    .sideBlock li.active div {
+        background-color: #002060;
+    }
 
-	#content {
-		padding: 0px;
-		width: 100%;
-		margin-top: -7px;
-		margin-left: 0px;
-		border: none;
-		line-height: initial;
-	}
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: -7px;
+        margin-left: 0px;
+        border: none;
+        line-height: initial;
+    }
 </style>
 
 
 <!-- text wrapper -->
 <style>
-	#content-tag {
-		background-color: #ffffff;
-		position: relative;
-	}
+    #content-tag {
+        background-color: #ffffff;
+        position: relative;
+    }
 
-	.content p.photo-desc {
-		text-align: center !important;
-		font-size: 0.8em !important;
-	}
+    .content p.photo-desc {
+        text-align: center !important;
+        font-size: 0.8em !important;
+    }
 
-	#content-tag p {
-		margin: 0;
-		font-size: 1.2rem;
-		line-height: 1.5;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		text-align: justify;
-	}
+    #content-tag p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
 
-	#content-tag .contentBlock {
-		float: none;
-		margin: 0 auto;
-	}
+    #content-tag .contentBlock {
+        float: none;
+        margin: 0 auto;
+    }
 
-	#content {
-		padding: 0px;
-		width: 100%;
-		margin-top: -7px;
-		margin-left: 0px;
-		border: none;
-		line-height: initial;
-	}
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: -7px;
+        margin-left: 0px;
+        border: none;
+        line-height: initial;
+    }
 
-	.contentBlock {
-		width: 64vw;
-		max-width: 1000px;
-		/*change size*/
-		float: right;
-		display: flex;
-		flex-direction: column;
-	}
+    .contentBlock {
+        width: 64vw;
+        max-width: 1000px;
+        /*change size*/
+        float: right;
+        display: flex;
+        flex-direction: column;
+    }
 
-	.content {
-		padding: 64px;
-		border-radius: 5px;
-		box-shadow: 0 0 10px lightgray;
-		color: #121212;
-		margin-top: 40px;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		flex: 1 0 auto;
-	}
-
-
-	.content p:first-child {
-		margin-top: 0;
-	}
+    .content {
+        padding: 64px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px lightgray;
+        color: #121212;
+        margin-top: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
 
 
-	.content ul {
-		padding-inline-start: 20px;
+    .content p:first-child {
+        margin-top: 0;
+    }
 
-		list-style-image: none;
-		list-style-type: none;
-	}
 
-	.content ul li {
-		display: flex;
-		font-size: 1.2rem;
+    .content ul {
+        padding-inline-start: 20px;
 
-	}
+        list-style-image: none;
+        list-style-type: none;
+    }
 
-	.content ol li {
-		font-size: 1.2rem;
+    .content ul li {
+        display: flex;
+        font-size: 1.2rem;
 
-	}
+    }
 
-	.content ul li::before {
-		font-size: 1.2rem;
-		color: #000000;
-	}
+    .content ol li {
+        font-size: 1.2rem;
 
-	.content .splide ul li::before {
-		content: unset;
-	}
+    }
 
-	.content li {
-		margin: 10px;
-	}
+    .content ul li::before {
+        font-size: 1.2rem;
+        color: #000000;
+    }
 
-	.content li::marker {
-		color: #000000;
-		font-size: 1.3em;
-	}
+    .content .splide ul li::before {
+        content: unset;
+    }
 
-	.content h4,
-	.content h5 {
-		font-size: 1.2em;
-		text-transform: uppercase;
-		margin-block-end: 0.2em;
-		margin-block-start: 30px;
-	}
+    .content li {
+        margin: 10px;
+    }
 
-	.content h5 {
-		font-size: 1.2rem;
+    .content li::marker {
+        color: #000000;
+        font-size: 1.3em;
+    }
 
-	}
+    .content h4,
+    .content h5 {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-block-end: 0.2em;
+        margin-block-start: 30px;
+    }
 
-	.content a {
-		color: #2e64ec;
-		text-decoration: none;
-		text-align: center;
-		cursor: pointer;
-	}
+    .content h5 {
+        font-size: 1.2rem;
 
-	.content a.citation {
-		font-size: 0.6em;
-		vertical-align: super;
-	}
+    }
 
-	.content-paragraph {
-		margin: 0;
-		font-size: 1.2rem;
-		line-height: 1.5;
-		margin-top: 20px;
-		margin-bottom: 30px;
-		text-align: justify;
-	}
+    .content a {
+        color: #2e64ec;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .content a.citation {
+        font-size: 0.6em;
+        vertical-align: super;
+    }
+
+    .content-paragraph {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
 </style>
 
 <!-- slideshow -->
 <style>
-	/* Slideshow container */
-	.slideshow-container {
-		max-width: 500px;
-		position: relative;
-		margin: auto;
-		border: 4px solid #CEDDEF;
-	}
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 500px;
+        position: relative;
+        margin: auto;
+        border: 4px solid #CEDDEF;
+    }
 
-	/* Next & previous buttons */
-	.prev,
-	.next {
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		width: auto;
-		padding: 16px;
-		margin-top: -22px;
-		color: white;
-		font-weight: bold;
-		font-size: 18px;
-		transition: 0.6s ease;
-		border-radius: 0 3px 3px 0;
-		user-select: none;
-		background-color: rgba(0, 0, 0, 0.472);
-	}
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.472);
+    }
 
-	/* Position the "next button" to the right */
-	.next {
-		right: 0;
-		border-radius: 3px 0 0 3px;
-	}
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
 
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover,
-	.next:hover {
-		background-color: rgba(0, 0, 0, 0.883);
-	}
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.883);
+    }
 
-	/* Caption text */
-	.text {
-		color: #f2f2f2;
-		font-size: 15px;
-		padding: 8px 12px;
-		position: absolute;
-		bottom: 8px;
-		width: 100%;
-		text-align: center;
-	}
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
 
-	/* Number text (1/3 etc) */
-	.numbertext {
-		color: #f2f2f2;
-		font-size: 12px;
-		padding: 8px 12px;
-		position: absolute;
-		top: 0;
-	}
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
 
-	/* The dots/bullets/indicators */
-	.dot1 {
-		cursor: pointer;
-		height: 15px;
-		width: 15px;
-		margin: 0 2px;
-		background-color: #bbb;
-		border-radius: 50%;
-		display: inline-block;
-		transition: background-color 0.6s ease;
-	}
+    /* The dots/bullets/indicators */
+    .dot1 {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
 
-	.activeSlide1,
-	.dot1:hover {
-		background-color: #717171;
-	}
+    .activeSlide1,
+    .dot1:hover {
+        background-color: #717171;
+    }
 
-	.dot2 {
-		cursor: pointer;
-		height: 15px;
-		width: 15px;
-		margin: 0 2px;
-		background-color: #bbb;
-		border-radius: 50%;
-		display: inline-block;
-		transition: background-color 0.6s ease;
-	}
+    .dot2 {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
 
-	.activeSlide2,
-	.dot2:hover {
-		background-color: #717171;
-	}
+    .activeSlide2,
+    .dot2:hover {
+        background-color: #717171;
+    }
 
-	/* Fading animation */
-	.fade {
-		-webkit-animation-name: fade;
-		-webkit-animation-duration: 1.5s;
-		animation-name: fade;
-		animation-duration: 1.5s;
-	}
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
 
-	@-webkit-keyframes fade {
-		from {
-			opacity: .4
-		}
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
 
-		to {
-			opacity: 1
-		}
-	}
+        to {
+            opacity: 1
+        }
+    }
 
-	@keyframes fade {
-		from {
-			opacity: .4
-		}
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
 
-		to {
-			opacity: 1
-		}
-	}
+        to {
+            opacity: 1
+        }
+    }
 
-	/* On smaller screens, decrease text size */
-	@media only screen and (max-width: 300px) {
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
 
-		.prev,
-		.next,
-		.text {
-			font-size: 11px
-		}
-	}
+        .prev,
+        .next,
+        .text {
+            font-size: 11px
+        }
+    }
 </style>
 
 <!-- header text -->
 <style>
-	.header h1 {
-		font-size: 50px;
-		margin-block-end: 0;
-		color: #1F3C88;
-		font-family: "raleway", sans-serif !important;
-		padding-bottom: px;
-	}
+    .header h1 {
+        font-size: 50px;
+        margin-block-end: 0;
+        color: #1F3C88;
+        font-family: "raleway", sans-serif !important;
+        padding-bottom: px;
+    }
 
-	.header h2 {
-		margin-block-start: 0;
-		font-family: "raleway", sans-serif !important;
-		text-transform: uppercase;
-		font-size: 30px;
-		color: #5893D4;
-	}
+    .header h2 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #5893D4;
+    }
 </style>
 
 <body>
-	<!-- basic elements -->
+    <!-- basic elements -->
 
-	<!-- loader -->
-	<div id="loader-wrapper">
-		<div id="loader-bg">
-			<img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
-		</div>
-	</div>
-	<!-- header -->
-	<img src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--header-contribution.png" class="banner">
+    <!-- loader -->
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
+    <!-- header -->
+    <img src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--header-contribution.png" class="banner">
 
-	<!-- navigation bar -->
-	<div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
-		<div style="padding: 14px 20px;
+    <!-- navigation bar -->
+    <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
+        <div style="padding: 14px 20px;
         display: flex;
         cursor: pointer;">
-			<a href="https://2021.igem.org/Team:Greece_United" class="active">
+            <a href="https://2021.igem.org/Team:Greece_United" class="active">
 
 
-				<img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
-					src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
-			</a>
-		</div>
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+            </a>
+        </div>
 
-		<div class="right-navbar">
-			<ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+        <div class="right-navbar">
+            <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
-						</button>
-					</div>
-				</li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        </button>
+                    </div>
+                </li>
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Impact">IMPACT</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a>
-						</div>
-					</div>
-				</li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Impact">IMPACT</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a>
+                        </div>
+                    </div>
+                </li>
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Part_Collection">PART COLLECTION</a>
-						</div>
-					</div>
-				</li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Part_Collection">PART COLLECTION</a>
+                        </div>
+                    </div>
+                </li>
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
-						</div>
-					</div>
-				</li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                        </div>
+                    </div>
+                </li>
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
-							PRACTICES</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
 
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-						</div>
-					</div>
-				</li>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
+                        </div>
+                    </div>
+                </li>
 
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">
-							ENTREPRENEURSHIP</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/MarketAnalysis">MARKET
-								ANALYSIS</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/StrategicPlanning">STRATEGIC
-								PLANNING</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/ProductDescription">PRODUCT
-								DESCRIPTION</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="dropdown" style="float: left;">
-						<button
-							style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin-right: 50px;z-index: 10;"
-							onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
-						</button>
-						<div class="dropdown-content">
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-							<a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a><a
-								onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-								href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">
+                            ENTREPRENEURSHIP</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/MarketAnalysis">MARKET
+                                ANALYSIS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/StrategicPlanning">STRATEGIC
+                                PLANNING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/ProductDescription">PRODUCT
+                                DESCRIPTION</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin-right: 50px;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a><a
+                                onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-	<!-- Back to Top Button -->
-	<button onclick="topFunction()" id="BacktoTop" title="Go to top">
-		<svg width="24" height="24" viewBox="0 0 24 24">
-			<path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
-		</svg>
-	</button>
-	<!-- Back to Top Button End-->
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
 
-	<!-- Progress bar -->
-	<div id="globalWrapper">
-		<div id="fixedOverlay" bg="none">
-			<div class="scroll-wrapper">
-				<div id="sidebar-wrapper" class="scroll-area">
-					<div id="scrollbar-container">
-						<div id="scrollbar" style="height: 3%;"></div>
-					</div>
-				</div>
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper">
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 3%;"></div>
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</div>
-	<!-- Progress bar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
 
-	<!-- in page menu -->
-	<div id="index" class="sideBlock">
-		<div id="indexbutton" class="indexbutton"></div>
-		<!-- <b>Collaborations</b> -->
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading1">Dry Lab</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading2">Handbooks</a>
-			</li>
-		</ul>
-		<ul>
-			<li class="active">
-				<div></div>
-				<a href="#heading3">App</a>
-			</li>
-		</ul>
-	</div>
-	<!-- end of basic elements -->
-
-
-	<!--DRy lab part -->
-	<div id="heading1">
-		<div style="margin-top: 100px; margin-left:300px;" id="content-tag">
-			<div class="contentBlock">
-				<div class="content">
-					<b>
-						<div class="header">
-							<h1>Contribution:</h1>
-							<h2>Model</h2>
-						</div>
-					</b>
-					<p class="content-paragraph" style="text-align: justify;">
-						The second part of our model, exosome travelling, was developed
-						using C++. In the cell line we wanted to use and with the target of simulating
-						exosome movement in a joint, we could not gather all the needed constants and
-						values to complete it. Though we still developed it, documented our code properly
-						and made customizable. <br><br>
-						The program describes a visualization of cells in a 2D line, and with a simple multiplication, a
-						2D circle.
-						The cell that produces the exosome is in the start of line or the center of the circle. Then
-						using a probability
-						factor k (probability that an exosome will be inserted in the first cell it encounters and not
-						the next ones),
-						we calculate how many cells will be affected and how much exosomes will get in each one. This
-						can be an indicator
-						of effectiveness and extent of a solution. Also, we take into consideration the receptors of a
-						cell, and how many
-						receptors are needed to include an exosome inside a cell and how often they are renewed and
-						available to accept more
-						exosomes.<br> <br>
-						The iteration of the program uses complex if structures, loops, objects, and queues. Though,
-						anyone can just
-						change the starting values to describe another cell line and use it for their project
-						simulations.
-						With simple calculations the 2D shape can be turned into a 3D visualization that is closer to
-						reality
-						and more accurate.
-						<br><br>
-						You can find the executable code in our <a
-							href="https://github.com/melinazik/iGEM/blob/main/model/model-A-B-01.cpp">github
-							page</a>.<br>
-						You may find more details of the functionality of our whole model <a
-							href="https://2021.igem.org/Team:Greece_United/Model">here</a>.<br>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- HP -->
-	<div id="heading2">
-		<div style="margin-top: 50px; margin-left:300px;" id="content-tag">
-			<div class="contentBlock">
-				<div class="content">
-					<!-- <h2><b>Day #1</b></h2> -->
-					<b>
-						<div class="header">
-							<h1>Contribution:</h1>
-							<h2>Handbooks</h2>
-						</div>
-					</b>
-					<br><br>
-					<p class="content-paragraph" style="text-align: justify;">
-						As a team we had a long, tough, exhausting but amazing and teaching iGEM journey.
-						Learning from our mistakes and wanting to pass our epiphanies to the next person that
-						will be in our shoes, we created two guides. <br><br>
-					</p>
-					<div class="header">
-						<h1>"How To iGEM"</h1>
-					</div>
-					<p>
-						First one is “HOW TO iGEM”, a thorough and long handbook for someone that may not yet know what
-						the iGEM acronym stands for, but even for someone who has 2 months left for the wiki freeze.
-						We sincerely think it fits all shapes and sizes of future participants. For that, we have to
-						thank KOREA_HS, our high school partner team that enriched this guide with their view of point,
-						offering insights we could never have thought of or experienced. The creation process for this
-						guide
-						exceeded the limits of a simple collaboration or partnership and gave both teams the opportunity
-						to see iGEM through the eyes of someone completely different from them. It was then that we
-						realized how similar but still unique each team’s experiences are. It was unexpected for us,
-						some Greek university students, and a bit startling, to find out we had and exploited the chance
-						to
-						unite, familiarize and bond with much younger people from another peninsula! <br><br>
-					</p>
-					<embed height="800px" style="align-content: center;"
-						src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--how-to-igem.pdf" width="625px">
-					<br><br>
-					<p>
-						The next guide came to be after it became pretty clear to us that we had to share our knowledge
-						and newly gained expertise, for others to succeed along with us. We believe, irrespectively of
-						how
-						other people behave, that it is a duty of an iGEM team when successful in a field or task, to
-						share
-						their acquired knowledge. After all, that is the trait that allows the human kind to advance, in
-						contrast
-						to other species that do not share and build on collective knowledge. Here is the guide <b>“How
-							to Crowdfund”!</b><br><br>
-					</p>
-
-					<div class="header">
-						<h1>"How To CFR"</h1>
-					</div>
-					<p>
-						The economy in each country or region is for sure different from any other, and how frequent
-						big sponsorships come along, depends on it. One thing anyone can be sure of when looking for
-						financial support, is the willingness of people to support new ideas by young students trying to
-						change the world in one way or another. Crowdfunding gives you that. It gives the opportunity to
-						ordinary people to support and be part of an idea without the judgmental and precautious point
-						of
-						view of a big corporation. <br><br>
-						In our iGEM experience we used crowdfunding to raise money for our registration fee, and people
-						responded to us and helped us in our mission. We managed to raise 52% of our original target
-						(6000$),
-						possibly the most successful Greek iGEM crowdfunding so far. So, many Greek teams contacted us
-						for advice
-						on how to crowdfund. We thought, instead of spreading this self-learned experience
-						mouth-to-mouth, to make
-						a simple generalized guide for any country, so that any team could use our experience to
-						furtherly succeed
-						in their fundraising efforts. Also, we hope to spread the idea of crowdfunding, since it is not
-						widely
-						used within iGEM teams, and endorse the connection of a project with the society.<br><br>
-						Here are the steps you should follow & some tips!<br><br>
-						<b>1)</b> Look up crowdfunding platforms and choose those that work best in your country.
-						If there are many, favor those that work in most countries, so that it will be easier for people
-						from
-						all around the world to discover and support you. <br><br>
-						­ <b>2)</b> Check the crowdfunding types each platform allows. E.g.,
-						some support only non-profit organization work or start-ups. <br><br>
-						­ <b>3)</b> Which one has the lowest fee? (Watch out! Some platforms seem to have a very low
-						fee,
-						though they only allow payments through PayPal so there are additional fees you didn’t see at
-						first)<br><br>
-						­ <b>4)</b>Chose the crowdfunding platform that has the most available paying methods (you need
-						to make it easy to the possible supporters to contribute to your cause, e.g. if you can donate
-						only via PayPal and the supporter does not have in account, it is very possible that he/she will
-						not end up contributing). <br><br>
-						<b>5)</b>Look up your country’s financial laws. What is the limit for money to be taxed? You
-						would like to raise less than that so that you don’t have to engage with tax paying procedures.
-						(e.g. In Greece if you get less than 6.000$ euro, it is not taxable, so we set the target to
-						6.000$) <br><br>
-						<b>6)</b>Crowdfunding platforms usually ask for a personal account to be registered in order to
-						receive the money. So, someone from your team should add their personal account. Be sure to have
-						transparency in your transactions. (e.g., we had a shared OneNote where we posted when and how
-						much money were withdrawn, with notes and screenshots)<br><br>
-						<b>7)</b>Write a descriptive text to accompany your fundraising campaign. Include photos,
-						introduce the team’s members, show your team’s character and make it interesting, inspiring and
-						eye-catching. Show them your work, your vision and be clear on the reason the money will be
-						used. You can even reward certain amount of donations (e.g., we sent out 3D printed keychains
-						with our team’s name for every 100$ donation!) <br><br>
-						<b>8)</b>Promote it! Let the world know you are raising money! Spread the news to your friends,
-						family, old soccer mates or Facebook groups. Ideally, get in touch with groups of people
-						affected by the problem you are planning to solve. Statistics show that if you raise 25% of your
-						target in the first days, your chances of completing your target raise by up to 90%!!<br><br>
-						<b>9)</b>Keep your backers updated! Send them a thank-you email, or even create a weekly or
-						monthly newsletter to let them know about your team’s progress. It’s nice to show them that
-						their money is well spent!<br><br>
-						<b>10)</b>Don’t forget to attribute and acknowledge their contribution to your success in your
-						wiki or social media. <br><br>
-
-						Here is a helpful infographic! <br><br>
-					</p>
-					<embed height="700px" src="https://2021.igem.org/wiki/images/6/60/T--Greece_United--how-to-cfr.pdf"
-						width="625px">
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- App -->
-	<div id="heading3">
-		<div style="margin-top: 100px; padding-bottom: 100px; margin-left:300px;" id="content-tag">
-			<div class="contentBlock">
-				<div class="content">
-					<!-- <h2><b>Day #2</b></h2> -->
-					<b>
-						<div class="header">
-							<h1>Risk Factor</h1>
-							<h2>Calculator</h2>
-						</div>
-					</b>
-					<br><br>
-					<p class="content-paragraph">
-
-						ENTER TEXT
-
-						The second day started of with a presentation from each organizing team about the
-						<b>troubleshooting process</b>
-						they experienced with their projects. What problems occurred, how they solved them and what
-						changes had to
-						happen to reach to the point they are today. All presentations were really informative and let
-						us understand
-						each other’s projects, ask questions and realize that we are all in this together, our struggles
-						are the same.<br><br>
-						Next part was <b>“a nBLAST from the past”</b> were iGEM Alumni joined us to answer questions
-						about their experience,
-						such us “What was the most random thing (unrelated to your field of expertise) that you learned
-						through iGEM?”,
-						“Tell us a fun iGEM story.”, “How did iGEM help you in your next projects?”.
-						The alumni that participated were the past members Platon Megagiannis (iGEM Thessaloniki 2019),
-						Nikos Kalavros
-						(iGEM Athens 2019), Anastasis Galanis (iGEM Athens 2019), Kostas Ragkios (EPFL 2019),
-						but also the ambassador Leandros Tsiotos and the judge Dimitris Michailidis. <br><br>
-						This part was not a formal presentation, rather a friendly conversation, through which we took a
-						glimpse of our future as iGEM alumni. It was a chance to realize that all will be over at some
-						point,
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- footer -->
-	<div class="footer">
-		<!-- Footer -->
-		<br><br><br><br>
-		<hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-
-		<ul>
-			<li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
-						aria-hidden="true"></i></a></li>
-			<li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
-						aria-hidden="true"></i></a></li>
-			<li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
-						class="fa fa-instagram" aria-hidden="true"></i></a></li>
-			<li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
-						aria-hidden="true"></i></a></li>
-			<li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
-						class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			<li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
-						class="fa fa-youtube" aria-hidden="true"></i></a></li>
-			<li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
-						aria-hidden="true"></i></a></li>
-			<li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
-						aria-hidden="true"></i></a></li>
-		</ul>
-		<br><br><br><br><br><br><br>
-		<hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
-
-		<br><br><br><br><br><br><br><br>
+    <!-- in page menu -->
+    <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton"></div>
+        <!-- <b>Collaborations</b> -->
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Dry Lab</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Handbooks</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">App</a>
+            </li>
+        </ul>
+    </div>
+    <!-- end of basic elements -->
 
 
-		<div style="display:flex;flex-wrap:wrap; ">
-			<div class="col">
-				<a href="https://igemnous.med.duth.gr/" target="_blank">
-					<img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
-						src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
-				</a>
+    <!--DRy lab part -->
+    <div id="heading1">
+        <div style="margin-top: 100px; margin-left:300px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <b>
+                        <div class="header">
+                            <h1>Contribution:</h1>
+                            <h2>Model</h2>
+                        </div>
+                    </b>
+                    <p class="content-paragraph" style="text-align: justify;">
+                        A computational model for exosome migration developed in C++. The model can be used for in
+                        silico experiments to assess the effectiveness of an exosome delivery method.
+                        <br><br>
+                        The model treats cells in a 2D line, and with a simple multiplication, a 2D circle: the cell
+                        that produces the exosome is in the start of the line or the center of the circle.
+                        <br><br>
+                        The model calculates how many exosomes enter a cell, and how many cells are affected, taking
+                        into consideration:
+                        (1) a probability factor k (probability that an exosome will be inserted in the first cell it
+                        encounters and not the next ones),
+                        (2) the number of receptors of a cell,
+                        (3) the number receptors needed to include an exosome and
+                        (4) how often the receptors are renewed and available to accept more exosomes.
 
-			</div>
+                        <br><br>
+                        All the above are parametrizable variables. Each iteration of the program uses complex if
+                        structures, loops, objects, and queues. With simple calculations the 2D shape can be turned into
+                        a 3D visualization.
+                        <br><br>
+                        You can find the executable code in our <a
+                        style="color:#5245da" target="_blank" href="https://github.com/melinazik/iGEM/blob/main/model/model-A-B-01.cpp">github
+                            page</a>.<br><br>
+                        You may find more details of the functionality of our whole model <a
+                        style="color:#5245da" href="https://2021.igem.org/Team:Greece_United/Model">here</a>.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- HP -->
+    <div id="heading2">
+        <div style="margin-top: 50px; margin-left:300px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <!-- <h2><b>Day #1</b></h2> -->
+                    <b>
+                        <div class="header">
+                            <h1>Contribution:</h1>
+                            <h2>Handbooks</h2>
+                        </div>
+                    </b>
+                    <br><br>
+                    <p class="content-paragraph" style="text-align: justify;">
+                        As a team we had a long, tough, exhausting but amazing iGEM journey. Learning from our mistakes,
+                        we want to pass our epiphanies to the next person who will be in our shoes. Here are two guides.
+                        <br><br>
+                    </p>
+                    <div class="header">
+                        <h1>"How To iGEM"</h1>
+                    </div>
+                    <p>
+                        A thorough handbook for someone who may not yet know what the iGEM acronym stands for, but even
+                        for someone who has 2 months left for the wiki freeze. We sincerely think it fits all shapes and
+                        sizes of future iGEM participants. We would like to acknowledge KOREA_HS, our high school
+                        partner team, who enriched this guide from their high school team perspective. Developing this
+                        guide exceeded the limits of a simple collaboration or partnership and gave both teams the
+                        opportunity to see iGEM from a different perspective. We realized how similar but still unique
+                        each team’s experiences are and managed to familiarize and bond with much younger people from
+                        another peninsula!
+                        <br><br>
+                    </p>
+                    <embed height="800px" style="align-content: center;"
+                        src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--how-to-igem.pdf" width="625px">
+                    <br><br>
 
-			<div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-				<div class="footer_sponsors"
-					style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-					<a href="https://duth.gr/" target="_blank"><img
-							src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
-							style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-					<a href="https://www.geneious.com/" target="_blank"><img
-							src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
-							style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-					<a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
-							src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
-							style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
-					<a href="https://bioemtech.com/" target="_blank"><img
-							src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
-							style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
-				</div>
-			</div>
+                    <div class="header">
+                        <h1>"How To CFR"</h1>
+                    </div>
+                    <p>
+                        Crowdfunding gives the opportunity to ordinary people to support and be part of a research
+                        project and enhance science-society collaboration.
+                        <br><br>
+                        We used crowdfunding to raise money for the iGEM registration fee. Around 70 individuals helped
+                        us raise 52% of our original target (6000$), possibly the most successful Greek iGEM
+                        crowdfunding so far.
+                        <br><br>
+                        Here are the steps you should follow & some tips!<br>
 
-		</div>
+                        <br /><br />&nbsp;1)&nbsp;&nbsp;Look up crowdfunding platforms and choose those that work best
+                        in your country. If there are many, choose those that work in most countries, so that it will be
+                        easier for people from all around the world to discover and support you.
+                        <br /><br />&nbsp;2)&nbsp;&nbsp;Check the crowdfunding types each platform allows. E.g., some
+                        support only non-profit organizations or start-ups.
+                        <br /><br />&nbsp;3)&nbsp;&nbsp;Carefully consider the fee. Watch out! Some platforms seem to
+                        have a very low fee, though they only allow payments through PayPal so there are additional fees
+                        you dodn’t see at first.
+                        <br /><br />&nbsp;4)&nbsp;&nbsp;Chose the crowdfunding platform that has more options for people
+                        to donate. You need to make it easy to the possible supporters to contribute to your cause. For
+                        example, if you can donate only via PayPal and the supporter does not have an account, it is
+                        highly likely that they quit trying to contribute.
+                        <br /><br />&nbsp;5)&nbsp;&nbsp;Look up your country’s financial laws. What is the limit for
+                        money to be taxed? You would like to raise less than that so that you don’t have to engage with
+                        tax paying procedures. (e.g. In Greece today if you get less than 6.000$ euro, it is not
+                        taxable, so we set the target to 6.000$)
+                        <br /><br />&nbsp;6)&nbsp;&nbsp;Crowdfunding platforms usually ask for a personal bank account
+                        to transfer donations. So, someone from your team should add their personal account. Be sure to
+                        have transparency in your transactions. (e.g., we had a shared OneNote where we posted when and
+                        how much money were withdrawn, with thorough notes and screenshots).
+                        <br /><br />&nbsp;7)&nbsp;&nbsp;Write a descriptive text to accompany your fundraising campaign.
+                        Include photos, introduce the team’s members, show your team’s character and make it
+                        interesting, inspiring and eye-catching. Show them your work, your vision and be clear on how
+                        you intend to use the funds. You can even thank your supporters (e.g., we sent out 3D printed
+                        keychains with our team’s name for every 100$ donation!)
+                        <br /><br />&nbsp;8)&nbsp;&nbsp;Promote it! Let the world know you are raising money! Spread the
+                        news to your friends, family, old soccer mates or Facebook groups. Ideally, get in touch with
+                        groups of people affected by the problem you are planning to solve. Statistics show that if you
+                        raise 25% of your target in the first days, your chances of completing your target rise by up to
+                        90%!!
+                        <br /><br />&nbsp;9)&nbsp;&nbsp;Keep your backers updated! Send them a thank-you email, or even
+                        create a weekly or monthly newsletter to let them know about your team’s progress. It’s nice to
+                        show them that their money is well spent!
+                        <br /><br />&nbsp;10)&nbsp;&nbsp;Don’t forget to attribute and acknowledge their contribution to
+                        your success in your wiki or social media.
+                        <br><br>
 
-	</div>
+                        Here is a helpful infographic! <br><br>
+                    </p>
+                    <embed height="700px" src="https://2021.igem.org/wiki/images/6/60/T--Greece_United--how-to-cfr.pdf"
+                        width="625px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- App -->
+    <div id="heading3">
+        <div style="margin-top: 100px; padding-bottom: 100px; margin-left:300px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <!-- <h2><b>Day #2</b></h2> -->
+                    <b>
+                        <div class="header">
+                            <h1>Risk Factor</h1>
+                            <h2>Calculator</h2>
+                        </div>
+                    </b>
+                    <br><br>
+                    <p class="content-paragraph">
+
+                        A novel online osteoarthritis risk calculator that uses medical evidence from recent high
+                        evidence level medical publications to estimate personalized risk for osteoarthritis.
+                        <br><br>
+                        The Osteoarthritis Risk Calculator is available online. The citizen can visit the page
+                        anonymously and provide a few personal details (related to occupation, hobbies, musculoskeletal
+                        injuries, and common health conditions and behaviours). The information is used against the
+                        available evidence coded into the dynamic risk repository to determine whether the person
+                        satisfies any of the conditions for osteoarthritis risk, based on the medical evidence encoded
+                        in the dynamic risk repository. If any risk is identified, the likelihood (or odds) of getting
+                        osteoarthritis is presented together with the causing agent or exposure and the pointer to the
+                        scientific publication presenting the respective evidence.
+                        <br><br>
+                        The NOUS OA Risk Calculator is expandable and can include new risk evidence when this is
+                        published.The tool is based on the CARRE health risk ontology and expands the CARRE health risk database
+                        (<a style="color:#5245da"  target="_blank"href="https://www.carre-project.eu/">CARRE</a> is an EU FP7 ICT
+                        project, Contract No. 611140).
+                        <br><br>
+                        During development, we conducted a structured literature research and identified 28
+                        osteoarthritis risk associations. They were described using the CARRE ontology and submitted as
+                        a contribution to the CARRE online risk factor repository.
+                        <br><br>
+                        Use the NOUS OA Risk Calculator AEGLE <a style="color:#5245da"
+                        target="_blank" href="https://2021.igem.org/Team:Greece_United/Model/App/Calculator">here.</a>
+
+                            <br><br>
+                        Learn more about the software and the medical evidence behind the tool 
+                        <a style="color:#5245da" href="https://2021.igem.org/Team:Greece_United/Model/App">here</a>
+                        <br><br>
+                        Get the software from Github <a style="color:#5245da" target="_blank" href="https://github.com/melinazik/iGEM/tree/main/webApp">here.</a>
+                        <br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- Footer -->
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
+
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 
@@ -1231,116 +1207,118 @@
 
 <!-- loader -->
 <script>
-	// Loader
-	window.addEventListener("load", function () {
-		let loader = document.getElementById('loader-bg');
+    // Loader
+    window.addEventListener("load", function () {
+        let loader = document.getElementById('loader-bg');
 
-		setTimeout(function () {
-			loader.classList.add('loaded')
-		}, 100);
-	});
+        setTimeout(function () {
+            loader.classList.add('loaded')
+        }, 100);
+    });
 </script>
 
 <script>
-	function changeColor(x) {
-		x.style.background = '#5893D4';
-		x.style.color = '#002060';
-	}
+    function changeColor(x) {
+        x.style.background = '#5893D4';
+        x.style.color = '#002060';
+    }
 
-	function normalColor(x) {
-		x.style.background = '#B7E0FF';
-	}
+    function normalColor(x) {
+        x.style.background = '#B7E0FF';
+    }
 </script>
 
 <!-- Back to Top Button -->
 <script>
-	var mybutton = document.getElementById("BacktoTop");
+    var mybutton = document.getElementById("BacktoTop");
 
-	window.onscroll = function () {
-		scrollFunction()
-	};
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
-	function scrollFunction() {
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			mybutton.style.display = "block";
-		} else {
-			mybutton.style.display = "none";
-		}
-	}
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
 
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>
 
 <!-- scroll script -->
 <script>
-	var textSection = null;
-	var navbar = document.getElementById("navbar");
+    var textSection = null;
+    var navbar = document.getElementById("navbar");
 
-	window.addEventListener('load', function () {
-		textSection = document.querySelector('.elevate-navbar');
-		checkScrollPos();
-		checkBackToTopPos();
-	})
-	window.addEventListener('scroll', function () {
-		updateScrollbar();
-		checkNavbarPos();
-		checkScrollPos();
-		checkBackToTopPos();
-	});
+    window.addEventListener('load', function () {
+        textSection = document.querySelector('.elevate-navbar');
+        checkScrollPos();
+        checkBackToTopPos();
+    })
+    window.addEventListener('scroll', function () {
+        updateScrollbar();
+        checkNavbarPos();
+        checkScrollPos();
+        checkBackToTopPos();
+    });
 
-	function checkScrollPos() {
-		var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-		var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-		let scrollWrapper = document.querySelector('.scroll-wrapper');
-		if (scrollbarBottom >= footerTop) {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll", "true");
-		} else {
-			if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll", "false");
-		}
-	}
+    function checkScrollPos() {
+        var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+        var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+        let scrollWrapper = document.querySelector('.scroll-wrapper');
+        if (scrollbarBottom >= footerTop) {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                "true");
+        } else {
+            if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                "false");
+        }
+    }
 
-	function checkBackToTopPos() {
-		if ($(window).scrollTop() > 1000) {
-			$('#backtotop-wrapper').addClass('scrolled')
-		} else $('#backtotop-wrapper').removeClass('scrolled')
-	}
-	$(document).ready(function () {
-		$('#backtotop-wrapper').on('click', function () {
-			$('html, body').animate({
-				'scrollTop': $('body').offset().top
-			}, 2000);
-		});
-	});
+    function checkBackToTopPos() {
+        if ($(window).scrollTop() > 1000) {
+            $('#backtotop-wrapper').addClass('scrolled')
+        } else $('#backtotop-wrapper').removeClass('scrolled')
+    }
+    $(document).ready(function () {
+        $('#backtotop-wrapper').on('click', function () {
+            $('html, body').animate({
+                'scrollTop': $('body').offset().top
+            }, 2000);
+        });
+    });
 
-	function updateScrollbar() {
-		var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-		var height = document.documentElement.scrollHeight - window.innerHeight;;
-		var scrolled = (winScroll / height) * 100;
-		document.getElementById("scrollbar").style.height = scrolled + "%";
-	}
+    function updateScrollbar() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - window.innerHeight;;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("scrollbar").style.height = scrolled + "%";
+    }
 
-	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 400,
-		speedAsDuration: true,
-		offset: 160
-	});
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 400,
+        speedAsDuration: true,
+        offset: 160
+    });
 
-	document.getElementById("fixedOverlay").classList.add("project");
+    document.getElementById("fixedOverlay").classList.add("project");
 </script>
 
 <!-- navigation bar -->
 <script>
-	function changeColor(x) {
-		x.style.background = '#5893D4';
-		x.style.color = '#002060';
-	}
+    function changeColor(x) {
+        x.style.background = '#5893D4';
+        x.style.color = '#002060';
+    }
 
-	function normalColor(x) {
-		x.style.background = '#B7E0FF';
-	}
+    function normalColor(x) {
+        x.style.background = '#B7E0FF';
+    }
 </script>
 
 </html>
