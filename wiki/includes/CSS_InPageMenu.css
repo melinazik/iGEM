@@ -68,7 +68,7 @@
 }
 
 /* in page menu */
-.indexbutton {
+/* .indexbutton {
     display: none;
     color: #FAFAFC;
     text-transform: capitalize;
@@ -83,13 +83,13 @@
     background-color: #6281EF;
     z-index: 2;
     transition: 0.5s;
-}
+} */
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .indexbutton {
         display: block;
     }
-}
+} */
 
 .sideBlock {
     text-transform: uppercase;
@@ -169,7 +169,7 @@
     background-color: #002060;
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .sideBlock {
         position: fixed;
         bottom: 0;
@@ -226,8 +226,8 @@
 
     .sideBlock.open {
         transform: translateY(0);
-    }
-}
+    } 
+}*/
 
 
 
