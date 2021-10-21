@@ -362,28 +362,7 @@
     }
 
     /* in page menu */
-    .indexbutton {
-        display: none;
-        color: #FAFAFC;
-        text-transform: capitalize;
-        font-size: 1.4rem;
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        padding: 16px 0;
-        height: 62px;
-        box-sizing: border-box;
-        cursor: pointer;
-        background-color: #6281EF;
-        z-index: 21;
-        transition: 0.5s;
-    }
-
-    @media (max-width: 800px) {
-        .indexbutton {
-            display: block;
-        }
-    }
+    
 
     .sideBlock {
         text-transform: uppercase;
@@ -463,7 +442,7 @@
         background-color: #002060;
     }
 
-    @media (max-width: 800px) {
+    /* @media (max-width: 800px) {
         .sideBlock {
             position: fixed;
             bottom: 0;
@@ -521,7 +500,7 @@
         .sideBlock.open {
             transform: translateY(0);
         }
-    }
+    } */
 
 
     #content {
@@ -792,13 +771,7 @@
         <ul>
             <li class="active">
                 <div></div>
-                <a href="#heading4">Results - A</a>
-            </li>
-        </ul>
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading5">Results - B</a>
+                <a href="#heading4">Results</a>
             </li>
         </ul>
         <ul>
@@ -816,32 +789,30 @@
     </div>
 
     <!-- introduction -->
-    <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading1">
+    <div id="heading1">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
                         <h1>Introduction</h1>
                     </div>
+                    <br><br>
                     <p class="content-paragraph">We aimed at developing mathematical models and a genetic circuit in
                         order
                         better understand our Wet Lab experiments. The results from our Dry Lab work would later be used
                         to
                         adjust experiments, having had a prior estimation of the expected results deriving from our
                         biological work.
-                        <br><br> Our main goals were to:
-                        <li><b>1)</b>&nbsp;&nbsp;develop an accurate model that describes the formation of exosomes and
-                            the
-                            delivery of miRNA-140 to the chondrocytes.</li>
-                        <li><b>2)</b>&nbsp;&nbsp;help the Wet Lab team adjust the design of the ongoing experiments by
-                            consulting the results of our mathematical model simulations. </li>
-                        <li><b>3)</b>&nbsp;&nbsp;Build a Genetic Circuit Model to investigate the feasibility of our
+                        <br><br> Our main goals were to:<br>
+                        <b>1)</b> develop an accurate model that describes the formation of exosomes and
+                            the delivery of miRNA-140 to the chondrocytes. <br>
+                        <b>2)</b> help the Wet Lab team adjust the design of the ongoing experiments by
+                            consulting the results of our mathematical model simulations. <br>
+                        <b>3)</b> Build a Genetic Circuit Model to investigate the feasibility of our
                             proposed implementation and develop an approach to tackle the “low transfection” problem the
-                            Wet
-                            Lab team encountered.</li>
-                        <li><b>4)</b>&nbsp;&nbsp;Combine our Exosome Production Model (1) with the Genetic Circuit Model
-                            (2)
-                            to draw conclusions on the general functionality of our proposed implementation.</li>
+                            Wet Lab team encountered.<br>
+                        <b>4)</b> Combine our Exosome Production Model (1) with the Genetic Circuit Model
+                            (2) to draw conclusions on the general functionality of our proposed implementation.<br>
                     </p>
                 </div>
             </div>
@@ -849,31 +820,28 @@
     </div>
 
     <!-- Exosome Model A -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading2">
+    <div id="heading2">
+        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
                         <h1>Exosome Model</h1>
                     </div>
                     <br><br>
+                    <p class="content-paragraph">
+                        We created two models that calculate the levels of exosomes carrying miRNA
+                        to chondrocytes of the cartilage.
+                        The process of building each model is described below and is mainly based on literature data
+                        known to date.
+                        At first, we made our simulations and calculations and predicted the expected result of the Wet
+                        Lab experiments to guide them.
+                        Then, we hoped to compare our data to their findings and use it to fit our model and make it more
+                        accurate and closer to real-life conditions.
+                    </p>
                     <div class="header">
                         <h3>Approach A</h3>
                     </div>
-                    <p class="content-paragraph">
-                        We created two models that calculates the levels of exosomes carrying miRNA
-                        to chondrocytes of the cartilage.
-                        The process of building each model is described below and is mainly based on literature data
-                        known
-                        to date.
-                        At first, we made our simulations and calculations and predicted the expected result of the Wet
-                        Lab
-                        experiments to guide them.
-                        Then, we compared our data to their findings and used it to fit our model and make it more
-                        accurate
-                        and closer to real-life conditions.
-                        Finally, we managed to create an accurate simulation for the HEK-293 cell line.
-                    </p>
+                    
                     <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
                         src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--Exosome-Model-Final.png">
                     <p style="align-self: center" class="photo-desc"><b>Figure 1:</b> The Exosome Production Model in
@@ -888,143 +856,144 @@
                         <li><b>d)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
                             out.</li>
                     </p>
-                </div>
-                <div class="header">
-                    <h3>Model Parts</h3>
-                </div>
-                <p class="content-paragraph">
-                    The model consists of three main parts. <br><br>
-                    <b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how
-                    many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b -
-                    CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
-                </p>
+                
+                    <div class="header">
+                        <h3>Model Parts</h3>
+                    </div>
+                    <p class="content-paragraph">
+                        The model consists of three main parts. <br><br>
+                        <b>First</b> is the exosome production in the transfected HEK-293 cells. This model calculates how
+                        many exosomes are produced. These exosomes can either contain the miRNA-140 and have the Lamp-2b -
+                        CAP protein in their membrane or contain the miRNA-140 without the Lamp-2b - CAP protein.
+                    </p>
 
-                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
-
-                <br><br>
-
-                <p class="content-paragraph">
-                    <b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to
-                    measure the effectiveness of our solution. We did that by calculating how many of the produced
-                    exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
-                    <br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured
-                    quantities. Had those been known we could have approached the subject with even greater accuracy.
-                </p>
-
-                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.
-                </p>
-
-                <br><br>
-
-                <p class="content-paragraph">
-                    The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER
-                    protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a
-                    single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get
-                    degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find
-                    out how these complex effects the production of the MMP-13 protein.
-                </p>
-
-                <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.
-                </p>
-                <br><br><br><br>
-                <div class="header">
-                    <h3>How the Model Works</h3>
-                </div>
-                <p class="content-paragraph">
-                    <b><u>First Stage</u></b> <br>
-                    The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate
-                    transcription factor via the CMV promoter.
-                    This is described by the following equation:<br>
-
-                    $$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-                    This equation describes the formation of a complex between the plasmids Gene and the complimentary
-                    Transcription Factor,
-                    where
-                    \(k_{bindCMV}\)
-                    and
-                    \(k_{unbindCMV}\)
-                    are the binding and unbinding constants of the TF to the CMV promoter.<br>
-
-                    After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
-
-                    $$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
-
-                    The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied
-                    by a transcription constant.
-                    This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase
-                    places nucleotides.
-
-                    $$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
-
-                    The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre
-                    miRNA.
-                    The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
-                    After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
-                    the produced exosomes.
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--Exosome-Model-1.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 2:</b>Part I of Exosome Production Model.</p>
 
                     <br><br>
 
-                    Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP
-                    protein in its membrane.
-                    We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule.
-                    These two types of exosomes are produced at different rates.
-                    More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones
-                    who do not have it.
-                    Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the
-                    regular exosomes.
+                    <p class="content-paragraph">
+                        <b>Second </b> is the exosome delivery model. This has a more relativistic approach, in order to
+                        measure the effectiveness of our solution. We did that by calculating how many of the produced
+                        exosomes are absorbed by cells, and how many exosomes each cell receives (level of effectiveness).
+                        <br><br>Unfortunately, science knowledge still has many unanswered questions and unmeasured
+                        quantities. Had those been known we could have approached the subject with even greater accuracy.
+                    </p>
+
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/0/00/T--Greece_United--Exosome-Model-2.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Part II of Exosome Production Model.
+                    </p>
 
                     <br><br>
 
-                    This concludes the first part of our model.
+                    <p class="content-paragraph">
+                        The <b>third</b> part is is the activity of the miRNA-140 and the complex it creates with the DICER
+                        protein. In order to accurately predict how many miRNA-140 - DICER complexes are produced in a
+                        single cell, we need to estimate how many miRNA-140 molecules will reach the cell, don't get
+                        degraded by RNAse enzymes and find the DICER protein in order to form the complex. We can also find
+                        out how these complex effects the production of the MMP-13 protein.
+                    </p>
 
-                    <br><br><br>
+                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/e/e2/T--Greece_United--Exosome-Model-3.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Part III of Exosome Production Model.
+                    </p>
+                    <br><br><br><br>
+                    <div class="header">
+                        <h3>How the Model Works</h3>
+                    </div>
+                    <p class="content-paragraph">
+                        <b><u>First Stage</u></b> <br>
+                        The model begins with the plasmid of the transfected HEK-293 cells binding with the appropriate
+                        transcription factor via the CMV promoter.
+                        This is described by the following equation:<br>
 
-                    <b><u>Second Stage</u></b> <br>
-                    The second part involves the transportation of the exosomes to the Chondrocytes.
-                    In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes
-                    have \(x\) times larger affinity
-                    towards chondrocytes than regular exosomes do not. <br><br>
+                        $$\frac{d[Gene - TF Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
 
-                    The equations we used are:
+                        This equation describes the formation of a complex between the plasmids Gene and the complimentary
+                        Transcription Factor,
+                        where
+                        \(k_{bindCMV}\)
+                        and
+                        \(k_{unbindCMV}\)
+                        are the binding and unbinding constants of the TF to the CMV promoter.<br>
 
-                    $$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
+                        After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
 
-                    $$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
+                        $$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
 
-                    where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\)
-                    <br> <br>
+                        The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied
+                        by a transcription constant.
+                        This constant is based on the length of the RNA molecule and the speed of which RNA Polymerase
+                        places nucleotides.
 
-                    Since there is not enough information on exosome modeling, we believed it would be best to keep this
-                    part as simple as possible,
-                    in order to avoid inaccuracies due to unnecessary complication.
+                        $$k_{transcription} = RNA_{lenght} * RNA_{PolymeraseSpeed}$$
 
-                    <br><br><br>
+                        The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre
+                        miRNA.
+                        The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
+                        After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
+                        the produced exosomes.
 
-                    <b><u>Third Stage</u></b> <br>
-                    The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells.
-                    We assumed that the concentration of the DICER is high enough that the creation of the complex is
-                    entirely based on the miRNA concentration.
+                        <br><br>
 
-                    $$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
+                        Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP
+                        protein in its membrane.
+                        We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule.
+                        These two types of exosomes are produced at different rates.
+                        More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones
+                        who do not have it.
+                        Therefore, we assumed that the production rate of the CAP exosomes is 2.42 times the one of the
+                        regular exosomes.
 
-                    where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
-                </p>
+                        <br><br>
+
+                        This concludes the first part of our model.
+
+                        <br><br><br>
+
+                        <b><u>Second Stage</u></b> <br>
+                        The second part involves the transportation of the exosomes to the Chondrocytes.
+                        In order to model this, we assumed that exosomes have a constant endocytosis rate and CAP exosomes
+                        have \(x\) times larger affinity
+                        towards chondrocytes than regular exosomes do not. <br><br>
+
+                        The equations we used are:
+
+                        $$\frac{d[Endocytosis_1]}{dt} = [CAP exosomes] * k_{loadCAP}$$
+
+                        $$\frac{d[Endocytosis_2]}{dt} = [exosomes] * k_{load}$$
+
+                        where, \(\;k_{loadCAP}=k_{load}*x, \;x>1\)
+                        <br> <br>
+
+                        Since there is not enough information on exosome modeling, we believed it would be best to keep this
+                        part as simple as possible,
+                        in order to avoid inaccuracies due to unnecessary complication.
+
+                        <br><br><br>
+
+                        <b><u>Third Stage</u></b> <br>
+                        The third part calculates the production of DICER-miRNA complexes in the target chondrocyte cells.
+                        We assumed that the concentration of the DICER is high enough that the creation of the complex is
+                        entirely based on the miRNA concentration.
+
+                        $$\frac{d[miRNA - DICER]}{dt} = [miRNA] * k_{act}$$
+
+                        where \(k_{act}\) is the creation constant of the miRNA-DICER complex.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Exosome Model B -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading3">
+    <div id="heading3">
+        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
                         <h1>Exosome Model</h1>
                     </div>
@@ -1109,10 +1078,53 @@
                         src="https://2021.igem.org/wiki/images/5/54/T--Greece_United--rates-model.png">
                     <p style="align-self: center" class="photo-desc"><b>Figure 6:</b> Screenshot from the C++ code of
                         the exosome model.<br> Use of rates to calculate total values.</p>
+
+                    <div class="header">
+                        <h3>Explanation</h3>
+                    </div>
                     <p>
+                        Equation 1: $$\frac{d[DNA]}{dt} = - k_{dil} $$ accounts for the dilution of the DNA plasmid which happens at a constant rate kdil.<br><br>
+                        Equation 2: $$\frac{d[mRNA]}{dt} = k_{ts} * [DNA] - DmRNA * [mRNA] $$ accounts for the rate of change of the total mRNA transcripts. mRNA is produced at a constant rate Kts, corresponding to the 
+                        expression of the CMV promoter and at the same time is naturally degraded at a constant rate DmRNA. <br><br>
+
+                        Equation 3: $$\frac{d[miRNA]}{dt} = k_{ts} * [DNA] - DpremiRNA * [premiRNA] - c1 * [premiRNA] $$ accounts for the rate of change 
+                        of the total pre-miRNAs. Based on literature, we know that almost all pri-miRNAs are spliced from the 
+                        pre-mRNAs so its production rate matches the one of the mRNA while it is limited by natural degradation at a constant rate Dpre-miRNA.<br><br>
+
+                        Equation 4: $$\frac{d[P]}{dt} = (\frac{a}{L}) * [mRNA] * Dprot * [P] - c2 * [P]  $$ accounts for the rate of change of the protein’s 
+                        concentration. Protein translation depends on the translational rate and the length of the protein as well on the concentration of mRNAs. 
+                        At the same time, protein concentration is restricted through natural degradation and the loading of the protein in exosome membranes.<br><br>
+
+                        Equation 5: $$\frac{d[Exo]}{dt} = k_{0} $$ accounts for the rate of production of exosomes that happens at a constant rate k0.<br><br>
+                        
+                        Equation 6: $$d[miRNA_{u}] = u * [miRNA_{exos}] + c * (1-u)* [miRNA_{exos}] $$ accounts for all the useful miRNA, meaning the miRNA 
+                        that will actually reach the target cells. It is calculated by taking into account all the miRNA that is included in the exosomes 
+                        with the protein and the percentage c of the miRNAs that are in exosomes without the protein.<br><br>
+                        <br>
+                        <u>Supplementary Equations:</u><br><br>
+
+                        Equation 7: $$\frac{d[mRNA_{1}]}{dt} = k_{ts} * [DNA] - DmRNA * [mRNA_{1}] - k_{syn} * [mRNA_{1}] $$ <br>
+                        Equation 8: $$\frac{d[mRNA_{2}]}{dt} = k_{syn} * [mRNA_{1}] - DmRNA * [mRNA_{2}] $$ Equations 7 and 8 account for the pre-mRNA and 
+                        mRNA concentrations in case you wish to take into account the percentage of pri-miRNAs that are not cut off where Ksyn 
+                        is the constant of pre-miRNA synthesis.<br><br>
+
+                        Equation 9: $$\frac{d[miRNA_{exos}]}{dt} = (\frac{c1}{k_{0}}) * [miRNA] $$ accounts for the pre-miRNA that is 
+                        included in the exosomes created. The change in the exosomal cargo is corresponding to the change in the cytoplasm’s 
+                        pre-miRNA concentration and depending on the loading rate and at the amount of exosomes produced in respect to time (k0). 
+                        In this variable we also take into account the mature miRNAs that are loaded in a miRISC protein complex.<br><br>
+
+                        Equation 10: $$\frac{d[P_{exos}]}{dt} = (\frac{c2}{u * k_{0}}) * [P] $$ accounts for the proteins that are included in the 
+                        exosomes created. Based on literature, even though miRNAs are easily and at great rate transported to exosomes, exosomal protein 
+                        cargo varies. For instance, extracellular vesicles coming from the lateral side of the cell have different proteins than those 
+                        from the frontal or basal sides. It was concluded that 70% of the exosomes will carry the engineered protein (u). On the positive 
+                        side though we know that exosomes with the protein have total absorption in the joint. The rate of change of the concentration 
+                        of proteins in exosomes, making them thus the “effective exosomes”, is depended on the protein concentration in the cell’s membrane
+                        as described from the loading constant C2.<br><br>
+
+                        
                         You can find our C++ code in executable form in our <a
                             href="https://github.com/melinazik/iGEM/blob/main/model/exosome-model-partA-NOUS.cpp"
-                            target="_blank">github.</a><br>
+                            target="_blank" style="color:#5245da"> github page.</a><br>
                         With appropriate changes it can be used to model many similar situations.<br><br>
                     </p>
                 </div>
@@ -1121,10 +1133,10 @@
     </div>
 
     <!-- Results -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading4">
+    <div id="heading4">
+        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
                         <h1>Results</h1>
                     </div>
@@ -1180,7 +1192,6 @@
                         protein and thus more CAP exosomes.
                     </p>
 
-                    <div id="heading5">
                         <br><br><br>
                         <div class="header">
                             <h3>Approach B</h3>
@@ -1206,17 +1217,19 @@
                         <p>
                             For a total runtime of <b>2880 minutes (= 2 days)</b> the cell produced, <b>16153920</b>
                             useful exosomes (that carry the protein and miRNA),
-                            a total concentration of miRNA: <b>[miRNA] = 298527</b>, a total concentration of miRNA-
-                            useful (miRNA that got into exosomes): <b>[miRNA useful] = 520230000</b>
-                            and a total concentration of protein <b>[protein] = 755747</b>, were produced by one cell
+                            the total concentration of miRNA in the cell is: <b>[miRNA] = 298,527 CPC</b>, a total concentration of miRNA-
+                            useful (miRNA that got into exosomes): <b>[miRNA useful] = 520,230,000 CPC</b>
+                            and a total concentration of protein <b>[protein] = 755,747 CPC</b>, were produced by one cell
                             transfected with one plasmid.<br><br>
-                            The mean average of cells in a joint is 149000000 with a deviation of 46000000. We used that
+                            The mean average of cells in a joint is 149,000,000 with a deviation of 46,000,000 cells. We used that
                             along with our results to calculate how much
                             concentration of miRNA would be in each cell, considering that the exosomes would reach
                             every cell equally. The average is <b>[miRNA] = 3.49148 </b>
-                            per cell while using the deviation the best-case scenario is <b>[miRNA] = 5.05078</b> per
+                            copies per cell while using the deviation the best-case scenario is <b>[miRNA] = 5.05078</b> copies per
                             cell and the worst-case scenario is <b>[miRNA]= 2.66785</b>
-                            per cell.<br><br>
+                            copies per cell.<br><br>
+
+                            <b>Concentrations are counted in copies per cell (CPC).</b>
 
                             Literature data have showed that exosomes with the guiding tag do not leave the target
                             joint, while without, can be found in the whole organism.
@@ -1231,25 +1244,25 @@
                         <table>
                             <tr>
                                 <td>
-                                    <p class="table-paragraph"><b>N cells</b></p>
+                                    <p class="table-paragraph"><b>N (cells)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Total [miRNA]</b></p>
+                                    <p class="table-paragraph"><b>Total [miRNA] (CPC)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Total [protein]</b></p>
+                                    <p class="table-paragraph"><b>Total [protein] (CPC)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Total [miRNA useful]</b></p>
+                                    <p class="table-paragraph"><b>Total [miRNA useful] (CPC)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Average case</b></p>
+                                    <p class="table-paragraph"><b>Average case (CPC)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Worst case</b></p>
+                                    <p class="table-paragraph"><b>Worst case (CPC)</b></p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph"><b>Best case</b></p>
+                                    <p class="table-paragraph"><b>Best case (CPC)</b></p>
                                 </td>
                             </tr>
 
@@ -1380,22 +1393,24 @@
                             been documented by promoting cartilage formation and inhibiting its degeneration.
                             Even though we were not able to further correct our model due to lack of laboratory results,
                             it shows us that based on literature we have
-                            sufficient therapeutic potential.<br><br>
+                            <b>sufficient therapeutic potential.</b><br><br>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
+
     <!-- equations constants parts -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading6">
+    <div id="heading6">
+        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
+                        <h1>Model Components</h1>
+                        <br><br>
                         <h2>Approach A</h2>
                         <br><br>
-                        <h2>Equations</h2>
+                        <h3>Equations</h3>
                     </div>
                     <p class="content-paragraph">In this table, you can find the equations used to build our Exosome
                         Production Model.
@@ -1540,7 +1555,7 @@
                     </table>
                     <br><br><br><br>
                     <div class="header">
-                        <h2>Model Components</h2>
+                        <h3>Model Elements</h3>
                     </div>
                     <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to
                         build
@@ -1857,7 +1872,7 @@
 
                     <br><br><br><br>
                     <div class="header">
-                        <h2>Constants</h2>
+                        <h3>Constants</h3>
                     </div>
                     <p class="content-paragraph">In this table, you can find the values of the constants we used in the
                         equations of the Exosome Production Model.</p>
@@ -2059,59 +2074,203 @@
                             </td>
                         </tr>
                     </table>
-                    <br><br>
+                    <br><br><br><br>
                     <div class="header">
                         <h2> Approach B</h2>
                         <br><br>
-                        <h2>Constants</h2>
+                        <h3>Constants</h3>
                     </div>
                     <br><br>
                     <p>
-                        <b>•</b>Kts: Transcription rate of the CMV promoter<br>
-                        <b>•</b>Kdil: Dilution of DNA<br>
-                        <b>•</b>DmRNA: Degradation rate of mRNA<br>
-                        <b>•</b>Dpre-miRNA: Degradation rate of pre-miRNA<br>
-                        <b>•</b>C1: Loading rate of pre-miRNAs <br>
-                        <b>•</b>a: Translational rate per amino acid<br>
-                        <b>•</b>L: Length of the Protein<br>
-                        <b>•</b>Dprot: Protein degradation rate<br>
-                        <b>•</b>C2: Loading rate of Proteins<br>
-                        <b>•</b>k0: Exosome production rate<br>
-                        <b>•</b>u: Percentage of exosomes that carry the protein<br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph"><b>Name</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Value</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Units</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Comments</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">k<sub>ts</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">288</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">copies / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Transcription rate of the CMV promoter</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">k<sub>dil</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.0004813524</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1 / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Dilution of DNA</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">DmRNA</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.41</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1 / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Degradation rate of mRNA</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">DmiRNA</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.00144</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1 / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Degradation rate of pre-mRNA</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">c<sub>1</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.6</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1 / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Loading rate of pre-miRNAs</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">c<sub>2</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.6</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1 / min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Loading rate of Proteins</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">a</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">3017.644</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">nucleotides/min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Translational rate per nucleotide</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">L</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">2040.00</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">nucleotides</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Length of the Protein</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">D<sub>prot</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.00167</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1/min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Protein degradation rate</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">k<sub>0</sub></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">7,900</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">1/min</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Exosome production rate</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph">u</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">0.71</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">%</p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph">Percentage of exosomes that carry the protein</p>
+                                </td>
+                            </tr>
+                        </table>
                     </p>
 
                     <br><br>
                     <div class="header">
-                        <h2>Variables</h2>
+                        <h3>Variables</h3>
                     </div>
                     <p>
-                        <b>•</b>mRNA: The transcripts concentration which encodes the protein Lamp2b-GFP-CAP <br>
-                        <b>•</b>DNA: The strength of expression (with 1 being the maximum) <br>
-                        <b>•</b>Pre-miRNA: The premiRNAs 140 concentration<br>
-                        <b>•</b>P: Protein Concentration<br>
-                        <b>•</b>miRNA exos: The miRNA concentration in every exosome created that moment<br>
-                        <b>•</b>P exos: Protein concentration in the exosome membranes created that moment<br>
-                        <b>•</b>miRNA useful: miRNA that gets into cells – originates from exosomes with the guiding
+                        <b>• mRNA:</b> The transcripts concentration which encodes the protein Lamp2b-GFP-CAP <br>
+                        <b>• DNA:</b> The strength of expression (with 1 being the maximum) <br>
+                        <b>• Pre-miRNA:</b> The premiRNAs 140 concentration<br>
+                        <b>• P:</b> Protein Concentration<br>
+                        <b>• miRNA exos:</b> The miRNA concentration in every exosome created that moment<br>
+                        <b>• P exos:</b> Protein concentration in the exosome membranes created that moment<br>
+                        <b>• miRNA useful:</b> miRNA that gets into cells – originates from exosomes with the guiding
                         protein<br>
 
                     </p>
 
                     <br><br>
-                    <div class="header">
-                        <h2>Equations</h2>
-                    </div>
-                    <p>
-                        <b>•</b>dDNA/dt = - Kdil <br>
-                        <b>•</b>dmRNA/dt = Kts * DNA - DmRNA * mRNA<br>
-                        <b>•</b>dpremiRNA/dt = Kts * DNA - DpremiRNA * premiRNA - C1 * premiRNA <br>
-                        <b>•</b>dP/dt = (a / L) * mRNA - Dprot * P - C2 * P<br>
-                        <b>•</b>dmiRNA/dt = kts * DNA - DmiRNA * miRNA - c1 * miRNA<br>
-                        <b>•</b>Exo = k0 * t<br>
-                        <b>•</b>miRNA useful = u * miRNA_exos + c * (1-u) * miRNA_exos<br>
-                        <b>•</b>dmiRNAex/dt = (c1 / k0) * dpremiRNA/dt<br>
-                        <b>•</b>dPex/dt = c2 / (u * k0) * dP/dt<br>
-                    </p>
-
                 </div>
             </div>
         </div>
@@ -2147,19 +2306,19 @@
                     target joint, while without, can be found in the whole organism. So, it turned out that this
                     model was not necessary to describe our approach since there are already sufficient experiments
                     to support the movement of exosomes in this case.<br><br>
-                    You can find the executable code in our <a
-                        href="https://github.com/melinazik/iGEM/blob/main/model/exosome-model-partB-NOUS.cpp"
-                        target="_blank"></a>github page.<br><br>
+                   
+                    You can find our C++ code in executable form in our <a href="https://github.com/melinazik/iGEM/blob/main/model/exosome-model-partB-NOUS.cpp"
+                            target="_blank" style="color:#5245da"> github page.</a><br>
 
                 </p>
             </div>
         </div>
     </div>
     <!-- references -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading7">
+    <div id="heading7">
+        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
                     <div class="header">
                         <h2>References</h2>
                     </div>
@@ -2332,8 +2491,6 @@
     });
 
     document.getElementById("fixedOverlay").classList.add("project");
-</script>
-<script>
     function changeColor(x) {
         x.style.background = '#5893D4';
         x.style.color = '#002060';

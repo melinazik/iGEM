@@ -19,1239 +19,1310 @@
 <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-<style>
-    /* CLEAR DEFAULT SETTINGS **************************************************/
+    <style>
+        /* CLEAR DEFAULT SETTINGS **************************************************/
 
-    #sideMenu,
-    #top_title,
-    .patrollink,
-    #firstHeading,
-    #home_logo,
-    #sideMenu {
-        display: none;
-    }
-
-    #content {
-        padding: 0px;
-        width: 100%;
-        margin-top: 7px;
-        margin-left: 0px;
-        border: none;
-    }
-
-    #bodyContent h1,
-    #bodyContent h2,
-    #bodyContent h3,
-    #bodyContent h4,
-    #bodyContent h5 {
-        margin-bottom: 0px;
-    }
-
-    #bodyContent a[href ^="https://"],
-    .link-https {
-        padding-right: 0px;
-    }
-
-    html {
-        height: 100%;
-        min-height: 100%;
-        font-family: 'Raleway', sans-serif;
-
-    }
-
-    body {
-        padding: 0px;
-        margin: 0px;
-        background: white;
-
-        font-family: 'Raleway', sans-serif;
-
-        display: flex;
-        flex-direction: column;
-    }
-</style>
-<style>
-    td,
-    th {
-        border: 1px solid black;
-        padding: 15px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    h2 {
-        font-family: 'Raleway', sans-serif;
-    }
-
-    .content p.photo-desc {
-        text-align: center !important;
-        font-size: 0.8em !important;
-    }
-
-    .class-paragraph {
-        padding-left: 5px;
-        margin-right: 5px;
-        text-align: justify;
-
-    }
-
-    #content-tag {
-        background-color: #ffffff;
-        position: relative;
-    }
-
-    #content-tag p {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
-    }
-
-
-    #content-tag .contentBlock {
-        float: none;
-        margin: 0 auto;
-    }
-
-
-    #content {
-        padding: 0px;
-        width: 100%;
-        margin-top: -7px;
-        margin-left: 0px;
-        border: none;
-        line-height: initial;
-
-    }
-
-    .contentBlock {
-        width: 64vw;
-        max-width: 1200px;
-        float: right;
-        display: flex;
-        flex-direction: column;
-        font-family: 'Raleway', sans-serif;
-
-    }
-
-    .content {
-        padding: 64px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px lightgray;
-        color: #121212;
-        margin-top: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-    }
-
-    .content p:first-child {
-        margin-top: 0;
-    }
-
-
-    .content ul {
-        padding-inline-start: 20px;
-        list-style-image: none;
-        list-style-type: none;
-    }
-
-    .content ul li {
-        display: flex;
-    }
-
-    .content ul li::before {
-        list-style-type: none;
-
-        color: #000000;
-    }
-
-    .content .splide ul li::before {
-        content: unset;
-    }
-
-    .content li {
-        margin: 10px;
-        font-size: 1.2em;
-        list-style-type: none;
-
-
-    }
-
-    .content li::marker {
-        color: #000000;
-        font-weight: bold;
-    }
-
-    .content h4,
-    .content h5 {
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-block-end: 0.2em;
-        margin-block-start: 60px;
-    }
-
-    .content h5 {
-        font-size: 1em;
-    }
-
-    .content a {
-        color: #000000;
-
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .content a.citation {
-        font-size: 0.6em;
-        vertical-align: super;
-    }
-
-    .content-paragraph {
-        margin: 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        text-align: justify;
-
-    }
-</style>
-<style>
-    #loader-wrapper {
-        display: flex;
-        align-items: center;
-        margin-top: calc((100%)/5);
-        justify-content: center;
-        height: 0.1vh;
-        width: 100vw;
-        z-index: 500;
-        position: fixed;
-        pointer-events: none;
-    }
-
-    #loader-bg {
-        position: fixed;
-        height: 200vw;
-        width: 200vw;
-        transform: translateY(0);
-        background-color: #6C8EC9;
-        transition-property: height, width, border-radius, transform;
-        transition-duration: 0.5s;
-        transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
-        transition-delay: 0s, 0s, 0s, 1s;
-        border-radius: 0%;
-        -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
-        -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
-        box-shadow: 0px 0px 27px 0px #6E91CB;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-
-    #loader-wrapper img {
-        width: 30vh;
-
-    }
-
-    #loader-wrapper h1 {
-        color: #fafafc;
-        text-transform: uppercase;
-        font-family: 'Raleway', sans-serif;
-        position: absolute;
-        transform: translateY(15vh);
-        font-size: 2.2vw;
-        opacity: 100%;
-    }
-
-    #loader-bg.loaded {
-        height: 35vh;
-        width: 35vh;
-        border-radius: 70%;
-        transform: translateY(-2000px);
-    }
-</style>
-<style>
-    .banner {
-
-        width: 100%;
-        background-size: cover;
-        margin-top: 90px;
-        z-index: 5;
-    }
-</style>
-<!-- in page menu & progress bar -->
-<style>
-    /* progress bar */
-
-    #fixedOverlay {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 12;
-        top: 18px;
-        transition: 1s;
-        font-family: 'Raleway', sans-serif;
-        /* background-color: #002060; */
-    }
-
-    #fixedOverlay[bg=none],
-    #fixedOverlay[bg=dark] {
-        pointer-events: none;
-    }
-
-    #fixedOverlay .scroll-wrapper {
-        display: flex;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        justify-content: space-between;
-        opacity: 1;
-        transition: 0.5s;
-    }
-
-    #fixedOverlay .scroll-wrapper .scroll-area {
-        height: 100%;
-        width: 5vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    @media screen and (max-width: 767px) {
-        #fixedOverlay .scroll-wrapper .scroll-area {
-            width: 10vw;
+        #sideMenu,
+        #top_title,
+        .patrollink,
+        #firstHeading,
+        #home_logo,
+        #sideMenu {
+            display: none;
         }
-    }
 
-    #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
-        width: 30%;
-        height: 30%;
-        background-color: rgba(98, 129, 239, 0.3);
-        border-radius: 10px;
-        max-width: 7px;
-    }
-
-    #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
-        width: 100%;
-        background: #002060;
-        opacity: 100%;
-        height: 0%;
-        border-radius: 20px;
-        transition: background-color 0.5s;
-    }
-
-    #fixedOverlay nav {
-        box-sizing: border-box;
-        z-index: 2;
-        pointer-events: none;
-        display: block;
-        transition: 0.5s;
-        height: 87px;
-    }
-
-    /* in page menu */
-    .indexbutton {
-        display: none;
-        color: #FAFAFC;
-        text-transform: capitalize;
-        font-size: 1.4rem;
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        padding: 16px 0;
-        height: 62px;
-        box-sizing: border-box;
-        cursor: pointer;
-        background-color: #6281EF;
-        z-index: 21;
-        transition: 0.5s;
-    }
-
-    @media (max-width: 800px) {
-        .indexbutton {
-            display: block;
-        }
-    }
-
-    .sideBlock {
-        text-transform: uppercase;
-        text-decoration: none;
-        float: left;
-        margin-left: 10vw;
-        margin-top: 400px;
-        position: -webkit-sticky;
-        position: fixed;
-        top: 30%;
-        margin: 200px 32px 0 4vw;
-        transform: translateY(-50%);
-        min-width: 20px;
-        max-width: 350px;
-        background: #ffffff;
-        opacity: 80%;
-        border-radius: 15%;
-        padding-left: 20px;
-        z-index: 2;
-    }
-
-    @media (max-width: 1024px) {
-        .sideBlock {
-            margin: 200px 32px 0 4vw;
-        }
-    }
-
-    .sideBlock b {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-left: 0.25em;
-        padding-bottom: 20px;
-        display: block;
-    }
-
-    .sideBlock ul {
-        margin: 1em 0;
-        padding: 0;
-    }
-
-    .sideBlock a {
-        color: #002060;
-        text-decoration: none;
-        font-family: 'Raleway', sans-serif;
-
-    }
-
-    .sideBlock li {
-        margin: 24px;
-        list-style: none;
-        color: #002060;
-        font-size: 1.1rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        margin-left: 0.25em;
-    }
-
-    .sideBlock li:last-child {
-        margin-bottom: 0;
-    }
-
-    .sideBlock li div {
-        max-width: 15px;
-        max-height: 15px;
-        box-sizing: border-box;
-        border: 1px solid;
-        color: #002060;
-        border-radius: 2px;
-        transition: 0.5s;
-        margin-right: 8px;
-        height: 10vw;
-        width: 10vh;
-    }
-
-    .sideBlock li.active div {
-        background-color: #002060;
-    }
-
-    @media (max-width: 800px) {
-        .sideBlock {
-            position: fixed;
-            bottom: 0;
-            padding: 0 64px;
-            background-color: #6281EF;
-            color: #FAFAFC;
-            float: unset;
-            margin: 0;
-            z-index: 20;
+        #content {
+            padding: 0px;
             width: 100%;
-            box-sizing: border-box;
-            min-width: unset;
-            max-width: unset;
-            text-align: center;
-            transition: transform 0.5s;
-            top: unset;
-            transform: translateY(calc(100% - 62px));
-            display: fixed;
+            margin-top: 7px;
+            margin-left: 0px;
+            border: none;
+        }
+
+        #bodyContent h1,
+        #bodyContent h2,
+        #bodyContent h3,
+        #bodyContent h4,
+        #bodyContent h5 {
+            margin-bottom: 0px;
+        }
+
+        #bodyContent a[href ^="https://"],
+        .link-https {
+            padding-right: 0px;
+        }
+
+        html {
+            height: 100%;
+            min-height: 100%;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: white;
+
+            font-family: 'Raleway', sans-serif;
+
+            display: flex;
             flex-direction: column;
-            align-items: center;
+        }
+    </style>
+    <style>
+        td,
+        th {
+            border: 1px solid black;
+            padding: 15px;
         }
 
-        .sideBlock b {
-            display: block;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .content p.photo-desc {
+            text-align: center !important;
+            font-size: 0.8em !important;
+        }
+
+        .class-paragraph {
+            padding-left: 5px;
+            margin-right: 5px;
+            text-align: justify;
+
+        }
+
+        #content-tag {
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        #content-tag p {
             margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
         }
 
-        .sideBlock ul {
-            display: inline-block;
-            text-align: start;
+
+        #content-tag .contentBlock {
+            float: none;
+            margin: 0 auto;
+        }
+
+
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+
+        }
+
+        .contentBlock {
+            width: 64vw;
+            max-width: 1200px;
+            float: right;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        .content {
+            padding: 64px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px lightgray;
+            color: #121212;
+            margin-top: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
+        }
+
+        .content p:first-child {
             margin-top: 0;
-            margin-bottom: 30px;
         }
 
-        .sideBlock li {
+
+        .content ul {
+            padding-inline-start: 20px;
+            list-style-image: none;
+            list-style-type: none;
+        }
+
+        .content ul li {
+            display: flex;
+        }
+
+        .content ul li::before {
+            list-style-type: none;
+
+            color: #000000;
+        }
+
+        .content .splide ul li::before {
+            content: unset;
+        }
+
+        .content li {
+            margin: 10px;
+            font-size: 1.2em;
+            list-style-type: none;
+
+
+        }
+
+        .content li::marker {
+            color: #000000;
             font-weight: bold;
         }
 
-        .sideBlock li a {
+        .content h4,
+        .content h5 {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-block-end: 0.2em;
+            margin-block-start: 60px;
+        }
+
+        .content h5 {
+            font-size: 1em;
+        }
+
+        .content a {
+            color: #000000;
+
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .content a.citation {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+
+        .content-paragraph {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+
+        }
+    </style>
+    <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
+
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
+    </style>
+    <style>
+        .banner {
+
+            width: 100%;
+            background-size: cover;
+            margin-top: 90px;
+            z-index: 5;
+        }
+    </style>
+    <!-- in page menu & progress bar -->
+    <style>
+        /* progress bar */
+
+        #fixedOverlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+            top: 18px;
+            transition: 1s;
+            font-family: 'Raleway', sans-serif;
+            /* background-color: #002060; */
+        }
+
+        #fixedOverlay[bg=none],
+        #fixedOverlay[bg=dark] {
+            pointer-events: none;
+        }
+
+        #fixedOverlay .scroll-wrapper {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            height: 100%;
+            width: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            #fixedOverlay .scroll-wrapper .scroll-area {
+                width: 10vw;
+            }
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(98, 129, 239, 0.3);
+            border-radius: 10px;
+            max-width: 7px;
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+            width: 100%;
+            background: #002060;
+            opacity: 100%;
+            height: 0%;
+            border-radius: 20px;
+            transition: background-color 0.5s;
+        }
+
+        #fixedOverlay nav {
+            box-sizing: border-box;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+            transition: 0.5s;
+            height: 87px;
+        }
+
+        /* in page menu */
+        .indexbutton {
+            display: none;
             color: #FAFAFC;
+            text-transform: capitalize;
+            font-size: 1.4rem;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 16px 0;
+            height: 62px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #6281EF;
+            z-index: 21;
+            transition: 0.5s;
+        }
+
+        @media (max-width: 800px) {
+            .indexbutton {
+                display: block;
+            }
+        }
+
+        .sideBlock {
+            text-transform: uppercase;
+            text-decoration: none;
+            float: left;
+            margin-left: 10vw;
+            margin-top: 400px;
+            position: -webkit-sticky;
+            position: fixed;
+            top: 30%;
+            margin: 200px 32px 0 4vw;
+            transform: translateY(-50%);
+            min-width: 20px;
+            max-width: 350px;
+            background: #ffffff;
+            opacity: 80%;
+            border-radius: 15%;
+            padding-left: 20px;
+            z-index: 2;
+        }
+
+        @media (max-width: 1024px) {
+            .sideBlock {
+                margin: 200px 32px 0 4vw;
+            }
+        }
+
+        .sideBlock b {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 0.25em;
+            padding-bottom: 20px;
+            display: block;
+        }
+
+        .sideBlock ul {
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .sideBlock a {
+            color: #002060;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        .sideBlock li {
+            margin: 24px;
+            list-style: none;
+            color: #002060;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 0.25em;
+        }
+
+        .sideBlock li:last-child {
+            margin-bottom: 0;
         }
 
         .sideBlock li div {
-            color: #FAFAFC;
+            max-width: 15px;
+            max-height: 15px;
+            box-sizing: border-box;
+            border: 1px solid;
+            color: #002060;
+            border-radius: 2px;
+            transition: 0.5s;
+            margin-right: 8px;
+            height: 10vw;
+            width: 10vh;
         }
 
         .sideBlock li.active div {
-            background-color: #FAFAFC;
+            background-color: #002060;
         }
 
-        .sideBlock.notshow {
-            transform: translateY(calc(100% - 900px));
+        /* @media (max-width: 800px) {
+            .sideBlock {
+                position: fixed;
+                bottom: 0;
+                padding: 0 64px;
+                background-color: #6281EF;
+                color: #FAFAFC;
+                float: unset;
+                margin: 0;
+                z-index: 20;
+                width: 100%;
+                box-sizing: border-box;
+                min-width: unset;
+                max-width: unset;
+                text-align: center;
+                transition: transform 0.5s;
+                top: unset;
+                transform: translateY(calc(100% - 62px));
+                display: fixed;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sideBlock b {
+                display: block;
+                margin: 0;
+            }
+
+            .sideBlock ul {
+                display: inline-block;
+                text-align: start;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+
+            .sideBlock li {
+                font-weight: bold;
+            }
+
+            .sideBlock li a {
+                color: #FAFAFC;
+            }
+
+            .sideBlock li div {
+                color: #FAFAFC;
+            }
+
+            .sideBlock li.active div {
+                background-color: #FAFAFC;
+            }
+
+            .sideBlock.notshow {
+                transform: translateY(calc(100% - 900px));
+            }
+
+            .sideBlock.open {
+                transform: translateY(0);
+            }
+        } */
+
+
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+    </style>
+    <!-- back to top -->
+    <style>
+        #BacktoTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #B8EBFF;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 30%;
         }
 
-        .sideBlock.open {
-            transform: translateY(0);
+        #BacktoTop:hover {
+            background-color: #002060;
         }
-    }
+    </style>
 
+    <!-- header text -->
+    <style>
+        .header h1 {
+            font-size: 40px;
+            margin-block-end: 0;
+            color: #1F3C88;
+            font-family: "raleway", sans-serif !important;
+            padding-bottom: px;
+        }
 
-    #content {
-        padding: 0px;
-        width: 100%;
-        margin-top: -7px;
-        margin-left: 0px;
-        border: none;
-        line-height: initial;
-    }
-</style>
-<!-- back to top -->
-<style>
-    #BacktoTop {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background-color: #B8EBFF;
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 30%;
-    }
+        .header h2 {
+            margin-block-start: 0;
+            font-family: "raleway", sans-serif !important;
+            text-transform: uppercase;
+            font-size: 30px;
+            color: #5893D4;
+        }
 
-    #BacktoTop:hover {
-        background-color: #002060;
-    }
-</style>
+        .header h3 {
+            margin-block-start: 0;
+            font-family: "raleway", sans-serif !important;
+            font-size: 24px;
+            color: #5893D4;
+        }
+    </style>
 
-<!-- header text -->
-<style>
-    .header h1 {
-        font-size: 40px;
-        margin-block-end: 0;
-        color: #1F3C88;
-        font-family: "raleway", sans-serif !important;
-        padding-bottom: px;
-    }
+    <body>
 
-    .header h2 {
-        margin-block-start: 0;
-        font-family: "raleway", sans-serif !important;
-        text-transform: uppercase;
-        font-size: 30px;
-        color: #5893D4;
-    }
-
-    .header h3 {
-        margin-block-start: 0;
-        font-family: "raleway", sans-serif !important;
-        font-size: 24px;
-        color: #5893D4;
-    }
-</style>
-
-<body>
-
-    <div id="loader-wrapper">
-        <div id="loader-bg">
-            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        <div id="loader-wrapper">
+            <div id="loader-bg">
+                <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+            </div>
         </div>
-    </div>
 
-    <!-- header -->
-    <img src="https://2021.igem.org/wiki/images/d/d0/T--Greece_United--header-results.png" class="banner">
+        <!-- header -->
+        <img src="https://2021.igem.org/wiki/images/d/d0/T--Greece_United--header-results.png" class="banner">
 
-    <!-- nav bar -->
-    <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
-        <div style="padding: 14px 20px;
-            display: flex;
-            cursor: pointer;">
-            <a href="https://2021.igem.org/Team:Greece_United" class="active">
+        <!-- nav bar -->
+        <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
+            <div style="padding: 14px 20px;
+                display: flex;
+                cursor: pointer;">
+                <a href="https://2021.igem.org/Team:Greece_United" class="active">
 
 
-                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
-                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
-            </a>
+                    <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                        src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+                </a>
+            </div>
+
+            <div class="right-navbar">
+                <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                            </button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Impact">IMPACT</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Part_Collection">PART COLLECTION</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                                PRACTICES</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">
+                                ENTREPRENEURSHIP</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/MarketAnalysis">MARKET
+                                    ANALYSIS</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/StrategicPlanning">STRATEGIC
+                                    PLANNING</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/ProductDescription">PRODUCT
+                                    DESCRIPTION</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown" style="float: left;">
+                            <button
+                                style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin-right: 50px;z-index: 10;"
+                                onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                            </button>
+                            <div class="dropdown-content">
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                                <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a><a
+                                    onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                    href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="right-navbar">
-            <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+        <!-- Back to Top Button -->
+        <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+            </svg>
+        </button>
+        <!-- Back to Top Button End-->
 
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
-                        </button>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Impact">IMPACT</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a>
+        <!-- Progress bar -->
+        <div id="globalWrapper">
+            <div id="fixedOverlay" bg="none">
+                <div class="scroll-wrapper">
+                    <div id="sidebar-wrapper" class="scroll-area">
+                        <div id="scrollbar-container">
+                            <div id="scrollbar" style="height: 3%;"></div>
                         </div>
                     </div>
-                </li>
 
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Part_Collection">PART COLLECTION</a>
-                        </div>
-                    </div>
-                </li>
+                </div>
+            </div>
+        </div>
+        <!-- Progress bar End -->
 
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
-                        </div>
-                    </div>
+        <!-- in page menu -->
+        <div id="index" class="sideBlock">
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading1">Wet Lab</a>
                 </li>
-
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
-                            PRACTICES</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
-
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
-                        </div>
-                    </div>
+            </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading2">Dry Lab</a>
                 </li>
-
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">
-                            ENTREPRENEURSHIP</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/MarketAnalysis">MARKET
-                                ANALYSIS</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/StrategicPlanning">STRATEGIC
-                                PLANNING</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/ProductDescription">PRODUCT
-                                DESCRIPTION</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown" style="float: left;">
-                        <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin-right: 50px;z-index: 10;"
-                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
-                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a><a
-                                onmouseover="changeColor(this)" onmouseout="normalColor(this)"
-                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
-                        </div>
-                    </div>
+            </ul>
+            <ul>
+                <li class="active">
+                    <div></div>
+                    <a href="#heading3">Human Practices</a>
                 </li>
             </ul>
         </div>
-    </div>
 
-    <!-- Back to Top Button -->
-    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
-        <svg width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
-        </svg>
-    </button>
-    <!-- Back to Top Button End-->
-
-    <!-- Progress bar -->
-    <div id="globalWrapper">
-        <div id="fixedOverlay" bg="none">
-            <div class="scroll-wrapper">
-                <div id="sidebar-wrapper" class="scroll-area">
-                    <div id="scrollbar-container">
-                        <div id="scrollbar" style="height: 3%;"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Progress bar End -->
-
-    <!-- in page menu -->
-    <div id="index" class="sideBlock">
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading1">Introduction</a>
-            </li>
-        </ul>
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading2">Wet Lab</a>
-            </li>
-        </ul>
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading3">Dry Lab</a>
-            </li>
-        </ul>
-        <ul>
-            <li class="active">
-                <div></div>
-                <a href="#heading4">Human Practices</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- introduction -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading1">
-                    <div class="header">
-                        <h1>Introduction</h1>
-                    </div>
-                    <p class="content-paragraph">
-                        INSERT
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--DL Results -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
-                <div id="heading3">
-                    <div class="header">
-                        <h1>Results</h1>
-                    </div>
-                    <br><br><br>
-                    <p>Below we have included the results our simulations from an exosome model
-                        itterated with two different approaches. You can find more details about
-                        each model in our <a href="https://2021.igem.org/Team:Greece_United/Model" target="_blank">wiki
-                            page.</a></p>
-                    <br><br>
-                    <div class="header">
-                        <h3>Approach A</h3>
-                    </div>
-                    <p class="content-paragraph">
-                        We ran our simulation for a time span of 24h.
-                    </p>
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                        src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>CAP and regular exosomes
-                        synthesized
-                        with [TF] = 24000</p>
-
-                    <p class="content-paragraph">
-                        Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h
-                        the
-                        amount of CAP exosomes synthesized
-                        is far greater than that of regular exosomes (Figure 5). This is a desired result, because it
-                        has
-                        been proven that CAP exosomes have
-                        higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely
-                        end up
-                        entering the blood stream.
-                        But why is there such a gap between these two types of exosomes?
-
-                        <br><br>
-
-                        To find out, we thought it would be best to see the difference in the expression rates of pre
-                        miRNA
-                        and the Lamp2b-CAP membrane protein.
-                    </p>
-
-
-                    <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                        src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Lamp2b-CAP and pre miRNA synthesis
-                        with
-                        [TF] = 24000 </p>
-
-
-                    <p class="content-paragraph">
-                        In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells.
-                        This result makes sense, because when the gene is transcripted once, we get at most a single
-                        prem
-                        iRNA molecule and an mRNA
-                        molecule which is likely translated more than once. Over the spam of 24h this adds up to having
-                        a
-                        higher level of the membrane
-                        protein and thus more CAP exosomes.
-                    </p>
-
-                    <div id="heading5">
-                        <br><br><br>
+        <!--WL Results -->
+        <div id="heading1">
+            <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+                <div class="contentBlock">
+                    <div class="content">
                         <div class="header">
-                            <h3>Approach B</h3>
+                            <h1>Results</h1>
+                            <h2>Wet Lab</h2>
+                        </div>
+                        <br>
+                        
+                        <p class="content-paragraph">
+                            During the our lab experiments we tried to assemble our genetic construct. Unfortunately, 
+                            we were not able to transfect HEK293T cells in order to end up with some results concerning the 
+                            part that we had designed, as it was not successfully inserted in a plasmid backbone.<br><br>
+                        </p>
+
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/a/ab/T--Greece_United--wl-re-1.png"><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/b/b2/T--Greece_United--wl-re-2.png"><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/b/b9/T--Greece_United--wl-re-3.png"><br>
+                        <p style="align-self: center" class="photo-desc"><b>Figure 1-3:</b>Electrophorisis Gels</p>
+
+                        <p class="content-paragraph">
+                            Above, we can see 4 different agarose gels(1%) in which we performed gel electrophoresis. 23 colonies of DH5a 
+                            transformed with the ligation mix were tested to see if any of these colonies had the plasmid we desired. <br><br>
+                            So, after plasmid DNA purification for each colony picked, we ran the agarose gel electrophoresis to be able 
+                            to observe the DNA isolated. Unfortunately, the are no visible bands of the plasmid we desired in any of the colonies. <br><br>
+                            Top- left agarose gel: On the first column we can see the ladder spreading evenly and on the 8th column our 
+                            vector was used as a control. In columns 1-6 the isolated DNA from the colonies was run. There are some pale 
+                            band in columns 1 , 2 and 3. <br><br>
+                            Top-right agarose gel: On the first column we can see the ladder spreading evenly and on the 8th column our 
+                            vector was used as a control. In columns 7-12 the isolated DNA from the colonies was run. There are some pale 
+                            visible bands in columns 8, 11 and 12.  <br><br>
+                            Bottom-left agarose gel: On the first column we can see the ladder spreading evenly and on the 8th column our 
+                            vector was used as a control. In columns 13-15 the isolated DNA from the colonies was run. We can see some very 
+                            pale bands in columns 14 and 15.<br><br>
+
+                            Colonies 1,8 and 11 were further grown and their plasmid DNA was Isolated again. This time  diagnostic digestions 
+                            were performed and the results follow:<br><br>
+                        </p>
+
+
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/2/27/T--Greece_United--wl-re-4.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 4:</b>Agarose gel - Digested with HindIII</p>
+                        <br>
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/f/ff/T--Greece_United--wl-re-5.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 5:</b>Agarose gel - Digested with KpnI</p>
+
+                        <p class="content-paragraph">
+                            Figure 4:  In this gel the isolated DNA and control were digested with HindIII. 
+                            We can see the ladder spread evenly on the 1st column and the control on the 5th column. 
+                            On columns 1, 8 and 11 the DNA isolated from the colonies 1,8 and 11 were ran. There is no visible plasmid DNA.<br><br>
+
+                            Figure 5:In this gel the isolated DNA and control were digested with KpnI. We can see the ladder spread 
+                            evenly on the 1st column and the control on the 5th column. On columns 1, 8 and 11 the DNA isolated from the 
+                            colonies 1,8 and 11 were ran. There is no visible plasmid DNA.<br><br>
+
+                            Therefore, we can surely conclude that our genetic construct was not successfully built.<br>
+                        </p>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Results DL -->
+        <div id="heading2">
+            <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+                <div class="contentBlock">
+                    <div class="content">
+                        <div class="header">
+                            <h1>Results</h1>
+                            <h2>Dry Lab</h2>
+                        </div>
+                        <br>
+                        <div class="header">
+                            <h3>Approach A</h3>
                         </div>
                         <p class="content-paragraph">
-                            Below you can see all the graphs that resulted from our simulation.
-                        </p>
-                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                            src="https://2021.igem.org/wiki/images/c/c7/T--Greece_United--model-g1.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Graph of mRNA, miRNA and
-                            protein rate through time.</p>
-                        <br><br><br>
-                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                            src="https://2021.igem.org/wiki/images/f/f7/T--Greece_United--model-g3.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Graph of miRNA in exosomes and
-                            Protein in exosomes value through time.</p>
-                        <br><br><br>
-                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                            src="https://2021.igem.org/wiki/images/2/27/T--Greece_United--model-g4.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Graph of miRNA useful value
-                            through time.</p>
-                        <br><br>
-                        <p>
-                            For a total runtime of <b>2880 minutes (= 2 days)</b> the cell produced, <b>16153920</b>
-                            useful exosomes (that carry the protein and miRNA),
-                            a total concentration of miRNA: <b>[miRNA] = 298527</b>, a total concentration of miRNA-
-                            useful (miRNA that got into exosomes): <b>[miRNA useful] = 520230000</b>
-                            and a total concentration of protein <b>[protein] = 755747</b>, were produced by one cell
-                            transfected with one plasmid.<br><br>
-                            The mean average of cells in a joint is 149000000 with a deviation of 46000000. We used that
-                            along with our results to calculate how much
-                            concentration of miRNA would be in each cell, considering that the exosomes would reach
-                            every cell equally. The average is <b>[miRNA] = 3.49148 </b>
-                            per cell while using the deviation the best-case scenario is <b>[miRNA] = 5.05078</b> per
-                            cell and the worst-case scenario is <b>[miRNA]= 2.66785</b>
-                            per cell.<br><br>
-
-                            Literature data have showed that exosomes with the guiding tag do not leave the target
-                            joint, while without, can be found in the whole organism.
-                            So, we calculated the effect exosomes with the protein will have inside the joint. <br><br>
-                            For a hypothetical introduction of N cells transfected with the plasmid into a joint, we
-                            calculated the large-scale extent of idea, to simulate
-                            how it would work and what efficiency it would have in more real-life conditions and
-                            numbers. The calculations are similar to those above.
-                            The results are presented in the table below.<br><br>
+                            We ran our simulation for a time span of 24h.
                         </p>
 
-                        <table>
-                            <tr>
-                                <td>
-                                    <p class="table-paragraph"><b>N cells</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Total [miRNA]</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Total [protein]</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Total [miRNA useful]</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Average case</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Worst case</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Best case</b></p>
-                                </td>
-                            </tr>
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>CAP and regular exosomes
+                            synthesized
+                            with [TF] = 24000</p>
 
-                            <tr>
-                                <td>
-                                    1000
-                                </td>
-                                <td>
-                                    2.98955e+08
-                                </td>
-                                <td>
-                                    7.55747e+08
-                                </td>
-                                <td>
-                                    5.2023e+11
-                                </td>
-                                <td>
-                                    3491.48
-                                </td>
-                                <td>
-                                    2667.85
-                                </td>
-                                <td>
-                                    5050.78
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    2000
-                                </td>
-                                <td>
-                                    5.97911e+08
-                                </td>
-                                <td>
-                                    1.51149e+09
-                                </td>
-                                <td>
-                                    1.04046e+12
-                                </td>
-                                <td>
-                                    6982.96
-                                </td>
-                                <td>
-                                    5335.7
-                                </td>
-                                <td>
-                                    10101.6
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    3000
-                                </td>
-                                <td>
-                                    8.96866e+08
-                                </td>
-                                <td>
-                                    2.26724e+09
-                                </td>
-                                <td>
-                                    1.56069e+12
-                                </td>
-                                <td>
-                                    10474.4
-                                </td>
-                                <td>
-                                    8003.54
-                                </td>
-                                <td>
-                                    15152.3
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    4000
-                                </td>
-                                <td>
-                                    1.19582e+09
-                                </td>
-                                <td>
-                                    3.02299e+09
-                                </td>
-                                <td>
-                                    2.08092e+12
-                                </td>
-                                <td>
-                                    13965.9
-                                </td>
-                                <td>
-                                    10671.4
-                                </td>
-                                <td>
-                                    20203.1
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    5000
-                                </td>
-                                <td>
-                                    1.49478e+09
-                                </td>
-                                <td>
-                                    3.77874e+09
-                                </td>
-                                <td>
-                                    2.60115e+12
-                                </td>
-                                <td>
-                                    17457.4
-                                </td>
-                                <td>
-                                    13339.2
-                                </td>
-                                <td>
-                                    25253.9
-                                </td>
-                            </tr>
-                        </table>
-                        <p>
-                            Those results are promising and show that by introducing our therapy in its current design,
-                            cells will be affected in the whole target
-                            joint by a sufficient number of exosomes that will introduce a significant amount of miRNA
-                            in each cell since miRNA copies per cell typically
-                            vary between hundreds and 120000 copies per cell. <br><br>
-                            From literature we know that chondrocytes in osteoarthritis have lower levels of miRNA140
-                            and many positive effects of increasing it have already
-                            been documented by promoting cartilage formation and inhibiting its degeneration.
-                            Even though we were not able to further correct our model due to lack of laboratory results,
-                            it shows us that based on literature we have
-                            sufficient therapeutic potential.<br><br>
+                        <p class="content-paragraph">
+                            Even though our model produces both CAP exosomes and regular exosomes, we can see that in 24h
+                            the
+                            amount of CAP exosomes synthesized
+                            is far greater than that of regular exosomes (Figure 5). This is a desired result, because it
+                            has
+                            been proven that CAP exosomes have
+                            higher affinity for chondrocytes, they get absorbed quickly by the cartilage cells and rarely
+                            end up
+                            entering the blood stream.
+                            But why is there such a gap between these two types of exosomes?
+
+                            <br><br>
+
+                            To find out, we thought it would be best to see the difference in the expression rates of pre
+                            miRNA
+                            and the Lamp2b-CAP membrane protein.
                         </p>
+
+
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Lamp2b-CAP and pre miRNA synthesis
+                            with
+                            [TF] = 24000 </p>
+
+
+                        <p class="content-paragraph">
+                            In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells.
+                            This result makes sense, because when the gene is transcripted once, we get at most a single
+                            prem
+                            iRNA molecule and an mRNA
+                            molecule which is likely translated more than once. Over the spam of 24h this adds up to having
+                            a
+                            higher level of the membrane
+                            protein and thus more CAP exosomes.
+                        </p>
+
+                            <br><br><br>
+                            <div class="header">
+                                <h3>Approach B</h3>
+                            </div>
+                            <p class="content-paragraph">
+                                Below you can see all the graphs that resulted from our simulation.
+                            </p>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/c/c7/T--Greece_United--model-g1.png">
+                            <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Graph of mRNA, miRNA and
+                                protein rate through time.</p>
+                            <br><br><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/f/f7/T--Greece_United--model-g3.png">
+                            <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Graph of miRNA in exosomes and
+                                Protein in exosomes value through time.</p>
+                            <br><br><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/2/27/T--Greece_United--model-g4.png">
+                            <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Graph of miRNA useful value
+                                through time.</p>
+                            <br><br>
+                            <p>
+                                For a total runtime of <b>2880 minutes (= 2 days)</b> the cell produced, <b>16153920</b>
+                                useful exosomes (that carry the protein and miRNA),
+                                the total concentration of miRNA in the cell is: <b>[miRNA] = 298,527 CPC</b>, a total concentration of miRNA-
+                                useful (miRNA that got into exosomes): <b>[miRNA useful] = 520,230,000 CPC</b>
+                                and a total concentration of protein <b>[protein] = 755,747 CPC</b>, were produced by one cell
+                                transfected with one plasmid.<br><br>
+                                The mean average of cells in a joint is 149,000,000 with a deviation of 46,000,000 cells. We used that
+                                along with our results to calculate how much
+                                concentration of miRNA would be in each cell, considering that the exosomes would reach
+                                every cell equally. The average is <b>[miRNA] = 3.49148 </b>
+                                copies per cell while using the deviation the best-case scenario is <b>[miRNA] = 5.05078</b> copies per
+                                cell and the worst-case scenario is <b>[miRNA]= 2.66785</b>
+                                copies per cell.<br><br>
+
+                                <b>Concentrations are counted in copies per cell (CPC).</b>
+
+                                Literature data have showed that exosomes with the guiding tag do not leave the target
+                                joint, while without, can be found in the whole organism.
+                                So, we calculated the effect exosomes with the protein will have inside the joint. <br><br>
+                                For a hypothetical introduction of N cells transfected with the plasmid into a joint, we
+                                calculated the large-scale extent of idea, to simulate
+                                how it would work and what efficiency it would have in more real-life conditions and
+                                numbers. The calculations are similar to those above.
+                                The results are presented in the table below.<br><br>
+                            </p>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p class="table-paragraph"><b>N (cells)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Total [miRNA] (CPC)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Total [protein] (CPC)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Total [miRNA useful] (CPC)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Average case (CPC)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Worst case (CPC)</b></p>
+                                    </td>
+                                    <td>
+                                        <p class="table-paragraph"><b>Best case (CPC)</b></p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        1000
+                                    </td>
+                                    <td>
+                                        2.98955e+08
+                                    </td>
+                                    <td>
+                                        7.55747e+08
+                                    </td>
+                                    <td>
+                                        5.2023e+11
+                                    </td>
+                                    <td>
+                                        3491.48
+                                    </td>
+                                    <td>
+                                        2667.85
+                                    </td>
+                                    <td>
+                                        5050.78
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2000
+                                    </td>
+                                    <td>
+                                        5.97911e+08
+                                    </td>
+                                    <td>
+                                        1.51149e+09
+                                    </td>
+                                    <td>
+                                        1.04046e+12
+                                    </td>
+                                    <td>
+                                        6982.96
+                                    </td>
+                                    <td>
+                                        5335.7
+                                    </td>
+                                    <td>
+                                        10101.6
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        3000
+                                    </td>
+                                    <td>
+                                        8.96866e+08
+                                    </td>
+                                    <td>
+                                        2.26724e+09
+                                    </td>
+                                    <td>
+                                        1.56069e+12
+                                    </td>
+                                    <td>
+                                        10474.4
+                                    </td>
+                                    <td>
+                                        8003.54
+                                    </td>
+                                    <td>
+                                        15152.3
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        4000
+                                    </td>
+                                    <td>
+                                        1.19582e+09
+                                    </td>
+                                    <td>
+                                        3.02299e+09
+                                    </td>
+                                    <td>
+                                        2.08092e+12
+                                    </td>
+                                    <td>
+                                        13965.9
+                                    </td>
+                                    <td>
+                                        10671.4
+                                    </td>
+                                    <td>
+                                        20203.1
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        5000
+                                    </td>
+                                    <td>
+                                        1.49478e+09
+                                    </td>
+                                    <td>
+                                        3.77874e+09
+                                    </td>
+                                    <td>
+                                        2.60115e+12
+                                    </td>
+                                    <td>
+                                        17457.4
+                                    </td>
+                                    <td>
+                                        13339.2
+                                    </td>
+                                    <td>
+                                        25253.9
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Those results are promising and show that by introducing our therapy in its current design,
+                                cells will be affected in the whole target
+                                joint by a sufficient number of exosomes that will introduce a significant amount of miRNA
+                                in each cell since miRNA copies per cell typically
+                                vary between hundreds and 120000 copies per cell. <br><br>
+                                From literature we know that chondrocytes in osteoarthritis have lower levels of miRNA140
+                                and many positive effects of increasing it have already
+                                been documented by promoting cartilage formation and inhibiting its degeneration.
+                                Even though we were not able to further correct our model due to lack of laboratory results,
+                                it shows us that based on literature we have
+                                <b>sufficient therapeutic potential.</b><br><br>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <br><br><br><br>
-        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+        <!--HP Results -->
+        <div id="heading3">
+            <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+                <div class="contentBlock">
+                    <div class="content">
+                        <div class="header">
+                            <h1>Results</h1>
+                            <h2>Survey</h2>
+                        </div>
+                        <br>
+                        
+                        <p class="content-paragraph">
+                            During the our lab experiments we tried to assemble our genetic construct. Unfortunately, 
+                            we were not able to transfect HEK293T cells in order to end up with some results concerning the 
+                            part that we had designed, as it was not successfully inserted in a plasmid backbone.<br><br>
+                        </p>
 
-        <ul>
-            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
-                        aria-hidden="true"></i></a></li>
-            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
-                        aria-hidden="true"></i></a></li>
-            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
-                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
-                        aria-hidden="true"></i></a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
-                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
-                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
-            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
-                        aria-hidden="true"></i></a></li>
-            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
-                        aria-hidden="true"></i></a></li>
-        </ul>
-        <br><br><br><br><br><br><br>
-        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png"><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png"><br>
+                            <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                            src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png"><br>
+                        <p style="align-self: center" class="photo-desc"><b>Figure 1-3:</b>Electrophorisis Gels</p>
 
-        <br><br><br><br><br><br><br><br>
-
-
-        <div style="display:flex;flex-wrap:wrap; ">
-            <div class="col">
-                <a href="https://igemnous.med.duth.gr/" target="_blank">
-                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
-                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
-                </a>
-
-            </div>
-
-            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
-                <div class="footer_sponsors"
-                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
-                    <a href="https://duth.gr/" target="_blank"><img
-                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
-                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
-                    <a href="https://www.geneious.com/" target="_blank"><img
-                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
-                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
-                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
-                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
-                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
-                    <a href="https://bioemtech.com/" target="_blank"><img
-                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
-                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                        
+                    </div>
                 </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <br><br><br><br>
+            <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+            <ul>
+                <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                            aria-hidden="true"></i></a></li>
+                <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                            aria-hidden="true"></i></a></li>
+                <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                            aria-hidden="true"></i></a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                            class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                            aria-hidden="true"></i></a></li>
+                <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                            aria-hidden="true"></i></a></li>
+            </ul>
+            <br><br><br><br><br><br><br>
+            <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+            <br><br><br><br><br><br><br><br>
+
+
+            <div style="display:flex;flex-wrap:wrap; ">
+                <div class="col">
+                    <a href="https://igemnous.med.duth.gr/" target="_blank">
+                        <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                            src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                    </a>
+
+                </div>
+
+                <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                    <div class="footer_sponsors"
+                        style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                        <a href="https://duth.gr/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                                style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                        <a href="https://www.geneious.com/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                                style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                        <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                                style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                        <a href="https://bioemtech.com/" target="_blank"><img
+                                src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                                style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
+        </footer>
+    </body>
 
-    </footer>
-</body>
-
-<script>
-    function changeColor(x) {
-        x.style.background = '#5893D4';
-        x.style.color = '#002060';
-    }
-
-    function normalColor(x) {
-        x.style.background = '#B7E0FF';
-    }
-</script>
-<script>
-    // Loader
-    window.addEventListener("load", function () {
-        let loader = document.getElementById('loader-bg');
-
-        setTimeout(function () {
-            loader.classList.add('loaded')
-        }, 100);
-    });
-</script>
-<script>
-    var textSection = null;
-    var navbar = document.getElementById("navbar");
-
-    window.addEventListener('load', function () {
-        textSection = document.querySelector('.elevate-navbar');
-        checkScrollPos();
-        checkBackToTopPos();
-    })
-    window.addEventListener('scroll', function () {
-        updateScrollbar();
-        checkNavbarPos();
-        checkScrollPos();
-        checkBackToTopPos();
-    });
-
-    function checkScrollPos() {
-        var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
-        var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
-        let scrollWrapper = document.querySelector('.scroll-wrapper');
-        if (scrollbarBottom >= footerTop) {
-            if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
-                "true");
-        } else {
-            if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
-                "false");
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
         }
-    }
 
-    function checkBackToTopPos() {
-        if ($(window).scrollTop() > 1000) {
-            $('#backtotop-wrapper').addClass('scrolled')
-        } else $('#backtotop-wrapper').removeClass('scrolled')
-    }
-    $(document).ready(function () {
-        $('#backtotop-wrapper').on('click', function () {
-            $('html, body').animate({
-                'scrollTop': $('body').offset().top
-            }, 2000);
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
         });
-    });
+    </script>
+    <script>
+        var textSection = null;
+        var navbar = document.getElementById("navbar");
 
-    function updateScrollbar() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - window.innerHeight;;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("scrollbar").style.height = scrolled + "%";
-    }
+        window.addEventListener('load', function () {
+            textSection = document.querySelector('.elevate-navbar');
+            checkScrollPos();
+            checkBackToTopPos();
+        })
+        window.addEventListener('scroll', function () {
+            updateScrollbar();
+            checkNavbarPos();
+            checkScrollPos();
+            checkBackToTopPos();
+        });
 
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 400,
-        speedAsDuration: true,
-        offset: 160
-    });
-
-    document.getElementById("fixedOverlay").classList.add("project");
-</script>
-<script>
-    function changeColor(x) {
-        x.style.background = '#5893D4';
-        x.style.color = '#002060';
-    }
-
-    function normalColor(x) {
-        x.style.background = '#B7E0FF';
-    }
-</script>
-<!-- Back to Top Button -->
-<script>
-    var mybutton = document.getElementById("BacktoTop");
-
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+        function checkScrollPos() {
+            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+            let scrollWrapper = document.querySelector('.scroll-wrapper');
+            if (scrollbarBottom >= footerTop) {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                    "true");
+            } else {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                    "false");
+            }
         }
-    }
 
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
+        function checkBackToTopPos() {
+            if ($(window).scrollTop() > 1000) {
+                $('#backtotop-wrapper').addClass('scrolled')
+            } else $('#backtotop-wrapper').removeClass('scrolled')
+        }
+        $(document).ready(function () {
+            $('#backtotop-wrapper').on('click', function () {
+                $('html, body').animate({
+                    'scrollTop': $('body').offset().top
+                }, 2000);
+            });
+        });
+
+        function updateScrollbar() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - window.innerHeight;;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollbar").style.height = scrolled + "%";
+        }
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
+    </script>
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
+        }
+
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+    <!-- Back to Top Button -->
+    <script>
+        var mybutton = document.getElementById("BacktoTop");
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 
 </html>
