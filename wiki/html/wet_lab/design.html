@@ -160,7 +160,31 @@
             z-index: 5;
         }
     </style>
+<!-- header text -->
+<style>
+    .header h1 {
+        font-size: 40px;
+        margin-block-end: 0;
+        color: #1F3C88;
+        font-family: "raleway", sans-serif !important;
+        padding-bottom: px;
+    }
 
+    .header h2 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #5893D4;
+    }
+
+    .header h3 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        font-size: 24px;
+        color: #5893D4;
+    }
+</style>
 
     <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
         <div style="padding: 14px 20px;
@@ -315,15 +339,6 @@
     </div>
 
 
-
-
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ------------------- PAGE CONTENT-------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
     <style>
         /* progress bar */
 
@@ -648,8 +663,6 @@
     <!-- header text -->
 
     <div id="index" class="sideBlock">
-        <div id="indexbutton" class="indexbutton">Index</div>
-
         <ul>
             <li class="active">
                 <div></div>
@@ -684,190 +697,220 @@
 
     </div>
 
+    <!-- background -->
+    <div id="heading0">
+        <div style="margin-top: 50px; padding-bottom:100px; margin-left:300px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <div class="header">
+                        <h1>Background</h1>
+                    </div>
+                    <br><br>
+                    <p class="content-paragraph">
+
+                        Osteoarthritis is a joint disease which is characterized by progressive deterioration of the articular cartilage. Articular cartilage destruction is caused by degeneration of extracellular matrix, mainly composed of type II collagen and aggrecan. 
+                        <br><br>
+                        Key matrix degrading enzymes that should be inhibited include matrix metalloproteinases (MMPs), namely MMP13, and metalloproteinase with thrombospondin motifs (ADAMTSs), namely ADAMTS4 and ADAMTS5. 
+                        <br><br>
+                        Cartilage matrix homeostasis is disrupted by proinflammatory cytokines and chemokines that stimulate the collective production of proteases, nitric oxide (NO), and eicosanoids such as prostaglandins and leukotrienes. The action of these inflammatory mediators results in the induction of the catabolic pathways, inhibition of matrix synthesis, and promotion of cellular apoptosis.  
+                        <br><br>
+                        Key proinflammatory cytokines secreted in OA onset are IL-1β and TNF-α, anddrive the inflammatory cascade independently or in collaboration with other cytokines. IL-1β interferes with the production of structural proteins, affects MMPs’ synthesis by chondrocytes and induces the production of reactive oxygen species, for example, nitric oxide (NO). 
+                        <br><br>
+                        The nuclear factor-kappa B (NF-κB) transcription factor plays a central role in the pathogenesis of osteoarthritis. It is triggered by proinflammatory cytokines and ECM degradation products. The activated NF-κB modulates the expression of several cytokines, chemokines and matrix-degrading enzymes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- all -->
+    <div id="heading1">
+        <div style="margin-top: 50px; padding-bottom:100px; margin-left:300px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <div class="header">
+                        <h1>Overview</h1>
+                    </div>
+                    <br><br>
+                    <p class="paragraph-content">
+                        Our project proposes a therapeutic approach to disrupt the inflammation cycle and the production of matrix-degrading enzymes and promote the regeneration of the cartilage. 
+                        <br><br>
+                        The main idea is to design a novel method to deliver a therapeutic microRNA in the OA chondrocytes. For that purpose we designed a plasmid that overexpresses the microRNA. Cells transfected with the plasmid are induced in the cartilage and begin to produce miRNA carrying exosomes. In turn, the exosomes deliver the therapeutic miRNA to the OA chondrocytes. 
+                    </p>
+
+                    <div id="heading2"></div>
+                    <div class="header">
+                        <h3>Genetic Circuit</h3>
+                    </div>
+                    <br>
+                    <p class="paragraph-content">
+                        As mentioned, osteoarthritis is characterized by an intense inflammatory cycle, in which the Transcription Factor(TF) NF-kB plays a central role. NF-kB is highly expressed in chondrocytes during the duration of the disease. 
+                        <br><br>
+                        To exploit the abundance of NF-kB in the osteoarthritic chondrocytes, we choose the Genetic Circuit designed by Smole et al., since its activation happens through the binding of NF-kB. This circuit is composed by 5 parts:
+                        <br><br>
+                        <br>&nbsp;−&nbsp;&nbsp;A Sensor that can detect inflammation and in particular the transcription factor NF-kB (even on small concentrations), to activate the secretion process of the proteins. 
+                        <br>&nbsp;−&nbsp;&nbsp;An Amplifier that can amplify the sensor’s signal. 
+                        <br>&nbsp;−&nbsp;&nbsp;An Effector activated by the sensor and the amplifier, which initiates the transcription of the microRNA and Lamp2b
+                        <br>&nbsp;−&nbsp;&nbsp;A Thresholder which acts as a threshold to avoid overexpression of the effector. 
+                        <br>&nbsp;−&nbsp;&nbsp;A Safety Switch which deactivates the genetic circuit, by administering a circuit inhibitor, doxycycline (Dox).
+
+                    </p>
+                    <img style="width:85%; align-self: center; "
+                        src="https://2021.igem.org/wiki/images/b/ba/T--Greece_United--design-4.png">
+                    <br><br>
+                    <br><br>
+
+                    <p class="content-paragraph">
+                        <div class="header">
+                            <h3>Effector Components for Exosome Production</h3>
+                        </div>
+                        <br>
+                        
+
+                        The Effector components used in exosome production are analyzed in the following table.
+                        <br>
+                        <br>
+
+                        <table style="width:100%" id="education">
+                            <tr>
+                                <th>Components</th>
+
+                            </tr>
+                            <tr onClick='toggleRow(this)'>
+                                <td>microRNA - 140</td>
+
+                                <td class='expanded-row-content hide-row'>
+                                    miRNAs are a class of small (19-24 nucleotides in length), noncoding RNAs that can regulate gene expression by binding to specific sequences in mRNAs, resulting in either degradation of the target mRNAs or repression of their translation.
+                                    <br><br>
+                                    miR-140 is a micro-RNA that regulates cartilage development and homeostasis. It is encoded in an intronic region of the ubiquitin E3 ligase and it is highly conserved among vertebrates.
+                                    <br><br>
+                                    The expression of mir140 is significantly decreased in OA, while its external administration and overexpression have been shown to halt the progression of the disease and promote the regeneration of the cartilage. While the exact targets of mir140 are not yet fully known, they include MMP13 and ADAMTS5 that participate in the degradation of the extracellular matrix.
+                                    <br><br>
+                                    For the above reasons, mir140 is one of the main molecules that are investigated in the search for a regenerative therapy of OA. Our project aims to create cells that when injected to the affected joint will produce and deliver mir140 to the chondrocytes.
+                                </td>
+                            </tr>
+                            <tr onClick='toggleRow(this)'>
+                                <td>Exosomes</td>
+
+                                <td class='expanded-row-content hide-row'>
+                                    Exosomes are extracellular vesicles (EVs) that are produced in the endosomal compartment of most eukaryotic cells. They are produced through the inward budding of the multivesicular body (MVB) and are released to the extracellular environment when the MVB fusses with the plasma membrane.
+                                    <br><br>
+                                    Exosomes contain a variety of proteins and small non-coding RNAs. They are natural messengers in cell−cell communications and can therefore be modified to deliver an intended cargo to specified cells. Our design intends to use these natural messengers as the delivery system of mir140 to chondrocytes.
+                                </td>
+                            </tr>
+
+                            <tr onClick='toggleRow(this)'>
+                                <td>Lamp2b - GFP - CAP</td>
+
+                                <td class='expanded-row-content hide-row'>
+                                    The lysosome-associated membrane glycoprotein 2b (Lamp2b) is located in the membrane of exosomes. In our design, we use a modified lamp2b that includes a chondrocyte-affinity peptide (CAP) at the N-terminus of lamp2b that will promote binding to the membrane of chondrocytes. To enable monitoring of the exosome production, we added a Green Florescent Protein (GFP) domain between the CAP and Lamp2b. 
+                                    <br><br>
+                                    Therefore, the effector of the genetic construct was reformed as follows with the modified Lamp-2b and the mir-140
+
+                                    <br><br>
+
+                                    <img style="width:85%; align-self: center; "
+                                        src="https://2021.igem.org/wiki/images/b/b4/T--Greece_United--design-3.png">
+
+
+
+                                </td>
+                            </tr>
+                        </table>
+                    </p>
+                    <br><br>
+
+                    <div id="heading3"></div>
+
+                    <div class="header">
+                        <h3>Cell Type Decision</h3>
+                    </div>
+                    <br>
+                    <p class="paragraph-content">
+                        A suitable cell candidate for our approach is Mesenchymal Stem Cells (MSCs) for two reasons: (a) they are already being studied as a potential therapy of osteoarthritis, as they can differentiate to chondrocytes and support cartilage regeneration; and (b) they can produce exosomes. 
+                        <br><br>
+                        However, MSCs are difficult to handle, let alone to transfect. Considering the limited time span available for the competition, we opted to work with HEK293T cells, which also have the same ability to produce exosomes while they are easier to cultivate and transfect.
+                    </p>
+                    <br><br>
+
+                    <div id="heading4"></div>
+
+                    <div class="header">
+                        <h3>Genetic Construct Design</h3>
+                    </div>
+                    <br>
+                    <p class="paragraph-content">
+                        As a first step, we decided to experimentally test the Effector component of the genetic circuit, which would mean that only 1 plasmid should be assembled and transfected. 
+                        <br><br>
+                        We had collected all of the sequences of the components that wanted to test Geneious Prime. We wanted this part to be transfected in HEK293T cells and be expressed under constant expression in order to be able to measure the outcomes to which it leads, meaning the exosomes production and the presence of miRNA-140 inside the exosomes. For that, we needed to assemble a genetic construct, to be able to perform the transfection. 
+                        <br><br>
+                        <br><br>
+
+                        <b>Plasmid Design</b>
+
+                        To enable transfection, we designed a genetic construct that could be suitable for amplification in bacteria (DH5alpha E.coli) and for transfecting HEK293T cells. 
+                        <br><br>
+
+                        The pcDNA3 GFP LIC cloning vector (6D) was chosen as a plasmid backbone, to account for the overall requirements:
+                        <br>
+
+                        <br>&nbsp;−&nbsp;&nbsp;Ampicillin-resistance Gene (for bacteria cultures)
+                        <br>&nbsp;−&nbsp;&nbsp;Kanamycin/Neomycine – resistance gene (for HEK293T selection)
+                        <br>&nbsp;−&nbsp;&nbsp;Origin of Replication
+                        <br>&nbsp;−&nbsp;&nbsp;CMV promoter
+                        <br>&nbsp;−&nbsp;&nbsp;PolyA_signal
+
+                        <br><br>
+                    </p>
+
+                    <img style="width:85%; align-self: center; "
+                        src="https://2021.igem.org/wiki/images/b/b2/T--Greece_United--design-1.png">
+                    <br><br>
+                    <br><br>
+
+                    <p class="content-paragraph">
+
+                        <b>Insert Design</b><br>
+
+                        The proposed insert consists of 2 main subparts: (a) the miRNA-140, and (b) the modified Lamp-2b protein. The sequence of precursor mir-140 was found on miRbase while the sequence of Lamp-2b was found on Uniprot and added to the insert in silico. 
+                        <br><br>
+                        Lamp-2b is a transmembrane protein which is distributed in the surface of exosomes. Therefore, we thought of combining it with a Guiding Tag, the Chondrocyte Affinity Peptide. Also, we needed a way to be able to quantify this protein and consequently the exosomes carrying this modified peptide. The way we chose to do this was by fusing Lamp-2b with a GFP sequence. As Lamp-2b is a transmembrane protein though, it has a Signal-Peptide which needs to be in the beginning of the polypeptide chain, in order to achieve the membrane localization. Also, the chondrocyte Affinity Peptide needed to be in the outer surface of the modified protein in order to guide the produced exosomes to the chondrocytes. So, the sequence is:
+                        <br><br>
+                        SP Lamp2b – CAP – GFP- Lamp2b
+                        <br><br>
+                        followed by the sequence of the precursor mir-140 (so that the mir-140 is cut off in the cells).
+                        <br><br>
+                        The plasmid backbone we chose already had a GFP gene, which we did not need as the modified Lamp-2b was equipped with a GFP by itself. So, the idea was that the plasmid would be double digested and the GFP gene would be excluded. 
+                        <br><br>
+                        The plasmid backbone already had a HindIII restriction site right before the GFP gene. Consequently, a HindIII restriction site was added to our insert as well. We needed to find a restriction site right in the end of the GFP gene in our plasmid backbone which would suit our experiments, while making sure that we don’t encounter any problems in the ligation digestion with the insert and our vector. In the end of the GFP gene in our plasmid there was an XbaI restriction site. It is a commonly used enzyme, but the problem was that our insert already had an XbaI restriction site in its prefix that was added as it is an iGEM part. So, another XbaI restriction site in our plasmid would not be beneficial. But, after some studying we found out that NheI is a restriction enzyme that can leave sticky ends suitable for the sticky ends that are left after an XbaI digestion. For that reason, NheI was very convenent for our use and a NheI restriction site was added in the end of our insert. 
+                        <br><br>
+                        Considering all the requirements, the final insert was formed as shown in the figure.
+
+                    </p>
+                    <img style="width:85%; align-self: center; "
+                        src="https://2021.igem.org/wiki/images/6/6b/T--Greece_United--design-2.png">
+                    <br><br>
+
+                    <p class="content-paragraph">
+                        Digestions and ligation were performed in silico on Geneious.
+                    </p>
+                    <img style="width:85%; align-self: center; "
+                        src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--Eng05a.png">
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- references -->
     <div style="margin-top: 50px; padding-bottom:100px; margin-left:300px;" id="content-tag">
         <div class="contentBlock">
             <div class="content">
                 <div class="header">
+                    <h3>References</h3>
                 </div>
-                <div id="heading0"></div>
-
-                <h2>Background</h2>
-                <p class="content-paragraph">
-
-                    Osteoarthritis is a joint disease which is characterized by progressive deterioration of the articular cartilage. Articular cartilage destruction is caused by degeneration of extracellular matrix, mainly composed of type II collagen and aggrecan. 
-                    <br><br>
-                    Key matrix degrading enzymes that should be inhibited include matrix metalloproteinases (MMPs), namely MMP13, and metalloproteinase with thrombospondin motifs (ADAMTSs), namely ADAMTS4 and ADAMTS5. 
-                    <br><br>
-                    Cartilage matrix homeostasis is disrupted by proinflammatory cytokines and chemokines that stimulate the collective production of proteases, nitric oxide (NO), and eicosanoids such as prostaglandins and leukotrienes. The action of these inflammatory mediators results in the induction of the catabolic pathways, inhibition of matrix synthesis, and promotion of cellular apoptosis.  
-                    <br><br>
-                    Key proinflammatory cytokines secreted in OA onset are IL-1β and TNF-α, anddrive the inflammatory cascade independently or in collaboration with other cytokines. IL-1β interferes with the production of structural proteins, affects MMPs’ synthesis by chondrocytes and induces the production of reactive oxygen species, for example, nitric oxide (NO). 
-                    <br><br>
-                    The nuclear factor-kappa B (NF-κB) transcription factor plays a central role in the pathogenesis of osteoarthritis. It is triggered by proinflammatory cytokines and ECM degradation products. The activated NF-κB modulates the expression of several cytokines, chemokines and matrix-degrading enzymes.
-                </p>
-
-
-                <div id="heading1"></div>
-
-                <h2>Overview</h2>
-                <p class="paragraph-content">
-                    Our project proposes a therapeutic approach to disrupt the inflammation cycle and the production of matrix-degrading enzymes and promote the regeneration of the cartilage. 
-                    <br><br>
-                    The main idea is to design a novel method to deliver a therapeutic microRNA in the OA chondrocytes. For that purpose we designed a plasmid that overexpresses the microRNA. Cells transfected with the plasmid are induced in the cartilage and begin to produce miRNA carrying exosomes. In turn, the exosomes deliver the therapeutic miRNA to the OA chondrocytes. 
-                </p>
-
-                <div id="heading2"></div>
-
-                <h2>Genetic Circuit</h2>
-                <p class="paragraph-content">
-                    As mentioned, osteoarthritis is characterized by an intense inflammatory cycle, in which the Transcription Factor(TF) NF-kB plays a central role. NF-kB is highly expressed in chondrocytes during the duration of the disease. 
-                    <br><br>
-                    To exploit the abundance of NF-kB in the osteoarthritic chondrocytes, we choose the Genetic Circuit designed by Smole et al., since its activation happens through the binding of NF-kB. This circuit is composed by 5 parts:
-                    <br><br>
-                    <br>&nbsp;−&nbsp;&nbsp;A Sensor that can detect inflammation and in particular the transcription factor NF-kB (even on small concentrations), to activate the secretion process of the proteins. 
-                    <br>&nbsp;−&nbsp;&nbsp;An Amplifier that can amplify the sensor’s signal. 
-                    <br>&nbsp;−&nbsp;&nbsp;An Effector activated by the sensor and the amplifier, which initiates the transcription of the microRNA and Lamp2b
-                    <br>&nbsp;−&nbsp;&nbsp;A Thresholder which acts as a threshold to avoid overexpression of the effector. 
-                    <br>&nbsp;−&nbsp;&nbsp;A Safety Switch which deactivates the genetic circuit, by administering a circuit inhibitor, doxycycline (Dox).
-
-                </p>
-                <img style="width:85%; align-self: center; "
-                    src="https://2021.igem.org/wiki/images/b/ba/T--Greece_United--design-4.png">
-                <br><br>
-                <br><br>
-
-                <p class="content-paragraph">
-                    <b>Effector Components for Exosome Production</b><br>
-                    <br>
-
-                    The Effector components used in exosome production are analyzed in the following table.
-                    <br>
-                    <br>
-
-                    <table style="width:100%" id="education">
-                        <tr>
-                            <th>Components</th>
-
-                        </tr>
-                        <tr onClick='toggleRow(this)'>
-                            <td>microRNA - 140</td>
-
-                            <td class='expanded-row-content hide-row'>
-                                miRNAs are a class of small (19-24 nucleotides in length), noncoding RNAs that can regulate gene expression by binding to specific sequences in mRNAs, resulting in either degradation of the target mRNAs or repression of their translation.
-                                <br><br>
-                                miR-140 is a micro-RNA that regulates cartilage development and homeostasis. It is encoded in an intronic region of the ubiquitin E3 ligase and it is highly conserved among vertebrates.
-                                <br><br>
-                                The expression of mir140 is significantly decreased in OA, while its external administration and overexpression have been shown to halt the progression of the disease and promote the regeneration of the cartilage. While the exact targets of mir140 are not yet fully known, they include MMP13 and ADAMTS5 that participate in the degradation of the extracellular matrix.
-                                <br><br>
-                                For the above reasons, mir140 is one of the main molecules that are investigated in the search for a regenerative therapy of OA. Our project aims to create cells that when injected to the affected joint will produce and deliver mir140 to the chondrocytes.
-                            </td>
-                        </tr>
-                        <tr onClick='toggleRow(this)'>
-                            <td>Exosomes</td>
-
-                            <td class='expanded-row-content hide-row'>
-                                Exosomes are extracellular vesicles (EVs) that are produced in the endosomal compartment of most eukaryotic cells. They are produced through the inward budding of the multivesicular body (MVB) and are released to the extracellular environment when the MVB fusses with the plasma membrane.
-                                <br><br>
-                                Exosomes contain a variety of proteins and small non-coding RNAs. They are natural messengers in cell−cell communications and can therefore be modified to deliver an intended cargo to specified cells. Our design intends to use these natural messengers as the delivery system of mir140 to chondrocytes.
-                            </td>
-                        </tr>
-
-                        <tr onClick='toggleRow(this)'>
-                            <td>Lamp2b - GFP - CAP</td>
-
-                            <td class='expanded-row-content hide-row'>
-                                The lysosome-associated membrane glycoprotein 2b (Lamp2b) is located in the membrane of exosomes. In our design, we use a modified lamp2b that includes a chondrocyte-affinity peptide (CAP) at the N-terminus of lamp2b that will promote binding to the membrane of chondrocytes. To enable monitoring of the exosome production, we added a Green Florescent Protein (GFP) domain between the CAP and Lamp2b. 
-                                <br><br>
-                                Therefore, the effector of the genetic construct was reformed as follows with the modified Lamp-2b and the mir-140
-
-                                <br><br>
-
-                                <img style="width:85%; align-self: center; "
-                                    src="https://2021.igem.org/wiki/images/b/b4/T--Greece_United--design-3.png">
-
-
-
-                            </td>
-                        </tr>
-                    </table>
-                </p>
-                <br><br>
-
-                <div id="heading3"></div>
-
-                <h2>Cell Type Decision</h2>
-                <p class="paragraph-content">
-                    A suitable cell candidate for our approach is Mesenchymal Stem Cells (MSCs) for two reasons: (a) they are already being studied as a potential therapy of osteoarthritis, as they can differentiate to chondrocytes and support cartilage regeneration; and (b) they can produce exosomes. 
-                    <br><br>
-                    However, MSCs are difficult to handle, let alone to transfect. Considering the limited time span available for the competition, we opted to work with HEK293T cells, which also have the same ability to produce exosomes while they are easier to cultivate and transfect.
-                </p>
-                <br><br>
-
-                <div id="heading4"></div>
-
-                <h2>Genetic Construct Design</h2>
-                <p class="paragraph-content">
-                    As a first step, we decided to experimentally test the Effector component of the genetic circuit, which would mean that only 1 plasmid should be assembled and transfected. 
-                    <br><br>
-                    We had collected all of the sequences of the components that wanted to test Geneious Prime. We wanted this part to be transfected in HEK293T cells and be expressed under constant expression in order to be able to measure the outcomes to which it leads, meaning the exosomes production and the presence of miRNA-140 inside the exosomes. For that, we needed to assemble a genetic construct, to be able to perform the transfection. 
-                    <br><br>
-                    <br><br>
-
-                    <b>Plasmid Design</b>
-
-                    To enable transfection, we designed a genetic construct that could be suitable for amplification in bacteria (DH5alpha E.coli) and for transfecting HEK293T cells. 
-                    <br><br>
-
-                    The pcDNA3 GFP LIC cloning vector (6D) was chosen as a plasmid backbone, to account for the overall requirements:
-                    <br>
-
-                    <br>&nbsp;−&nbsp;&nbsp;Ampicillin-resistance Gene (for bacteria cultures)
-                    <br>&nbsp;−&nbsp;&nbsp;Kanamycin/Neomycine – resistance gene (for HEK293T selection)
-                    <br>&nbsp;−&nbsp;&nbsp;Origin of Replication
-                    <br>&nbsp;−&nbsp;&nbsp;CMV promoter
-                    <br>&nbsp;−&nbsp;&nbsp;PolyA_signal
-
-                    <br><br>
-                </p>
-
-                <img style="width:85%; align-self: center; "
-                    src="https://2021.igem.org/wiki/images/b/b2/T--Greece_United--design-1.png">
-                <br><br>
-                <br><br>
-
-                <p class="content-paragraph">
-
-                    <b>Insert Design</b><br>
-
-                    The proposed insert consists of 2 main subparts: (a) the miRNA-140, and (b) the modified Lamp-2b protein. The sequence of precursor mir-140 was found on miRbase while the sequence of Lamp-2b was found on Uniprot and added to the insert in silico. 
-                    <br><br>
-                    Lamp-2b is a transmembrane protein which is distributed in the surface of exosomes. Therefore, we thought of combining it with a Guiding Tag, the Chondrocyte Affinity Peptide. Also, we needed a way to be able to quantify this protein and consequently the exosomes carrying this modified peptide. The way we chose to do this was by fusing Lamp-2b with a GFP sequence. As Lamp-2b is a transmembrane protein though, it has a Signal-Peptide which needs to be in the beginning of the polypeptide chain, in order to achieve the membrane localization. Also, the chondrocyte Affinity Peptide needed to be in the outer surface of the modified protein in order to guide the produced exosomes to the chondrocytes. So, the sequence is:
-                    <br><br>
-                    SP Lamp2b – CAP – GFP- Lamp2b
-                    <br><br>
-                    followed by the sequence of the precursor mir-140 (so that the mir-140 is cut off in the cells).
-                    <br><br>
-                    The plasmid backbone we chose already had a GFP gene, which we did not need as the modified Lamp-2b was equipped with a GFP by itself. So, the idea was that the plasmid would be double digested and the GFP gene would be excluded. 
-                    <br><br>
-                    The plasmid backbone already had a HindIII restriction site right before the GFP gene. Consequently, a HindIII restriction site was added to our insert as well. We needed to find a restriction site right in the end of the GFP gene in our plasmid backbone which would suit our experiments, while making sure that we don’t encounter any problems in the ligation digestion with the insert and our vector. In the end of the GFP gene in our plasmid there was an XbaI restriction site. It is a commonly used enzyme, but the problem was that our insert already had an XbaI restriction site in its prefix that was added as it is an iGEM part. So, another XbaI restriction site in our plasmid would not be beneficial. But, after some studying we found out that NheI is a restriction enzyme that can leave sticky ends suitable for the sticky ends that are left after an XbaI digestion. For that reason, NheI was very convenent for our use and a NheI restriction site was added in the end of our insert. 
-                    <br><br>
-                    Considering all the requirements, the final insert was formed as shown in the figure.
-
-                </p>
-                <img style="width:85%; align-self: center; "
-                    src="https://2021.igem.org/wiki/images/6/6b/T--Greece_United--design-2.png">
-                <br><br>
-
-                <p class="content-paragraph">
-                    Digestions and ligation were performed in silico on Geneious.
-                </p>
-                <img style="width:85%; align-self: center; "
-                    src="https://2021.igem.org/wiki/images/9/9b/T--Greece_United--Eng05a.png">
-                <br><br>
-                <br><br>
-                <br><br>
-
-
-                <h2>References</h2>
+                <br>
                 <div style="font-size: 0.9em; font-style: italic; " class="references">
 
                     <br>1. &nbsp;&nbsp;A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic
