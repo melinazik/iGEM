@@ -1,0 +1,1297 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer_Icons&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_InPageMenu&action=raw&ctype=text/css" />
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_MainContent&action=raw&ctype=text/css" />
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_NavBar&action=raw&ctype=text/css" />
+<script type="text/javascript"
+    src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
+</script>
+<script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+    /* CLEAR DEFAULT SETTINGS **************************************************/
+
+    #sideMenu,
+    #top_title,
+    .patrollink,
+    #firstHeading,
+    #home_logo,
+    #sideMenu {
+        display: none;
+    }
+
+    #content {
+        padding: 0px;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+        border: none;
+    }
+
+    #bodyContent h1,
+    #bodyContent h2,
+    #bodyContent h3,
+    #bodyContent h4,
+    #bodyContent h5 {
+        margin-bottom: 0px;
+    }
+
+    #bodyContent a[href ^="https://"],
+    .link-https {
+        padding-right: 0px;
+    }
+
+    html {
+        height: 100%;
+        min-height: 100%;
+        font-family: 'Raleway', sans-serif;
+
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+        background: white;
+
+        font-family: 'Raleway', sans-serif;
+
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+
+<body>
+    <style>
+        #loader-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: calc((100%)/5);
+            justify-content: center;
+            height: 0.1vh;
+            width: 100vw;
+            z-index: 500;
+            position: fixed;
+            pointer-events: none;
+        }
+
+        #loader-bg {
+            position: fixed;
+            height: 200vw;
+            width: 200vw;
+            transform: translateY(0);
+            background-color: #6C8EC9;
+            transition-property: height, width, border-radius, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.99, .05, .51, 1.01);
+            transition-delay: 0s, 0s, 0s, 1s;
+            border-radius: 0%;
+            -webkit-box-shadow: 0px 0px 27px 0px #6E91CB;
+            -moz-box-shadow: 0px 0px 27px 0px #6E91CB;
+            box-shadow: 0px 0px 27px 0px #6E91CB;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+
+        #loader-wrapper img {
+            width: 30vh;
+
+        }
+
+        #loader-wrapper h1 {
+            color: #fafafc;
+            text-transform: uppercase;
+            font-family: 'montserrat-black', sans-serif !important;
+            position: absolute;
+            transform: translateY(15vh);
+            font-size: 2.2vw;
+            opacity: 100%;
+        }
+
+        #loader-bg.loaded {
+            height: 35vh;
+            width: 35vh;
+            border-radius: 70%;
+            transform: translateY(-2000px);
+        }
+    </style>
+
+
+    <div id="loader-wrapper">
+        <div id="loader-bg">
+            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--loader.gif" />
+        </div>
+    </div>
+
+    <script>
+        // Loader
+        window.addEventListener("load", function () {
+            let loader = document.getElementById('loader-bg');
+
+            setTimeout(function () {
+                loader.classList.add('loaded')
+            }, 100);
+        });
+    </script>
+
+    <!-- header -->
+    <img src="https://2021.igem.org/wiki/images/7/73/T--Greece_United--header-design.png" class="banner">
+
+    <style>
+        .banner {
+
+            width: 100%;
+            background-size: cover;
+            margin-top: 80px;
+            z-index: 5;
+        }
+    </style>
+
+
+    <div style="display: flex;flex-wrap: wrap;background-color:#002060;position: fixed;top: 0;width: 100%;z-index: 10;">
+        <div style="padding: 14px 20px;
+        display: flex;
+        cursor: pointer;">
+            <a href="https://2021.igem.org/Team:Greece_United" class="active">
+
+
+                <img style="height: 70px;background-size: cover;padding-right: 7px;position: relative;padding-top:20px;"
+                    src="https://2021.igem.org/wiki/images/a/a2/T--Greece_United--logo-small-transp-cropped.png">
+
+            </a>
+        </div>
+
+
+        <div class="right-navbar">
+            <ul id="nav" style="display: flex;flex-direction: row;list-style: none inside;margin: 0;padding: 0;">
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United'">HOME</a>
+                        </button>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Description'">PROJECT</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Description">DESCRIPTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Implementation">IMPLEMENTATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Results">RESULTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Contribution">CONTRIBUTION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Partnership">PARTNERSHIP</a> <a
+                                onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Fundraising">FUNDRAISING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Graphics">GRAPHICS</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Design'">WET LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Design">DESIGN</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Engineering">ENGINEERING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Experiments">EXPERIMENTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Notebook">NOTEBOOK</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Parts">PARTS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/PartCollection">PART COLLECTION</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Model'">DRY LAB</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model">MODEL</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/App">APPLICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Model/Circuit">GENETIC CIRCUIT</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Human_Practices'">HUMAN
+                            PRACTICES</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Human_Practices">HUMAN PRACTICES</a>
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Education">EDUCATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Communication">COMMUNICATION</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Collaborations">COLLABORATIONS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Inclusivity">INCLUSIVITY</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Entrepreneurship'">
+                            ENTREPRENEURSHIP</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship">ENTREPRENEURSHIP</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/MarketAnalysis">MARKET
+                                ANALYSIS</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/StrategicPlanning">STRATEGIC
+                                PLANNING</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Entrepreneurship/ProductDescription">PRODUCT
+                                DESCRIPTION</a>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
+                        </button>
+                        <div class="dropdown-content">
+
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Team">TEAM</a>
+                            <a onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Attributions">ATTRIBUTIONS</a><a
+                                onmouseover="changeColor(this)" onmouseout="normalColor(this)"
+                                href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ------------------- PAGE CONTENT-------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <style>
+        /* progress bar */
+
+        #fixedOverlay {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 12;
+            top: 18px;
+            transition: 1s;
+            font-family: "montserrat-light" !important;
+            /* background-color: #002060; */
+        }
+
+        #fixedOverlay[bg=none],
+        #fixedOverlay[bg=dark] {
+            pointer-events: none;
+        }
+
+        #fixedOverlay .scroll-wrapper {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area {
+            height: 100%;
+            width: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            #fixedOverlay .scroll-wrapper .scroll-area {
+                width: 10vw;
+            }
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(98, 129, 239, 0.3);
+            border-radius: 10px;
+            max-width: 7px;
+        }
+
+        #fixedOverlay .scroll-wrapper .scroll-area#sidebar-wrapper #scrollbar-container #scrollbar {
+            width: 100%;
+            background: #002060;
+            opacity: 100%;
+            height: 0%;
+            border-radius: 20px;
+            transition: background-color 0.5s;
+        }
+
+        #fixedOverlay nav {
+            box-sizing: border-box;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+            transition: 0.5s;
+            height: 87px;
+        }
+
+        /* back to top */
+
+        #BacktoTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #B8EBFF;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 30%;
+        }
+
+        #BacktoTop:hover {
+            background-color: #002060;
+        }
+    </style>
+
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
+        }
+
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="BacktoTop" title="Go to top">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+        </svg>
+    </button>
+    <!-- Back to Top Button End-->
+
+    <!-- Progress bar -->
+    <div id="globalWrapper">
+        <div id="fixedOverlay" bg="none">
+            <div class="scroll-wrapper">
+                <div id="sidebar-wrapper" class="scroll-area">
+                    <div id="scrollbar-container">
+                        <div id="scrollbar" style="height: 3%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Progress bar End -->
+
+
+
+    <script>
+        var textSection = null;
+        var navbar = document.getElementById("navbar");
+
+        window.addEventListener('load', function () {
+            textSection = document.querySelector('.elevate-navbar');
+            checkScrollPos();
+            checkBackToTopPos();
+        })
+        window.addEventListener('scroll', function () {
+            updateScrollbar();
+            checkNavbarPos();
+            checkScrollPos();
+            checkBackToTopPos();
+        });
+
+        function checkScrollPos() {
+            var footerTop = document.getElementById("footerWrapper").getBoundingClientRect().top;
+            var scrollbarBottom = document.getElementById("scrollbar-container").getBoundingClientRect().bottom;
+            let scrollWrapper = document.querySelector('.scroll-wrapper');
+            if (scrollbarBottom >= footerTop) {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "false") scrollWrapper.setAttribute("hiddenScroll",
+                    "true");
+            } else {
+                if (scrollWrapper.getAttribute("hiddenScroll") == "true") scrollWrapper.setAttribute("hiddenScroll",
+                    "false");
+            }
+        }
+
+        function checkBackToTopPos() {
+            if ($(window).scrollTop() > 1000) {
+                $('#backtotop-wrapper').addClass('scrolled')
+            } else $('#backtotop-wrapper').removeClass('scrolled')
+        }
+        $(document).ready(function () {
+            $('#backtotop-wrapper').on('click', function () {
+                $('html, body').animate({
+                    'scrollTop': $('body').offset().top
+                }, 2000);
+            });
+        });
+
+        function updateScrollbar() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - window.innerHeight;;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollbar").style.height = scrolled + "%";
+        }
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 400,
+            speedAsDuration: true,
+            offset: 160
+        });
+
+        document.getElementById("fixedOverlay").classList.add("project");
+    </script>
+    <script>
+        function changeColor(x) {
+            x.style.background = '#5893D4';
+            x.style.color = '#002060';
+        }
+
+        function normalColor(x) {
+            x.style.background = '#B7E0FF';
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <script>
+        var mybutton = document.getElementById("BacktoTop");
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <style>
+        #education {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+        #education td,
+        #education th {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 8px;
+        }
+
+        #education caption {
+            background-color: #5893d4;
+            color: white;
+            font-size: large;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #education tr {
+            background-color: #a3a3a32c;
+            border: none;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            justify-content: flex-start;
+        }
+
+
+
+        #education tr:hover {
+            background-color: #a3a3a349;
+        }
+
+        #education th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #5893d4;
+            color: white;
+            font-weight: 100;
+        }
+
+        #education a:link {
+            color: #020108;
+            text-decoration: none;
+        }
+
+        #education a:visited {
+            color: #002060
+        }
+
+        #education a:hover {
+            color: #e2b205
+        }
+
+        #education a:active {
+            color: #C0F0FC
+        }
+
+        /* top-left border-radius */
+        #education tr:first-child th:first-child {
+            border-top-left-radius: 6px;
+        }
+
+        /* top-right border-radius */
+        #education tr:first-child th:last-child {
+            border-top-right-radius: 6px;
+        }
+
+        /* bottom-left border-radius */
+        #education tr:last-child td:first-child {
+            border-bottom-left-radius: 6px;
+        }
+
+        /* bottom-right border-radius */
+        #education tr:last-child td:last-child {
+            border-bottom-right-radius: 6px;
+        }
+
+        .expanded-row-content {
+            border-top: none;
+            display: grid;
+            grid-column: 1/-1;
+            justify-content: flex-start;
+            color: #0a0a0a;
+            background-color: #fff;
+            text-align: justify;
+        }
+
+        .hide-row {
+            display: none;
+        }
+    </style>
+
+    <script>
+        const toggleRow = (element) => {
+            element.getElementsByClassName('expanded-row-content')[0].classList.toggle('hide-row');
+            console.log(event);
+        }
+    </script>
+    <!-- header text -->
+
+    <div id="index" class="sideBlock">
+        <div id="indexbutton" class="indexbutton">Index</div>
+
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading0">Background</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading1">Overview</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading2">Genetic Circuit</a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">Genetic construct <br>design </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <div></div>
+                <a href="#heading3">Cell type decision</a>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div style="margin-top: 50px; padding-bottom:100px; margin-left:300px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
+                <div class="header">
+                </div>
+                <div id="heading0"></div>
+
+                <h2>Background</h2>
+                <p class="content-paragraph">
+
+                    Osteoarthritis is a joint disease which is characterized by progressive deterioration of the
+                    articular cartilage. Articular cartilage destruction is caused by degeneration of extreacellular
+                    matrix, mainly composed of type II collagen and aggrecan.
+                    <br><br>
+                    Matrix degrading enzymes, such as the matrix metalloproteinases (MMPs) and metalloproteinase with
+                    thrombospondin motifs (ADAMTSs) play key role in this procedure. A main enzyme is MMP13 that
+                    degrades, in addition to collagens, a wide range of matrix components, while ADAMTS4 and ADAMTS5 are
+                    responsible for aggrecan degradation, and their inhibition represents an important target in OA.
+                    <br><br>
+                    In OA patients, cartilage matrix homeostasis is disrupted by proinflammatory cytokines and
+                    chemokines that stimulate the collective production of proteases, nitric oxide (NO), and eicosanoids
+                    such as prostaglandins and leukotrienes by macrophages and chondrocytes. Subsequently, the action of
+                    these inflammatory mediators in the cartilage results in the induction of the catabolic pathways,
+                    inhibition of matrix synthesis, and promotion of cellular apoptosis.
+                    <br><br>
+                    Proinflammatory cytokines, such as IL-1β and TNF-α, are among the mediators secreted in early
+                    osteoarthritis. IL-1β and TNF-α drive the inflammatory cascade independently or in collaboration
+                    with other cytokines. IL-1β interferes with the production of structural proteins, affects MMPs’
+                    synthesis by chondrocytes and induces the production of reactive oxygen species, for example, nitric
+                    oxide (NO).
+                    <br><br>
+                    The nuclear factor-kappa B (NF-κB) transcription factor plays a central role in the pathogenesis of
+                    osteoarthritis. It is triggered by proinflammatory cytokines and ECM degradation products. The
+                    activated NF-κB modulates the expression of several cytokines, chemokines and matrix-degrading
+                    enzymes.
+
+
+
+                </p>
+
+
+                <div id="heading1"></div>
+
+                <h2>Overview</h2>
+                <p class="paragraph-content">
+                    Our project aims to introduce a therapeutic approach that could shut down the inflammation cycle and
+                    the production of matrix-degrading enzymes and promote the regeneration of the cartilage.
+                    <br><br>
+                    Our main idea is to create genetically modified cells that produce and deliver the therapeutic
+                    molecule, in our case a microRNA, to the chondrocytes. These cells could then be injected into the
+                    affected joint, leading to the desired effects. For that purpose we designed a plasmid that
+                    overexpresses the microRNA, which is subsequently loaded into exosomes and delivered to the
+                    chondrocytes.
+
+
+
+                </p>
+
+                <div id="heading2"></div>
+
+                <h2>Genetic Circuit</h2>
+                <p class="paragraph-content">
+                    As mentioned before, Osteoarthritis is characterized by an intense inflammatory cycle, in which the
+                    Transcription Factor(TF) NF-kB plays a central role. NF-kB is highly expressed in chondrocytes
+                    during the duration of the disease. Therefore, after extensive literature study, we found a Genetic
+                    Circuit (by Smole et al.) which fitted our approach perfectly, as the activation of the circuit
+                    happens through the binding of NF-kB in the circuit. This circuit is composed by 5 parts:
+                    <br><br>
+                    <br>&nbsp;−&nbsp;&nbsp;A Sensor that can detect inflammation and in particular the transcription
+                    factor NF-kB (even on small levels), to activate the secretion process of the used proteins.
+                    <br>&nbsp;−&nbsp;&nbsp;An Amplifier that will amplify the sensor’s signal.
+                    <br>&nbsp;−&nbsp;&nbsp;An Effector activated by the sensor and the amplifier, which will start the
+                    transcription of the microRNA and Lamp2b
+                    <br>&nbsp;−&nbsp;&nbsp;A Thresholder which will act as a threshold to avoid overexpression of the
+                    effector.
+                    <br>&nbsp;−&nbsp;&nbsp;A Safety Switch which deactivates the genetic circuit, by administering a
+                    circuit inhibitor, doxycycline (Dox).
+
+                </p>
+
+                <p class="content-paragraph">
+                    <b>Effector Components for Exosomes Production</b><br>
+                    <br>
+
+
+                    The Effector components used in exosome production are analyzed in the following table.
+                    <br>
+                    <br>
+
+                    <table style="width:100%" id="education">
+                        <tr>
+                            <th>Components</th>
+
+                        </tr>
+                        <tr onClick='toggleRow(this)'>
+                            <td>microRNA - 140</td>
+
+                            <td class='expanded-row-content hide-row'>
+                                miRNAs are a class of small (19-24 nucleotides in length), noncoding RNAs that can
+                                regulate gene expression by binding to specific sequences in mRNAs, resulting in either
+                                degradation of the target mRNAs or repression of their translation.
+                                <br><br>
+                                miR-140 is a micro-RNA that regulates cartilage development and homeostasis. It is
+                                encoded in an intronic region of the ubiquitin E3 ligase and it is highly conserved
+                                among vertebrates.
+                                <br><br>
+                                The expression of mir140 is significantly decreased in OA, while its external
+                                administration and overexpression have been shown to halt the progression of the disease
+                                and promote the regeneration of the cartilage. While the exact targets of mir140 are not
+                                yet fully known, they include MMP13 and ADAMTS5 that participate in the degradation of
+                                the extracellular matrix.
+                                <br><br>
+                                For the above reasons, mir140 is one of the main molecules that are investigated in the
+                                search for a regenerative therapy of OA. Our project aims to create cells that when
+                                injected to the affected joint will produce and deliver mir140 to the chondrocytes.
+
+
+
+
+                            </td>
+                        </tr>
+                        <tr onClick='toggleRow(this)'>
+                            <td>Exosomes</td>
+
+                            <td class='expanded-row-content hide-row'>
+                                Exosomes are extracellular vesicles (EVs) that are produced in the endosomal compartment
+                                of most eukaryotic cells. They are produced through the inward budding of the
+                                multivesicular body (MVB) and are released to the extracellular environment when the MVB
+                                fusses with the plasma membrane.
+                                <br><br>
+                                Exosomes contain a variety of proteins and small non-coding RNAs. They are natural
+                                messengers in cell−cell communications and can therefore be modified to deliver an
+                                intended cargo to specified cells. Our design intends to use these natural messengers as
+                                the delivery system of mir140 to chondrocytes.
+
+
+
+
+                            </td>
+                        </tr>
+
+                        <tr onClick='toggleRow(this)'>
+                            <td>Lamp2b - GFP - CAP</td>
+
+                            <td class='expanded-row-content hide-row'>
+                                Lysosome-associated membrane glycoprotein 2b (Lamp2b) is a protein that is located in
+                                the membrane of exosomes. In our design, we use a modified lamp2b that includes a
+                                chondrocyte-affinity peptide (CAP) at the N-terminus of lamp2b that will promote binding
+                                to the membrane of chondrocytes. In addition, we added a Green Florescent Protein (GFP)
+                                domain between the CAP and Lamp2b, in order to monitor the production of exosomes more
+                                easily.
+                                <br><br>
+                                Therefore, the effector of the genetic construct was reformed as follows with the
+                                modified Lamp-2b and the mir-140
+
+
+
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+
+                <div id="heading3"></div>
+
+                <h2>Cell Type Decision</h2>
+                <p class="paragraph-content">
+                    After our research we concluded that the Mesenchymal Stem Cells are the perfect cell type for our
+                    approach. The MSCs are already studied as a potential therapy of Osteoarthritis. Indeed the
+                    Mesenchymal Stem Cells give the opportunity for regeneration of the cartilage as they can
+                    differentiate to Chondrocytes. Besides that they have a vary important role in modulating the immune
+                    system in an osteoarthritic joint. They also allow us to pursue our approach as they are found to
+                    produce exosomes, which eventually release into the chondrocytes beneficial molecules to stop the
+                    progression of the disease.
+                    <br><br>
+                    However, this cell type, is really difficult to handle, let alone to transfect. Therefore, in the
+                    time span that we had available for the competition we couldn’t use this cell type for our
+                    experiments and we had to find some another cell type, which is more easy to handle and transfect.
+                    <br><br>
+                    For that reason, we decided to work with HEK293T cells, which also have the same ability to produce
+                    exosomes while being significantly easier to cultivate and transfect.
+
+                </p>
+
+
+                <p class="content-paragraph">
+                    The digestions and ligation were performed in silico on Geneious to make sure that everything was
+                    well designed and we ended up with our whole plasmid designed.
+                </p>
+
+                <div id="heading4"></div>
+
+                <h2>Cell Construct Design</h2>
+                <p class="paragraph-content">
+                    The genetic circuit that had concluded to use, was consisted of 5 different sub-parts, which needed
+                    to be in 5 different plasmids. That means that 5 different plasmids should be transfected inside our
+                    chassis organisms, which is really difficult to achieve during the time span of 3 months. As a
+                    consequence we decided to test only the components of the effector of the genetic circuit in our
+                    experiments, which would mean that only 1 plasmid should be assembled and transfected in the chassis
+                    organism.
+                    <br><br>
+                    We had collected all of the sequences of the components that wanted to test Geneious Prime. We
+                    wanted this part to be transfected in HEK293T cells and be expressed under constant expression in
+                    order to be able to measure the outcomes to which it leads, meaning the exosomes production and the
+                    presence of miRNA-140 inside the exosomes. For that, we needed to assemble a genetic construct, to
+                    be able to perform the transfection.
+
+                    <br><br>
+
+                    <b>Plasmid Design</b>
+
+                    Our genetic construct should be easily selected when amplifying it in bacteria (DH5alpha E.coli) and
+                    when transfected in HEK293T cells. For this purpose, we chose wisely our plasmid backbone. We also
+                    wanted our insert to be expressed constantly. <br><br>
+
+                    For these reasons, our plasmid backbone should have:<br>
+
+
+                    <br>&nbsp;−&nbsp;&nbsp;Ampicillin-resistance Gene (for bacteria cultures)
+                    <br>&nbsp;−&nbsp;&nbsp;Kanamycin/Neomycine – resistance gene (for HEK293T selection)
+                    <br>&nbsp;−&nbsp;&nbsp;Origin of Replication
+                    <br>&nbsp;−&nbsp;&nbsp;CMV promoter
+                    <br>&nbsp;−&nbsp;&nbsp;PolyA_signal
+
+                    <br><br>
+                    According to these, pcDNA3 GFP LIC cloning vector (6D) was chosen.
+
+                    <br><br>
+                </p>
+
+                <p class="content-paragraph">
+                    <b>Insert Design</b><br>
+
+                    Our insert has 2 main subparts. The miRNA-140 and the modified Lamp-2b protein. The sequence of
+                    precursor mir-140 was found on miRbase while the sequence of Lamp-2b was found on Uniprot and added
+                    to the insert in silico.
+                    <br><br>
+                    Lamp-2b is a transmembrane protein which is distributed in the surface of exosomes. Therefore, we
+                    thought of combining it with a Guiding Tag, the Chondrocyte Affinity Peptide. Also, we needed a way
+                    to be able to quantify this protein and consequently the exosomes carrying this modified peptide.
+                    The way we chose to do this was by fusing Lamp-2b with a GFP sequence. As Lamp-2b is a transmembrane
+                    protein though, it has a Signal-Peptide which needs to be in the beginning of the polypeptide chain,
+                    in order to achieve the membrane localization. Also, the chondrocyte Affinity Peptide needed to be
+                    in the outer surface of the modified protein in order to guide the produced exosomes to the
+                    chondrocytes. So, the sequence was as follows.
+                    <br><br>
+                    SP Lamp2b – CAP – GFP- Lamp2b
+                    <br><br>
+                    The sequence of the precursor mir-140 followed (so that the mir-140 is cut off in the cells).
+                    <br><br>
+                    The plasmid backbone we chose already had a GFP gene, which we did not need as the modified Lamp-2b
+                    was equipped with a GFP by itself. So, the idea was that the plasmid would be double digested and
+                    the GFP gene would be excluded. For this purpose, as we had to ligate the insert inside the plasmid
+                    we had to choose wisely the restriction enzymes that we would use.
+                    <br><br>
+                    The plasmid backbone already had a HindIII restriction site right before the GFP gene. Consequently,
+                    a HindIII restriction site was added to our insert as well. We needed to find a restriction site
+                    right in the end of the GFP gene in our plasmid backbone which would suit our experiments, while
+                    making sure that we don’t encounter any problems in the ligation digestion with the insert and our
+                    vector. In the end of the GFP gene in our plasmid there was an XbaI restriction site. It is a
+                    commonly used enzyme, but the problem was that our insert already had an XbaI restriction site in
+                    its prefix that was added as it is an iGEM part. So, another XbaI restriction site in our plasmid
+                    would not be beneficial. But, after some studying we found out that NheI is a restriction enzyme
+                    that can leave sticky ends suitable for the sticky ends that are left after an XbaI digestion. For
+                    that reason, NheI was very convenent for our use and a NheI restriction site was added in the end of
+                    our insert.
+                    <br><br>
+                    So our insert was formed like that.
+
+                </p>
+
+                <p class="content-paragraph">
+                    The digestions and ligation were performed in silico on Geneious to make sure that everything was
+                    well designed and we ended up with our whole plasmid designed.
+                </p>
+
+
+                <h2>References</h2>
+                <div style="font-size: 0.9em; font-style: italic; " class="references">
+
+                    <br>1. &nbsp;&nbsp;A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic
+                    mammalian therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy,
+                    vol. 25, no. 1, pp. 102–119, 2017.
+                    <br>2. &nbsp;&nbsp;H.-bo Si, T.-min Yang, L. Li, M. Tian, L. Zhou, D.-ping Li, Q. Huang, P.-de Kang,
+                    J. Yang, Z.-ke Zhou, J.-qiu Cheng, and B. Shen, “Mir-140 attenuates the progression of early-stage
+                    osteoarthritis by retarding chondrocyte senescence,” Molecular Therapy - Nucleic Acids, vol. 19, pp.
+                    15–30, 2020.
+                    <br>3. &nbsp;&nbsp;M. H. Yunus, A. Nordin, and H. Kamal, “Pathophysiological perspective of
+                    osteoarthritis,” Medicina, vol. 56, no. 11, p. 614, 2020.
+                    <br>4. &nbsp;&nbsp;R. Zhang, J. Ma, and J. Yao, “Molecular mechanisms of the cartilage-specific
+                    microrna-140 in osteoarthritis,” Inflammation Research, vol. 62, no. 10, pp. 871–877, 2013.
+                    <br>5. &nbsp;&nbsp;Y. Liang, X. Xu, X. Li, J. Xiong, B. Li, L. Duan, D. Wang, and J. Xia,
+                    “Chondrocyte-targeted MicroRNA delivery by engineered exosomes toward a cell-free osteoarthritis
+                    therapy,” ACS Applied Materials & Interfaces, vol. 12, no. 33, pp. 36938–36947, 2020.
+                    <br>6. &nbsp;&nbsp;Y. Y. Chow and K.-Y. Chin, “The role of inflammation in the pathogenesis of
+                    osteoarthritis,” Mediators of Inflammation, vol. 2020, pp. 1–19, 2020.
+                    <br>7. &nbsp;&nbsp;Y. Zhang, J. Lin, X. Zhou, X. Chen, A. C. Chen, B. Pi, G. Pan, M. Pei, H. Yang,
+                    T. Liu, and F. He, “Melatonin prevents osteoarthritis-induced cartilage degradation via targeting
+                    microrna-140,” Oxidative Medicine and Cellular Longevity, vol. 2019, pp. 1–16, 2019.
+                    <br>8. &nbsp;&nbsp;L. Hofmann, S. Ludwig, J. M. Vahl, C. Brunner, T. K. Hoffmann, and M.-N.
+                    Theodoraki, “The Emerging Role of Exosomes in Diagnosis, Prognosis, and Therapy in Head and Neck
+                    Cancer,” International Journal of Molecular Sciences, vol. 21, no. 11, p. 4072, Jun. 2020.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(1)
+            }
+
+            to {
+                -webkit-transform: scale(2)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.4)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes zoom-out {
+            from {
+                transform: scale(1)
+            }
+
+            to {
+                transform: scale(0)
+            }
+        }
+
+        @keyframes zoom-out {
+            from {
+                transform: scale(1)
+            }
+
+            to {
+                transform: scale(0)
+            }
+        }
+
+        .out {
+            animation-name: zoom-out;
+            animation-duration: 0.8s;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        .social-links ul {
+            margin: 10% 45%;
+            text-align: right;
+            display: flex;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            color: rgb(0, 0, 0);
+        }
+
+        .social-links ul li {
+            list-style: none;
+            margin-right: 10%;
+        }
+
+        .social-links ul li a {
+            text-align: center;
+            line-height: 70px;
+            font-size: 60px;
+            margin: 0 30px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links ul li a .fa {
+            position: relative;
+            color: rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        .content p.photo-desc {
+            text-align: center !important;
+            font-size: 0.8em !important;
+        }
+
+        #content-tag {
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        #content-tag p {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+
+        #content-tag .contentBlock {
+            float: none;
+            margin: 0 auto;
+        }
+
+
+        #content {
+            padding: 0px;
+            width: 100%;
+            margin-top: -7px;
+            margin-left: 0px;
+            border: none;
+            line-height: initial;
+        }
+
+
+        .contentBlock {
+            width: 64vw;
+            max-width: 1200px;
+            float: right;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            padding: 64px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px lightgray;
+            color: #121212;
+            margin-top: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
+        }
+
+
+        .content p:first-child {
+            margin-top: 0;
+        }
+
+
+        .content ul {
+            padding-inline-start: 20px;
+            list-style-image: none;
+            list-style-type: none;
+        }
+
+        .content ul li {
+            display: flex;
+            font-size: 1.2em;
+
+        }
+
+        .content ul li::before {
+            content: "-";
+        }
+
+        .content .splide ul li::before {
+            content: unset;
+        }
+
+        .content li {
+            margin: 10px;
+        }
+
+        .content li::marker {
+            font-weight: bold;
+        }
+
+        .content h4,
+        .content h5 {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-block-end: 0.2em;
+            margin-block-start: 60px;
+        }
+
+        .content h5 {
+            font-size: 1em;
+        }
+
+        .content a {
+            color: #2e64ec;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .content a.citation {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+
+        .content-paragraph {
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+    </style>
+
+
+
+
+    <footer class="footer">
+
+        <br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/iGEMNous" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a></li>
+            <li class="twitter"><a href="https://twitter.com/IgemNous" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/nous_igem/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li class="mail"><a href="mailto:igemnous@gmail.com" target="_blank"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a></li>
+            <li class="linkedin"><a href="https://www.linkedin.com/company/igem-nous" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li class="youtube"> <a href="https://www.youtube.com/channel/UCVN2NQ_uRJVXhXU_FfvKlrg" target="_blank"><i
+                        class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li class="github"><a href="https://github.com/melinazik/iGEM" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a></li>
+            <li class="website"><a href="https://igemnous.med.duth.gr/" target="_blank"><i class="fa fa-globe"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+        <br><br><br><br><br><br><br>
+        <hr style="background-color: #E8E8E8;border: 1.5px solid #E8E8E8;opacity: 50%;">
+
+        <br><br><br><br><br><br><br><br>
+
+
+        <div style="display:flex;flex-wrap:wrap; ">
+            <div class="col">
+                <a href="https://igemnous.med.duth.gr/" target="_blank">
+                    <img style=" position: relative;width: 40%;padding-bottom: 120px;margin-left: calc(100%/1.5);"
+                        src="https://2021.igem.org/wiki/images/2/2f/T--Greece_United--black-logo-transp.png">
+                </a>
+
+            </div>
+
+            <div style="display: flex;flex-direction: row;justify-content: center;bottom: 0%;">
+                <div class="footer_sponsors"
+                    style="display: flex;flex: 1;justify-content: center;align-items: center;padding-left: 1%;padding-right: 1%;">
+                    <a href="https://duth.gr/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--dimokriteio.png"
+                            style="width:250%; margin-left: calc((100%)/0.09); margin-bottom: 290px; margin-top: -400px; "></a>
+                    <a href="https://www.geneious.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/f/f9/T--Greece_United--geneious.png"
+                            style="width:70%; margin-left: calc((100%)/0.45); margin-bottom: 250px; margin-top: -280px;"></a>
+                    <a href="https://www2.deloitte.com/gr/en.html" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/0/07/T--Greece_United--deloitte.svg"
+                            style="width:170%; margin-left: calc((100%)/0.31); margin-bottom: 290px; margin-top: -480px;"></a>
+                    <a href="https://bioemtech.com/" target="_blank"><img
+                            src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--bioemtech.png"
+                            style="width:40%; margin-left: calc((100%)/6.5); margin-bottom: -40px; margin-top: -320px;"></a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </footer>
+
+</body>
+
+</html>
