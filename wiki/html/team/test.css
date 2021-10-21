@@ -51,6 +51,88 @@ html {
     justify-content: space-between;
 }
 
+#intro-page #intro #title-wrapper {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+#intro-page #intro h1 {
+    color: #679bf4;
+    font-size: 11vw;
+    font-family: 'raleway', sans-serif;
+    text-transform: lowercase;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    z-index: 5;
+    text-shadow: 0px 0px 4px #fafafc;
+}
+
+#intro-page #intro h1 em {
+    font-style: initial;
+    font-weight: 300;
+}
+
+#intro-page #intro #desc-wrapper {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+#intro-page #intro #desc-wrapper img {
+    width: 700px;
+    max-width: 85vw;
+}
+
+#bubbles-container {
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.big-section {
+    line-height: 1.7
+}
+
+.black-bg {
+    background-color: #121212;
+}
+
+.white-bg {
+    background-color: #fafafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.smallWaves {
+    position: relative;
+    height: 200px;
+}
+
+.lightblue-bg {
+    background-color: #6281ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightblue-bg b em {
+    font-style: normal;
+    font-family: 'montserrat-bold', sans-serif;
+}
+
+.brightblue-bg {
+    background-color: #3356ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 .darkblue-bg {
     background-color: #11348f;
