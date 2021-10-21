@@ -797,16 +797,16 @@
                         <h1>Introduction</h1>
                     </div>
                     <br><br>
-                    <p class="content-paragraph">We aimed at developing mathematical models and a genetic circuit in
-                        order
+                    <p class="content-paragraph">We aimed to develop mathematical models and a genetic circuit in
+                        order to
                         better understand our Wet Lab experiments. The results from our Dry Lab work would later be used
                         to
                         adjust experiments, having had a prior estimation of the expected results deriving from our
                         biological work.
                         <br><br> Our main goals were to:<br>
-                        <b>1)</b> develop an accurate model that describes the formation of exosomes and
+                        <b>1)</b> Develop an accurate model that describes the formation of exosomes and
                             the delivery of miRNA-140 to the chondrocytes. <br>
-                        <b>2)</b> help the Wet Lab team adjust the design of the ongoing experiments by
+                        <b>2)</b> Help the Wet Lab team adjust the design of the ongoing experiments by
                             consulting the results of our mathematical model simulations. <br>
                         <b>3)</b> Build a Genetic Circuit Model to investigate the feasibility of our
                             proposed implementation and develop an approach to tackle the “low transfection” problem the
@@ -821,7 +821,7 @@
 
     <!-- Exosome Model A -->
     <div id="heading2">
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
                     <div class="header">
@@ -848,13 +848,13 @@
                         CellDesigner v4.4.</p>
 
                     <p class="content-paragraph">
-                        The assumptions we made were:
-                        <li><b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.
-                        </li>
-                        <li><b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.</li>
-                        <li><b>c)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.</li>
-                        <li><b>d)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
-                            out.</li>
+                        The assumptions we made were:<br><br>
+                       <b>a)</b>&nbsp;&nbsp;The mRNA - prem iRNA always splits into its respective RNA molecules.
+                       <br>
+                       <b>b)</b>&nbsp;&nbsp;The production rate of exosomes is constant.
+                       <br><b>c)</b>&nbsp;&nbsp;Exosomes have a constant endocytosis rate.
+                       <b>d)</b>&nbsp;&nbsp;DICER concentration in a cell is high enough that the cell will not run
+                            out.
                     </p>
                 
                     <div class="header">
@@ -922,7 +922,7 @@
 
                         After this complex is formed, the synthesis of the mRNA-premiRNA complex from aminoacids begins:
 
-                        $$\frac{d[mRNA - pre miRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
+                        $$\frac{d[mRNA - premiRNA Complex]}{dt} = [Gene - TF Complex] * k_{transcription}$$
 
                         The synthesis of this RNA molecule is based on the concentration of the Gene-TF complex multiplied
                         by a transcription constant.
@@ -934,14 +934,14 @@
                         The RNA complex then is split into the mRNA molecule that codes the Lamp2b-CAP protein and the pre
                         miRNA.
                         The mRNA will then be translated and synthesize the Lamp2b-CAP protein.
-                        After the pre miRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
+                        After the premiRNA & the Lamp2b-CAP membrane protein is synthesized, they need to be transferred to
                         the produced exosomes.
 
                         <br><br>
 
-                        Two kinds of exosomes can be synthesized. The first has both the pre miRNA and the Lamp2b-CAP
+                        Two kinds of exosomes can be synthesized. The first has both the premiRNA and the Lamp2b-CAP
                         protein in its membrane.
-                        We will call this type of exosome a "CAP exosome". The second, only contains the pre miRNA molecule.
+                        We will call this type of exosome a "CAP exosome". The second, only contains the premiRNA molecule.
                         These two types of exosomes are produced at different rates.
                         More accurately, it has been measured that the number of CAP exosomes is 2.42 larger than the ones
                         who do not have it.
@@ -991,7 +991,7 @@
 
     <!-- Exosome Model B -->
     <div id="heading3">
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
                     <div class="header">
@@ -1006,7 +1006,7 @@
                         for simulations.
                         That means the equations and the constants are different, though they still describe the same
                         phenomenon.<br>
-                        We constructed an ODE (ordinary differential equation) model to better understand the
+                        We constructed an ODE (Ordinary Differential Equation) model to better understand the
                         modelled processes, contributing in this way to the laboratory aspect of our project and to
                         answer the following questions.<br><br>
                         <b>1.</b> Is our project’s therapeutic potential based on its design enough according to
@@ -1019,19 +1019,18 @@
                         protein
                         Lamp2b-GFP-CAP and miRNA 140 and their packaging in exosomes.<br><br>
 
-                        The assumptions we made were:
-                        <li><b>1)</b>&nbsp;&nbsp;The cell is cultivated in ideal conditions, so exosome production is
-                            stable</li>
-                        <li><b>2)</b>&nbsp;&nbsp;The loading of mRNA into exosomes can be ignored because of its great
-                            length and because it lacks sequences which would lead to loading (1)</li>
-                        <li><b>3)</b>&nbsp;&nbsp;The time interval between the pre-miRNA synthesis and the loading of
-                            the exosomes is too short to take into account</li>
-                        <li><b>4)</b>&nbsp;&nbsp;The pre-miRNA that is loaded into exosomes is divided evenly in them
-                        </li>
-                        <li><b>5)</b>&nbsp;&nbsp;The packaging of protein to exosome and finishing of translation happen
-                            simultaneously because of a short time interval that can be ignored. </li>
-                        <li><b>6)</b>&nbsp;&nbsp;The diffusion of the protein in the other membranes of the cell is
-                            ignored</li>
+                        The assumptions we made were:<br>
+                        <br><b>1)</b>&nbsp;&nbsp;The cell is cultivated in ideal conditions, so exosome production is
+                        stable
+                        <br><b>2)</b>&nbsp;&nbsp;The loading of mRNA into exosomes can be ignored because of its great
+                        length and because it lacks sequences which would lead to loading (1)
+                        <br><b>3)</b>&nbsp;&nbsp;The time interval between the premiRNA synthesis and the loading of
+                        the exosomes is too short to take into account
+                        <br><b>4)</b>&nbsp;&nbsp;The premiRNA that is loaded into exosomes is divided evenly in them
+                        <br><b>5)</b>&nbsp;&nbsp;The packaging of protein to exosome and finishing of translation happen
+                        simultaneously because of a short time interval that can be ignored. 
+                        <br><b>6)</b>&nbsp;&nbsp;The diffusion of the protein in the other membranes of the cell is
+                            ignored
 
                     </p>
                     <br><br><br>
@@ -1088,8 +1087,8 @@
                         expression of the CMV promoter and at the same time is naturally degraded at a constant rate DmRNA. <br><br>
 
                         Equation 3: $$\frac{d[miRNA]}{dt} = k_{ts} * [DNA] - DpremiRNA * [premiRNA] - c1 * [premiRNA] $$ accounts for the rate of change 
-                        of the total pre-miRNAs. Based on literature, we know that almost all pri-miRNAs are spliced from the 
-                        pre-mRNAs so its production rate matches the one of the mRNA while it is limited by natural degradation at a constant rate Dpre-miRNA.<br><br>
+                        of the total premiRNAs. Based on literature, we know that almost all premiRNAs are spliced from the 
+                        pre-mRNAs so its production rate matches the one of the mRNA while it is limited by natural degradation at a constant rate DpremiRNA.<br><br>
 
                         Equation 4: $$\frac{d[P]}{dt} = (\frac{a}{L}) * [mRNA] * Dprot * [P] - c2 * [P]  $$ accounts for the rate of change of the protein’s 
                         concentration. Protein translation depends on the translational rate and the length of the protein as well on the concentration of mRNAs. 
@@ -1105,12 +1104,12 @@
 
                         Equation 7: $$\frac{d[mRNA_{1}]}{dt} = k_{ts} * [DNA] - DmRNA * [mRNA_{1}] - k_{syn} * [mRNA_{1}] $$ <br>
                         Equation 8: $$\frac{d[mRNA_{2}]}{dt} = k_{syn} * [mRNA_{1}] - DmRNA * [mRNA_{2}] $$ Equations 7 and 8 account for the pre-mRNA and 
-                        mRNA concentrations in case you wish to take into account the percentage of pri-miRNAs that are not cut off where Ksyn 
-                        is the constant of pre-miRNA synthesis.<br><br>
+                        mRNA concentrations in case you wish to take into account the percentage of premiRNAs that are not cut off where Ksyn 
+                        is the constant of premiRNA synthesis.<br><br>
 
-                        Equation 9: $$\frac{d[miRNA_{exos}]}{dt} = (\frac{c1}{k_{0}}) * [miRNA] $$ accounts for the pre-miRNA that is 
+                        Equation 9: $$\frac{d[miRNA_{exos}]}{dt} = (\frac{c1}{k_{0}}) * [miRNA] $$ accounts for the premiRNA that is 
                         included in the exosomes created. The change in the exosomal cargo is corresponding to the change in the cytoplasm’s 
-                        pre-miRNA concentration and depending on the loading rate and at the amount of exosomes produced in respect to time (k0). 
+                        premiRNA concentration and depending on the loading rate and at the amount of exosomes produced in respect to time (k0). 
                         In this variable we also take into account the mature miRNAs that are loaded in a miRISC protein complex.<br><br>
 
                         Equation 10: $$\frac{d[P_{exos}]}{dt} = (\frac{c2}{u * k_{0}}) * [P] $$ accounts for the proteins that are included in the 
@@ -1134,7 +1133,7 @@
 
     <!-- Results -->
     <div id="heading4">
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
                     <div class="header">
@@ -1176,7 +1175,7 @@
 
                     <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
                         src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
-                    <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Lamp2b-CAP and pre miRNA synthesis
+                    <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Lamp2b-CAP and premiRNA synthesis
                         with
                         [TF] = 24000 </p>
 
@@ -1184,8 +1183,7 @@
                     <p class="content-paragraph">
                         In Figure 6 we can see that there is indeed a higher amount of Lamp2b-CAP produced in the cells.
                         This result makes sense, because when the gene is transcripted once, we get at most a single
-                        prem
-                        iRNA molecule and an mRNA
+                        premiRNA molecule and an mRNA
                         molecule which is likely translated more than once. Over the spam of 24h this adds up to having
                         a
                         higher level of the membrane
@@ -1402,7 +1400,7 @@
 
     <!-- equations constants parts -->
     <div id="heading6">
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
                     <div class="header">
@@ -1439,7 +1437,7 @@
 
                         <tr>
                             <td>
-                                $$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
+                                $$\frac{d[premiRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
                             </td>
                             <td>
                                 <p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p>
@@ -1448,7 +1446,7 @@
 
                         <tr>
                             <td>
-                                $$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
+                                $$\frac{d[premiRNA]}{dt} = [[premiRNA-mRNA Complex]] * k_{split_s}$$
 
                             </td>
                             <td>
@@ -1460,7 +1458,7 @@
 
                         <tr>
                             <td>
-                                $$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] * k_{split_s}$$
+                                $$\frac{d[mRNA]}{dt} = [premiRNA-mRNA Complex] * k_{split_s}$$
                             </td>
                             <td>
                                 <p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA
@@ -1488,7 +1486,7 @@
 
                         <tr>
                             <td>
-                                $$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
+                                $$\frac{d[Exosome]}{dt} = [premiRNA] * k_{r-exosome} * 0.2923976$$
                             </td>
                             <td>
                                 <p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p>
@@ -1496,7 +1494,7 @@
                         </tr>
                         <tr>
                             <td>
-                                $$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
+                                $$\frac{d[[premiRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
                             </td>
                             <td>
                                 <p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p>
@@ -1504,7 +1502,7 @@
                         </tr>
                         <tr>
                             <td>
-                                $$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
+                                $$\frac{d[premiRNA^{*}]}{dt} = [Exosome] * k_{load} $$
                             </td>
                             <td>
                                 <p class="table-paragraph">Non-CAP Exosome endocytosis</p>
@@ -1512,7 +1510,7 @@
                         </tr>
                         <tr>
                             <td>
-                                $$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
+                                $$\frac{d[premiRNA-DICER Complex]}{dt} = [premiRNA^{*}] * k_{act} $$
                             </td>
                             <td>
                                 <p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p>
@@ -1617,7 +1615,7 @@
                                 <p class="table-paragraph">RNA</p>
                             </td>
                             <td>
-                                <p class="table-paragraph">pre miRNA</p>
+                                <p class="table-paragraph">premiRNA</p>
                             </td>
                             <td>
                                 <p class="table-paragraph">S<sub>4</sub></p>
@@ -1626,7 +1624,7 @@
                                 <p class="table-paragraph">False</p>
                             </td>
                             <td>
-                                <p class="table-paragraph">pre miRNA in HEK-293 cell</p>
+                                <p class="table-paragraph">premiRNA in HEK-293 cell</p>
                             </td>
                         </tr>
                         <tr>
@@ -1634,7 +1632,7 @@
                                 <p class="table-paragraph">RNA</p>
                             </td>
                             <td>
-                                <p class="table-paragraph">pre miRNA</p>
+                                <p class="table-paragraph">premiRNA</p>
                             </td>
                             <td>
                                 <p class="table-paragraph">S<sub>8</sub></p>
@@ -1643,7 +1641,7 @@
                                 <p class="table-paragraph">False</p>
                             </td>
                             <td>
-                                <p class="table-paragraph">pre miRNA in chondrocyte</p>
+                                <p class="table-paragraph">premiRNA in chondrocyte</p>
                             </td>
                         </tr>
                         <tr>
@@ -1651,7 +1649,7 @@
                                 <p class="table-paragraph">RNA</p>
                             </td>
                             <td>
-                                <p class="table-paragraph">pre miRNA - mRNA <br> Complex</p>
+                                <p class="table-paragraph">premiRNA - mRNA <br> Complex</p>
                             </td>
                             <td>
                                 <p class="table-paragraph">S<sub>64</sub></p>
@@ -2164,7 +2162,7 @@
                                     <p class="table-paragraph">1 / min</p>
                                 </td>
                                 <td>
-                                    <p class="table-paragraph">Loading rate of pre-miRNAs</p>
+                                    <p class="table-paragraph">Loading rate of premiRNAs</p>
                                 </td>
                             </tr>
                             <tr>
@@ -2261,7 +2259,7 @@
                     <p>
                         <b>• mRNA:</b> The transcripts concentration which encodes the protein Lamp2b-GFP-CAP <br>
                         <b>• DNA:</b> The strength of expression (with 1 being the maximum) <br>
-                        <b>• Pre-miRNA:</b> The premiRNAs 140 concentration<br>
+                        <b>• premiRNA:</b> The premiRNAs 140 concentration<br>
                         <b>• P:</b> Protein Concentration<br>
                         <b>• miRNA exos:</b> The miRNA concentration in every exosome created that moment<br>
                         <b>• P exos:</b> Protein concentration in the exosome membranes created that moment<br>
@@ -2277,7 +2275,7 @@
     </div>
 
     <!-- model B -->
-    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+    <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
         <div class="contentBlock">
             <div class="content">
                 <div class="header">
@@ -2316,7 +2314,7 @@
     </div>
     <!-- references -->
     <div id="heading7">
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
                     <div class="header">
