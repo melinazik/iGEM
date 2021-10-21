@@ -75,6 +75,34 @@
     }
 </style>
 
+<!-- <button class="riskButton" onclick="javascript:window.open('https:\/\/2021.igem.org/Team:Greece_United/Model/App/Calculator', '_blank');">AEGLE <br>Risk Calculator</button> -->
+<style>
+    .goToEvent {
+        text-transform: uppercase;
+
+
+        margin: 200px 32px 0 4vw;
+        border-radius: 20px;
+
+        background-color: #dfb41b;
+        border: none;
+        color: #002060;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        padding: 30px 60px;
+        cursor: pointer;
+    }
+
+    .goToEvent:hover {
+        background-color: #002060a6;
+        color: #dfb41b;
+
+    }
+</style>
+
 <style>
     /* table education */
 
@@ -99,7 +127,7 @@
     }
 
     #education tr:nth-child(even) {
-        background-color: #eff4ff;
+        background-color: #00206026;
     }
 
     #education tr:hover {
@@ -131,6 +159,7 @@
     #education a:active {
         color: #C0F0FC
     }
+
 
     #education2 {
         font-family: Arial, Helvetica, sans-serif;
@@ -477,6 +506,140 @@
         </ul>
     </div>
 
+    <!-- cards -->
+    <style>
+        .card-icon {
+            z-index: 1;
+        }
+
+        .icon {
+            padding: 10%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            max-width: 160px;
+        }
+
+        .info-section {
+            margin: auto;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .cardcolors {
+            --bg-color: #dfb41b;
+            --bg-color-light: #dfb41b;
+            --text-color-hover: #002060;
+            --box-shadow-color: #5893d4;
+        }
+
+        .c-card {
+            margin: auto;
+            margin-bottom: 20px;
+            margin-right: 50px;
+            width: 175px;
+            height: 321px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 14px 26px rgba(128, 128, 128, 0.2);
+            transition: all 0.3s ease-out;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 0px !important;
+        }
+
+        .c-card:hover {
+            transform: translateY(-5px) scale(1.005) translateZ(0);
+            box-shadow: 0 24px 36px rgba(163, 33, 33, 0.11), 0 24px 46px var(--box-shadow-color);
+            text-decoration: none;
+        }
+
+        .c-card:hover .overlay {
+            transform: scale(4) translateZ(0);
+        }
+
+        .c-card:hover .circle {
+            border-color: var(--bg-color-light);
+            background: var(--bg-color);
+        }
+
+        .c-card:hover .circle:after {
+            background: var(--bg-color-light);
+        }
+
+        .c-card:hover p {
+            color: var(--text-color-hover);
+        }
+
+        .c-card:active {
+            transform: scale(1) translateZ(0);
+            box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11), 0 15px 24px var(--box-shadow-color);
+        }
+
+        .c-card p {
+            font-size: 20px;
+            color: #5893D4;
+            margin-top: 30px;
+            z-index: 8;
+            transition: color 0.3s ease-out;
+            text-decoration: none;
+        }
+
+        .circle {
+            width: 162px;
+            height: 162px;
+            border-radius: 60%;
+            background: #fff;
+            border: 2px solid var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease-out;
+        }
+
+        .circle:after {
+            content: "";
+            width: 160px;
+            height: 160px;
+            display: block;
+            position: absolute;
+            background: var(--bg-color);
+            border-radius: 50%;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .circle svg {
+            z-index: 10000;
+            transform: translateZ(0);
+        }
+
+        .overlay {
+            width: 118px;
+            position: absolute;
+            height: 118px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            top: 70px;
+            left: 50px;
+            z-index: 0;
+            transition: transform 0.3s ease-out;
+        }
+
+        .front-cover {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
 
     <!-- main content -->
     <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
@@ -554,10 +717,128 @@
                     of educational objectives: The classification of educational goals. Handbook I: Cognitive
                     domain. New York: David McKay Company
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- cards -->
+    <div class="info-section" style="margin-left:370px;">
 
+        <div class="container ">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Games" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--hp-card-integrate.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Games</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Comic" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
 
-                <br><br><br><br>
+                            <img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--hp-card-edu.png"
+                                alt="Bio Icon" class="icon card-icon" />
+                        </div>
+                        <p>Comic</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/Videos" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/3/35/T--Greece_United--hp-card-communication.png"
+                                alt="Bio Icon" class="icon card-icon" />
+                        </div>
+                        <p>Videos</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Model/App" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/e/ec/T--Greece_United--hp-card-inclu.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Risk Calculator</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Slideshows" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/5/50/T--Greece_United--hp-card-collab.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Slideshows</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Portal" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/9/98/T--Greece_United--hp-card-dissem.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Educational Tool</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/BioGirls" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/e/ec/T--Greece_United--hp-card-inclu.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Bio Girls</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/LabOnTheStreet" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/5/50/T--Greece_United--hp-card-collab.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Lab on the Street</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Inclusivity#heading3" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/9/98/T--Greece_United--hp-card-dissem.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Fun with Biology</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
                 <h2>Educational Tools & Materials</h2>
 
 
@@ -620,9 +901,16 @@
                             </tr>
                             <tr>
                                 <th>More info</th>
-                                <td><a style="color:#5245da"
+                                <td>
+                                    <a style="color:#5245da"
                                         href="https://2021.igem.org/Team:Greece_United/Communication/Videos">Watch the
-                                        video!</a></td>
+                                        Video!</a>
+                                    <!-- <button class="goToEvent"
+                                        onclick="javascript:window.open('https:\/\/2021.igem.org/Team:Greece_United/Communication/Videos', '_blank');">Watch
+                                        the video!</button> -->
+                                </td>
+
+
                             </tr>
                         </tbody>
                     </table>
@@ -695,9 +983,13 @@
                             </tr>
                             <tr>
                                 <th>More info</th>
-                                <td><a style="color:#5245da"
+                                <td>
+                                    <a style="color:#5245da"
                                         href="https://2021.igem.org/Team:Greece_United/Education/Comic">Browse the
-                                        comic!</a></td>
+                                        comic!</a>
+                                    <!-- <button class="goToEvent"
+                                        onclick="javascript:window.open('https:\/\/2021.igem.org/Team:Greece_United/Communication/Comic', '_blank');">Browse the Comic!</button> -->
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -768,9 +1060,14 @@
                             </tr>
                             <tr>
                                 <th>More info</th>
-                                <td><a style="color:#5245da"
+                                <td>
+                                    <a style="color:#5245da"
                                         href="https://2021.igem.org/Team:Greece_United/Education/Games">See more about
-                                        the games!</a></td>
+                                        the games!</a>
+                                    <!-- <button class="goToEvent"
+                                        onclick="javascript:window.open('https:\/\/2021.igem.org/Team:Greece_United/Communication/Games', '_blank');">See more about the games!</button> -->
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -840,9 +1137,15 @@
                             </tr>
                             <tr>
                                 <th>More info</th>
-                                <td><a style="color:#5245da"
+                                <td>
+                                    <a style="color:#5245da"
                                         href="https://2021.igem.org/Team:Greece_United/Education/Slideshows">Watch the
-                                        slideshows!</a></td>
+                                        slideshows!</a>
+                                    <!-- <button class="goToEvent"
+                                        onclick="javascript:window.open('https:\/\/2021.igem.org/Team:Greece_United/Communication/Slideshows', '_blank');">Watch
+                                        the Slideshows!</button> -->
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
