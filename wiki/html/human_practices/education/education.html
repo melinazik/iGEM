@@ -211,8 +211,43 @@
 
         /* border-color: chartreuse; */
     }
-</style>>
+</style>
+ <!-- header text -->
+ <style>
+    .header h1 {
+        font-size: 40px;
+        margin-block-end: 0;
+        color: #1F3C88;
+        font-family: "raleway", sans-serif !important;
+        padding-bottom: px;
+    }
 
+    .header h2 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #5893D4;
+    }
+
+    .header h3 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        font-size: 24px;
+        color: #5893D4;
+    }
+</style>
+
+<!-- banner -->
+<style>
+        .banner {
+
+            width: 100%;
+            background-size: cover;
+            margin-top: 65px;
+            z-index: 5;
+        }
+    </style>
 <body>
     <div id="loader-wrapper">
         <div id="loader-bg">
@@ -222,16 +257,6 @@
 
     <!-- header -->
     <img src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--header-education.png" class="banner">
-
-    <style>
-        .banner {
-
-            width: 100%;
-            background-size: cover;
-            margin-top: 65px;
-            z-index: 5;
-        }
-    </style>
 
     <script>
         // Loader
@@ -411,13 +436,6 @@
         }
     </script>
 
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ------------------- PAGE CONTENT-------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
-    <!-- ---------------------------------------------------- -->
 
 
     <script>
@@ -457,8 +475,6 @@
     <!-- in page menu -->
 
     <div id="index" class="sideBlock">
-        <div id="indexbutton" class="indexbutton">Index</div>
-
         <ul>
             <li class="active">
                 <div></div>
@@ -645,13 +661,14 @@
 
 
     <!-- main content -->
-    <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-        <div class="contentBlock">
-            <div class="content">
+    <div id="heading0">
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                <div class="header">
+                    <h1>Overview</h1>
+                </div>
 
-                <div id="heading0"></div>
-
-                <h2>Overview</h2>
 
                 <p class="content-paragraph">
 
@@ -724,16 +741,128 @@
         </div>
     </div>
 
-    
+    <!-- cards -->
+    <div class="info-section" style="margin-left:370px;">
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Games" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/3/34/T--Greece_United--edu-cards-games.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Games</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Comic" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+
+                            <img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--hp-card-edu.png"
+                                alt="Bio Icon" class="icon card-icon" />
+                        </div>
+                        <p>Comic</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/Videos" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/b/bb/T--Greece_United--edu-cards-videos.png"
+                                alt="Bio Icon" class="icon card-icon" />
+                        </div>
+                        <p>Videos</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Model/App" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/9/9f/T--Greece_United--edu-cards-calculator.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Risk Calculator</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Slideshows" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/d/d3/T--Greece_United--edu-cards-slideshows.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Slideshows</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Education/Portal" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/c/c6/T--Greece_United--edu-cards-edutool.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Educational Tool</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/BioGirls" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/9/94/T--Greece_United--edu-cards-biogirls.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Bio Girls</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Communication/LabOnTheStreet" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/f/fe/T--Greece_United--edu-cards-labonthestreet.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Lab on the Street</p>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
+                    <a href="https://2021.igem.org/Team:Greece_United/Inclusivity#heading3" target="_blank"
+                        class="c-card cardcolors">
+                        <div class="overlay"></div>
+                        <div class="circle">
+                            <img src="https://2021.igem.org/wiki/images/7/76/T--Greece_United--edu-cards-bio.png"
+                                alt="HP Icon" class="icon card-icon" />
+                        </div>
+                        <p>Fun with Biology</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <br><br><br><br>
 
     <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
         <div class="contentBlock">
             <div class="content">
-                <h2>Educational Tools & Materials</h2>
-
-
+                <div class="header">
+                    <h1>Educational Tools & Materials</h1>
+                </div>
+                <br><br>
                 <div id="heading1"></div>
 
                 <div class="education">
@@ -1205,8 +1334,9 @@
 
 
                 <br><br><br><br>
-
-                <h2>Educational Activities</h2>
+                <div class="header">
+                    <h3>Educational Activities</h3>
+                </div>
 
                 <p class="content-paragraph">
                     Using the educational materials and tools described above we have designed and implemented education
@@ -1558,117 +1688,6 @@
 
 
 
-            </div>
-        </div>
-    </div>
-
-
-    <!-- cards -->
-    <div class="info-section" style="margin-left:370px;">
-
-        <div class="container ">
-            <div class="row">
-                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Education/Games" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--hp-card-integrate.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Games</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Education/Comic" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-
-                            <img src="https://2021.igem.org/wiki/images/8/86/T--Greece_United--hp-card-edu.png"
-                                alt="Bio Icon" class="icon card-icon" />
-                        </div>
-                        <p>Comic</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12" style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Communication/Videos" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/3/35/T--Greece_United--hp-card-communication.png"
-                                alt="Bio Icon" class="icon card-icon" />
-                        </div>
-                        <p>Videos</p>
-                    </a>
-                </div>
-            </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Model/App" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/e/ec/T--Greece_United--hp-card-inclu.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Risk Calculator</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Education/Slideshows" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/5/50/T--Greece_United--hp-card-collab.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Slideshows</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Education/Portal" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/9/98/T--Greece_United--hp-card-dissem.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Educational Tool</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Communication/BioGirls" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/e/ec/T--Greece_United--hp-card-inclu.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Bio Girls</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Communication/LabOnTheStreet" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/5/50/T--Greece_United--hp-card-collab.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Lab on the Street</p>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-md-6 col-xs-12 " style="display:inline-block;">
-                    <a href="https://2021.igem.org/Team:Greece_United/Inclusivity#heading3" target="_blank"
-                        class="c-card cardcolors">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="https://2021.igem.org/wiki/images/9/98/T--Greece_United--hp-card-dissem.png"
-                                alt="HP Icon" class="icon card-icon" />
-                        </div>
-                        <p>Fun with Biology</p>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
