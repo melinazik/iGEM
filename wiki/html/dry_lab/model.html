@@ -784,25 +784,25 @@
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading2">Model Parts</a>
+                    <a href="#heading2">Model - Approach A</a>
                 </li>
             </ul>
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading3">How the Model Works</a>
+                    <a href="#heading3">MOdel - Approach B</a>
                 </li>
             </ul>
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading4">Results</a>
+                    <a href="#heading4">Results - A</a>
                 </li>
             </ul>
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading5">Equations</a>
+                    <a href="#heading5">Results - B</a>
                 </li>
             </ul>
             <ul>
@@ -814,7 +814,7 @@
             <ul>
                 <li class="active">
                     <div></div>
-                    <a href="#heading7">Constants</a>
+                    <a href="#heading7">References</a>
                 </li>
             </ul>
         </div>
@@ -1081,7 +1081,7 @@
                         src="https://2021.igem.org/wiki/images/5/54/T--Greece_United--rates-model.png">
                         <p style="align-self: center" class="photo-desc"><b>Figure 6:</b> Screenshot from the C++ code of the exosome model.<br> Use of rates to calculate total values.</p>
                         <p>
-                            You can find our C++ code in executable form in our <a href="https://github.com/melinazik/iGEM/blob/main/model/model-A-tryc.cpp" target="_blank">github.</a><br>
+                            You can find our C++ code in executable form in our <a href="https://github.com/melinazik/iGEM/blob/main/model/exosome-model-partA-NOUS.cpp" target="_blank">github.</a><br>
                             With appropriate changes it can be used to model many similar situations.<br><br> 
                         </p>
                     </div>
@@ -1107,7 +1107,7 @@
 
                         <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
                             src="https://2021.igem.org/wiki/images/9/91/T--Greece_United--Figure2-1em.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 5:</b>CAP and regular exosomes synthesized
+                        <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>CAP and regular exosomes synthesized
                             with [TF] = 24000</p>
 
                         <p class="content-paragraph">
@@ -1128,7 +1128,7 @@
 
                         <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
                             src="https://2021.igem.org/wiki/images/4/47/T--Greece_United--Figure2-2em.png">
-                        <p style="align-self: center" class="photo-desc"><b>Figure 6:</b>Lamp2b-CAP and pre miRNA synthesis with
+                        <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Lamp2b-CAP and pre miRNA synthesis with
                             [TF] = 24000 </p>
 
 
@@ -1140,720 +1140,901 @@
                             higher level of the membrane
                             protein and thus more CAP exosomes.
                         </p>
+                        
+                    <div id="heading5">
                         <br><br><br>
                         <div class="header">
                             <h3>Approach B</h3>
                         </div>
+                        <p class="content-paragraph">
+                            Below you can see all the graphs that resulted from our simulation.
+                        </p>
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/c/c7/T--Greece_United--model-g1.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>Graph of mRNA, miRNA and protein rate through time.</p>
+                        <br><br><br>    
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/f/f7/T--Greece_United--model-g3.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Graph of miRNA in exosomes and Protein in exosomes value through time.</p>
+                        <br><br><br>
+                        <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                                src="https://2021.igem.org/wiki/images/2/27/T--Greece_United--model-g4.png">
+                        <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Graph of miRNA useful value through time.</p>
+                        <br><br>
+                        <p>
+                            For a total runtime of <b>2880 minutes (= 2 days)</b> the cell produced, <b>16153920</b> useful exosomes (that carry the protein and miRNA), 
+                            a total concentration of miRNA: <b>[miRNA] = 298527</b>, a total concentration of miRNA- useful (miRNA that got into exosomes): <b>[miRNA useful] = 520230000</b> 
+                            and a total concentration of protein <b>[protein] = 755747</b>, were produced by one cell transfected with one plasmid.<br><br>
+                            The mean average of cells in a joint is 149000000 with a deviation of 46000000. We used that along with our results to calculate how much 
+                            concentration of miRNA would be in each cell, considering that the exosomes would reach every cell equally. The average is <b>[miRNA] = 3.49148 </b>
+                            per cell while using the deviation the best-case scenario is <b>[miRNA] = 5.05078</b> per cell and the worst-case scenario is <b>[miRNA]= 2.66785</b>
+                            per cell.<br><br>
+
+                            Literature data have showed that exosomes with the guiding tag do not leave the target joint, while without, can be found in the whole organism. 
+                            So, we calculated the effect exosomes with the protein will have inside the joint. <br><br>
+                            For a hypothetical introduction of N cells transfected with the plasmid into a joint, we calculated the large-scale extent of idea, to simulate 
+                            how it would work and what efficiency it would have in more real-life conditions and numbers. The calculations are similar to those above. 
+                            The results are presented in the table below.<br><br>
+                        </p>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    <p class="table-paragraph"><b>N cells</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Total [miRNA]</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Total [protein]</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Total [miRNA useful]</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Average case</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Worst case</b></p>
+                                </td>
+                                <td>
+                                    <p class="table-paragraph"><b>Best case</b></p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    1000 					
+                                </td>
+                                <td>
+                                    2.98955e+08
+                                </td>
+                                <td>
+                                    7.55747e+08
+                                </td>
+                                <td>
+                                    5.2023e+11
+                                </td>
+                                <td>
+                                    3491.48
+                                </td>
+                                <td>
+                                    2667.85
+                                </td>
+                                <td>
+                                    5050.78
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2000 					
+                                </td>
+                                <td>
+                                    5.97911e+08					
+                                </td>
+                                <td>
+                                    1.51149e+09
+                                </td>
+                                <td>
+                                    1.04046e+12
+                                </td>
+                                <td>
+                                    6982.96
+                                </td>
+                                <td>
+                                    5335.7
+                                </td>
+                                <td>
+                                    10101.6
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3000 					
+                                </td>
+                                <td>
+                                    8.96866e+08					
+                                </td>
+                                <td>
+                                    2.26724e+09
+                                </td>
+                                <td>
+                                    1.56069e+12
+                                </td>
+                                <td>
+                                    10474.4
+                                </td>
+                                <td>
+                                    8003.54
+                                </td>
+                                <td>
+                                    15152.3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4000 					
+                                </td>
+                                <td>
+                                    1.19582e+09					
+                                </td>
+                                <td>
+                                    3.02299e+09
+                                </td>
+                                <td>
+                                    2.08092e+12
+                                </td>
+                                <td>
+                                    13965.9
+                                </td>
+                                <td>
+                                    10671.4
+                                </td>
+                                <td>
+                                    20203.1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5000 					
+                                </td>
+                                <td>
+                                    1.49478e+09					
+                                </td>
+                                <td>
+                                    3.77874e+09
+                                </td>
+                                <td>
+                                    2.60115e+12
+                                </td>
+                                <td>
+                                    17457.4
+                                </td>
+                                <td>
+                                    13339.2
+                                </td>
+                                <td>
+                                    25253.9
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            Those results are promising and show that by introducing our therapy in its current design, cells will be affected in the whole target 
+                            joint by a sufficient number of exosomes that will introduce a significant amount of miRNA in each cell since miRNA copies per cell typically 
+                            vary between hundreds and 120000 copies per cell. <br><br>
+                            From literature we know that chondrocytes in osteoarthritis have lower levels of miRNA140 and many positive effects of increasing it have already 
+                            been documented by promoting cartilage formation and inhibiting its degeneration. 
+                            Even though we were not able to further correct our model due to lack of laboratory results, it shows us that based on literature we have 
+                            sufficient therapeutic potential.<br><br>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- equations constants parts -->
-        <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
-            <div class="contentBlock">
-                <div class="content">
-                    <div id="heading5">
-                        <div class="header">
-                            <h2>Equations</h2>
-                        </div>
-                        <p class="content-paragraph">In this table, you can find the equations used to build our Exosome
-                            Production Model.</p>
-                        <table>
-                            <tr>
-                                <td>
-                                    <p class="table-paragraph"><b>Equation</b></p>
-                                </td>
-                                <td>
-                                    <p class="table-paragraph"><b>Description</b></p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] *
-                                    k_{unbind}$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV
-                                        promoter</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
-
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA
-                                        Complex during maturation</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] * k_{split_s}$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA
-                                        Complex during maturation</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    $$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Non-CAP Exosome endocytosis</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP
-                                        protein complexes, as well as the miRNA-DICER complex</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Lost DNA due to cell division</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    $$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
-                                </td>
-                                <td>
-                                    <p class="table-paragraph">Lost DNA due to cell division</p>
-                                </td>
-                            </tr>
-                        </table>
+    </div>
+    <!-- equations constants parts -->
+    <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+        <div class="contentBlock">
+            <div class="content">
+                <div id="heading6">
+                    <div class="header">
+                        <h2>Equations</h2>
                     </div>
-                        <br><br><br><br>
-                        <div id="heading6">
-                            <div class="header">
-                                <h2>Model Components</h2>
-                            </div>
-                            <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build
-                                our Exosome Production Model.</p>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph"><b>Class</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Name</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>id</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Boundary Condition</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Description</b></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">GENE</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Plasmid Gene</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>1</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Gene that codes miRNA & mRNA</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">RNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">mRNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>12</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Mature mRNA that codes the Lamp2b-CAP protein</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">RNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">pre miRNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>4</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">pre miRNA in HEK-293 cell</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">RNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">pre miRNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>8</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">pre miRNA in chondrocyte</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">RNA</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">pre miRNA - mRNA <br> Complex</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>64</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">RNA product before maturation</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">PROTEIN</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">CMV TF</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>79</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Transcription Factor</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">PROTEIN</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Lamp2b-CAP</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>5</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Lamp2b-CAP in HEK-293 cell</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">PROTEIN</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Lamp2b-CAP</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>71</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Lamp2b-CAP in ECM </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">DEGRADED</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">NucleicAcids</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>88</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">True</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degraded RNA in HEK-293 cell</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">DEGRADED</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">NucleicAcids</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>90</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">True</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degraded RNA in chondrocytes</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">DEGRADED</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">AminoAcids</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>93</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">True</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degraded RNA in HEK-293 cells</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">DEGRADED</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">AminoAcids</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>96</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">True</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degraded RNA in ECM</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">DEGRADED</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">AminoAcids</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>97</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">True</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degraded RNA in chondrocytes</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">COMPLEX</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Exosome Complex 1</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>73</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Exosome with premiRNA & Lamp2b-CAP</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">COMPLEX</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Exosome Complex 2</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>78</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Exosome with premiRNA</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">COMPLEX</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">TF Gene Complex</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>82</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">TF & Gene binded complex</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">COMPLEX</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">miRNA-DICER Complex</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">S<sub>55</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">False</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Mature miRNA-140 with DICER protein</p>
-                                    </td>
-                                </tr>
+                    <p class="content-paragraph">In this table, you can find the equations used to build our Exosome
+                        Production Model.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph"><b>Equation</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Description</b></p>
+                            </td>
+                        </tr>
 
-                            </table>
-                        </div>
+                        <tr>
+                            <td>
+                                $$\frac{d[TF-Gene Complex]}{dt} = [Plasmid Gene] * k_{bind} - [TF-Gene Complex] *
+                                k_{unbind}$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Binding and dissociation of the Transcription Factor to the CMV
+                                    promoter</p>
+                            </td>
+                        </tr>
 
-                        <br><br><br><br>
-                        <div id="heading7">
-                            <div class="header">
-                                <h2>Constants</h2>
-                            </div>
-                            <p class="content-paragraph">In this table, you can find the values of the constants we used in the
-                                equations of the Exosome Production Model.</p>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph"><b>Name</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Value</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Units</b></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph"><b>Comments</b></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>degma</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.0068333</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degredation of RNA</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>degp</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">2.7833333E-5</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Degredation of proteins</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>translation</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.27777778</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Proteins translated per second</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>split</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.83</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Split of the RNA compolex due to maturation</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>degp</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.8</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Activation of miRNA-DICER complex</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>p-exosome</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.010167</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Loading of protein to exosome</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>r-exosome</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.010167</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Loading of premiRNA to exosome</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>transcription</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">4.8</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">RNA molecules transcripted per second</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>dil</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">8.02254E-6</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Dilution rate</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>load</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.01</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">CAP exosome endocytosis constant</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>loadCAP</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.2</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per num per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Exosome endocytosis constant</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>bind</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.145</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Binding Constant</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class="table-paragraph">k<sub>unbind</sub></p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">0.00159</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">per sec</p>
-                                    </td>
-                                    <td>
-                                        <p class="table-paragraph">Dissassosiation constant </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                        <tr>
+                            <td>
+                                $$\frac{d[pre miRNA-mRNA Complex]}{dt} = [[TF-Gene Complex]] * k_{transcription}$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of the premiRNA-mRNA Complex from aminoacids</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                $$\frac{d[pre miRNA]}{dt} = [[pre miRNA-mRNA Complex]] * k_{split_s}$$
+
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of premiRNA molecule from splitting of premiRNA-mRNA
+                                    Complex during maturation</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                $$\frac{d[mRNA]}{dt} = [pre miRNA-mRNA Complex] * k_{split_s}$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of mRNA molecule from splitting of premiRNA-mRNA
+                                    Complex during maturation</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                $$\frac{d[Lamp2b-CAP]}{dt} = [mRNA] * k_{transcription}$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of the Lamp2b-CAP membraine protein complex</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                $$\frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}* k_{p-exosome}$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                $$\frac{d[Exosome]}{dt} = [pre miRNA] * k_{r-exosome} * 0.2923976$$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Production of premiRNA carrying non-CAP Exosome </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[[pre miRNA]}{dt} = [CAP Exosome] * k_{loadCAP} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">CAP Exosome endocytosis to chondrocytes</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[pre miRNA^{*}]}{dt} = [Exosome] * k_{load} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Non-CAP Exosome endocytosis</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[pre miRNA-DICER Complex]}{dt} = [pre miRNA^{*}] * k_{act} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">premiRNA maturation and activation of the DICER complex</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[Aminoacids]}{dt} = [Protein] * k_{degp} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Protein degradation. This equation is found in all Lamp2b-CAP
+                                    protein complexes, as well as the miRNA-DICER complex</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[Nucleic Acids]}{dt} = [RNA] * k_{degp} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">RNA degradation. This equation is found in all RNA molecules</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[Lost]}{dt} = [TF-Gene Complex] * k_{dil} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lost DNA due to cell division</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                $$\frac{d[Lost]}{dt} = [Plasmid Gene] * k_{dil} $$
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lost DNA due to cell division</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br><br><br>
+                    <div class="header">
+                        <h2>Model Components</h2>
                     </div>
+                    <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build
+                        our Exosome Production Model.</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph"><b>Class</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Name</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>id</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Boundary Condition</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Description</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">GENE</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Plasmid Gene</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>1</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Gene that codes miRNA & mRNA</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">RNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">mRNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>12</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Mature mRNA that codes the Lamp2b-CAP protein</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">RNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">pre miRNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>4</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">pre miRNA in HEK-293 cell</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">RNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">pre miRNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>8</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">pre miRNA in chondrocyte</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">RNA</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">pre miRNA - mRNA <br> Complex</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>64</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">RNA product before maturation</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">PROTEIN</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">CMV TF</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>79</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Transcription Factor</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">PROTEIN</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lamp2b-CAP</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>5</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lamp2b-CAP in HEK-293 cell</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">PROTEIN</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lamp2b-CAP</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>71</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Lamp2b-CAP in ECM </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">DEGRADED</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">NucleicAcids</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>88</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">True</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degraded RNA in HEK-293 cell</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">DEGRADED</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">NucleicAcids</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>90</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">True</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degraded RNA in chondrocytes</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">DEGRADED</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">AminoAcids</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>93</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">True</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degraded RNA in HEK-293 cells</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">DEGRADED</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">AminoAcids</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>96</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">True</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degraded RNA in ECM</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">DEGRADED</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">AminoAcids</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>97</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">True</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degraded RNA in chondrocytes</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">COMPLEX</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Exosome Complex 1</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>73</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Exosome with premiRNA & Lamp2b-CAP</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">COMPLEX</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Exosome Complex 2</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>78</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Exosome with premiRNA</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">COMPLEX</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">TF Gene Complex</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>82</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">TF & Gene binded complex</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">COMPLEX</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">miRNA-DICER Complex</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">S<sub>55</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">False</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Mature miRNA-140 with DICER protein</p>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <br><br><br><br>
+                    <div class="header">
+                        <h2>Constants</h2>
+                    </div>
+                    <p class="content-paragraph">In this table, you can find the values of the constants we used in the
+                        equations of the Exosome Production Model.</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph"><b>Name</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Value</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Units</b></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph"><b>Comments</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>degma</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.0068333</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degredation of RNA</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>degp</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">2.7833333E-5</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Degredation of proteins</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>translation</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.27777778</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Proteins translated per second</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>split</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.83</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Split of the RNA compolex due to maturation</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>degp</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.8</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Activation of miRNA-DICER complex</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>p-exosome</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.010167</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Loading of protein to exosome</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>r-exosome</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.010167</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Loading of premiRNA to exosome</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>transcription</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">4.8</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">RNA molecules transcripted per second</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>dil</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">8.02254E-6</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Dilution rate</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>load</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.01</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">CAP exosome endocytosis constant</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>loadCAP</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.2</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per num per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Exosome endocytosis constant</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>bind</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.145</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Binding Constant</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="table-paragraph">k<sub>unbind</sub></p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">0.00159</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">per sec</p>
+                            </td>
+                            <td>
+                                <p class="table-paragraph">Dissassosiation constant </p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-        </div>    
+        </div>
+    </div>   
 
         <!-- references -->
         <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
             <div class="contentBlock">
                 <div class="content">
-                    <div class="header">
-                        <h2>References</h2>
-                    </div>  
-                    <div style="font-size: 0.7em; font-style: italic; " class="references">
+                    <div id="heading7">
+                        <div class="header">
+                            <h2>References</h2>
+                        </div>  
+                        <div style="font-size: 0.7em; font-style: italic; " class="references">
 
-                        <ol>
-                            <li> Y. Liang, X. Xu, X. Li, J. Xiong, B. Li, L. Duan, D. Wang, and J. Xia,
-                                “Chondrocyte-targeted MicroRNA delivery by engineered exosomes toward a cell-free
-                                osteoarthritis therapy,” ACS Applied Materials & Interfaces, vol. 12, no. 33, pp.
-                                36938–36947, 2020.</li>
-                            <li>“Median mrna half-life,” Median mRNA half-life - Mammals - BNID 112681. [Online]. Available:
-                                https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112681&ver=6&trm=median%2Btranscription%2Brate&org=.
-                                [Accessed: 17-Oct-2021]. </li>
-                            <li>J. G. Betancur and Y. Tomari, “Dicer is dispensable for asymmetric RISC loading in mammals,”
-                                RNA, vol. 18, no. 1, pp. 24–30, 2011. </li>
-                            <li>E. R. Kingston and D. P. Bartel, “Global analyses of the dynamics of mammalian microrna
-                                metabolism,” bioRxiv, 01-Jan-2019. [Online]. Available:
-                                https://www.biorxiv.org/content/10.1101/607150v1.full. [Accessed: 17-Oct-2021]. </li>
-                            <li>“Hek cell splitting and maintenance,” HEK Cell Splitting and Maintenance | Şen Lab.
-                                [Online]. Available:
-                                http://receptor.nsm.uh.edu/research/protocols/experimental/hekcells-split. [Accessed:
-                                17-Oct-2021]. </li>
-                            <li>A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
-                                therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
-                                25, no. 1, pp. 102–119, 2017. </li>
-                        </ol>
+                            <ol>
+                                <li> Y. Liang, X. Xu, X. Li, J. Xiong, B. Li, L. Duan, D. Wang, and J. Xia,
+                                    “Chondrocyte-targeted MicroRNA delivery by engineered exosomes toward a cell-free
+                                    osteoarthritis therapy,” ACS Applied Materials & Interfaces, vol. 12, no. 33, pp.
+                                    36938–36947, 2020.</li>
+                                <li>“Median mrna half-life,” Median mRNA half-life - Mammals - BNID 112681. [Online]. Available:
+                                    https://bionumbers.hms.harvard.edu/bionumber.aspx?id=112681&ver=6&trm=median%2Btranscription%2Brate&org=.
+                                    [Accessed: 17-Oct-2021]. </li>
+                                <li>J. G. Betancur and Y. Tomari, “Dicer is dispensable for asymmetric RISC loading in mammals,”
+                                    RNA, vol. 18, no. 1, pp. 24–30, 2011. </li>
+                                <li>E. R. Kingston and D. P. Bartel, “Global analyses of the dynamics of mammalian microrna
+                                    metabolism,” bioRxiv, 01-Jan-2019. [Online]. Available:
+                                    https://www.biorxiv.org/content/10.1101/607150v1.full. [Accessed: 17-Oct-2021]. </li>
+                                <li>“Hek cell splitting and maintenance,” HEK Cell Splitting and Maintenance | Şen Lab.
+                                    [Online]. Available:
+                                    http://receptor.nsm.uh.edu/research/protocols/experimental/hekcells-split. [Accessed:
+                                    17-Oct-2021]. </li>
+                                <li>A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
+                                    therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
+                                    25, no. 1, pp. 102–119, 2017. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
