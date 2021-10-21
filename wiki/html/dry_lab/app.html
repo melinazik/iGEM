@@ -20,6 +20,31 @@
     src="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/JS_NavBar&action=raw&ctype=text/javascript">
 </script>
 
+ <!-- header text -->
+ <style>
+    .header h1 {
+        font-size: 40px;
+        margin-block-end: 0;
+        color: #1F3C88;
+        font-family: "raleway", sans-serif !important;
+        padding-bottom: px;
+    }
+
+    .header h2 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #5893D4;
+    }
+
+    .header h3 {
+        margin-block-start: 0;
+        font-family: "raleway", sans-serif !important;
+        font-size: 24px;
+        color: #5893D4;
+    }
+</style>
 <style>
     /* CLEAR DEFAULT SETTINGS **************************************************/
 
@@ -317,8 +342,6 @@
     <!-- in page menu -->
 
     <div id="index" class="sideBlock">
-        <div id="indexbutton" class="indexbutton">Index</div>
-
         <ul>
             <li class="active">
                 <div></div>
@@ -390,7 +413,9 @@
             <div class="content">
 
                 <div id="heading1"></div>
-                <h2>Introduction</h2>
+                <div class="header">
+                    <h3>Introduction</h3>
+                </div>
                 <p class="content-paragraph">Current trends in health reflect an important contemporary shift towards
                     citizen engagement for health and prevention, as opposed to mere disease management.
                     <br><br>However, broadcasting generic health messages (e.g. ‘do this, don’t do that’) has limited
@@ -436,8 +461,9 @@
 
 
                 <div id="heading2"></div>
-                <h2>Definition</h2>
-
+                <div class="header">
+                    <h3>Definition</h3>
+                </div>
 
                 <p class="content-paragraph">
                     Risk is the probability of a negative outcome on the health of a population of subjects.
@@ -460,8 +486,9 @@
                 <br><br><br>
 
                 <div id="heading3"></div>
-                <h2>Data Sources</h2>
-
+                <div class="header">
+                    <h3>Data Sources</h3>
+                </div>
                 <p class="content-paragraph">In order to identify high-level medical evidence of risk factors related to
                     osteoarthritis, we searched systematically in PubMed during September 2021.
                     PubMed (<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/</a>) is a
@@ -533,8 +560,9 @@
                 </table>
 
                 <br><br>
-                <h3>Publications</h3>
-
+                <div class="header">
+                    <h3>Publications</h3>
+                </div>
                 <p class="content-paragraph">
                     Initially we retrieved 393 publications and after applying inclusion and exclusion criteria,
                     we retained the following:<br>
@@ -575,7 +603,9 @@
 
 
                 <br><br>
-                <h3>Risk Factors</h3>
+                <div class="header">
+                    <h3>Risk Factors</h3>
+                </div>
                 <p class="content-paragraph">
                     The above 8 publications produced 7 risk factors:<br>
 
@@ -653,7 +683,9 @@
                     &nbsp;&nbsp;&nbsp;then osteoarthritis OR = 1.01 (0.96 to 1.05) no association
                 </p>
 
-                <h3>Limitations</h3>
+                <div class="header">
+                    <h3>Limitations</h3>
+                </div>
 
                 <p class="content-paragraph">
                     Only meta-analyses were included, however, a wider search might
@@ -667,7 +699,9 @@
 
                 <br><br><br>
                 <div id="heading4"></div>
-                <h3>Software Design</h3>
+                <div class="header">
+                    <h3>Software Design</h3>
+                </div>
 
                 <br><br><br>
                 <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
@@ -679,7 +713,9 @@
 
                 <br><br><br>
                 <div id="heading5"></div>
-                <h2>Implementation</h2>
+                <div class="header">
+                    <h3>Implementation</h3>
+                </div>
                 <p class="content-paragraph">
                     Calculator is written in javascript. It uses the SPARQL endpoint provided by the CARRE risk factor
                     repository to read the risk factors availiable.
