@@ -499,7 +499,7 @@
             background-color: #002060;
         }
 
-        @media (max-width: 800px) {
+        /* @media (max-width: 800px) {
             .sideBlock {
                 position: fixed;
                 bottom: 0;
@@ -557,7 +557,7 @@
             .sideBlock.open {
                 transform: translateY(0);
             }
-        }
+        } */
 
 
         #content {
@@ -567,6 +567,31 @@
             margin-left: 0px;
             border: none;
             line-height: initial;
+        }
+    </style>
+    <!-- header text -->
+    <style>
+        .header h1 {
+            font-size: 40px;
+            margin-block-end: 0;
+            color: #1F3C88;
+            font-family: "raleway", sans-serif !important;
+            padding-bottom: px;
+        }
+
+        .header h2 {
+            margin-block-start: 0;
+            font-family: "raleway", sans-serif !important;
+            text-transform: uppercase;
+            font-size: 30px;
+            color: #5893D4;
+        }
+
+        .header h3 {
+            margin-block-start: 0;
+            font-family: "raleway", sans-serif !important;
+            font-size: 24px;
+            color: #5893D4;
         }
     </style>
 
@@ -783,13 +808,16 @@
             <div class="content">
 
                 <div id="heading1"></div>
-                <h2>Introduction</h2>
+                <div class="header">
+                    <h1>Introduction </h1>
+                </div>
+                <br><br>
                 <p class="content-paragraph">As analyzed in the <a
-                        href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1">exosome model
+                        href="file:///C:/igem/github/iGEM/wiki/html/dry_lab/model.html#heading1" target="_blank" style="color:#5245da">exosome model
                         overview</a>,
                     we created a genetic circuit, utilizing the CellDesigner v4.4 software, aiming to investigate the
                     feasibility of our proposed implementation and
-                    develop an approach to tackle the <a href="heading3">"low transfection"</a> problem the Wet Lab team
+                    develop an approach to tackle the <a href="heading3" style="color:#5245da" target="_blank">"low transfection"</a> problem the Wet Lab team
                     encountered (Goal #3).
                     We also used this Genetic Circuit Model in combination with the Exosome Production Model to to draw
                     conclusions on the general
@@ -813,11 +841,11 @@
                     <br><br>
 
                     You can find specific information on the exact function of each part in the <a
-                        href="https://2021.igem.org/Team:Greece_United/Parts">Wet Lab</a> section of our Wiki.<br> <br>
+                        href="https://2021.igem.org/Team:Greece_United/Parts" style="color:#5245da" target="_blank">Wet Lab</a> section of our Wiki.<br> <br>
                     You can find our designed as .xml executable through CellDesigner, MatLab or anyother program that
                     works with SBML in our <a
                         href="https://github.com/melinazik/iGEM/blob/main/circuit/NFkB_Genetic_Circuit_Final.xml"
-                        target="_blank">github.</a>
+                        target="_blank" style="color:#5245da">github.</a>
                 </p>
 
                 <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
@@ -827,7 +855,10 @@
 
                 <br><br><br><br>
                 <div id="heading2"></div>
-                <h2>How the Genetic Circuit Model works</h2>
+                <div class="header">
+                    <h3>How the Genetic Circuit Model works </h3>
+                </div>
+                <br>
                 <p class="content-paragraph">At first glance the circuit might look intimidating, but it is composed of
                     small simple parts, working together in harmony.
                     Let’s take it step by step and explain how it works.
@@ -908,7 +939,10 @@
                 </p>
 
                 <div id="heading3"></div>
-                <h2>Why we created the Genetic Circuit model</h2>
+                <div class="header">
+                    <h3>Why we created the Genetic Circuit model</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">
                     During the development of the project, a problem occurred we named the “low transfection” problem,
                     because Mesenchymal Stem Cells are very difficult to transfect considering time, skills and
@@ -929,14 +963,17 @@
 
                 <br><br><br><br>
                 <div id="heading4"></div>
-                <h2>Results</h2>
+                <div class="header">
+                    <h3>Results</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">
                     The first exclusion was to the amplifier construct. We ran the simulation in CellDesigner and
                     MATLAB.
                 </p>
 
                 <img style="width:70%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png">
+                    src="https://2021.igem.org/wiki/images/c/cf/T--Greece_United--2.1.png" >
                 <p style="align-self: center" class="photo-desc"><b>Figure 3:</b>Effector expression levels in
                     difference values of the amplifier construct.</p>
 
@@ -1009,7 +1046,10 @@
                 <br><br><br><br>
 
                 <div id="heading5"></div>
-                <h2>Equations : General Categories</h2>
+                <div class="header">
+                    <h3>Equations : General Categories</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">In this table, you can find the general categories of the equations used to
                     build our Genetic Circuit Model.</p>
                 <table>
@@ -1099,7 +1139,10 @@
 
                 <br><br><br><br>
                 <div id="heading6"></div>
-                <h2>Equations</h2>
+                <div class="header">
+                    <h3>Equations</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">In this table, you can find the equations used to build our Genetic Circuit
                     Model</p>
                 <table>
@@ -1403,7 +1446,10 @@
 
                 <br><br><br><br>
                 <div id="heading7"></div>
-                <h2>Model Parts</h2>
+                <div class="header">
+                    <h3>Model Parts</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">In this table, you can find the parts (DNA, RNA, Proteins) used to build
                     our Exosome Production Model.</p>
                 <table>
@@ -1841,7 +1887,10 @@
 
                 <br><br><br><br>
                 <div id="heading8"></div>
-                <h2>Constants</h2>
+                <div class="header">
+                    <h3>Constants</h3>
+                </div>
+                <br>
                 <p class="content-paragraph">In this table, you can find the values of the constants we used in the
                     equations of the Exosome Production Model.</p>
                 <table>
@@ -2058,116 +2107,135 @@
 
 
 
-                </table>
+              </table>
+            </div>
+        </div>
+    </div>
 
-                <br><br><br><br>
-                <div id="heading9"></div>
-                <h2>The Genetic Circuit - Exosomes Model Hybrid Model</h2>
-                <p class="content-paragraph">
-                    Since we were unable to conduct the necessary experiments in the wet lab, we decided to create a
-                    model to simulate it from start to finish.
+    <div id="heading9">    
+        <div style="margin-top: 50px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
+            <div class="contentBlock">
+                <div class="content">
+                    <div class="header">
+                        <h1>The Genetic Circuit - Exosomes Model Hybrid Model</h1>
+                    </div>
                     <br><br>
+                    <p class="content-paragraph">
+                        Since we were unable to conduct the necessary experiments in the wet lab, we decided to create a
+                        model to simulate it from start to finish.
+                        <br><br>
 
-                    We simply replaced the effector of the Genetic Circuit with the Exosome Model.
+                        We simply replaced the effector of the Genetic Circuit with the Exosome Model.
 
-                    <br><br>
+                        <br><br>
 
-                    This way, the miRNA-140 carrying exosomes are produced when the cell is in an inflammatory
-                    environment,
-                    such the one of Osteoarthritis, via the NF-kB transcription factor.
+                        This way, the miRNA-140 carrying exosomes are produced when the cell is in an inflammatory
+                        environment,
+                        such the one of Osteoarthritis, via the NF-kB transcription factor.
 
-                </p>
+                    </p>
 
-                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--Hybrid-Model.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>The Genetic Circuit – Exosome
-                    Production Hybrid Model in CellDesigner v4.4</p>
+                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/5/5f/T--Greece_United--Hybrid-Model.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 7:</b>The Genetic Circuit – Exosome
+                        Production Hybrid Model in CellDesigner v4.4</p>
 
-                <br><br><br><br>
-                <h2>Results</h2>
-                <p class="content-paragraph">
-                    To compare our results, we are going to measure the effects of different values on the production of
-                    exosomes.
+                    <br><br><br><br>
+                    <h2></h2>
+                    <div class="header">
+                        <h3>Results</h3>
+                    </div>
+                    <br>
+                    <p class="content-paragraph">
+                        To compare our results, we are going to measure the effects of different values on the production of
+                        exosomes.
 
-                </p>
+                    </p>
 
-                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/7/79/T--Greece_United--Figure4-1.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>CAP Exosome production in different
-                    levels of NF-kB</p>
+                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/7/79/T--Greece_United--Figure4-1.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 8:</b>CAP Exosome production in different
+                        levels of NF-kB</p>
 
-                <p class="content-paragraph">
-                    Having the Genetic Circuit as part of the exosome production, gives it the flexibility of activating
-                    only when necessary and according to the levels
-                    of NF-kB in the cell (Figure 8). This means that the production of exosomes is dynamic and reactive
-                    to the level of the inflammation, instead of
-                    constant and pro-active.
+                    <p class="content-paragraph">
+                        Having the Genetic Circuit as part of the exosome production, gives it the flexibility of activating
+                        only when necessary and according to the levels
+                        of NF-kB in the cell (Figure 8). This means that the production of exosomes is dynamic and reactive
+                        to the level of the inflammation, instead of
+                        constant and pro-active.
 
-                </p>
+                    </p>
 
-                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--Figure4-2.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Exosome production in different levels
-                    of Doxycycline (Dox).</p>
+                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/5/53/T--Greece_United--Figure4-2.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 9:</b>Exosome production in different levels
+                        of Doxycycline (Dox).</p>
 
 
-                <p class="content-paragraph">
-                    It is also important to note that the inclusion of the genetic circuit means that we can switch off
-                    the production of exosomes at any given moment (Figure 9),
-                    simply by inducing Doxycycline to the system. This is important, because it makes the system
-                    considerably more secure and allows for more complicated
-                    experiments to be conducted in the lab.
+                    <p class="content-paragraph">
+                        It is also important to note that the inclusion of the genetic circuit means that we can switch off
+                        the production of exosomes at any given moment (Figure 9),
+                        simply by inducing Doxycycline to the system. This is important, because it makes the system
+                        considerably more secure and allows for more complicated
+                        experiments to be conducted in the lab.
 
-                </p>
+                    </p>
 
-                <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
-                    src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--Figure4-3.png">
-                <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Exosome production in the Exosome
-                    Production Model & Genetic Circuit-Exosome Production Hybrid Model.</p>
+                    <img style="width:50%; align-self: center; border-radius: 10px; box-shadow: 5px 5px 14px rgb(83, 83, 83);"
+                        src="https://2021.igem.org/wiki/images/f/fb/T--Greece_United--Figure4-3.png">
+                    <p style="align-self: center" class="photo-desc"><b>Figure 10:</b>Exosome production in the Exosome
+                        Production Model & Genetic Circuit-Exosome Production Hybrid Model.</p>
 
-                <p class="content-paragraph">
-                    On the other side of the spectrum, we can see that the single plasmid transfected cell that utilizes
-                    the CMV promoter for constant expression produces a
-                    significant amount more exosomes (Figure 10). This is mostly since the genetic circuit is designed
-                    to be expressed under certain conditions and have
-                    control over the expression of the effector. It is also important to note that the difference
-                    between the two models is not significant enough to mark
-                    the genetic circuit as significant.
+                    <p class="content-paragraph">
+                        On the other side of the spectrum, we can see that the single plasmid transfected cell that utilizes
+                        the CMV promoter for constant expression produces a
+                        significant amount more exosomes (Figure 10). This is mostly since the genetic circuit is designed
+                        to be expressed under certain conditions and have
+                        control over the expression of the effector. It is also important to note that the difference
+                        between the two models is not significant enough to mark
+                        the genetic circuit as significant.
 
-                    <br><br>
+                        <br><br>
 
-                    Although the genetic circuit model produces less CAP Exosomes, it provides safety measures and an
-                    adaptable dynamic expression system, both of which are crucial elements to
-                    designing a solution of Osteoarthritis with the aid of synthetic biology.
+                        Although the genetic circuit model produces less CAP Exosomes, it provides safety measures and an
+                        adaptable dynamic expression system, both of which are crucial elements to
+                        designing a solution of Osteoarthritis with the aid of synthetic biology.
 
-                </p>
+                    </p>
 
-                <br><br><br><br>
-                <h2>Tools</h2>
-                <p class="content-paragraph">
-                    To create our models and calculate our results we used the software CellDesigner v4.4, as well as
-                    MATLABs SimBiology Model
-                    Builder and Model Analyzer, to validate our results. Both software's have a user interface that
-                    enables the user to create visual
-                    representation of the models (architecture of the model) and use equations to model their
-                    interactions. Then you can use the built-in
-                    simulator of CellDesigner v4.4 or MATLAB's SimBiology Model Analyzer to simulate the model.
+                    <br><br><br><br>
+                    <div class="header">
+                        <h3>Tools</h3>
+                    </div>
+                    <br>
+                    <p class="content-paragraph">
+                        To create our models and calculate our results we used the software CellDesigner v4.4, as well as
+                        MATLABs SimBiology Model
+                        Builder and Model Analyzer, to validate our results. Both software's have a user interface that
+                        enables the user to create visual
+                        representation of the models (architecture of the model) and use equations to model their
+                        interactions. Then you can use the built-in
+                        simulator of CellDesigner v4.4 or MATLAB's SimBiology Model Analyzer to simulate the model.
 
-                    <br><br>
+                        <br><br>
 
-                    More information on how these two pieces of software work, can be found in our educational page,
-                    where we have fully documented their functionality by creating two tutorials for beginners.
-                </p>
+                        More information on how these two pieces of software work, can be found in our educational page,
+                        where we have fully documented their functionality by creating two tutorials for beginners.
+                    </p>
 
-                <br><br><br><br>
-                <h3>References</h3>
-                <div style="font-size: 0.7em; font-style: italic; " class="references">
+                    <br><br><br><br>
+                    <div class="header">
+                        <h3>References</h3>
+                    </div>
+                    <br>
+                    <div style="font-size: 0.7em; font-style: italic; " class="references">
 
-                    <ol>
-                        <li> A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
-                            therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
-                            25, no. 1, pp. 102–119, 2017. </li>
-                    </ol>
+                        <ol>
+                            <li> A. Smole, D. Lainšček, U. Bezeljak, S. Horvat, and R. Jerala, “A synthetic mammalian
+                                therapeutic gene circuit for sensing and suppressing inflammation,” Molecular Therapy, vol.
+                                25, no. 1, pp. 102–119, 2017. </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
