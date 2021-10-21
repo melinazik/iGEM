@@ -1338,6 +1338,8 @@
             <div class="content">
                 <div id="heading6">
                     <div class="header">
+                        <h2>Approach A</h2>
+                        <br><br>
                         <h2>Equations</h2>
                     </div>
                     <p class="content-paragraph">In this table, you can find the equations used to build our Exosome
@@ -1998,10 +2000,63 @@
                             </td>
                         </tr>
                     </table>
+                    <br><br>
+                    <div class="header">
+                        <h2> Approach B</h2>
+                        <br><br>
+                        <h2>Constants</h2>
+                    </div>
+                    <br><br>
+                    <p>
+                        <b>•</b>Kts: Transcription rate of the CMV promoter<br>
+                        <b>•</b>Kdil: Dilution of DNA<br>
+                        <b>•</b>DmRNA: Degradation rate of mRNA<br>
+                        <b>•</b>Dpre-miRNA: Degradation rate of pre-miRNA<br>
+                        <b>•</b>C1: Loading rate of pre-miRNAs <br>
+                        <b>•</b>a: Translational rate per amino acid<br>
+                        <b>•</b>L: Length of the Protein<br>
+                        <b>•</b>Dprot: Protein degradation rate<br>
+                        <b>•</b>C2: Loading rate of Proteins<br>
+                        <b>•</b>k0: Exosome production rate<br>
+                        <b>•</b>u: Percentage of exosomes that carry the protein<br>
+                    </p>
+
+                    <br><br>
+                    <div class="header">
+                        <h2>Variables</h2>
+                    </div>
+                    <p>
+                        <b>•</b>mRNA: The transcripts concentration which encodes the protein Lamp2b-GFP-CAP <br>
+                        <b>•</b>DNA: The strength of expression (with 1 being the maximum) <br>
+                        <b>•</b>Pre-miRNA: The premiRNAs 140 concentration<br>
+                        <b>•</b>P: Protein Concentration<br>
+                        <b>•</b>miRNA exos: The miRNA concentration in every exosome created that moment<br>
+                        <b>•</b>P exos: Protein concentration in the exosome membranes created that moment<br>
+                        <b>•</b>miRNA useful: miRNA that gets into cells – originates from exosomes with the guiding protein<br>
+                           
+                    </p>
+
+                    <br><br>
+                    <div class="header">
+                        <h2>Equations</h2>
+                    </div>
+                    <p>
+                        <b>•</b>dDNA/dt = - Kdil <br>
+                        <b>•</b>dmRNA/dt = Kts * DNA - DmRNA * mRNA<br>
+                        <b>•</b>dpremiRNA/dt = Kts * DNA - DpremiRNA * premiRNA - C1 * premiRNA  <br>
+                        <b>•</b>dP/dt = (a / L) * mRNA - Dprot * P - C2 * P<br>
+                        <b>•</b>dmiRNA/dt = kts * DNA -  DmiRNA * miRNA - c1 * miRNA<br>
+                        <b>•</b>Exo = k0 * t<br>
+                        <b>•</b>miRNA useful = u * miRNA_exos + c * (1-u) * miRNA_exos<br>
+                        <b>•</b>dmiRNAex/dt = (c1 / k0) * dpremiRNA/dt<br>
+                        <b>•</b>dPex/dt = c2 / (u * k0) * dP/dt<br>
+                    </p>
+
                 </div>
             </div>
         </div>
     </div>   
+
 <!-- model B -->
 <div style="margin-top: 200px; margin-left:300px; padding-bottom: 100px;" id="content-tag">
     <div class="contentBlock">
@@ -2032,7 +2087,7 @@
                     target joint, while without, can be found in the whole organism. So, it turned out that this 
                     model was not necessary to describe our approach since there are already sufficient experiments 
                     to support the movement of exosomes in this case.<br><br>
-                    You can find the executable code in our <a href="" target="_blank"></a>github page.<br><br>
+                    You can find the executable code in our <a href="https://github.com/melinazik/iGEM/blob/main/model/exosome-model-partB-NOUS.cpp" target="_blank"></a>github page.<br><br>
                       
                 </p>
         </div>
