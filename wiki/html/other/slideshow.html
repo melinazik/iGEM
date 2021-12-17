@@ -1,399 +1,1258 @@
-
 <html>
-   
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-        
-        
-        @font-face {
-        font-family: "Gothic";
-        src:url("https://2019.igem.org/wiki/images/8/85/T--Thessaly--Gothc.otf") format("opentype");
-        }
-        
-        
-        
-    
-        
-        .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
-          left: 0;
-          top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgb(0,0,0); /* Fallback color */
-          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-          padding-top: 60px;
-        }
-        
-        .modal-content {
-          margin: 0;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -ms-transform: translate(-36%, -45%);
-          transform: translate(-36%, -45%);
-          background-color: #1f7a82;
-          width: 60%; /* Could be more or less, depending on screen size */
-          border-radius: 16px;
-          z-index: 5;
-        }
-        
-        .close {
-          position: absolute;
-          right: 25px;
-          top: 25px;
-          color: #000;
-          font-size: 35px;
-          font-weight: bold;
-          z-index: 99;
-        }
-        
-        .close:hover,
-        .close:focus {
-          color: #1f7a82;
-          cursor: pointer;
-        }
-        
-        .card-name {
-          font-size: 20px;
-          padding-top: 10px;
-          color: white;
-          text-align: center;
-        }
-        .card-title {
-          font-size: 14px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          color: white;
-          text-align: left;
-        }
-        
-        .mySlides {display: none}
-        img {vertical-align: middle;}
-        
-        /* Slideshow container */
-        .slideshow-container {
-          max-width: 1000px;
-          position: relative;
-          margin: auto;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-          top: 50%;
-          cursor: pointer;
-          position: absolute;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-          z-index: 10;
-          text-decoration: none !important;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        
-        .prev {
-          left: 0;
-          border-radius: 3px 0 0 3px;
-          top: 49.5%;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Caption text */
-        .text {
-          color: #f2f2f2;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-        
-        /* Number text (1/3 etc) */
-        .numbertext {
-          color: #f2f2f2;
-          font-size: 12px;
-          padding: 8px 12px;
-          position: absolute;
-          top: 0;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dot {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .active, .dot:hover {
-          background-color: #717171;
-        }
-                
-        </style>
-        
-        <body>
-        
-        
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://2021.igem.org/wiki/index.php?title=Template:Greece_United/CSS_Footer&action=raw&ctype=text/css" />
-    
-     
-    
-    <body>
-    
-    <!-- slideshow with photos
-					<div class="slideshow-container">
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/2/2a/T--Greece_United--NUKaz-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NU_Kazakhstan</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--NUKaz-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NU_Kazakhstan</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--NUKaz-3.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NU_Kazakhstan</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/6/65/T--Greece_United--NUKaz-4.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NU_Kazakhstan</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/a/ac/T--Greece_United--NUKaz-5.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NU_Kazakhstan</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/0/05/T--Greece_United--Mindgao-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Mingdao</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/5/5c/T--Greece_United--Aria-UPFt-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM UPF Barcelona</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/0/0d/T--Greece_United--Aria-UPFt-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM UPF Barcelona</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/e/e6/T--Greece_United--Aria-UPFt-3.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM UPF Barcelona</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/1/1b/T--Greece_United--Aria-UPFt-4.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM UPF Barcelona</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/7/7d/T--Greece_United--egypt-1.png" style="width:100%">
-							<div class="text">
-								<p> iGEM AFCM</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--egypt-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM AFCM</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/c/cd/T--AFCM-EGYPT--COL3.png" style="width:100%">
-							<div class="text">
-								<p> iGEM AFCM</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/e/ed/T--Greece_United--estonia-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/7/74/T--Greece_United--estonia-3.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/8/87/T--Greece_United--estonia-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/f/fc/T--Greece_United--estonia-4.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/7/71/T--Greece_United--estonia-5.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/1/1d/T--Greece_United--estonia-6.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/0/0b/T--Greece_United--estonia-7.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/6/66/T--Greece_United--estonia-8.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/6/6a/T--Greece_United--estonia-9.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/2/29/T--Greece_United--estonia-10.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="	https://2021.igem.org/wiki/images/8/8e/T--Greece_United--estonia-11.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM Estonia TUIT</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/1/11/T--Greece_United--hungary-art-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM SZTA_RMG_Szeged</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/7/75/T--Greece_United--hungary-art-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM SZTA_RMG_Szeged</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/a/aa/T--Greece_United--nous-art-1.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NOUS (Greece_United)</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/6/69/T--Greece_United--nous-art-2.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NOUS (Greece_United)</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--nous-art-3.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NOUS (Greece_United)</p>
-							</div>
-						</div>
-						<div class="mySLides2 fade">
-							<img src="https://2021.igem.org/wiki/images/d/db/T--Greece_United--nous-art-4.jpg" style="width:100%">
-							<div class="text">
-								<p> iGEM NOUS (Greece_United)</p>
-							</div>
-						</div>
+<style>
 
-						<a class="prev" style="color: white;" onclick="plusSlides2(-1)">&#10094;</a>
-						<a class="next" style="color: white;" onclick="plusSlides2(1)">&#10095;</a>
-						
+</style>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+	<section id="Main">
+
+		<div class="sidenav sidenav-bg-about">
+
+
+			<svg id="mySVG">
+				<circle fill="none" cx="80" cy="80" r="67" stroke="#1f7a82" stroke-width="5" id="triangle"
+					transform='rotate(270 80 80)' />
+				<circle fill="#363636" cx="80" cy="80" r="58" stroke="#363636" stroke-width="5" />
+				Sorry, your browser does not support inline SVG.
+			</svg>
+
+			<div><a href="https://2019.igem.org/Team:Thessaly"><img
+						src="https://2019.igem.org/wiki/images/e/ea/T--Thessaly--logo-about.svg"
+						style="width: 130px; top: 54px; left: 59px; position: fixed; z-index: 90; padding: 0px;"></a>
+			</div>
+
+			<div class="caption2" style="margin-top: -40px;">
+				<br>
+				<span class="border">TEAM.</span>
+				<div class="line" style="margin-left: 15px; height: 4px; margin-top: 5px; width: 70px;">
+				</div>
+			</div>
+
+			<a href="#11" style="margin-top: -40px;">Members</a>
+			<a href="#13">Advisors</a>
+			<a href="#12">Instructors</a>
+			<a href="#14">Principle Investigators</a>
+			<a href="#15">Ambassadors</a>
+
+		</div>
+
+		<div class="main">
+
+			<div class="myBtn" onclick="topFunction()" id="Btn"><a href="#top"><img alt=""
+						src="https://2019.igem.org/wiki/images/f/fe/T--Thessaly--up.png" style="width: 50px;"></a></div>
+
+
+			<div id="" class="" style="min-height: 30vh;">
+
+
+				<div
+					style="width:100%; float: right; minheight: 50px; margin-bottom: 0px; padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 10px; background-color: #f2b762; color: white; z-index: 80;">
+					<div
+						style="width: 50px; float: left; minheight: 50px; margin-bottom: 0px; padding-top: -10px; margin-left: -75px; ">
+						<img src="https://2019.igem.org/wiki/images/a/af/T--Thessaly--overview.png"
+							style="height: 100px; z-index: 90; float: right; margin-left: -100px;">
 					</div>
-					
+					<p style="font-size: 16px; font-family: MuliLight; color: black; padding-top: 10px;">Around November
+						last year, 10 students with many different backgrounds came together to form iGEM Thessaly and
+						make the journey to the Giant Jamboree.</p>
+					<p style="font-size: 16px; font-family: MuliLight; color: black;">Meet the people behind ODYSSEE.
+					</p>
+				</div>
 
-                    <br><br>
-					<div style="text-align:center">
-						<span class="dot2" onclick="currentSlide(1)"></span> 
-						<span class="dot2" onclick="currentSlide(2)"></span> 
-						<span class="dot2" onclick="currentSlide(3)"></span> 
-						<span class="dot2" onclick="currentSlide(4)"></span> 
-						<span class="dot2" onclick="currentSlide(5)"></span> 
-						<span class="dot2" onclick="currentSlide(6)"></span> 
-						<span class="dot2" onclick="currentSlide(7)"></span> 
-						<span class="dot2" onclick="currentSlide(8)"></span> 
-						<span class="dot2" onclick="currentSlide(9)"></span> 
-						<span class="dot2" onclick="currentSlide(10)"></span> 
-						<span class="dot2" onclick="currentSlide(11)"></span> 
-						<span class="dot2" onclick="currentSlide(12)"></span> 
-						<span class="dot2" onclick="currentSlide(13)"></span> 
-						<span class="dot2" onclick="currentSlide(14)"></span> 
-						<span class="dot2" onclick="currentSlide(15)"></span> 
-						<span class="dot2" onclick="currentSlide(16)"></span> 
-						<span class="dot2" onclick="currentSlide(17)"></span> 
-						<span class="dot2" onclick="currentSlide(18)"></span> 
-						<span class="dot2" onclick="currentSlide(19)"></span> 
-						<span class="dot2" onclick="currentSlide(20)"></span> 
-						<span class="dot2" onclick="currentSlide(21)"></span> 
-						<span class="dot2" onclick="currentSlide(23)"></span> 
-						<span class="dot2" onclick="currentSlide(24)"></span> 
-						<span class="dot2" onclick="currentSlide(25)"></span> 
-						<span class="dot2" onclick="currentSlide(26)"></span> 
-						<span class="dot2" onclick="currentSlide(27)"></span> 
-						<span class="dot2" onclick="currentSlide(28)"></span> 
-						<span class="dot2" onclick="currentSlide(29)"></span> 
-						<span class="dot2" onclick="currentSlide(30)"></span> 
-					</div> -->
-    
-        
-    </div>
-    
-    </body>
-    
-    </html>
-    
+
+			</div>
+
+			<div id="11" class="scrollspy" style="min-height: 60vh; margin-top; 15vh;">
+				<p style="font-size: 25px; font-family: AgeoPersonalUse-Bold; color: black;"><b>Members</b></p>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="vasilikihover()" onmouseout="vasilikidehover()">
+								<img src="https://2019.igem.org/wiki/images/5/5f/T--Thessaly--vasiliki.jpg"
+									class="team-img" onclick="document.getElementById('id01').style.display='block'"
+									style="opacity: 1;" id="vasiliki1">
+								<img src="https://2019.igem.org/wiki/images/3/3f/T--Thessaly--vasiliki-.png"
+									class="team-img" onclick="document.getElementById('id01').style.display='block'"
+									style="opacity: 0;" id="vasiliki2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Vasiliki Kavvatha</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Project Leader</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="leohover()" onmouseout="leodehover()">
+								<img src="https://2019.igem.org/wiki/images/c/c8/T--Thessaly--leo.jpg" class="team-img"
+									onclick="document.getElementById('id02').style.display='block'" style="opacity: 1;"
+									id="leo1">
+								<img src="https://2019.igem.org/wiki/images/0/08/T--Thessaly--leo-.png" class="team-img"
+									onclick="document.getElementById('id02').style.display='block'" style="opacity: 0;"
+									id="leo2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Leandros Tsiotos</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Project Leader</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="afrohover()" onmouseout="afrodehover()">
+								<img src="https://2019.igem.org/wiki/images/8/81/T--Thessaly--afro.jpg" class="team-img"
+									onclick="document.getElementById('id03').style.display='block'" style="opacity: 1;"
+									id="afro1">
+								<img src="https://2019.igem.org/wiki/images/1/1e/T--Thessaly--afro-.png"
+									class="team-img" onclick="document.getElementById('id03').style.display='block'"
+									style="opacity: 0;" id="afro2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Afroditi Katsaouni</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Wet Lab</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="nicolhover()" onmouseout="nicoldehover()">
+								<img src="https://2019.igem.org/wiki/images/b/b7/T--Thessaly--nicol.jpg"
+									class="team-img" onclick="document.getElementById('id04').style.display='block'"
+									style="opacity: 1;" id="nicol1">
+								<img src="https://2019.igem.org/wiki/images/e/e4/T--Thessaly--nicol-.png"
+									class="team-img" onclick="document.getElementById('id04').style.display='block'"
+									style="opacity: 0;" id="nicol2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Nikoleta Efthymiopoulou</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Wet Lab</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="nickhover()" onmouseout="nickdehover()">
+								<img src="https://2019.igem.org/wiki/images/c/cd/T--Thessaly--nick.jpg" class="team-img"
+									onclick="document.getElementById('id05').style.display='block'" style="opacity: 1;"
+									id="nick1">
+								<img src="https://2019.igem.org/wiki/images/3/30/T--Thessaly--nick-.png"
+									class="team-img" onclick="document.getElementById('id05').style.display='block'"
+									style="opacity: 0;" id="nick2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Nikolaos Ntelkis</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Wet Lab</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="theohover()" onmouseout="theodehover()">
+								<img src="https://2019.igem.org/wiki/images/e/e0/T--Thessaly--theo.jpg" class="team-img"
+									onclick="document.getElementById('id06').style.display='block'" style="opacity: 1;"
+									id="theo1">
+								<img src="https://2019.igem.org/wiki/images/1/16/T--Thessaly--theodore-.png"
+									class="team-img" onclick="document.getElementById('id06').style.display='block'"
+									style="opacity: 0;" id="theo2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Thodoris Kontogiannis</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Wet Lab</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="xeniahover()" onmouseout="xeniadehover()">
+								<img src="https://2019.igem.org/wiki/images/4/47/T--Thessaly--xenia.jpg"
+									class="team-img" onclick="document.getElementById('id07').style.display='block'"
+									style="opacity: 1;" id="xenia1">
+								<img src="https://2019.igem.org/wiki/images/5/5e/T--Thessaly--xenia-.png"
+									class="team-img" onclick="document.getElementById('id07').style.display='block'"
+									style="opacity: 0;" id="xenia2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Xenia - Artemis Doulka</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Modeling </div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="eleftheriahover()" onmouseout="eleftheriadehover()">
+								<img src="https://2019.igem.org/wiki/images/f/fa/T--Thessaly--eleftheria.jpg"
+									class="team-img" onclick="document.getElementById('id08').style.display='block'"
+									style="opacity: 1;" id="eleftheria1">
+								<img src="https://2019.igem.org/wiki/images/e/e2/T--Thessaly--eleftheria-.png"
+									class="team-img" onclick="document.getElementById('id08').style.display='block'"
+									style="opacity: 0;" id="eleftheria2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Eleftheria Moustaka</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Wiki Design</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="mariahover()" onmouseout="mariadehover()">
+								<img src="https://2019.igem.org/wiki/images/d/d5/T--Thessaly--maria.jpg"
+									class="team-img" onclick="document.getElementById('id09').style.display='block'"
+									style="opacity: 1;" id="maria1">
+								<img src="https://2019.igem.org/wiki/images/2/2b/T--Thessaly--maria-.png"
+									class="team-img" onclick="document.getElementById('id09').style.display='block'"
+									style="opacity: 0;" id="maria2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Maria Gerontopoulou</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Graphic Design</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="athinahover()" onmouseout="athinadehover()">
+								<img src="https://2019.igem.org/wiki/images/d/db/T--Thessaly--athina.jpg"
+									class="team-img" onclick="document.getElementById('id10').style.display='block'"
+									style="opacity: 1;" id="athina1">
+								<img src="https://2019.igem.org/wiki/images/6/6d/T--Thessaly--athina-.png"
+									class="team-img" onclick="document.getElementById('id10').style.display='block'"
+									style="opacity: 0;" id="athina2">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Athina Milona</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">Human Practices</div>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div id="id01" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">1 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id01').style.display='none'; document.getElementById('id01').style.transition= '0.5s'; document.getElementById('id10').style.display='block'; document.getElementById('id10').style.transition= '1s';">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/5/52/T--Thessaly--vasiliki--.png"
+								class="avatar">
+						</div>
+						<div style="width: 50%; float: right; min-height: 100%;">
+							<div style="width: 90%; float: left; min-height: 100%; ">
+								<img src="https://2019.igem.org/wiki/images/1/14/T--Thessaly--vasiliki-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; min-height: 100%;">
+								<a class="next"
+									onclick="document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id01').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id02" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">2 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/8/88/T--Thessaly--leo--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/9/96/T--Thessaly--leo-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id02').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id03" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">3 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/3/36/T--Thessaly--afro--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/9/9b/T--Thessaly--afro-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id03').style.display='none';document.getElementById('id04').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id03').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id04" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">4 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id04').style.display='none';document.getElementById('id03').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/8/87/T--Thessaly--nicol--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/d/d0/T--Thessaly--nikoleta-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id04').style.display='none';document.getElementById('id05').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id04').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id05" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">5 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id05').style.display='none';document.getElementById('id04').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/f/f7/T--Thessaly--nick--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/1/16/T--Thessaly--nick-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id05').style.display='none';document.getElementById('id06').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id05').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id06" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">6 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id06').style.display='none';document.getElementById('id05').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/5/57/T--Thessaly--theo--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/4/4d/T--Thessaly--theodore-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id06').style.display='none';document.getElementById('id07').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id06').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id07" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">7 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id07').style.display='none';document.getElementById('id06').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/8/8d/T--Thessaly--xenia--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/7/7b/T--Thessaly--xenia-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id07').style.display='none';document.getElementById('id08').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id07').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id08" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">8 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id08').style.display='none';document.getElementById('id07').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/2/2a/T--Thessaly--eleftheria--.png"
+								class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/e/ee/T--Thessaly--eleftheria-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id08').style.display='none';document.getElementById('id09').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id08').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id09" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">9 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id09').style.display='none';document.getElementById('id08').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/5/54/T--Thessaly--maria--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/e/e7/T--Thessaly--maria-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id09').style.display='none';document.getElementById('id10').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id09').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="id10" class="modal">
+					<div class="modal-content">
+						<div class="numbertext">10 / 3</div>
+						<div class="imgcontainer" style="width: 50%; float: left;">
+							<a class="prev"
+								onclick="document.getElementById('id10').style.display='none';document.getElementById('id09').style.display='block'">&#10094;</a>
+							<img src="https://2019.igem.org/wiki/images/8/88/T--Thessaly--athina--.png" class="avatar">
+						</div>
+						<div style="width: 50%; float: right;">
+							<div style="width: 90%; float: left; height: auto;">
+								<img src="https://2019.igem.org/wiki/images/e/e9/T--Thessaly--athina-text.png"
+									class="avatar">
+							</div>
+							<div style="width: 10%; float: right; height: auto;">
+								<a class="next"
+									onclick="document.getElementById('id10').style.display='none';document.getElementById('id01').style.display='block'">&#10095;</a>
+								<span onclick="document.getElementById('id10').style.display='none'" class="close"
+									title="Close Modal">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div id="13" class="scrollspy" style="min-height: 60vh; margin-top:15vh;">
+				<p style="font-size: 25px; font-family: AgeoPersonalUse-Bold; color: black;"><b>Advisors</b></p>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/7/78/T--Thessaly--team-sideris.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Nikos Sideris</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Biochemist &
+									Biotechnologist</b><br> University of Thessaly</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/4/4c/T--Thessaly--team-ntekas.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Yannis Ntekas</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Chemical
+									Engineer</b><br>National Technical University of Athens</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div id="12" class="scrollspy" style="min-height: 60vh; margin-top:15vh;">
+				<p style="font-size: 25px; font-family: AgeoPersonalUse-Bold; color: black;"><b>Instructors</b></p>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/7/78/T--Thessaly--kostas.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Constantine Garagounis</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Postdoctoral
+									Fellow</b><br>Laboratory of Plant & Environmental Biotechnology<br>University of
+								Thessaly</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/3/3b/T--Thessaly--kotsouma.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Konstantina Tsoumani</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Postdoctoral
+									Fellow</b><br>Laboratory of Molecular Biology & Genomics<br>University of Thessaly
+							</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/0/09/T--Thessaly--%CF%83%CF%84%CE%B1%CE%BC%CE%B1%CF%84%CE%B9%CF%83.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Stamatis Damalas</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>PhD
+									Candidate</b><br>Laboratory of Systems & Synthetic Biology<br>Wageningen University
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/e/ee/T--Thessaly--%CE%B2%CE%B1%CF%84%CE%B9%CE%B1%CE%BD%CE%B9%CF%83.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Christos Batianis</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>PhD
+									Candidate</b><br>Laboratory of Systems & Synthetic Biology<br>Wageningen University
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+			<div id="14" class="scrollspy" style="min-height: 60vh; margin-top:15vh;">
+				<p style="font-size: 25px; font-family: AgeoPersonalUse-Bold; color: black;"><b>Principle
+						Investigators</b></p>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/2/2f/T--Thessaly--mathiopoulos.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Konstantinos Mathiopoulos</b>
+							</div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Professor of
+									Molecular Biology</b><br>Head of the Laboratory of Molecular Biology &
+								Genomics<br>University of Thessaly</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/5/58/T--Thessaly--papadopoulou_new.jpg"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Kalliope Papadopoulou</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Associate Professor
+									of Plant Biotechnology</b><br>Head of the Laboratory of Plant & Environmental
+								Biotechnology<br>University of Thessaly</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/8/84/T--Thessaly--gourgoulianis.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Konstantinos Gourgoulianis</b>
+							</div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Professor of
+									Pulmonology</b><br>Head of the Pulmonology Clinic of the <br>University of Thessaly
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="15" class="scrollspy" style="min-height: 60vh; margin-top:15vh;">
+				<p style="font-size: 25px; font-family: AgeoPersonalUse-Bold; color: black;"><b>Ambassadors</b></p>
+
+				<div class="row" style="align: center;">
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/1/18/T--Thessaly--%CE%B5%CE%BB%CE%B5%CE%BD%CE%B1.png"
+									class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Elena Pappa</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;">
+								<b>Student</b><br>Department of<br>Biochemistry and Biotechnology</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="https://2019.igem.org/wiki/images/5/5e/T--Thessaly--olga.png" class="team-img"
+									onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b>Olga Tsiouri</b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b>Biochemist &
+									Biotechnologist</b><br>University of Thessaly</div>
+						</div>
+					</div>
+
+					<div class="team-column">
+						<div class="team-center">
+							<div onmouseover="" onmouseout="">
+								<img src="" class="team-img" onclick="" style="opacity: 1; cursor: auto;" id="">
+								<img src="" class="team-img" onclick="" style="opacity: 0;" id="">
+							</div>
+							<div class="team-name" style="font-family: MuliLight;"><b></b></div>
+							<div class="team-title" style="font-family: MuliLight; color: black;"><b></b><br><br></div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+
+		<div class="footer-mob" style="width: 100vw;">
+
+			<div class="footer-mob-row" style="max-height: 50px;">
+				<div class="line"
+					style="width: 100%; background-image: linear-gradient(90deg,#1f7a82 , #433565, #f2b762);"></div>
+			</div>
+
+			<div class="footer-mob-row" style="min-height: 50px;">
+				<div class="footer-mob-card">
+					<a href="http://igem-thessaly.uth.gr/" target="_blank">
+						<img alt="" src="https://2019.igem.org/wiki/images/7/74/T--Thessaly--logo2.png" class="grey"
+							style=" width: 30vw;">
+					</a>
+				</div>
+			</div>
+			<div class="footer-mob-row" style="margin-top: -20px;">
+				<div class="footer-column1" style="width: 25%;">
+					<div class="footer-mob-card">
+						<a href="https://www.facebook.com/igemthessaly/?epa=SEARCH_BOX"
+							style="color: black; text-decoration: none; text-align: center; float: center;"
+							class="grey">
+							<img alt="" src="https://2019.igem.org/wiki/images/3/36/T--Thessaly--facebook.svg"
+								width="20" height="20">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 25%;">
+					<div class="footer-mob-card">
+						<a href="https://www.youtube.com/channel/UCBHXzFL7r9xxHxqQICznphA"
+							style="color: black; text-decoration: none; text-align: center; float: center;"
+							class="grey">
+							<img alt="" src="https://2019.igem.org/wiki/images/d/d0/T--Thessaly--youtube.svg" width="20"
+								height="20">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 25%;">
+					<div class="footer-mob-card">
+						<a href="https://twitter.com/igemthessaly?lang=en"
+							style="color: black; text-decoration: none; text-align: center; float: center;"
+							class="grey">
+							<img alt="" src="https://2019.igem.org/wiki/images/7/72/T--Thessaly--twitter.svg" width="20"
+								height="20">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 25%;">
+					<div class="footer-mob-card">
+						<a href="https://www.instagram.com/igemthessaly/?hl=el"
+							style="color: black; text-decoration: none; text-align: center; float: center;"
+							class="grey">
+							<img alt="" src="https://2019.igem.org/wiki/images/6/61/T--Thessaly--instagram.svg"
+								width="20" height="20">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-mob-row" style="min-height: 20px; margin-top: -10px;">
+				<div class="footer-mob-card">
+					<a href="mailto:igem.thessaly@gmail.com"
+						style="color: black; text-decoration: none; text-align: center; float: center; color: #363636;">
+						igem.thessaly@gmail.com
+					</a>
+				</div>
+			</div>
+
+
+			<div class="footer-mob-row" style="min-height: 20px;">
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.omic-engine.com/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/3/3f/T--Thessaly--2omic.png" class="grey"
+								style="width: 30vw; margin-top: 1.5vh; margin-left: -2vw;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.iky.gr/en/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/7/72/T--Thessaly--1IKY.png" class="grey"
+								style="width: 25vw; margin-top: 1.5vh;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="http://www.uth.gr/en/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/9/93/T--Thessaly--3uni.png" class="grey"
+								style="width: 12.5vw;">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-mob-row" style="min-height: 20px;">
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.novartis.gr/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/0/04/T--Thessaly--6NOVARTIS.png"
+								class="grey" style="width: 22.5vw; margin-top: 3.5vh;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.helpe.gr/en/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/f/f8/T--Thessaly--5petroleum.png"
+								class="grey" style="width: 12.5vw; margin-top: 2.5vh;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.elpen.gr/en/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/7/7e/T--Thessaly--4elpen.png"
+								class="grey" style="width: 12.5vw; margin-top: 3vh;">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-mob-row" style="min-height: 20px;">
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="http://www.labsupplies.gr/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/8/88/T--Thessaly--7lab.png" class="grey"
+								style="width: 12.5vw;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://www.mathworks.com/" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/3/3f/T--Thessaly--12mathworks.png"
+								class="grey" style="width: 15vw;">
+						</a>
+					</div>
+				</div>
+				<div class="footer-column1" style="width: 33%;">
+					<div class="footer-mob-card">
+						<a href="https://eu.idtdna.com/pages" target="_blank">
+							<img alt="" src="https://2019.igem.org/wiki/images/f/fd/T--Thessaly--10IDT.png" class="grey"
+								style="width: 12.5vw;">
+							<//a> </div> </div> </div> <div class="footer-mob-row" style="min-height: 20px;">
+							<div class="footer-column1" style="width: 33%;">
+								<div class="footer-mob-card">
+									<a href="https://www.neb.com/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/5/5f/T--Thessaly--11NEB.png"
+											class="grey" style="width: 12.5vw; margin-top: -1vh;">
+									</a>
+								</div>
+							</div>
+							<div class="footer-column1" style="width: 33%;">
+								<div class="footer-mob-card">
+									<a href="https://www.snapgene.com/" target="_blank">
+										<img alt=""
+											src="https://2019.igem.org/wiki/images/c/c2/T--Thessaly--8snapgene.png"
+											class="grey" style="width: 15vw;">
+									</a>
+								</div>
+							</div>
+							<div class="footer-column1" style="width: 33%;">
+								<div class="footer-mob-card">
+									<a href="https://twistbioscience.com/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/9/97/T--Thessaly--9twist.png"
+											class="grey" style="width: 12.5vw; margin-top: -1vh;">
+									</a>
+								</div>
+							</div>
+					</div>
+				</div>
+
+
+				<div class="footer" style="margin-top: -50px;">
+
+					<div class="footer-row">
+						<div class="line"
+							style="width: 100%; background-image: linear-gradient(90deg,#1f7a82 , #433565, #f2b762);">
+						</div>
+					</div>
+
+					<div class="footer-row">
+						<div class="footer-column1" style="width: 15%;">
+							<div class="footer-row">
+								<div class="footer-card">
+									<a href="http://igem-thessaly.uth.gr/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/7/74/T--Thessaly--logo2.png"
+											class="grey" style="margin-left: 1.5vw; margin-top: 0; width: 7vw;">
+									</a>
+								</div>
+							</div>
+							<div class="footer-row" style="margin-top: -20px;">
+								<div class="footer-column1" style="width: 25%;">
+									<div class="footer-card">
+										<a href="https://www.facebook.com/igemthessaly/?epa=SEARCH_BOX"
+											style="color: black; text-decoration: none; text-align: center; float: center;"
+											class="grey">
+											<img alt=""
+												src="https://2019.igem.org/wiki/images/3/36/T--Thessaly--facebook.svg"
+												width="20" height="20">
+										</a>
+									</div>
+								</div>
+								<div class="footer-column1" style="width: 25%;">
+									<div class="footer-card">
+										<a href="https://www.youtube.com/channel/UCBHXzFL7r9xxHxqQICznphA"
+											style="color: black; text-decoration: none; text-align: center; float: center;"
+											class="grey">
+											<img alt=""
+												src="https://2019.igem.org/wiki/images/d/d0/T--Thessaly--youtube.svg"
+												width="20" height="20">
+										</a>
+									</div>
+								</div>
+								<div class="footer-column1" style="width: 25%;">
+									<div class="footer-card">
+										<a href="https://twitter.com/igemthessaly?lang=en"
+											style="color: black; text-decoration: none; text-align: center; float: center;"
+											class="grey">
+											<img alt=""
+												src="https://2019.igem.org/wiki/images/7/72/T--Thessaly--twitter.svg"
+												width="20" height="20">
+										</a>
+									</div>
+								</div>
+								<div class="footer-column1" style="width: 25%;">
+									<div class="footer-card">
+										<a href="https://www.instagram.com/igemthessaly/?hl=el"
+											style="color: black; text-decoration: none; text-align: center; float: center;"
+											class="grey">
+											<img alt=""
+												src="https://2019.igem.org/wiki/images/6/61/T--Thessaly--instagram.svg"
+												width="20" height="20">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="footer-row" style="margin-top: -60px;">
+								<div class="footer-card" style="">
+									<a href="mailto:igem.thessaly@gmail.com"
+										style="color: black; text-decoration: none; text-align: center; float: center; color: #363636;">
+										igem.thessaly@gmail.com
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="footer-column2" style="width: 80%; float: right;">
+							<div class="footer-row" style="margin-top: 40px;">
+								<div class="footer-column1" style="width: 24.5%;">
+									<a href="https://www.omic-engine.com/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/3/3f/T--Thessaly--2omic.png"
+											class="grey" style="width: 12vw; margin-top: 1.5vh;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 20.5%;">
+									<a href="https://www.iky.gr/en/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/7/72/T--Thessaly--1IKY.png"
+											class="grey" style="width: 10vw; margin-top: 1.5vh;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 12.5%;">
+									<a href="http://www.uth.gr/en/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/9/93/T--Thessaly--3uni.png"
+											class="grey" style="width: 5vw;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 18.5%;">
+									<a href="https://www.novartis.gr/" target="_blank">
+										<img alt=""
+											src="https://2019.igem.org/wiki/images/0/04/T--Thessaly--6NOVARTIS.png"
+											class="grey" style="width: 9vw; margin-top: 3.5vh;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 11.5%;">
+									<a href="https://www.helpe.gr/en/" target="_blank">
+										<img alt=""
+											src="https://2019.igem.org/wiki/images/f/f8/T--Thessaly--5petroleum.png"
+											class="grey" style="width: 5vw; margin-top: 2.5vh;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 11.5%;">
+									<a href="https://www.elpen.gr/en/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/7/7e/T--Thessaly--4elpen.png"
+											class="grey" style="width: 5vw; margin-top: 3vh;">
+									</a>
+								</div>
+							</div>
+							<div class="footer-row" style="margin-top: 30px;">
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="http://www.labsupplies.gr/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/8/88/T--Thessaly--7lab.png"
+											class="grey" style="width: 5vw;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="https://www.mathworks.com/" target="_blank">
+										<img alt=""
+											src="https://2019.igem.org/wiki/images/3/3f/T--Thessaly--12mathworks.png"
+											class="grey" style="width: 6vw;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="https://eu.idtdna.com/pages" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/f/fd/T--Thessaly--10IDT.png"
+											class="grey" style="width: 5vw;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="https://www.neb.com/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/5/5f/T--Thessaly--11NEB.png"
+											class="grey" style="width: 5vw; margin-top: -1vh;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="https://www.snapgene.com/" target="_blank">
+										<img alt=""
+											src="https://2019.igem.org/wiki/images/c/c2/T--Thessaly--8snapgene.png"
+											class="grey" style="width: 6vw;">
+									</a>
+								</div>
+								<div class="footer-column1" style="width: 16.5%;">
+									<a href="https://twistbioscience.com/" target="_blank">
+										<img alt="" src="https://2019.igem.org/wiki/images/9/97/T--Thessaly--9twist.png"
+											class="grey" style="width: 5vw; margin-top: -1vh;">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+	<script>
+		// When the user scrolls the page, execute myFunction 
+		window.onscroll = function () {
+			scrollFunction1()
+		};
+
+		function scrollFunction1() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("Btn").style.display = "block";
+			} else {
+				document.getElementById("Btn").style.display = "none";
+			}
+		}
+
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+
+		$(document).ready(function () {
+			$('.scrollspy').scrollSpy();
+		});
+
+		var triangle = document.getElementById("triangle");
+		var length = triangle.getTotalLength();
+
+		// The start position of the drawing
+		triangle.style.strokeDasharray = length;
+
+		// Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
+		triangle.style.strokeDashoffset = length;
+
+		// Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
+		window.addEventListener("scroll", myFunction8);
+
+		function myFunction8() {
+			var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement
+				.scrollHeight - document.documentElement.clientHeight);
+
+			var draw = length * scrollpercent;
+
+			// Reverse the drawing (when scrolling upwards)
+			triangle.style.strokeDashoffset = length - draw;
+		}
+
+		window.onclick = function (event) {
+			if (event.target == document.getElementById('id01')) {
+				document.getElementById('id01').style.display = "none";
+			}
+			if (event.target == document.getElementById('id02')) {
+				document.getElementById('id02').style.display = "none";
+			}
+			if (event.target == document.getElementById('id03')) {
+				document.getElementById('id03').style.display = "none";
+			}
+			if (event.target == document.getElementById('id04')) {
+				document.getElementById('id04').style.display = "none";
+			}
+			if (event.target == document.getElementById('id05')) {
+				document.getElementById('id05').style.display = "none";
+			}
+			if (event.target == document.getElementById('id06')) {
+				document.getElementById('id06').style.display = "none";
+			}
+			if (event.target == document.getElementById('id07')) {
+				document.getElementById('id07').style.display = "none";
+			}
+			if (event.target == document.getElementById('id08')) {
+				document.getElementById('id08').style.display = "none";
+			}
+			if (event.target == document.getElementById('id09')) {
+				document.getElementById('id09').style.display = "none";
+			}
+			if (event.target == document.getElementById('id10')) {
+				document.getElementById('id10').style.display = "none";
+			}
+		}
+
+
+		function vasilikihover() {
+			document.getElementById("vasiliki1").style.opacity = "0";
+			document.getElementById("vasiliki2").style.opacity = "1";
+
+			document.getElementById("vasiliki1").style.transition = "1s";
+			document.getElementById("vasiliki2").style.transition = "0.5s";
+		}
+
+		function vasilikidehover() {
+			document.getElementById("vasiliki1").style.opacity = "1";
+			document.getElementById("vasiliki2").style.opacity = "0";
+
+			document.getElementById("vasiliki1").style.transition = "0.5s";
+			document.getElementById("vasiliki2").style.transition = "1s";
+		}
+
+		function leohover() {
+			document.getElementById("leo1").style.opacity = "0";
+			document.getElementById("leo2").style.opacity = "1";
+
+			document.getElementById("leo1").style.transition = "1s";
+			document.getElementById("leo2").style.transition = "0.5s";
+		}
+
+		function leodehover() {
+			document.getElementById("leo1").style.opacity = "1";
+			document.getElementById("leo2").style.opacity = "0";
+
+			document.getElementById("leo1").style.transition = "0.5s";
+			document.getElementById("leo2").style.transition = "1s";
+		}
+
+		function afrohover() {
+			document.getElementById("afro1").style.opacity = "0";
+			document.getElementById("afro2").style.opacity = "1";
+
+			document.getElementById("afro1").style.transition = "1s";
+			document.getElementById("afro2").style.transition = "0.5s";
+		}
+
+		function afrodehover() {
+			document.getElementById("afro1").style.opacity = "1";
+			document.getElementById("afro2").style.opacity = "0";
+
+			document.getElementById("afro1").style.transition = "0.5s";
+			document.getElementById("afro2").style.transition = "1s";
+		}
+
+		function nicolhover() {
+			document.getElementById("nicol1").style.opacity = "0";
+			document.getElementById("nicol2").style.opacity = "1";
+
+			document.getElementById("nicol1").style.transition = "1s";
+			document.getElementById("nicol2").style.transition = "0.5s";
+		}
+
+		function nicoldehover() {
+			document.getElementById("nicol1").style.opacity = "1";
+			document.getElementById("nicol2").style.opacity = "0";
+
+			document.getElementById("nicol1").style.transition = "0.5s";
+			document.getElementById("nicol2").style.transition = "1s";
+		}
+
+		function nickhover() {
+			document.getElementById("nick1").style.opacity = "0";
+			document.getElementById("nick2").style.opacity = "1";
+
+			document.getElementById("nick1").style.transition = "1s";
+			document.getElementById("nick2").style.transition = "0.5s";
+		}
+
+		function nickdehover() {
+			document.getElementById("nick1").style.opacity = "1";
+			document.getElementById("nick2").style.opacity = "0";
+
+			document.getElementById("nick1").style.transition = "0.5s";
+			document.getElementById("nick2").style.transition = "1s";
+		}
+
+		function theohover() {
+			document.getElementById("theo1").style.opacity = "0";
+			document.getElementById("theo2").style.opacity = "1";
+
+			document.getElementById("theo1").style.transition = "1s";
+			document.getElementById("theo2").style.transition = "0.5s";
+		}
+
+		function theodehover() {
+			document.getElementById("theo1").style.opacity = "1";
+			document.getElementById("theo2").style.opacity = "0";
+
+			document.getElementById("theo1").style.transition = "0.5s";
+			document.getElementById("theo2").style.transition = "1s";
+		}
+
+		function xeniahover() {
+			document.getElementById("xenia1").style.opacity = "0";
+			document.getElementById("xenia2").style.opacity = "1";
+
+			document.getElementById("xenia1").style.transition = "1s";
+			document.getElementById("xenia2").style.transition = "0.5s";
+		}
+
+		function xeniadehover() {
+			document.getElementById("xenia1").style.opacity = "1";
+			document.getElementById("xenia2").style.opacity = "0";
+
+			document.getElementById("xenia1").style.transition = "0.5s";
+			document.getElementById("xenia2").style.transition = "1s";
+		}
+
+		function eleftheriahover() {
+			document.getElementById("eleftheria1").style.opacity = "0";
+			document.getElementById("eleftheria2").style.opacity = "1";
+
+			document.getElementById("eleftheria1").style.transition = "1s";
+			document.getElementById("eleftheria2").style.transition = "0.5s";
+		}
+
+		function eleftheriadehover() {
+			document.getElementById("eleftheria1").style.opacity = "1";
+			document.getElementById("eleftheria2").style.opacity = "0";
+
+			document.getElementById("eleftheria1").style.transition = "0.5s";
+			document.getElementById("eleftheria2").style.transition = "1s";
+		}
+
+		function mariahover() {
+			document.getElementById("maria1").style.opacity = "0";
+			document.getElementById("maria2").style.opacity = "1";
+
+			document.getElementById("maria1").style.transition = "1s";
+			document.getElementById("maria2").style.transition = "0.5s";
+		}
+
+		function mariadehover() {
+			document.getElementById("maria1").style.opacity = "1";
+			document.getElementById("maria2").style.opacity = "0";
+
+			document.getElementById("maria1").style.transition = "0.5s";
+			document.getElementById("maria2").style.transition = "1s";
+		}
+
+		function athinahover() {
+			document.getElementById("athina1").style.opacity = "0";
+			document.getElementById("athina2").style.opacity = "1";
+
+			document.getElementById("athina1").style.transition = "1s";
+			document.getElementById("athina2").style.transition = "0.5s";
+		}
+
+		function athinadehover() {
+			document.getElementById("athina1").style.opacity = "1";
+			document.getElementById("athina2").style.opacity = "0";
+
+			document.getElementById("athina1").style.transition = "0.5s";
+			document.getElementById("athina2").style.transition = "1s";
+		}
+	</script>
+
+</body>
+
+</html>

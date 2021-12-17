@@ -1233,6 +1233,27 @@
 
 	<hr class="line">
 
+	<style>
+		.card-photo {
+			position: relative;
+			display: inline-block;
+			width:50%;
+
+		}
+		.card-photo .img-top {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 99;
+			width:50%;
+		}
+		.card-photo:hover .img-top {
+			display: inline;
+		}
+	</style>
+
+
 	<!--Team members-->
 	<section class="tMember-part">
 		<div class="h3" id="heading1" tabindex="-1" style="outline: none;  ">
@@ -1250,385 +1271,42 @@
 			</p>
 		</div>
 
-		<div class="photo-wrapper d-flex justify-content-center flex-wrap w-100">
+		<!--  -->
 
-			<!--Jordi-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Jordi Kontis</b> <br><br>
-					<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
-					<b>LOVES</b>: Literally anything that has to do with the sea <br>
-					<b>FIELD</b>: Fundraising, Wet Lab<br>
-					<b>TITLE</b>: Team leader & Head of Entrepreneurship<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Jordi</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: The one who tries to keep everything in place<br>
-						<b>MISSION</b>: Make everyone love whiskey <br>
-						<b>MOTO</b>: Think logically<br>
-						<b>KARAOKE GO-TO</b>: Sober - TOOL<br>
-						<b>COMPLETED MISSIONS</b>: Became Head of Entrepreneurship<br>
-						<b>LEFT HIS MARK BY</b>: Managing to take up a totally different sector he never worked
-						before<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
+		<div class="intro-all">
+			<div class="card-photo">
+				<img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" >
+				<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" class="img-top">
 			</div>
-			<!---->
-			<!--Nefeli-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/e/e4/T--Greece_United--nef.png" alt="" class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/4/41/T--Greece_United--nef-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Nefeli Zikou</b> <br><br>
-					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
-					<b>AGE</b>: 20 <br>
-					<b>ULTIMATE ABILITY</b>: Physics, AUTH <br>
-					<b>LOVES</b>: octopuses, everything that is blue, stars and DIY projects<br>
-					<b>FIELD</b>: Dry Lab, Web Development, Human Practices <br>
-					<b>TITLE</b>: Team Leader & Head of Dry Lab<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Nefos</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: the one who thinks that Gin smells like love and flowers<br>
-						<b>HATES</b>: slow-talkers<br>
-						<b>MOTO</b>: Shut up and swim <br>
-						<b>KARAOKE GO-TO</b>: Kati san psema, Xasma<br>
-						<b>COMPLETED MISSIONS</b>: Used Mike to understand what Dani said to cooperate with Christos to
-						model these biology thingys.<br>
-						<b>LEFT HER MARK BY</b>: Eating only and always garlic ham.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
+			<!-- <img src="https://2021.igem.org/wiki/images/6/61/T--Greece_United--jordi.png" alt=""
+				class="normal w-100">
+			<img src="https://2021.igem.org/wiki/images/d/d4/T--Greece_United--jordi-fun.jpg" alt=""
+				class="hover d-none w-100"> -->
+			<figcaption>
+				<b style=" font-size:20px; color:#5893D4;"><br>Jordi Kontis</b> <br><br>
+				<b>ORIGINS</b>: Athens & the place Christopher Columbus departed from<br>
+				<b>AGE</b>: 21 <br>
+				<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
+				<b>LOVES</b>: Literally anything that has to do with the sea <br>
+				<b>FIELD</b>: Fundraising, Wet Lab<br>
+				<b>TITLE</b>: Team leader & Head of Entrepreneurship<br>
+			</figcaption>
+			<div class="intro d-none">
+				<h3 class="card-title">aka Jordi</h3>
+				<p class="card-text">
+					<b>CLASSIFIED AS</b>: The one who tries to keep everything in place<br>
+					<b>MISSION</b>: Make everyone love whiskey <br>
+					<b>MOTO</b>: Think logically<br>
+					<b>KARAOKE GO-TO</b>: Sober - TOOL<br>
+					<b>COMPLETED MISSIONS</b>: Became Head of Entrepreneurship<br>
+					<b>LEFT HIS MARK BY</b>: Managing to take up a totally different sector he never worked
+					before<br>
+					<b>EXTENT OF POWER</b>: UNKNOWN<br>
+				</p>
+				<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
+					aria-label="close">Close</button>
 			</div>
-			<!---->
-			<!--Dani-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/8/83/T--Greece_United--dani.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/7/77/T--Greece_United--dani-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Daniel Kotsi</b> <br><br>
-					<b>ORIGINS</b>: Malia (not Matala), Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH <br>
-					<b>LOVES</b>: any sport that'll bring out his competitive self <br>
-					<b>FIELD</b>: Wet Lab, Human Practices<br>
-					<b>TITLE</b>: Head of Wet Lab <br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Dani</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: The one that would not hesitate to cut his hair off.<br>
-						<b>MOTO</b>: Go bald or go home! (Currently at home)<br>
-						<b>KARAOKE GO-TO</b>: Zitti e buoni, Maneskin<br>
-						<b>COMPLETED MISSIONS</b>: Managed to handle the wet lab crisis. And he had a mental breakdown
-						like only twice (per day)!<br>
-						<b>LEFT HIS MARK BY</b>: Constantly upsetting Dry Lab.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Melina-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/8/8e/T--Greece_United--mel.png" alt="" class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/d/da/T--Greece_United--mel-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Melina Zikou</b> <br><br>
-					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Computer Science, AUTH <br>
-					<b>LOVES</b>: tomatoes, nature, bikes and hiking<br>
-					<b>FIELD</b>: Dry Lab, Web Development, Human Practices<br>
-					<b>TITLE</b>: Head of Web Development<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Laluña</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: the bonkers one who will find a way to sneak AI in our project<br>
-						<b>UNOFFICIAL WORLD RECORD HOLDER</b>: most bruises with unknown cause<br>
-						<b>MOTO</b>: It is what it is<br>
-						<b>KARAOKE GO-TO</b>: What’s up, Four None Blondes<br>
-						<b>COMPLETED MISSIONS</b>: Put Html in its place! (with just 7,718 lines of code)<br>
-						<b>LEFT HER MARK BY</b>: Letting the whole city know when she successfully compiled.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Giannis-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/7/77/T--Greece_United--giann.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/0/01/T--Greece_United--giannis-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>John Thimianidis</b><br> <br>
-					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
-					<b>AGE</b>: 20 <br>
-					<b>ULTIMATE ABILITY</b>: Molecular Biology and Genetics, DUTH <br>
-					<b>LOVES</b>: Any way you can associate with music, gardening (yes, he is 40 deep down)<br>
-					<b>FIELD</b>: Wet Lab, Human Practices<br>
-					<b>TITLE</b>: Head of Human Practices<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka GIAAAAAAAIINNN</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: The fun, the serious, the philosopher (or not)<br>
-						<b>MOTO</b>: You only need to find yourself. Everything else can be Googled.<br>
-						<b>KARAOKE GO-TO</b>: Crazy train, Ozzy Osbourne<br>
-						<b>COMPLETED MISSIONS</b>: Playing that elevator music in (almost) every group call but composed
-						the one needed for the video.<br>
-						<b>LEFT HIS MARK BY</b>: Never letting a call go by without screen sharing.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Paulos-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/4/49/T--Greece_United--paulos.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/8/80/T--Greece_United--pavlos-fun.png" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Pavlos Chatzoudis</b><br> <br>
-					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Animation & Interactive media, Akto Thessaloniki <br>
-					<b>HOBBIES</b>: Sketching, animating, dancing and sleeping<br>
-					<b>FIELD</b>: Graphics Design, Social media<br>
-					<b>TITLE</b>: Head of Graphics Design<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Chatz</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: silent, but not shy, miracle worker<br>
-						<b>MOTO</b>: Happy thoughts through hard times.<br>
-						<b>DANCE SONG GO-TO</b>: Smooth Criminal, Michael Jackson<br>
-						<b>COMPLETED MISSIONS</b>: Everything pretty you can see about our team.<br>
-						<b>LEFT HIS MARK BY</b>: Fracturing his hand before the Wiki Freeze week...<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Mantis-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/d/dd/T--Greece_United--mantis.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/d/d8/T--Greece_United--mantis-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Christos Mantis</b><br> <br>
-					<b>ORIGINS</b>: Athens, Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Molecular biology and Genetics, DUTH <br>
-					<b>HOBBIES</b>: Hardware, hardware and occasionally some software<br>
-					<b>FIELD</b>: Wet Lab, Dry Lab<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka (Praying) Mantis</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: Bridge between Wet and Dry lab<br>
-						<b>HATES</b>: Losing<br>
-						<b>THOUGHT HE WAS BEING RECRUITED FOR</b>: Wet Lab?... yeah right<br>
-						<b>MOTO</b>: Procrastination is the art of keeping up with yesterday<br>
-						<b>KARAOKE GO-TO</b>: The Worst (instrumental)<br>
-						<b>COMPLETED MISSIONS</b>: Fought with CellDesigner and won (with a few gray hairs as collateral
-						but who cares)<br>
-						<b>LEFT HIS MARK BY</b>:Always canceling on our group activities the last moment.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Mike-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/c/cc/T--Greece_United--mike.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/b/be/T--Greece_United--mike-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Michalis Sarris</b><br> <br>
-					<b>ORIGINS</b>: Athens, Greece<br>
-					<b>AGE</b>: 20 <br>
-					<b>ULTIMATE ABILITY</b>: Medicine, UOA <br>
-					<b>HOBBIES</b>: His girl, his mom, his god complex and telling people they're wrong<br>
-					<b>FIELD</b>: Wet Lab, Human Practices<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Mike</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: Chandler Bing’s and Gregory House’s sarcastic love child<br>
-						<b>HATES</b>: People who won’t accept the truth <br>
-						<b>MOTO</b>: All limitations are self-imposed.<br>
-						<b>KARAOKE GO-TO</b>: Anything but he won’t know the exact lyrics<br>
-						<b>COMPLETED MISSIONS</b>: Made 10 cells to do what he wants. One trillion to go!!<br>
-						<b>LEFT HIS MARK BY</b>: Playing chess during meetings, during lab hours, even in his sleep.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Alkmini-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/c/c8/T--Greece_United--alkmini.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/9/95/T--Greece_United--alkmini-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Alkmini Zania</b><br> <br>
-					<b>ORIGINS</b>: Athens, Greece<br>
-					<b>AGE</b>: 22<br>
-					<b>ULTIMATE ABILITY</b>: Biology, UOA<br>
-					<b>HOBBIES</b>: Crafts, algorithms, Dungeons&Dragons<br>
-					<b>FIELD</b>: Wet Lab<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Minion</h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: The one who constantly tried to sneak mushrooms in the project idea at any
-						cost<br>
-						<b>THOUGHT HE WAS BEING RECRUITED FOR</b>: A campaign against space debris (also known as space
-						junk, space pollution, space waste, space trash, or space garbage)<br>
-						<b>MOTO</b>: You miss 100% of the shots you don’t take.<br>
-						<b>KARAOKE GO-TO</b>: Baby one more time, Britney Spears<br>
-						<b>COMPLETED MISSIONS</b>: Managed to remain as calm as Buddha in the face of disaster.
-						Sometimes calmed Dani too.<br>
-						<b>LEFT HER MARK BY</b>: Mentioning D&D at least 3 times a day.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Nikolas-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/3/30/T--Greece_United--nikolas.jpg" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/d/d0/T--Greece_United--nikolas-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Nikolas Romanidis</b><br> <br>
-					<b>ORIGINS</b>: Alexandroupoli, Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Economics, UM<br>
-					<b>HOBBIES</b>: Boxing, finance, cryptocurrency<br>
-					<b>FIELD</b>: Fundraising, Public Relations<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Nikolas </h3>
-					<p style="font-size: 16px;">(dare you call him anything else...)</p><br>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: The new guy<br>
-						<b>MOTO</b>: Veni, vidi, vici<br>
-						<b>KARAOKE GO-TO</b>: Uparxo, Kazatzidis<br>
-						<b>COMPLETED MISSIONS</b>: Has seen all the mafia movies available.<br> Hoped to use them to
-						make "an offer that he can't resude".<br>
-						<b>LEFT HIS MARK BY</b>: Transitioning extremely quickly from fun to serious when he had to talk
-						to someone important.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Eva-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/0/0e/T--Greece_United--eva.png" alt="" class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/d/d3/T--Greece_United--eva-fun.jpg" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Evangelia Maleskou</b><br> <br>
-					<b>ORIGINS</b>: Athens, Greece<br>
-					<b>AGE</b>: 22 <br>
-					<b>ULTIMATE ABILITY</b>: Computer Science and Biomedical Informatics, UTH<br>
-					<b>HOBBIES</b>: Feeding the spiders in her room<br>
-					<b>FIELD</b>: Dry Lab<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Eva </h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: -<br>
-						<b>THOUGHT SHE WAS BEING RECRUITED FOR</b>: an attempt to hack the iGEM organization using HTML
-						<br>
-						<b>MOTO</b>: Whatever you do give 100%. Unless you donate blood<br>
-						<b>KARAOKE GO-TO</b>: Under pressure, Queen<br>
-						<b>COMPLETED MISSIONS</b>: Managed to never answer about team presentation.<br>
-						<b>LEFT HER MARK BY</b>: Never answering about team presentation.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
-			<!--Anastasia-->
-			<div class="intro-all">
-				<img src="https://2021.igem.org/wiki/images/b/b9/T--Greece_United--anny.png" alt=""
-					class="normal w-100">
-				<img src="https://2021.igem.org/wiki/images/8/84/T--Greece_United--anny-fun.png" alt=""
-					class="hover d-none w-100">
-				<figcaption>
-					<b style=" font-size:20px; color:#5893D4;"><br>Anastasia Tzima</b><br> <br>
-					<b>ORIGINS</b>: Thessaloniki, Greece<br>
-					<b>AGE</b>: 21 <br>
-					<b>ULTIMATE ABILITY</b>: Economics, AUTH <br>
-					<b>LOVES</b>: Business strategy, entrepreneurship, tennis, piano<br>
-					<b>FIELD</b>: Fundraising<br>
-				</figcaption>
-				<div class="intro d-none">
-					<h3 class="card-title">aka Annie </h3>
-					<p class="card-text">
-						<b>CLASSIFIED AS</b>: cool kid with the briefcase<br>
-						<b>THOUGHT SHE WAS BEING RECRUITED FOR</b>: a position in W.H.O.<br>
-						<b>MOTO</b>: You may have to fight a battle more than once to win it.<br>
-						<b>KARAOKE GO-TO</b>: Gucci forema, Mazonakis <br>
-						<b>COMPLETED MISSIONS</b>: Once finished a call to a possible sponsor without being doubtful of
-						what they said.<br>
-						<b>LEFT HER MARK BY</b>: Establishing the "very very kind reminders" - to sponsors and everyone
-						else.<br>
-						<b>EXTENT OF POWER</b>: UNKNOWN<br>
-					</p>
-					<button class="btn btn-outline-dark btn-sm align-self-end mt-auto" onclick="closeDimmer()"
-						aria-label="close">Close</button>
-				</div>
-			</div>
-			<!---->
 		</div>
-		</div>
-	</section>
 
 	<br><br>
 

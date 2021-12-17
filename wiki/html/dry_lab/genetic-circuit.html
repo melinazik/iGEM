@@ -300,7 +300,8 @@
                 <li>
                     <div class="dropdown" style="float: left;">
                         <button
-                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 17px;background-color: inherit;font-family: inherit;margin-right: 50px;z-index: 10;"
+                        style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+
                             onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Team'">TEAM</a>
                         </button>
                         <div class="dropdown-content">
@@ -311,6 +312,15 @@
                                 onmouseover="changeColor(this)" onmouseout="normalColor(this)"
                                 href="https://2021.igem.org/Team:Greece_United/Sponsors">SPONSORS</a>
                         </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown" style="float: left;">
+                        <button
+                            style="font-size: 1.2em;border: none;outline: none;color: white;padding: 14px 16px;background-color: inherit;font-family: inherit;margin: 0;z-index: 10;"
+                            onclick="location.href = 'https:\/\/2021.igem.org/Team:Greece_United/Medals'">MEDALS</a>
+                        </button>
                     </div>
                 </li>
             </ul>
@@ -891,7 +901,7 @@
                     The correct combination of a gene and a transcription factor enables the gene to be expressed and
                     synthesize the corresponding protein.
 
-                    $$\small \frac{d[P]]}{dt} = k_s * [TF-DNA]$$
+                    $$\small \frac{d[P]}{dt} = k_s * [TF-DNA]$$
 
                     where:
 
@@ -901,7 +911,7 @@
                     Complexes that contain the activated rtTR-KRAB* protein are considered inactive but have a small
                     synthesis rate due to leaky protein production.
 
-                    $$\small \frac{d[P]]}{dt} = k_l * [DNA]$$
+                    $$\small \frac{d[P]}{dt} = k_l * [DNA]$$
 
                     where:
 
@@ -915,7 +925,7 @@
                     the Doxycycline (Dox) in the cells environment. This interaction is described by the following
                     equation:
 
-                    $$\small \frac{d[rtTR-KRAB^{*}]]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
+                    $$\small \frac{d[rtTR-KRAB^{*}]}{dt} = [rtTR-KRAB] * [Dox] * k_dox$$
 
                     where:
 
@@ -924,11 +934,11 @@
                     Finally, we have the degradation of the proteins into aminoacids (aa) and the disassembly of the
                     gene array due to cell dilution.
 
-                    $$\small \frac{d[aa]]}{dt} = [P]* k_{deg-p}$$
+                    $$\small \frac{d[aa]}{dt} = [P]* k_{deg-p}$$
 
                     and
 
-                    $$\small \frac{d[lost]]}{dt} = [Gene]* k_{dil}$$
+                    $$\small \frac{d[lost]}{dt} = [Gene]* k_{dil}$$
 
                     where:
 
@@ -1119,16 +1129,6 @@
 
                     <tr>
                         <td>
-                            $$\small \frac{d[CAP Exosome]}{dt} = [premiRNA] * [Lamp2b-CAP] * k_{r-exosome}*
-                            k_{p-exosome}$$
-                        </td>
-                        <td>
-                            <p class="table-paragraph">Production of premiRNA carrying CAP Exosome</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
                             $$\small \frac{d[Effector \; Construct]}{dt} = [Gal4 (effector)] * k_{l} * 0.01$$
                         </td>
                         <td>
@@ -1190,7 +1190,7 @@
 
                     <tr>
                         <td>
-                            $$\small \frac{d[Amino Acids]}{dt} = [rtTr-KRAB] * k_{deg}$$
+                            $$\small \frac{d[Amino Acids]}{dt} = [rtTR-KRAB] * k_{deg}$$
                         </td>
                         <td>
                             <p class="table-paragraph">Inactive rtTR - KRAB degradation.</p>
@@ -1352,8 +1352,8 @@
                             $$\small \frac{d[rtTRKRAB Dox Complex]}{dt} = [rtTR-KRAB] * [Dox]*k_{dox} $$
                         </td>
                         <td>
-                            <p class="table-paragraph">Binding of doxycycline to an inactive rtTR – KRAB, producing an
-                                active rtTR – KRAB. </p>
+                            <p class="table-paragraph">Binding of doxycycline to an inactive rtTR–KRAB, producing an
+                                active rtTR–KRAB<sup>*</sup>. </p>
                         </td>
                     </tr>
                     <tr>
@@ -1628,7 +1628,7 @@
                             <p class="table-paragraph">COMPLEX</p>
                         </td>
                         <td>
-                            <p class="table-paragraph">NF-_kappa_B RE-NF- _kappa_B (sensor)</p>
+                            <p class="table-paragraph">NF - _kappa_B RE - NF - _kappa_B (sensor)</p>
                         </td>
                         <td>
                             <p class="table-paragraph">S<sub>43</sub></p>
@@ -1662,7 +1662,7 @@
                             <p class="table-paragraph">COMPLEX</p>
                         </td>
                         <td>
-                            <p class="table-paragraph">TRE-rtTR_NF-_kappa_B RENF-_kappa_B (sensor)</p>
+                            <p class="table-paragraph">TRE - rtTR_NF - _kappa_B RENF - _kappa_B (sensor)</p>
                         </td>
                         <td>
                             <p class="table-paragraph">S<sub>39</sub></p>
@@ -2059,7 +2059,7 @@
                             <p class="table-paragraph"> N<sup>-1</sup> * s<sup>-1</sup></p>
                         </td>
                         <td>
-                            <p class="table-paragraph">rtTR-KRAB - DNA on-rate binding constant</p>
+                            <p class="table-paragraph">rtTR-KRAB - DNA off-rate constant</p>
                         </td>
                     </tr>
                     <tr>
