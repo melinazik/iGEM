@@ -212,6 +212,137 @@
     }
 </style>
 
+<!-- slideshow -->
+<style>
+	/* Slideshow container */
+	.slideshow-container {
+		max-width: 800px;
+		position: relative;
+		margin: auto;
+		border: 4px solid #CEDDEF;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 16px;
+		margin-top: -22px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		background-color: rgba(0, 0, 0, 0.472);
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+		background-color: rgba(0, 0, 0, 0.883);
+	}
+
+	/* Caption text */
+	.text {
+		color: #f2f2f2;
+		font-size: 15px;
+		padding: 8px 12px;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot1 {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+
+	.activeSlide1,
+	.dot1:hover {
+		background-color: #717171;
+	}
+
+	.dot2 {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+
+	.activeSlide2,
+	.dot2:hover {
+		background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+		from {
+			opacity: .4
+		}
+
+		to {
+			opacity: 1
+		}
+	}
+
+	@keyframes fade {
+		from {
+			opacity: .4
+		}
+
+		to {
+			opacity: 1
+		}
+	}
+
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+
+		.prev,
+		.next,
+		.text {
+			font-size: 11px
+		}
+	}
+</style>
 
 <header class="circles" id="banner">
 
@@ -436,10 +567,10 @@
         color: #5893D4;
     }
 
-    .back {
-        background: linear-gradient(#FFFFFF, #1F3C88);
+    /* .back { */
+        /* background: linear-gradient(#FFFFFF, #1F3C88); */
         /*#F9FAFC,*/
-    }
+    /* } */
 </style>
 
 
@@ -622,10 +753,80 @@
                         <div class="header">
                             <h1>Overview</h1>
                         </div>
-    
+                        
+                        <br><br>
     
                         <p class="content-paragraph">
-    
+                            During our time on the iGEM competition <b>Greece_United</b> focused on various aspects of the project and many criteria 
+                            concerning the competition’s medals were met. We put a lot of work on our Human Practices aiming for the integration of them in 
+                            our project, the education and communication of science to many societal and age groups. Through our partnership with Korea_HS we 
+                            were able to gain and give useful support in many aspects of the projects of both teams. We focused on supporting our Wet Lab work 
+                            by modelling every possible aspect of our project using different tools. And last but not least, we also put our efforts on 
+                            developing a very thoughtful and meticulous strategic plan concerning the entrepreneurial expansions of our project.<br><br>
+
+                            All of these, combined with a lot more of hard work resulted in us being delighted to be awarded with a Gold Medal in a beautiful 
+                            Jamboree event in Zaragoza, Spain organized by the 2021 iGEM Ambassador to EU Claudia Troncone and the Reconby-iGEM-Unizar team.<br><br>
+
+                            The criteria that were met and resulted in a Gold Medal can be found below, accompanied with links for the respective topic in our page.
+                            
+                            
+                            <br><br><br>
+                            	<!-- slideshow -->
+                                <div class="slideshow-container">
+                                    <div class="mySlides1 ">
+                                        <img src="https://2021.igem.org/wiki/images/e/e9/T--Greece_United--jamboree-5.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1 ">
+                                        <img src="https://2021.igem.org/wiki/images/a/af/T--Greece_United--jamboree-4.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/3/30/T--Greece_United--jamboree-1.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/c/c4/T--Greece_United--jamboree-2.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/9/93/T--Greece_United--jamboree-6.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/f/f6/T--Greece_United--jamboree-3.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/2/20/T--Greece_United--jamboree-9.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/5/55/T--Greece_United--jamboree-8.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/4/4b/T--Greece_United--jamboree-7.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/8/8b/T--Greece_United--jamboree-10.png" style="width:100%">
+                                    </div>
+                                    <div class="mySlides1">
+                                        <img src="https://2021.igem.org/wiki/images/3/37/T--Greece_United--jamboree-11.png" style="width:100%">
+                                    </div>
+
+                                    <a class="prev" style="color: white;" onclick="plusSlides1(-1)">&#10094;</a>
+                                    <a class="next" style="color: white;" onclick="plusSlides1(1)">&#10095;</a>
+
+                                </div>
+                                <br>
+                                <div style="text-align:center">
+                                    <span class="dot1" onclick="currentSlide1(1)"></span>
+                                    <span class="dot1" onclick="currentSlide1(2)"></span>
+                                    <span class="dot1" onclick="currentSlide1(3)"></span>
+                                    <span class="dot1" onclick="currentSlide1(4)"></span>
+                                    <span class="dot1" onclick="currentSlide1(5)"></span>
+                                    <span class="dot1" onclick="currentSlide1(6)"></span>
+                                    <span class="dot1" onclick="currentSlide1(7)"></span>
+                                    <span class="dot1" onclick="currentSlide1(8)"></span>
+                                    <span class="dot1" onclick="currentSlide1(9)"></span>
+                                    <span class="dot1" onclick="currentSlide1(10)"></span>
+                                    <span class="dot1" onclick="currentSlide1(11)"></span>
+                            
+                                </div>
+                                <!-- end of slideshow -->
                             
                         </div>
                     </div>
@@ -715,7 +916,7 @@
                     <!-- silver -->
                     <div class="education">
                         <div class="header">
-                            <h2> Siver Medal Criteria</h>
+                            <h2> Silver Medal Criteria</h>
                         </div>
                         <table id="education2-external" cellspacing="0" style="border: 0;">
                             <tbody>
@@ -969,6 +1170,75 @@
     </div>
 
 </body>
+
+<!-- slideshow -->
+<script>
+	var slideIndex1 = 1;
+	var slideIndex2 = 1;
+	showSlides1(slideIndex1);
+	showSlides2(slideIndex2);
+
+	function plusSlides1(n) {
+		showSlides1(slideIndex1 += n);
+	}
+
+	function plusSlides2(n) {
+		showSlides2(slideIndex2 += n);
+	}
+
+	function currentSlide1(n) {
+		showSlides1(slideIndex1 = n);
+	}
+
+	function currentSlide2(n) {
+		showSlides2(slideIndex2 = n);
+	}
+
+	function showSlides1(n) {
+		var i;
+		var slides1 = document.getElementsByClassName("mySlides1");
+		var dots1 = document.getElementsByClassName("dot1");
+
+
+		if (n > slides1.length) {
+			slideIndex1 = 1
+		}
+		if (n < 1) {
+			slideIndex1 = slides1.length
+		}
+
+		for (i = 0; i < slides1.length; i++) {
+			slides1[i].style.display = "none";
+		}
+		for (i = 0; i < dots1.length; i++) {
+			dots1[i].className = dots1[i].className.replace(" activeSlide1", "");
+		}
+		slides1[slideIndex1 - 1].style.display = "block";
+		dots1[slideIndex1 - 1].className += " activeSlide1";
+	}
+
+	function showSlides2(n) {
+		var i;
+		var slides2 = document.getElementsByClassName("mySlides2");
+		var dots2 = document.getElementsByClassName("dot2");
+
+		if (n > slides2.length) {
+			slideIndex2 = 1
+		}
+		if (n < 1) {
+			slideIndex2 = slides2.length
+		}
+
+		for (i = 0; i < slides2.length; i++) {
+			slides2[i].style.display = "none";
+		}
+		for (i = 0; i < dots2.length; i++) {
+			dots2[i].className = dots2[i].className.replace(" activeSlide2", "");
+		}
+		slides2[slideIndex2 - 1].style.display = "block";
+		dots2[slideIndex2 - 1].className += " activeSlide2";
+	}
+</script>
 <script>
     // Loader
     window.addEventListener("load", function () {
