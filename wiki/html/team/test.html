@@ -5,8 +5,116 @@
     <link rel="stylesheet" type="text/css" href="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/CSS/Animations&action=raw&ctype=text/css" />
     
 </head>
+<style>
+    
+    .container {
+        width: 100%;
+        height: calc(100vh - 14px)
+    }
+    
+    #waves {
+        transform: rotate(180deg);
+        background-color: #fafafc
+    }
+    
+    
+    .smallWaves {
+        position: relative;
+        height: 200px;
+    }
 
+    .milkWave {
+        z-index: 2;
+        width: 100%;
+        top: 4px;
+        position: relative;
+        content: "";
+        pointer-events: none;
+        background-position: bottom;
+        background-origin: border-box;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url(https://2020.igem.org/wiki/images/e/e7/T--Vilnius-Lithuania--milkTeam.svg);
+        height: 150px
+    }
+    
+    .milkWave.rotate-wave {
+        transform: rotate(180deg);
+        top: -4px;
+    }
+    
+    .milkWave svg {
+        height: 150px;
+    }
+    
+    .milkWave.small {
+        position: absolute;
+    }
+    
+ 
+
+</style>
 <body>
+
+    <!-- 1 -->
+<div class="milkWave small" style="top: 440px; z-index:1; opacity:100%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="" fill="#B7E0FF" />
+    </svg>
+</div>
+<div class="milkWave small" style="top: 460px; z-index:2; opacity:100%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="" fill="#6C8EC9" />
+    </svg>
+</div>
+<div class="milkWave small" style="top: 480px; z-index:3; opacity:100%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="" fill="#1F3C88" />
+    </svg>
+</div>
+<div class="milkWave small" style="opacity:90%; z-index:4; top: 500px;">
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="100" fill="#002060"/>
+    </svg>
+</div>
+ <div class="milkWave small " style="top: 520px; z-index:5; opacity:90%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath " d=" " fill="#1F3C88 " />
+    </svg>
+</div>
+<div class="milkWave small " style="top: 540px; z-index:6; opacity:90% ">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath " d=" " fill="#5893D4 " />
+    </svg>
+</div>
+<div class="milkWave small" style="top: 560px; z-index:7; opacity:90%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="" fill="#6C8EC9" />
+    </svg>
+</div>
+<div class="milkWave small" style="top: 580px; z-index:8; opacity:100%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="4" fill="#B8EBFF" />
+    </svg>
+</div>
+<div class="milkWave small" style="top: 600px; z-index:9; opacity:100%">
+    <svg width="100%" height="100%" version="1.1 " xmlns="http://www.w3.org/2000/svg">
+        <path class="animWavePath" d="" fill="#B7E0FF" />
+    </svg>
+</div>
+
+<!-- <link rel="stylesheet" type="text/css" href="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/index.css&action=raw&ctype=text/css" /> -->
+<link rel="stylesheet" type="text/css" href="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/CSS/Animations&action=raw&ctype=text/css" />
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/JS/WaveScript&action=raw&ctype=text/javascript"></script>
+<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Vilnius-Lithuania/js/intro.js&action=raw&ctype=text/javascript"></script>
+
+
+    <script>
+    let pageWaves = document.querySelectorAll(".milkWave");
+    Array.from(pageWaves).forEach((item)=>{
+        makeWave(item, setWaveParams);
+    });
+</script>
 	    
 		<br><br><br><br><br>
    
